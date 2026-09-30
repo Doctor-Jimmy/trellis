@@ -1,0 +1,183 @@
+{
+  "_comment": "Public default Trellis config (codex provider). setup_repo.sh uses this template by default and rewrites repo_path, paper_tex_path, main-result targets, tmux session, and chat metadata for your project. To use a different provider, change the 'provider' fields below to 'claude' or 'gemini' (gemini also requires GEMINI_OAUTH_CLIENT_ID / GEMINI_OAUTH_CLIENT_SECRET in the environment). Replace placeholder values marked with REPLACE_ME if you write a config by hand instead of running setup_repo.sh.",
+  "repo_path": "/home/james/math/bqo3",
+  "goal_file": "GOAL.md",
+  "state_dir": ".trellis",
+  "policy_path": "trellis.policy.json",
+  "phase0": {
+    "allow_same_model_lanes": true
+  },
+  "worker": {
+    "provider": "codex",
+    "model": "gpt-5.6-luna",
+    "effort": "high",
+    "label": "codex-xhigh"
+  },
+  "easy_worker": {
+    "provider": "codex",
+    "model": "gpt-5.6-luna",
+    "effort": "high",
+    "label": "codex-xhigh"
+  },
+  "hard_worker": {
+    "provider": "codex",
+    "model": "gpt-5.6-luna",
+    "effort": "high",
+    "label": "codex-xhigh"
+  },
+  "reviewer": {
+    "provider": "codex",
+    "model": "gpt-5.6-luna",
+    "effort": "high",
+    "label": "codex-xhigh"
+  },
+  "stuck_math_audit": {
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "effort": "xhigh",
+    "label": "codex-xhigh"
+  },
+  "verification": {
+    "correspondence_agents": [
+      {
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "effort": "high",
+        "label": "codex-xhigh"
+      }
+    ],
+    "soundness_agents": [
+      {
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "effort": "high",
+        "label": "codex-xhigh"
+      }
+    ],
+    "substantiveness_agents": [
+      {
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "effort": "high",
+        "label": "codex-xhigh"
+      }
+    ]
+  },
+  "tmux": {
+    "session_name": "bqo3",
+    "dashboard_window_name": "dashboard",
+    "kill_windows_after_capture": true,
+    "burst_user": "james",
+    "burst_group": "james",
+    "burst_home": "/home/james/.cache/trellis-burst-home"
+  },
+  "sandbox": {
+    "enabled": true,
+    "backend": "bwrap"
+  },
+  "loogle": {
+    "enabled": false
+  },
+  "workflow": {
+    "start_phase": "theorem_stating",
+    "paper_tex_path": "paper/paper.tex",
+    "approved_axioms_path": "APPROVED_AXIOMS.json",
+    "allowed_import_prefixes": [
+      "Mathlib"
+    ],
+    "forbidden_keyword_allowlist": [],
+    "human_input_path": "HUMAN_INPUT.md",
+    "input_request_path": "INPUT_REQUEST.md",
+    "main_result_labels": [],
+    "main_result_targets": [
+      {
+        "start_line": 985,
+        "end_line": 987
+      },
+      {
+        "start_line": 1224,
+        "end_line": 1226,
+        "tex_label": "cor:NashWill"
+      },
+      {
+        "start_line": 1246,
+        "end_line": 1248,
+        "tex_label": "corollary:SuperNW"
+      },
+      {
+        "start_line": 1552,
+        "end_line": 1554,
+        "tex_label": "cor PowerQPresBqo"
+      },
+      {
+        "start_line": 1585,
+        "end_line": 1587,
+        "tex_label": "thm BqoHerCtblWqo"
+      },
+      {
+        "start_line": 1594,
+        "end_line": 1596,
+        "tex_label": "thm BqoHerCtblWellF"
+      },
+      {
+        "start_line": 1652,
+        "end_line": 1659,
+        "tex_label": "lem:subarr"
+      },
+      {
+        "start_line": 1713,
+        "end_line": 1715,
+        "tex_label": "MainProp"
+      },
+      {
+        "start_line": 1743,
+        "end_line": 1745,
+        "tex_label": "g-BQO"
+      },
+      {
+        "start_line": 1748,
+        "end_line": 1753
+      }
+    ],
+    "phase_overrides": {},
+    "main_result_envs": [
+      "theorem",
+      "corollary",
+      "definition",
+      "proposition",
+      "lemma"
+    ]
+  },
+  "chat": {
+    "root_dir": "/home/james/math/bqo3/.trellis/chats",
+    "repo_name": "bqo3",
+    "project_name": "Bqo3 Formalization",
+    "public_base_url": ""
+  },
+  "history": {
+    "_comment": "shared_state=true writes .trellis-history/supervisor_state.json in the trellis-shared-state/1 structural-sharing form (7-10x smaller; the plain form crosses GitHub's 100 MB per-file limit on a long run). Every reader decodes both forms, so setting this to false is a pure rollback with no migration. A plain payload at or above 90 MiB is encoded regardless.",
+    "shared_state": true
+  },
+  "git": {
+    "remote_url": null,
+    "remote_name": "origin",
+    "branch": "master",
+    "author_name": ".trellis",
+    "author_email": "trellis@localhost"
+  },
+  "max_cycles": 0,
+  "sleep_seconds": 1.0,
+  "startup_timeout_seconds": 120.0,
+  "burst_timeout_seconds": 14400.0,
+  "sidecar": {
+    "_comment": "Closure sidecar ('grunts'). Off by default: each grunt adds a workspace clone and a concurrent Lean build, and it buys a modest speedup, not a better chance of formalizing anything (README \u00a710). Flip `enabled` to true to turn it on.",
+    "enabled": false,
+    "daemon": {
+      "grunts": 2
+    },
+    "budgets": {
+      "attempt_wall_seconds": 3600,
+      "attempt_memory_gb": 20
+    }
+  }
+}
