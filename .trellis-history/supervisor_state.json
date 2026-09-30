@@ -1,0 +1,602 @@
+{
+  "$format": "trellis-shared-state/1",
+  "event_count": 2,
+  "metadata": {
+    "repo_path": "/home/james/math/bqo3",
+    "config_path": "/home/james/math/bqo3/trellis.config.json",
+    "native_history_kinds": [
+      "review:theorem_stating",
+      "stuck_math_audit"
+    ],
+    "initial_planning_seeded": true,
+    "trust_journal_path": null,
+    "trust_actor_key_manifest_path": null,
+    "trust_gate_presentation_path": null,
+    "trust_seed_manifest_path": null,
+    "trust_seed_definition_bundle_path": null,
+    "trust_evidence_tool_manifest_path": null,
+    "trust_evidence_tool_root_path": null,
+    "trust_seed_transaction_id": null,
+    "trust_advance_gate_episode_id": null,
+    "trust_manifest_authority_roots": {},
+    "coverage_replanning_seeded": true,
+    "plan_review_cadence_seeded": true,
+    "theorem_verifier_only_continuation_seeded": true
+  },
+  "commands": [
+    {
+      "command": "commit_checkpoint"
+    }
+  ],
+  "$strings": {
+    "35b5052f9b678fd9": "b46d99ee7274900a0edf2c6a385a21593a343d41ba9220f213659dec1a089ee9",
+    "77b873e7477d9e09": "237288819cefc0e2f9683c0517f7b3a7e1de3abf716fbdf4c1c57417ad139bd0",
+    "bb7063a8f077eaf7": "initial planning: fresh run \u2014 plan the DAG before the first worker burst"
+  },
+  "$pool": {
+    "10e3f74170766725": {
+      "MainProp": "",
+      "cor PowerQPresBqo": "",
+      "cor:NashWill": "",
+      "corollary:SuperNW": "",
+      "g-BQO": "",
+      "lem:subarr": "",
+      "lines:1748-1753": "",
+      "lines:985-987": "",
+      "thm BqoHerCtblWellF": "",
+      "thm BqoHerCtblWqo": ""
+    },
+    "26904f8863f12994": {
+      "MainProp": [],
+      "cor PowerQPresBqo": [],
+      "cor:NashWill": [],
+      "corollary:SuperNW": [],
+      "g-BQO": [],
+      "lem:subarr": [],
+      "lines:1748-1753": [],
+      "lines:985-987": [],
+      "thm BqoHerCtblWellF": [],
+      "thm BqoHerCtblWqo": []
+    },
+    "2b3786f8a387eba3": {
+      "corr_current_fingerprints": {
+        "Preamble": ""
+      },
+      "coverage": {
+        "$r": "26904f8863f12994"
+      },
+      "deviation_current_fingerprints": {},
+      "open_nodes": [],
+      "paper_current_fingerprints": {
+        "$r": "10e3f74170766725"
+      },
+      "placeholder_definition_nodes": [],
+      "present_nodes": [
+        "Preamble"
+      ],
+      "protected_closure_nodes_per_target": {},
+      "sketch_proof_nodes": [],
+      "sound_current_fingerprint_parts": {},
+      "sound_current_fingerprints": {},
+      "substantiveness_current_fingerprints": {},
+      "target_fingerprints": {
+        "Preamble": ""
+      }
+    },
+    "3d9d01d6a27a9ce8": {
+      "artifact_bundle": {
+        "$r": "635f736939bd09b4"
+      },
+      "artifact_bundle_root": "fc2b3c79068d037906b1451e31730924df21ed7ba0cc6668a2606ac984b733f3",
+      "axiom_policy_root": "4444f88ca0d3ac4190f5456f3e05b7984582426224b3e6b699ce91f0d934f3f1",
+      "build_root": "843df5eaeda3ab1e5452542eb5cce8dbee8189fd1ebe7171b93091e48dc1d215",
+      "certified_node_root": "7b9be9d0175965b846a5d937a3545b0ece5973ec735a4943c730d040aee6cdd9",
+      "declaration_manifest": [],
+      "declaration_manifest_root": "81596d1f72a14c66b4b91b50639537666c2a802154533f8ed57dc59565475830",
+      "dependency_certificate_roots": {},
+      "exact_use_witnesses": [],
+      "local_module_root": "3d9dc40970547f799d503eb8059224c0e69f8288745542fd088e07be6f47361c",
+      "logic_root": "1057b46df448b81d68f6e66e66440a71c0815c2f7671dcd038e890f7f15e4320",
+      "module_name": "Tablet.Preamble",
+      "node": "Preamble",
+      "observed_declaration_uses": [],
+      "principal_declaration": "",
+      "semantic_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": {
+        "$s": "35b5052f9b678fd9"
+      },
+      "toolchain_root": "4b4deaca9d4e220a2d782d3888b70e3e8789e1d215a4d0df1d1a5dc5e25f8df9",
+      "version": "node-certificate-v2",
+      "visibility_manifest_roots": {
+        "$r": "482f6a260af97011"
+      },
+      "visibility_manifests": [
+        {
+          "declarations": [],
+          "level": "exported"
+        }
+      ]
+    },
+    "42e9030f1910c605": {
+      "Preamble": {
+        "$r": "7e2e79e2229d8058"
+      }
+    },
+    "482f6a260af97011": {
+      "exported": "64b899a7a654128a476691c08a6e77f8f745ddb0a2a72ce520096948463a99c0"
+    },
+    "60bd9191067886a3": {
+      "artifact_bundle": {
+        "$r": "635f736939bd09b4"
+      },
+      "declaration_manifest": [],
+      "direct_imports": [
+        "Init"
+      ],
+      "exact_declaration_uses": [],
+      "principal_declaration": "",
+      "replay_declaration_manifest": [],
+      "source_sha256": {
+        "$s": "35b5052f9b678fd9"
+      },
+      "visibility_manifests": [
+        {
+          "declarations": [],
+          "level": "exported"
+        }
+      ]
+    },
+    "635f736939bd09b4": [
+      {
+        "$r": "bd306774fb25cb05"
+      }
+    ],
+    "7e2e79e2229d8058": {
+      "accepted_at_snapshot_id": "revalidate-cycle-0",
+      "active_decl_hash": {
+        "$s": "35b5052f9b678fd9"
+      },
+      "active_statement_hash": "",
+      "approved_axioms_hash": "a38d052bcea60ddba4763fcaadc9bafc21d26983f53dc8a52d64b26c36f67f27",
+      "axcheck_status": "Agreed",
+      "boundary_theorems": {},
+      "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
+      "closure_version": "patch_c_v1",
+      "kernel_axioms": [],
+      "kernel_semantic_hashes": {},
+      "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
+      "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
+      "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+      "node": "Preamble",
+      "node_certificate": {
+        "$r": "3d9d01d6a27a9ce8"
+      },
+      "node_certificate_evidence": {
+        "$r": "60bd9191067886a3"
+      },
+      "preamble_hash": {
+        "$s": "35b5052f9b678fd9"
+      },
+      "seed_support_definition_deps": {},
+      "seed_support_evidence_root": null,
+      "seed_support_file_hashes": {},
+      "strict_definition_deps": {},
+      "strict_theorem_deps": {},
+      "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    "bd306774fb25cb05": {
+      "level": "exported",
+      "sha256": {
+        "$s": "77b873e7477d9e09"
+      },
+      "size_bytes": 1376
+    }
+  },
+  "checkpoint": {
+    "active_node": null,
+    "committed": {
+      "$r": "2b3786f8a387eba3"
+    },
+    "cycle": 1,
+    "gate_kind": "None",
+    "phase": "TheoremStating"
+  },
+  "state": {
+    "active_coarse_node": null,
+    "active_node": null,
+    "approved_targets": {
+      "configured_targets": [],
+      "coverage": {},
+      "protected_closure_nodes": []
+    },
+    "assumption_authoring": null,
+    "attempt": 0,
+    "audit_burst_retry_count": 0,
+    "audit_plan": {
+      "cone_clean_node": null,
+      "initial_plan": true,
+      "need_input_audit": false,
+      "probe_paths": [],
+      "report": "## Claim being audited\n\nThis is a fresh-tablet construction plan for all ten configured claims. The manuscript naturally decomposes into three branches: (A) fronts, locally constant multi-sequences, and Nash-Williams; (B) generalized shifts on increasing self-embeddings of the naturals; and (C) the iterated nonempty powerset and its hereditarily countable part. There is no defect in the paper that prevents formalization, but branch C must preserve the paper's genuinely iterated, well-founded hierarchy rather than silently replacing it by the first-level type `Set Q`.\n\n## Foundational interfaces\n\nUse Mathlib's unbundled `WellQuasiOrdered r` for the paper's sequence definition of wqo, with an explicit `IsPreorder` assumption on `r` when order laws are needed. Represent an infinite subset of the naturals by an increasing order embedding `IncSeq := Nat \u21aao Nat`. This single type also represents the paper's monoid `IIf`; composition is the monoid action, and shift is right-composition with successor. Define finite-prefix agreement and `LocallyConstant` directly: a value at `x` is decided by some finite prefix of `x`. This is equivalent to continuity into a discrete type in the Baire subspace topology, but keeps all combinatorial proofs independent of general topology. State and prove closure under composition and restriction early.\n\nFor fronts, use the paper's explicit definition (paper lines 1078-1090), over finite strictly increasing lists or an equivalent finite-set-with-prefix representation. A `Front X` must carry a prefix-free family and the density/bar property against every subsequence of the base `X`, including the exceptional trivial front `{empty}`. Define restriction to a subsequence, rays, the prefix tree, sub-front, super-sequence, and the shift relation on finite members. Prove uniqueness of the front member that is a proper prefix of an infinite sequence, restriction remains a front, rays remain fronts, and the prefix tree is well-founded. The Nash-Williams proof can then recurse on accessibility in this tree; an explicit ordinal-valued rank is not needed. Its fusion step also needs the elementary infinite pigeonhole lemma for a Boolean sequence.\n\nFor topological digraphs, use a small structure or predicate for a prefix-continuous relation homomorphism. Define continuous-homomorphic reducibility, `BetterRel r` as absence of a prefix-continuous homomorphism from shift into the complement of `r`, and `GBetter g r` analogously with right-composition by `g`. Define `Bqo r` by the paper's equivalent bad locally constant multi-sequence clause (lines 1445-1459), and later prove the super-sequence equivalence rather than taking it as a second definition.\n\nFor the full hierarchy, use a universe-polymorphic tagged PSet-style inductive type: an atom `q : Q`, or a nonempty family of earlier trees indexed by an arbitrary small type. Define the lifted relation by exactly the four clauses at paper lines 1404-1419. Raw well-founded tree codes may be used instead of an extensional quotient because mutually extensional codes are equivalent in this quasi-order, but that equivalence and invariance must be proved. Define hereditary countability recursively by countability of every node's index type. This preserves arbitrary well-founded iteration; `Set Q` is reserved for the separate first-powerset Rado theorem.\n\n## Intended DAG\n\n```text\nIncSeq + prefix/local constancy + WQO\n  |-- orbit/block arithmetic --> RmapLemma + EmapLemma --> MainProp\n  |                                               |--> g-BQO --> lines 1748-1753\n  |-- Front core --> restriction/ray/tree-WF --> NashWilliams\n  |                                      |--> finite-color front theorem --> SuperNW\n  |                                      |--> fixed-arity Ramsey (n=3,4) --> Rado embedding\n  |-- Front core + local constancy --> super/multi bridge --+\n  |                                                         + NashWilliams --> perfect/bad dichotomy --> subarr\n  |-- Bqo core + iterated Power tree/order/game --> bad-map reflection --> PowerQPresBqo\n                                                        |\n  Front tree-WF + bad-super bridge --> ConverseGame ----+--> HerCtblWqo\n  HerCtbl countable-node closure + WQO/WF lemmas ------------> HerCtblWellF\n```\n\nThe generalized-shift branch should split `RmapLemma` from `EmapLemma`. For nonidentity `g`, first prove the least moved point exists, all smaller points are fixed, every increasing injection satisfies `n <= f n`, and the orbit `G(n)=g^[n](k_g)` is strictly increasing and unbounded. `RmapLemma` is restriction along `G`. For `EmapLemma`, isolate the unique orbit-block decomposition and prove separately that the paper's piecewise sigma is increasing, prefix-continuous, and satisfies `sigma(f after succ)=sigma(f) after g` (paper lines 1787-1835). `MainProp` is then just the pair of homomorphisms.\n\nNash-Williams should be proved before developing any independent infinite Ramsey library. The fixed-length fronts give exactly the homogeneous triple and quadruple instances used in the proof of the target at lines 985-987. For that target, separately define Rado's order, domination on `Set Q`, bad sequences of pairs, the witness-selection lemma from a bad powerset sequence, and the two thinning lemmas. The final map must reflect as well as preserve Rado's order; proving only monotonicity is insufficient.\n\nThe multi-sequence branch should construct the minimal deciding front of a locally constant finite coloring (paper lines 1277-1289), apply Nash-Williams, and obtain the perfect-versus-bad dichotomy specialized to shift. This is enough for all three implications in `lem:subarr`; do not record only the one implication written out at lines 1660-1662. In particular, prove transport of badness and perfectness through the super/multi correspondence and through restriction.\n\nThe powerset-preservation node must sit above a substantive reflection theorem matching paper lines 1533-1550: a bad locally constant map into the full iterated hierarchy yields a bad locally constant map into the atoms. Build the finite descending comparison game, prove termination from structural well-foundedness, prove the four-clause order is equivalent to a winning strategy for player II and its negation to one for player I, then formalize the diagonal copying construction. Do not introduce the final preservation theorem until these interfaces have complete natural-language proofs.\n\nFor `HerCtblQ`, prove both directions in paper lines 1585-1590. Forward uses powerset preservation, bqo implies wqo, and heredity to the countable subtype. Reverse uses a bad super-sequence, well-founded recursion on its front tree to form the countably branching `tilde f`, and `ConverseGame`. For the well-founded characterization, one direction is Mathlib's wqo-implies-well-founded strict part. The converse is special to `HerCtblQ`: from a bad sequence, form the countable nonempty nodes of its successive tails and obtain a strict descending chain. Do not use the false general statement that every well-founded preorder is wqo.\n\n## Target order\n\nReach targets in this order: (1) `MainProp`; (2) `g-BQO`; (3) `lines:1748-1753`; (4) `cor:NashWill`; (5) `corollary:SuperNW`; (6) `lem:subarr`; (7) `lines:985-987`; (8) `cor PowerQPresBqo`; (9) `thm BqoHerCtblWqo`; (10) `thm BqoHerCtblWellF`. The first three give an early, relatively independent closed branch. Nash-Williams then supplies both the front results and the finite Ramsey thinning used by Laver's theorem. The iterated-powerset results come last because their game/reflection infrastructure is the deepest part of the manuscript.\n\nEach mathematical concept above should be its own paired node; do not stack helper claims in one ordinary `.tex` file. Every proof-bearing node needs a complete proof block, and dependencies should cite principal nodes only. Keep imports above the tablet marker and the unique `-- BODY` marker immediately after the principal declaration's body delimiter.",
+      "revision_audit": false,
+      "route_tex": "",
+      "tasks": [
+        {
+          "body": "Populate the preamble only with specific Mathlib imports and accurately documented imported facts. Add one-concept nodes for `IncSeq = Nat \u21aao Nat`, composition, successor/shift, finite-prefix agreement, prefix-local constancy, relation homomorphisms, `WellQuasiOrdered`, bad/good sequences, `BetterRel`, and `Bqo`. Prove basic composition/restriction lemmas and the equivalence between subranges and right composition. Use the bad locally constant multi-sequence clause from paper lines 1445-1459; do not define bqo as an opaque Prop alias or via the later powerset theorem.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "foundation-incseq-wqo",
+          "title": "Build the shared sequence foundation"
+        },
+        {
+          "body": "Formalize the arithmetic lemmas for a nonidentity increasing injection, its least moved point, and its strictly increasing unbounded orbit. Split the two reductions into nodes corresponding to `RmapLemma` and `EmapLemma`; split Emap further into block coverage/uniqueness, strict monotonicity, prefix-continuity, and the intertwining identity. Then state and cover `MainProp` exactly as mutual continuous-homomorphic reducibility between right-composition by `g` and shift (paper lines 1713-1715).",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "generalized-shift-main",
+          "title": "Prove the generalized-shift branch"
+        },
+        {
+          "body": "From `MainProp`, prove invariance of absence of complement homomorphisms and cover `g-BQO` including its better-relation clause and quasi-order specialization. Then cover lines 1748-1753. Split on `g = id`: reflexivity handles the identity case, while `g-BQO` handles nonidentity. Preserve the quantifier order `for every locally constant phi and every g, there exists f`.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "generalized-shift-consequences",
+          "title": "Derive both generalized bqo consequences"
+        },
+        {
+          "body": "Implement the explicit front-on-a-base definition from paper lines 1078-1090, including the trivial front. Add finite-prefix, restriction, sub-front, ray, prefix-tree, and super-sequence definitions. Prove prefix uniqueness, restriction/ray closure, tree well-foundedness, and the Boolean infinite-pigeonhole/fusion helpers. Use accessibility induction on the prefix tree to prove the binary Nash-Williams target `cor:NashWill`, then derive a finite-color homogeneous-front theorem and cover `corollary:SuperNW`.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "front-nash-williams",
+          "title": "Construct fronts and prove Nash-Williams"
+        },
+        {
+          "body": "Define super-to-multi extension, the minimal deciding front of a locally constant map, shift on infinite and finite indices, perfect multi/super-sequences, and subobjects. Prove the two badness transports and the necessary perfectness/restriction transports. Apply Nash-Williams to the Boolean coloring `r (phi X) (phi (shift X))` to obtain the shift perfect-or-bad dichotomy. Cover all three equivalent clauses of `lem:subarr`, with complete proofs of all implications rather than only the direction expanded in the paper.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "super-multi-subarr",
+          "title": "Bridge super-sequences and prove subarr"
+        },
+        {
+          "body": "Define Rado pairs and their partial order, first-level domination on `Set Q`, and relation embeddings in the paper's sense. Derive fixed-arity Ramsey for triples and quadruples from Nash-Williams applied to constant-length fronts. From failure of wqo for the powerset, select a bad sequence of sequences; implement the two homogeneous thinning steps in paper lines 988-993; and prove that the resulting map both preserves and reflects Rado's order. Cover exactly `lines:985-987`, assuming `Q` is wqo and its domination powerset is not.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "rado-embedding-target",
+          "title": "Prove the Rado embedding theorem"
+        },
+        {
+          "body": "Create a universe-polymorphic tagged PSet-style hierarchy of atoms and arbitrary nonempty indexed nodes, not `Set Q`. Define support and the four-clause lifted relation from paper lines 1404-1419; prove reflexivity/transitivity and equivalence of mutually extensional codes. Define the finite comparison game and prove termination/determinacy plus the winning-strategy characterization. Then formalize the strategy-copying reflection theorem of lines 1533-1550 and use it to cover `cor PowerQPresBqo`. Keep the reflection theorem and its game lemmas as separate nodes.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "iterated-power-preservation",
+          "title": "Formalize the iterated powerset reflection"
+        },
+        {
+          "body": "Define hereditary countability recursively on the iterated hierarchy and prove closure under nonempty countable families. Formalize the front-tree recursion `tilde f` and the converse-game lemma from paper lines 1559-1579. Combine it with powerset preservation to cover `thm BqoHerCtblWqo`. Finally prove wqo implies well-founded strict part and the converse tail-node construction special to the hereditarily countable hierarchy, then cover `thm BqoHerCtblWellF`.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "hereditarily-countable-targets",
+          "title": "Close the hereditarily countable branch"
+        }
+      ],
+      "trigger_at_write": {
+        "$s": "bb7063a8f077eaf7"
+      },
+      "written_at_cycle": 1,
+      "written_by_request": 1
+    },
+    "cleanup_active_task": null,
+    "cleanup_audit_burst_count": 0,
+    "cleanup_audit_round": 1,
+    "cleanup_audit_scratchpad": "",
+    "cleanup_audit_tasks": [],
+    "cleanup_consecutive_invalid_workers": 0,
+    "cleanup_force_done": false,
+    "coarse_dag_nodes": [],
+    "committed": {
+      "$r": "2b3786f8a387eba3"
+    },
+    "committed_deps": {
+      "Preamble": []
+    },
+    "committed_deviation_files": {},
+    "committed_local_closure_failures": {},
+    "committed_local_closure_records": {
+      "$r": "42e9030f1910c605"
+    },
+    "committed_local_closure_unverified_nodes": [],
+    "committed_node_deviation_claims": {},
+    "committed_node_kinds": {
+      "Preamble": "Preamble"
+    },
+    "committed_proof_nodes": [],
+    "committed_target_claims": {
+      "Preamble": []
+    },
+    "configured_targets": [
+      "MainProp",
+      "cor PowerQPresBqo",
+      "cor:NashWill",
+      "corollary:SuperNW",
+      "g-BQO",
+      "lem:subarr",
+      "lines:1748-1753",
+      "lines:985-987",
+      "thm BqoHerCtblWellF",
+      "thm BqoHerCtblWqo"
+    ],
+    "consecutive_transport_failure_count": 0,
+    "consecutive_transport_failure_halt_threshold": 5,
+    "consecutive_transport_failure_node": null,
+    "corr_approved_fingerprints": {
+      "Preamble": ""
+    },
+    "corr_fingerprint_schema_version": 4,
+    "corr_status": {
+      "Preamble": "Pass"
+    },
+    "coverage_replanning_source": {
+      "kind": "paper_manuscript",
+      "paper_tex_path": "paper/paper.tex"
+    },
+    "cycle": 1,
+    "cycles_in_coarse_repair_mode": 0,
+    "cycles_since_clean": 1,
+    "cycles_since_shallow_coarse_closed_count_increase": 0,
+    "deps": {
+      "Preamble": []
+    },
+    "deterministic_worker_rejection_reasons": [],
+    "deviation_approved_fingerprints": {},
+    "deviation_files": {},
+    "deviation_status": {},
+    "easy_attempts": {
+      "Preamble": 0
+    },
+    "easy_max_retries": 2,
+    "ever_shallow_coarse_closed": [],
+    "force_review_after_cone_clean": false,
+    "force_stuck_math_audit_after_rewind": false,
+    "gap_human_escalation": null,
+    "gap_plan_budget_gap_key": null,
+    "gap_plan_reject_count": 0,
+    "gate_from_invalid_attempt": false,
+    "gate_kind": "None",
+    "global_repair_mode_enabled": true,
+    "has_ever_been_clean": false,
+    "held_target": null,
+    "human_input_outstanding": false,
+    "in_flight_request": null,
+    "invalid_attempt": false,
+    "last_audit_request_cycle": null,
+    "last_clean_commit": null,
+    "last_clean_corr_approved_fingerprints": {},
+    "last_clean_corr_status": {},
+    "last_clean_deps": {},
+    "last_clean_deviation_approved_fingerprints": {},
+    "last_clean_deviation_files": {},
+    "last_clean_deviation_status": {},
+    "last_clean_live": {
+      "corr_current_fingerprints": {},
+      "coverage": {},
+      "deviation_current_fingerprints": {},
+      "open_nodes": [],
+      "paper_current_fingerprints": {},
+      "placeholder_definition_nodes": [],
+      "present_nodes": [],
+      "protected_closure_nodes_per_target": {},
+      "sketch_proof_nodes": [],
+      "sound_current_fingerprint_parts": {},
+      "sound_current_fingerprints": {},
+      "substantiveness_current_fingerprints": {},
+      "target_fingerprints": {}
+    },
+    "last_clean_local_closure_failures": {},
+    "last_clean_local_closure_mirror_ready": false,
+    "last_clean_local_closure_records": {},
+    "last_clean_local_closure_unverified_nodes": [],
+    "last_clean_node_deviation_claims": {},
+    "last_clean_node_kinds": {},
+    "last_clean_paper_approved_fingerprints": {},
+    "last_clean_paper_status": {},
+    "last_clean_proof_nodes": [],
+    "last_clean_rewind_count": 0,
+    "last_clean_sound_approved_fingerprints": {},
+    "last_clean_sound_status": {},
+    "last_clean_substantiveness_approved_fingerprints": {},
+    "last_clean_substantiveness_status": {},
+    "last_clean_target_claims": {},
+    "last_clean_verifier_mirror_ready": false,
+    "last_reviewer_global_repair_request_cycle": null,
+    "last_stuck_math_audit_dispatched_cycle": 1,
+    "latest_assumptions_lane_evidence": [],
+    "latest_audit_rejection_reason": "",
+    "latest_corr_review_nodes": [],
+    "latest_corr_reviewer_evidence": {},
+    "latest_deviation_review_ids": [],
+    "latest_deviation_reviewer_evidence": {},
+    "latest_global_repair_audit_decline_cycle": null,
+    "latest_global_repair_audit_decline_reason": "",
+    "latest_paper_review_targets": [],
+    "latest_paper_reviewer_evidence": {},
+    "latest_review_rejection_reasons": [],
+    "latest_sound_review_nodes": [],
+    "latest_sound_reviewer_evidence": {},
+    "latest_stuck_math_audit_rejection_reason": "",
+    "latest_substantiveness_review_nodes": [],
+    "latest_substantiveness_reviewer_evidence": {},
+    "latest_worker_comments": "",
+    "latest_worker_needs_restructure_suggested_nodes": [],
+    "latest_worker_summary": "",
+    "latest_worker_under_model_disproof": "",
+    "latest_worker_under_model_reasoning": "",
+    "latest_worker_under_model_route_opinion": "",
+    "live": {
+      "$r": "2b3786f8a387eba3"
+    },
+    "local_closure_failures": {},
+    "local_closure_records": {
+      "$r": "42e9030f1910c605"
+    },
+    "local_closure_unverified_nodes": [],
+    "max_theorem_invalid_attempt": 2,
+    "node_deviation_claims": {},
+    "node_difficulty": {
+      "Preamble": "Hard"
+    },
+    "node_kinds": {
+      "Preamble": "Preamble"
+    },
+    "node_rank": {},
+    "paper_approved_fingerprints": {
+      "MainProp": ""
+    },
+    "paper_status": {
+      "MainProp": "Fail"
+    },
+    "pending_assumption_draft": null,
+    "pending_audit_request": null,
+    "pending_authoring_candidate": "",
+    "pending_global_repair_grant": null,
+    "pending_global_repair_request": null,
+    "pending_protected_reapproval_nodes": [],
+    "pending_protected_semantic_scope_confirmation": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Global",
+      "must_close_active": false,
+      "next_worker_context_mode": "fresh",
+      "node": null,
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [
+        {
+          "end_line": 1271,
+          "reason": "The paper's increasing-enumeration model and finite-prefix definition of locally constant multi-sequences.",
+          "start_line": 1264
+        },
+        {
+          "end_line": 1459,
+          "reason": "The paper's shift, bad/good multi-sequence, and bqo definitions for the shared foundation.",
+          "start_line": 1445
+        },
+        {
+          "end_line": 1715,
+          "reason": "The increasing-embedding monoid, right-composition shifts, and exact MainProp target.",
+          "start_line": 1690
+        },
+        {
+          "end_line": 1835,
+          "reason": "The paper's orbit restriction and piecewise block construction proving the two homomorphisms.",
+          "start_line": 1780
+        }
+      ],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": "",
+          "kind": "PaperFaithfulness",
+          "object": {
+            "otype": "target",
+            "target": "MainProp"
+          }
+        }
+      ],
+      "work_style_hint": "none"
+    },
+    "pending_worker_audit_request": null,
+    "phase": "TheoremStating",
+    "plan_review_cadence_enabled": true,
+    "post_advance_routing_pending": false,
+    "previous_corr_lane_findings": {},
+    "previous_paper_lane_findings": {},
+    "previous_sound_lane_findings": {},
+    "previous_substantiveness_lane_findings": {},
+    "process_memory_seq": 3,
+    "progress_history": {
+      "last_dispatched_index": null,
+      "next_index": 1,
+      "snapshots": [
+        {
+          "present": [
+            "Preamble"
+          ],
+          "progressed": [
+            "Preamble"
+          ],
+          "snapshot_index": 0
+        }
+      ]
+    },
+    "proof_edit_mode": "Local",
+    "proof_invalid_review_threshold": 2,
+    "proof_nodes": [],
+    "request_seq": 2,
+    "retry_outcome_kind": "None",
+    "reviewer_comments": "Build the first paper-faithful support package, not a single oversized target node. Populate only specific imports in Preamble, then add paired one-concept nodes for increasing embeddings, right composition and successor shift, finite-prefix local constancy, the bad/good multi-sequence clauses, and the relation-homomorphism interfaces. For MainProp, split the support into the least moved point/orbit facts, the restriction map (RmapLemma), and the piecewise block map (EmapLemma), with separate statements for block coverage/uniqueness, monotonicity, continuity, and the intertwining identity. Keep MainProp's theorem statement exactly at the paper's mutual continuous-homomorphic reducibility claim. Do not collapse the later g-BQO, Nash-Williams, Rado, or iterated-powerset targets into this burst; leave their covering packages for the planned later tasks. Every new proof-bearing node needs a complete NL proof rather than SKETCH, and every cross-node proof use must cite the relevant principal node.",
+    "reviewer_requested_sound_verifier_nodes": [],
+    "revision_context": null,
+    "shallow_coarse_closed_count": 0,
+    "sound_approved_fingerprints": {},
+    "sound_assessment_schema_version": 1,
+    "sound_assessments": {},
+    "sound_status": {},
+    "stage": "Start",
+    "stuck_math_audit": {
+      "active": true,
+      "active_since_cycle": 0,
+      "assumptions_lane": null,
+      "gap_plan_critique": null,
+      "gap_research": null,
+      "initial_planning": null,
+      "last_reviewer_lean_product": null,
+      "need_input_audit": null,
+      "revision_planning": null,
+      "trigger": {
+        "$s": "bb7063a8f077eaf7"
+      },
+      "trigger_blockers": []
+    },
+    "stuck_math_audit_burst_retry_count": 0,
+    "substantiveness_approved_fingerprints": {},
+    "substantiveness_consecutive_no_progress_requests": 0,
+    "substantiveness_status": {},
+    "superseded_audit_plan": null,
+    "tablet_target": "lean",
+    "target_claims": {
+      "Preamble": []
+    },
+    "target_edit_mode": "Global",
+    "theorem_verifier_only_continuation_enabled": true,
+    "transport_attempt": 0,
+    "transport_invalid_review_threshold": 5,
+    "trust_base": {
+      "active_revision_lane_id": null,
+      "advance_gate_episode_id": null,
+      "approved_evidence_tool_input_root": null,
+      "authored_semantic_root": null,
+      "current_human_approval_event_hash": null,
+      "evidence_tool_manifest_sha256": null,
+      "format_version": 0,
+      "gate_commit_pending": false,
+      "last_fail_closed_reason": null,
+      "mode": "disabled",
+      "routine_gate_state": "not_presented",
+      "seed_definition_bundle_sha256": null,
+      "seed_manifest_sha256": null
+    },
+    "undermodel_deferral_count": 0,
+    "verifier_lanes": [
+      "v1"
+    ]
+  }
+}
