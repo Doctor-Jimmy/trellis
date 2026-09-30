@@ -4,16 +4,21 @@
 |------|-----|------|--------|--------|-------|---------|
 | BadMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | BaireContinuous | definition | definition | closed | - | - | PrefixAgree |
+| BetterRel | definition | definition | closed | - | - | ContinuousRelHom, ShiftMap |
 | BlockSigma | definition | definition | closed | - | - | OrbitPoint |
 | BlockSigmaContinuous | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, PrefixAgree |
 | BlockSigmaEmbedding | lemma | proof | open | - | - | BlockSigma, IncSeq, OrbitBlockCoverage |
 | BlockSigmaIntertwines | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, RightComp, SuccSeq |
 | Bqo | definition | definition | closed | - | - | BadMultiSequence, LocallyConstant |
+| BqoIffGeneralShift | corollary | proof | open | - | - | BadMultiSequence, Bqo, GBetterRel, GBetterRelIff, IncSeqId, RightComp, ShiftMap, SuccSeq |
 | ContMor | definition | definition | closed | - | - | ContinuousHom |
 | ContMorEq | definition | definition | closed | - | - | ContMor |
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
+| ContinuousRelHom | definition | definition | closed | - | - | LocallyConstant |
 | EmapLemma | lemma | proof | open | - | - | BlockSigmaContinuous, BlockSigmaEmbedding, BlockSigmaIntertwines, ContMor, FirstMovedPoint, RightComp, ShiftMap |
 | FirstMovedPoint | lemma | proof | open | - | - | IncSeqId, IncSeqPointwiseLe |
+| GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
+| GBetterRelIff | theorem | proof | open | - | g-BQO | BetterRel, Bqo, GBetterRel, IncSeqId, MainProp |
 | GoodMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | IncSeq | definition | definition | closed | - | - | Preamble |
 | IncSeqComp | definition | definition | closed | - | - | IncSeq |
@@ -34,4 +39,4 @@
 | ShiftMap | definition | definition | closed | - | - | RightComp, SuccSeq |
 | SuccSeq | definition | definition | closed | - | - | IncSeq |
 
-**Total:** 30 nodes | **Closed:** 19 | **Open:** 11
+**Total:** 35 nodes | **Closed:** 22 | **Open:** 13

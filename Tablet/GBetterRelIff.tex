@@ -1,0 +1,68 @@
+\begin{theorem}[g-BQO]
+For every nonidentity $g\in\mathsf{IncSeq}$ and every binary relation $R$
+on a discrete type $A$,
+\[
+(A,R)\text{ is a $g$-better-relation}
+\quad\Longleftrightarrow\quad
+(A,R)\text{ is a better-relation}.
+\]
+In particular, if $Q$ is a quasi-order with relation $\leq$, then
+\[
+Q\text{ is $g$-bqo}\quad\Longleftrightarrow\quad Q\text{ is bqo}.
+\]
+\end{theorem}
+\begin{proof}
+Fix $g\neq\mathsf{IncSeqId}$.  By \noderef{MainProp}, choose continuous
+homomorphisms in both directions between
+$(\mathsf{IncSeq},\mathsf{RightComp}(g))$ and
+$(\mathsf{IncSeq},\mathsf{ShiftMap})$.  We first record the transport
+argument for the second clauses in \noderef{GBetterRel} and
+\noderef{BetterRel}.  If $K$ is a continuous homomorphism from a source
+system $(\mathsf{IncSeq},s)$ to $(\mathsf{IncSeq},t)$ and $H$ is a
+continuous homomorphism from $(\mathsf{IncSeq},t)$ to
+$(A,R^{\complement})$, then $H\circ K$ is locally constant and is a
+homomorphism from $(\mathsf{IncSeq},s)$ to $(A,R^{\complement})$:
+local constancy follows by first choosing a prefix deciding the required
+finite output of $K$ and then a prefix deciding $H$ on that output, while
+the homomorphism equation follows from
+$K(s(x))=t(K(x))$ and $H(t(y))$ being related by $R^{\complement}$ to
+$H(y)$.  The reverse source homomorphism gives the converse implication.
+Thus the absence of the complement homomorphism for $g$ is equivalent to
+the absence of the complement homomorphism for the ordinary shift.  The
+source actions here are the maps defined in \noderef{RightComp} and
+\noderef{ShiftMap}.
+
+For completeness, the two clauses in \noderef{GBetterRel} are equivalent by
+the standard finite-prefix fusion argument.  If the first clause fails for
+a locally constant $\varphi$, recursively choose, after every finite
+prefix $u$, an extension $v$ witnessing failure of the restricted
+homomorphism.  At stage $n$ only finitely many values of $\varphi$ have
+been queried, so local constancy lets us extend the current prefix beyond
+all of them.  The increasing union of these prefixes defines an increasing
+enumeration $x$ for every input and, by the choice at each stage, the map
+$y\mapsto\varphi(x\circ y)$ is locally constant and satisfies
+$\neg R(\varphi(x\circ y),\varphi(x\circ y\circ g))$ for every $y$.
+This is a complement homomorphism, contradicting the second clause.
+Conversely, suppose $H$ is a complement homomorphism.  For every $f$, the
+restriction $x\mapsto H(f\circ x)$ is still locally constant and still
+satisfies the complement relation, because the homomorphism equation for
+$H$ can be evaluated at $f\circ x$.  It therefore cannot also be an
+$R$-homomorphism: at any $x$ that would assert both $R(a,b)$ and
+$\neg R(a,b)$.  Thus no restriction supplied by the first clause can
+exist.  The same fusion uses $\mathsf{ShiftMap}$ in place of
+$\mathsf{RightComp}(g)$ for \noderef{BetterRel}.  Hence the transported
+second clauses also transport the first clauses, proving the first
+displayed equivalence.
+
+Suppose now that $r$ is a quasi-order on $Q$.  By \noderef{ContinuousRelHom}, a
+homomorphism from the shift into the complement relation is precisely a
+locally constant map $h:\mathsf{IncSeq}\to Q$ such that
+\[
+\neg r(h(x),h(\mathsf{ShiftMap}(x)))
+\]
+for every $x$.  By \noderef{BadMultiSequence} this says exactly that $h$
+is a bad multi-sequence, and \noderef{Bqo} says that no such locally
+constant map exists.  Therefore $\operatorname{BetterRel}(r)$ is
+equivalent to $\operatorname{Bqo}(r)$.  Combining this with the first
+equivalence gives the quasi-order specialization.
+\end{proof}

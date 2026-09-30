@@ -6,16 +6,21 @@
 |------|------|-------|--------|
 | BadMultiSequence | definition | - | closed |
 | BaireContinuous | definition | - | closed |
+| BetterRel | definition | - | closed |
 | BlockSigma | definition | - | closed |
 | BlockSigmaContinuous | proof | - | open |
 | BlockSigmaEmbedding | proof | - | open |
 | BlockSigmaIntertwines | proof | - | open |
 | Bqo | definition | - | closed |
+| BqoIffGeneralShift | proof | - | open |
 | ContMor | definition | - | closed |
 | ContMorEq | definition | - | closed |
 | ContinuousHom | definition | - | closed |
+| ContinuousRelHom | definition | - | closed |
 | EmapLemma | proof | - | open |
 | FirstMovedPoint | proof | - | open |
+| GBetterRel | definition | - | closed |
+| GBetterRelIff | proof | g-BQO | open |
 | GoodMultiSequence | definition | - | closed |
 | IncSeq | definition | - | closed |
 | IncSeqComp | definition | - | closed |
@@ -35,4 +40,4 @@
 | ShiftMap | definition | - | closed |
 | SuccSeq | definition | - | closed |
 
-**Summary:** 19/30 closed
+**Summary:** 22/35 closed
