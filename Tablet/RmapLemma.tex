@@ -1,0 +1,29 @@
+\begin{lemma}
+Let $g\in\mathsf{IncSeq}$ be nonidentity.  There is a prefix-continuous map
+$\rho:\mathsf{IncSeq}\to\mathsf{IncSeq}$ satisfying
+\[
+\rho(f\circ g)=\rho(f)\circ\mathsf{SuccSeq}
+\]
+for every $f$.  Equivalently, right composition by $g$ continuously
+homomorphically maps to the ordinary shift.
+\end{lemma}
+\begin{proof}
+By \noderef{FirstMovedPoint}, choose the least moved point $k_g$ with
+$k_g<g(k_g)$.  Define $G(n)=g^{[n]}(k_g)$.  The node
+\noderef{OrbitEmbedding} gives an increasing embedding $G$.  Define
+$\rho(f)=f\circ G$.  Composition with the fixed finite-prefix map $G$ is
+prefix-continuous: to determine the first $m$ values of $\rho(f)$ it is
+enough to know the first $G(m-1)+1$ values of $f$.  It is an increasing
+embedding because both $f$ and $G$ are.
+
+For every $n$,
+\[
+\rho(f\circ g)(n)
+ =f(g(G(n)))
+ =f(G(n+1))
+ =\rho(f)(n+1).
+\]
+The middle equality is the defining orbit identity.  Hence
+$\rho(f\circ g)=\rho(f)\circ\mathsf{SuccSeq}$, which is the required
+continuous homomorphism.
+\end{proof}

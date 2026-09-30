@@ -1,0 +1,12 @@
+\begin{lemma}
+If $k<g(k)$, then the orbit map
+$G(n)=g^{[n]}(k)$ is an increasing embedding of $\mathbb N$ into itself.
+\end{lemma}
+\begin{proof}
+Because $g$ is strictly increasing and $k<g(k)$, applying $g^{[n]}$ to this
+inequality gives
+$g^{[n]}(k)<g^{[n]}(g(k))=g^{[n+1]}(k)$ for every $n$.  Thus successive
+orbit points are strictly increasing.  A sequence with this property is
+strictly monotone, hence injective and order preserving, so it defines the
+required order embedding $G$.
+\end{proof}

@@ -1,0 +1,13 @@
+\begin{definition}
+Let $g\in\mathsf{IncSeq}$ and let $k$ be a point with $k<g(k)$.  For
+$f\in\mathsf{IncSeq}$ define the block map $\sigma_f$ by
+\[
+\sigma_f(l)=
+\begin{cases}
+l,&l<G(0),\\
+g^{[f(n)-n]}(l),&G(n)\leq l<G(n+1),
+\end{cases}
+\]
+where $G(n)=g^{[n]}(k)$.  The Lean definition uses the least block index;
+the coverage and uniqueness of that index are recorded separately.
+\end{definition}

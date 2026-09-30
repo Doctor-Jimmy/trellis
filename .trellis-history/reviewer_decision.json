@@ -1,10 +1,11 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The tablet is still an empty scaffold, so the paper-faithfulness failures require genuine covering-node construction. Continue in Global theorem-stating mode with the planned foundation and first generalized-shift package, aiming to cover MainProp without pretending that the downstream targets are already represented.",
-    "comments": "Build the first paper-faithful support package, not a single oversized target node. Populate only specific imports in Preamble, then add paired one-concept nodes for increasing embeddings, right composition and successor shift, finite-prefix local constancy, the bad/good multi-sequence clauses, and the relation-homomorphism interfaces. For MainProp, split the support into the least moved point/orbit facts, the restriction map (RmapLemma), and the piecewise block map (EmapLemma), with separate statements for block coverage/uniqueness, monotonicity, continuity, and the intertwining identity. Keep MainProp's theorem statement exactly at the paper's mutual continuous-homomorphic reducibility claim. Do not collapse the later g-BQO, Nash-Williams, Rado, or iterated-powerset targets into this burst; leave their covering packages for the planned later tasks. Every new proof-bearing node needs a complete NL proof rather than SKETCH, and every cross-node proof use must cite the relevant principal node.",
+    "reason": "MainProp now has a paper-faithful covering set, but the remaining configured targets are still uncovered. Continue in Global theorem-stating mode with the next planned generalized-shift consequence package: expose the paper's better-relation definitions, cover g-BQO, and cover the corollary at lines 1748-1753.",
+    "comments": "Treat MainProp and its existing support as established statement structure; do not spend this burst repairing the open soundness or correspondence findings on BlockSigmaIntertwines or OrbitUnbounded. Add separate paired nodes for the paper's better-relation definition and its generalized-g analogue, with the complement relation and continuous-homomorphism quantifiers explicit. Then add a theorem-like node whose statement is exactly the paper's g-BQO equivalence, including the quasi-order specialization, and a separate corollary node covering lines 1748-1753 with the quantifier order: Q is bqo iff every locally constant phi and every g in IncSeq admit f with phi(f) <= phi(f composed on the right by g). Keep the identity case visible in the NL statement/proof and use MainProp for the nonidentity case. Do not collapse this into Bqo or silently restrict g to nonidentity. New proof-bearing nodes must have complete NL proofs, not SKETCH. Leave the Nash-Williams, Rado, and iterated-powerset covering packages for their planned later tasks.",
     "task_blocker_ids": [
-      "paperfaithfulness:target:MainProp:"
+      "paperfaithfulness:target:g-BQO:",
+      "paperfaithfulness:target:lines:1748-1753:"
     ],
     "reset_blocker_ids": [],
     "next_active": "",
@@ -15,55 +16,51 @@
     "allow_new_obligations": true,
     "must_close_active": false,
     "request_sound_verifier_node_ids": [],
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1264,
-        "end_line": 1271,
-        "reason": "The paper's increasing-enumeration model and finite-prefix definition of locally constant multi-sequences."
+        "start_line": 1664,
+        "end_line": 1687,
+        "reason": "The paper's better-relation definition and its characterization by absence of a shift complement homomorphism."
       },
       {
-        "start_line": 1445,
-        "end_line": 1459,
-        "reason": "The paper's shift, bad/good multi-sequence, and bqo definitions for the shared foundation."
-      },
-      {
-        "start_line": 1690,
-        "end_line": 1715,
-        "reason": "The increasing-embedding monoid, right-composition shifts, and exact MainProp target."
-      },
-      {
-        "start_line": 1780,
-        "end_line": 1835,
-        "reason": "The paper's orbit restriction and piecewise block construction proving the two homomorphisms."
+        "start_line": 1719,
+        "end_line": 1753,
+        "reason": "The generalized-shift consequences: g-better-relation, g-BQO, and the exact locally constant corollary."
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passages. They identify infinite subsets with increasing enumerations, define local constancy by finite initial segments, define bad/good multi-sequences and bqo via shift, state MainProp as equivalence of right-composition by any nonidentity increasing injection with successor shift, and prove it through the orbit restriction and piecewise block maps. The worker should preserve those scopes while exposing the intermediate support nodes.",
+      "basis_summary": "I directly read both cited passages. The paper defines a better-relation by forbidding a continuous homomorphism from the shift into the complement, defines g-better-relation by the restriction formulation and the equivalent complement-homomorphism formulation, states g-BQO equivalence for every nonidentity g including the quasi-order specialization, and then states the all-g corollary with the explicit inequality phi(f) <= phi(f composed with g). The identity case is separately noted as trivial/reflexive.",
       "consulted_cited_ranges": true
     },
     "stuck_math_audit": {
-      "notes": "The initial StuckMathAudit plan is consistent with the paper and the empty tablet. The first useful progress is a Global foundation plus the generalized-shift covering package; no mathematical defect or need for human input is indicated. Preserve the full iterated hierarchy for the later powerset branch.",
+      "notes": "The initial audit plan remains valid. MainProp has cleared paper-faithfulness, so the next structurally appropriate package is the generalized-shift consequence branch; no mathematical defect or human-input gate is indicated. Preserve the later target order and the full iterated hierarchy constraint.",
       "reviewer_lean_product": {
-        "first_package": "foundation-incseq-wqo plus generalized-shift-main",
-        "target_order": [
-          "MainProp",
-          "g-BQO",
-          "lines:1748-1753",
-          "cor:NashWill",
-          "corollary:SuperNW",
-          "lem:subarr",
-          "lines:985-987",
-          "cor PowerQPresBqo",
-          "thm BqoHerCtblWqo",
-          "thm BqoHerCtblWellF"
+        "next_package": "better-relation interfaces -> g-BQO equivalence -> lines 1748-1753 corollary",
+        "required_scopes": [
+          "continuous homomorphism into the complement relation",
+          "all locally constant phi",
+          "all g in IncSeq in the final corollary",
+          "explicit identity/nonidentity split"
         ],
-        "constraint": "Do not replace the iterated nonempty powerset hierarchy by Set Q."
+        "do_not_reopen": [
+          "MainProp statement",
+          "iterated powerset representation"
+        ]
       }
     },
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "foundation-incseq-wqo",
+        "reason": "The worker added the shared increasing-embedding, composition/shift, prefix-local-constancy, bad/good multi-sequence, bqo, and continuous-homomorphism interfaces as paired nodes; the remaining work is now downstream consequence construction."
+      },
+      {
+        "id": "generalized-shift-main",
+        "reason": "The worker split the generalized-shift support into first-moved-point/orbit, block coverage, embedding, continuity, intertwining, RmapLemma, EmapLemma, and MainProp, and the MainProp paper verifier passed."
+      }
+    ],
     "memory_challenges": []
   },
   "response": {
@@ -75,71 +72,67 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Build the first paper-faithful support package, not a single oversized target node. Populate only specific imports in Preamble, then add paired one-concept nodes for increasing embeddings, right composition and successor shift, finite-prefix local constancy, the bad/good multi-sequence clauses, and the relation-homomorphism interfaces. For MainProp, split the support into the least moved point/orbit facts, the restriction map (RmapLemma), and the piecewise block map (EmapLemma), with separate statements for block coverage/uniqueness, monotonicity, continuity, and the intertwining identity. Keep MainProp's theorem statement exactly at the paper's mutual continuous-homomorphic reducibility claim. Do not collapse the later g-BQO, Nash-Williams, Rado, or iterated-powerset targets into this burst; leave their covering packages for the planned later tasks. Every new proof-bearing node needs a complete NL proof rather than SKETCH, and every cross-node proof use must cite the relevant principal node.",
+    "comments": "Treat MainProp and its existing support as established statement structure; do not spend this burst repairing the open soundness or correspondence findings on BlockSigmaIntertwines or OrbitUnbounded. Add separate paired nodes for the paper's better-relation definition and its generalized-g analogue, with the complement relation and continuous-homomorphism quantifiers explicit. Then add a theorem-like node whose statement is exactly the paper's g-BQO equivalence, including the quasi-order specialization, and a separate corollary node covering lines 1748-1753 with the quantifier order: Q is bqo iff every locally constant phi and every g in IncSeq admit f with phi(f) <= phi(f composed on the right by g). Keep the identity case visible in the NL statement/proof and use MainProp for the nonidentity case. Do not collapse this into Bqo or silently restrict g to nonidentity. New proof-bearing nodes must have complete NL proofs, not SKETCH. Leave the Nash-Williams, Rado, and iterated-powerset covering packages for their planned later tasks.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 1,
+    "cycle": 2,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "foundation-incseq-wqo",
+        "reason": "The worker added the shared increasing-embedding, composition/shift, prefix-local-constancy, bad/good multi-sequence, bqo, and continuous-homomorphism interfaces as paired nodes; the remaining work is now downstream consequence construction."
+      },
+      {
+        "id": "generalized-shift-main",
+        "reason": "The worker split the generalized-shift support into first-moved-point/orbit, block coverage, embedding, continuity, intertwining, RmapLemma, EmapLemma, and MainProp, and the MainProp paper verifier passed."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
     "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1271,
-        "reason": "The paper's increasing-enumeration model and finite-prefix definition of locally constant multi-sequences.",
-        "start_line": 1264
+        "end_line": 1687,
+        "reason": "The paper's better-relation definition and its characterization by absence of a shift complement homomorphism.",
+        "start_line": 1664
       },
       {
-        "end_line": 1459,
-        "reason": "The paper's shift, bad/good multi-sequence, and bqo definitions for the shared foundation.",
-        "start_line": 1445
-      },
-      {
-        "end_line": 1715,
-        "reason": "The increasing-embedding monoid, right-composition shifts, and exact MainProp target.",
-        "start_line": 1690
-      },
-      {
-        "end_line": 1835,
-        "reason": "The paper's orbit restriction and piecewise block construction proving the two homomorphisms.",
-        "start_line": 1780
+        "end_line": 1753,
+        "reason": "The generalized-shift consequences: g-better-relation, g-BQO, and the exact locally constant corollary.",
+        "start_line": 1719
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passages. They identify infinite subsets with increasing enumerations, define local constancy by finite initial segments, define bad/good multi-sequences and bqo via shift, state MainProp as equivalence of right-composition by any nonidentity increasing injection with successor shift, and prove it through the orbit restriction and piecewise block maps. The worker should preserve those scopes while exposing the intermediate support nodes.",
+      "basis_summary": "I directly read both cited passages. The paper defines a better-relation by forbidding a continuous homomorphism from the shift into the complement, defines g-better-relation by the restriction formulation and the equivalent complement-homomorphism formulation, states g-BQO equivalence for every nonidentity g including the quasi-order specialization, and then states the all-g corollary with the explicit inequality phi(f) <= phi(f composed with g). The identity case is separately noted as trivial/reflexive.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The tablet is still an empty scaffold, so the paper-faithfulness failures require genuine covering-node construction. Continue in Global theorem-stating mode with the planned foundation and first generalized-shift package, aiming to cover MainProp without pretending that the downstream targets are already represented.",
-    "request_id": 2,
+    "reason": "MainProp now has a paper-faithful covering set, but the remaining configured targets are still uncovered. Continue in Global theorem-stating mode with the next planned generalized-shift consequence package: expose the paper's better-relation definitions, cover g-BQO, and cover the corollary at lines 1748-1753.",
+    "request_id": 13,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The initial StuckMathAudit plan is consistent with the paper and the empty tablet. The first useful progress is a Global foundation plus the generalized-shift covering package; no mathematical defect or need for human input is indicated. Preserve the full iterated hierarchy for the later powerset branch.",
+      "notes": "The initial audit plan remains valid. MainProp has cleared paper-faithfulness, so the next structurally appropriate package is the generalized-shift consequence branch; no mathematical defect or human-input gate is indicated. Preserve the later target order and the full iterated hierarchy constraint.",
       "reviewer_lean_product": {
-        "constraint": "Do not replace the iterated nonempty powerset hierarchy by Set Q.",
-        "first_package": "foundation-incseq-wqo plus generalized-shift-main",
-        "target_order": [
-          "MainProp",
-          "g-BQO",
-          "lines:1748-1753",
-          "cor:NashWill",
-          "corollary:SuperNW",
-          "lem:subarr",
-          "lines:985-987",
-          "cor PowerQPresBqo",
-          "thm BqoHerCtblWqo",
-          "thm BqoHerCtblWellF"
+        "do_not_reopen": [
+          "MainProp statement",
+          "iterated powerset representation"
+        ],
+        "next_package": "better-relation interfaces -> g-BQO equivalence -> lines 1748-1753 corollary",
+        "required_scopes": [
+          "continuous homomorphism into the complement relation",
+          "all locally constant phi",
+          "all g in IncSeq in the final corollary",
+          "explicit identity/nonidentity split"
         ]
       }
     },
@@ -150,11 +143,20 @@
         "kind": "PaperFaithfulness",
         "object": {
           "otype": "target",
-          "target": "MainProp"
+          "target": "g-BQO"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "",
+        "kind": "PaperFaithfulness",
+        "object": {
+          "otype": "target",
+          "target": "lines:1748-1753"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_2_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_13_decision.context.json"
 }

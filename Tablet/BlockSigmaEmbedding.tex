@@ -1,0 +1,18 @@
+\begin{lemma}
+For every $g,k,f$ as in \noderef{BlockSigma}, the block map $\sigma_f$ is
+an increasing injection of $\mathbb N$ into itself.
+\end{lemma}
+\begin{proof}
+On the initial interval $[0,G(0))$, $\sigma_f$ is the identity.  On the
+$n$th block it is an iterate of the increasing injection $g$, so it is
+strictly increasing there.  At the first boundary,
+$l<G(0)\leq G(f(0))=\sigma_f(G(0))$, so values before $G(0)$ precede the
+first block.  At a later boundary, if $G(n)\leq l<G(n+1)$ then
+\[
+\sigma_f(l)<g^{[f(n)]}(k)=G(f(n))<G(f(n+1))
+=\sigma_f(G(n+1)),
+\]
+using strict increase of $f$ and the orbit-block identity.  Thus the pieces
+fit strictly increasingly.  The resulting strictly increasing map is the
+required order embedding.
+\end{proof}

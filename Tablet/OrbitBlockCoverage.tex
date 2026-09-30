@@ -1,0 +1,14 @@
+\begin{lemma}
+Assume $k<g(k)$ and put $G(n)=g^{[n]}(k)$.  Every $l\in\mathbb N$ either
+satisfies $l<G(0)$ or belongs to exactly one orbit block
+$[G(n),G(n+1))$.
+\end{lemma}
+\begin{proof}
+If $l<G(0)$ there is nothing to prove.  Otherwise, by
+\noderef{OrbitUnbounded}, choose an $m$ with $l<G(m+1)$.  The least such
+index $n$ has $l<G(n+1)$, while minimality and $l\geq G(0)$ imply
+$G(n)\leq l$; hence $l$ lies in the $n$th block.  If two indices $n<m$ both
+worked, strict increase of the orbit from \noderef{OrbitEmbedding} would give
+$G(m)\geq G(n+1)>l$, contradicting the lower-bound clause for the $m$th
+block.  Thus the index is unique.
+\end{proof}

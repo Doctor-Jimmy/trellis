@@ -1,0 +1,11 @@
+\begin{lemma}
+Every increasing self-embedding of $\mathbb N$ lies pointwise above the
+identity: for every $f\in\mathsf{IncSeq}$ and every $n\in\mathbb N$,
+$n\leq f(n)$.
+\end{lemma}
+\begin{proof}
+Fix $f$ and argue by induction on $n$.  The base case is $0\leq f(0)$.
+If $n\leq f(n)$, then strict monotonicity gives
+$f(n)+1\leq f(n+1)$, while the induction hypothesis gives
+$n+1\leq f(n)+1$.  Transitivity yields $n+1\leq f(n+1)$.
+\end{proof}

@@ -1,0 +1,17 @@
+\begin{lemma}
+For every $f\in\mathsf{IncSeq}$ and every $l\in\mathbb N$, the block maps
+satisfy
+\[
+\sigma_{f\circ\mathsf{SuccSeq}}(l)=\sigma_f(g(l)).
+\]
+Equivalently, $\sigma_{f\circ\mathsf{SuccSeq}}=\sigma_f\circ g$.
+\end{lemma}
+\begin{proof}
+If $l<G(0)$, then the least moved-point property gives $g(l)=l$, and both
+sides equal $l$.  If $G(n)\leq l<G(n+1)$, strict monotonicity of $g$ gives
+$G(n+1)\leq g(l)<G(n+2)$.  The left side therefore uses exponent
+$f(n+1)-n$, whereas the right side uses exponent $f(n+1)-(n+1)$ after the
+extra application of $g$.  The identity
+$g^{[a]}(g(l))=g^{[a+1]}(l)$ makes the two values equal.  The two cases cover
+all $l$ by \noderef{OrbitBlockCoverage}.
+\end{proof}

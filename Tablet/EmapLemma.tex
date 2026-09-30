@@ -1,0 +1,25 @@
+\begin{lemma}
+Let $g\in\mathsf{IncSeq}$ be nonidentity.  There is a prefix-continuous map
+$\sigma:\mathsf{IncSeq}\to\mathsf{IncSeq}$ satisfying
+\[
+\sigma(f\circ\mathsf{SuccSeq})=\sigma(f)\circ g
+\]
+for every $f$.  Equivalently, the ordinary shift continuously
+homomorphically maps to right composition by $g$.
+\end{lemma}
+\begin{proof}
+Choose $k_g$ from \noderef{FirstMovedPoint} and put
+$G(n)=g^{[n]}(k_g)$.  For each $f$, use the block formula of
+\noderef{BlockSigma} to define $\sigma_f$.  The node
+\noderef{BlockSigmaEmbedding} says that this is an increasing injection,
+and \noderef{BlockSigmaContinuous} says that the assignment
+$f\mapsto\sigma_f$ is prefix-continuous.  Thus it gives a candidate map
+$\sigma$ into $\mathsf{IncSeq}$.
+
+Finally, \noderef{BlockSigmaIntertwines} gives, coordinate by coordinate,
+\[
+\sigma_{f\circ\mathsf{SuccSeq}}(l)=\sigma_f(g(l)).
+\]
+Therefore $\sigma(f\circ\mathsf{SuccSeq})=\sigma(f)\circ g$, so the
+candidate is the required continuous homomorphism.
+\end{proof}
