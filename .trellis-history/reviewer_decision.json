@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The front package has cleared the Nash-Williams paper target, and the sidecar has no remaining paper-faithfulness blocker for SuperNW. Continue in Global theorem-stating mode on the next live paper target, lem:subarr, by building the super-sequence/multi-sequence correspondence and the full perfect-subobject equivalence.",
-    "comments": "Keep the existing Front/NashWilliams/SuperNW statements intact; do not spend this burst on their open correspondence, substantiveness, or soundness findings. Build the next package from the paper's actual multi-sequence section: define the extension of a front-valued super-sequence to a locally constant multi-sequence using the unique front member that is a proper prefix of an infinite enumeration; define sub-multi-sequences and the minimal deciding front for a locally constant map; define finite-set shift and transport of badness in both directions. Expose perfect multi-sequences and perfect super-sequences for an arbitrary binary relation, then state lem:subarr exactly for a quasi-order with all three clauses: bqo, every locally constant multi-sequence has a perfect sub-multi-sequence, and every super-sequence has a perfect sub-super-sequence. The proof must include all implications, use NashWilliams for the shift dichotomy, and cite principal support nodes explicitly. Preserve arbitrary front domains and restriction bases; do not reduce the result to fixed-length fronts or only prove the paper's displayed one implication. New proof-bearing nodes need complete NL proofs, not SKETCH. Leave the Rado and iterated-powerset targets downstream.",
+    "reason": "The current paper-faithfulness gap is the uncovered lem:subarr target. Continue in Global theorem-stating mode to build its super-sequence/multi-sequence covering package and the exact three-clause equivalence, while leaving the already-covered front and generalized-shift statements intact.",
+    "comments": "Keep Front, NashWilliams, and SuperNW unchanged; their remaining findings are correspondence, substantiveness, or soundness work rather than a missing paper-target package. Build the next package from paper lines 1254-1292, 1465-1502, and 1613-1662. Add separate paired support nodes for existence and uniqueness of the front member properly prefixing an increasing enumeration on an arbitrary base, extension of a front-valued super-sequence to a locally constant multi-sequence, restriction by right composition, commutation with ShiftMap, and preservation of local constancy. Add the deciding-prefix set and minimal-front construction, with its induced value map. Define the finite-set shift relation and expose both badness transports and the corresponding perfectness restriction/extension facts. Then add the target-covering node for lem:subarr with an explicit quasi-order hypothesis and exactly these three equivalent clauses: Bqo r; every locally constant multi-sequence has a perfect restriction; and every super-sequence on an arbitrary front/base has a perfect restricted sub-super-sequence. Prove all implications, including the NashWilliams shift dichotomy and both directions of the super/multi transports. Preserve arbitrary fronts and bases; do not reduce to fixed-cardinality fronts or to the universal base. New proof-bearing nodes require complete NL proofs with explicit principal noderefs, not SKETCH. Defer the Rado and iterated-powerset targets, and do not use the currently parent-to-child FrontTreeWellFounded relation as the later child-to-parent recursion relation; that orientation issue belongs to the hereditary branch.",
     "task_blocker_ids": [
       "paperfaithfulness:target:lem:subarr:"
     ],
@@ -21,47 +21,43 @@
       {
         "start_line": 1254,
         "end_line": 1292,
-        "reason": "The paper's super-to-multi extension, multi-sequence restriction, local constancy, and minimal deciding front correspondence."
+        "reason": "The paper's arbitrary-front super-to-multi extension, restriction, local constancy, and minimal deciding-front construction."
       },
       {
         "start_line": 1465,
         "end_line": 1502,
-        "reason": "The finite shift relation, bad/good super-sequences, both badness transports, and bqo characterization through super-sequences."
+        "reason": "The finite-set shift relation and the two directions of badness transport between multi-sequences and super-sequences."
       },
       {
         "start_line": 1613,
         "end_line": 1662,
-        "reason": "The perfect-versus-bad dichotomy, perfect multi/super definitions, and exact three-clause lem:subarr target."
+        "reason": "The shift dichotomy, perfect multi/super definitions, and exact three-clause lem:subarr target."
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read all cited ranges. The paper associates a locally constant multi-sequence to a super-sequence by selecting the unique front member that is a proper prefix of each infinite enumeration, constructs the minimal front of a locally constant map, defines finite shift and badness for super-sequences, proves both badness transports, obtains a perfect-versus-complement dichotomy from Nash-Williams, and states lem:subarr as exactly three equivalent clauses. The next worker must preserve arbitrary front bases and prove all three implications rather than only the implication expanded in the paper.",
-      "consulted_cited_ranges": true
+      "consulted_cited_ranges": true,
+      "basis_summary": "I directly read all three cited passages. The paper selects the unique front member below each increasing enumeration, extends a super-sequence to a locally constant multi-sequence, constructs the minimal deciding front of a locally constant map, defines finite shift and super-sequence badness, proves both badness transports, obtains the perfect-versus-complement dichotomy from Nash-Williams, and states lem:subarr as exactly three equivalent clauses. The worker must preserve arbitrary front domains and bases and expose these bridges as statement-level support."
     },
     "stuck_math_audit": {
-      "notes": "The initial audit plan remains valid and the scratch sanity check found no structural defect. The front branch is now present and Nash-Williams is paper-faithful; the next planned bridge is the super/multi package for lem:subarr. Defer lower-lane repairs and later Rado/powerset work.",
+      "notes": "The cycle-5 coverage audit confirms that the existing foundation and front branch are usable and that no human-input or mathematical-defect gate is needed. The scratch right-composition probe passed with exit 0. Route the super/multi bridge and lem:subarr now; preserve the audit's warning that the existing FrontTreeWellFounded relation has the wrong orientation for the later hereditary TildeF recursion, which should be handled in that downstream package.",
       "reviewer_lean_product": {
+        "next_package": "arbitrary-front super/multi bridge -> bad/perfect transports -> lem:subarr",
         "subarr_clauses": [
-          "Bqo r for a quasi-order relation",
-          "every locally constant multi-sequence admits a perfect restriction",
-          "every super-sequence admits a perfect restricted sub-super-sequence"
+          "Bqo r for a quasi-order",
+          "every locally constant multi-sequence has a perfect restriction",
+          "every super-sequence has a perfect restricted sub-super-sequence"
         ],
-        "required_bridges": [
-          "unique front member below each infinite enumeration",
+        "required_support": [
+          "unique front prefix existence and uniqueness",
           "minimal deciding front",
           "finite-set shift",
-          "badness in both directions",
-          "perfectness transport through restriction"
+          "badness transports in both directions",
+          "perfectness and restriction transports"
         ]
       }
     },
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "front-nash-williams",
-        "reason": "The worker added the explicit front, ray, tree, restriction, super-sequence, pigeonhole, NashWilliams, and SuperNW statement package; the NashWilliams paper target has passed, and the sidecar has no remaining SuperNW paper-faithfulness blocker. Remaining SuperNW findings belong to later verifier lanes rather than target coverage construction."
-      }
-    ],
+    "dismissed_tasks": [],
     "memory_challenges": []
   },
   "response": {
@@ -73,19 +69,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep the existing Front/NashWilliams/SuperNW statements intact; do not spend this burst on their open correspondence, substantiveness, or soundness findings. Build the next package from the paper's actual multi-sequence section: define the extension of a front-valued super-sequence to a locally constant multi-sequence using the unique front member that is a proper prefix of an infinite enumeration; define sub-multi-sequences and the minimal deciding front for a locally constant map; define finite-set shift and transport of badness in both directions. Expose perfect multi-sequences and perfect super-sequences for an arbitrary binary relation, then state lem:subarr exactly for a quasi-order with all three clauses: bqo, every locally constant multi-sequence has a perfect sub-multi-sequence, and every super-sequence has a perfect sub-super-sequence. The proof must include all implications, use NashWilliams for the shift dichotomy, and cite principal support nodes explicitly. Preserve arbitrary front domains and restriction bases; do not reduce the result to fixed-length fronts or only prove the paper's displayed one implication. New proof-bearing nodes need complete NL proofs, not SKETCH. Leave the Rado and iterated-powerset targets downstream.",
+    "comments": "Keep Front, NashWilliams, and SuperNW unchanged; their remaining findings are correspondence, substantiveness, or soundness work rather than a missing paper-target package. Build the next package from paper lines 1254-1292, 1465-1502, and 1613-1662. Add separate paired support nodes for existence and uniqueness of the front member properly prefixing an increasing enumeration on an arbitrary base, extension of a front-valued super-sequence to a locally constant multi-sequence, restriction by right composition, commutation with ShiftMap, and preservation of local constancy. Add the deciding-prefix set and minimal-front construction, with its induced value map. Define the finite-set shift relation and expose both badness transports and the corresponding perfectness restriction/extension facts. Then add the target-covering node for lem:subarr with an explicit quasi-order hypothesis and exactly these three equivalent clauses: Bqo r; every locally constant multi-sequence has a perfect restriction; and every super-sequence on an arbitrary front/base has a perfect restricted sub-super-sequence. Prove all implications, including the NashWilliams shift dichotomy and both directions of the super/multi transports. Preserve arbitrary fronts and bases; do not reduce to fixed-cardinality fronts or to the universal base. New proof-bearing nodes require complete NL proofs with explicit principal noderefs, not SKETCH. Defer the Rado and iterated-powerset targets, and do not use the currently parent-to-child FrontTreeWellFounded relation as the later child-to-parent recursion relation; that orientation issue belongs to the hereditary branch.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 4,
+    "cycle": 5,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "front-nash-williams",
-        "reason": "The worker added the explicit front, ray, tree, restriction, super-sequence, pigeonhole, NashWilliams, and SuperNW statement package; the NashWilliams paper target has passed, and the sidecar has no remaining SuperNW paper-faithfulness blocker. Remaining SuperNW findings belong to later verifier lanes rather than target coverage construction."
-      }
-    ],
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -96,46 +87,47 @@
     "paper_focus_ranges": [
       {
         "end_line": 1292,
-        "reason": "The paper's super-to-multi extension, multi-sequence restriction, local constancy, and minimal deciding front correspondence.",
+        "reason": "The paper's arbitrary-front super-to-multi extension, restriction, local constancy, and minimal deciding-front construction.",
         "start_line": 1254
       },
       {
         "end_line": 1502,
-        "reason": "The finite shift relation, bad/good super-sequences, both badness transports, and bqo characterization through super-sequences.",
+        "reason": "The finite-set shift relation and the two directions of badness transport between multi-sequences and super-sequences.",
         "start_line": 1465
       },
       {
         "end_line": 1662,
-        "reason": "The perfect-versus-bad dichotomy, perfect multi/super definitions, and exact three-clause lem:subarr target.",
+        "reason": "The shift dichotomy, perfect multi/super definitions, and exact three-clause lem:subarr target.",
         "start_line": 1613
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read all cited ranges. The paper associates a locally constant multi-sequence to a super-sequence by selecting the unique front member that is a proper prefix of each infinite enumeration, constructs the minimal front of a locally constant map, defines finite shift and badness for super-sequences, proves both badness transports, obtains a perfect-versus-complement dichotomy from Nash-Williams, and states lem:subarr as exactly three equivalent clauses. The next worker must preserve arbitrary front bases and prove all three implications rather than only the implication expanded in the paper.",
+      "basis_summary": "I directly read all three cited passages. The paper selects the unique front member below each increasing enumeration, extends a super-sequence to a locally constant multi-sequence, constructs the minimal deciding front of a locally constant map, defines finite shift and super-sequence badness, proves both badness transports, obtains the perfect-versus-complement dichotomy from Nash-Williams, and states lem:subarr as exactly three equivalent clauses. The worker must preserve arbitrary front domains and bases and expose these bridges as statement-level support.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The front package has cleared the Nash-Williams paper target, and the sidecar has no remaining paper-faithfulness blocker for SuperNW. Continue in Global theorem-stating mode on the next live paper target, lem:subarr, by building the super-sequence/multi-sequence correspondence and the full perfect-subobject equivalence.",
-    "request_id": 32,
+    "reason": "The current paper-faithfulness gap is the uncovered lem:subarr target. Continue in Global theorem-stating mode to build its super-sequence/multi-sequence covering package and the exact three-clause equivalence, while leaving the already-covered front and generalized-shift statements intact.",
+    "request_id": 34,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The initial audit plan remains valid and the scratch sanity check found no structural defect. The front branch is now present and Nash-Williams is paper-faithful; the next planned bridge is the super/multi package for lem:subarr. Defer lower-lane repairs and later Rado/powerset work.",
+      "notes": "The cycle-5 coverage audit confirms that the existing foundation and front branch are usable and that no human-input or mathematical-defect gate is needed. The scratch right-composition probe passed with exit 0. Route the super/multi bridge and lem:subarr now; preserve the audit's warning that the existing FrontTreeWellFounded relation has the wrong orientation for the later hereditary TildeF recursion, which should be handled in that downstream package.",
       "reviewer_lean_product": {
-        "required_bridges": [
-          "unique front member below each infinite enumeration",
+        "next_package": "arbitrary-front super/multi bridge -> bad/perfect transports -> lem:subarr",
+        "required_support": [
+          "unique front prefix existence and uniqueness",
           "minimal deciding front",
           "finite-set shift",
-          "badness in both directions",
-          "perfectness transport through restriction"
+          "badness transports in both directions",
+          "perfectness and restriction transports"
         ],
         "subarr_clauses": [
-          "Bqo r for a quasi-order relation",
-          "every locally constant multi-sequence admits a perfect restriction",
-          "every super-sequence admits a perfect restricted sub-super-sequence"
+          "Bqo r for a quasi-order",
+          "every locally constant multi-sequence has a perfect restriction",
+          "every super-sequence has a perfect restricted sub-super-sequence"
         ]
       }
     },
@@ -152,5 +144,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_32_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_34_decision.context.json"
 }
