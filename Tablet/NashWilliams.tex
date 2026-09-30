@@ -1,0 +1,35 @@
+\begin{theorem}[Nash--Williams]
+Let $F$ be a front.  For every subset $S$ of $F$ there is a sub-front
+$F'\subseteq F$ such that either $F'\subseteq S$ or
+$F'\cap S=\emptyset$.
+\end{theorem}
+\begin{proof}
+We argue by accessibility induction on the prefix tree from
+\noderef{FrontTreeWellFounded}; equivalently, assume the assertion has been
+proved for every front whose prefix tree has smaller rank.  The trivial
+front is immediate: its only subfamilies are the empty family and the whole
+singleton, and the whole singleton is a front.
+
+Let $F$ be nontrivial on $X$.  For each $n\in X$, define
+$S_n=\{s\in F_n\mid\{n\}\cup s\in S\}$.  By the ray closure lemma
+\noderef{FrontRayClosure}, $F_n$ is a front on $X/n$; its prefix tree is a
+proper successor subtree of the tree of $F$, so the induction hypothesis
+applies to $F_n$ and $S_n$.  Choose an infinite tail $X_n\subseteq X/n$
+on which either $F_n\mathbin{|}X_n\subseteq S_n$ or
+$(F_n\mathbin{|}X_n)\cap S_n=\emptyset$.
+
+Perform this choice successively.  Starting with $X_{-1}=X$, put
+$n_k=\min X_{k-1}$ and use the induction hypothesis on the ray at $n_k$
+and the tail after $n_k$ to choose an infinite $X_k\subseteq X_{k-1}/n_k$
+with one of the two alternatives above.  The resulting $n_k$ are strictly
+increasing.  Apply \noderef{BooleanInfinitePigeonhole} to the binary record
+of which alternative was chosen.  There is an infinite set of indices $I$
+on which the same alternative holds.  Let $Y=\{n_k\mid k\in I\}$.
+
+By \noderef{FrontRestriction}, $F\mathbin{|}Y$ is a front and it is a
+subfamily of $F$.  If the first alternative holds on $I$, then for any
+$s\in F\mathbin{|}Y$, its least element is some $n_k$ with $k\in I$ and
+$s\setminus\{n_k\}\in F_{n_k}\mathbin{|}X_k\subseteq S_{n_k}$; hence
+$s\in S$.  If the second alternative holds, the same decomposition gives
+$s\notin S$.  Thus $F\mathbin{|}Y$ is the required homogeneous sub-front.
+\end{proof}

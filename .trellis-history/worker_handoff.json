@@ -1,20 +1,50 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Added the paper-faithful continuous relation-homomorphism interface, ordinary and generalized better-relation definitions, the g-BQO equivalence with its quasi-order specialization, and the exact locally constant generalized-shift corollary. MainProp remains unchanged.",
-    "comments": "The new Lean declarations elaborate with the existing sorry-permitted theorem-stating policy, and the full tablet structural check passes. New NL proofs explicitly cite their statement-level dependencies, retain the identity case, use MainProp for nonidentity g, and use SuccSeq/ShiftMap for the converse.",
+    "summary": "Built the paper-faithful front branch: explicit finite-set front definitions including the trivial front, rays and ray closure, prefix trees and well-foundedness, restriction and sub-front characterization, super-sequences, infinite pigeonhole, Nash-Williams, and the finite-color SuperNW consequence.",
+    "comments": "The full Tablet structural check and Lean build pass. New proof-bearing NL blocks are complete and cite statement-level support nodes. The prefix-tree theorem exposes well-founded proper-extension accessibility for the Nash-Williams induction; target coverage is exact for the two requested paper claims.",
     "target_claim_updates": {
-      "ContinuousRelHom": [],
-      "BetterRel": [],
-      "GBetterRel": [],
-      "GBetterRelIff": [
-        "g-BQO"
+      "InitialSegment": [],
+      "ProperInitialSegment": [],
+      "FrontBase": [],
+      "ProperPrefixSet": [],
+      "Front": [],
+      "TailSet": [],
+      "Ray": [],
+      "FrontRayClosure": [],
+      "PrefixTree": [],
+      "FrontTreeWellFounded": [],
+      "FrontRestrict": [],
+      "FrontRestriction": [],
+      "SubFrontCharacterization": [],
+      "SuperSequence": [],
+      "BooleanInfinitePigeonhole": [],
+      "NashWilliams": [
+        "cor:NashWill"
       ],
-      "BqoIffGeneralShift": [
-        "lines:1748-1753"
+      "SuperNW": [
+        "corollary:SuperNW"
       ]
     },
-    "difficulty_updates": {},
+    "difficulty_updates": {
+      "InitialSegment": "easy",
+      "ProperInitialSegment": "easy",
+      "FrontBase": "easy",
+      "ProperPrefixSet": "easy",
+      "Front": "easy",
+      "TailSet": "easy",
+      "Ray": "easy",
+      "FrontRayClosure": "hard",
+      "PrefixTree": "easy",
+      "FrontTreeWellFounded": "hard",
+      "FrontRestrict": "easy",
+      "FrontRestriction": "easy",
+      "SubFrontCharacterization": "hard",
+      "SuperSequence": "easy",
+      "BooleanInfinitePigeonhole": "easy",
+      "NashWilliams": "hard",
+      "SuperNW": "hard"
+    },
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
@@ -30,123 +60,326 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "The new Lean declarations elaborate with the existing sorry-permitted theorem-stating policy, and the full tablet structural check passes. New NL proofs explicitly cite their statement-level dependencies, retain the identity case, use MainProp for nonidentity g, and use SuccSeq/ShiftMap for the converse.",
-    "cycle": 3,
+    "comments": "The full Tablet structural check and Lean build pass. New proof-bearing NL blocks are complete and cite statement-level support nodes. The prefix-tree theorem exposes well-founded proper-extension accessibility for the Nash-Williams induction; target coverage is exact for the two requested paper claims.",
+    "cycle": 4,
     "deleted_nodes": [],
     "dep_updates": {
-      "BetterRel": {
+      "BooleanInfinitePigeonhole": {
         "Set": [
-          "ContinuousRelHom",
-          "ShiftMap"
+          "Preamble"
         ]
       },
-      "BqoIffGeneralShift": {
+      "Front": {
         "Set": [
-          "BadMultiSequence",
-          "Bqo",
-          "GBetterRel",
-          "GBetterRelIff",
-          "IncSeqId",
-          "RightComp",
-          "ShiftMap",
-          "SuccSeq"
+          "FrontBase",
+          "InitialSegment",
+          "ProperPrefixSet"
         ]
       },
-      "ContinuousRelHom": {
+      "FrontBase": {
         "Set": [
-          "LocallyConstant"
+          "Preamble"
         ]
       },
-      "GBetterRel": {
+      "FrontRayClosure": {
         "Set": [
-          "ContinuousRelHom",
-          "RightComp"
+          "Front",
+          "Ray",
+          "TailSet"
         ]
       },
-      "GBetterRelIff": {
+      "FrontRestrict": {
         "Set": [
-          "BetterRel",
-          "Bqo",
-          "GBetterRel",
-          "IncSeqId",
-          "MainProp"
+          "Preamble"
+        ]
+      },
+      "FrontRestriction": {
+        "Set": [
+          "Front",
+          "FrontRestrict"
+        ]
+      },
+      "FrontTreeWellFounded": {
+        "Set": [
+          "Front",
+          "PrefixTree",
+          "ProperInitialSegment"
+        ]
+      },
+      "InitialSegment": {
+        "Set": [
+          "Preamble"
+        ]
+      },
+      "NashWilliams": {
+        "Set": [
+          "BooleanInfinitePigeonhole",
+          "Front",
+          "FrontRayClosure",
+          "FrontRestrict",
+          "FrontRestriction",
+          "FrontTreeWellFounded"
+        ]
+      },
+      "PrefixTree": {
+        "Set": [
+          "InitialSegment"
+        ]
+      },
+      "ProperInitialSegment": {
+        "Set": [
+          "InitialSegment"
+        ]
+      },
+      "ProperPrefixSet": {
+        "Set": [
+          "Preamble"
+        ]
+      },
+      "Ray": {
+        "Set": [
+          "Preamble"
+        ]
+      },
+      "SubFrontCharacterization": {
+        "Set": [
+          "Front",
+          "FrontRestrict",
+          "FrontRestriction"
+        ]
+      },
+      "SuperNW": {
+        "Set": [
+          "NashWilliams",
+          "SuperSequence"
+        ]
+      },
+      "SuperSequence": {
+        "Set": [
+          "Front"
+        ]
+      },
+      "TailSet": {
+        "Set": [
+          "Preamble"
         ]
       }
     },
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {},
+    "difficulty_updates": {
+      "BooleanInfinitePigeonhole": {
+        "Set": "Easy"
+      },
+      "Front": {
+        "Set": "Easy"
+      },
+      "FrontBase": {
+        "Set": "Easy"
+      },
+      "FrontRayClosure": {
+        "Set": "Hard"
+      },
+      "FrontRestrict": {
+        "Set": "Easy"
+      },
+      "FrontRestriction": {
+        "Set": "Easy"
+      },
+      "FrontTreeWellFounded": {
+        "Set": "Hard"
+      },
+      "InitialSegment": {
+        "Set": "Easy"
+      },
+      "NashWilliams": {
+        "Set": "Hard"
+      },
+      "PrefixTree": {
+        "Set": "Easy"
+      },
+      "ProperInitialSegment": {
+        "Set": "Easy"
+      },
+      "ProperPrefixSet": {
+        "Set": "Easy"
+      },
+      "Ray": {
+        "Set": "Easy"
+      },
+      "SubFrontCharacterization": {
+        "Set": "Hard"
+      },
+      "SuperNW": {
+        "Set": "Hard"
+      },
+      "SuperSequence": {
+        "Set": "Easy"
+      },
+      "TailSet": {
+        "Set": "Easy"
+      }
+    },
+    "elaboration_costs": {
+      "NashWilliams": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "NashWilliams",
+        "olean_size_bytes": 13112,
+        "peak_rss_kib": 1677424,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "d07b5cfb58214e9354dbdbaf3681cbb9658c984066cdfcb7dbf33bf955e35a0c",
+        "walltime_ms": 2377
+      },
+      "SubFrontCharacterization": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "SubFrontCharacterization",
+        "olean_size_bytes": 12472,
+        "peak_rss_kib": 1695028,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "2bcc3000cd5c6b4ff868fa401ab671600dcdaf8a99f15201509de854998d9fa2",
+        "walltime_ms": 2288
+      },
+      "SuperNW": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "SuperNW",
+        "olean_size_bytes": 15584,
+        "peak_rss_kib": 1680284,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "8044361d03a2f3ed876f9850fa52448313c551628b93f8e491ab79d0386db03b",
+        "walltime_ms": 2205
+      }
+    },
     "kind": "worker",
     "local_closure_results": {},
     "local_closure_revalidation": null,
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "node_kind_updates": {
-      "BqoIffGeneralShift": {
+      "BooleanInfinitePigeonhole": {
         "Set": "Proof"
       },
-      "GBetterRelIff": {
+      "FrontRayClosure": {
+        "Set": "Proof"
+      },
+      "FrontRestriction": {
+        "Set": "Proof"
+      },
+      "FrontTreeWellFounded": {
+        "Set": "Proof"
+      },
+      "NashWilliams": {
+        "Set": "Proof"
+      },
+      "SubFrontCharacterization": {
+        "Set": "Proof"
+      },
+      "SuperNW": {
         "Set": "Proof"
       }
     },
     "outcome": "Valid",
     "proof_node_updates": {
-      "BqoIffGeneralShift": {
+      "BooleanInfinitePigeonhole": {
         "Set": true
       },
-      "GBetterRelIff": {
+      "FrontRayClosure": {
+        "Set": true
+      },
+      "FrontRestriction": {
+        "Set": true
+      },
+      "FrontTreeWellFounded": {
+        "Set": true
+      },
+      "NashWilliams": {
+        "Set": true
+      },
+      "SubFrontCharacterization": {
+        "Set": true
+      },
+      "SuperNW": {
         "Set": true
       }
     },
     "protected_semantic_change_nodes": [],
-    "request_id": 14,
+    "request_id": 22,
     "snapshot": {
       "corr_current_fingerprints": {
-        "BadMultiSequence": "{\"own_tex\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"lean_semantic_closure\":\"f1bcb10c0e55fecd3029e3f6f9753158ff5f0f27c08c3c8cea6d06a6ac6f18a0\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BaireContinuous": "{\"own_tex\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"lean_semantic_closure\":\"076fd77dbceb75a83b1d498ed0381dc876079a9226d0c523e1bbcc8fa15512d7\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BetterRel": "{\"own_tex\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"lean_semantic_closure\":\"c30b9cd10a7a23d75a320c9d8d8601be0776e71b094b20e089d55eb7c5bc1e1a\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigma": "{\"own_tex\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigmaContinuous": "{\"own_tex\":\"09a9a8b83b29897b8d2bcf8836a7d29a89ea868b2854b072fb63d4993044e6d1\",\"lean_semantic_closure\":\"956da18b462667e06dd47228bd95e93856e584464c46a785d5a52c0ac7a0bb41\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigmaEmbedding": "{\"own_tex\":\"716482de56f149477a9e950341c883ff5eaee6c0348c1b9bb7480040419ff686\",\"lean_semantic_closure\":\"4c79795b37b4c66c32f755491c382c21f8adf1097d9523165dfa3ade34a23367\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigmaIntertwines": "{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"lean_semantic_closure\":\"3c728ab18d2b55500a2afc0c4db53a2d3dfcc6cc6efbeee4c6c6484275e88798\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"IncSeqComp\",\"OrbitPoint\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "Bqo": "{\"own_tex\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"lean_semantic_closure\":\"604b2718b8bd008f91a74b58e23f6c84284331c88f58094813d3e4ceb49b3686\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BqoIffGeneralShift": "{\"own_tex\":\"29999954bf11924792fa106b22b2f0885d8023c8e53611313bd35ece10859526\",\"lean_semantic_closure\":\"12c65a312f1be6d03c8357bfb9034fd0a368e01ee94e80c3fed2c9fba55ff755\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"Bqo\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContMor": "{\"own_tex\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"lean_semantic_closure\":\"d75c2a78f92dfe5a3596927fd0db09814585490f6fef77bb0921a563269a06e0\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContMorEq": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"lean_semantic_closure\":\"80b58e7b33b5d37513c03c04054f8e3c64f228e35c2f55efec140a9b3e1abb25\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContinuousHom": "{\"own_tex\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"lean_semantic_closure\":\"88605943375ffcaa2a4f89b2366773e492ad59d68f444979968494327a2070c6\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"lean_semantic_closure\":\"cc3b5cd70fdadb56f663f0649763da6dab9fa60073d66336e8fb208e73ea7b81\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "EmapLemma": "{\"own_tex\":\"21b33d67303624dd2b5611e477765e910011f1e089275d9b22d7deccd94a2a9d\",\"lean_semantic_closure\":\"35e36eb567593e1a79803076ca5afbde02a1c1ce8c96e0d2216583124e09d10e\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "FirstMovedPoint": "{\"own_tex\":\"807172e9b87b38deeb1d6be5b8c7ed374530d57a6e41d65fc8c1de57c84f605a\",\"lean_semantic_closure\":\"7e6006c0caf42f08edad26fa542c095f321202cda71754e646e780cad94f4788\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqId\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"d6c75167f4104b47df96e7080ec30874a1508470b122d590f39511a2d0676141\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"lean_semantic_closure\":\"88c3969d6d6c9f7f0e12bfdf289b76f8a8b136e4d3cdf9b058f44c19fa0dde43\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BetterRel\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"GBetterRel\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BetterRel\",\"Bqo\",\"ContinuousRelHom\",\"GBetterRel\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"lean_semantic_closure\":\"83e4c8a27f91a5e1b19de77f03d8f779ab60303d098e5ac5f966072af0d7bac1\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeq": "{\"own_tex\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"lean_semantic_closure\":\"2f294aa534116c66ed8e1135196c8221873b7cdde9b31ab791fe2d51fc31d42a\",\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"lean_semantic_closure\":\"39d055c5c38bd5cf361792d3811740d8c8cdc7efaa285f8355f8f507882b093b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"lean_semantic_closure\":\"85afef81cded08fed3d58aa4078c7d2a0229080a10dabae1c1141724bb2b1008\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeqPointwiseLe": "{\"own_tex\":\"3840bd71c98e46aa9d4d905c99a3d11f970d798581290084b4246f6400c2ab0c\",\"lean_semantic_closure\":\"2488da5c727de1324c15be1c8107ca72086bcfa330e7781206d7a2b6b9b169a3\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "LocallyConstant": "{\"own_tex\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"lean_semantic_closure\":\"db25085ca86df64546525767d86a630ce7c012fdbee042fe8a7220cb0651e6bf\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "MainProp": "{\"own_tex\":\"eeab77584e1dd0adfa624b771d52edf0449a4103e1f925c550438b6b8f56a856\",\"lean_semantic_closure\":\"9a2164f6614d4a8088001034bddb87e017532476b2de8349ff293a63cf25dc64\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContMorEq\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContMorEq\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "MultiSequence": "{\"own_tex\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"lean_semantic_closure\":\"890772294760234fff15eb54699b9925e03800e2a04dd6b888374add40fd2451\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitBlock": "{\"own_tex\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"lean_semantic_closure\":\"df4bd93afe1adaf6e8b2901488187d171bd61bd2b2ac3c6f72515a17964a19a8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitBlockCoverage": "{\"own_tex\":\"b6d40ddcb1ef29e3a6976d7346748f80b3235e200b2a287e1edb33c0060454dc\",\"lean_semantic_closure\":\"32fa43219ac3e96cff6f721b4815d8c427499f566f8f37044ff12b91d512b1f5\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitBlock\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitBlock\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitEmbedding": "{\"own_tex\":\"5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018\",\"lean_semantic_closure\":\"a359d6e317c1d230da93bc1573885afb42d47a1f45abccb55285aad001862169\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitPoint": "{\"own_tex\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"lean_semantic_closure\":\"bbc1a2d86d7c96bd73a7d6ad64d7115767970d1b3905b171c1bd992e68b7257a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitUnbounded": "{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"lean_semantic_closure\":\"c280795b5c47710fc784279b43989001eb5fa1c22ca24c49dec5d49968d2b04f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "Preamble": "{\"own_tex\":\"e741fbd0664b50509e95717b9700cc4d3dafcbb00ed912b8e0436d658ed3004a\",\"lean_semantic_closure\":\"\",\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "PrefixAgree": "{\"own_tex\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"lean_semantic_closure\":\"fb6dbc9688a74c3adb774cbbd6b6772222d1bd5837baaa0c2ffd6353fbffe92e\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "RightComp": "{\"own_tex\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"lean_semantic_closure\":\"c7848464831ddf5e34dc736fff97570b28c050c51e97fe861ee6bd9d1048fae8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "RmapLemma": "{\"own_tex\":\"03f5b930671537a2367b17e00ea584ce5333294bfd77bb73ef6e3e21c012c7b1\",\"lean_semantic_closure\":\"cab4424557ae942ca20a8fb51b7e109e03ca47dd1cfe26104a9d229a8ae02b02\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ShiftMap": "{\"own_tex\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"lean_semantic_closure\":\"fe7ea21e0dccd8138abc3e44a9ac541bf3be93fac3c7d2b76b85b4082c98ad6f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "SuccSeq": "{\"own_tex\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"lean_semantic_closure\":\"78255dd3f4e14dd7e165e97436528e234e57159d3aefe6fc7cff7423fa2b281a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}"
+        "BadMultiSequence": "{\"own_tex\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"lean_semantic_closure\":\"f1bcb10c0e55fecd3029e3f6f9753158ff5f0f27c08c3c8cea6d06a6ac6f18a0\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BaireContinuous": "{\"own_tex\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"lean_semantic_closure\":\"076fd77dbceb75a83b1d498ed0381dc876079a9226d0c523e1bbcc8fa15512d7\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BetterRel": "{\"own_tex\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"lean_semantic_closure\":\"c30b9cd10a7a23d75a320c9d8d8601be0776e71b094b20e089d55eb7c5bc1e1a\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigma": "{\"own_tex\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigmaContinuous": "{\"own_tex\":\"09a9a8b83b29897b8d2bcf8836a7d29a89ea868b2854b072fb63d4993044e6d1\",\"lean_semantic_closure\":\"956da18b462667e06dd47228bd95e93856e584464c46a785d5a52c0ac7a0bb41\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigmaEmbedding": "{\"own_tex\":\"716482de56f149477a9e950341c883ff5eaee6c0348c1b9bb7480040419ff686\",\"lean_semantic_closure\":\"4c79795b37b4c66c32f755491c382c21f8adf1097d9523165dfa3ade34a23367\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigmaIntertwines": "{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"lean_semantic_closure\":\"3c728ab18d2b55500a2afc0c4db53a2d3dfcc6cc6efbeee4c6c6484275e88798\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"IncSeqComp\",\"OrbitPoint\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BooleanInfinitePigeonhole": "{\"own_tex\":\"987a5eec9c6c8d571452359e653164a4e23507a3d8d5abfad4d3a1df9f8fdee0\",\"lean_semantic_closure\":\"f53aaf63321bd534b32c51753fca894a55415d89bea17b1d54477b39023dc634\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Bqo": "{\"own_tex\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"lean_semantic_closure\":\"604b2718b8bd008f91a74b58e23f6c84284331c88f58094813d3e4ceb49b3686\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BqoIffGeneralShift": "{\"own_tex\":\"29999954bf11924792fa106b22b2f0885d8023c8e53611313bd35ece10859526\",\"lean_semantic_closure\":\"12c65a312f1be6d03c8357bfb9034fd0a368e01ee94e80c3fed2c9fba55ff755\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"Bqo\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContMor": "{\"own_tex\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"lean_semantic_closure\":\"d75c2a78f92dfe5a3596927fd0db09814585490f6fef77bb0921a563269a06e0\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContMorEq": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"lean_semantic_closure\":\"80b58e7b33b5d37513c03c04054f8e3c64f228e35c2f55efec140a9b3e1abb25\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContinuousHom": "{\"own_tex\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"lean_semantic_closure\":\"88605943375ffcaa2a4f89b2366773e492ad59d68f444979968494327a2070c6\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"lean_semantic_closure\":\"cc3b5cd70fdadb56f663f0649763da6dab9fa60073d66336e8fb208e73ea7b81\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "EmapLemma": "{\"own_tex\":\"21b33d67303624dd2b5611e477765e910011f1e089275d9b22d7deccd94a2a9d\",\"lean_semantic_closure\":\"35e36eb567593e1a79803076ca5afbde02a1c1ce8c96e0d2216583124e09d10e\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FirstMovedPoint": "{\"own_tex\":\"807172e9b87b38deeb1d6be5b8c7ed374530d57a6e41d65fc8c1de57c84f605a\",\"lean_semantic_closure\":\"7e6006c0caf42f08edad26fa542c095f321202cda71754e646e780cad94f4788\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqId\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Front": "{\"own_tex\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"lean_semantic_closure\":\"b0894c706705964a4906f3d4397863df6a15822b5271ac2a01768cf156e4b2aa\",\"lean_relevant_definition_descendants\":{\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontBase": "{\"own_tex\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"lean_semantic_closure\":\"1a9dba16f85af3d4f3f0632d40eb1102856bcdea6905af8c1fa5778eb01480fa\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"lean_semantic_closure\":\"df88ab2fe24deb2dd9fbde1d02e356e7774c701d9685aba33bb5c014f160ecd2\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"lean_semantic_closure\":\"2bcb8b3472ad7df228c0e3ae11e029782002cde409d9fc6da22d8c760ec04364\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"lean_semantic_closure\":\"8c4986e1a9c4975f580f327324910d6d5bdd09f960c0374965ebc3ce1344bfa9\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontTreeWellFounded": "{\"own_tex\":\"4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b\",\"lean_semantic_closure\":\"5ec497d761d10308a66bd58a977f51d846ef4ec9bba8de3000a1d4785ca2211c\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"d6c75167f4104b47df96e7080ec30874a1508470b122d590f39511a2d0676141\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"lean_semantic_closure\":\"88c3969d6d6c9f7f0e12bfdf289b76f8a8b136e4d3cdf9b058f44c19fa0dde43\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BetterRel\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"GBetterRel\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BetterRel\",\"Bqo\",\"ContinuousRelHom\",\"GBetterRel\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"lean_semantic_closure\":\"83e4c8a27f91a5e1b19de77f03d8f779ab60303d098e5ac5f966072af0d7bac1\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeq": "{\"own_tex\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"lean_semantic_closure\":\"2f294aa534116c66ed8e1135196c8221873b7cdde9b31ab791fe2d51fc31d42a\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"lean_semantic_closure\":\"39d055c5c38bd5cf361792d3811740d8c8cdc7efaa285f8355f8f507882b093b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"lean_semantic_closure\":\"85afef81cded08fed3d58aa4078c7d2a0229080a10dabae1c1141724bb2b1008\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeqPointwiseLe": "{\"own_tex\":\"3840bd71c98e46aa9d4d905c99a3d11f970d798581290084b4246f6400c2ab0c\",\"lean_semantic_closure\":\"2488da5c727de1324c15be1c8107ca72086bcfa330e7781206d7a2b6b9b169a3\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "InitialSegment": "{\"own_tex\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"lean_semantic_closure\":\"957e018bba484bd6f1ab120720ca860858be18c0608958f9782c8ed08b0ce02f\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "LocallyConstant": "{\"own_tex\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"lean_semantic_closure\":\"db25085ca86df64546525767d86a630ce7c012fdbee042fe8a7220cb0651e6bf\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "MainProp": "{\"own_tex\":\"eeab77584e1dd0adfa624b771d52edf0449a4103e1f925c550438b6b8f56a856\",\"lean_semantic_closure\":\"9a2164f6614d4a8088001034bddb87e017532476b2de8349ff293a63cf25dc64\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContMorEq\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContMorEq\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "MultiSequence": "{\"own_tex\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"lean_semantic_closure\":\"890772294760234fff15eb54699b9925e03800e2a04dd6b888374add40fd2451\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "NashWilliams": "{\"own_tex\":\"86fecabae20ea2d0e8b51a90bc5f45c34c17099d38a9865f7631812939d8ce3a\",\"lean_semantic_closure\":\"32cd08e799a0ad192f4ac092200fc088633ffdd81134c5766de8b87dd9f09590\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitBlock": "{\"own_tex\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"lean_semantic_closure\":\"df4bd93afe1adaf6e8b2901488187d171bd61bd2b2ac3c6f72515a17964a19a8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitBlockCoverage": "{\"own_tex\":\"b6d40ddcb1ef29e3a6976d7346748f80b3235e200b2a287e1edb33c0060454dc\",\"lean_semantic_closure\":\"32fa43219ac3e96cff6f721b4815d8c427499f566f8f37044ff12b91d512b1f5\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitBlock\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitBlock\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitEmbedding": "{\"own_tex\":\"5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018\",\"lean_semantic_closure\":\"a359d6e317c1d230da93bc1573885afb42d47a1f45abccb55285aad001862169\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitPoint": "{\"own_tex\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"lean_semantic_closure\":\"bbc1a2d86d7c96bd73a7d6ad64d7115767970d1b3905b171c1bd992e68b7257a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitUnbounded": "{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"lean_semantic_closure\":\"c280795b5c47710fc784279b43989001eb5fa1c22ca24c49dec5d49968d2b04f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Preamble": "{\"own_tex\":\"f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365\",\"lean_semantic_closure\":\"\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PrefixAgree": "{\"own_tex\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"lean_semantic_closure\":\"fb6dbc9688a74c3adb774cbbd6b6772222d1bd5837baaa0c2ffd6353fbffe92e\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PrefixTree": "{\"own_tex\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"lean_semantic_closure\":\"5955a0ba784397c826d249df2d70316650abe123b33450aeb11b34a4c3b18826\",\"lean_relevant_definition_descendants\":{\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\"},\"lean_relevant_dependencies\":[\"InitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ProperInitialSegment": "{\"own_tex\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"lean_semantic_closure\":\"326cebdb8534e5c63638eaae0d56aa8f3107190b14dd7329ae585900518684fb\",\"lean_relevant_definition_descendants\":{\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\"},\"lean_relevant_dependencies\":[\"InitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ProperPrefixSet": "{\"own_tex\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"lean_semantic_closure\":\"0c732a23a47482a7375499076ab2ee9fca4c9dacd7472abe0fc8634380011829\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Ray": "{\"own_tex\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"lean_semantic_closure\":\"e809a6b908c92f6b2f9d268ebf86b7e22d6f2200af0a37b40d4d7a50f172b6fb\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RightComp": "{\"own_tex\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"lean_semantic_closure\":\"c7848464831ddf5e34dc736fff97570b28c050c51e97fe861ee6bd9d1048fae8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RmapLemma": "{\"own_tex\":\"03f5b930671537a2367b17e00ea584ce5333294bfd77bb73ef6e3e21c012c7b1\",\"lean_semantic_closure\":\"cab4424557ae942ca20a8fb51b7e109e03ca47dd1cfe26104a9d229a8ae02b02\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ShiftMap": "{\"own_tex\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"lean_semantic_closure\":\"fe7ea21e0dccd8138abc3e44a9ac541bf3be93fac3c7d2b76b85b4082c98ad6f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SubFrontCharacterization": "{\"own_tex\":\"91f62451f879492656af3f0e4af713ae73ba83518beb465240d1f47b5c33cf08\",\"lean_semantic_closure\":\"78925e38db5575c19961694242f313800e90c2296f44fe5002e8d06e58dd5f14\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SuccSeq": "{\"own_tex\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"lean_semantic_closure\":\"78255dd3f4e14dd7e165e97436528e234e57159d3aefe6fc7cff7423fa2b281a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SuperNW": "{\"own_tex\":\"d1672289b768830dbb9584a348f1f6beb66a6a6347be2d74a2352cb3935b0b37\",\"lean_semantic_closure\":\"3429bf99bead7ba255c2a09bc7499943e331f9d30d400514f329259c3f25ffd8\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SuperSequence": "{\"own_tex\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"lean_semantic_closure\":\"af9e6c4635dd95f030b520dec2ab35efe3f9db9b1700c15d93061109f65eec9d\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TailSet": "{\"own_tex\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\",\"lean_semantic_closure\":\"7acdc23be2a250ce5bc2df5ece0a6ff336899c8290e0a666b886eaa7bb63c11c\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}"
       },
       "coverage": {
         "MainProp": [
           "MainProp"
         ],
         "cor PowerQPresBqo": [],
-        "cor:NashWill": [],
-        "corollary:SuperNW": [],
+        "cor:NashWill": [
+          "NashWilliams"
+        ],
+        "corollary:SuperNW": [
+          "SuperNW"
+        ],
         "g-BQO": [
           "GBetterRelIff"
         ],
@@ -163,22 +396,29 @@
         "BlockSigmaContinuous",
         "BlockSigmaEmbedding",
         "BlockSigmaIntertwines",
+        "BooleanInfinitePigeonhole",
         "BqoIffGeneralShift",
         "EmapLemma",
         "FirstMovedPoint",
+        "FrontRayClosure",
+        "FrontRestriction",
+        "FrontTreeWellFounded",
         "GBetterRelIff",
         "IncSeqPointwiseLe",
         "MainProp",
+        "NashWilliams",
         "OrbitBlockCoverage",
         "OrbitEmbedding",
         "OrbitUnbounded",
-        "RmapLemma"
+        "RmapLemma",
+        "SubFrontCharacterization",
+        "SuperNW"
       ],
       "paper_current_fingerprints": {
         "MainProp": "{\"target\":\"MainProp\",\"covering_nodes\":{\"MainProp\":\"fb2fb371243a039fa491772ebdcede5e14bc5484555d5cdeab325a7a791360e5\"},\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"d021288c4bd741e074f0be580769057f7738eae46960657ffc8f995735b92f1c\",\"ContMor\":\"dfa456a882144c75ec69ddddc405b0572cc399694f5e1a09ffc2450dc5b74c62\",\"ContMorEq\":\"93c7acca9d1b2c04e8eba37751ebbc575485fa22cdfb456a4d87f6b73570be32\",\"ContinuousHom\":\"af41b3e1d4ca8047ec1cca7891559aaba7538ad15a414b60211f1cabeb49806f\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "cor PowerQPresBqo": "",
-        "cor:NashWill": "",
-        "corollary:SuperNW": "",
+        "cor:NashWill": "{\"target\":\"cor:NashWill\",\"covering_nodes\":{\"NashWilliams\":\"6b8260cddde225e6ab005429f0ff2902ec05000666065a65ee75218ec2d138c0\"},\"lean_relevant_definition_descendants\":{\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
+        "corollary:SuperNW": "{\"target\":\"corollary:SuperNW\",\"covering_nodes\":{\"SuperNW\":\"5e23d00ee2b58e14f1b4ac87f1b630f9d0c5b756aa444aba982d91553a7eae00\"},\"lean_relevant_definition_descendants\":{\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\",\"SuperSequence\":\"e1b07dc8312697d448c83fa2070eab5b4caa1f70ed2e30e66f475fbf76419d94\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "g-BQO": "{\"target\":\"g-BQO\",\"covering_nodes\":{\"GBetterRelIff\":\"9cce16dbf3cbe8548d1334b9f5e69a3a9b332c3eaab65c8c15624d87c89187cf\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"BetterRel\":\"43225e63c973f28ca1ec64c58845a341f0481e53714fee29d8a4f03924e9ae5d\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"ContinuousRelHom\":\"159a7c1a692c4a4cf37f42e7fe794f307112024798c478436e23c72b46877ec2\",\"GBetterRel\":\"4a086f9397fa96daa1c31fdb3a3b75a5dac4c4eeec2a1a8acca00a95bf7a7e0a\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "lem:subarr": "",
         "lines:1748-1753": "{\"target\":\"lines:1748-1753\",\"covering_nodes\":{\"BqoIffGeneralShift\":\"a03a0d03dbfe74021c99376cf490d951aae910eb709ccb4dc60aaf0ced974082\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
@@ -195,6 +435,7 @@
         "BlockSigmaContinuous",
         "BlockSigmaEmbedding",
         "BlockSigmaIntertwines",
+        "BooleanInfinitePigeonhole",
         "Bqo",
         "BqoIffGeneralShift",
         "ContMor",
@@ -203,6 +444,12 @@
         "ContinuousRelHom",
         "EmapLemma",
         "FirstMovedPoint",
+        "Front",
+        "FrontBase",
+        "FrontRayClosure",
+        "FrontRestrict",
+        "FrontRestriction",
+        "FrontTreeWellFounded",
         "GBetterRel",
         "GBetterRelIff",
         "GoodMultiSequence",
@@ -210,9 +457,11 @@
         "IncSeqComp",
         "IncSeqId",
         "IncSeqPointwiseLe",
+        "InitialSegment",
         "LocallyConstant",
         "MainProp",
         "MultiSequence",
+        "NashWilliams",
         "OrbitBlock",
         "OrbitBlockCoverage",
         "OrbitEmbedding",
@@ -220,10 +469,18 @@
         "OrbitUnbounded",
         "Preamble",
         "PrefixAgree",
+        "PrefixTree",
+        "ProperInitialSegment",
+        "ProperPrefixSet",
+        "Ray",
         "RightComp",
         "RmapLemma",
         "ShiftMap",
-        "SuccSeq"
+        "SubFrontCharacterization",
+        "SuccSeq",
+        "SuperNW",
+        "SuperSequence",
+        "TailSet"
       ],
       "protected_closure_nodes_per_target": {
         "MainProp": [
@@ -240,8 +497,19 @@
           "SuccSeq"
         ],
         "cor PowerQPresBqo": [],
-        "cor:NashWill": [],
-        "corollary:SuperNW": [],
+        "cor:NashWill": [
+          "Front",
+          "FrontBase",
+          "InitialSegment",
+          "ProperPrefixSet"
+        ],
+        "corollary:SuperNW": [
+          "Front",
+          "FrontBase",
+          "InitialSegment",
+          "ProperPrefixSet",
+          "SuperSequence"
+        ],
         "g-BQO": [
           "BadMultiSequence",
           "BetterRel",
@@ -316,6 +584,11 @@
           },
           "own_tex_hash": "defbd36f8b882faf182733ef32265e7392c1e532c3075241f716b0d3e779e616"
         },
+        "BooleanInfinitePigeonhole": {
+          "combined_sound_fp": "sound-v2:cc928bbb60c5991446dcdaeb8bca220dbab804934c6e07bc9252f6b2a625a36f",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "de0ebcad4361e8c950661319f70c011f8792a1e8de7b65b05386451bca6446b7"
+        },
         "Bqo": {
           "combined_sound_fp": "sound-v2:3466ac45fb34d7cfe007d7ce195b7b21959fdb69948ae2819d7a2934f466651d",
           "dep_statement_hashes": {},
@@ -374,6 +647,45 @@
           },
           "own_tex_hash": "8597c3a1ee725668636699f25e1b2303d1ad03922cc0a409d417b7d8a80fb62e"
         },
+        "Front": {
+          "combined_sound_fp": "sound-v2:d927991278cb915faf5866523c1402fb2e751ed3dfef834095d053111aeb15df",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "8dcbecd1c1a690dcc8944a802e5800ae06def2fd2d40dee11d4198a3c5846291"
+        },
+        "FrontBase": {
+          "combined_sound_fp": "sound-v2:3372c622b54269a388d6198416d3b100d75c756f0d798a355b53831b009cd4b8",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "7b1ce736a6aa19a7ce841e9d5996216919e3887f679041fb98c00bf82dd8725d"
+        },
+        "FrontRayClosure": {
+          "combined_sound_fp": "sound-v2:ba21bf414577e02ff3ef6120e69be7546e0d436c9c2c02a2884493838a58bc14",
+          "dep_statement_hashes": {
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "Ray": "9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b"
+          },
+          "own_tex_hash": "307c01065907f6089c894dd6f4c4f59c768b2a76f52740e2c5ad634223383ea9"
+        },
+        "FrontRestrict": {
+          "combined_sound_fp": "sound-v2:fdc4327d7aa648c52062803de9991bf434e69363e24d983c3d7e480104e66fa3",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "5eadc568ab62c17fe8032a3389cd9bf2aad2a699cda02858c73486415b267475"
+        },
+        "FrontRestriction": {
+          "combined_sound_fp": "sound-v2:dc2368ee2f49f3a38e7d9cac16406c63d02ebe652db4cd6f5c99872f096170fe",
+          "dep_statement_hashes": {
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "FrontRestrict": "c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0"
+          },
+          "own_tex_hash": "f692a532aa03a43279f868ea4b053f317906fd9e58af2e2422c4e735c26f76c5"
+        },
+        "FrontTreeWellFounded": {
+          "combined_sound_fp": "sound-v2:0d236619251a06ad8dd6e9de4b67f5d7acca6a1b7cbdd884c521f491827637df",
+          "dep_statement_hashes": {
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "PrefixTree": "d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1"
+          },
+          "own_tex_hash": "840b4d5497f4af7f49c9af316a76934780d40d287f42d8fc6aa341a939f93c3d"
+        },
         "GBetterRel": {
           "combined_sound_fp": "sound-v2:b2b340eecf2f1664684205b7208a5b510ff8f6f25699284850b03314ca4d949e",
           "dep_statement_hashes": {},
@@ -418,6 +730,11 @@
           "dep_statement_hashes": {},
           "own_tex_hash": "9da60a00e0bba6a9de6e56a6153b3165710f216991e1cf05de5e60fd3a7ea928"
         },
+        "InitialSegment": {
+          "combined_sound_fp": "sound-v2:7b9f757734bbb49f5fbac42e44fc1345ec8847dfa20c2cfd531e9059d7290d39",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "9f010ad87e9897b55bb3b92e0ed90715eae5723716eab99ca0b4131b706a5e71"
+        },
         "LocallyConstant": {
           "combined_sound_fp": "sound-v2:776fb53207b38594e8951256b9e943a8658beff116a2f5ec9e66189a66f37364",
           "dep_statement_hashes": {},
@@ -435,6 +752,16 @@
           "combined_sound_fp": "sound-v2:042810595607ee9c6dfd26d3f94e47f57fe027503cdd631da334ef87eb5040d7",
           "dep_statement_hashes": {},
           "own_tex_hash": "5f9b678e770549a93fb8b46882f88226da73f996bdc9d1014ea8d5a9008dc63f"
+        },
+        "NashWilliams": {
+          "combined_sound_fp": "sound-v2:8a5ea32d15897975feb3437639a3fba9663befcab394fce71f508d7515209f1f",
+          "dep_statement_hashes": {
+            "BooleanInfinitePigeonhole": "987a5eec9c6c8d571452359e653164a4e23507a3d8d5abfad4d3a1df9f8fdee0",
+            "FrontRayClosure": "3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28",
+            "FrontRestriction": "277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe",
+            "FrontTreeWellFounded": "4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b"
+          },
+          "own_tex_hash": "ed82e6c6a57242980b105b02b09a08e92cc25fd0222ecedb5df95644a4a93191"
         },
         "OrbitBlock": {
           "combined_sound_fp": "sound-v2:2a1398bb6313aaaa95692080dfa1c0322d995f3d2fe85d46766cae74e9fed86d",
@@ -467,14 +794,34 @@
           "own_tex_hash": "6238f98cf6d002512359e7221cc79cbff5223f057031ef3c493f9c19282f3ee8"
         },
         "Preamble": {
-          "combined_sound_fp": "sound-v2:9d63af017f819278b453dc3eb0dbcf6e21ec5f475583fcfcafe862622d67529f",
+          "combined_sound_fp": "sound-v2:2c73247304b68b0ec2894492dfe7b7bca3bd07e43d4aeb7b3b96e2a5433568db",
           "dep_statement_hashes": {},
-          "own_tex_hash": "3308c3b76c5c8d1e9bac17904d9ad64588eed09d2573d5117211f3b5fc82aeed"
+          "own_tex_hash": "6f829a6f1d3189537f617261575e0159ab52c35b56b001557edbd94103263bd4"
         },
         "PrefixAgree": {
           "combined_sound_fp": "sound-v2:6b087a7d6f2a24289fd8ac77909fc0f26828a601edcc3853e1964ca0044d0796",
           "dep_statement_hashes": {},
           "own_tex_hash": "47c88d549026a55343e120be6a0cc47e59a1460a6863e1274b6574a1c638af1a"
+        },
+        "PrefixTree": {
+          "combined_sound_fp": "sound-v2:604f8e119279a0ff7beea76fa276f12c2d6bc4bd1efbf6b30ae0bfb9f52fbb8d",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "c4dbfd2b5d6482b69be9037a9fcb9d9c5459e2536b09c5be82699d0674236e05"
+        },
+        "ProperInitialSegment": {
+          "combined_sound_fp": "sound-v2:b99b127375bf144bd398d68fed3f23e338061226a9fd7d1731b823ef0ba52e04",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "801fa3cabdc529d9ee67b23e84d5d13e26ad0a65bf2d8e5801b849ffb5a013cd"
+        },
+        "ProperPrefixSet": {
+          "combined_sound_fp": "sound-v2:ad9003916e97cbe6e568954e6f27ee5d1b9fbcc5bafe4906574176719aec0c31",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1"
+        },
+        "Ray": {
+          "combined_sound_fp": "sound-v2:2c189c6e7bf3f568e8cf765ddde17b15a410cf935224f57a4baf3992dbcd9e09",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "9859188308d0606e635e36270453ae5db6f67482781933fb6525542d7542d553"
         },
         "RightComp": {
           "combined_sound_fp": "sound-v2:c8c9d15954140dee4d86d7f3d7bdd04f6b0b0fc604fabd104d1a77be9befcc52",
@@ -494,10 +841,37 @@
           "dep_statement_hashes": {},
           "own_tex_hash": "ced9ab97fbfaecc1f61b5f6d98a7fef71d8ef1417e3fa504d9c3deff2a58e135"
         },
+        "SubFrontCharacterization": {
+          "combined_sound_fp": "sound-v2:bff5190c16dd949ab178cfb0c9e4f809abda0375face8908feb008cd37cf8e4c",
+          "dep_statement_hashes": {
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "FrontRestrict": "c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0",
+            "FrontRestriction": "277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe"
+          },
+          "own_tex_hash": "6c03d78352ddbb75ce24e8573ec4bafea632893a2e9a86801699cb8cf88347a4"
+        },
         "SuccSeq": {
           "combined_sound_fp": "sound-v2:004fa54817cb38830c76eeaa1fa74da693929d18619b3296cd4b8aad036861f7",
           "dep_statement_hashes": {},
           "own_tex_hash": "24147c64fe879638cd3488b61a4b27b081b7538e1a38735f175383b75ccde04a"
+        },
+        "SuperNW": {
+          "combined_sound_fp": "sound-v2:4c85b8e61ceaa1971cff31acb6e46e7a3f687be3b25a4f60152b15ceb978c1ca",
+          "dep_statement_hashes": {
+            "NashWilliams": "86fecabae20ea2d0e8b51a90bc5f45c34c17099d38a9865f7631812939d8ce3a",
+            "SuperSequence": "d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a"
+          },
+          "own_tex_hash": "519d0daf4867c4f4de4ba80d5bec28f663a7bb66792dfdf7c2c6bd4ea51e8fec"
+        },
+        "SuperSequence": {
+          "combined_sound_fp": "sound-v2:8d86cd0bab856128bc05eac87c178dbde5570b0317f18c81d77b9447865e4aec",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "97453d948aea178a7110d5a7a42d24635df2ce03ec5fd5026f8884daf34250fa"
+        },
+        "TailSet": {
+          "combined_sound_fp": "sound-v2:a88539664cd43acdcbf0771bb300544b420564e9c4e9e4e1eaf238ce8944fb67",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "c7033ac7f3a695e8aabb7a0398f7edd7c8c48cc6c76e3fc82477b041895fa212"
         }
       },
       "sound_current_fingerprints": {
@@ -508,6 +882,7 @@
         "BlockSigmaContinuous": "sound-v2:972feea800ebca481e6366d423cfaa90cb238839cb98b85b25c37474ff11f115",
         "BlockSigmaEmbedding": "sound-v2:c9326ac470cf102f07241517abcc901f0723994b626a62e501b981e08ced935d",
         "BlockSigmaIntertwines": "sound-v2:1e8ebb8ea9ad34b56d4b6eda781d252119c8eadefa53d5cd711a72b32f4fc734",
+        "BooleanInfinitePigeonhole": "sound-v2:cc928bbb60c5991446dcdaeb8bca220dbab804934c6e07bc9252f6b2a625a36f",
         "Bqo": "sound-v2:3466ac45fb34d7cfe007d7ce195b7b21959fdb69948ae2819d7a2934f466651d",
         "BqoIffGeneralShift": "sound-v2:c40397787449554d7204c5ddc9908b2f2de76889e90524931242e6e120c404fe",
         "ContMor": "sound-v2:de0676d20729b490096f8633e5cb29178eb8f5c4de7ea59f212c289d2b7dc0ac",
@@ -516,6 +891,12 @@
         "ContinuousRelHom": "sound-v2:cdef6190aba9405573f47fd82b8446eed72f5e639ccd6a2abaaa56b3612bd51a",
         "EmapLemma": "sound-v2:481332089fc7afd206971e7132aef3f051584596ded7240cf189cb861bc63d0d",
         "FirstMovedPoint": "sound-v2:65888920b44f52901370d8f597cb08cf6f9a7d8c170e3c418544ee8d3ceb35a7",
+        "Front": "sound-v2:d927991278cb915faf5866523c1402fb2e751ed3dfef834095d053111aeb15df",
+        "FrontBase": "sound-v2:3372c622b54269a388d6198416d3b100d75c756f0d798a355b53831b009cd4b8",
+        "FrontRayClosure": "sound-v2:ba21bf414577e02ff3ef6120e69be7546e0d436c9c2c02a2884493838a58bc14",
+        "FrontRestrict": "sound-v2:fdc4327d7aa648c52062803de9991bf434e69363e24d983c3d7e480104e66fa3",
+        "FrontRestriction": "sound-v2:dc2368ee2f49f3a38e7d9cac16406c63d02ebe652db4cd6f5c99872f096170fe",
+        "FrontTreeWellFounded": "sound-v2:0d236619251a06ad8dd6e9de4b67f5d7acca6a1b7cbdd884c521f491827637df",
         "GBetterRel": "sound-v2:b2b340eecf2f1664684205b7208a5b510ff8f6f25699284850b03314ca4d949e",
         "GBetterRelIff": "sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0",
         "GoodMultiSequence": "sound-v2:cbd8088e853b09100edd11cea9bde319cedc80a0ce7541809fa8ae923662dfc3",
@@ -523,20 +904,30 @@
         "IncSeqComp": "sound-v2:3491f9619d33646b6122bfeae6fc2db6f076930a4947e3bc98e6f5ba25193f5d",
         "IncSeqId": "sound-v2:d73e81b50f936c249af8973fc5025ca5defc069ae787912fa99718d090a72e14",
         "IncSeqPointwiseLe": "sound-v2:4388761857d6e0745fe1a3954446812e871cbac0dbdc8501926c05bac8e13ae0",
+        "InitialSegment": "sound-v2:7b9f757734bbb49f5fbac42e44fc1345ec8847dfa20c2cfd531e9059d7290d39",
         "LocallyConstant": "sound-v2:776fb53207b38594e8951256b9e943a8658beff116a2f5ec9e66189a66f37364",
         "MainProp": "sound-v2:e586de76c8ae33307277ca66e8b6ea6e2c27d1919a001a0f5fb29d6bbe11e654",
         "MultiSequence": "sound-v2:042810595607ee9c6dfd26d3f94e47f57fe027503cdd631da334ef87eb5040d7",
+        "NashWilliams": "sound-v2:8a5ea32d15897975feb3437639a3fba9663befcab394fce71f508d7515209f1f",
         "OrbitBlock": "sound-v2:2a1398bb6313aaaa95692080dfa1c0322d995f3d2fe85d46766cae74e9fed86d",
         "OrbitBlockCoverage": "sound-v2:cfb78ea6d8b687f2b4f5ee593af7e31a640dd71e81f3b209a8883d42861dfd94",
         "OrbitEmbedding": "sound-v2:26ea9727bc0c7fb947b602aea55f90228af9576324d3c3ce60bc8d8a93f9d6d4",
         "OrbitPoint": "sound-v2:81ea51d8ffd747c5a13e77ba023ec99d3f1c7ebf20879ea01ffa4249c6aa1b86",
         "OrbitUnbounded": "sound-v2:73e09b8a2f468e56aac7fc3d1be31476d35930ee7d37706d26b7b34548baf094",
-        "Preamble": "sound-v2:9d63af017f819278b453dc3eb0dbcf6e21ec5f475583fcfcafe862622d67529f",
+        "Preamble": "sound-v2:2c73247304b68b0ec2894492dfe7b7bca3bd07e43d4aeb7b3b96e2a5433568db",
         "PrefixAgree": "sound-v2:6b087a7d6f2a24289fd8ac77909fc0f26828a601edcc3853e1964ca0044d0796",
+        "PrefixTree": "sound-v2:604f8e119279a0ff7beea76fa276f12c2d6bc4bd1efbf6b30ae0bfb9f52fbb8d",
+        "ProperInitialSegment": "sound-v2:b99b127375bf144bd398d68fed3f23e338061226a9fd7d1731b823ef0ba52e04",
+        "ProperPrefixSet": "sound-v2:ad9003916e97cbe6e568954e6f27ee5d1b9fbcc5bafe4906574176719aec0c31",
+        "Ray": "sound-v2:2c189c6e7bf3f568e8cf765ddde17b15a410cf935224f57a4baf3992dbcd9e09",
         "RightComp": "sound-v2:c8c9d15954140dee4d86d7f3d7bdd04f6b0b0fc604fabd104d1a77be9befcc52",
         "RmapLemma": "sound-v2:befb3feeac838183c7f684414658b072062d458c50a90a147544173c000d9f93",
         "ShiftMap": "sound-v2:d6c97a32146eb05a340e699aa170c31c0e738bffd71edc74275025be5c2cbbe6",
-        "SuccSeq": "sound-v2:004fa54817cb38830c76eeaa1fa74da693929d18619b3296cd4b8aad036861f7"
+        "SubFrontCharacterization": "sound-v2:bff5190c16dd949ab178cfb0c9e4f809abda0375face8908feb008cd37cf8e4c",
+        "SuccSeq": "sound-v2:004fa54817cb38830c76eeaa1fa74da693929d18619b3296cd4b8aad036861f7",
+        "SuperNW": "sound-v2:4c85b8e61ceaa1971cff31acb6e46e7a3f687be3b25a4f60152b15ceb978c1ca",
+        "SuperSequence": "sound-v2:8d86cd0bab856128bc05eac87c178dbde5570b0317f18c81d77b9447865e4aec",
+        "TailSet": "sound-v2:a88539664cd43acdcbf0771bb300544b420564e9c4e9e4e1eaf238ce8944fb67"
       },
       "substantiveness_current_fingerprints": {
         "BadMultiSequence": "{\"own_tex\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -546,6 +937,7 @@
         "BlockSigmaContinuous": "{\"own_tex\":\"09a9a8b83b29897b8d2bcf8836a7d29a89ea868b2854b072fb63d4993044e6d1\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "BlockSigmaEmbedding": "{\"own_tex\":\"716482de56f149477a9e950341c883ff5eaee6c0348c1b9bb7480040419ff686\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "BlockSigmaIntertwines": "{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "BooleanInfinitePigeonhole": "{\"own_tex\":\"987a5eec9c6c8d571452359e653164a4e23507a3d8d5abfad4d3a1df9f8fdee0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "Bqo": "{\"own_tex\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "BqoIffGeneralShift": "{\"own_tex\":\"29999954bf11924792fa106b22b2f0885d8023c8e53611313bd35ece10859526\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "ContMor": "{\"own_tex\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -554,6 +946,12 @@
         "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "EmapLemma": "{\"own_tex\":\"21b33d67303624dd2b5611e477765e910011f1e089275d9b22d7deccd94a2a9d\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FirstMovedPoint": "{\"own_tex\":\"807172e9b87b38deeb1d6be5b8c7ed374530d57a6e41d65fc8c1de57c84f605a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "Front": "{\"own_tex\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontBase": "{\"own_tex\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontTreeWellFounded": "{\"own_tex\":\"4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -561,9 +959,11 @@
         "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "IncSeqPointwiseLe": "{\"own_tex\":\"3840bd71c98e46aa9d4d905c99a3d11f970d798581290084b4246f6400c2ab0c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "InitialSegment": "{\"own_tex\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "LocallyConstant": "{\"own_tex\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "MainProp": "{\"own_tex\":\"eeab77584e1dd0adfa624b771d52edf0449a4103e1f925c550438b6b8f56a856\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "MultiSequence": "{\"own_tex\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "NashWilliams": "{\"own_tex\":\"86fecabae20ea2d0e8b51a90bc5f45c34c17099d38a9865f7631812939d8ce3a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "OrbitBlock": "{\"own_tex\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "OrbitBlockCoverage": "{\"own_tex\":\"b6d40ddcb1ef29e3a6976d7346748f80b3235e200b2a287e1edb33c0060454dc\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "OrbitEmbedding": "{\"own_tex\":\"5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
@@ -571,73 +971,134 @@
         "OrbitUnbounded": "{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "Preamble": "",
         "PrefixAgree": "{\"own_tex\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "PrefixTree": "{\"own_tex\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "ProperInitialSegment": "{\"own_tex\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "ProperPrefixSet": "{\"own_tex\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "Ray": "{\"own_tex\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "RightComp": "{\"own_tex\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "RmapLemma": "{\"own_tex\":\"03f5b930671537a2367b17e00ea584ce5333294bfd77bb73ef6e3e21c012c7b1\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "ShiftMap": "{\"own_tex\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
-        "SuccSeq": "{\"own_tex\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}"
+        "SubFrontCharacterization": "{\"own_tex\":\"91f62451f879492656af3f0e4af713ae73ba83518beb465240d1f47b5c33cf08\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "SuccSeq": "{\"own_tex\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "SuperNW": "{\"own_tex\":\"d1672289b768830dbb9584a348f1f6beb66a6a6347be2d74a2352cb3935b0b37\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "SuperSequence": "{\"own_tex\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "TailSet": "{\"own_tex\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}"
       },
       "target_fingerprints": {
-        "BadMultiSequence": "{\"own_tex\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"lean_semantic_closure\":\"f1bcb10c0e55fecd3029e3f6f9753158ff5f0f27c08c3c8cea6d06a6ac6f18a0\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BaireContinuous": "{\"own_tex\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"lean_semantic_closure\":\"076fd77dbceb75a83b1d498ed0381dc876079a9226d0c523e1bbcc8fa15512d7\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BetterRel": "{\"own_tex\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"lean_semantic_closure\":\"c30b9cd10a7a23d75a320c9d8d8601be0776e71b094b20e089d55eb7c5bc1e1a\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigma": "{\"own_tex\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigmaContinuous": "{\"own_tex\":\"09a9a8b83b29897b8d2bcf8836a7d29a89ea868b2854b072fb63d4993044e6d1\",\"lean_semantic_closure\":\"956da18b462667e06dd47228bd95e93856e584464c46a785d5a52c0ac7a0bb41\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigmaEmbedding": "{\"own_tex\":\"716482de56f149477a9e950341c883ff5eaee6c0348c1b9bb7480040419ff686\",\"lean_semantic_closure\":\"4c79795b37b4c66c32f755491c382c21f8adf1097d9523165dfa3ade34a23367\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BlockSigmaIntertwines": "{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"lean_semantic_closure\":\"3c728ab18d2b55500a2afc0c4db53a2d3dfcc6cc6efbeee4c6c6484275e88798\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"IncSeqComp\",\"OrbitPoint\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "Bqo": "{\"own_tex\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"lean_semantic_closure\":\"604b2718b8bd008f91a74b58e23f6c84284331c88f58094813d3e4ceb49b3686\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "BqoIffGeneralShift": "{\"own_tex\":\"29999954bf11924792fa106b22b2f0885d8023c8e53611313bd35ece10859526\",\"lean_semantic_closure\":\"12c65a312f1be6d03c8357bfb9034fd0a368e01ee94e80c3fed2c9fba55ff755\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"Bqo\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContMor": "{\"own_tex\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"lean_semantic_closure\":\"d75c2a78f92dfe5a3596927fd0db09814585490f6fef77bb0921a563269a06e0\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContMorEq": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"lean_semantic_closure\":\"80b58e7b33b5d37513c03c04054f8e3c64f228e35c2f55efec140a9b3e1abb25\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContinuousHom": "{\"own_tex\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"lean_semantic_closure\":\"88605943375ffcaa2a4f89b2366773e492ad59d68f444979968494327a2070c6\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"lean_semantic_closure\":\"cc3b5cd70fdadb56f663f0649763da6dab9fa60073d66336e8fb208e73ea7b81\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "EmapLemma": "{\"own_tex\":\"21b33d67303624dd2b5611e477765e910011f1e089275d9b22d7deccd94a2a9d\",\"lean_semantic_closure\":\"35e36eb567593e1a79803076ca5afbde02a1c1ce8c96e0d2216583124e09d10e\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "FirstMovedPoint": "{\"own_tex\":\"807172e9b87b38deeb1d6be5b8c7ed374530d57a6e41d65fc8c1de57c84f605a\",\"lean_semantic_closure\":\"7e6006c0caf42f08edad26fa542c095f321202cda71754e646e780cad94f4788\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqId\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"d6c75167f4104b47df96e7080ec30874a1508470b122d590f39511a2d0676141\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"lean_semantic_closure\":\"88c3969d6d6c9f7f0e12bfdf289b76f8a8b136e4d3cdf9b058f44c19fa0dde43\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BetterRel\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"GBetterRel\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BetterRel\",\"Bqo\",\"ContinuousRelHom\",\"GBetterRel\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"lean_semantic_closure\":\"83e4c8a27f91a5e1b19de77f03d8f779ab60303d098e5ac5f966072af0d7bac1\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeq": "{\"own_tex\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"lean_semantic_closure\":\"2f294aa534116c66ed8e1135196c8221873b7cdde9b31ab791fe2d51fc31d42a\",\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"lean_semantic_closure\":\"39d055c5c38bd5cf361792d3811740d8c8cdc7efaa285f8355f8f507882b093b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"lean_semantic_closure\":\"85afef81cded08fed3d58aa4078c7d2a0229080a10dabae1c1141724bb2b1008\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "IncSeqPointwiseLe": "{\"own_tex\":\"3840bd71c98e46aa9d4d905c99a3d11f970d798581290084b4246f6400c2ab0c\",\"lean_semantic_closure\":\"2488da5c727de1324c15be1c8107ca72086bcfa330e7781206d7a2b6b9b169a3\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "LocallyConstant": "{\"own_tex\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"lean_semantic_closure\":\"db25085ca86df64546525767d86a630ce7c012fdbee042fe8a7220cb0651e6bf\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "MainProp": "{\"own_tex\":\"eeab77584e1dd0adfa624b771d52edf0449a4103e1f925c550438b6b8f56a856\",\"lean_semantic_closure\":\"9a2164f6614d4a8088001034bddb87e017532476b2de8349ff293a63cf25dc64\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContMorEq\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContMorEq\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "MultiSequence": "{\"own_tex\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"lean_semantic_closure\":\"890772294760234fff15eb54699b9925e03800e2a04dd6b888374add40fd2451\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitBlock": "{\"own_tex\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"lean_semantic_closure\":\"df4bd93afe1adaf6e8b2901488187d171bd61bd2b2ac3c6f72515a17964a19a8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitBlockCoverage": "{\"own_tex\":\"b6d40ddcb1ef29e3a6976d7346748f80b3235e200b2a287e1edb33c0060454dc\",\"lean_semantic_closure\":\"32fa43219ac3e96cff6f721b4815d8c427499f566f8f37044ff12b91d512b1f5\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitBlock\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitBlock\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitEmbedding": "{\"own_tex\":\"5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018\",\"lean_semantic_closure\":\"a359d6e317c1d230da93bc1573885afb42d47a1f45abccb55285aad001862169\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitPoint": "{\"own_tex\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"lean_semantic_closure\":\"bbc1a2d86d7c96bd73a7d6ad64d7115767970d1b3905b171c1bd992e68b7257a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "OrbitUnbounded": "{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"lean_semantic_closure\":\"c280795b5c47710fc784279b43989001eb5fa1c22ca24c49dec5d49968d2b04f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "Preamble": "{\"own_tex\":\"e741fbd0664b50509e95717b9700cc4d3dafcbb00ed912b8e0436d658ed3004a\",\"lean_semantic_closure\":\"\",\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "PrefixAgree": "{\"own_tex\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"lean_semantic_closure\":\"fb6dbc9688a74c3adb774cbbd6b6772222d1bd5837baaa0c2ffd6353fbffe92e\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "RightComp": "{\"own_tex\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"lean_semantic_closure\":\"c7848464831ddf5e34dc736fff97570b28c050c51e97fe861ee6bd9d1048fae8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "RmapLemma": "{\"own_tex\":\"03f5b930671537a2367b17e00ea584ce5333294bfd77bb73ef6e3e21c012c7b1\",\"lean_semantic_closure\":\"cab4424557ae942ca20a8fb51b7e109e03ca47dd1cfe26104a9d229a8ae02b02\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "ShiftMap": "{\"own_tex\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"lean_semantic_closure\":\"fe7ea21e0dccd8138abc3e44a9ac541bf3be93fac3c7d2b76b85b4082c98ad6f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}",
-        "SuccSeq": "{\"own_tex\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"lean_semantic_closure\":\"78255dd3f4e14dd7e165e97436528e234e57159d3aefe6fc7cff7423fa2b281a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"5edef63ac6f394a79b02557d0c5142a6e12b806fdca07f17bd27ffa60c874074\"}"
+        "BadMultiSequence": "{\"own_tex\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"lean_semantic_closure\":\"f1bcb10c0e55fecd3029e3f6f9753158ff5f0f27c08c3c8cea6d06a6ac6f18a0\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BaireContinuous": "{\"own_tex\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"lean_semantic_closure\":\"076fd77dbceb75a83b1d498ed0381dc876079a9226d0c523e1bbcc8fa15512d7\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BetterRel": "{\"own_tex\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"lean_semantic_closure\":\"c30b9cd10a7a23d75a320c9d8d8601be0776e71b094b20e089d55eb7c5bc1e1a\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigma": "{\"own_tex\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigmaContinuous": "{\"own_tex\":\"09a9a8b83b29897b8d2bcf8836a7d29a89ea868b2854b072fb63d4993044e6d1\",\"lean_semantic_closure\":\"956da18b462667e06dd47228bd95e93856e584464c46a785d5a52c0ac7a0bb41\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigmaEmbedding": "{\"own_tex\":\"716482de56f149477a9e950341c883ff5eaee6c0348c1b9bb7480040419ff686\",\"lean_semantic_closure\":\"4c79795b37b4c66c32f755491c382c21f8adf1097d9523165dfa3ade34a23367\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BlockSigmaIntertwines": "{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"lean_semantic_closure\":\"3c728ab18d2b55500a2afc0c4db53a2d3dfcc6cc6efbeee4c6c6484275e88798\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"IncSeqComp\",\"OrbitPoint\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BooleanInfinitePigeonhole": "{\"own_tex\":\"987a5eec9c6c8d571452359e653164a4e23507a3d8d5abfad4d3a1df9f8fdee0\",\"lean_semantic_closure\":\"f53aaf63321bd534b32c51753fca894a55415d89bea17b1d54477b39023dc634\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Bqo": "{\"own_tex\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"lean_semantic_closure\":\"604b2718b8bd008f91a74b58e23f6c84284331c88f58094813d3e4ceb49b3686\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "BqoIffGeneralShift": "{\"own_tex\":\"29999954bf11924792fa106b22b2f0885d8023c8e53611313bd35ece10859526\",\"lean_semantic_closure\":\"12c65a312f1be6d03c8357bfb9034fd0a368e01ee94e80c3fed2c9fba55ff755\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"Bqo\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContMor": "{\"own_tex\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"lean_semantic_closure\":\"d75c2a78f92dfe5a3596927fd0db09814585490f6fef77bb0921a563269a06e0\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContMorEq": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"lean_semantic_closure\":\"80b58e7b33b5d37513c03c04054f8e3c64f228e35c2f55efec140a9b3e1abb25\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContinuousHom": "{\"own_tex\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"lean_semantic_closure\":\"88605943375ffcaa2a4f89b2366773e492ad59d68f444979968494327a2070c6\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"lean_semantic_closure\":\"cc3b5cd70fdadb56f663f0649763da6dab9fa60073d66336e8fb208e73ea7b81\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "EmapLemma": "{\"own_tex\":\"21b33d67303624dd2b5611e477765e910011f1e089275d9b22d7deccd94a2a9d\",\"lean_semantic_closure\":\"35e36eb567593e1a79803076ca5afbde02a1c1ce8c96e0d2216583124e09d10e\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FirstMovedPoint": "{\"own_tex\":\"807172e9b87b38deeb1d6be5b8c7ed374530d57a6e41d65fc8c1de57c84f605a\",\"lean_semantic_closure\":\"7e6006c0caf42f08edad26fa542c095f321202cda71754e646e780cad94f4788\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqId\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Front": "{\"own_tex\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"lean_semantic_closure\":\"b0894c706705964a4906f3d4397863df6a15822b5271ac2a01768cf156e4b2aa\",\"lean_relevant_definition_descendants\":{\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontBase": "{\"own_tex\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"lean_semantic_closure\":\"1a9dba16f85af3d4f3f0632d40eb1102856bcdea6905af8c1fa5778eb01480fa\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"lean_semantic_closure\":\"df88ab2fe24deb2dd9fbde1d02e356e7774c701d9685aba33bb5c014f160ecd2\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"lean_semantic_closure\":\"2bcb8b3472ad7df228c0e3ae11e029782002cde409d9fc6da22d8c760ec04364\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"lean_semantic_closure\":\"8c4986e1a9c4975f580f327324910d6d5bdd09f960c0374965ebc3ce1344bfa9\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontTreeWellFounded": "{\"own_tex\":\"4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b\",\"lean_semantic_closure\":\"5ec497d761d10308a66bd58a977f51d846ef4ec9bba8de3000a1d4785ca2211c\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"d6c75167f4104b47df96e7080ec30874a1508470b122d590f39511a2d0676141\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"lean_semantic_closure\":\"88c3969d6d6c9f7f0e12bfdf289b76f8a8b136e4d3cdf9b058f44c19fa0dde43\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BetterRel\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"GBetterRel\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BetterRel\",\"Bqo\",\"ContinuousRelHom\",\"GBetterRel\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"lean_semantic_closure\":\"83e4c8a27f91a5e1b19de77f03d8f779ab60303d098e5ac5f966072af0d7bac1\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeq": "{\"own_tex\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"lean_semantic_closure\":\"2f294aa534116c66ed8e1135196c8221873b7cdde9b31ab791fe2d51fc31d42a\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"lean_semantic_closure\":\"39d055c5c38bd5cf361792d3811740d8c8cdc7efaa285f8355f8f507882b093b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"lean_semantic_closure\":\"85afef81cded08fed3d58aa4078c7d2a0229080a10dabae1c1141724bb2b1008\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "IncSeqPointwiseLe": "{\"own_tex\":\"3840bd71c98e46aa9d4d905c99a3d11f970d798581290084b4246f6400c2ab0c\",\"lean_semantic_closure\":\"2488da5c727de1324c15be1c8107ca72086bcfa330e7781206d7a2b6b9b169a3\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "InitialSegment": "{\"own_tex\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"lean_semantic_closure\":\"957e018bba484bd6f1ab120720ca860858be18c0608958f9782c8ed08b0ce02f\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "LocallyConstant": "{\"own_tex\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"lean_semantic_closure\":\"db25085ca86df64546525767d86a630ce7c012fdbee042fe8a7220cb0651e6bf\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "MainProp": "{\"own_tex\":\"eeab77584e1dd0adfa624b771d52edf0449a4103e1f925c550438b6b8f56a856\",\"lean_semantic_closure\":\"9a2164f6614d4a8088001034bddb87e017532476b2de8349ff293a63cf25dc64\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContMorEq\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContMorEq\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "MultiSequence": "{\"own_tex\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"lean_semantic_closure\":\"890772294760234fff15eb54699b9925e03800e2a04dd6b888374add40fd2451\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "NashWilliams": "{\"own_tex\":\"86fecabae20ea2d0e8b51a90bc5f45c34c17099d38a9865f7631812939d8ce3a\",\"lean_semantic_closure\":\"32cd08e799a0ad192f4ac092200fc088633ffdd81134c5766de8b87dd9f09590\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitBlock": "{\"own_tex\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"lean_semantic_closure\":\"df4bd93afe1adaf6e8b2901488187d171bd61bd2b2ac3c6f72515a17964a19a8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitBlockCoverage": "{\"own_tex\":\"b6d40ddcb1ef29e3a6976d7346748f80b3235e200b2a287e1edb33c0060454dc\",\"lean_semantic_closure\":\"32fa43219ac3e96cff6f721b4815d8c427499f566f8f37044ff12b91d512b1f5\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitBlock\":\"f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitBlock\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitEmbedding": "{\"own_tex\":\"5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018\",\"lean_semantic_closure\":\"a359d6e317c1d230da93bc1573885afb42d47a1f45abccb55285aad001862169\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitPoint": "{\"own_tex\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\",\"lean_semantic_closure\":\"bbc1a2d86d7c96bd73a7d6ad64d7115767970d1b3905b171c1bd992e68b7257a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "OrbitUnbounded": "{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"lean_semantic_closure\":\"c280795b5c47710fc784279b43989001eb5fa1c22ca24c49dec5d49968d2b04f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Preamble": "{\"own_tex\":\"f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365\",\"lean_semantic_closure\":\"\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PrefixAgree": "{\"own_tex\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"lean_semantic_closure\":\"fb6dbc9688a74c3adb774cbbd6b6772222d1bd5837baaa0c2ffd6353fbffe92e\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PrefixTree": "{\"own_tex\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"lean_semantic_closure\":\"5955a0ba784397c826d249df2d70316650abe123b33450aeb11b34a4c3b18826\",\"lean_relevant_definition_descendants\":{\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\"},\"lean_relevant_dependencies\":[\"InitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ProperInitialSegment": "{\"own_tex\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"lean_semantic_closure\":\"326cebdb8534e5c63638eaae0d56aa8f3107190b14dd7329ae585900518684fb\",\"lean_relevant_definition_descendants\":{\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\"},\"lean_relevant_dependencies\":[\"InitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ProperPrefixSet": "{\"own_tex\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"lean_semantic_closure\":\"0c732a23a47482a7375499076ab2ee9fca4c9dacd7472abe0fc8634380011829\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "Ray": "{\"own_tex\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"lean_semantic_closure\":\"e809a6b908c92f6b2f9d268ebf86b7e22d6f2200af0a37b40d4d7a50f172b6fb\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RightComp": "{\"own_tex\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"lean_semantic_closure\":\"c7848464831ddf5e34dc736fff97570b28c050c51e97fe861ee6bd9d1048fae8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RmapLemma": "{\"own_tex\":\"03f5b930671537a2367b17e00ea584ce5333294bfd77bb73ef6e3e21c012c7b1\",\"lean_semantic_closure\":\"cab4424557ae942ca20a8fb51b7e109e03ca47dd1cfe26104a9d229a8ae02b02\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ShiftMap": "{\"own_tex\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"lean_semantic_closure\":\"fe7ea21e0dccd8138abc3e44a9ac541bf3be93fac3c7d2b76b85b4082c98ad6f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SubFrontCharacterization": "{\"own_tex\":\"91f62451f879492656af3f0e4af713ae73ba83518beb465240d1f47b5c33cf08\",\"lean_semantic_closure\":\"78925e38db5575c19961694242f313800e90c2296f44fe5002e8d06e58dd5f14\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SuccSeq": "{\"own_tex\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"lean_semantic_closure\":\"78255dd3f4e14dd7e165e97436528e234e57159d3aefe6fc7cff7423fa2b281a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SuperNW": "{\"own_tex\":\"d1672289b768830dbb9584a348f1f6beb66a6a6347be2d74a2352cb3935b0b37\",\"lean_semantic_closure\":\"3429bf99bead7ba255c2a09bc7499943e331f9d30d400514f329259c3f25ffd8\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "SuperSequence": "{\"own_tex\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"lean_semantic_closure\":\"af9e6c4635dd95f030b520dec2ab35efe3f9db9b1700c15d93061109f65eec9d\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TailSet": "{\"own_tex\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\",\"lean_semantic_closure\":\"7acdc23be2a250ce5bc2df5ece0a6ff336899c8290e0a666b886eaa7bb63c11c\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}"
       }
     },
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Added the paper-faithful continuous relation-homomorphism interface, ordinary and generalized better-relation definitions, the g-BQO equivalence with its quasi-order specialization, and the exact locally constant generalized-shift corollary. MainProp remains unchanged.",
+    "summary": "Built the paper-faithful front branch: explicit finite-set front definitions including the trivial front, rays and ray closure, prefix trees and well-foundedness, restriction and sub-front characterization, super-sequences, infinite pigeonhole, Nash-Williams, and the finite-color SuperNW consequence.",
     "target_claim_updates": {
-      "BetterRel": {
+      "BooleanInfinitePigeonhole": {
         "Set": []
       },
-      "BqoIffGeneralShift": {
+      "Front": {
+        "Set": []
+      },
+      "FrontBase": {
+        "Set": []
+      },
+      "FrontRayClosure": {
+        "Set": []
+      },
+      "FrontRestrict": {
+        "Set": []
+      },
+      "FrontRestriction": {
+        "Set": []
+      },
+      "FrontTreeWellFounded": {
+        "Set": []
+      },
+      "InitialSegment": {
+        "Set": []
+      },
+      "NashWilliams": {
         "Set": [
-          "lines:1748-1753"
+          "cor:NashWill"
         ]
       },
-      "ContinuousRelHom": {
+      "PrefixTree": {
         "Set": []
       },
-      "GBetterRel": {
+      "ProperInitialSegment": {
         "Set": []
       },
-      "GBetterRelIff": {
+      "ProperPrefixSet": {
+        "Set": []
+      },
+      "Ray": {
+        "Set": []
+      },
+      "SubFrontCharacterization": {
+        "Set": []
+      },
+      "SuperNW": {
         "Set": [
-          "g-BQO"
+          "corollary:SuperNW"
         ]
+      },
+      "SuperSequence": {
+        "Set": []
+      },
+      "TailSet": {
+        "Set": []
       }
     },
     "transport_failure": false,
@@ -660,6 +1121,8 @@
     "BlockSigmaEmbedding.tex": "0e49bbe60602972d21c8a1a20517dd005bdb4f3ac2cd5353d381db094ed3d21b",
     "BlockSigmaIntertwines.lean": "5e0837edb2f3f59ca42c323cb00c94fc99b0b6e6013ea822403efa01e595a440",
     "BlockSigmaIntertwines.tex": "defbd36f8b882faf182733ef32265e7392c1e532c3075241f716b0d3e779e616",
+    "BooleanInfinitePigeonhole.lean": "034eed4a541a141b2e64f0eebc7467532c250a6fa42a2241389db8fdaec4d6c5",
+    "BooleanInfinitePigeonhole.tex": "de0ebcad4361e8c950661319f70c011f8792a1e8de7b65b05386451bca6446b7",
     "Bqo.lean": "0824aa297ac4ff4ceb98a5aa443d2d217cdc8c988a62dd1f80d65defe94f6ddf",
     "Bqo.tex": "c37237d1847bfac9ad0e6141fcfa3696bdab49d5a8ccdf250c103ef8898aff47",
     "BqoIffGeneralShift.lean": "7dbf02853a591af14d1b88f5fb6b755e49a9041a96e467995f9c2d292560f0dd",
@@ -676,13 +1139,25 @@
     "EmapLemma.tex": "d238c9e660bc5a8a5451c747ddd2be4f4e0544f83b7a9ebabe0f663df4aa3b35",
     "FirstMovedPoint.lean": "9e8ade095df3f604e533fd0163126f9d5df031e8481a5a4de1e23bdf50d4cd90",
     "FirstMovedPoint.tex": "8597c3a1ee725668636699f25e1b2303d1ad03922cc0a409d417b7d8a80fb62e",
+    "Front.lean": "95d73d7abd41e6cd7834a5e5811e4fd8c0ec8521a6214a3744c3cab0e9b6984d",
+    "Front.tex": "8dcbecd1c1a690dcc8944a802e5800ae06def2fd2d40dee11d4198a3c5846291",
+    "FrontBase.lean": "33df4a2abdc80cdcd3944be5aa394d0e26b64f924e2869c8dd3bb1b36a907aff",
+    "FrontBase.tex": "7b1ce736a6aa19a7ce841e9d5996216919e3887f679041fb98c00bf82dd8725d",
+    "FrontRayClosure.lean": "d13861a1525d08624675bca2c8420ac3b41c8cde584441382a1df91d22c24cf2",
+    "FrontRayClosure.tex": "307c01065907f6089c894dd6f4c4f59c768b2a76f52740e2c5ad634223383ea9",
+    "FrontRestrict.lean": "962e5eae1670db34fe90b25dbd0706239a790752229d243328322af8136eea76",
+    "FrontRestrict.tex": "5eadc568ab62c17fe8032a3389cd9bf2aad2a699cda02858c73486415b267475",
+    "FrontRestriction.lean": "68c6a7836db4a40aec467047cf165ce0a0263aa4189b5653e777ecb049e00576",
+    "FrontRestriction.tex": "f692a532aa03a43279f868ea4b053f317906fd9e58af2e2422c4e735c26f76c5",
+    "FrontTreeWellFounded.lean": "34af23a019ac0b61737bad63d0c69ffd6df5f81ba544a3a708d124cdc1180067",
+    "FrontTreeWellFounded.tex": "840b4d5497f4af7f49c9af316a76934780d40d287f42d8fc6aa341a939f93c3d",
     "GBetterRel.lean": "74b2ee6d5480afc56c3d6ffb555fb3bf3a813d20b5b1645410cea52e38a12ee7",
     "GBetterRel.tex": "e5762c0ca6a3cf0ba19e7ecfb4a23e8ae4e554b6a4d9bbf1d78881ff070588b1",
     "GBetterRelIff.lean": "26744acbb629fea1f806b5ce2f9278ce3f9480fb806b3f624e49a29ed2e82418",
     "GBetterRelIff.tex": "b04881587ad7f81864198af6e8b66dc551462096771feba1eab092935e268a72",
     "GoodMultiSequence.lean": "c4bd9fe7761dceaa3dda46012ddeb547f5a9fd042134d0e7600570747cb76d19",
     "GoodMultiSequence.tex": "e2a214ee38e14cdb74e95a61fe6792faac106f3ffcebec6a6568fed66f404bc6",
-    "INDEX.md": "2e8796a72f66fff9238445bf813ed86931bb474046ff571482c50396dfcf3e2e",
+    "INDEX.md": "88639d8a8239346364a59e0544b7e0188120034ef273a0cca0c38910f150d905",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -691,12 +1166,16 @@
     "IncSeqId.tex": "bf567b71a79b6759aa3f48d90fc2e1601af1a19264aa89b4dbdf46236a11f0dd",
     "IncSeqPointwiseLe.lean": "4e3543579d4544025e171cdbfea322ed3fcd18374404c4de1e3e0c16c9d25ada",
     "IncSeqPointwiseLe.tex": "9da60a00e0bba6a9de6e56a6153b3165710f216991e1cf05de5e60fd3a7ea928",
+    "InitialSegment.lean": "1e67891fa9f7851f93feca23fbc4ef7cba6330c979ed0ab5d87fa6168a0bba64",
+    "InitialSegment.tex": "9f010ad87e9897b55bb3b92e0ed90715eae5723716eab99ca0b4131b706a5e71",
     "LocallyConstant.lean": "d2e3e7b4b5518523314c6da5402f095ec851746e2bc3793cff8a78e329f4d293",
     "LocallyConstant.tex": "84dae52510dd2eb7ef0cd12dc3e4a420340ca8004d6a8144df3e81032a9dcd59",
     "MainProp.lean": "46105044e63546437ff44755ae903c2a36b83937c2354a83199ab3058c7c660d",
     "MainProp.tex": "3865bd5d6e62fa54e8d2471ff2597357c3014b84c0322428ffc505de45b9bc25",
     "MultiSequence.lean": "7e116eb2097e1c0f60c7393ee61b5e5b9d55be380b0b75027060d9fa12378cf7",
     "MultiSequence.tex": "5f9b678e770549a93fb8b46882f88226da73f996bdc9d1014ea8d5a9008dc63f",
+    "NashWilliams.lean": "422e885393cb86508bd113c1583631680158580455c6e766040eb58f89051978",
+    "NashWilliams.tex": "ed82e6c6a57242980b105b02b09a08e92cc25fd0222ecedb5df95644a4a93191",
     "OrbitBlock.lean": "0c2728053547190cd2254df9160b3bc7e913b78a08e3fa3c0ffd153c4b54fbba",
     "OrbitBlock.tex": "b9ad896c2daae80fd33b584a1ddbcf1391ec271d149eeb3c23a252d90ae5c3b2",
     "OrbitBlockCoverage.lean": "6f42387e676bb7cbe31152716aee4d11e533480da145f03d13f10a3e14b5ed0b",
@@ -707,22 +1186,38 @@
     "OrbitPoint.tex": "487d448cd4baf3f3c7a9e93a118db9506070f9d7b61d018620b0351a9f9db4d2",
     "OrbitUnbounded.lean": "9f7bc41dc2b7cb8b32f06625184b91334ef91df091caca20b6f11739af33f8c0",
     "OrbitUnbounded.tex": "6238f98cf6d002512359e7221cc79cbff5223f057031ef3c493f9c19282f3ee8",
-    "Preamble.lean": "e741fbd0664b50509e95717b9700cc4d3dafcbb00ed912b8e0436d658ed3004a",
-    "Preamble.tex": "3308c3b76c5c8d1e9bac17904d9ad64588eed09d2573d5117211f3b5fc82aeed",
+    "Preamble.lean": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
+    "Preamble.tex": "6f829a6f1d3189537f617261575e0159ab52c35b56b001557edbd94103263bd4",
     "PrefixAgree.lean": "3d070a3f584bb3993788306cb0584a2f93b448a44180510eb1d15821798d8397",
     "PrefixAgree.tex": "47c88d549026a55343e120be6a0cc47e59a1460a6863e1274b6574a1c638af1a",
-    "README.md": "b657b3e7422f803a6613e903976facc5adea5cc80001bd26624317c99cd2793b",
+    "PrefixTree.lean": "3d69a61b17b37135b907344045617a6d76dfa145a381152d1c62932fd0177c0f",
+    "PrefixTree.tex": "c4dbfd2b5d6482b69be9037a9fcb9d9c5459e2536b09c5be82699d0674236e05",
+    "ProperInitialSegment.lean": "442acbad8d4822f8a009520b4ce196e661434404661b0bd8b5a98d4a9e91c16b",
+    "ProperInitialSegment.tex": "801fa3cabdc529d9ee67b23e84d5d13e26ad0a65bf2d8e5801b849ffb5a013cd",
+    "ProperPrefixSet.lean": "964388c9448b3a1d9311c144b53def2cbc29f8a00517c24956eef98cfc657952",
+    "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
+    "README.md": "baddfcb64199209ddaa3a08f2879370dd1b523a35fa41acc608fece2f8ab9586",
+    "Ray.lean": "9f4ae701ffc6c12ac0b09136ecce3ca8daa70513cba8b47ee7a5f564d1664010",
+    "Ray.tex": "9859188308d0606e635e36270453ae5db6f67482781933fb6525542d7542d553",
     "RightComp.lean": "a020071dfa0fd12696fa2bdeb2fb7432e851c005bc4f819bac7ef43f63dbf69a",
     "RightComp.tex": "4540906ff1d9772ce3c48d5470269ea290de626df52e26d0e38d1850c8628985",
     "RmapLemma.lean": "84143c60c22a83acac0b11624db12babebe3c1ef476874531261c98174557ed9",
     "RmapLemma.tex": "90184e9447f7bf9dc0c338a9f37a0e2b4cf4636e090cafdb912b3f132b5f56c8",
     "ShiftMap.lean": "b91fa810f87c9b2b979a4c09f5fe8645641d1a6856eb6f8d4671222b49459763",
     "ShiftMap.tex": "ced9ab97fbfaecc1f61b5f6d98a7fef71d8ef1417e3fa504d9c3deff2a58e135",
+    "SubFrontCharacterization.lean": "708386637412218656eba61c6a2e347131a6a3985be5cb8b1ec10e802b105574",
+    "SubFrontCharacterization.tex": "6c03d78352ddbb75ce24e8573ec4bafea632893a2e9a86801699cb8cf88347a4",
     "SuccSeq.lean": "792389962692f3758f600e53a58a1ef6a7b3fdc332d141dcb269a0f09ef67ed3",
     "SuccSeq.tex": "24147c64fe879638cd3488b61a4b27b081b7538e1a38735f175383b75ccde04a",
+    "SuperNW.lean": "21c7c9c7fd7cc6f0d7b148cbe7f15822054f909e8f69909321d605a49d0f9552",
+    "SuperNW.tex": "519d0daf4867c4f4de4ba80d5bec28f663a7bb66792dfdf7c2c6bd4ea51e8fec",
+    "SuperSequence.lean": "07e29b2b961f27b8bba21c6318401b5e75658f53193524089e62d696139b75fc",
+    "SuperSequence.tex": "97453d948aea178a7110d5a7a42d24635df2ce03ec5fd5026f8884daf34250fa",
+    "TailSet.lean": "dc281805dfe65fb00d41e2498574152619893869ea45508444e060606998fe6f",
+    "TailSet.tex": "c7033ac7f3a695e8aabb7a0398f7edd7c8c48cc6c76e3fc82477b041895fa212",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_14_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_22_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

@@ -1,0 +1,29 @@
+\begin{lemma}[Ray closure]
+Let $F$ be a nontrivial front on $X$.  For every $n\in X$, the ray
+$F_n$ is a front on $X/n$, and
+\[
+F=\bigl\{\{n\}\cup s\mid n\in X,\ s\in F_n\bigr\}.
+\]
+\end{lemma}
+\begin{proof}
+Fix $n\in X$.  Let $Y\subseteq X/n$ be infinite.  Then
+$\{n\}\cup Y$ is an infinite subset of $X$.  By density in
+\noderef{Front}, choose $u\in F$ with $u\segs(\{n\}\cup Y)$.  Since $F$
+is nontrivial, $u\ne\emptyset$; hence its least element is $n$ and
+$u=\{n\}\cup s$ for a finite $s$ with every element greater than $n$.
+By the definition of \noderef{Ray}, $s\in F_n$, and removing the first
+element shows $s\segs Y$.  Thus the ray is dense on $X/n$.
+
+The ray's base condition follows in the same way.  If the ray is nontrivial
+and $k\in X/n$, apply its density to $\{k\}\cup(X/n)/k$; the resulting
+member contains $k$.  Hence its base is $X/n$.  If it is trivial, the first
+clause of the definition of \noderef{Front} applies.  Prefix-freeness is
+inherited: if $s,t\in F_n$ and $s$ is an initial segment of $t$, then
+$\{n\}\cup s$ and $\{n\}\cup t$ belong to $F$ and the corresponding finite
+sets are initial segments.  The prefix-freeness clause of \noderef{Front}
+gives $s=t$.
+
+Finally, every member of $F$ is nonempty and has a least element $n\in X$;
+removing $n$ gives a member of $F_n$.  Conversely the definition of the ray
+puts $\{n\}\cup s$ back in $F$.  This proves the displayed decomposition.
+\end{proof}

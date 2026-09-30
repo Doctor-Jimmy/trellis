@@ -1,0 +1,22 @@
+\begin{theorem}
+Let $E$ be a finite set.  Every super-sequence $f:F\to E$ admits a constant
+sub-super-sequence.
+\end{theorem}
+\begin{proof}
+We induct on the finite cardinality of $E$.  For a two-part split, apply
+\noderef{NashWilliams} to the subset
+$S=\{s\in F\mid f(s)=e\}$ for a chosen color $e$.  If the resulting
+sub-front is contained in $S$, the restriction of $f$ to it is constantly
+$e$.  If it is disjoint from $S$, its values lie in the remaining finite
+color set, so the induction hypothesis applies to this sub-super-sequence.
+
+Formally, the sub-front supplied by \noderef{NashWilliams} carries its own
+front structure and is contained in $F$.  Restrict the value map of
+\noderef{SuperSequence} along this inclusion.  In the second case the
+restricted map has codomain $E\setminus\{e\}$, whose cardinality is one
+smaller; the induction hypothesis gives a further front on which the map is
+constant.  Composing the two inclusions gives a sub-front of the original
+front and preserves constancy.  The empty finite-color case cannot occur for
+a super-sequence, since its domain front is nonempty by density.  Therefore
+the induction terminates with a constant sub-super-sequence.
+\end{proof}

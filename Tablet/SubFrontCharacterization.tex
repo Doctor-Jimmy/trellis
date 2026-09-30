@@ -1,0 +1,24 @@
+\begin{lemma}[Sub-fronts]
+Let $F$ be a front on $X$ and let $F'\subseteq F$.  Then $F'$ is a front
+if and only if there is an infinite $Y\subseteq X$ such that
+\[
+F'=F\mathbin{|}Y.
+\]
+\end{lemma}
+\begin{proof}
+If $Y\subseteq X$ is infinite, \noderef{FrontRestriction} shows that the
+family defined by \noderef{FrontRestrict}, namely $F\mathbin{|}Y$, is a
+front, and it is plainly contained in $F$.
+
+Conversely, suppose $F'$ is a front on $Y$ and $F'\subseteq F$.  If $F$ is
+trivial, the only possible front subfamily is the same trivial family, and
+the conclusion follows by taking $Y=X$.  Otherwise $F'$ cannot contain the
+empty set, so its base is $Y$ and the base clause of \noderef{Front} gives
+$Y=\mathsf{FrontBase}(F')\subseteq\mathsf{FrontBase}(F)=X$.
+
+For $s\in F'$, clearly $s\in F\mathbin{|}Y$.  Conversely, if
+$s\in F\mathbin{|}Y$, density of $F'$ on $Y$ supplies $t\in F'$ with
+$t\segs(s\cup(Y/s))$.  Both $s$ and $t$ belong to $F$, and one is an
+initial segment of the other; prefix-freeness of $F$ forces $s=t$.  Hence
+$F\mathbin{|}Y\subseteq F'$, proving equality.
+\end{proof}
