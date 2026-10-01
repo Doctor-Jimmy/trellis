@@ -101,7 +101,7 @@
 | PerfectSuperRestrict | lemma | proof | open | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
 | PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
 | PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, PerfectSuperSequence, SuperSequenceExtension |
-| PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, SuperSequenceRestrict |
+| PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, DecidingValue, FiniteShift, Front, InfiniteSetEnumeration, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, RestrictionShift, SuperSequenceRestrict |
 | PowerChild | definition | definition | closed | - | - | PowerQ |
 | PowerChildSupport | lemma | proof | open | - | Support decreases along a child | PowerChild, PowerSupport |
 | PowerChildWellFounded | lemma | proof | open | - | Well-founded hierarchy descent | PowerChild |

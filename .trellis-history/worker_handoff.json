@@ -1,17 +1,17 @@
 {
   "raw": {
     "audit_request": null,
-    "outcome": "valid",
-    "summary": "Expanded PowerCopiedFiniteTerminal's NL proof with the requested paper-faithful witness extraction and finite-dependence argument.",
-    "comments": "Only Tablet/PowerCopiedFiniteTerminal.tex was edited. The proof cites PowerCopiedTerminates for k at row 0, cites PowerCopiedTerminalAt to unpack q and q' and both atom equations including row 1, and cites PowerCopiedFiniteDependence at n=0 for an arbitrary h' with the exact agreement orientation h'(PowerShiftIter(j,x)) = h(PowerShiftIter(j,x)) through k+2. It then rewrites the replacement first-row value through the original atom(q) equation. The active Lean statement, imports, and support DAG are unchanged; the deterministic node check passes.",
-    "target_claim_updates": {},
+    "comments": "Edited only Tablet/PerfectSuperToMulti.tex and the import preamble of Tablet/PerfectSuperToMulti.lean. The proof now cites Front for the infinite base and density, InfiniteSetEnumeration for z, IncSeq/IncSeqComp/ShiftMap for the two infinite composed ranges, DecidingValue together with the local hf coherence hypothesis, RestrictionShift and FiniteShift for the explicit witness, and SuperSequenceRestrict, PerfectSuperSequence, MultiSequenceRestrict, and PerfectMultiSequence for the value rewrites and conclusion. The theorem statement and support direction are unchanged.",
     "deleted_nodes": [],
-    "deviation_requests": {},
-    "node_deviation_claims": {},
     "deviation_deletions": [],
+    "deviation_requests": {},
     "difficulty_updates": {},
+    "memory_challenges": [],
     "needs_restructure_suggested_nodes": [],
-    "memory_challenges": []
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Completed the detailed NL soundness repair for PerfectSuperToMulti with explicit enumeration, density, finite-shift, restriction-value, and perfectness steps.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,14 +21,56 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Only Tablet/PowerCopiedFiniteTerminal.tex was edited. The proof cites PowerCopiedTerminates for k at row 0, cites PowerCopiedTerminalAt to unpack q and q' and both atom equations including row 1, and cites PowerCopiedFiniteDependence at n=0 for an arbitrary h' with the exact agreement orientation h'(PowerShiftIter(j,x)) = h(PowerShiftIter(j,x)) through k+2. It then rewrites the replacement first-row value through the original atom(q) equation. The active Lean statement, imports, and support DAG are unchanged; the deterministic node check passes.",
-    "cycle": 146,
+    "comments": "Edited only Tablet/PerfectSuperToMulti.tex and the import preamble of Tablet/PerfectSuperToMulti.lean. The proof now cites Front for the infinite base and density, InfiniteSetEnumeration for z, IncSeq/IncSeqComp/ShiftMap for the two infinite composed ranges, DecidingValue together with the local hf coherence hypothesis, RestrictionShift and FiniteShift for the explicit witness, and SuperSequenceRestrict, PerfectSuperSequence, MultiSequenceRestrict, and PerfectMultiSequence for the value rewrites and conclusion. The theorem statement and support direction are unchanged.",
+    "cycle": 151,
     "deleted_nodes": [],
-    "dep_updates": {},
+    "dep_updates": {
+      "PerfectSuperToMulti": {
+        "Set": [
+          "DecidingFrontSet",
+          "DecidingValue",
+          "FiniteShift",
+          "Front",
+          "InfiniteSetEnumeration",
+          "LocallyConstant",
+          "MultiSequenceRestrict",
+          "PerfectMultiSequence",
+          "PerfectSuperSequence",
+          "RestrictionShift",
+          "SuperSequenceRestrict"
+        ]
+      }
+    },
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
     "difficulty_updates": {},
+    "elaboration_costs": {
+      "PerfectSuperToMulti": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "PerfectSuperToMulti",
+        "olean_size_bytes": 19880,
+        "peak_rss_kib": 1692592,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "4802f0b80c24c660cddb2bb5168662c9c7c66ae35f6efe63b6f78afbf6014266",
+        "walltime_ms": 2401
+      },
+      "Subarr": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "Subarr",
+        "olean_size_bytes": 18736,
+        "peak_rss_kib": 1677456,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "b9ab434bb4017cc737a053bd94cf7bce6e22f2e8d3bbcb0dacb9d5a556e6e5df",
+        "walltime_ms": 2309
+      }
+    },
     "kind": "worker",
     "local_closure_results": {},
     "local_closure_revalidation": null,
@@ -38,7 +80,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 476,
+    "request_id": 487,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1479,12 +1521,22 @@
           "own_tex_hash": "f53e9f96dac0baaefa4c370e93ffa3cd2b23003b31129445ff67d4588759926c"
         },
         "PerfectSuperToMulti": {
-          "combined_sound_fp": "sound-v2:63440e7bd206cfa18a8f20fdabfc5e456936460fdef6b635d43ed5a3021001d3",
+          "combined_sound_fp": "sound-v2:b8d5f93ebc04a2676883ba2d970551217baab7b05101596bc6e678622528aec1",
           "dep_statement_hashes": {
+            "DecidingValue": "d89e83c0dcbfa25ccfb8c95b62e240da165c8bdabe1c262d48b7ec26d7926286",
+            "FiniteShift": "789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af",
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "IncSeq": "62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e",
+            "IncSeqComp": "fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c",
+            "InfiniteSetEnumeration": "6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1",
             "MultiSequenceRestrict": "0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d",
-            "PerfectMultiSequence": "eda8449879f6345d53aeff6c08eee97ceda122b2aa4a567da72c9c72c7370edf"
+            "PerfectMultiSequence": "eda8449879f6345d53aeff6c08eee97ceda122b2aa4a567da72c9c72c7370edf",
+            "PerfectSuperSequence": "dc30a179671cc070d087bcbedcee438c11f19fba522fcef6018bf0bca107b231",
+            "RestrictionShift": "d5d841aef941841d35501227a7c33143993f0ba417eb963325e0ca62e3c0ccc7",
+            "ShiftMap": "f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44",
+            "SuperSequenceRestrict": "f15491d4e67a34d015a60cbfccc6538d4e27868caae50e9b770315897e71175c"
           },
-          "own_tex_hash": "864ab6f490b785e28546b31b0b29c164020772a00e92c0484b41081f2c83023c"
+          "own_tex_hash": "cce11dd065ab1eb8e64b0e1b7e9114240d65b776d118598b6e3675a9937365c1"
         },
         "PowerChild": {
           "combined_sound_fp": "sound-v2:3fb815b7396ddcbce0bc7c03dc968e195abc0e9ca6a63c07a268212426ecaabf",
@@ -2237,7 +2289,7 @@
         "PerfectSuperRestrict": "sound-v2:7a564070601f8a383fcfbbda810c86553821152056ec1984d9fabd0ea290f61d",
         "PerfectSuperSequence": "sound-v2:c87af4cf2f220597215ec9cf9ad1ea1a8b514612c500224941f8f216ec5cb0c0",
         "PerfectSuperToBase": "sound-v2:4664ccd1f487c996b0a79f4149d1d90df202f8636a418613e1b6a969abe41720",
-        "PerfectSuperToMulti": "sound-v2:63440e7bd206cfa18a8f20fdabfc5e456936460fdef6b635d43ed5a3021001d3",
+        "PerfectSuperToMulti": "sound-v2:b8d5f93ebc04a2676883ba2d970551217baab7b05101596bc6e678622528aec1",
         "PowerChild": "sound-v2:3fb815b7396ddcbce0bc7c03dc968e195abc0e9ca6a63c07a268212426ecaabf",
         "PowerChildSupport": "sound-v2:8aed15e02e633c98f4b0c28bf3a991ca669da176bea5008a079e6f91ddb9e826",
         "PowerChildWellFounded": "sound-v2:7e45668178ede6ed955b654489376bb1a60ad806ecb5a4f75a0c06e8123086c5",
@@ -2678,7 +2730,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Expanded PowerCopiedFiniteTerminal's NL proof with the requested paper-faithful witness extraction and finite-dependence argument.",
+    "summary": "Completed the detailed NL soundness repair for PerfectSuperToMulti with explicit enumeration, density, finite-shift, restriction-value, and perfectness steps.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2834,7 +2886,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "e56f57c23d552e161f7b81fc706acbdfee2163dcc87097aefcc089bf162cb135",
+    "INDEX.md": "576f2f29902fe265745b859f1ab331ba7549face839c6d1dc74635b860b09a84",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -2885,8 +2937,8 @@
     "PerfectSuperSequence.tex": "a58ea238cc596e0300749ae4414ef4e0ac444e8f8a449e9be5933c14bec66c4d",
     "PerfectSuperToBase.lean": "9cc57c624f4f59e5617444792f6695d97beb4cf3a9f7bf219be4514cf4056c44",
     "PerfectSuperToBase.tex": "f53e9f96dac0baaefa4c370e93ffa3cd2b23003b31129445ff67d4588759926c",
-    "PerfectSuperToMulti.lean": "c8f657b5a81488195aad15e1e621aed2a20a34ce648fbf774f4ca2b59fb7e0f2",
-    "PerfectSuperToMulti.tex": "864ab6f490b785e28546b31b0b29c164020772a00e92c0484b41081f2c83023c",
+    "PerfectSuperToMulti.lean": "b075b39e282da8b2e30f3908c1c170873569c0a74575025607162d9228e494fa",
+    "PerfectSuperToMulti.tex": "cce11dd065ab1eb8e64b0e1b7e9114240d65b776d118598b6e3675a9937365c1",
     "PowerChild.lean": "2b5bb7d9645973dcf467bd535816b67cd01c3025a9e65f59485dcf0063bdcb94",
     "PowerChild.tex": "c88eaed1df38366812ce52fdbc12f461c6d5f9b8aac0e62062706fba81f3c3cb",
     "PowerChildSupport.lean": "b20229251c1cab459cf80794ab16cc68f5c3d2ddcc81380a54dbf5d148d043d8",
@@ -3044,7 +3096,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_476_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_487_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

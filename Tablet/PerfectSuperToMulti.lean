@@ -1,8 +1,13 @@
 import Tablet.DecidingFrontSet
+import Tablet.DecidingValue
+import Tablet.FiniteShift
+import Tablet.Front
+import Tablet.InfiniteSetEnumeration
 import Tablet.LocallyConstant
 import Tablet.PerfectMultiSequence
 import Tablet.PerfectSuperSequence
 import Tablet.MultiSequenceRestrict
+import Tablet.RestrictionShift
 import Tablet.SuperSequenceRestrict
 
 -- [TABLET NODE: PerfectSuperToMulti]

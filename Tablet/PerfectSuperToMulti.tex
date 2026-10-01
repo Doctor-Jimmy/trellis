@@ -4,17 +4,122 @@ super-sequence on $F^h$.  If a restriction of $h^{\dcl}$ to a sub-front is
 perfect, then $h$ has a perfect sub-multi-sequence.
 \end{lemma}
 \begin{proof}
-Let $Y$ be the infinite base of the sub-front and enumerate it increasingly
-by $z$.  The required restriction is the fixed-left restriction
-$x\mapsto h(z\circ x)$, namely
-$\mathsf{MultiSequenceRestrict}(h,z)$ by
-\noderef{MultiSequenceRestrict}.  For every $x$, the deciding-front member
-selected by the range of $z\circ x$ lies in the chosen sub-front; this is
-the density of the sub-front together with the fact that it is a subfamily
-of $F^h$.  The value equation for $h^{\dcl}$ therefore identifies the
-restricted super-sequence value with $h(z\circ x)$.  The corresponding
-member for $\mathsf{ShiftMap}(x)$ is related by a finite shift to the first
-member, and perfectness of the restricted super-sequence gives the relation
-between the two values.  Hence the fixed-left restriction is perfect in the
-sense of \noderef{PerfectMultiSequence}.
+The structure statement \noderef{Front} gives
+$Y.\mathsf{Infinite}$ from the field $hF'.\mathsf{infinite\_base}$.
+Apply \noderef{InfiniteSetEnumeration} to choose an increasing enumeration
+$z\in\mathsf{IncSeq}$ with
+
+\[
+\operatorname{range}(z)=Y.
+\tag{1}
+\]
+
+We prove that the fixed-left restriction is perfect.  Fix an arbitrary
+$x\in\mathsf{IncSeq}$ and put
+
+\[
+a=z\circ x,\qquad b=z\circ\mathsf{ShiftMap}(x).
+\tag{2}
+\]
+
+Here both $a$ and $b$ are in $\mathsf{IncSeq}$ by the composition statement
+\noderef{IncSeqComp} and the definition of $\mathsf{ShiftMap}$ in
+\noderef{ShiftMap}.  Thus their ranges are infinite by the enumeration
+meaning of \noderef{IncSeq}.  Moreover,
+$\operatorname{range}(a)\subseteq Y$: if $n=a(k)$, then the composition
+equation from \noderef{IncSeqComp} gives $n=z(x(k))$, so (1) gives $n\in Y$.
+The identical argument gives
+$\operatorname{range}(b)\subseteq Y$, since $b(k)=z(\mathsf{ShiftMap}(x)(k))$.
+
+The density field of the Front statement \noderef{Front}, applied first to
+$\operatorname{range}(a)\subseteq Y$ and its infinitude, supplies
+$s\in F'$ with
+
+\[
+s\in F'\quad\text{and}\quad
+\mathsf{ProperPrefixSet}(s,\operatorname{range}(a)).
+\tag{3}
+\]
+
+Applying the same density field to $\operatorname{range}(b)$ supplies
+$t\in F'$ with
+
+\[
+t\in F'\quad\text{and}\quad
+\mathsf{ProperPrefixSet}(t,\operatorname{range}(b)).
+\tag{4}
+\]
+
+The explicit hypothesis $hsub$ is the subfamily inclusion
+$F'\subseteq\mathsf{DecidingFrontSet}(h)$, so (3) and (4) also give the
+deciding-front memberships of the corresponding subtypes.
+
+The coherence equation for the value map on the deciding front is the
+property supplied by \noderef{DecidingValue}; for the particular map $f$
+in this theorem it is explicitly the hypothesis $hf$.  Therefore (3), with
+the subtype $\langle s,hsub(s\in F')\rangle$, gives
+
+\[
+f.value\langle s,hsub(s\in F')\rangle=h(a),
+\tag{5}
+\]
+
+and (4) gives, with the analogous subtype,
+
+\[
+f.value\langle t,hsub(t\in F')\rangle=h(b).
+\tag{6}
+\]
+
+We next verify the finite-shift premise needed for perfectness.  The
+restriction-shift identity \noderef{RestrictionShift}, instantiated at
+$z$ and $x$, says
+
+\[
+b=z\circ\mathsf{ShiftMap}(x)
+ =\mathsf{ShiftMap}(z\circ x)=\mathsf{ShiftMap}(a).
+\tag{7}
+\]
+
+Consequently (4) is also
+$\mathsf{ProperPrefixSet}(t,\operatorname{range}(\mathsf{ShiftMap}(a)))$.
+Taking $a$ itself as the increasing-sequence witness, (3) and this last
+equality are exactly the two conjuncts in the definition
+\noderef{FiniteShift}; hence
+
+\[
+\mathsf{FiniteShift}(s,t).
+\tag{8}
+\]
+
+Now instantiate the perfectness statement \noderef{PerfectSuperSequence}
+for the restricted super-sequence
+$\mathsf{SuperSequenceRestrict}(f,F',Y,hF',hsub)$, with the members $s,t$,
+their membership proofs from (3) and (4), and the witness (8).  This gives
+
+\[
+r\bigl(\mathsf{SuperSequenceRestrict}(f,F',Y,hF',hsub).value
+       \langle s,s\in F'\rangle,
+       \mathsf{SuperSequenceRestrict}(f,F',Y,hF',hsub).value
+       \langle t,t\in F'\rangle\bigr).
+\tag{9}
+\]
+
+By the definition \noderef{SuperSequenceRestrict}, the first value in (9)
+is $f.value\langle s,hsub(s\in F')\rangle$ and the second is
+$f.value\langle t,hsub(t\in F')\rangle$.  Rewriting with (5) and (6)
+turns (9) into
+
+\[
+r(h(a),h(b)).
+\tag{10}
+\]
+
+Finally, \noderef{MultiSequenceRestrict} says that
+$(\mathsf{MultiSequenceRestrict}(h,z))(x)=h(a)$ and, using (2),
+$(\mathsf{MultiSequenceRestrict}(h,z))(\mathsf{ShiftMap}(x))=h(b)$.
+Thus (10) is precisely the required relation for this arbitrary $x$.
+Since $x$ was arbitrary, the defining condition in
+\noderef{PerfectMultiSequence} proves that
+$\mathsf{MultiSequenceRestrict}(h,z)$ is perfect.
 \end{proof}
