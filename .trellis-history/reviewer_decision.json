@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerMoveInSupport has a current Sound approval. Continue to PowerGameDescentWellFounded, whose current proof leaves the lexicographic well-foundedness step implicit and should expose the nested induction explicitly.",
-    "comments": "Edit only Tablet/PowerGameDescentWellFounded.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof asserts that a standard lexicographic-product construction applies, but does not show why it matches the displayed relation. Cite \\noderef{PowerGameDescent}, \\noderef{PowerChild}, and \\noderef{PowerChildWellFounded}, then give the line-by-line accessibility argument: use outer well-founded induction on the first coordinate with motive `for every second coordinate, the pair is accessible`; at a fixed first coordinate use inner well-founded induction on the second coordinate. For a predecessor, the first disjunct is discharged by the outer induction hypothesis, while the equal-first-coordinate second disjunct is discharged by the inner induction hypothesis. Explicitly identify these two cases with the definition of PowerGameDescent. Do not change the theorem statement or imports.",
+    "reason": "PowerGameDescentWellFounded has a current Sound approval. Continue to PowerFiniteOrbitConstancy with an explicit finite-maximum and prefix-arithmetic expansion for its common neighborhood argument.",
+    "comments": "Edit only Tablet/PowerFiniteOrbitConstancy.tex. Preserve the Lean statement, imports, and current dependencies. The proof currently says that there are finitely many indices and then simply chooses N at least n_j+j for each; make this line-by-line checkable by defining N as the maximum of the finitely many numbers n_j+j (or by a finite induction), proving N is at least each n_j+j, and then applying \\noderef{PowerShiftIterPrefixAgree} separately for every j\u2264m. Retain the citation to \\noderef{LocallyConstant} for the local neighborhoods and explicitly conclude the same N works for all j. Do not change the theorem statement, add a helper, or rewire imports.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerGameDescentWellFounded",
+    "next_active": "PowerFiniteOrbitConstancy",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -16,19 +16,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1385,
-        "end_line": 1397,
-        "reason": "The paper defines the finite comparison game and its child-selection recursion on the two presentations."
-      },
-      {
-        "start_line": 1424,
-        "end_line": 1426,
-        "reason": "The paper invokes foundation to justify eventual termination of the recursive game descent."
+        "start_line": 1264,
+        "end_line": 1271,
+        "reason": "The paper identifies finite-prefix cylinder neighborhoods and defines local constancy on them."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1385-1397 define each game round by moving to children until both coordinates reach atoms, and lines 1424-1426 explain that foundation ensures this descent terminates. The tablet's pair relation formalizes that descent, so its well-foundedness proof must explicitly handle first-coordinate descent and the equal-first-coordinate second descent."
+      "basis_summary": "Lines 1264-1267 identify finite-prefix cylinder neighborhoods in the enumeration topology, and lines 1269-1271 define local constancy by constancy on one such neighborhood. The tablet proof must therefore exhibit one finite prefix that simultaneously controls the finitely many shifted evaluations."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -43,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerGameDescentWellFounded.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof asserts that a standard lexicographic-product construction applies, but does not show why it matches the displayed relation. Cite \\noderef{PowerGameDescent}, \\noderef{PowerChild}, and \\noderef{PowerChildWellFounded}, then give the line-by-line accessibility argument: use outer well-founded induction on the first coordinate with motive `for every second coordinate, the pair is accessible`; at a fixed first coordinate use inner well-founded induction on the second coordinate. For a predecessor, the first disjunct is discharged by the outer induction hypothesis, while the equal-first-coordinate second disjunct is discharged by the inner induction hypothesis. Explicitly identify these two cases with the definition of PowerGameDescent. Do not change the theorem statement or imports.",
+    "comments": "Edit only Tablet/PowerFiniteOrbitConstancy.tex. Preserve the Lean statement, imports, and current dependencies. The proof currently says that there are finitely many indices and then simply chooses N at least n_j+j for each; make this line-by-line checkable by defining N as the maximum of the finitely many numbers n_j+j (or by a finite induction), proving N is at least each n_j+j, and then applying \\noderef{PowerShiftIterPrefixAgree} separately for every j\u2264m. Retain the citation to \\noderef{LocallyConstant} for the local neighborhoods and explicitly conclude the same N works for all j. Do not change the theorem statement, add a helper, or rewire imports.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 132,
+    "cycle": 133,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,29 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerGameDescentWellFounded",
+    "next_active": "PowerFiniteOrbitConstancy",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1397,
-        "reason": "The paper defines the finite comparison game and its child-selection recursion on the two presentations.",
-        "start_line": 1385
-      },
-      {
-        "end_line": 1426,
-        "reason": "The paper invokes foundation to justify eventual termination of the recursive game descent.",
-        "start_line": 1424
+        "end_line": 1271,
+        "reason": "The paper identifies finite-prefix cylinder neighborhoods and defines local constancy on them.",
+        "start_line": 1264
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1385-1397 define each game round by moving to children until both coordinates reach atoms, and lines 1424-1426 explain that foundation ensures this descent terminates. The tablet's pair relation formalizes that descent, so its well-foundedness proof must explicitly handle first-coordinate descent and the equal-first-coordinate second descent.",
+      "basis_summary": "Lines 1264-1267 identify finite-prefix cylinder neighborhoods in the enumeration topology, and lines 1269-1271 define local constancy by constancy on one such neighborhood. The tablet proof must therefore exhibit one finite prefix that simultaneously controls the finitely many shifted evaluations.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerMoveInSupport has a current Sound approval. Continue to PowerGameDescentWellFounded, whose current proof leaves the lexicographic well-foundedness step implicit and should expose the nested induction explicitly.",
-    "request_id": 436,
+    "reason": "PowerGameDescentWellFounded has a current Sound approval. Continue to PowerFiniteOrbitConstancy with an explicit finite-maximum and prefix-arithmetic expansion for its common neighborhood argument.",
+    "request_id": 439,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -86,5 +76,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_436_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_439_decision.context.json"
 }
