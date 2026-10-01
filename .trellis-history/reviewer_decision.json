@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BadSuperRestrict has a current Sound approval. BadMultiToSuper is the held next node, has no Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
-    "comments": "Leave Tablet/BadMultiToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToSuper. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, unpack the finite-shift witness x and both proper-prefix hypotheses. Apply DecidingValue separately at s with x and at t with ShiftMap x, verifying that the deciding-front membership and ProperPrefixSet hypotheses match. Use the explicit BadMultiSequence condition to derive the failed relation between h x and h (ShiftMap x), rewrite the dependent f.value terms with hf, and conclude the universal BadSuperSequence condition. Every cross-node dependency used should be cited, including DecidingValue, BadMultiSequence, BadSuperSequence, FiniteShift, ShiftMap, ProperPrefixSet, and DecidingFrontSet; do not rely on another theorem's hypotheses by citation.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "BadMultiToSuper"
+    "reason": "The Sound verifier found a structural proof gap in BadMultiToSuper: the proof omits the required FiniteShift citation, does not expose the two proper-prefix witness facts, and does not explicitly apply the supplied value-equation hypothesis to the particular map f. Assign this repair-ready blocker to a bounded worker edit while preserving the theorem statement.",
+    "comments": "Edit only Tablet/BadMultiToSuper.tex and, if needed, the import preamble of Tablet/BadMultiToSuper.lean. Preserve the Lean statement, conclusion, support direction, and no-helper structure. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, explicitly cite \\noderef{FiniteShift} and unpack its witness x, including ProperPrefixSet s (range x) and ProperPrefixSet t (range (ShiftMap x)); cite \\noderef{ProperPrefixSet}, \\noderef{ShiftMap}, and the deciding-front definition as used. Apply the theorem's supplied hf hypothesis, not merely the existential map in \\noderef{DecidingValue}, separately to (s,x) and (t,ShiftMap x), and state why the two front-membership and prefix premises hold. Then cite \\noderef{BadMultiSequence} for the negated relation between h x and h (ShiftMap x), rewrite both dependent f.value terms using hf, and cite \\noderef{BadSuperSequence} when concluding the universal badness condition. Do not change any statement or add a helper; run the deterministic checks after the edit.",
+    "task_blocker_ids": [
+      "soundness:node:BadMultiToSuper:sound-v2:f672a4f22f6fcbd549779cab94db7946cfad2187c0f4684a85eff6ccecc8b1ee"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "BadMultiToSuper",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -22,12 +22,12 @@
       {
         "start_line": 1478,
         "end_line": 1496,
-        "reason": "The manuscript proves that a bad locally constant multi-sequence induces a bad super-sequence via an enumeration witnessing the finite shift."
+        "reason": "The manuscript's first case explicitly uses the finite-shift enumeration, both prefix relations, the two value equations, and badness of the multi-sequence."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript lemma gives exactly the badness transfer from a locally constant multi-sequence to its deciding-front super-sequence: a finite-shift witness supplies x and ShiftMap x, the value equation identifies the super-sequence values, and BadMultiSequence supplies the failed relation. The requested Sound check follows this argument with the tablet's explicit dependencies."
+      "basis_summary": "The cited manuscript proof of badSimpsonNW(1) takes s and t related by a finite shift, chooses an infinite enumeration witnessing the two prefix relations, identifies the two deciding-front values with h(Y) and h(shift Y), and applies badness of h. The worker repair should make each of these steps explicit for the supplied map f and Lean witness data."
     },
     "authorized_node_ids": []
   },
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/BadMultiToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToSuper. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, unpack the finite-shift witness x and both proper-prefix hypotheses. Apply DecidingValue separately at s with x and at t with ShiftMap x, verifying that the deciding-front membership and ProperPrefixSet hypotheses match. Use the explicit BadMultiSequence condition to derive the failed relation between h x and h (ShiftMap x), rewrite the dependent f.value terms with hf, and conclude the universal BadSuperSequence condition. Every cross-node dependency used should be cited, including DecidingValue, BadMultiSequence, BadSuperSequence, FiniteShift, ShiftMap, ProperPrefixSet, and DecidingFrontSet; do not rely on another theorem's hypotheses by citation.",
+    "comments": "Edit only Tablet/BadMultiToSuper.tex and, if needed, the import preamble of Tablet/BadMultiToSuper.lean. Preserve the Lean statement, conclusion, support direction, and no-helper structure. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, explicitly cite \\noderef{FiniteShift} and unpack its witness x, including ProperPrefixSet s (range x) and ProperPrefixSet t (range (ShiftMap x)); cite \\noderef{ProperPrefixSet}, \\noderef{ShiftMap}, and the deciding-front definition as used. Apply the theorem's supplied hf hypothesis, not merely the existential map in \\noderef{DecidingValue}, separately to (s,x) and (t,ShiftMap x), and state why the two front-membership and prefix premises hold. Then cite \\noderef{BadMultiSequence} for the negated relation between h x and h (ShiftMap x), rewrite both dependent f.value terms using hf, and cite \\noderef{BadSuperSequence} when concluding the universal badness condition. Do not change any statement or add a helper; run the deterministic checks after the edit.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 170,
+    "cycle": 171,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,34 +51,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "BadMultiToSuper",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1496,
-        "reason": "The manuscript proves that a bad locally constant multi-sequence induces a bad super-sequence via an enumeration witnessing the finite shift.",
+        "reason": "The manuscript's first case explicitly uses the finite-shift enumeration, both prefix relations, the two value equations, and badness of the multi-sequence.",
         "start_line": 1478
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript lemma gives exactly the badness transfer from a locally constant multi-sequence to its deciding-front super-sequence: a finite-shift witness supplies x and ShiftMap x, the value equation identifies the super-sequence values, and BadMultiSequence supplies the failed relation. The requested Sound check follows this argument with the tablet's explicit dependencies.",
+      "basis_summary": "The cited manuscript proof of badSimpsonNW(1) takes s and t related by a finite shift, chooses an infinite enumeration witnessing the two prefix relations, identifies the two deciding-front values with h(Y) and h(shift Y), and applies badness of h. The worker repair should make each of these steps explicit for the supplied map f and Lean witness data.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BadSuperRestrict has a current Sound approval. BadMultiToSuper is the held next node, has no Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
-    "request_id": 535,
-    "request_sound_verifier_nodes": [
-      "BadMultiToSuper"
-    ],
+    "reason": "The Sound verifier found a structural proof gap in BadMultiToSuper: the proof omits the required FiniteShift citation, does not expose the two proper-prefix witness facts, and does not explicitly apply the supplied value-equation hypothesis to the particular map f. Assign this repair-ready blocker to a bounded worker edit while preserving the theorem statement.",
+    "request_id": 537,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:f672a4f22f6fcbd549779cab94db7946cfad2187c0f4684a85eff6ccecc8b1ee",
+        "kind": "Soundness",
+        "object": {
+          "node": "BadMultiToSuper",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_535_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_537_decision.context.json"
 }
