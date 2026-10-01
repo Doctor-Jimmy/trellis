@@ -1,27 +1,27 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontTreeSingleton has a current Sound approval. FrontBridgeInit is the next fresh Sound obligation, and its current proof appears to follow the paper's initial bridge construction without a concrete unsupported step; request a verifier-only Sound run rather than assigning a repair.",
-    "comments": "Run a verifier-only Sound burst for `FrontBridgeInit`; do not edit Tablet content, assign a worker, or reset a blocker. Check the construction of u={m,n}, the two singleton tree-membership uses of `FrontTreeSingleton`, the nonterminal left case via `FrontTreeOrderedExtension`, and all four `FrontBridge` clauses, including the exact finite-tail equalities supplied by `FrontBridgeTail`. The paper's corresponding initial-play construction is at lines 1569--1570.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "FrontBridgeInit"
+    "reason": "The Sound verifier identified a specific invalid step in FrontBridgeInit.tex: when {m} is in F and m<n, the proof claims that InitialSegment({m},{m,n}) holds by equality, but the two sets are unequal. Assign a bounded repair of that branch while preserving the bridge statement and support structure.",
+    "comments": "Repair only `Tablet/FrontBridgeInit.tex`; preserve its Lean statement, imports, and existing bridge decomposition. In the `{m} in F` branch, do not justify `InitialSegment({m},{m,n})` by equality. Cite `InitialSegment` and explicitly use the second alternative with cutoff `n`: because `m<n`, filtering `{m,n}` by elements below `n` gives exactly `{m}`. Retain the existing citations to `FrontTreeSingleton`, `FrontTreeOrderedExtension`, `FrontBridgeTail`, and `FrontBridge`; recheck the remaining four bridge clauses line by line and add no helper or structural change. The corresponding paper construction starts at lines 1569--1570.",
+    "task_blocker_ids": [
+      "soundness:node:FrontBridgeInit:sound-v2:2f91d0246d2a7ac010f0c4a0a599146f414594d14ab071bb4780be85d0ad2aaa"
     ],
-    "next_active": "",
-    "next_mode": "global",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "FrontBridgeInit",
+    "next_mode": "targeted",
     "next_active_coarse": "",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "start_line": 1569,
         "end_line": 1570,
-        "reason": "The paper's initial bridge state and first response construction."
+        "reason": "The paper's initial bridge state and response cases."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front and extend the bridge accordingly. FrontBridgeInit formalizes exactly this initial state for m<n."
+      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front. The tablet node formalizes this construction; its only reported defect is the invalid equality justification for the nonterminal initial-segment clause when m<n."
     },
     "reset": "none",
     "reset_node": "",
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Run a verifier-only Sound burst for `FrontBridgeInit`; do not edit Tablet content, assign a worker, or reset a blocker. Check the construction of u={m,n}, the two singleton tree-membership uses of `FrontTreeSingleton`, the nonterminal left case via `FrontTreeOrderedExtension`, and all four `FrontBridge` clauses, including the exact finite-tail equalities supplied by `FrontBridgeTail`. The paper's corresponding initial-play construction is at lines 1569--1570.",
+    "comments": "Repair only `Tablet/FrontBridgeInit.tex`; preserve its Lean statement, imports, and existing bridge decomposition. In the `{m} in F` branch, do not justify `InitialSegment({m},{m,n})` by equality. Cite `InitialSegment` and explicitly use the second alternative with cutoff `n`: because `m<n`, filtering `{m,n}` by elements below `n` gives exactly `{m}`. Retain the existing citations to `FrontTreeSingleton`, `FrontTreeOrderedExtension`, `FrontBridgeTail`, and `FrontBridge`; recheck the remaining four bridge clauses line by line and add no helper or structural change. The corresponding paper construction starts at lines 1569--1570.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 73,
+    "cycle": 74,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,34 +51,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "FrontBridgeInit",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1570,
-        "reason": "The paper's initial bridge state and first response construction.",
+        "reason": "The paper's initial bridge state and response cases.",
         "start_line": 1569
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front and extend the bridge accordingly. FrontBridgeInit formalizes exactly this initial state for m<n.",
+      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front. The tablet node formalizes this construction; its only reported defect is the invalid equality justification for the nonterminal initial-segment clause when m<n.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontTreeSingleton has a current Sound approval. FrontBridgeInit is the next fresh Sound obligation, and its current proof appears to follow the paper's initial bridge construction without a concrete unsupported step; request a verifier-only Sound run rather than assigning a repair.",
-    "request_id": 282,
-    "request_sound_verifier_nodes": [
-      "FrontBridgeInit"
-    ],
+    "reason": "The Sound verifier identified a specific invalid step in FrontBridgeInit.tex: when {m} is in F and m<n, the proof claims that InitialSegment({m},{m,n}) holds by equality, but the two sets are unequal. Assign a bounded repair of that branch while preserving the bridge statement and support structure.",
+    "request_id": 284,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:2f91d0246d2a7ac010f0c4a0a599146f414594d14ab071bb4780be85d0ad2aaa",
+        "kind": "Soundness",
+        "object": {
+          "node": "FrontBridgeInit",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_282_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_284_decision.context.json"
 }

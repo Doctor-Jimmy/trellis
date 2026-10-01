@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 354,
+  "event_count": 357,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -25107,6 +25107,129 @@
         "$r": "b2c39113c1199793"
       }
     ],
+    "6bac6f20032cd177": [
+      "BadMultiSequence",
+      "BadPairSequence",
+      "BadSuperSequence",
+      "BaireContinuous",
+      "BaseBad",
+      "BaseIncSeq",
+      "BaseLocallyConstant",
+      "BaseMultiSequence",
+      "BasePerfect",
+      "BaseRestrict",
+      "BaseRightComp",
+      "BaseShift",
+      "BetterRel",
+      "BlockSigma",
+      "BlockSigmaIntertwines",
+      {
+        "$s": "4c3bac0512a45c96"
+      },
+      "Bqo",
+      "BqoHerCtblWellF",
+      "BqoHerCtblWqo",
+      "CardinalityFront",
+      "ContMor",
+      "ContMorEq",
+      "ContinuousHom",
+      "ContinuousRelHom",
+      "DecidingFrontSet",
+      "DecidingPrefix",
+      "FiniteShift",
+      "Front",
+      "FrontBase",
+      "FrontBridge",
+      "FrontBridgeTail",
+      "FrontPrefix",
+      "FrontPrefixExists",
+      "FrontPrefixUnique",
+      "FrontRayClosure",
+      "FrontRestrict",
+      "FrontRestriction",
+      {
+        "$s": "ba060752f87266a9"
+      },
+      {
+        "$s": "ce47bd99c3ed46e0"
+      },
+      "FrontTreeSingleton",
+      "FrontTreeWellFounded",
+      "GBetterRel",
+      "GoodMultiSequence",
+      "HerCtblCode",
+      "HerCtblCodeErase",
+      "HerCtblPower",
+      "HerCtblPowerIsPreorder",
+      "HerCtblRel",
+      {
+        "$s": "19fb7b62eea67a5d"
+      },
+      "HereditarilyCountable",
+      {
+        "$s": "248a162fe13df6db"
+      },
+      {
+        "$s": "0de210e54bc47028"
+      },
+      "IncSeq",
+      "IncSeqComp",
+      "IncSeqId",
+      "IncreasingPair",
+      "InfiniteSetEnumeration",
+      "InitialSegment",
+      "LocallyConstant",
+      "MultiSequence",
+      "MultiSequenceRestrict",
+      "NashWilliams",
+      "OrbitBlock",
+      "OrbitBlockCoverage",
+      "OrbitEmbedding",
+      "OrbitPoint",
+      "OrbitUnbounded",
+      "PerfectMultiSequence",
+      "PerfectSuperSequence",
+      "PowerChild",
+      "PowerChildWellFounded",
+      "PowerCopiedLeft",
+      "PowerCopiedTerminalAt",
+      "PowerGameDescent",
+      "PowerIResponse",
+      "PowerIResponseFailure",
+      "PowerIResponseLegal",
+      "PowerIResponseWitness",
+      "PowerMove",
+      "PowerPresentationEq",
+      "PowerQ",
+      "PowerQIsPreorder",
+      "PowerRel",
+      "PowerRelAtomAtom",
+      "PowerRelAtomNode",
+      "PowerRelNodeAtom",
+      "PowerRelNodeNode",
+      "PowerShiftIter",
+      "PowerSupport",
+      "Preamble",
+      "PrefixAgree",
+      "PrefixTree",
+      "ProperInitialSegment",
+      "ProperPrefixSet",
+      "RadoOrder",
+      "Ray",
+      "RelationEmbedding",
+      "RightComp",
+      "SetDomination",
+      "ShiftMap",
+      {
+        "$s": "b93919442f024c21"
+      },
+      "SuccSeq",
+      "SuperSequence",
+      "SuperSequenceRestrict",
+      "TailSet",
+      "TildeF",
+      "TildeFSingleton"
+    ],
     "6bba2c48f3aed132": {
       "consumer": "PowerRelNodeNode",
       "declaration_kind": "theorem",
@@ -39561,118 +39684,6 @@
       },
       "size_bytes": 7144
     },
-    "aa005fdfea6bddb2": [
-      "BadMultiRestrict",
-      "BadMultiSequence",
-      "BadMultiToSuper",
-      "BadPairSequence",
-      "BadSuperRestrict",
-      "BadSuperSequence",
-      "BadSuperToBase",
-      "BaireContinuous",
-      "BaseBad",
-      "BaseBqoRestriction",
-      "BaseIncSeq",
-      "BaseLocallyConstant",
-      "BaseMultiSequence",
-      "BasePerfect",
-      "BaseRestrict",
-      "BaseRightComp",
-      "BaseShift",
-      "BetterRel",
-      "BlockSigma",
-      "BlockSigmaContinuous",
-      "BlockSigmaEmbedding",
-      "BlockSigmaIntertwines",
-      {
-        "$s": "4c3bac0512a45c96"
-      },
-      "Bqo",
-      "BqoIffGeneralShift",
-      "CardinalityFront",
-      "CardinalityFrontIsFront",
-      "ContMor",
-      "ContMorEq",
-      "ContinuousHom",
-      "ContinuousRelHom",
-      "DecidingFront",
-      "DecidingFrontSet",
-      "DecidingPrefix",
-      "DecidingValue",
-      "EmapLemma",
-      "FinitePrefixExtension",
-      "FiniteShift",
-      "FirstMovedPoint",
-      "Front",
-      "FrontBase",
-      "FrontPrefix",
-      "FrontPrefixExists",
-      "FrontPrefixUnique",
-      "FrontRayClosure",
-      "FrontRestrict",
-      "FrontRestriction",
-      "FrontTreeWellFounded",
-      "GBetterRel",
-      "GBetterRelIff",
-      "GoodMultiSequence",
-      "IncSeq",
-      "IncSeqComp",
-      "IncSeqId",
-      "IncSeqPointwiseLe",
-      "IncreasingPair",
-      "InfiniteSetEnumeration",
-      "InitialSegment",
-      "LocallyConstant",
-      "MainProp",
-      "MultiSequence",
-      "MultiSequenceRestrict",
-      "NashWilliams",
-      "NoBadPerfectSuper",
-      "OrbitBlock",
-      "OrbitBlockCoverage",
-      "OrbitEmbedding",
-      "OrbitPoint",
-      "OrbitUnbounded",
-      "PerfectBaseToSuper",
-      "PerfectMultiRestrict",
-      "PerfectMultiSequence",
-      "PerfectMultiToSuper",
-      "PerfectSuperRestrict",
-      "PerfectSuperSequence",
-      "PerfectSuperToBase",
-      "PerfectSuperToMulti",
-      "PowerWqoBadPairSequence",
-      "Preamble",
-      "PrefixAgree",
-      "PrefixTree",
-      "ProperInitialSegment",
-      "ProperPrefixSet",
-      "QuadrupleHomogeneous",
-      "RadoEmbedding",
-      "RadoOrder",
-      "Ray",
-      "RelationEmbedding",
-      {
-        "$s": "b415d99a5587255c"
-      },
-      "RestrictionShift",
-      "RightComp",
-      "RmapLemma",
-      "SetDomination",
-      "ShiftDichotomy",
-      "ShiftMap",
-      {
-        "$s": "b93919442f024c21"
-      },
-      "Subarr",
-      "SuccSeq",
-      "SuperNW",
-      "SuperSequence",
-      "SuperSequenceExtension",
-      "SuperSequenceRestrict",
-      "TailSet",
-      "TripleHomogeneous"
-    ],
     "aa0acdf1fe9b7cf1": {
       "accepted_at_snapshot_id": "revalidate-cycle-7",
       "active_decl_hash": {
@@ -45272,64 +45283,6 @@
         "$s": "9486d3d15d7d719e"
       }
     },
-    "c0b77e2d0c771a52": [
-      "BadMultiSequence",
-      "BadPairSequence",
-      "BadSuperSequence",
-      "BaireContinuous",
-      "BaseBad",
-      "BaseIncSeq",
-      "BaseLocallyConstant",
-      "BaseMultiSequence",
-      "BasePerfect",
-      "BaseRestrict",
-      "BaseRightComp",
-      "BaseShift",
-      "BetterRel",
-      "BlockSigma",
-      "Bqo",
-      "CardinalityFront",
-      "ContMor",
-      "ContMorEq",
-      "ContinuousHom",
-      "ContinuousRelHom",
-      "DecidingFrontSet",
-      "DecidingPrefix",
-      "FiniteShift",
-      "Front",
-      "FrontBase",
-      "FrontPrefix",
-      "FrontRestrict",
-      "GBetterRel",
-      "GoodMultiSequence",
-      "IncSeq",
-      "IncSeqComp",
-      "IncSeqId",
-      "IncreasingPair",
-      "InitialSegment",
-      "LocallyConstant",
-      "MultiSequence",
-      "MultiSequenceRestrict",
-      "OrbitBlock",
-      "OrbitPoint",
-      "PerfectMultiSequence",
-      "PerfectSuperSequence",
-      "Preamble",
-      "PrefixAgree",
-      "PrefixTree",
-      "ProperInitialSegment",
-      "ProperPrefixSet",
-      "RadoOrder",
-      "Ray",
-      "RelationEmbedding",
-      "RightComp",
-      "SetDomination",
-      "ShiftMap",
-      "SuccSeq",
-      "SuperSequence",
-      "SuperSequenceRestrict",
-      "TailSet"
-    ],
     "c0dd7adf42bb7ef6": [
       {
         "$r": "02996f87469ae192"
@@ -60106,17 +60059,17 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": "FrontBridgeInit",
     "committed": {
       "$r": "14cce36ea6ce05f9"
     },
-    "cycle": 73,
+    "cycle": 74,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": null,
+    "active_node": "FrontBridgeInit",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60358,9 +60311,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 73,
+    "cycle": 74,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 73,
+    "cycles_since_clean": 74,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -61102,7 +61055,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 73,
+    "last_sound_response_cycle": 74,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61344,7 +61297,38 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Targeted",
+      "must_close_active": false,
+      "next_worker_context_mode": "resume",
+      "node": "FrontBridgeInit",
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [
+        {
+          "end_line": 1570,
+          "reason": "The paper's initial bridge state and response cases.",
+          "start_line": 1569
+        }
+      ],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "cf3da6fb47233ede"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontBridgeInit",
+            "otype": "node"
+          }
+        }
+      ],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "TheoremStating",
     "plan_review_cadence_enabled": true,
@@ -61419,16 +61403,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "FrontTreeSingleton": {
+      "FrontBridgeInit": {
         "v1": {
-          "comments": "The proof explicitly cites Front, ProperPrefixSet, InitialSegment, and PrefixTree, and the least-element argument establishes singleton membership without relying on unstated theorem hypotheses.",
-          "node": "FrontTreeSingleton",
-          "overall": "APPROVE",
+          "comments": "1. In the branch where {m} is in F, the proof says the required InitialSegment({m}, {m,n}) clause holds by equality. This is false when m<n: the sets are unequal, and the proof must instead exhibit the cutoff n (using m<n). The other bridge clauses are addressed by the cited singleton, ordered-extension, tail, and bridge statements.",
+          "node": "FrontBridgeInit",
+          "overall": "REJECT",
           "soundness": {
-            "decision": "SOUND",
-            "explanation": "The NL proof rigorously derives FrontBase(F)=N from nontriviality, applies front density to the infinite tail beginning at n, and proves in detail that the resulting finite prefix has {n} as an initial segment. The cited dependencies provide exactly the definitions used."
+            "decision": "UNSOUND",
+            "explanation": "The proof does not establish the left-front clause of FrontBridge in the {m} in F case. Since m<n, {m} is a proper initial segment of {m,n}, not equal to it; the asserted equality justification is invalid. Thus the NL proof is not line-by-line rigorous."
           },
-          "summary": "FrontTreeSingleton has a detailed, line-by-line sound NL proof from its cited support nodes."
+          "summary": "Reject: the {m} in F branch uses an invalid equality argument for the required initial-segment relation."
         }
       }
     },
@@ -61436,24 +61420,179 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 73,
+      "next_index": 74,
       "snapshots": [
         {
-          "present": {
-            "$r": "aa005fdfea6bddb2"
-          },
-          "progressed": {
-            "$r": "c0b77e2d0c771a52"
-          },
-          "snapshot_index": 9
-        },
-        {
-          "present": {
-            "$r": "aa005fdfea6bddb2"
-          },
-          "progressed": {
-            "$r": "c0b77e2d0c771a52"
-          },
+          "present": [
+            "BadMultiRestrict",
+            "BadMultiSequence",
+            "BadMultiToSuper",
+            "BadPairSequence",
+            "BadSuperRestrict",
+            "BadSuperSequence",
+            "BadSuperToBase",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseBqoRestriction",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "NoBadPerfectSuper",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectBaseToSuper",
+            "PerfectMultiRestrict",
+            "PerfectMultiSequence",
+            "PerfectMultiToSuper",
+            "PerfectSuperRestrict",
+            "PerfectSuperSequence",
+            "PerfectSuperToBase",
+            "PerfectSuperToMulti",
+            "PowerWqoBadPairSequence",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "QuadrupleHomogeneous",
+            "RadoEmbedding",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            {
+              "$s": "b415d99a5587255c"
+            },
+            "RestrictionShift",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftDichotomy",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "Subarr",
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TripleHomogeneous"
+          ],
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "Bqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontPrefix",
+            "FrontRestrict",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitPoint",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet"
+          ],
           "snapshot_index": 10
         },
         {
@@ -65131,130 +65270,19 @@
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "FiniteShift",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeTail",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "SetDomination",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
+          "progressed": {
+            "$r": "6bac6f20032cd177"
+          },
           "snapshot_index": 72
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "6bac6f20032cd177"
+          },
+          "snapshot_index": 73
         }
       ]
     },
@@ -65263,12 +65291,10 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 282,
+    "request_seq": 284,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Run a verifier-only Sound burst for `FrontBridgeInit`; do not edit Tablet content, assign a worker, or reset a blocker. Check the construction of u={m,n}, the two singleton tree-membership uses of `FrontTreeSingleton`, the nonterminal left case via `FrontTreeOrderedExtension`, and all four `FrontBridge` clauses, including the exact finite-tail equalities supplied by `FrontBridgeTail`. The paper's corresponding initial-play construction is at lines 1569--1570.",
-    "reviewer_requested_sound_verifier_nodes": [
-      "FrontBridgeInit"
-    ],
+    "reviewer_comments": "Repair only `Tablet/FrontBridgeInit.tex`; preserve its Lean statement, imports, and existing bridge decomposition. In the `{m} in F` branch, do not justify `InitialSegment({m},{m,n})` by equality. Cite `InitialSegment` and explicitly use the second alternative with cutoff `n`: because `m<n`, filtering `{m,n}` by elements below `n` gives exactly `{m}`. Retain the existing citations to `FrontTreeSingleton`, `FrontTreeOrderedExtension`, `FrontBridgeTail`, and `FrontBridge`; recheck the remaining four bridge clauses line by line and add no helper or structural change. The corresponding paper construction starts at lines 1569--1570.",
+    "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
@@ -65277,6 +65303,9 @@
       },
       "BooleanInfinitePigeonhole": {
         "$s": "66f5b021e983ad69"
+      },
+      "FrontBridgeInit": {
+        "$s": "cf3da6fb47233ede"
       },
       "FrontPrefixExists": {
         "$s": "351588e5ea64e4bc"
@@ -65356,6 +65385,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "FrontBridgeInit": {
+        "fingerprints": {
+          "$r": "865556e19a742785"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       },
       "FrontPrefixExists": {
         "fingerprints": {
@@ -66623,6 +66661,7 @@
     "sound_status": {
       "BlockSigmaIntertwines": "Pass",
       "BooleanInfinitePigeonhole": "Pass",
+      "FrontBridgeInit": "Fail",
       "FrontPrefixExists": "Pass",
       "FrontPrefixUnique": "Pass",
       "FrontRayClosure": "Pass",
@@ -67402,7 +67441,7 @@
     "target_claims": {
       "$r": "8b8358bcaa735e43"
     },
-    "target_edit_mode": "Global",
+    "target_edit_mode": "Targeted",
     "theorem_verifier_only_continuation_enabled": true,
     "transport_attempt": 0,
     "transport_invalid_review_threshold": 5,
