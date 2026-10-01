@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 312,
+  "event_count": 315,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -234,7 +234,6 @@
     "24e16e3a4c4bd28a": "c933fc8e30b48ffa7076c413613abb18a4222aa7b7eb268befa2cc472aeadabf",
     "24e1d8bea58f5865": "b238a0c4059a72cb573e373c4cf444d4e0512687df2f9047aa511ddbfded3629",
     "24e26b320dbf1639": "{\"own_tex\":\"987a5eec9c6c8d571452359e653164a4e23507a3d8d5abfad4d3a1df9f8fdee0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-    "24f951a5857b1524": "sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef",
     "251a3350a4fe910b": "{\"own_tex\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"lean_semantic_closure\":\"a13b3de03443ce4d122f5a467d46f681fd870f6a9ccb63f886be40a73f253cb9\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerMove\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "251b6171e3275ee5": "{\"own_tex\":\"a25dad15902a1d7ea587ee0a4eaff046e22495a6f45068a4411d31a6ff21867a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "252c017031cf1033": "sound-v2:4664ccd1f487c996b0a79f4149d1d90df202f8636a418613e1b6a969abe41720",
@@ -59963,7 +59962,7 @@
     "committed": {
       "$r": "afef9337c0d6b817"
     },
-    "cycle": 61,
+    "cycle": 62,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60244,9 +60243,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 61,
+    "cycle": 62,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 61,
+    "cycles_since_clean": 62,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -60988,7 +60987,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 61,
+    "last_sound_response_cycle": 62,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61305,16 +61304,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "OrbitUnbounded": {
+      "OrbitBlockCoverage": {
         "v1": {
-          "comments": "The proof correctly uses the cited orbit-embedding result and the finite-range contradiction.",
-          "node": "OrbitUnbounded",
+          "comments": "The proof establishes coverage by choosing the least n with l < G(n+1), and establishes uniqueness using strict monotonicity of the selected orbit embedding.",
+          "node": "OrbitBlockCoverage",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "For the stated g, k, and k<g(k), OrbitEmbedding supplies an increasing embedding equal pointwise to the orbit, hence the orbit values are strictly increasing and injective. If no orbit value exceeded a fixed l, every value would lie in the finite set {0,...,l}, contradicting injectivity of the map on the infinite set of natural indices. Therefore some n satisfies l<OrbitPoint(g,k,n), for each l."
+            "explanation": "The NL proof rigorously proves both disjuncts. It explicitly cites OrbitEmbedding, OrbitUnbounded, OrbitPoint, and OrbitBlock, uses the stated hypothesis k < g(k), handles the r = 0 case, obtains a least index in a nonempty subset of Nat, and rules out two distinct block indices by the order-embedding monotonicity of G."
           },
-          "summary": "The NL proof rigorously establishes the stated unboundedness from OrbitEmbedding with an explicitly cited dependency."
+          "summary": "SOUND: the natural-language proof is line-by-line sufficient for the stated orbit-block coverage and uniqueness theorem."
         }
       }
     },
@@ -61322,7 +61321,7 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 61,
+      "next_index": 62,
       "snapshots": [
         {
           "present": [
@@ -64649,6 +64648,121 @@
             "TildeFSingleton"
           ],
           "snapshot_index": 60
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
+          "snapshot_index": 61
         }
       ]
     },
@@ -64657,11 +64771,10 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 252,
+    "request_seq": 254,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Run a verifier-only Sound burst for OrbitBlockCoverage with no Tablet edits. The current proof uses OrbitEmbedding for the orbit map and monotonicity, OrbitPoint for the iterate interpretation, OrbitUnbounded for the successor witness, and OrbitBlock for the two inequalities; it separately handles the least-index cases and both possible strict index orders for uniqueness. After this result, continue with the repaired BlockSigmaIntertwines node in the orbit chain, while the SubFrontCharacterization request remains independent. Do not assign a worker or reset any current blocker in this transition.",
+    "reviewer_comments": "Request a Sound verifier for SubFrontCharacterization only. Its current proof cites FrontRestriction, FrontRestrict, Front, FrontBase, and InitialSegment and handles both the trivial-front and nontrivial-front cases, including both restriction inclusions. If it passes, request NashWilliams next; leave the repaired gated obligation for its eligible Sound slot.",
     "reviewer_requested_sound_verifier_nodes": [
-      "OrbitBlockCoverage",
       {
         "$s": "b93919442f024c21"
       }
@@ -64691,7 +64804,7 @@
         "$s": "e89f7611038e4db0"
       },
       "OrbitBlockCoverage": {
-        "$s": "24f951a5857b1524"
+        "$s": "ef04984b80de171a"
       },
       "OrbitEmbedding": {
         "$s": "3161995d95830072"
@@ -64823,23 +64936,14 @@
       },
       "OrbitBlockCoverage": {
         "fingerprints": {
-          "combined_sound_fp": {
-            "$s": "24f951a5857b1524"
-          },
-          "dep_statement_hashes": {
-            "OrbitEmbedding": {
-              "$s": "adc8e424e9c7575b"
-            },
-            "OrbitUnbounded": {
-              "$s": "df38e99488357b52"
-            }
-          },
-          "own_tex_hash": "9a10debc884e91c8043df796e3debd3bba49a15f743a6d70b8cf884a4bfe9952"
+          "$r": "6f286114301095d8"
         },
-        "lane_votes": {},
-        "origin": "ReviewerAction",
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
         "reviewer_action_id": null,
-        "status": "ReviewerPinnedFail"
+        "status": "VerifierPass"
       },
       "OrbitEmbedding": {
         "fingerprints": {
@@ -65980,7 +66084,7 @@
       "FrontTreeWellFounded": "Pass",
       "InfiniteSetEnumeration": "Pass",
       "NashWilliams": "Fail",
-      "OrbitBlockCoverage": "Fail",
+      "OrbitBlockCoverage": "Pass",
       "OrbitEmbedding": "Pass",
       "OrbitUnbounded": "Pass",
       "PowerChildWellFounded": "Pass",
@@ -66379,9 +66483,7 @@
         },
         {
           "deferred": false,
-          "fingerprint": {
-            "$s": "24f951a5857b1524"
-          },
+          "fingerprint": "sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef",
           "kind": "Soundness",
           "object": {
             "node": "OrbitBlockCoverage",

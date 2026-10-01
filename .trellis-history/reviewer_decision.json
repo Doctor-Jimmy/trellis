@@ -1,38 +1,38 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The latest Sound result approves OrbitUnbounded. The orbit chain now advances to OrbitBlockCoverage, whose repaired proof is fresh, requestable, and explicitly supplies existence and uniqueness of the orbit block decomposition. The still-gated active obligation has no failure verdict and is omitted from all blocker actions.",
-    "comments": "Run a verifier-only Sound burst for OrbitBlockCoverage with no Tablet edits. The current proof uses OrbitEmbedding for the orbit map and monotonicity, OrbitPoint for the iterate interpretation, OrbitUnbounded for the successor witness, and OrbitBlock for the two inequalities; it separately handles the least-index cases and both possible strict index orders for uniqueness. After this result, continue with the repaired BlockSigmaIntertwines node in the orbit chain, while the SubFrontCharacterization request remains independent. Do not assign a worker or reset any current blocker in this transition.",
+    "reason": "OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage now have fresh Sound approvals. The next independent audit task is the current SubFrontCharacterization proof, which is requestable and precedes NashWilliams in the front chain. The still-gated obligation has no failure verdict and is omitted from this transition; no worker repair or reset is warranted.",
+    "comments": "Request a Sound verifier for SubFrontCharacterization only. Its current proof cites FrontRestriction, FrontRestrict, Front, FrontBase, and InitialSegment and handles both the trivial-front and nontrivial-front cases, including both restriction inclusions. If it passes, request NashWilliams next; leave the repaired gated obligation for its eligible Sound slot.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "OrbitBlockCoverage"
+      "SubFrontCharacterization"
     ],
     "next_active": "",
     "next_active_coarse": "",
     "next_mode": "global",
+    "next_worker_context_mode": "resume",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1794,
-        "end_line": 1808,
-        "reason": "The paper defines the initial and half-open orbit-block cases and proves the boundary inequalities used by the coverage argument."
+        "start_line": 1204,
+        "end_line": 1227,
+        "reason": "The paper's front-restriction proposition and its trivial/nontrivial proof cases ground the next Sound check."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines the block map using the initial segment below G(0) and the unique half-open intervals [G(n),G(n+1)). The current OrbitBlockCoverage proof formalizes that decomposition, including the least-index argument and uniqueness from strict orbit growth."
+      "basis_summary": "The cited paper passage gives the existential infinite-base characterization of sub-fronts and separates the empty-front case from the nontrivial restriction argument. The current SubFrontCharacterization proof follows that structure and explicitly proves the two restriction inclusions."
     },
-    "dismissed_tasks": [],
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding and OrbitUnbounded have passed; this transition requests OrbitBlockCoverage next. No worker repair, reset, structural change, or human input is warranted."
-    }
+      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage have passed; this transition advances the independent front chain to SubFrontCharacterization. No worker repair, reset, structural change, or human input is warranted."
+    },
+    "dismissed_tasks": []
   },
   "response": {
     "allow_new_obligations": true,
@@ -43,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Run a verifier-only Sound burst for OrbitBlockCoverage with no Tablet edits. The current proof uses OrbitEmbedding for the orbit map and monotonicity, OrbitPoint for the iterate interpretation, OrbitUnbounded for the successor witness, and OrbitBlock for the two inequalities; it separately handles the least-index cases and both possible strict index orders for uniqueness. After this result, continue with the repaired BlockSigmaIntertwines node in the orbit chain, while the SubFrontCharacterization request remains independent. Do not assign a worker or reset any current blocker in this transition.",
+    "comments": "Request a Sound verifier for SubFrontCharacterization only. Its current proof cites FrontRestriction, FrontRestrict, Front, FrontBase, and InitialSegment and handles both the trivial-front and nontrivial-front cases, including both restriction inclusions. If it passes, request NashWilliams next; leave the repaired gated obligation for its eligible Sound slot.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 61,
+    "cycle": 62,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -60,31 +60,31 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1808,
-        "reason": "The paper defines the initial and half-open orbit-block cases and proves the boundary inequalities used by the coverage argument.",
-        "start_line": 1794
+        "end_line": 1227,
+        "reason": "The paper's front-restriction proposition and its trivial/nontrivial proof cases ground the next Sound check.",
+        "start_line": 1204
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines the block map using the initial segment below G(0) and the unique half-open intervals [G(n),G(n+1)). The current OrbitBlockCoverage proof formalizes that decomposition, including the least-index argument and uniqueness from strict orbit growth.",
+      "basis_summary": "The cited paper passage gives the existential infinite-base characterization of sub-fronts and separates the empty-front case from the nontrivial restriction argument. The current SubFrontCharacterization proof follows that structure and explicitly proves the two restriction inclusions.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The latest Sound result approves OrbitUnbounded. The orbit chain now advances to OrbitBlockCoverage, whose repaired proof is fresh, requestable, and explicitly supplies existence and uniqueness of the orbit block decomposition. The still-gated active obligation has no failure verdict and is omitted from all blocker actions.",
-    "request_id": 252,
+    "reason": "OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage now have fresh Sound approvals. The next independent audit task is the current SubFrontCharacterization proof, which is requestable and precedes NashWilliams in the front chain. The still-gated obligation has no failure verdict and is omitted from this transition; no worker repair or reset is warranted.",
+    "request_id": 254,
     "request_sound_verifier_nodes": [
-      "OrbitBlockCoverage"
+      "SubFrontCharacterization"
     ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding and OrbitUnbounded have passed; this transition requests OrbitBlockCoverage next. No worker repair, reset, structural change, or human input is warranted.",
+      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage have passed; this transition advances the independent front chain to SubFrontCharacterization. No worker repair, reset, structural change, or human input is warranted.",
       "reviewer_lean_product": null
     },
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_252_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_254_decision.context.json"
 }
