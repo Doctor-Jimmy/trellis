@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The current Sound verifier rejects BlockSigmaIntertwines with concrete proof gaps, and the node is sound-repair-ready. Assign a focused NL proof repair; keep the Lean signature and imports unchanged and defer further Sound requests until this repaired support node is rechecked.",
-    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex. Preserve the theorem statement and the existing two-case block argument. Add an explicit citation to IncSeq when using strict increase/order-embedding facts. Prove the needed natural-number bound n+1 <= f(n+1) by induction from f being strictly increasing, rather than asserting it. Cite OrbitPoint and explicitly unfold the orbit recursion to justify G(n+1)=g(G(n)) and g(G(n+1))=G(n+2). Also prove by induction on a the iterate identity g^[a](g(l)) = g^[a+1](l), then use it with a=f(n+1)-(n+1). Retain the citations to OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq, and make the two block inequalities and exponent arithmetic line-by-line checkable. Do not edit support nodes, add helpers, or request Sound verification in this burst.",
+    "reason": "The StuckMathAudit confirms that BlockSigmaIntertwines is mathematically correct and that the current obstruction is confined to missing detail in its NL proof. No worker edit has occurred yet, so the existing Sound failure remains binding and should be assigned for the prescribed prose repair.",
+    "comments": "Edit only Tablet/BlockSigmaIntertwines.tex. Preserve the Lean signature, imports, and two-case argument. Cite IncSeq for strict increase. Prove by induction that m <= f(m) for every increasing embedding f, then specialize to m=n+1. Cite OrbitPoint and explicitly unfold the iterate successor rule to derive G(n+1)=g(G(n)) and G(n+2)=g(G(n+1)). Prove by induction on a that g^[a](g(l))=g^[a+1](l). In the block case set a=f(n+1)-(n+1), prove a+1=f(n+1)-n, and explicitly establish the inequalities placing g(l) in block n+1 before comparing the two BlockSigma values. Retain the OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq citations; add no helper and change no statement or support node. After this edit, request Sound verification in the audit's dependency order rather than now.",
     "task_blocker_ids": [
       "soundness:node:BlockSigmaIntertwines:sound-v2:d08e9886961ae21a993ae7a690038ac7691e2d2cc24d6923e2d051385a3c91a9"
     ],
@@ -22,32 +22,26 @@
       {
         "start_line": 1778,
         "end_line": 1783,
-        "reason": "The preceding manuscript lemma defines the orbit G by iterates and records the iterate/composition identity used by the block construction."
+        "reason": "The paper defines the orbit iterates and their successor composition identity used by the block proof."
       },
       {
         "start_line": 1794,
         "end_line": 1812,
-        "reason": "The Emap proof defines the two block cases and proves the monotonicity and boundary comparisons needed to move g(l) to the next block."
+        "reason": "The paper gives the two block cases and the boundary inequalities needed to locate the shifted point."
       },
       {
         "start_line": 1815,
         "end_line": 1833,
-        "reason": "The manuscript proves the intertwining identity by comparing the shifted block exponent with the iterate applied to g(l)."
+        "reason": "The paper performs the shifted exponent calculation establishing the intertwining identity."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines G(n)=g^n(k_g), proves the block map by its initial and half-open orbit blocks, and derives the intertwining equation by showing g(l) lies in the next block and applying the iterate identity. The worker guidance expands precisely the steps the Sound verifier found unsupported."
+      "basis_summary": "The cited passage defines G by iterates of g, defines the block map on the initial segment and half-open orbit blocks, and then proves the shifted block formula by moving g(l) into the next block and comparing exponents. The requested repair expands exactly those paper steps without changing the theorem interface."
     },
-    "dismissed_tasks": [
-      {
-        "id": "clear-statement-lane-surface",
-        "reason": "Completed: after the correspondence and substantiveness passes, the live blocker set now contains only Soundness obligations. The statement-lane surface is clear, so the audit can proceed to its Sound-closing task after current Sound repairs."
-      }
-    ],
+    "dismissed_tasks": [],
     "stuck_math_audit": {
-      "notes": "The audit statement-lane task is complete and dismissed. The current Sound rejection is concrete and local, not a structural failure: repair BlockSigmaIntertwines.tex with the missing IncSeq citation, natural-number bound proof, orbit recursion identities, and iterate induction. Keep the audit's pinned Sound package task open and do not request Sound while this known Fail is being repaired.",
-      "reviewer_lean_product": null
+      "notes": "The active audit plan remains valid. Its first task is the worker assignment above; its second task, fresh Sound certification of the repaired orbit and front chains, remains live and is not yet actionable because the current BlockSigmaIntertwines text is unchanged. The scratch probe passed, so no signature change, helper, reset, or human input is warranted."
     }
   },
   "response": {
@@ -59,19 +53,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex. Preserve the theorem statement and the existing two-case block argument. Add an explicit citation to IncSeq when using strict increase/order-embedding facts. Prove the needed natural-number bound n+1 <= f(n+1) by induction from f being strictly increasing, rather than asserting it. Cite OrbitPoint and explicitly unfold the orbit recursion to justify G(n+1)=g(G(n)) and g(G(n+1))=G(n+2). Also prove by induction on a the iterate identity g^[a](g(l)) = g^[a+1](l), then use it with a=f(n+1)-(n+1). Retain the citations to OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq, and make the two block inequalities and exponent arithmetic line-by-line checkable. Do not edit support nodes, add helpers, or request Sound verification in this burst.",
+    "comments": "Edit only Tablet/BlockSigmaIntertwines.tex. Preserve the Lean signature, imports, and two-case argument. Cite IncSeq for strict increase. Prove by induction that m <= f(m) for every increasing embedding f, then specialize to m=n+1. Cite OrbitPoint and explicitly unfold the iterate successor rule to derive G(n+1)=g(G(n)) and G(n+2)=g(G(n+1)). Prove by induction on a that g^[a](g(l))=g^[a+1](l). In the block case set a=f(n+1)-(n+1), prove a+1=f(n+1)-n, and explicitly establish the inequalities placing g(l) in block n+1 before comparing the two BlockSigma values. Retain the OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq citations; add no helper and change no statement or support node. After this edit, request Sound verification in the audit's dependency order rather than now.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 56,
+    "cycle": 57,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "clear-statement-lane-surface",
-        "reason": "Completed: after the correspondence and substantiveness passes, the live blocker set now contains only Soundness obligations. The statement-lane surface is clear, so the audit can proceed to its Sound-closing task after current Sound repairs."
-      }
-    ],
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -82,34 +71,34 @@
     "paper_focus_ranges": [
       {
         "end_line": 1783,
-        "reason": "The preceding manuscript lemma defines the orbit G by iterates and records the iterate/composition identity used by the block construction.",
+        "reason": "The paper defines the orbit iterates and their successor composition identity used by the block proof.",
         "start_line": 1778
       },
       {
         "end_line": 1812,
-        "reason": "The Emap proof defines the two block cases and proves the monotonicity and boundary comparisons needed to move g(l) to the next block.",
+        "reason": "The paper gives the two block cases and the boundary inequalities needed to locate the shifted point.",
         "start_line": 1794
       },
       {
         "end_line": 1833,
-        "reason": "The manuscript proves the intertwining identity by comparing the shifted block exponent with the iterate applied to g(l).",
+        "reason": "The paper performs the shifted exponent calculation establishing the intertwining identity.",
         "start_line": 1815
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines G(n)=g^n(k_g), proves the block map by its initial and half-open orbit blocks, and derives the intertwining equation by showing g(l) lies in the next block and applying the iterate identity. The worker guidance expands precisely the steps the Sound verifier found unsupported.",
+      "basis_summary": "The cited passage defines G by iterates of g, defines the block map on the initial segment and half-open orbit blocks, and then proves the shifted block formula by moving g(l) into the next block and comparing exponents. The requested repair expands exactly those paper steps without changing the theorem interface.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The current Sound verifier rejects BlockSigmaIntertwines with concrete proof gaps, and the node is sound-repair-ready. Assign a focused NL proof repair; keep the Lean signature and imports unchanged and defer further Sound requests until this repaired support node is rechecked.",
-    "request_id": 241,
+    "reason": "The StuckMathAudit confirms that BlockSigmaIntertwines is mathematically correct and that the current obstruction is confined to missing detail in its NL proof. No worker edit has occurred yet, so the existing Sound failure remains binding and should be assigned for the prescribed prose repair.",
+    "request_id": 243,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit statement-lane task is complete and dismissed. The current Sound rejection is concrete and local, not a structural failure: repair BlockSigmaIntertwines.tex with the missing IncSeq citation, natural-number bound proof, orbit recursion identities, and iterate induction. Keep the audit's pinned Sound package task open and do not request Sound while this known Fail is being repaired.",
+      "notes": "The active audit plan remains valid. Its first task is the worker assignment above; its second task, fresh Sound certification of the repaired orbit and front chains, remains live and is not yet actionable because the current BlockSigmaIntertwines text is unchanged. The scratch probe passed, so no signature change, helper, reset, or human input is warranted.",
       "reviewer_lean_product": null
     },
     "task_blockers": [
@@ -125,5 +114,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_241_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_243_decision.context.json"
 }
