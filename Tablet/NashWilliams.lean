@@ -4,6 +4,7 @@ import Tablet.FrontRayClosure
 import Tablet.FrontRestriction
 import Tablet.FrontTreeWellFounded
 import Tablet.BooleanInfinitePigeonhole
+import Tablet.SubFrontCharacterization
 
 -- [TABLET NODE: NashWilliams]
 theorem NashWilliams (F : Set (Finset Nat)) (X : Set Nat)

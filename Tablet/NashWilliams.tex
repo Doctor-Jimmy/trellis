@@ -4,32 +4,155 @@ $F'\subseteq F$ such that either $F'\subseteq S$ or
 $F'\cap S=\emptyset$.
 \end{theorem}
 \begin{proof}
-We argue by accessibility induction on the prefix tree from
-\noderef{FrontTreeWellFounded}; equivalently, assume the assertion has been
-proved for every front whose prefix tree has smaller rank.  The trivial
-front is immediate: its only subfamilies are the empty family and the whole
-singleton, and the whole singleton is a front.
+We prove the assertion by transfinite induction on the ordinal rank of the
+prefix tree.  This induction is legitimate because the relation in
+\noderef{FrontTreeWellFounded} is well-founded, and its orientation is
+important: a relation step from a node $v$ to a node $u$ means that $u$ is a
+proper extension of $v$, since it is
+\(\mathsf{ProperInitialSegment}(v,u)\) in the notation of
+\noderef{ProperInitialSegment}.  Thus the induction hypothesis is available
+for every strict successor subtree.
 
-Let $F$ be nontrivial on $X$.  For each $n\in X$, define
-$S_n=\{s\in F_n\mid\{n\}\cup s\in S\}$.  By the ray closure lemma
-\noderef{FrontRayClosure}, $F_n$ is a front on $X/n$; its prefix tree is a
-proper successor subtree of the tree of $F$, so the induction hypothesis
-applies to $F_n$ and $S_n$.  Choose an infinite tail $X_n\subseteq X/n$
-on which either $F_n\mathbin{|}X_n\subseteq S_n$ or
-$(F_n\mathbin{|}X_n)\cap S_n=\emptyset$.
+Here is the precise rank comparison used below.  If $F$ is nontrivial on
+$X$ and $n\in X$, the map
+\[
+ \phi_n(s)=\{n\}\cup s
+\]
+identifies the prefix tree of the ray $F_n$ with
+\[
+ \{u\in\mathsf{PrefixTree}(F)\mid \{n\}\segm u\},
+\]
+the successor subtree rooted at the strict successor $\{n\}$ of the empty
+root.  Indeed, if
+$s\in\mathsf{PrefixTree}(F_n)$, then by the definitions of
+\noderef{PrefixTree} and \noderef{Ray}, $s$ is an initial segment of a
+member of $F_n$, and inserting the common least element $n$ makes
+$\phi_n(s)$ an initial segment of the corresponding member of $F$.
+Conversely, if $u$ is in the displayed successor subtree, then
+\noderef{PrefixTree} gives $t\in F$ with $u\segm t$; the initial-segment
+description in \noderef{InitialSegment} shows that both $u$ and $t$ begin
+with $n$, and deleting that common first element gives a prefix of the ray
+member $t\setminus\{n\}$ in \noderef{Ray}.  This proves the claimed
+identification and preserves proper extension.  Consequently the rank of
+$F_n$ is strictly smaller than the rank of $F$; explicitly, the paper's
+ray/rank formula is
+\[
+ \rk F=\sup\{\rk(F_n)+1\mid n\in X\}.
+\]
+Thus the induction hypothesis applies to every $F_n$.
 
-Perform this choice successively.  Starting with $X_{-1}=X$, put
-$n_k=\min X_{k-1}$ and use the induction hypothesis on the ray at $n_k$
-and the tail after $n_k$ to choose an infinite $X_k\subseteq X_{k-1}/n_k$
-with one of the two alternatives above.  The resulting $n_k$ are strictly
-increasing.  Apply \noderef{BooleanInfinitePigeonhole} to the binary record
-of which alternative was chosen.  There is an infinite set of indices $I$
-on which the same alternative holds.  Let $Y=\{n_k\mid k\in I\}$.
+The trivial case is immediate.  If $F=\{\emptyset\}$, then
+$S\subseteq F$ is either empty or all of $F$.  Take $F'=F$ and $Y=X$;
+the front assertion is the hypothesis from \noderef{Front}, and one of
+$F'\subseteq S$ or $F'\cap S=\emptyset$ holds.
 
-By \noderef{FrontRestriction}, $F\mathbin{|}Y$ is a front and it is a
-subfamily of $F$.  If the first alternative holds on $I$, then for any
-$s\in F\mathbin{|}Y$, its least element is some $n_k$ with $k\in I$ and
-$s\setminus\{n_k\}\in F_{n_k}\mathbin{|}X_k\subseteq S_{n_k}$; hence
-$s\in S$.  If the second alternative holds, the same decomposition gives
-$s\notin S$.  Thus $F\mathbin{|}Y$ is the required homogeneous sub-front.
+Now assume $F\ne\{\emptyset\}$.  By the base disjunction in
+\noderef{Front}, together with the definition of the base in
+\noderef{FrontBase}, $\mathsf{FrontBase}(F)=X$.  Also $\emptyset\notin F$:
+if it were in $F$, then \(\mathsf{InitialSegment}(\emptyset,t)\) would
+hold for every $t\in F$ (use the equality case for $t=\emptyset$ and the
+least element of $t$ otherwise), so prefix-freeness from
+\noderef{Front} would force every member of $F$ to equal $\emptyset$,
+contrary to nontriviality.  Thus every member of $F$ is nonempty and has a
+least element.
+
+For each $n\in X$, set
+\[
+ S_n=\{s\in F_n\mid \{n\}\cup s\in S\}.
+\]
+By \noderef{FrontRayClosure}, $F_n$ is a front on
+$\mathsf{TailSet}(X,n)$, and the preceding tree identification places its
+rank below that of $F$.  Apply the induction hypothesis to this front and
+$S_n\subseteq F_n$.  It gives a front $H_n$ on some infinite base, with
+$H_n\subseteq F_n$, which is either contained in $S_n$ or disjoint from
+$S_n$.  The forward direction of the sub-front characterization
+\noderef{SubFrontCharacterization} now gives an infinite set
+$Z_n\subseteq\mathsf{TailSet}(X,n)$ such that
+\[
+ H_n=F_n\mathbin{|}Z_n.
+\]
+The restriction lemma \noderef{FrontRestriction}, applied to $F_n$ and
+$Z_n$, confirms directly that this restriction is a front.  This is the
+step that permits the induction hypothesis's
+arbitrary homogeneous sub-front to be replaced by the particular restriction
+needed for the diagonal construction.
+
+We carry out these choices along one increasing sequence, keeping all
+infinite-tail facts explicit.  Put $X_{-1}=X$.  Inductively suppose that
+$X_{k-1}$ is infinite and $X_{k-1}\subseteq X$.  A nonempty infinite set of
+naturals has a least element, so define
+\[
+ n_k=\min X_{k-1}.
+\]
+Then $n_k\in X_{k-1}\subseteq X$.  The set
+\[
+ X_{k-1}/n_k=\mathsf{TailSet}(X_{k-1},n_k)
+\]
+where $\mathsf{TailSet}$ is the tail operation of \noderef{TailSet}.  This
+set is infinite: its complement in $X_{k-1}$ is contained in the finite set
+$\{0,1,\ldots,n_k\}$.  Apply the preceding ray construction at $n_k$,
+using the induction hypothesis on $F_{n_k}$, and use
+\noderef{SubFrontCharacterization} to choose an infinite set
+\[
+ X_k\subseteq X_{k-1}/n_k
+\]
+for which either
+\[
+ F_{n_k}\mathbin{|}X_k\subseteq S_{n_k}
+ \quad\text{or}\quad
+ (F_{n_k}\mathbin{|}X_k)\cap S_{n_k}=\emptyset.
+\]
+This completes the induction step: $X_k$ is infinite and
+$X_k\subseteq X_{k-1}\subseteq X$.  Moreover every element of $X_k$ is
+strictly larger than $n_k$, so $n_{k+1}>n_k$; hence $(n_k)_{k\in\mathbb N}$
+is strictly increasing.
+
+Encode the first alternative by $b(k)=\mathsf{true}$ and the second by
+$b(k)=\mathsf{false}$.  By
+\noderef{BooleanInfinitePigeonhole}, for some $c\in\{\mathsf{true},
+\mathsf{false}\}$ the index set
+\[
+ I=\{k\in\mathbb N\mid b(k)=c\}
+\]
+is infinite.  Define
+\[
+ Y=\{n_k\mid k\in I\}.
+\]
+Every $n_k$ lies in $X$, so $Y\subseteq X$.  The set $Y$ is infinite as
+well: strict increase makes $k\mapsto n_k$ injective, and if $Y$ were
+finite then its preimage $I$ under this injection would be finite, contrary
+to the choice of $I$.
+
+It remains to verify the front and the homogeneous conclusion.  By
+\noderef{FrontRestriction}, applied to the front $F$ and the infinite
+subset $Y\subseteq X$, the family
+\[
+ F'=F\mathbin{|}Y
+   =\mathsf{FrontRestrict}(F,Y)
+\]
+is a front on $Y$; the equality is the definition in
+\noderef{FrontRestrict}, and $F'\subseteq F$ is immediate.
+
+Take $s\in F'$.  Since $s\in F$ and $\emptyset\notin F$, let
+$m=\min s$.  Because $m\in\mathsf{FrontBase}(F)=X$ and $s\subseteq Y$,
+$m\in Y$, so $m=n_k$ for some $k\in I$.  Strict increase makes this $k$
+unique.  Every other element of $s$ is a member $n_j$ of $Y$ larger than
+$n_k$, hence $j>k$ and, by the nested construction of the $X_i$, belongs
+to $X_k$.  Therefore
+\[
+ t=s\setminus\{n_k\}\in F_{n_k}\mathbin{|}X_k:
+\]
+the ray membership follows from the definition in \noderef{Ray}, because
+$s\in F$ and $n_k$ is its least element, and the restriction membership
+follows from $t\subseteq X_k$.
+
+If $c=\mathsf{true}$, the first alternative at every $k\in I$ gives
+$t\in S_{n_k}$, so the definition of $S_{n_k}$ gives
+\[
+ s=\{n_k\}\cup t\in S.
+\]
+Thus $F'\subseteq S$.  If $c=\mathsf{false}$, the second alternative
+gives $t\notin S_{n_k}$, and the same definition gives $s\notin S$.
+Thus $F'\cap S=\emptyset$.  In either case $F'$ and $Y$ satisfy the
+claimed conclusion.
 \end{proof}
