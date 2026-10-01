@@ -79,6 +79,7 @@
 | HerCtblPower | definition | - | closed |
 | HerCtblPowerIsPreorder | proof | The hereditary countable carrier is a preorder | closed |
 | HerCtblRel | definition | - | closed |
+| HerCtblWqoIffWellFounded | proof | Hereditary WQO and strict well-foundedness | closed |
 | HereditarilyCountable | definition | - | closed |
 | HereditarilyCountableAtom | proof | Atoms are hereditarily countable | closed |
 | HereditarilyCountablePresentationInvariant | proof | Hereditary countability is presentation invariant | closed |
@@ -184,4 +185,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 84/174 closed
+**Summary:** 85/175 closed

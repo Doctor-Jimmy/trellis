@@ -71,6 +71,7 @@
 | HerCtblPower | definition | definition | closed | - | - | HereditarilyCountable |
 | HerCtblPowerIsPreorder | lemma | proof | closed | - | The hereditary countable carrier is a preorder | HerCtblRel, PowerQIsPreorder |
 | HerCtblRel | definition | definition | closed | - | - | HerCtblPower, PowerRel |
+| HerCtblWqoIffWellFounded | helper | proof | closed | - | Hereditary WQO and strict well-foundedness | HerCtblNodeClosure, HerCtblPowerIsPreorder, HerCtblRel, PowerRelNodeNode, PowerRelRefl |
 | HereditarilyCountable | definition | definition | closed | - | - | HerCtblCodeErase, PowerPresentationEq |
 | HereditarilyCountableAtom | lemma | proof | closed | - | Atoms are hereditarily countable | HereditarilyCountable, PowerPresentationEqEquivalence |
 | HereditarilyCountablePresentationInvariant | lemma | proof | closed | - | Hereditary countability is presentation invariant | HereditarilyCountable, PowerPresentationEqEquivalence |
@@ -178,4 +179,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 174 nodes | **Closed:** 84 | **Open:** 90
+**Total:** 175 nodes | **Closed:** 85 | **Open:** 90
