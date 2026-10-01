@@ -1,16 +1,16 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The audit task is complete: FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, OrbitBlockCoverage, and BlockSigmaIntertwines all have current Sound approvals. I am closing the stale audit plan and resuming the ordinary bottom-up Sound queue with FrontTreeImmediateExtensions, whose direct support is already sound-approved or definitional.",
-    "comments": "Run a verifier-only Sound burst for FrontTreeImmediateExtensions. Preserve the current proof and check its explicit uses of PrefixTree, Front, ProperInitialSegment, and InitialSegment to obtain a one-point extension and the countability conclusion. No worker repair or blocker reset is warranted.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "FrontTreeImmediateExtensions"
+    "reason": "Soundness rejected FrontTreeImmediateExtensions for a concrete invalid inference and an omitted nonemptiness obligation. The node is sound-repair-ready, so the correct next step is a narrowly scoped NL-proof repair before requesting Sound again.",
+    "comments": "Repair only `Tablet/FrontTreeImmediateExtensions.tex`; preserve its Lean statement, imports, and theorem decomposition. After `PrefixTree` supplies t in F with s an initial segment of t, do not invoke prefix-freeness with s not in F. Instead prove s != t directly from s notin F and t in F, then use the InitialSegment facts to establish that s is a proper initial segment of t. Explicitly prove t\\s is nonempty (otherwise the initial-segment inclusions force s=t) before invoking well-ordering of Nat to choose its least element. Retain the existing PrefixTree and InitialSegment steps and the countability conclusion; do not add helpers or change support structure.",
+    "task_blocker_ids": [
+      "soundness:node:FrontTreeImmediateExtensions:sound-v2:a1d9d27457fe5f9445577b8215fd419b9123d0447629d70da08a2202c16d18dc"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "FrontTreeImmediateExtensions",
     "next_active_coarse": "",
-    "next_mode": "global",
+    "next_mode": "targeted",
     "next_worker_context_mode": "resume",
     "reset": "none",
     "reset_node": "",
@@ -22,23 +22,13 @@
       {
         "start_line": 1160,
         "end_line": 1168,
-        "reason": "The paper's prefix-tree/ray identification and strict rank decrease ground the next foundational front-tree Sound check."
+        "reason": "The paper's front-tree/ray passage supplies the relevant prefix-tree context for this local repair."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage identifies ray trees as successor subtrees of the front prefix tree and uses their strict rank decrease. The current FrontTreeImmediateExtensions proof establishes the corresponding local tree-extension fact from the front and prefix-tree definitions, with all cross-node dependencies explicitly cited."
-    },
-    "stuck_math_audit": {
-      "notes": "The audit plan's sole live task is complete: every named Sound-chain node now has a current Sound approval. The plan is dismissed, and ordinary bottom-up Sound verification resumes at FrontTreeImmediateExtensions. No worker repair, reset, structural change, or human input is warranted."
-    },
-    "dismiss_audit_plan": true,
-    "dismissed_tasks": [
-      {
-        "id": "close-pinned-soundness-records",
-        "reason": "All listed orbit and front-chain nodes now have current Sound approvals, including the repaired BlockSigmaIntertwines node; the certification task is complete."
-      }
-    ]
+      "basis_summary": "The cited passage identifies the front prefix tree and its successor subtrees, the context in which the node's one-point extension lemma is used. The requested repair makes the local strict-extension argument valid from the current PrefixTree and InitialSegment support."
+    }
   },
   "response": {
     "allow_new_obligations": true,
@@ -49,53 +39,53 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Run a verifier-only Sound burst for FrontTreeImmediateExtensions. Preserve the current proof and check its explicit uses of PrefixTree, Front, ProperInitialSegment, and InitialSegment to obtain a one-point extension and the countability conclusion. No worker repair or blocker reset is warranted.",
+    "comments": "Repair only `Tablet/FrontTreeImmediateExtensions.tex`; preserve its Lean statement, imports, and theorem decomposition. After `PrefixTree` supplies t in F with s an initial segment of t, do not invoke prefix-freeness with s not in F. Instead prove s != t directly from s notin F and t in F, then use the InitialSegment facts to establish that s is a proper initial segment of t. Explicitly prove t\\s is nonempty (otherwise the initial-segment inclusions force s=t) before invoking well-ordering of Nat to choose its least element. Retain the existing PrefixTree and InitialSegment steps and the countability conclusion; do not add helpers or change support structure.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 65,
+    "cycle": 66,
     "decision": "Continue",
     "difficulty_updates": {},
-    "dismiss_audit_plan": true,
-    "dismissed_tasks": [
-      {
-        "id": "close-pinned-soundness-records",
-        "reason": "All listed orbit and front-chain nodes now have current Sound approvals, including the repaired BlockSigmaIntertwines node; the certification task is complete."
-      }
-    ],
+    "dismiss_audit_plan": false,
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "FrontTreeImmediateExtensions",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1168,
-        "reason": "The paper's prefix-tree/ray identification and strict rank decrease ground the next foundational front-tree Sound check.",
+        "reason": "The paper's front-tree/ray passage supplies the relevant prefix-tree context for this local repair.",
         "start_line": 1160
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage identifies ray trees as successor subtrees of the front prefix tree and uses their strict rank decrease. The current FrontTreeImmediateExtensions proof establishes the corresponding local tree-extension fact from the front and prefix-tree definitions, with all cross-node dependencies explicitly cited.",
+      "basis_summary": "The cited passage identifies the front prefix tree and its successor subtrees, the context in which the node's one-point extension lemma is used. The requested repair makes the local strict-extension argument valid from the current PrefixTree and InitialSegment support.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The audit task is complete: FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, OrbitBlockCoverage, and BlockSigmaIntertwines all have current Sound approvals. I am closing the stale audit plan and resuming the ordinary bottom-up Sound queue with FrontTreeImmediateExtensions, whose direct support is already sound-approved or definitional.",
-    "request_id": 260,
-    "request_sound_verifier_nodes": [
-      "FrontTreeImmediateExtensions"
-    ],
+    "reason": "Soundness rejected FrontTreeImmediateExtensions for a concrete invalid inference and an omitted nonemptiness obligation. The node is sound-repair-ready, so the correct next step is a narrowly scoped NL-proof repair before requesting Sound again.",
+    "request_id": 262,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
-    "stuck_math_audit": {
-      "notes": "The audit plan's sole live task is complete: every named Sound-chain node now has a current Sound approval. The plan is dismissed, and ordinary bottom-up Sound verification resumes at FrontTreeImmediateExtensions. No worker repair, reset, structural change, or human input is warranted.",
-      "reviewer_lean_product": null
-    },
-    "task_blockers": [],
+    "stuck_math_audit": null,
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:a1d9d27457fe5f9445577b8215fd419b9123d0447629d70da08a2202c16d18dc",
+        "kind": "Soundness",
+        "object": {
+          "node": "FrontTreeImmediateExtensions",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_260_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_262_decision.context.json"
 }
