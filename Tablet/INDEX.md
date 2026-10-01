@@ -27,6 +27,7 @@
 | BlockSigmaIntertwines | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, RightComp, SuccSeq |
 | BooleanInfinitePigeonhole | lemma | proof | open | - | Infinite pigeonhole | Preamble |
 | Bqo | definition | definition | closed | - | - | BadMultiSequence, LocallyConstant |
+| BqoHerCtblWellF | theorem | proof | closed | - | - | BqoHerCtblWqo, HerCtblWqoIffWellFounded |
 | BqoHerCtblWqo | theorem | proof | closed | - | - | BadMultiToNontrivialSuper, BqoImpliesWqo, ConverseGame, PowerQPresBqo, TildeFHerCtbl, TildeFSingleton |
 | BqoIffGeneralShift | corollary | proof | open | - | - | BadMultiSequence, Bqo, GBetterRel, GBetterRelIff, IncSeqId, RightComp, ShiftMap, SuccSeq |
 | BqoImpliesWqo | lemma | proof | open | - | Better quasi-order implies well quasi-order | Bqo |
@@ -179,4 +180,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 175 nodes | **Closed:** 85 | **Open:** 90
+**Total:** 176 nodes | **Closed:** 86 | **Open:** 90

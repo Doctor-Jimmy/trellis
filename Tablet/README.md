@@ -35,6 +35,7 @@
 | BlockSigmaIntertwines | proof | - | open |
 | BooleanInfinitePigeonhole | proof | Infinite pigeonhole | open |
 | Bqo | definition | - | closed |
+| BqoHerCtblWellF | proof | - | closed |
 | BqoHerCtblWqo | proof | - | closed |
 | BqoIffGeneralShift | proof | - | open |
 | BqoImpliesWqo | proof | Better quasi-order implies well quasi-order | open |
@@ -185,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 85/175 closed
+**Summary:** 86/176 closed

@@ -1,45 +1,51 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The audit confirms that both support equivalences are complete and that the only uncovered configured target is thm BqoHerCtblWellF. Continue by adding its single paper-faithful composition node.",
-    "comments": "Add exactly one proof-bearing node BqoHerCtblWellF, importing and attaching directly to BqoHerCtblWqo and HerCtblWqoIffWellFounded. Use the exact universe-polymorphic statement Bqo r \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a), under [IsPreorder Q r], and make it the sole node claiming thm BqoHerCtblWellF. Close the Lean proof by transitivity of the two accepted equivalences. In TeX, match the paper theorem that a quasi-order is BQO iff its hereditary countable nonempty hierarchy is well-founded, spell out the strict-part orientation, cite both support nodes, and give a complete non-SKETCH proof of both directions. Do not duplicate the ULift tail construction, add a helper, or add a wrapper target.",
+    "reason": "The worker's target addition was valid, but it did not repair any of the unchanged substantive blockers. Route the configured SuperNW target node for a focused substantive repair and leave the other substantive failures live for later transitions.",
+    "comments": "Repair the natural-language package for SuperNW while preserving the exact paper target: every finite-valued super-sequence on a front has a constant sub-super-sequence. The current statement is the paper's corollary, but its package is essentially a one-node restatement of the equivalent NashWilliams theorem. Address Substantiveness Clause 2 by making the finite-color induction/case decomposition genuinely meaningful and paper-supported, with explicit handling of the selected color and its complement and with support statements cited precisely. Do not solve this by merely expanding prose or by wrapping NashWilliams in a trivial theorem. Preserve the exact Lean/TeX correspondence, the one-node target claim corollary:SuperNW, valid FILESPEC structure, and a complete non-SKETCH proof. Do not modify unrelated substantive blockers in this burst.",
     "task_blocker_ids": [
-      "paperfaithfulness:target:thm BqoHerCtblWellF:"
+      "substantiveness:node:SuperNW:{\"own_tex\":\"d1672289b768830dbb9584a348f1f6beb66a6a6347be2d74a2352cb3935b0b37\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
     ],
     "reset_blocker_ids": [],
-    "next_active": "",
-    "next_mode": "global",
+    "next_active": "SuperNW",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
+    "dismiss_audit_plan": true,
+    "dismissed_tasks": [
+      {
+        "id": "hereditarily-countable-targets",
+        "reason": "The worker added BqoHerCtblWellF as the sole covering node with the exact target statement and complete proof; the paper-faithfulness verifier approved the target package, so the coverage plan is complete."
+      }
+    ],
     "stuck_math_audit": {
-      "notes": "The audit's sole remaining task is current and unchanged: add the final BqoHerCtblWellF target node by composing the already accepted BqoHerCtblWqo and HerCtblWqoIffWellFounded statements. Keep the strict-part relation orientation explicit and do not reopen either support node or reproduce the tail descent.",
+      "notes": "The coverage audit plan is complete and is dismissed. The remaining work is independent per-node substantiveness cleanup, beginning with the configured SuperNW target. Its statement is paper-faithful, but the current node package must expose a meaningful finite-color decomposition rather than functioning as a trivial restatement of NashWilliams.",
       "reviewer_lean_product": {
-        "target_statement": "BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)",
-        "support_edges": [
-          "BqoHerCtblWqo r : Bqo r <-> WellQuasiOrdered (HerCtblRel r)",
-          "HerCtblWqoIffWellFounded r : WellQuasiOrdered (HerCtblRel r) <-> WellFounded of the displayed strict part"
-        ],
-        "constraints": [
-          "Claim only thm BqoHerCtblWellF in this burst.",
-          "Use one covering node and no duplicate tail construction.",
-          "Provide complete non-SKETCH TeX with explicit citations to both support nodes."
+        "node": "SuperNW",
+        "paper_target": "corollary:SuperNW",
+        "paper_locus": "paper/paper.tex lines 1222-1250",
+        "repair_constraints": [
+          "Keep the exact finite-valued super-sequence conclusion and current Lean/TeX correspondence.",
+          "Make the finite-color induction and its selected-color/complement cases explicit enough to be a substantive decomposition.",
+          "Do not add a wrapper theorem or merely cite NashWilliams for the entire conclusion.",
+          "Use only real support statements and complete non-SKETCH TeX proof content."
         ]
       }
     },
     "paper_focus_ranges": [
       {
-        "start_line": 1589,
-        "end_line": 1600,
-        "reason": "The paper's hereditary WQO-to-well-foundedness transition and exact final target theorem."
+        "start_line": 1222,
+        "end_line": 1250,
+        "reason": "The paper states Nash-Williams and immediately gives the finite-valued constant sub-super-sequence corollary."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread lines 1589-1600. They state that the hereditary countable carrier is WQO iff well-founded, then state the target that a quasi-order is BQO iff its hereditary countable hierarchy is well-founded. The two accepted Tablet equivalences are the direct decomposition of this passage."
+      "basis_summary": "I directly reread lines 1222-1250. The paper presents Nash-Williams as the finite-partition theorem and then states SuperNW as an equivalent finite-set-valued corollary, followed by the warning that the claim fails for infinite codomains. The repair must preserve that target while making its tablet decomposition substantively meaningful."
     }
   },
   "response": {
@@ -51,67 +57,71 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Add exactly one proof-bearing node BqoHerCtblWellF, importing and attaching directly to BqoHerCtblWqo and HerCtblWqoIffWellFounded. Use the exact universe-polymorphic statement Bqo r \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a), under [IsPreorder Q r], and make it the sole node claiming thm BqoHerCtblWellF. Close the Lean proof by transitivity of the two accepted equivalences. In TeX, match the paper theorem that a quasi-order is BQO iff its hereditary countable nonempty hierarchy is well-founded, spell out the strict-part orientation, cite both support nodes, and give a complete non-SKETCH proof of both directions. Do not duplicate the ULift tail construction, add a helper, or add a wrapper target.",
+    "comments": "Repair the natural-language package for SuperNW while preserving the exact paper target: every finite-valued super-sequence on a front has a constant sub-super-sequence. The current statement is the paper's corollary, but its package is essentially a one-node restatement of the equivalent NashWilliams theorem. Address Substantiveness Clause 2 by making the finite-color induction/case decomposition genuinely meaningful and paper-supported, with explicit handling of the selected color and its complement and with support statements cited precisely. Do not solve this by merely expanding prose or by wrapping NashWilliams in a trivial theorem. Preserve the exact Lean/TeX correspondence, the one-node target claim corollary:SuperNW, valid FILESPEC structure, and a complete non-SKETCH proof. Do not modify unrelated substantive blockers in this burst.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 30,
+    "cycle": 31,
     "decision": "Continue",
     "difficulty_updates": {},
-    "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismiss_audit_plan": true,
+    "dismissed_tasks": [
+      {
+        "id": "hereditarily-countable-targets",
+        "reason": "The worker added BqoHerCtblWellF as the sole covering node with the exact target statement and complete proof; the paper-faithfulness verifier approved the target package, so the coverage plan is complete."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "SuperNW",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1600,
-        "reason": "The paper's hereditary WQO-to-well-foundedness transition and exact final target theorem.",
-        "start_line": 1589
+        "end_line": 1250,
+        "reason": "The paper states Nash-Williams and immediately gives the finite-valued constant sub-super-sequence corollary.",
+        "start_line": 1222
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread lines 1589-1600. They state that the hereditary countable carrier is WQO iff well-founded, then state the target that a quasi-order is BQO iff its hereditary countable hierarchy is well-founded. The two accepted Tablet equivalences are the direct decomposition of this passage.",
+      "basis_summary": "I directly reread lines 1222-1250. The paper presents Nash-Williams as the finite-partition theorem and then states SuperNW as an equivalent finite-set-valued corollary, followed by the warning that the claim fails for infinite codomains. The repair must preserve that target while making its tablet decomposition substantively meaningful.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The audit confirms that both support equivalences are complete and that the only uncovered configured target is thm BqoHerCtblWellF. Continue by adding its single paper-faithful composition node.",
-    "request_id": 155,
+    "reason": "The worker's target addition was valid, but it did not repair any of the unchanged substantive blockers. Route the configured SuperNW target node for a focused substantive repair and leave the other substantive failures live for later transitions.",
+    "request_id": 160,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit's sole remaining task is current and unchanged: add the final BqoHerCtblWellF target node by composing the already accepted BqoHerCtblWqo and HerCtblWqoIffWellFounded statements. Keep the strict-part relation orientation explicit and do not reopen either support node or reproduce the tail descent.",
+      "notes": "The coverage audit plan is complete and is dismissed. The remaining work is independent per-node substantiveness cleanup, beginning with the configured SuperNW target. Its statement is paper-faithful, but the current node package must expose a meaningful finite-color decomposition rather than functioning as a trivial restatement of NashWilliams.",
       "reviewer_lean_product": {
-        "constraints": [
-          "Claim only thm BqoHerCtblWellF in this burst.",
-          "Use one covering node and no duplicate tail construction.",
-          "Provide complete non-SKETCH TeX with explicit citations to both support nodes."
-        ],
-        "support_edges": [
-          "BqoHerCtblWqo r : Bqo r <-> WellQuasiOrdered (HerCtblRel r)",
-          "HerCtblWqoIffWellFounded r : WellQuasiOrdered (HerCtblRel r) <-> WellFounded of the displayed strict part"
-        ],
-        "target_statement": "BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)"
+        "node": "SuperNW",
+        "paper_locus": "paper/paper.tex lines 1222-1250",
+        "paper_target": "corollary:SuperNW",
+        "repair_constraints": [
+          "Keep the exact finite-valued super-sequence conclusion and current Lean/TeX correspondence.",
+          "Make the finite-color induction and its selected-color/complement cases explicit enough to be a substantive decomposition.",
+          "Do not add a wrapper theorem or merely cite NashWilliams for the entire conclusion.",
+          "Use only real support statements and complete non-SKETCH TeX proof content."
+        ]
       }
     },
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "",
-        "kind": "PaperFaithfulness",
+        "fingerprint": "{\"own_tex\":\"d1672289b768830dbb9584a348f1f6beb66a6a6347be2d74a2352cb3935b0b37\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
         "object": {
-          "otype": "target",
-          "target": "thm BqoHerCtblWellF"
+          "node": "SuperNW",
+          "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_155_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_160_decision.context.json"
 }
