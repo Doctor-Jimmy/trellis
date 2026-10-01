@@ -1,41 +1,36 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Sound verification rejected CardinalityFrontIsFront with concrete gaps in the reverse base inclusion, proper-prefix density witnesses, and the strict-cardinality prefix-free argument. Assign that repair before returning to TripleHomogeneous.",
-    "comments": "Repair only Tablet/CardinalityFrontIsFront.tex, preserving its Lean statement and support structure; add only imports for genuine existing dependencies if needed, and add no helper or theorem. Cite Front, InfiniteSetEnumeration, ProperPrefixSet, and InitialSegment at their uses. Treat k=0 separately: show CardinalityFront(0,X) is exactly {emptyset}, and for density give an explicit witness from the first element of the increasing enumeration. For k>0, prove FrontBase equals X in both directions: members give the easy inclusion, while for arbitrary x in X use infinitude of X to choose k-1 distinct additional elements and form a k-set containing x. For density, enumerate an arbitrary infinite Y subset X, verify membership and cardinality of the first k values, and use y(k) as the next element to prove the first k values are ProperPrefixSet of Y (with the explicit witness). For prefix-freeness, unpack InitialSegment: a strict initial segment has a witness n in the larger finite set and omits n, so it has strictly smaller cardinality, contradicting equal cardinalities. Remove the current summary assertions and make every step line-by-line checkable from the cited nodes. Do not edit TripleHomogeneous yet.",
-    "task_blocker_ids": [
-      "soundness:node:CardinalityFrontIsFront:sound-v2:1465341f591ef2fdeb690e97dc3270350e1dc78496b32a9829cd8797a77ae778"
-    ],
+    "reason": "CardinalityFrontIsFront now has fresh Sound approval, and NashWilliams is already Sound-approved. TripleHomogeneous is the held target and remains FreshUnknown, so its Sound proof should be verified now that its direct support is certified.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound results approve CardinalityFrontIsFront and NashWilliams, and TripleHomogeneous imports CardinalityFrontIsFront directly. Request one real Sound verifier for TripleHomogeneous only. It should check the explicit construction of the front of three-element subsets, the coloring subset and Nash-Williams dichotomy, the argument that every three-element subset of the resulting base lies in the homogeneous sub-front via a branch with that prescribed initial segment, and the conclusion that the base remains contained in X. All cross-node uses must remain supported by the cited noderefs.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "CardinalityFrontIsFront",
-    "next_mode": "targeted",
+    "request_sound_verifier_node_ids": [
+      "TripleHomogeneous"
+    ],
+    "next_active": "",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
+      {
+        "start_line": 985,
+        "end_line": 994,
+        "reason": "The paper's homogeneous triple-coloring step and its use in the combinatorial route."
+      },
       {
         "start_line": 1002,
         "end_line": 1004,
-        "reason": "The paper's definition of finite subsets of fixed cardinality and increasing enumeration convention."
-      },
-      {
-        "start_line": 1036,
-        "end_line": 1037,
-        "reason": "The paper's constant-cardinality front example, including the trivial k=0 case."
-      },
-      {
-        "start_line": 1083,
-        "end_line": 1090,
-        "reason": "The paper's explicit base, prefix-freeness, and density clauses for a front."
+        "reason": "The paper's notation for finite k-element subsets and their increasing order."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper text defines [X]^k, records [X]^k as a front for every k with [X]^0 trivial, and specifies the three explicit front obligations. The verifier's rejected proof must therefore be repaired by fully proving those obligations, including the proper-prefix witness and both directions of the base equality."
+      "basis_summary": "The cited paper passage uses a homogeneous infinite set for a two-coloring of triples, while the notation passage defines [X]^k as the k-element subsets of an infinite X in increasing order. The TripleHomogeneous node realizes this step through CardinalityFrontIsFront and NashWilliams, whose Sound evidence is now current."
     },
     "work_style_hint": "none"
   },
@@ -48,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/CardinalityFrontIsFront.tex, preserving its Lean statement and support structure; add only imports for genuine existing dependencies if needed, and add no helper or theorem. Cite Front, InfiniteSetEnumeration, ProperPrefixSet, and InitialSegment at their uses. Treat k=0 separately: show CardinalityFront(0,X) is exactly {emptyset}, and for density give an explicit witness from the first element of the increasing enumeration. For k>0, prove FrontBase equals X in both directions: members give the easy inclusion, while for arbitrary x in X use infinitude of X to choose k-1 distinct additional elements and form a k-set containing x. For density, enumerate an arbitrary infinite Y subset X, verify membership and cardinality of the first k values, and use y(k) as the next element to prove the first k values are ProperPrefixSet of Y (with the explicit witness). For prefix-freeness, unpack InitialSegment: a strict initial segment has a witness n in the larger finite set and omits n, so it has strictly smaller cardinality, contradicting equal cardinalities. Remove the current summary assertions and make every step line-by-line checkable from the cited nodes. Do not edit TripleHomogeneous yet.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound results approve CardinalityFrontIsFront and NashWilliams, and TripleHomogeneous imports CardinalityFrontIsFront directly. Request one real Sound verifier for TripleHomogeneous only. It should check the explicit construction of the front of three-element subsets, the coloring subset and Nash-Williams dichotomy, the argument that every three-element subset of the resulting base lies in the homogeneous sub-front via a branch with that prescribed initial segment, and the conclusion that the base remains contained in X. All cross-node uses must remain supported by the cited noderefs.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 94,
+    "cycle": 95,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -59,52 +54,39 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "CardinalityFrontIsFront",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
-    "next_worker_context_mode": "fresh",
+    "next_mode": "Global",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
+        "end_line": 994,
+        "reason": "The paper's homogeneous triple-coloring step and its use in the combinatorial route.",
+        "start_line": 985
+      },
+      {
         "end_line": 1004,
-        "reason": "The paper's definition of finite subsets of fixed cardinality and increasing enumeration convention.",
+        "reason": "The paper's notation for finite k-element subsets and their increasing order.",
         "start_line": 1002
-      },
-      {
-        "end_line": 1037,
-        "reason": "The paper's constant-cardinality front example, including the trivial k=0 case.",
-        "start_line": 1036
-      },
-      {
-        "end_line": 1090,
-        "reason": "The paper's explicit base, prefix-freeness, and density clauses for a front.",
-        "start_line": 1083
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper text defines [X]^k, records [X]^k as a front for every k with [X]^0 trivial, and specifies the three explicit front obligations. The verifier's rejected proof must therefore be repaired by fully proving those obligations, including the proper-prefix witness and both directions of the base equality.",
+      "basis_summary": "The cited paper passage uses a homogeneous infinite set for a two-coloring of triples, while the notation passage defines [X]^k as the k-element subsets of an infinite X in increasing order. The TripleHomogeneous node realizes this step through CardinalityFrontIsFront and NashWilliams, whose Sound evidence is now current.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Sound verification rejected CardinalityFrontIsFront with concrete gaps in the reverse base inclusion, proper-prefix density witnesses, and the strict-cardinality prefix-free argument. Assign that repair before returning to TripleHomogeneous.",
-    "request_id": 338,
-    "request_sound_verifier_nodes": [],
+    "reason": "CardinalityFrontIsFront now has fresh Sound approval, and NashWilliams is already Sound-approved. TripleHomogeneous is the held target and remains FreshUnknown, so its Sound proof should be verified now that its direct support is certified.",
+    "request_id": 341,
+    "request_sound_verifier_nodes": [
+      "TripleHomogeneous"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:1465341f591ef2fdeb690e97dc3270350e1dc78496b32a9829cd8797a77ae778",
-        "kind": "Soundness",
-        "object": {
-          "node": "CardinalityFrontIsFront",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_338_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_341_decision.context.json"
 }

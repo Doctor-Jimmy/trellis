@@ -32,7 +32,7 @@
 | BqoIffGeneralShift | corollary | proof | open | - | - | BadMultiSequence, Bqo, GBetterRel, GBetterRelIff, IncSeqId, RightComp, ShiftMap, SuccSeq |
 | BqoImpliesWqo | lemma | proof | open | - | Better quasi-order implies well quasi-order | Bqo |
 | CardinalityFront | definition | definition | closed | - | Constant-cardinality front | Preamble |
-| CardinalityFrontIsFront | lemma | proof | open | - | - | CardinalityFront, Front |
+| CardinalityFrontIsFront | lemma | proof | open | - | - | CardinalityFront, Front, InfiniteSetEnumeration |
 | ContMor | definition | definition | closed | - | - | ContinuousHom |
 | ContMorEq | definition | definition | closed | - | - | ContMor |
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
