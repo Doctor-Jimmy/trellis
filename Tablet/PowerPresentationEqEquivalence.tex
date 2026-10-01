@@ -1,0 +1,19 @@
+\begin{lemma}[Structural equivalence is an equivalence relation]
+The relation $\mathsf{PowerPresentationEq}$ is reflexive, symmetric, and
+transitive on $\mathsf{PowerQ}(Q)$.
+\end{lemma}
+\begin{proof}
+For reflexivity, induct on a presentation.  An atom matches itself by
+equality.  At a node, pair each child with itself and apply the induction
+hypothesis, giving both directions of the matching condition in
+\noderef{PowerPresentationEqShape}.  For symmetry, exchange the two
+matching witnesses at every node; the induction hypotheses reverse the
+equivalence of each matched pair, and atom equality is symmetric.  For
+transitivity, compose the child matchings: a child of the first node matches
+a child of the middle node, which matches a child of the last node, so the
+induction hypothesis gives an equivalent child in the last node.  The reverse
+direction is identical.  The atom cases compose equality, and the mixed
+cases are impossible by the disjointness part of
+\noderef{PowerPresentationEqShape}.  Therefore all three equivalence laws
+hold.
+\end{proof}

@@ -87,6 +87,16 @@
 | PerfectSuperSequence | definition | - | closed |
 | PerfectSuperToBase | proof | Super-sequence perfectness gives base perfectness | open |
 | PerfectSuperToMulti | proof | Perfect sub-super-sequences give perfect sub-multi-sequences | open |
+| PowerChild | definition | - | closed |
+| PowerChildWellFounded | proof | Well-founded hierarchy descent | open |
+| PowerPresentationEq | definition | - | closed |
+| PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | open |
+| PowerPresentationEqShape | proof | Presentation cases | open |
+| PowerQ | definition | - | closed |
+| PowerSupport | definition | - | closed |
+| PowerSupportEquations | proof | Support equations | open |
+| PowerSupportInvariant | proof | Support respects presentation equivalence | open |
+| PowerSupportNonempty | proof | Nonempty support | open |
 | PowerWqoBadPairSequence | proof | Bad-witness characterization | open |
 | PrefixAgree | definition | - | closed |
 | PrefixTree | definition | - | closed |
@@ -113,4 +123,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 55/103 closed
+**Summary:** 59/113 closed

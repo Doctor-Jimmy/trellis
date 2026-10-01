@@ -1,10 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The universe-generalization prerequisite for the uncovered powerset target is complete and validated by the full build and the rebuilt hierarchy probe. The next legal and paper-faithful step is to add the tagged well-founded iterated-power hierarchy core before attempting the lifted order or preservation theorem.",
-    "comments": "Dismiss the completed universe-generalize-bqo-interface task. In the next Global burst, carry out iterated-power-core only as the next structural layer for cor PowerQPresBqo: add a tagged, atom/node-disjoint PSet-style carrier over Q : Type u with arbitrary nonempty small-indexed node constructors, the well-founded child relation, recursive support and support nonemptiness, and structural presentation equivalence with atom/atom equality, atom/node disjointness, and back-and-forth node equality. Do not replace the full hierarchy by Set Q, SetDomination, finite branching, or countable branching. If raw presentations remain public, establish support and equivalence invariance before downstream order nodes use them. Preserve the universe-generalized shared interfaces and do not claim the target from this core alone. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
+    "reason": "The iterated-power core is present and its meaningful hierarchy, descent, support, and invariance nodes have correspondence support. The substantive verifier identified only redundant wrappers in that package, so the next burst should remove those definitional duplications and preserve the genuine equivalence-law result before proceeding to PowerRel.",
+    "comments": "Use a fresh Global context for this cleanup. Keep PowerPresentationEqEquivalence as a genuine theorem, but revise PowerPresentationEq.tex so it states only the recursive matching relation and no longer asserts equivalence in the definition itself; revise its proof citations accordingly. Remove the paired PowerPresentationEqShape and PowerSupportEquations nodes because their statements are exactly the pattern-matching equations of PowerPresentationEq and PowerSupport. Rewire PowerSupportNonempty and PowerSupportInvariant to import and cite the definitions directly, and update all citations so no deleted node is referenced. Do not replace the deleted wrappers with equivalent theorem nodes. Preserve the substantive PowerPresentationEqEquivalence and PowerSupportInvariant arguments, keep the full tagged hierarchy unchanged, and run the shape check and build.",
     "task_blocker_ids": [
-      "paperfaithfulness:target:cor PowerQPresBqo:"
+      "substantiveness:node:PowerPresentationEqEquivalence:{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+      "substantiveness:node:PowerPresentationEqShape:{\"own_tex\":\"00c4de3517eaebc678f6ca7fdcc1402048c191f80c635d604e7d921bb6c28147\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+      "substantiveness:node:PowerSupportEquations:{\"own_tex\":\"9ad8ecf0408a416fd3bc9b5464cc2257085e75624cbd9816beff6dd66319ecb4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
     ],
     "reset_blocker_ids": [],
     "next_active": "",
@@ -14,41 +16,40 @@
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "start_line": 1362,
-        "end_line": 1421,
-        "reason": "The paper's transfinite nonempty hierarchy, recursive support, comparison game, and four atom/node clauses for the lifted relation."
+        "end_line": 1374,
+        "reason": "The paper's tagged atom/nonempty-node hierarchy and recursive support, which the retained definitions must continue to represent."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines PowerQ from atoms and nonempty higher nodes, gives recursive support, describes the finite comparison game, and states all four atom/node cases that the hierarchy core must expose."
+      "basis_summary": "The cited passage defines the full nonempty iterated powerset, distinguishes atoms from nodes, and defines support recursively. The requested cleanup preserves exactly that content while removing theorem nodes that merely restate transparent defining equations."
     },
     "stuck_math_audit": {
-      "notes": "The universe-generalize-bqo-interface task is complete: the shared interfaces were generalized in place, the full build passed, and the hierarchy probe now accepts Bqo at the Type (u + 1) carrier; its remaining failure is only the probe's intentionally impossible False conclusion. Continue to enforce pm-0002: cor PowerQPresBqo requires the full tagged well-founded iterated-power hierarchy, not SetDomination. The next audit-plan task is iterated-power-core.",
+      "notes": "The iterated-power-core task's substantive hierarchy package is complete, but three verifier failures must be repaired before the next audit task: PowerPresentationEqShape and PowerSupportEquations are pure definitional wrappers, while PowerPresentationEqEquivalence is redundant only because the definition TeX currently calls the relation an equivalence. Retain the genuine equivalence theorem, make the definition TeX purely recursive, remove the two wrappers, and rewire downstream citations. Preserve pm-0002 and continue to the four-clause PowerRel only after this cleanup passes.",
       "reviewer_lean_product": {
         "target": "cor PowerQPresBqo",
-        "next_task": "iterated-power-core",
-        "required_interface": [
-          "tagged disjoint atom/node PSet-style carrier over Q : Type u",
-          "arbitrary nonempty small-indexed node constructor, not finite/countable-only",
-          "well-founded child relation",
-          "recursive support and support nonemptiness",
-          "structural presentation equivalence with atom/node disjointness and back-and-forth node equality"
+        "completed_task": "iterated-power-core",
+        "cleanup_actions": [
+          "retain PowerPresentationEqEquivalence after removing the equivalence claim from PowerPresentationEq.tex",
+          "delete PowerPresentationEqShape and PowerSupportEquations rather than replacing them with equivalent wrappers",
+          "rewire PowerSupportNonempty and PowerSupportInvariant to PowerSupport and PowerPresentationEq, with direct definition citations"
         ],
+        "next_task_after_cleanup": "iterated-power-order",
         "constraints": [
-          "do not use Set Q or SetDomination as the full hierarchy",
-          "if raw presentations remain public, prove equivalence and support invariance before downstream use",
-          "keep the universe-generalized Bqo and multi-sequence interfaces"
+          "do not collapse the full hierarchy to Set Q or SetDomination",
+          "do not leave citations or imports to deleted nodes",
+          "do not weaken the meaningful support-invariance or equivalence-law statements"
         ]
       }
     },
     "dismissed_tasks": [
       {
-        "id": "universe-generalize-bqo-interface",
-        "reason": "Completed: the worker generalized the shared interfaces in place, preserved their TeX and bodies, passed the full build, and made the hierarchy probe typecheck Bqo at the Type (u + 1) carrier; only its intentionally impossible False conclusion remains."
+        "id": "iterated-power-core",
+        "reason": "The tagged PowerQ carrier, child descent, recursive support, nonempty support, presentation relation, equivalence law, and support invariance are now present and mechanically build. The remaining work is a verifier-directed anti-redundancy cleanup of three nodes, not a missing hierarchy-core task."
       }
     ]
   },
@@ -61,17 +62,17 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Dismiss the completed universe-generalize-bqo-interface task. In the next Global burst, carry out iterated-power-core only as the next structural layer for cor PowerQPresBqo: add a tagged, atom/node-disjoint PSet-style carrier over Q : Type u with arbitrary nonempty small-indexed node constructors, the well-founded child relation, recursive support and support nonemptiness, and structural presentation equivalence with atom/atom equality, atom/node disjointness, and back-and-forth node equality. Do not replace the full hierarchy by Set Q, SetDomination, finite branching, or countable branching. If raw presentations remain public, establish support and equivalence invariance before downstream order nodes use them. Preserve the universe-generalized shared interfaces and do not claim the target from this core alone. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
+    "comments": "Use a fresh Global context for this cleanup. Keep PowerPresentationEqEquivalence as a genuine theorem, but revise PowerPresentationEq.tex so it states only the recursive matching relation and no longer asserts equivalence in the definition itself; revise its proof citations accordingly. Remove the paired PowerPresentationEqShape and PowerSupportEquations nodes because their statements are exactly the pattern-matching equations of PowerPresentationEq and PowerSupport. Rewire PowerSupportNonempty and PowerSupportInvariant to import and cite the definitions directly, and update all citations so no deleted node is referenced. Do not replace the deleted wrappers with equivalent theorem nodes. Preserve the substantive PowerPresentationEqEquivalence and PowerSupportInvariant arguments, keep the full tagged hierarchy unchanged, and run the shape check and build.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 11,
+    "cycle": 12,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "universe-generalize-bqo-interface",
-        "reason": "Completed: the worker generalized the shared interfaces in place, preserved their TeX and bodies, passed the full build, and made the hierarchy probe typecheck Bqo at the Type (u + 1) carrier; only its intentionally impossible False conclusion remains."
+        "id": "iterated-power-core",
+        "reason": "The tagged PowerQ carrier, child descent, recursive support, nonempty support, presentation relation, equivalence law, and support invariance are now present and mechanically build. The remaining work is a verifier-directed anti-redundancy cleanup of three nodes, not a missing hierarchy-core task."
       }
     ],
     "global_repair_request": null,
@@ -80,57 +81,74 @@
     "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
-        "end_line": 1421,
-        "reason": "The paper's transfinite nonempty hierarchy, recursive support, comparison game, and four atom/node clauses for the lifted relation.",
+        "end_line": 1374,
+        "reason": "The paper's tagged atom/nonempty-node hierarchy and recursive support, which the retained definitions must continue to represent.",
         "start_line": 1362
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines PowerQ from atoms and nonempty higher nodes, gives recursive support, describes the finite comparison game, and states all four atom/node cases that the hierarchy core must expose.",
+      "basis_summary": "The cited passage defines the full nonempty iterated powerset, distinguishes atoms from nodes, and defines support recursively. The requested cleanup preserves exactly that content while removing theorem nodes that merely restate transparent defining equations.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The universe-generalization prerequisite for the uncovered powerset target is complete and validated by the full build and the rebuilt hierarchy probe. The next legal and paper-faithful step is to add the tagged well-founded iterated-power hierarchy core before attempting the lifted order or preservation theorem.",
-    "request_id": 71,
+    "reason": "The iterated-power core is present and its meaningful hierarchy, descent, support, and invariance nodes have correspondence support. The substantive verifier identified only redundant wrappers in that package, so the next burst should remove those definitional duplications and preserve the genuine equivalence-law result before proceeding to PowerRel.",
+    "request_id": 77,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The universe-generalize-bqo-interface task is complete: the shared interfaces were generalized in place, the full build passed, and the hierarchy probe now accepts Bqo at the Type (u + 1) carrier; its remaining failure is only the probe's intentionally impossible False conclusion. Continue to enforce pm-0002: cor PowerQPresBqo requires the full tagged well-founded iterated-power hierarchy, not SetDomination. The next audit-plan task is iterated-power-core.",
+      "notes": "The iterated-power-core task's substantive hierarchy package is complete, but three verifier failures must be repaired before the next audit task: PowerPresentationEqShape and PowerSupportEquations are pure definitional wrappers, while PowerPresentationEqEquivalence is redundant only because the definition TeX currently calls the relation an equivalence. Retain the genuine equivalence theorem, make the definition TeX purely recursive, remove the two wrappers, and rewire downstream citations. Preserve pm-0002 and continue to the four-clause PowerRel only after this cleanup passes.",
       "reviewer_lean_product": {
+        "cleanup_actions": [
+          "retain PowerPresentationEqEquivalence after removing the equivalence claim from PowerPresentationEq.tex",
+          "delete PowerPresentationEqShape and PowerSupportEquations rather than replacing them with equivalent wrappers",
+          "rewire PowerSupportNonempty and PowerSupportInvariant to PowerSupport and PowerPresentationEq, with direct definition citations"
+        ],
+        "completed_task": "iterated-power-core",
         "constraints": [
-          "do not use Set Q or SetDomination as the full hierarchy",
-          "if raw presentations remain public, prove equivalence and support invariance before downstream use",
-          "keep the universe-generalized Bqo and multi-sequence interfaces"
+          "do not collapse the full hierarchy to Set Q or SetDomination",
+          "do not leave citations or imports to deleted nodes",
+          "do not weaken the meaningful support-invariance or equivalence-law statements"
         ],
-        "next_task": "iterated-power-core",
-        "required_interface": [
-          "tagged disjoint atom/node PSet-style carrier over Q : Type u",
-          "arbitrary nonempty small-indexed node constructor, not finite/countable-only",
-          "well-founded child relation",
-          "recursive support and support nonemptiness",
-          "structural presentation equivalence with atom/node disjointness and back-and-forth node equality"
-        ],
+        "next_task_after_cleanup": "iterated-power-order",
         "target": "cor PowerQPresBqo"
       }
     },
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "",
-        "kind": "PaperFaithfulness",
+        "fingerprint": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
         "object": {
-          "otype": "target",
-          "target": "cor PowerQPresBqo"
+          "node": "PowerPresentationEqEquivalence",
+          "otype": "node"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"00c4de3517eaebc678f6ca7fdcc1402048c191f80c635d604e7d921bb6c28147\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "PowerPresentationEqShape",
+          "otype": "node"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"9ad8ecf0408a416fd3bc9b5464cc2257085e75624cbd9816beff6dd66319ecb4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "PowerSupportEquations",
+          "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_71_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_77_decision.context.json"
 }

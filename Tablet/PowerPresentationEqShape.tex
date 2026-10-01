@@ -1,0 +1,21 @@
+\begin{lemma}[Presentation cases]
+The structural equivalence of \noderef{PowerPresentationEq} has the three
+exclusive shapes required by the hierarchy.  No atom is equivalent to a
+node, in either order.  For nodes
+$\mathsf{node}(f)$ and $\mathsf{node}(g)$, equivalence is exactly the
+conjunction
+\[
+ (\forall i\,\exists j\; f(i)\mathrel{\mathsf{PowerPresentationEq}}g(j))
+ \ \land\ 
+ (\forall j\,\exists i\; f(i)\mathrel{\mathsf{PowerPresentationEq}}g(j)).
+\]
+\end{lemma}
+\begin{proof}
+Unfold the four defining equations in
+\noderef{PowerPresentationEq}.  The atom--node and node--atom equations
+reduce to $\mathsf{False}$, proving both disjointness assertions.  The
+node--node equation is precisely the displayed forward and backward
+matching conjunction, while the atom--atom equation is equality of the
+underlying $Q$-values.  These cases exhaust the two tagged constructors of
+\noderef{PowerQ}, so the stated characterization is complete.
+\end{proof}

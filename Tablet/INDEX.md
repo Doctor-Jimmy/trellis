@@ -79,6 +79,16 @@
 | PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
 | PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, PerfectSuperSequence, SuperSequenceExtension |
 | PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, SuperSequenceRestrict |
+| PowerChild | definition | definition | closed | - | - | PowerQ |
+| PowerChildWellFounded | lemma | proof | open | - | Well-founded hierarchy descent | PowerChild |
+| PowerPresentationEq | definition | definition | closed | - | - | PowerQ |
+| PowerPresentationEqEquivalence | lemma | proof | open | - | Structural equivalence is an equivalence relation | PowerPresentationEqShape |
+| PowerPresentationEqShape | lemma | proof | open | - | Presentation cases | PowerPresentationEq |
+| PowerQ | definition | definition | closed | - | - | Preamble |
+| PowerSupport | definition | definition | closed | - | - | PowerQ |
+| PowerSupportEquations | lemma | proof | open | - | Support equations | PowerSupport |
+| PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEqShape, PowerSupportEquations |
+| PowerSupportNonempty | lemma | proof | open | - | Nonempty support | PowerSupportEquations |
 | PowerWqoBadPairSequence | lemma | proof | open | - | Bad-witness characterization | BadPairSequence, SetDomination |
 | Preamble | preamble | preamble | closed | - | - | - |
 | PrefixAgree | definition | definition | closed | - | - | IncSeq |
@@ -107,4 +117,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 103 nodes | **Closed:** 55 | **Open:** 48
+**Total:** 113 nodes | **Closed:** 59 | **Open:** 54

@@ -1,0 +1,24 @@
+\begin{lemma}[Support respects presentation equivalence]
+If two raw presentations are structurally equivalent, then they have the same
+support:
+\[
+\mathsf{PowerPresentationEq}(X,Y)
+\quad\Longrightarrow\quad
+\mathsf{PowerSupport}(X)=\mathsf{PowerSupport}(Y).
+\]
+\end{lemma}
+\begin{proof}
+Use the recursive definition of structural equivalence from
+\noderef{PowerPresentationEq}.  In the atom case the equivalence says that
+the two atom values are equal, and the atom support equation in
+\noderef{PowerSupportEquations} gives equal singleton supports.  The mixed
+atom--node cases are impossible by the disjointness characterization in
+\noderef{PowerPresentationEqShape}.  In the node case, prove mutual support
+inclusion.  If an atom belongs to the support of the first node, the node
+support equation in \noderef{PowerSupportEquations} places it in the support
+of some child $f(i)$.  The forward matching clause supplies $j$ with
+$\mathsf{PowerPresentationEq}(f(i),g(j))$; the induction hypothesis places
+the atom in the support of $g(j)$, hence in the support of the second node.
+The backward matching clause gives the reverse inclusion.  Extensionality of
+sets now yields equality of supports.
+\end{proof}
