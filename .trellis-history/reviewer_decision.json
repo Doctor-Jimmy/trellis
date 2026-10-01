@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectMultiRestrict has a current Sound approval. PerfectBaseToSuper is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
-    "comments": "Leave Tablet/PerfectBaseToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectBaseToSuper. The verifier should check that z gives an infinite subbase Y contained in X, that FrontRestriction supplies F' = F restricted to Y as a front and subset of F, and that arbitrary finite-shift-related s,t in F' admit the stated enumeration witness. Check that the hext equation is instantiated at the corresponding BaseIncSeq enumerations to identify the super-sequence values with BaseRestrict h z at u and ShiftMap(u), that hp supplies the relation between those values, and that SuperSequenceRestrict transfers it to the exact perfectness conclusion. Check all cross-node dependencies, including FrontRestriction, BaseRestrict, SuperSequenceExtension, PerfectMultiSequence, and SuperSequenceRestrict, against the current theorem statement.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "PerfectBaseToSuper"
+    "reason": "The Sound verifier identified a structural incompleteness in PerfectBaseToSuper: the proof omits required support citations and does not construct a finite-shift witness inside the exact subbase, factor it through z, transfer the shifted prefix, or derive the universal restricted-super-sequence conclusion. The node is sound-repair-ready, so assign a bounded NL-proof repair.",
+    "comments": "Edit only Tablet/PerfectBaseToSuper.tex and, if needed, the import preamble of Tablet/PerfectBaseToSuper.lean. Preserve the Lean theorem statement, conclusion, support direction, and no-helper scope; do not weaken the claim. First put Y = range(z), use BaseIncSeq to prove Y is infinite and contained in X, define F' = FrontRestrict F Y, cite FrontRestriction for Front F' Y, and cite FrontRestrict explicitly for F' subset F. Then prove the defining PerfectSuperSequence implication for arbitrary s,t in F' with explicit membership proofs. Unpack FiniteShift s t and both ProperPrefixSet witnesses. Do not merely assert that the old witness lies in Y: construct an increasing enumeration y with range(y) contained in Y that preserves the two finite prefix sets. Explain the construction from the original witness through both cutoffs: all entries required by the two prefixes lie in s union t and hence in Y; append an increasing tail in Y using InfiniteSetEnumeration. Handle the empty/trivial-front and cutoff boundary cases explicitly, using Front and InitialSegment as needed, and display the resulting ProperPrefixSet s (range y) and ProperPrefixSet t (range (ShiftMap y)). Factor y through z by constructing the unique increasing index enumeration u with y = IncSeqComp z u; prove u is an IncSeq and prove the range-containment facts needed to form the two BaseIncSeq arguments. Use RestrictionShift to show z composed with ShiftMap(u) = ShiftMap(y). Apply hext separately to the first and shifted enumerations, displaying the FrontPrefix hypotheses and the dependent subtype values that identify f.value s and f.value t with h at the corresponding BaseIncSeq arguments. Unfold BaseRestrict and apply hp via PerfectMultiSequence at u to obtain the exact relation, then unfold SuperSequenceRestrict and PerfectSuperSequence and conclude the universal implication. Explicitly cite every cross-node dependency used, including BaseIncSeq, FrontRestrict, FrontRestriction, FiniteShift, ProperPrefixSet, InfiniteSetEnumeration, IncSeq, IncSeqComp, ShiftMap, RestrictionShift, BaseRestrict, PerfectMultiSequence, PerfectSuperSequence, and SuperSequenceRestrict. Add direct imports for newly cited support nodes if required by the checker.",
+    "task_blocker_ids": [
+      "soundness:node:PerfectBaseToSuper:sound-v2:fe2f74e84a0be9f5c6694336778e849c61323436519c111ecc554102f5fed121"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "PerfectBaseToSuper",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -16,28 +16,33 @@
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
         "start_line": 1192,
         "end_line": 1209,
-        "reason": "The manuscript defines sub-super-sequences and proves that restriction of a front to an infinite subbase is a front and subfamily."
+        "reason": "The manuscript defines sub-super-sequences and proves the front restriction to an infinite subbase."
+      },
+      {
+        "start_line": 1258,
+        "end_line": 1267,
+        "reason": "The manuscript identifies increasing enumerations with infinite subsets and explains restriction to an infinite subbase."
+      },
+      {
+        "start_line": 1465,
+        "end_line": 1468,
+        "reason": "The manuscript defines the finite shift relation through an infinite witness and its shifted tail."
       },
       {
         "start_line": 1642,
-        "end_line": 1648,
-        "reason": "The manuscript defines perfectness for multi-sequences and super-sequences using the shift relation."
-      },
-      {
-        "start_line": 1651,
         "end_line": 1662,
-        "reason": "The manuscript explicitly transfers perfectness of a restricted multi-sequence to the corresponding restricted super-sequence."
+        "reason": "The manuscript defines perfect multi- and super-sequences and transfers perfectness to a restricted super-sequence."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript characterizes a sub-super-sequence as a restriction to a front contained in the original front, proves the canonical front restriction construction on an infinite subbase, and then states that perfectness of the corresponding restricted multi-sequence yields perfectness of the restricted super-sequence. These are precisely the structural and perfectness steps checked by PerfectBaseToSuper."
+      "basis_summary": "The manuscript's route is restriction to an infinite subbase, represented by increasing enumerations, followed by the finite-shift definition and the shift-based perfectness implication. The worker repair must make the tablet's exact-set and dependent-value constructions implement those four paper steps rather than treating the finite-shift witness, factorization, or restriction value equalities as implicit."
     },
     "authorized_node_ids": []
   },
@@ -50,10 +55,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PerfectBaseToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectBaseToSuper. The verifier should check that z gives an infinite subbase Y contained in X, that FrontRestriction supplies F' = F restricted to Y as a front and subset of F, and that arbitrary finite-shift-related s,t in F' admit the stated enumeration witness. Check that the hext equation is instantiated at the corresponding BaseIncSeq enumerations to identify the super-sequence values with BaseRestrict h z at u and ShiftMap(u), that hp supplies the relation between those values, and that SuperSequenceRestrict transfers it to the exact perfectness conclusion. Check all cross-node dependencies, including FrontRestriction, BaseRestrict, SuperSequenceExtension, PerfectMultiSequence, and SuperSequenceRestrict, against the current theorem statement.",
+    "comments": "Edit only Tablet/PerfectBaseToSuper.tex and, if needed, the import preamble of Tablet/PerfectBaseToSuper.lean. Preserve the Lean theorem statement, conclusion, support direction, and no-helper scope; do not weaken the claim. First put Y = range(z), use BaseIncSeq to prove Y is infinite and contained in X, define F' = FrontRestrict F Y, cite FrontRestriction for Front F' Y, and cite FrontRestrict explicitly for F' subset F. Then prove the defining PerfectSuperSequence implication for arbitrary s,t in F' with explicit membership proofs. Unpack FiniteShift s t and both ProperPrefixSet witnesses. Do not merely assert that the old witness lies in Y: construct an increasing enumeration y with range(y) contained in Y that preserves the two finite prefix sets. Explain the construction from the original witness through both cutoffs: all entries required by the two prefixes lie in s union t and hence in Y; append an increasing tail in Y using InfiniteSetEnumeration. Handle the empty/trivial-front and cutoff boundary cases explicitly, using Front and InitialSegment as needed, and display the resulting ProperPrefixSet s (range y) and ProperPrefixSet t (range (ShiftMap y)). Factor y through z by constructing the unique increasing index enumeration u with y = IncSeqComp z u; prove u is an IncSeq and prove the range-containment facts needed to form the two BaseIncSeq arguments. Use RestrictionShift to show z composed with ShiftMap(u) = ShiftMap(y). Apply hext separately to the first and shifted enumerations, displaying the FrontPrefix hypotheses and the dependent subtype values that identify f.value s and f.value t with h at the corresponding BaseIncSeq arguments. Unfold BaseRestrict and apply hp via PerfectMultiSequence at u to obtain the exact relation, then unfold SuperSequenceRestrict and PerfectSuperSequence and conclude the universal implication. Explicitly cite every cross-node dependency used, including BaseIncSeq, FrontRestrict, FrontRestriction, FiniteShift, ProperPrefixSet, InfiniteSetEnumeration, IncSeq, IncSeqComp, ShiftMap, RestrictionShift, BaseRestrict, PerfectMultiSequence, PerfectSuperSequence, and SuperSequenceRestrict. Add direct imports for newly cited support nodes if required by the checker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 158,
+    "cycle": 159,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -61,44 +66,57 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "PerfectBaseToSuper",
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "end_line": 1209,
-        "reason": "The manuscript defines sub-super-sequences and proves that restriction of a front to an infinite subbase is a front and subfamily.",
+        "reason": "The manuscript defines sub-super-sequences and proves the front restriction to an infinite subbase.",
         "start_line": 1192
       },
       {
-        "end_line": 1648,
-        "reason": "The manuscript defines perfectness for multi-sequences and super-sequences using the shift relation.",
-        "start_line": 1642
+        "end_line": 1267,
+        "reason": "The manuscript identifies increasing enumerations with infinite subsets and explains restriction to an infinite subbase.",
+        "start_line": 1258
+      },
+      {
+        "end_line": 1468,
+        "reason": "The manuscript defines the finite shift relation through an infinite witness and its shifted tail.",
+        "start_line": 1465
       },
       {
         "end_line": 1662,
-        "reason": "The manuscript explicitly transfers perfectness of a restricted multi-sequence to the corresponding restricted super-sequence.",
-        "start_line": 1651
+        "reason": "The manuscript defines perfect multi- and super-sequences and transfers perfectness to a restricted super-sequence.",
+        "start_line": 1642
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript characterizes a sub-super-sequence as a restriction to a front contained in the original front, proves the canonical front restriction construction on an infinite subbase, and then states that perfectness of the corresponding restricted multi-sequence yields perfectness of the restricted super-sequence. These are precisely the structural and perfectness steps checked by PerfectBaseToSuper.",
+      "basis_summary": "The manuscript's route is restriction to an infinite subbase, represented by increasing enumerations, followed by the finite-shift definition and the shift-based perfectness implication. The worker repair must make the tablet's exact-set and dependent-value constructions implement those four paper steps rather than treating the finite-shift witness, factorization, or restriction value equalities as implicit.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectMultiRestrict has a current Sound approval. PerfectBaseToSuper is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
-    "request_id": 506,
-    "request_sound_verifier_nodes": [
-      "PerfectBaseToSuper"
-    ],
+    "reason": "The Sound verifier identified a structural incompleteness in PerfectBaseToSuper: the proof omits required support citations and does not construct a finite-shift witness inside the exact subbase, factor it through z, transfer the shifted prefix, or derive the universal restricted-super-sequence conclusion. The node is sound-repair-ready, so assign a bounded NL-proof repair.",
+    "request_id": 508,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:fe2f74e84a0be9f5c6694336778e849c61323436519c111ecc554102f5fed121",
+        "kind": "Soundness",
+        "object": {
+          "node": "PerfectBaseToSuper",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_506_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_508_decision.context.json"
 }
