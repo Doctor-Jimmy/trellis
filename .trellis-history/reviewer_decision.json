@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerChildSupport now has a current Sound approval, and the remaining held target is PerfectSuperToMulti. Its current proof has no reported concrete failure; request a fresh Sound verification of the restriction, value-identification, finite-shift, and perfectness steps before any further routing.",
-    "comments": "Leave Tablet/PerfectSuperToMulti.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectSuperToMulti. The verifier should check the increasing enumeration z of the sub-front base, the identification of the restricted super-sequence value with h (z composed with x), the use of sub-front density and inclusion in DecidingFrontSet h, the finite-shift relation between the selected front members for x and ShiftMap x, and the final application of PerfectSuperSequence to obtain PerfectMultiSequence. The proof's cross-node dependencies are MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, and the current super-sequence restriction supports. Do not assign a worker or reset any blocker.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "PerfectSuperToMulti"
+    "reason": "The Sound verifier found a structural proof failure in PerfectSuperToMulti: the proof uses an unsubstantiated enumeration and coherence/value identifications, omits required dependency citations, and asserts the central finite-shift step without constructing its witness. Assign the current blocker to a bounded repair of this node before requesting reverification.",
+    "comments": "Edit only Tablet/PerfectSuperToMulti.tex and the import preamble of Tablet/PerfectSuperToMulti.lean. Preserve the theorem statement, principal declaration, and overall support direction; add no helper and do not weaken hypotheses or conclusion. Add direct imports for every newly cited support node that is not already in the closure, in particular InfiniteSetEnumeration, DecidingValue, Front, RestrictionShift, and FiniteShift as needed; retain and cite SuperSequenceRestrict and the existing MultiSequenceRestrict, PerfectSuperSequence, and PerfectMultiSequence supports. In the NL proof, cite InfiniteSetEnumeration before choosing the increasing enumeration z and explicitly use the infinitude of Y and the fact that range(z composed with x) is infinite and contained in Y. For each x, use Front density to choose the two selected members of F' for z composed with x and z composed with ShiftMap(x), with their membership and proper-prefix witnesses. Cite DecidingValue for the h^dcl coherence equation and SuperSequenceRestrict for the restricted value rewrite. Construct the FiniteShift witness from z composed with x, and use RestrictionShift to prove z composed with ShiftMap(x) equals ShiftMap(z composed with x). Then instantiate PerfectSuperSequence on the selected F' members, rewrite both restricted values to h(z composed with x) and h(z composed with ShiftMap(x)), and conclude the PerfectMultiSequence obligation via MultiSequenceRestrict. Cite Front when extracting the density, subfamily, and infinite-base hypotheses. This repair must address all five points in the current verifier rejection without changing the Lean statement or adding a theorem node.",
+    "task_blocker_ids": [
+      "soundness:node:PerfectSuperToMulti:sound-v2:63440e7bd206cfa18a8f20fdabfc5e456936460fdef6b635d43ed5a3021001d3"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "PerfectSuperToMulti",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -17,6 +17,16 @@
     "must_close_active": false,
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
+      {
+        "start_line": 1258,
+        "end_line": 1261,
+        "reason": "The manuscript's induced multi-sequence and sub-multi-sequence correspondence."
+      },
+      {
+        "start_line": 1289,
+        "end_line": 1289,
+        "reason": "The manuscript's value equation for the deciding-front super-sequence."
+      },
       {
         "start_line": 1642,
         "end_line": 1647,
@@ -30,7 +40,7 @@
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines perfectness for a multi-sequence by the shift relation and for a super-sequence by the finite-extension relation, then explicitly derives perfectness of a restricted super-sequence from a perfect restricted multi-sequence. These passages provide the paper-level relation that the current reverse restriction lemma must establish from its cited value and front supports."
+      "basis_summary": "The paper defines the induced multi-sequence by selecting the unique front member extending an infinite set, defines its deciding-front value map, and defines perfectness for both multi- and super-sequences. Its restriction argument shows the intended value-identification and shift-relation pattern; the worker must make the reverse direction in this node fully explicit through the finite-shift witness and the cited tablet supports."
     }
   },
   "response": {
@@ -42,10 +52,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PerfectSuperToMulti.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectSuperToMulti. The verifier should check the increasing enumeration z of the sub-front base, the identification of the restricted super-sequence value with h (z composed with x), the use of sub-front density and inclusion in DecidingFrontSet h, the finite-shift relation between the selected front members for x and ShiftMap x, and the final application of PerfectSuperSequence to obtain PerfectMultiSequence. The proof's cross-node dependencies are MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, and the current super-sequence restriction supports. Do not assign a worker or reset any blocker.",
+    "comments": "Edit only Tablet/PerfectSuperToMulti.tex and the import preamble of Tablet/PerfectSuperToMulti.lean. Preserve the theorem statement, principal declaration, and overall support direction; add no helper and do not weaken hypotheses or conclusion. Add direct imports for every newly cited support node that is not already in the closure, in particular InfiniteSetEnumeration, DecidingValue, Front, RestrictionShift, and FiniteShift as needed; retain and cite SuperSequenceRestrict and the existing MultiSequenceRestrict, PerfectSuperSequence, and PerfectMultiSequence supports. In the NL proof, cite InfiniteSetEnumeration before choosing the increasing enumeration z and explicitly use the infinitude of Y and the fact that range(z composed with x) is infinite and contained in Y. For each x, use Front density to choose the two selected members of F' for z composed with x and z composed with ShiftMap(x), with their membership and proper-prefix witnesses. Cite DecidingValue for the h^dcl coherence equation and SuperSequenceRestrict for the restricted value rewrite. Construct the FiniteShift witness from z composed with x, and use RestrictionShift to prove z composed with ShiftMap(x) equals ShiftMap(z composed with x). Then instantiate PerfectSuperSequence on the selected F' members, rewrite both restricted values to h(z composed with x) and h(z composed with ShiftMap(x)), and conclude the PerfectMultiSequence obligation via MultiSequenceRestrict. Cite Front when extracting the density, subfamily, and infinite-base hypotheses. This repair must address all five points in the current verifier rejection without changing the Lean statement or adding a theorem node.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 149,
+    "cycle": 150,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -53,11 +63,21 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "PerfectSuperToMulti",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
+      {
+        "end_line": 1261,
+        "reason": "The manuscript's induced multi-sequence and sub-multi-sequence correspondence.",
+        "start_line": 1258
+      },
+      {
+        "end_line": 1289,
+        "reason": "The manuscript's value equation for the deciding-front super-sequence.",
+        "start_line": 1289
+      },
       {
         "end_line": 1647,
         "reason": "The manuscript definitions of perfect multi-sequences and perfect super-sequences.",
@@ -70,22 +90,30 @@
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines perfectness for a multi-sequence by the shift relation and for a super-sequence by the finite-extension relation, then explicitly derives perfectness of a restricted super-sequence from a perfect restricted multi-sequence. These passages provide the paper-level relation that the current reverse restriction lemma must establish from its cited value and front supports.",
+      "basis_summary": "The paper defines the induced multi-sequence by selecting the unique front member extending an infinite set, defines its deciding-front value map, and defines perfectness for both multi- and super-sequences. Its restriction argument shows the intended value-identification and shift-relation pattern; the worker must make the reverse direction in this node fully explicit through the finite-shift witness and the cited tablet supports.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerChildSupport now has a current Sound approval, and the remaining held target is PerfectSuperToMulti. Its current proof has no reported concrete failure; request a fresh Sound verification of the restriction, value-identification, finite-shift, and perfectness steps before any further routing.",
-    "request_id": 484,
-    "request_sound_verifier_nodes": [
-      "PerfectSuperToMulti"
-    ],
+    "reason": "The Sound verifier found a structural proof failure in PerfectSuperToMulti: the proof uses an unsubstantiated enumeration and coherence/value identifications, omits required dependency citations, and asserts the central finite-shift step without constructing its witness. Assign the current blocker to a bounded repair of this node before requesting reverification.",
+    "request_id": 486,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:63440e7bd206cfa18a8f20fdabfc5e456936460fdef6b635d43ed5a3021001d3",
+        "kind": "Soundness",
+        "object": {
+          "node": "PerfectSuperToMulti",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_484_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_486_decision.context.json"
 }
