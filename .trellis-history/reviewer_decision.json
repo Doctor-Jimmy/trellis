@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The direct support for TildeFHerCtbl is now Sound-approved: TildeFFrontEquation, TildeFNonfrontEquation, and HerCtblNodeClosure all have current passes. Request the parent Sound verification next.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFHerCtbl only. Check the well-founded induction on the extension-oriented tree relation, the front and non-front case split, the recursive induction family in HerCtblPower, the nonempty/countable extension index and its universe lift, and the exact identification of the non-front recursion node supplied by HerCtblNodeClosure. Require the existing citations to FrontTreeWellFounded, TildeFFrontEquation, TildeFNonfrontEquation, HereditarilyCountableAtom, FrontTreeImmediateExtensions, HerCtblPower, and HerCtblNodeClosure.",
+    "reason": "TildeFHerCtbl is now Sound-approved. TildeFAtomIffFront is the next held target and its proof is a direct two-case consequence of the already approved front and non-front recursion equations, so request its Sound verification.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFAtomIffFront only. Check that the front case obtains the atom constructor from TildeFFrontEquation, that the non-front case obtains the node constructor from TildeFNonfrontEquation, and that the tagged PowerQ atom/node constructors are disjoint. Require the existing citations to TildeFFrontEquation, TildeFNonfrontEquation, and PowerQ.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "TildeFHerCtbl"
+      "TildeFAtomIffFront"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -19,18 +19,13 @@
     "paper_focus_ranges": [
       {
         "start_line": 1559,
-        "end_line": 1564,
-        "reason": "The recursive front-tree definition and its front/non-front cases."
-      },
-      {
-        "start_line": 1580,
-        "end_line": 1589,
-        "reason": "The paper's hereditary-countability observation and the surrounding hereditary-countability theorem."
+        "end_line": 1566,
+        "reason": "The recursion definition and the paper's explicit atom/front equivalence observation."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage defines the well-founded recursion whose front values are atoms and whose non-front values are countable nodes, then states that all values are hereditarily countable before formulating the hereditary-countability equivalence. TildeFHerCtbl is the tablet lemma implementing that two-case argument."
+      "basis_summary": "The cited paper passage defines the front and non-front recursion cases and explicitly states that the recursive value lies in Q exactly when the finite node lies in F. The tablet lemma refines this to the tagged hierarchy's atom constructor and proves it from the two recursion equations."
     },
     "work_style_hint": "none"
   },
@@ -43,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFHerCtbl only. Check the well-founded induction on the extension-oriented tree relation, the front and non-front case split, the recursive induction family in HerCtblPower, the nonempty/countable extension index and its universe lift, and the exact identification of the non-front recursion node supplied by HerCtblNodeClosure. Require the existing citations to FrontTreeWellFounded, TildeFFrontEquation, TildeFNonfrontEquation, HereditarilyCountableAtom, FrontTreeImmediateExtensions, HerCtblPower, and HerCtblNodeClosure.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFAtomIffFront only. Check that the front case obtains the atom constructor from TildeFFrontEquation, that the non-front case obtains the node constructor from TildeFNonfrontEquation, and that the tagged PowerQ atom/node constructors are disjoint. Require the existing citations to TildeFFrontEquation, TildeFNonfrontEquation, and PowerQ.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 101,
+    "cycle": 102,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -60,25 +55,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1564,
-        "reason": "The recursive front-tree definition and its front/non-front cases.",
+        "end_line": 1566,
+        "reason": "The recursion definition and the paper's explicit atom/front equivalence observation.",
         "start_line": 1559
-      },
-      {
-        "end_line": 1589,
-        "reason": "The paper's hereditary-countability observation and the surrounding hereditary-countability theorem.",
-        "start_line": 1580
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage defines the well-founded recursion whose front values are atoms and whose non-front values are countable nodes, then states that all values are hereditarily countable before formulating the hereditary-countability equivalence. TildeFHerCtbl is the tablet lemma implementing that two-case argument.",
+      "basis_summary": "The cited paper passage defines the front and non-front recursion cases and explicitly states that the recursive value lies in Q exactly when the finite node lies in F. The tablet lemma refines this to the tagged hierarchy's atom constructor and proves it from the two recursion equations.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The direct support for TildeFHerCtbl is now Sound-approved: TildeFFrontEquation, TildeFNonfrontEquation, and HerCtblNodeClosure all have current passes. Request the parent Sound verification next.",
-    "request_id": 355,
+    "reason": "TildeFHerCtbl is now Sound-approved. TildeFAtomIffFront is the next held target and its proof is a direct two-case consequence of the already approved front and non-front recursion equations, so request its Sound verification.",
+    "request_id": 357,
     "request_sound_verifier_nodes": [
-      "TildeFHerCtbl"
+      "TildeFAtomIffFront"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -88,5 +78,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_355_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_357_decision.context.json"
 }

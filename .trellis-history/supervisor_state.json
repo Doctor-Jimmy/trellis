@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 455,
+  "event_count": 458,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -8290,104 +8290,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "177ebc969a30d95d": [
-      "BadMultiSequence",
-      "BadPairSequence",
-      "BadSuperSequence",
-      "BaireContinuous",
-      "BaseBad",
-      "BaseIncSeq",
-      "BaseLocallyConstant",
-      "BaseMultiSequence",
-      "BasePerfect",
-      "BaseRestrict",
-      "BaseRightComp",
-      "BaseShift",
-      "BetterRel",
-      "BlockSigma",
-      "Bqo",
-      "BqoHerCtblWellF",
-      "BqoHerCtblWqo",
-      "CardinalityFront",
-      "ContMor",
-      "ContMorEq",
-      "ContinuousHom",
-      "ContinuousRelHom",
-      "DecidingFrontSet",
-      "DecidingPrefix",
-      "FiniteShift",
-      "Front",
-      "FrontBase",
-      "FrontBridge",
-      "FrontBridgeTail",
-      "FrontPrefix",
-      "FrontRestrict",
-      "FrontRestriction",
-      "FrontTreeWellFounded",
-      "GBetterRel",
-      "GoodMultiSequence",
-      "HerCtblCode",
-      "HerCtblCodeErase",
-      "HerCtblPower",
-      "HerCtblPowerIsPreorder",
-      "HerCtblRel",
-      {
-        "$s": "19fb7b62eea67a5d"
-      },
-      "HereditarilyCountable",
-      {
-        "$s": "248a162fe13df6db"
-      },
-      {
-        "$s": "0de210e54bc47028"
-      },
-      "IncSeq",
-      "IncSeqComp",
-      "IncSeqId",
-      "IncreasingPair",
-      "InitialSegment",
-      "LocallyConstant",
-      "MultiSequence",
-      "MultiSequenceRestrict",
-      "OrbitBlock",
-      "OrbitPoint",
-      "PerfectMultiSequence",
-      "PerfectSuperSequence",
-      "PowerChild",
-      "PowerChildWellFounded",
-      "PowerCopiedLeft",
-      "PowerCopiedTerminalAt",
-      "PowerGameDescent",
-      "PowerIResponse",
-      "PowerMove",
-      "PowerPresentationEq",
-      "PowerQ",
-      "PowerQIsPreorder",
-      "PowerRel",
-      "PowerRelAtomAtom",
-      "PowerRelAtomNode",
-      "PowerRelNodeAtom",
-      "PowerRelNodeNode",
-      "PowerShiftIter",
-      "PowerSupport",
-      "Preamble",
-      "PrefixAgree",
-      "PrefixTree",
-      "ProperInitialSegment",
-      "ProperPrefixSet",
-      "RadoOrder",
-      "Ray",
-      "RelationEmbedding",
-      "RightComp",
-      "SetDomination",
-      "ShiftMap",
-      "SuccSeq",
-      "SuperSequence",
-      "SuperSequenceRestrict",
-      "TailSet",
-      "TildeF",
-      "TildeFSingleton"
-    ],
     "17a53d3609dbfb81": [
       {
         "$r": "d8b5b0f2372a8ab0"
@@ -59527,7 +59429,7 @@
     "committed": {
       "$r": "3e9f7663243d0fae"
     },
-    "cycle": 101,
+    "cycle": 102,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -59775,9 +59677,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 101,
+    "cycle": 102,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 101,
+    "cycles_since_clean": 102,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -60523,7 +60425,7 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": "TildeFHerCtbl",
+    "held_target": "TildeFAtomIffFront",
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -60567,7 +60469,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 101,
+    "last_sound_response_cycle": 102,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60884,16 +60786,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "HerCtblNodeClosure": {
+      "TildeFHerCtbl": {
         "v1": {
           "comments": "",
-          "node": "HerCtblNodeClosure",
+          "node": "TildeFHerCtbl",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The proof rigorously constructs a countable presentation code from a surjection from Nat onto I, extracts and chooses the hereditary-countability code witness for each f(i), and applies the two-node clauses of PowerPresentationEq in both directions. The erasure indexing by ULift Nat is matched explicitly via surjectivity and the chosen witnesses; symmetry is cited for the reverse matching orientation. All cross-node facts used in the proof are explicitly cited and lie in the target import closure."
+            "explanation": "The proof gives a well-founded induction over the extension-oriented prefix-tree relation. It handles front nodes using the front recursion equation and atomic hereditary countability, and handles non-front nodes by packaging the induction hypotheses over the nonempty countable extension type, lifting the index type, and applying the cited hereditary-node closure theorem. All cross-node dependencies used in the argument are explicitly cited with noderef."
           },
-          "summary": "The natural-language proof establishes hereditary countability of the full I-indexed node with a detailed code, erasure, and two-sided presentation-equivalence argument."
+          "summary": "The natural-language proof rigorously establishes hereditary countability of every recursively defined front-tree value from its cited support nodes."
         }
       }
     },
@@ -60901,24 +60803,110 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 101,
+      "next_index": 102,
       "snapshots": [
         {
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": {
-            "$r": "177ebc969a30d95d"
-          },
-          "snapshot_index": 37
-        },
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": {
-            "$r": "177ebc969a30d95d"
-          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitPoint",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
           "snapshot_index": 38
         },
         {
@@ -64593,6 +64581,156 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 100
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 101
         }
       ]
     },
@@ -64601,11 +64739,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 355,
+    "request_seq": 357,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFHerCtbl only. Check the well-founded induction on the extension-oriented tree relation, the front and non-front case split, the recursive induction family in HerCtblPower, the nonempty/countable extension index and its universe lift, and the exact identification of the non-front recursion node supplied by HerCtblNodeClosure. Require the existing citations to FrontTreeWellFounded, TildeFFrontEquation, TildeFNonfrontEquation, HereditarilyCountableAtom, FrontTreeImmediateExtensions, HerCtblPower, and HerCtblNodeClosure.",
+    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFAtomIffFront only. Check that the front case obtains the atom constructor from TildeFFrontEquation, that the non-front case obtains the node constructor from TildeFNonfrontEquation, and that the tagged PowerQ atom/node constructors are disjoint. Require the existing citations to TildeFFrontEquation, TildeFNonfrontEquation, and PowerQ.",
     "reviewer_requested_sound_verifier_nodes": [
-      "TildeFHerCtbl"
+      "TildeFAtomIffFront"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -64723,6 +64861,9 @@
       },
       "TildeFFrontEquation": {
         "$s": "09babba38453b62e"
+      },
+      "TildeFHerCtbl": {
+        "$s": "47bad7b560a723a1"
       },
       "TildeFNonfrontEquation": {
         "$s": "69c40ce9c1812916"
@@ -65143,6 +65284,17 @@
       "TildeFFrontEquation": {
         "fingerprints": {
           "$r": "7a7c0bef4b77cbe0"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
+      "TildeFHerCtbl": {
+        "fingerprints": {
+          "$r": "a22d05e46fd8777e"
         },
         "lane_votes": {
           "v1": "Pass"
@@ -66277,6 +66429,7 @@
       "RmapLemma": "Pass",
       "SubFrontCharacterization": "Pass",
       "TildeFFrontEquation": "Pass",
+      "TildeFHerCtbl": "Pass",
       "TildeFNonfrontEquation": "Pass",
       "TripleHomogeneous": "Pass"
     },
