@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectSuperToBase now has a current Sound approval and is absent from the live blocker list, so there is no repair to assign or reset. Advance the held target by requesting a real Sound verification of the fresh PerfectSuperRestrict obligation.",
-    "comments": "Leave Tablet/PerfectSuperToBase and the rest of the tablet unchanged. Request Sound verification of PerfectSuperRestrict. The verifier should check the arbitrary s,t in the restricted front, the use of the subset hypothesis to obtain their membership in the original front, the unchanged FiniteShift premise, and the exact value-preservation statement supplied by SuperSequenceRestrict before applying PerfectSuperSequence. The manuscript defines perfectness for super-sequences at lines 1642--1647 and then uses restriction of a super-sequence in the perfectness argument at line 1661; check the node against those statements. Do not assign a worker or reset any blocker.",
+    "reason": "PerfectSuperRestrict has a current Sound approval, and no repair evidence is present for the next held target. Request a real Sound verification of the fresh PerfectMultiToSuper obligation.",
+    "comments": "Leave the tablet unchanged and do not assign a worker or reset any blocker. Request Sound verification of PerfectMultiToSuper. The verifier should check an arbitrary FiniteShift witness x for s and t, use the two ProperPrefixSet clauses with x and ShiftMap x, apply the local coherence hypothesis hf with those exact enumerations to identify f.value s and f.value t with h x and h (ShiftMap x), and then apply the PerfectMultiSequence hypothesis before invoking the defining PerfectSuperSequence implication. Check the induced-super-sequence correspondence against the manuscript's construction at lines 1277--1289, the finite-shift definition at lines 1465--1468, and the perfectness definitions at lines 1642--1647.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PerfectSuperRestrict"
+      "PerfectMultiToSuper"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,19 +20,24 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
+        "start_line": 1277,
+        "end_line": 1289,
+        "reason": "The manuscript's construction of the induced super-sequence from a locally constant multi-sequence."
+      },
+      {
+        "start_line": 1465,
+        "end_line": 1468,
+        "reason": "The manuscript definition of the finite shift relation on finite prefixes."
+      },
+      {
         "start_line": 1642,
         "end_line": 1647,
         "reason": "The manuscript definitions of perfect multi- and super-sequences."
-      },
-      {
-        "start_line": 1661,
-        "end_line": 1661,
-        "reason": "The manuscript's restriction argument relating super-sequence perfectness."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines super-sequence perfectness by the finite-shift implication and later transfers perfectness to a restricted front by retaining the original values on the restricted members. These are exactly the two support facts the requested Sound verifier should check for PerfectSuperRestrict."
+      "basis_summary": "The manuscript constructs the induced super-sequence from deciding prefixes, defines finite shift through one enumeration and its tail, and defines perfectness by the corresponding shift implications. The requested Sound verifier should check that the tablet proof instantiates these three steps with the exact coherence hypothesis and shifted enumeration."
     },
     "authorized_node_ids": []
   },
@@ -45,10 +50,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PerfectSuperToBase and the rest of the tablet unchanged. Request Sound verification of PerfectSuperRestrict. The verifier should check the arbitrary s,t in the restricted front, the use of the subset hypothesis to obtain their membership in the original front, the unchanged FiniteShift premise, and the exact value-preservation statement supplied by SuperSequenceRestrict before applying PerfectSuperSequence. The manuscript defines perfectness for super-sequences at lines 1642--1647 and then uses restriction of a super-sequence in the perfectness argument at line 1661; check the node against those statements. Do not assign a worker or reset any blocker.",
+    "comments": "Leave the tablet unchanged and do not assign a worker or reset any blocker. Request Sound verification of PerfectMultiToSuper. The verifier should check an arbitrary FiniteShift witness x for s and t, use the two ProperPrefixSet clauses with x and ShiftMap x, apply the local coherence hypothesis hf with those exact enumerations to identify f.value s and f.value t with h x and h (ShiftMap x), and then apply the PerfectMultiSequence hypothesis before invoking the defining PerfectSuperSequence implication. Check the induced-super-sequence correspondence against the manuscript's construction at lines 1277--1289, the finite-shift definition at lines 1465--1468, and the perfectness definitions at lines 1642--1647.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 154,
+    "cycle": 155,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -62,25 +67,30 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
+        "end_line": 1289,
+        "reason": "The manuscript's construction of the induced super-sequence from a locally constant multi-sequence.",
+        "start_line": 1277
+      },
+      {
+        "end_line": 1468,
+        "reason": "The manuscript definition of the finite shift relation on finite prefixes.",
+        "start_line": 1465
+      },
+      {
         "end_line": 1647,
         "reason": "The manuscript definitions of perfect multi- and super-sequences.",
         "start_line": 1642
-      },
-      {
-        "end_line": 1661,
-        "reason": "The manuscript's restriction argument relating super-sequence perfectness.",
-        "start_line": 1661
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines super-sequence perfectness by the finite-shift implication and later transfers perfectness to a restricted front by retaining the original values on the restricted members. These are exactly the two support facts the requested Sound verifier should check for PerfectSuperRestrict.",
+      "basis_summary": "The manuscript constructs the induced super-sequence from deciding prefixes, defines finite shift through one enumeration and its tail, and defines perfectness by the corresponding shift implications. The requested Sound verifier should check that the tablet proof instantiates these three steps with the exact coherence hypothesis and shifted enumeration.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectSuperToBase now has a current Sound approval and is absent from the live blocker list, so there is no repair to assign or reset. Advance the held target by requesting a real Sound verification of the fresh PerfectSuperRestrict obligation.",
-    "request_id": 497,
+    "reason": "PerfectSuperRestrict has a current Sound approval, and no repair evidence is present for the next held target. Request a real Sound verification of the fresh PerfectMultiToSuper obligation.",
+    "request_id": 499,
     "request_sound_verifier_nodes": [
-      "PerfectSuperRestrict"
+      "PerfectMultiToSuper"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -90,5 +100,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_497_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_499_decision.context.json"
 }

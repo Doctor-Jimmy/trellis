@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 650,
+  "event_count": 653,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -60563,7 +60563,7 @@
     "committed": {
       "$r": "edb3c638385b9fad"
     },
-    "cycle": 154,
+    "cycle": 155,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60811,9 +60811,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 154,
+    "cycle": 155,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 154,
+    "cycles_since_clean": 155,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "c9074de8f483d80d"
@@ -61559,7 +61559,7 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": "PerfectSuperRestrict",
+    "held_target": "PerfectMultiToSuper",
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -61603,7 +61603,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 154,
+    "last_sound_response_cycle": 155,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61866,16 +61866,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PerfectSuperToBase": {
+      "PerfectSuperRestrict": {
         "v1": {
-          "comments": "The prior witness gap is repaired: FrontPrefixExists supplies s0 and t0, and the conditional equation from SuperSequenceExtension is applied explicitly to both witnesses. The same witnesses also establish the extension clause and the FiniteShift relation used in the perfectness argument.",
-          "node": "PerfectSuperToBase",
+          "comments": "",
+          "node": "PerfectSuperRestrict",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The proof is line-by-line supported by the cited statements. It obtains front-prefix witnesses for x and BaseShift_X(x), applies the extension equation to derive both value substitutions and the required existential extension witness, identifies the shifted range, constructs the exact FiniteShift witness using x.1, and applies PerfectSuperSequence to derive BasePerfect."
+            "explanation": "The proof correctly reduces perfectness of the restriction to the defining implication for the original super-sequence. Members of the restricted front are members of the original front via the stated sub-front inclusion, finite shift is the same relation on the same finite sets, and SuperSequenceRestrict identifies the restricted values with the original values along that inclusion. Both cross-node dependencies used are explicitly cited."
           },
-          "summary": "Approve: the previously unsupported extension-witness and value-substitution steps are now explicitly established, and the remaining perfectness argument is rigorous from the cited dependencies."
+          "summary": "The NL proof is a valid, line-by-line restriction of the defining perfectness condition."
         }
       }
     },
@@ -61883,150 +61883,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 154,
+      "next_index": 155,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 90
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -67844,6 +67702,215 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 153
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperRestrict",
+            "PerfectSuperSequence",
+            "PerfectSuperToBase",
+            "PerfectSuperToMulti",
+            "PowerChild",
+            "PowerChildSupport",
+            "PowerChildWellFounded",
+            "PowerCopiedFailureMove",
+            {
+              "$s": "5fd62f6199ae512b"
+            },
+            {
+              "$s": "86b2632417374ebd"
+            },
+            "PowerCopiedLeft",
+            {
+              "$s": "9a013b8cdeb9d5ff"
+            },
+            {
+              "$s": "55d1a8fd6d560eea"
+            },
+            "PowerCopiedSupport",
+            "PowerCopiedTerminalAt",
+            {
+              "$s": "2e7a9f9ae663f9f8"
+            },
+            {
+              "$s": "c92d93fd7a69a2a5"
+            },
+            "PowerCopiedTerminates",
+            {
+              "$s": "77d96f473077081d"
+            },
+            "PowerGameDescent",
+            {
+              "$s": "50a07aa664204053"
+            },
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerMoveInSupport",
+            "PowerPresentationEq",
+            {
+              "$s": "93d700ae7b9523b8"
+            },
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerQPresBqo",
+            "PowerQReflection",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelCongrLeft",
+            "PowerRelCongrRight",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerRelRefl",
+            "PowerRelTrans",
+            "PowerShiftIter",
+            {
+              "$s": "6947ec3a7b56b112"
+            },
+            "PowerShiftIterShift",
+            "PowerSupport",
+            "PowerSupportInvariant",
+            "PowerSupportNonempty",
+            "PowerWqoBadPairSequence",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "QuadrupleHomogeneous",
+            "RadoEmbedding",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            {
+              "$s": "b415d99a5587255c"
+            },
+            "RestrictionShift",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftDichotomy",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "Subarr",
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFAtomIffFront",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 154
         }
       ]
     },
@@ -67852,11 +67919,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 497,
+    "request_seq": 499,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Leave Tablet/PerfectSuperToBase and the rest of the tablet unchanged. Request Sound verification of PerfectSuperRestrict. The verifier should check the arbitrary s,t in the restricted front, the use of the subset hypothesis to obtain their membership in the original front, the unchanged FiniteShift premise, and the exact value-preservation statement supplied by SuperSequenceRestrict before applying PerfectSuperSequence. The manuscript defines perfectness for super-sequences at lines 1642--1647 and then uses restriction of a super-sequence in the perfectness argument at line 1661; check the node against those statements. Do not assign a worker or reset any blocker.",
+    "reviewer_comments": "Leave the tablet unchanged and do not assign a worker or reset any blocker. Request Sound verification of PerfectMultiToSuper. The verifier should check an arbitrary FiniteShift witness x for s and t, use the two ProperPrefixSet clauses with x and ShiftMap x, apply the local coherence hypothesis hf with those exact enumerations to identify f.value s and f.value t with h x and h (ShiftMap x), and then apply the PerfectMultiSequence hypothesis before invoking the defining PerfectSuperSequence implication. Check the induced-super-sequence correspondence against the manuscript's construction at lines 1277--1289, the finite-shift definition at lines 1465--1468, and the perfectness definitions at lines 1642--1647.",
     "reviewer_requested_sound_verifier_nodes": [
-      "PerfectSuperRestrict"
+      "PerfectMultiToSuper"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -67953,6 +68020,9 @@
       },
       "OrbitUnbounded": {
         "$s": "cd933185d925fe78"
+      },
+      "PerfectSuperRestrict": {
+        "$s": "dc616bc0cee82de3"
       },
       "PerfectSuperToBase": {
         "$s": "af8fa5264ae031bb"
@@ -68428,6 +68498,17 @@
       "OrbitUnbounded": {
         "fingerprints": {
           "$r": "5be663af2d88d732"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
+      "PerfectSuperRestrict": {
+        "fingerprints": {
+          "$r": "f23258a7403a6f73"
         },
         "lane_votes": {
           "v1": "Pass"
@@ -70039,6 +70120,7 @@
       "OrbitBlockCoverage": "Pass",
       "OrbitEmbedding": "Pass",
       "OrbitUnbounded": "Pass",
+      "PerfectSuperRestrict": "Pass",
       "PerfectSuperToBase": "Pass",
       "PerfectSuperToMulti": "Pass",
       "PowerChildSupport": "Pass",
