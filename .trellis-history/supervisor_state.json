@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 291,
+  "event_count": 296,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -606,6 +606,7 @@
     "650702b5a15a8c23": "d51275eeb843d9b6f67c244260b42f82cb6569a375773e6c3c37b2b24b1640c0",
     "650d37c172b68f6c": "cb756fd53b8d917e04e450559c1a369b5cdc4acc5508d774822f130a692178ec",
     "654424886140db00": "Tablet.SuperSequenceExtension",
+    "657b0d82399bf276": "All four frontier nodes pass Lean-versus-TeX correspondence.",
     "6584c394c5c465dc": "1a8792b354e08f7cd283113004bd76719839831570ee6ed82d5053631fc85c60",
     "65a6d7e0cb51eec9": "0e17c92db9d997b7c5fe3361bd4b7bbb9d8263a5ef0f8613be7b10d660731540",
     "65b1e24d48747520": "d937ec8af055646bd5413f8a5c2f2a25cf8ad162053f35b9b47974f538f86ff7",
@@ -854,7 +855,6 @@
     "8da4d4a36ca453c7": "{\"own_tex\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\",\"lean_semantic_closure\":\"94db876091b9989b10d6de523b1b4e7bf8cb9076cbf27142228771d72949c699\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "8da6c2bd86dd97a6": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"lean_semantic_closure\":\"df88ab2fe24deb2dd9fbde1d02e356e7774c701d9685aba33bb5c014f160ecd2\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "8da9062a07cfc261": "db89b60049988b30e0a4920dbbdea722686837641362101e9ce518937b69ecd4",
-    "8daad19774bb3133": "All three Lean declarations align with their paired TeX statements. The extension equation expands through FrontPrefix to the stated membership and proper-prefix conditions, while BaseIncSeq supplies the stated domain restriction.",
     "8dc1f29756db76f0": "{\"own_tex\":\"09a9a8b83b29897b8d2bcf8836a7d29a89ea868b2854b072fb63d4993044e6d1\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "8dc948696ec0ec47": "21c7c9c7fd7cc6f0d7b148cbe7f15822054f909e8f69909321d605a49d0f9552",
     "8dcd3f459183fa20": "{\"own_tex\":\"83ce5324ed4003defce8e207195d1a6fadd710d00885e6aecd4e28f9743adb36\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1335,6 +1335,7 @@
     "db8396ad9e79a7bf": "sound-v2:8aed15e02e633c98f4b0c28bf3a991ca669da176bea5008a079e6f91ddb9e826",
     "dbb8e4d8e2931bff": "0266f7ca52a33ef01ed2d1864334d16a92fdaea41c9b809e36b33344c04b7cbc",
     "dc0573a730a7321e": "{\"own_tex\":\"d89e83c0dcbfa25ccfb8c95b62e240da165c8bdabe1c262d48b7ec26d7926286\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+    "dc536114600e35aa": "All four Lean theorem signatures align with their paired TeX claims. The imported restriction, perfectness, front, and presentation definitions preserve the stated domains and quantifier scopes.",
     "dc616bc0cee82de3": "sound-v2:7a564070601f8a383fcfbbda810c86553821152056ec1984d9fabd0ea290f61d",
     "dc7525392534b105": "{\"own_tex\":\"44cef007e33d9d88468407b42b31b742d6cad7b1142d8a960eea6650919b7af3\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "dcbabda85544c6d2": "a38d052bcea60ddba4763fcaadc9bafc21d26983f53dc8a52d64b26c36f67f27",
@@ -1352,7 +1353,6 @@
     "de8034973f24a76e": "c0685567f7e4bbbb955d9e2713227bcf540aea4aad4f5b735185b10dbf5c6160",
     "de8f65aab510962d": "ffd4850b89a0d52bd081ecc0c286e4f64b5ceacffd846b8bca05df38bf3b51ce",
     "deb08539986fda30": "90184e9447f7bf9dc0c338a9f37a0e2b4cf4636e090cafdb912b3f132b5f56c8",
-    "df088701d5b346d2": "The three frontier statements match their TeX claims in hypotheses, domains, quantifier scope, and conclusions; imported project definitions are substantive and definition-safe.",
     "df1a76056db50ede": "2fe578a9182564812411599378b6815771b525cd8a75212b54c5051b26965726",
     "df38e99488357b52": "1499c0f20357ec3889ffae0356ba64a5f151aec65250765b39571390a23b1a43",
     "df7840f02605e697": "{\"own_tex\":\"987a5eec9c6c8d571452359e653164a4e23507a3d8d5abfad4d3a1df9f8fdee0\",\"lean_semantic_closure\":\"f53aaf63321bd534b32c51753fca894a55415d89bea17b1d54477b39023dc634\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -5840,6 +5840,17 @@
       },
       "SuccSeq": {
         "$s": "96e7f62041405a86"
+      }
+    },
+    "11e09e72d7976ff1": {
+      "deferred": false,
+      "fingerprint": {
+        "$s": "b47d4174219139ea"
+      },
+      "kind": "Soundness",
+      "object": {
+        "node": "BlockSigmaIntertwines",
+        "otype": "node"
       }
     },
     "11e55d3fa0f6e369": [
@@ -59955,17 +59966,17 @@
     }
   },
   "checkpoint": {
-    "active_node": "PerfectMultiRestrict",
+    "active_node": "BlockSigmaIntertwines",
     "committed": {
       "$r": "fe35b20bc66719b8"
     },
-    "cycle": 55,
+    "cycle": 56,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": "PerfectMultiRestrict",
+    "active_node": "BlockSigmaIntertwines",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60012,9 +60023,9 @@
         },
         {
           "body": "After the edits above, request fresh correspondence and substantiveness verdicts until no statement-lane failure remains. The exact current frontier is `BadSuperToBase`, `FrontPrefixUnique`, `PerfectMultiRestrict`, `PerfectSuperToBase`, `PerfectSuperToMulti`, `PowerPresentationEqEquivalence`, `ShiftDichotomy`, and `SubFrontCharacterization`. Re-evaluate current source rather than repeating the cycle-6/cycle-12 reasons: `MultiSequenceRestrict` is now `h(z composed with x)`, the dependent perfect/dichotomy statements use that orientation, and `PowerPresentationEq.tex` now only defines the matching relation. Do not weaken these true paper claims merely to clear the lane. This task is complete only when all eight have current pass verdicts.",
-          "dismissed": false,
-          "dismissed_at_cycle": null,
-          "dismissed_reason": "",
+          "dismissed": true,
+          "dismissed_at_cycle": 56,
+          "dismissed_reason": "Completed: after the correspondence and substantiveness passes, the live blocker set now contains only Soundness obligations. The statement-lane surface is clear, so the audit can proceed to its Sound-closing task after current Sound repairs.",
           "id": "clear-statement-lane-surface",
           "title": "Clear all eight statement-lane blockers"
         },
@@ -60079,525 +60090,7 @@
     "consecutive_transport_failure_halt_threshold": 5,
     "consecutive_transport_failure_node": null,
     "corr_approved_fingerprints": {
-      "BadMultiRestrict": {
-        "$s": "e2ca5d59676067c7"
-      },
-      "BadMultiSequence": {
-        "$s": "b57b5e87cd57341d"
-      },
-      "BadMultiToNontrivialSuper": {
-        "$s": "69c8e37b92c8b2c4"
-      },
-      "BadMultiToSuper": {
-        "$s": "cc8d405c78dfc72d"
-      },
-      "BadPairSequence": {
-        "$s": "b85d648d6f1c1256"
-      },
-      "BadSuperRestrict": {
-        "$s": "0ed7849b325db8fb"
-      },
-      "BadSuperSequence": {
-        "$s": "75a4c16c5731e1b3"
-      },
-      "BadSuperToBase": {
-        "$s": "ce5d0be140d9d947"
-      },
-      "BaireContinuous": {
-        "$s": "26a884c7c01f7841"
-      },
-      "BaseBad": {
-        "$s": "fb65c653aee5aec5"
-      },
-      "BaseBqoRestriction": {
-        "$s": "6f2690ff1b400d46"
-      },
-      "BaseIncSeq": {
-        "$s": "93f4a6553e49a300"
-      },
-      "BaseLocallyConstant": {
-        "$s": "8b4fc814ebd7bd2b"
-      },
-      "BaseMultiSequence": {
-        "$s": "2d1edb5a10806a66"
-      },
-      "BasePerfect": {
-        "$s": "7d523db1be106641"
-      },
-      "BaseRestrict": {
-        "$s": "27af2f5779208312"
-      },
-      "BaseRightComp": {
-        "$s": "8b65985f1660f1e4"
-      },
-      "BaseShift": {
-        "$s": "65ef72b85fdc0885"
-      },
-      "BetterRel": {
-        "$s": "4bb0700444485318"
-      },
-      "BlockSigma": {
-        "$s": "8dcd3f459183fa20"
-      },
-      "BlockSigmaContinuous": {
-        "$s": "aaad844393e437c1"
-      },
-      "BlockSigmaEmbedding": {
-        "$s": "b0a2e03f42b58c56"
-      },
-      "BlockSigmaIntertwines": {
-        "$s": "bc60dc3945259966"
-      },
-      "BooleanInfinitePigeonhole": {
-        "$s": "df7840f02605e697"
-      },
-      "Bqo": {
-        "$s": "b9ea1af0506c63ed"
-      },
-      "BqoHerCtblWellF": {
-        "$s": "6c2cd99740a3bc17"
-      },
-      "BqoHerCtblWqo": {
-        "$s": "e8b3a40e9d8e25bf"
-      },
-      "BqoIffGeneralShift": {
-        "$s": "7b9c646842802c4c"
-      },
-      "BqoImpliesWqo": {
-        "$s": "9b71876dc4da4301"
-      },
-      "CardinalityFront": {
-        "$s": "1474836db2c28762"
-      },
-      "CardinalityFrontIsFront": {
-        "$s": "b3ba39c1a463d384"
-      },
-      "ContMor": {
-        "$s": "a9436f408c4e7a45"
-      },
-      "ContMorEq": {
-        "$s": "17b3962c483f46e5"
-      },
-      "ContinuousHom": {
-        "$s": "fab58850ef71f623"
-      },
-      "ContinuousRelHom": {
-        "$s": "38bfb908b97a4833"
-      },
-      "ConverseGame": {
-        "$s": "7def322b3031f052"
-      },
-      "DecidingFront": {
-        "$s": "804a83606c781484"
-      },
-      "DecidingFrontSet": {
-        "$s": "f453746378ba6b09"
-      },
-      "DecidingPrefix": {
-        "$s": "3bf71380b21cf183"
-      },
-      "DecidingValue": {
-        "$s": "1cf3d568459d9f62"
-      },
-      "EmapLemma": {
-        "$s": "a9e5d1f8b4f4d471"
-      },
-      "FinitePrefixExtension": {
-        "$s": "a2c51586f57f20da"
-      },
-      "FiniteShift": {
-        "$s": "08fbd5350ac83e8c"
-      },
-      "FirstMovedPoint": {
-        "$s": "e884b370ea705013"
-      },
-      "Front": {
-        "$s": "40a2699944f47464"
-      },
-      "FrontBase": {
-        "$s": "7dad93274fe6ba46"
-      },
-      "FrontBridge": {
-        "$s": "3e4ff2b9753f6ef8"
-      },
-      "FrontBridgeInit": {
-        "$s": "40cd52309b32d66d"
-      },
-      "FrontBridgeStep": {
-        "$s": "863659e86cc769a8"
-      },
-      "FrontBridgeTail": {
-        "$s": "2a089323425107bd"
-      },
-      "FrontBridgeTerminal": {
-        "$s": "306aba901b89a4be"
-      },
-      "FrontPrefix": {
-        "$s": "60cc777c73b7468b"
-      },
-      "FrontPrefixExists": {
-        "$s": "b6c656357093fc68"
-      },
-      "FrontPrefixUnique": {
-        "$s": "8df87451078a9614"
-      },
-      "FrontRayClosure": {
-        "$s": "8da6c2bd86dd97a6"
-      },
-      "FrontRestrict": {
-        "$s": "f2fddf84216dfc0d"
-      },
-      "FrontRestriction": {
-        "$s": "915317d6a0065766"
-      },
-      "FrontTreeImmediateExtensions": {
-        "$s": "ce6704d41fdc229b"
-      },
-      "FrontTreeOrderedExtension": {
-        "$s": "1f6ce672f09a704b"
-      },
-      "FrontTreeSingleton": {
-        "$s": "c71152d9e23e4a0e"
-      },
-      "FrontTreeWellFounded": {
-        "$s": "0f214920d5c4c07b"
-      },
-      "GBetterRel": {
-        "$s": "077c1e2e7016d409"
-      },
-      "GBetterRelIff": {
-        "$s": "8298e42603e8af00"
-      },
-      "GoodMultiSequence": {
-        "$s": "d4e3aea402044d45"
-      },
-      "HerCtblCode": {
-        "$s": "4d55a2f749c80eb9"
-      },
-      "HerCtblCodeErase": {
-        "$s": "50769c12d7997588"
-      },
-      "HerCtblNodeClosure": {
-        "$s": "cb66de149e4a06d3"
-      },
-      "HerCtblPower": {
-        "$s": "6fe74fbea4db7ec0"
-      },
-      "HerCtblPowerIsPreorder": {
-        "$s": "1c485e8df2218d1e"
-      },
-      "HerCtblRel": {
-        "$s": "c7078c37fff5367e"
-      },
-      "HerCtblWqoIffWellFounded": {
-        "$s": "6fd7e453ecb98a62"
-      },
-      "HereditarilyCountable": {
-        "$s": "37d3ecffed9919dc"
-      },
-      "HereditarilyCountableAtom": {
-        "$s": "cafb2a51e1c43592"
-      },
-      "HereditarilyCountablePresentationInvariant": {
-        "$s": "d21a9ea35e1e312c"
-      },
-      "IncSeq": {
-        "$s": "1bef43c49bbf5f07"
-      },
-      "IncSeqComp": {
-        "$s": "c702c17b6fea34f9"
-      },
-      "IncSeqId": {
-        "$s": "2d12dfbb5dd1f27e"
-      },
-      "IncSeqPointwiseLe": {
-        "$s": "71161f20f21707b7"
-      },
-      "IncreasingPair": {
-        "$s": "a3fcaa95224bf89a"
-      },
-      "InfiniteSetEnumeration": {
-        "$s": "de343fa3b194ca98"
-      },
-      "InitialSegment": {
-        "$s": "990cc7299ec6fb5f"
-      },
-      "LocallyConstant": {
-        "$s": "9b44c875e87f3f6e"
-      },
-      "MainProp": {
-        "$s": "925e365c2cf6284e"
-      },
-      "MultiSequence": {
-        "$s": "563269175060ff77"
-      },
-      "MultiSequenceRestrict": {
-        "$s": "43653430f11a68f0"
-      },
-      "NashWilliams": {
-        "$s": "5a6bdcb62c9be872"
-      },
-      "NoBadPerfectSuper": {
-        "$s": "c82f953b9cc7b454"
-      },
-      "OrbitBlock": {
-        "$s": "43adc6cf074a2129"
-      },
-      "OrbitBlockCoverage": {
-        "$s": "bfbe41ab8cbcd790"
-      },
-      "OrbitEmbedding": {
-        "$s": "b0d9803c752f419a"
-      },
-      "OrbitPoint": {
-        "$s": "5f2c3738d9b0b618"
-      },
-      "OrbitUnbounded": {
-        "$s": "6e9b30c2832ada04"
-      },
-      "PerfectBaseToSuper": {
-        "$s": "a22614b39351958f"
-      },
-      "PerfectMultiSequence": {
-        "$s": "a10af19a93d10d6b"
-      },
-      "PerfectMultiToSuper": {
-        "$s": "779ebce846853411"
-      },
-      "PerfectSuperRestrict": {
-        "$s": "094c7ada83a529c5"
-      },
-      "PerfectSuperSequence": {
-        "$s": "3bf1637462f825c4"
-      },
-      "PerfectSuperToBase": {
-        "$s": "be853775ace2bcc7"
-      },
-      "PowerChild": {
-        "$s": "69b92207157f9d23"
-      },
-      "PowerChildSupport": {
-        "$s": "84ecc2285b13fbba"
-      },
-      "PowerChildWellFounded": {
-        "$s": "1e260538a8a51a99"
-      },
-      "PowerCopiedFailureMove": {
-        "$s": "190926e68073d61e"
-      },
-      "PowerCopiedFiniteDependence": {
-        "$s": "797fa1eaba28f6ae"
-      },
-      "PowerCopiedFiniteTerminal": {
-        "$s": "5baa1831cf571172"
-      },
-      "PowerCopiedLeft": {
-        "$s": "697d482e9f10c26b"
-      },
-      "PowerCopiedOrbitDependence": {
-        "$s": "fd736b7e24eda33f"
-      },
-      "PowerCopiedShiftIdentity": {
-        "$s": "fbe8ff505da03319"
-      },
-      "PowerCopiedSupport": {
-        "$s": "839a6d9655ce6fbb"
-      },
-      "PowerCopiedTerminalAt": {
-        "$s": "5aaaa16fa8f7c14c"
-      },
-      "PowerCopiedTerminalShift": {
-        "$s": "b6a061c08987bd62"
-      },
-      "PowerCopiedTerminalSupport": {
-        "$s": "bad499fe71d61624"
-      },
-      "PowerCopiedTerminates": {
-        "$s": "8fdf3a0542dc37fe"
-      },
-      "PowerFiniteOrbitConstancy": {
-        "$s": "cd536323366f7570"
-      },
-      "PowerGameDescent": {
-        "$s": "2cd9aa9bcfaa32e3"
-      },
-      "PowerGameDescentWellFounded": {
-        "$s": "db82f5a8bbc31775"
-      },
-      "PowerIResponse": {
-        "$s": "251a3350a4fe910b"
-      },
-      "PowerIResponseFailure": {
-        "$s": "86d027f01e521941"
-      },
-      "PowerIResponseLegal": {
-        "$s": "d575e6663dd94093"
-      },
-      "PowerIResponseWitness": {
-        "$s": "2d95670619370c2b"
-      },
-      "PowerMove": {
-        "$s": "a28e970b178dbf05"
-      },
-      "PowerMoveInSupport": {
-        "$s": "65bdaf8ddf133886"
-      },
-      "PowerPresentationEq": {
-        "$s": "428cf41cab4cbb6d"
-      },
-      "PowerQ": {
-        "$s": "a535fd9f419b610a"
-      },
-      "PowerQIsPreorder": {
-        "$s": "facad9ccd6771416"
-      },
-      "PowerQPresBqo": {
-        "$s": "5f7f5a21668afb9f"
-      },
-      "PowerQReflection": {
-        "$s": "bb06c487e2cdf7d0"
-      },
-      "PowerRel": {
-        "$s": "1f35da21b8f4a8d8"
-      },
-      "PowerRelAtomAtom": {
-        "$s": "d8144aa9cdbeb079"
-      },
-      "PowerRelAtomNode": {
-        "$s": "ace02e96fc5679ec"
-      },
-      "PowerRelCongrLeft": {
-        "$s": "a7adeafbec12f432"
-      },
-      "PowerRelCongrRight": {
-        "$s": "efa6b264dda38b3b"
-      },
-      "PowerRelNodeAtom": {
-        "$s": "ec2f5646e2152d7d"
-      },
-      "PowerRelNodeNode": {
-        "$s": "bb6ab7ad2b686d3c"
-      },
-      "PowerRelRefl": {
-        "$s": "2f8bccd0f90341c3"
-      },
-      "PowerRelTrans": {
-        "$s": "4b6aa3f8226ae47b"
-      },
-      "PowerShiftIter": {
-        "$s": "9e0efe75f79b3c78"
-      },
-      "PowerShiftIterPrefixAgree": {
-        "$s": "9cdf8e4c0e94ce0b"
-      },
-      "PowerShiftIterShift": {
-        "$s": "820d6ef2ee79b66a"
-      },
-      "PowerSupport": {
-        "$s": "4375ef5aa5209b6e"
-      },
-      "PowerSupportInvariant": {
-        "$s": "72b8d805cf14dbd5"
-      },
-      "PowerSupportNonempty": {
-        "$s": "1321fbc7f661366e"
-      },
-      "PowerWqoBadPairSequence": {
-        "$s": "234a29bf58fc8328"
-      },
-      "Preamble": {
-        "$s": "8e550dce538d42ef"
-      },
-      "PrefixAgree": {
-        "$s": "e3a0ee35b89a68cc"
-      },
-      "PrefixTree": {
-        "$s": "dd043b28e007313c"
-      },
-      "ProperInitialSegment": {
-        "$s": "ef7f25e8721dcdfe"
-      },
-      "ProperPrefixSet": {
-        "$s": "5e42ca89f2b141b0"
-      },
-      "QuadrupleHomogeneous": {
-        "$s": "041a27dee2308d3d"
-      },
-      "RadoEmbedding": {
-        "$s": "eac6790543794203"
-      },
-      "RadoOrder": {
-        "$s": "bd4ca6f7a54d0511"
-      },
-      "Ray": {
-        "$s": "2467decd1b0e4d0e"
-      },
-      "RelationEmbedding": {
-        "$s": "ec7993a857068e89"
-      },
-      "RestrictionLocallyConstant": {
-        "$s": "4d415a5dd4f78230"
-      },
-      "RestrictionShift": {
-        "$s": "3feb22e7b06f5a42"
-      },
-      "RightComp": {
-        "$s": "363c7ea599f04bb2"
-      },
-      "RmapLemma": {
-        "$s": "7a59ae3ffb5198ae"
-      },
-      "SetDomination": {
-        "$s": "e09124dbf8635f49"
-      },
-      "ShiftMap": {
-        "$s": "e38a586ff7c1cb33"
-      },
-      "SubFrontCharacterization": {
-        "$s": "ffc82c2d79fb7898"
-      },
-      "Subarr": {
-        "$s": "59593d6d501ff3c9"
-      },
-      "SuccSeq": {
-        "$s": "96e7f62041405a86"
-      },
-      "SuperNW": {
-        "$s": "24673033989a6c19"
-      },
-      "SuperSequence": {
-        "$s": "6001e0ef97ca31e0"
-      },
-      "SuperSequenceExtension": {
-        "$s": "ff33faa6ef808218"
-      },
-      "SuperSequenceRestrict": {
-        "$s": "a7b4e90a5794da2f"
-      },
-      "TailSet": {
-        "$s": "e87002e634302e2a"
-      },
-      "TildeF": {
-        "$s": "8da4d4a36ca453c7"
-      },
-      "TildeFAtomIffFront": {
-        "$s": "5d5a29815d71ef2e"
-      },
-      "TildeFFrontEquation": {
-        "$s": "ee1c46d4218f3773"
-      },
-      "TildeFHerCtbl": {
-        "$s": "fe2056c011110ce3"
-      },
-      "TildeFNonfrontEquation": {
-        "$s": "d1a18c6ff692ab44"
-      },
-      "TildeFSingleton": {
-        "$s": "69bb3d35ac93121e"
-      },
-      "TripleHomogeneous": {
-        "$s": "b49c301db10c0d55"
-      }
+      "$r": "bebb427d9b49bbe0"
     },
     "corr_fingerprint_schema_version": 4,
     "corr_status": {
@@ -60694,11 +60187,13 @@
       "OrbitPoint": "Pass",
       "OrbitUnbounded": "Pass",
       "PerfectBaseToSuper": "Pass",
+      "PerfectMultiRestrict": "Pass",
       "PerfectMultiSequence": "Pass",
       "PerfectMultiToSuper": "Pass",
       "PerfectSuperRestrict": "Pass",
       "PerfectSuperSequence": "Pass",
       "PerfectSuperToBase": "Pass",
+      "PerfectSuperToMulti": "Pass",
       "PowerChild": "Pass",
       "PowerChildSupport": "Pass",
       "PowerChildWellFounded": "Pass",
@@ -60723,6 +60218,7 @@
       "PowerMove": "Pass",
       "PowerMoveInSupport": "Pass",
       "PowerPresentationEq": "Pass",
+      "PowerPresentationEqEquivalence": "Pass",
       "PowerQ": "Pass",
       "PowerQIsPreorder": "Pass",
       "PowerQPresBqo": "Pass",
@@ -60758,6 +60254,7 @@
       "RightComp": "Pass",
       "RmapLemma": "Pass",
       "SetDomination": "Pass",
+      "ShiftDichotomy": "Pass",
       "ShiftMap": "Pass",
       "SubFrontCharacterization": "Pass",
       "Subarr": "Pass",
@@ -60779,9 +60276,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 55,
+    "cycle": 56,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 55,
+    "cycles_since_clean": 56,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -61479,7 +60976,7 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": null,
+    "held_target": "TripleHomogeneous",
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -61523,7 +61020,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 51,
+    "last_sound_response_cycle": 56,
     "last_stuck_math_audit_dispatched_cycle": 52,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61772,37 +61269,31 @@
       "mode": "Targeted",
       "must_close_active": false,
       "next_worker_context_mode": "resume",
-      "node": "PerfectMultiRestrict",
+      "node": "BlockSigmaIntertwines",
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [
         {
-          "end_line": 1275,
-          "reason": "The paper defines multi-sequences, sub-multi-sequences, and the locally constant finite-prefix interface underlying the restriction transports.",
-          "start_line": 1261
+          "end_line": 1783,
+          "reason": "The preceding manuscript lemma defines the orbit G by iterates and records the iterate/composition identity used by the block construction.",
+          "start_line": 1778
         },
         {
-          "end_line": 1374,
-          "reason": "The paper requires the full tagged, iterated powerset hierarchy and distinguishes atoms from nonempty set nodes.",
-          "start_line": 1362
+          "end_line": 1812,
+          "reason": "The Emap proof defines the two block cases and proves the monotonicity and boundary comparisons needed to move g(l) to the next block.",
+          "start_line": 1794
         },
         {
-          "end_line": 1419,
-          "reason": "The paper gives the four recursive cases for the lifted powerset relation, which contextualize the current presentation-matching equivalence.",
-          "start_line": 1404
-        },
-        {
-          "end_line": 1625,
-          "reason": "The paper derives the perfect-or-bad dichotomy from a Boolean locally constant coloring and homogeneous thinning.",
-          "start_line": 1617
-        },
-        {
-          "end_line": 1662,
-          "reason": "The paper defines perfect multi- and super-sequences and states their equivalence through perfect substructures.",
-          "start_line": 1646
+          "end_line": 1833,
+          "reason": "The manuscript proves the intertwining identity by comparing the shifted block exponent with the iterate applied to g(l).",
+          "start_line": 1815
         }
       ],
       "protected_semantic_change_nodes": [],
-      "task_blockers": [],
+      "task_blockers": [
+        {
+          "$r": "11e09e72d7976ff1"
+        }
+      ],
       "work_style_hint": "none"
     },
     "pending_worker_audit_request": null,
@@ -61810,67 +61301,85 @@
     "plan_review_cadence_enabled": true,
     "post_advance_routing_pending": false,
     "previous_corr_lane_findings": {
-      "BadSuperToBase": {
+      "PerfectMultiRestrict": {
         "v1": {
           "comments": {
-            "$s": "8daad19774bb3133"
+            "$s": "dc536114600e35aa"
           },
           "correspondence": {
             "decision": "PASS",
             "issues": []
           },
-          "node": "BadSuperToBase",
+          "node": "PerfectMultiRestrict",
           "overall": "APPROVE",
           "summary": {
-            "$s": "df088701d5b346d2"
+            "$s": "657b0d82399bf276"
           }
         }
       },
-      "FrontPrefixUnique": {
+      "PerfectSuperToMulti": {
         "v1": {
           "comments": {
-            "$s": "8daad19774bb3133"
+            "$s": "dc536114600e35aa"
           },
           "correspondence": {
             "decision": "PASS",
             "issues": []
           },
-          "node": "FrontPrefixUnique",
+          "node": "PerfectSuperToMulti",
           "overall": "APPROVE",
           "summary": {
-            "$s": "df088701d5b346d2"
+            "$s": "657b0d82399bf276"
           }
         }
       },
-      "PerfectSuperToBase": {
+      "PowerPresentationEqEquivalence": {
         "v1": {
           "comments": {
-            "$s": "8daad19774bb3133"
+            "$s": "dc536114600e35aa"
           },
           "correspondence": {
             "decision": "PASS",
             "issues": []
           },
-          "node": "PerfectSuperToBase",
+          "node": {
+            "$s": "93d700ae7b9523b8"
+          },
           "overall": "APPROVE",
           "summary": {
-            "$s": "df088701d5b346d2"
+            "$s": "657b0d82399bf276"
+          }
+        }
+      },
+      "ShiftDichotomy": {
+        "v1": {
+          "comments": {
+            "$s": "dc536114600e35aa"
+          },
+          "correspondence": {
+            "decision": "PASS",
+            "issues": []
+          },
+          "node": "ShiftDichotomy",
+          "overall": "APPROVE",
+          "summary": {
+            "$s": "657b0d82399bf276"
           }
         }
       }
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "OrbitBlockCoverage": {
+      "BlockSigmaIntertwines": {
         "v1": {
-          "comments": "1. The proof uses the defining conjunction for OrbitBlock when it says that the least index lies in a block and when it invokes the lower-bound clause for a competing block, but it never cites \\noderef{OrbitBlock}. 2. OrbitUnbounded states that some r satisfies l < OrbitPoint(g,k,r), not directly that some m satisfies l < G(m+1). Since the proof is in the branch l >= G(0), it must rule out r = 0 and write r = m+1 (and explicitly identify OrbitPoint with the locally defined G); this is not shown. 3. That identification of G with OrbitPoint is itself a cross-node use of the OrbitPoint definition and is uncited, so the application of OrbitUnbounded and the subsequent inequalities are not fully checkable from the cited statements. 4. The assertion that minimality and l >= G(0) imply G(n) <= l suppresses the necessary case split: for n = 0 use G(0) <= l, while for n > 0 minimality applied to n-1 gives not (l < G(n)) and hence G(n) <= l.",
-          "node": "OrbitBlockCoverage",
+          "comments": "1. The proof uses that g is strictly increasing because g is an increasing embedding, but it gives no \\noderef{IncSeq} citation for this cross-node definition. 2. The assertion that an increasing embedding f satisfies n+1 <= f(n+1) is essential for the natural-number subtraction and exponent identity, but it is merely asserted; the proof needs the induction from order preservation/strictness (and the IncSeq dependency). 3. The identities g^[n](g(l)) = g^[n+1](l), G(n+1) = g(G(n)), and g(G(n+1)) = G(n+2) are used to place g(l) in the next block and to compare exponents, but the iterate recursion identity is only called elementary and is not proved or supplied by a cited node.  These omissions leave the argument short of the required line-by-line NL proof standard.",
+          "node": "BlockSigmaIntertwines",
           "overall": "REJECT",
           "soundness": {
             "decision": "UNSOUND",
-            "explanation": "The proof has the correct least-index strategy, but it is not line-by-line sound under the citation and rigor rubric: it relies on uncited definitions and uses OrbitUnbounded as if it directly supplied a successor-index witness."
+            "explanation": "The case split and exponent comparison have the correct mathematical outline, and the cited block/composition statements support that outline, but essential monotonicity and iterate identities are left unjustified; the proof also omits the required IncSeq dependency citation. It is therefore not rigorous enough under the paper-floor, line-by-line soundness contract."
           },
-          "summary": "Reject: the coverage argument is mathematically repairable but currently omits required dependency citations and essential index derivations."
+          "summary": "Reject: the NL proof has the right block argument but omits a required dependency citation and essential elementary derivations."
         }
       }
     },
@@ -61878,7 +61387,7 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 50,
-      "next_index": 55,
+      "next_index": 56,
       "snapshots": [
         {
           "present": [
@@ -64737,6 +64246,15 @@
             "$r": "9550d64858cb4220"
           },
           "snapshot_index": 54
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "9550d64858cb4220"
+          },
+          "snapshot_index": 55
         }
       ]
     },
@@ -64745,17 +64263,19 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 237,
+    "request_seq": 241,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Run a verifier-only targeted burst on PerfectMultiRestrict with no Tablet edits. Preserve its repaired fixed-left restriction orientation: the restricted value is h(z composed with x), and RestrictionShift identifies the shifted value. Re-adjudicate the four current correspondence/substantiveness frontier nodes using current source rather than the obsolete right-composition objections: PerfectMultiRestrict, PerfectSuperToMulti, PowerPresentationEqEquivalence, and ShiftDichotomy. For PerfectSuperToMulti and ShiftDichotomy, use the current fixed-left MultiSequenceRestrict interface. For PowerPresentationEqEquivalence, verify the genuine reflexive/symmetric/transitive theorem for the current recursive matching relation; do not resurrect the deleted wrapper-shape objection. Do not request Sound verification until all statement lanes are current and clear.",
+    "reviewer_comments": "Repair only Tablet/BlockSigmaIntertwines.tex. Preserve the theorem statement and the existing two-case block argument. Add an explicit citation to IncSeq when using strict increase/order-embedding facts. Prove the needed natural-number bound n+1 <= f(n+1) by induction from f being strictly increasing, rather than asserting it. Cite OrbitPoint and explicitly unfold the orbit recursion to justify G(n+1)=g(G(n)) and g(G(n+1))=G(n+2). Also prove by induction on a the iterate identity g^[a](g(l)) = g^[a+1](l), then use it with a=f(n+1)-(n+1). Retain the citations to OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq, and make the two block inequalities and exponent arithmetic line-by-line checkable. Do not edit support nodes, add helpers, or request Sound verification in this burst.",
     "reviewer_requested_sound_verifier_nodes": [
-      "BlockSigmaIntertwines",
       "FrontRayClosure",
       "InfiniteSetEnumeration"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
+      "BlockSigmaIntertwines": {
+        "$s": "b47d4174219139ea"
+      },
       "BooleanInfinitePigeonhole": {
         "$s": "66f5b021e983ad69"
       },
@@ -64795,6 +64315,15 @@
     },
     "sound_assessment_schema_version": 1,
     "sound_assessments": {
+      "BlockSigmaIntertwines": {
+        "fingerprints": {
+          "$r": "772930f629f02614"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
+      },
       "BooleanInfinitePigeonhole": {
         "fingerprints": {
           "$r": "378543a55b518e34"
@@ -66030,6 +65559,7 @@
       }
     },
     "sound_status": {
+      "BlockSigmaIntertwines": "Fail",
       "BooleanInfinitePigeonhole": "Pass",
       "FrontRayClosure": "Fail",
       "FrontRestriction": "Pass",
@@ -66147,15 +65677,7 @@
           }
         },
         {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "b47d4174219139ea"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BlockSigmaIntertwines",
-            "otype": "node"
-          }
+          "$r": "11e09e72d7976ff1"
         },
         {
           "deferred": false,
@@ -67270,6 +66792,9 @@
       "PerfectBaseToSuper": {
         "$s": "14eb635466f31856"
       },
+      "PerfectMultiRestrict": {
+        "$s": "27dad1e6644ca62d"
+      },
       "PerfectMultiSequence": {
         "$s": "a2c08108c48b7faa"
       },
@@ -67284,6 +66809,9 @@
       },
       "PerfectSuperToBase": {
         "$s": "3fe4a300b7f0cbfd"
+      },
+      "PerfectSuperToMulti": {
+        "$s": "6943773cc7b06ecd"
       },
       "PowerChild": {
         "$s": "09f918cb4495de7d"
@@ -67356,6 +66884,9 @@
       },
       "PowerPresentationEq": {
         "$s": "69669e7aa3433b54"
+      },
+      "PowerPresentationEqEquivalence": {
+        "$s": "9c11ba06b5d96308"
       },
       "PowerQ": {
         "$s": "065fb8f83a135f00"
@@ -67458,6 +66989,9 @@
       },
       "SetDomination": {
         "$s": "a94565257552f769"
+      },
+      "ShiftDichotomy": {
+        "$s": "02e1e1fa822bf250"
       },
       "ShiftMap": {
         "$s": "576e339e1eb57062"
@@ -67603,13 +67137,13 @@
       "OrbitPoint": "Pass",
       "OrbitUnbounded": "Pass",
       "PerfectBaseToSuper": "Pass",
-      "PerfectMultiRestrict": "Unknown",
+      "PerfectMultiRestrict": "Pass",
       "PerfectMultiSequence": "Pass",
       "PerfectMultiToSuper": "Pass",
       "PerfectSuperRestrict": "Pass",
       "PerfectSuperSequence": "Pass",
       "PerfectSuperToBase": "Pass",
-      "PerfectSuperToMulti": "Unknown",
+      "PerfectSuperToMulti": "Pass",
       "PowerChild": "Pass",
       "PowerChildSupport": "Pass",
       "PowerChildWellFounded": "Pass",
@@ -67634,7 +67168,7 @@
       "PowerMove": "Pass",
       "PowerMoveInSupport": "Pass",
       "PowerPresentationEq": "Pass",
-      "PowerPresentationEqEquivalence": "Unknown",
+      "PowerPresentationEqEquivalence": "Pass",
       "PowerQ": "Pass",
       "PowerQIsPreorder": "Pass",
       "PowerQPresBqo": "Pass",
@@ -67669,7 +67203,7 @@
       "RightComp": "Pass",
       "RmapLemma": "Pass",
       "SetDomination": "Pass",
-      "ShiftDichotomy": "Unknown",
+      "ShiftDichotomy": "Pass",
       "ShiftMap": "Pass",
       "SubFrontCharacterization": "Pass",
       "Subarr": "Pass",

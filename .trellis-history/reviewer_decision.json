@@ -1,17 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker completed the audited statement-correspondence repairs, and the current correspondence verifier approves BadSuperToBase. The next audit task is fresh statement-lane adjudication: reset the four still-binding substantive Fail records that the contract permits, then run correspondence and substantiveness verification on the repaired/current packages before any Sound reverification.",
-    "comments": "Run a verifier-only targeted burst on PerfectMultiRestrict with no Tablet edits. Preserve its repaired fixed-left restriction orientation: the restricted value is h(z composed with x), and RestrictionShift identifies the shifted value. Re-adjudicate the four current correspondence/substantiveness frontier nodes using current source rather than the obsolete right-composition objections: PerfectMultiRestrict, PerfectSuperToMulti, PowerPresentationEqEquivalence, and ShiftDichotomy. For PerfectSuperToMulti and ShiftDichotomy, use the current fixed-left MultiSequenceRestrict interface. For PowerPresentationEqEquivalence, verify the genuine reflexive/symmetric/transitive theorem for the current recursive matching relation; do not resurrect the deleted wrapper-shape objection. Do not request Sound verification until all statement lanes are current and clear.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [
-      "substantiveness:node:PerfectMultiRestrict:{\"own_tex\":\"81fecb3d2cb1c7dc7bf873b55f5d3fca8804ac6d93a0cd6b1fba2ce098128dd5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:PerfectSuperToMulti:{\"own_tex\":\"3288a78768b5207606f453590faa65bb2dea83775f46d0d20bc6c4a9ef4b1406\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:PowerPresentationEqEquivalence:{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:ShiftDichotomy:{\"own_tex\":\"a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
+    "reason": "The current Sound verifier rejects BlockSigmaIntertwines with concrete proof gaps, and the node is sound-repair-ready. Assign a focused NL proof repair; keep the Lean signature and imports unchanged and defer further Sound requests until this repaired support node is rechecked.",
+    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex. Preserve the theorem statement and the existing two-case block argument. Add an explicit citation to IncSeq when using strict increase/order-embedding facts. Prove the needed natural-number bound n+1 <= f(n+1) by induction from f being strictly increasing, rather than asserting it. Cite OrbitPoint and explicitly unfold the orbit recursion to justify G(n+1)=g(G(n)) and g(G(n+1))=G(n+2). Also prove by induction on a the iterate identity g^[a](g(l)) = g^[a+1](l), then use it with a=f(n+1)-(n+1). Retain the citations to OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq, and make the two block inequalities and exponent arithmetic line-by-line checkable. Do not edit support nodes, add helpers, or request Sound verification in this burst.",
+    "task_blocker_ids": [
+      "soundness:node:BlockSigmaIntertwines:sound-v2:d08e9886961ae21a993ae7a690038ac7691e2d2cc24d6923e2d051385a3c91a9"
     ],
+    "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PerfectMultiRestrict",
+    "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": "",
     "next_mode": "targeted",
     "reset": "none",
@@ -23,43 +20,33 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1261,
-        "end_line": 1275,
-        "reason": "The paper defines multi-sequences, sub-multi-sequences, and the locally constant finite-prefix interface underlying the restriction transports."
+        "start_line": 1778,
+        "end_line": 1783,
+        "reason": "The preceding manuscript lemma defines the orbit G by iterates and records the iterate/composition identity used by the block construction."
       },
       {
-        "start_line": 1362,
-        "end_line": 1374,
-        "reason": "The paper requires the full tagged, iterated powerset hierarchy and distinguishes atoms from nonempty set nodes."
+        "start_line": 1794,
+        "end_line": 1812,
+        "reason": "The Emap proof defines the two block cases and proves the monotonicity and boundary comparisons needed to move g(l) to the next block."
       },
       {
-        "start_line": 1404,
-        "end_line": 1419,
-        "reason": "The paper gives the four recursive cases for the lifted powerset relation, which contextualize the current presentation-matching equivalence."
-      },
-      {
-        "start_line": 1617,
-        "end_line": 1625,
-        "reason": "The paper derives the perfect-or-bad dichotomy from a Boolean locally constant coloring and homogeneous thinning."
-      },
-      {
-        "start_line": 1646,
-        "end_line": 1662,
-        "reason": "The paper defines perfect multi- and super-sequences and states their equivalence through perfect substructures."
+        "start_line": 1815,
+        "end_line": 1833,
+        "reason": "The manuscript proves the intertwining identity by comparing the shifted block exponent with the iterate applied to g(l)."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passages confirm the fixed-left restriction interface, the full tagged powerset semantics and its four recursive relation cases, the Boolean-coloring dichotomy, and the perfect multi/super-sequence correspondence. These are the current mathematical interfaces to use when replacing the stale statement-lane verdicts."
+      "basis_summary": "The manuscript defines G(n)=g^n(k_g), proves the block map by its initial and half-open orbit blocks, and derives the intertwining equation by showing g(l) lies in the next block and applying the iterate identity. The worker guidance expands precisely the steps the Sound verifier found unsupported."
     },
     "dismissed_tasks": [
       {
-        "id": "repair-statement-correspondence",
-        "reason": "Completed: the worker added the SuperSequenceExtension value equations to BadSuperToBase and PerfectSuperToBase, made FrontPrefixUnique local and explicit, and corrected PerfectMultiRestrict to fixed-left composition. The current BadSuperToBase correspondence verifier passes."
+        "id": "clear-statement-lane-surface",
+        "reason": "Completed: after the correspondence and substantiveness passes, the live blocker set now contains only Soundness obligations. The statement-lane surface is clear, so the audit can proceed to its Sound-closing task after current Sound repairs."
       }
     ],
     "stuck_math_audit": {
-      "notes": "The active audit plan remains in force. The statement-interface repair task is complete and dismissed. Fresh correspondence and substantiveness verdicts must now clear the current four-node statement surface; keep Sound deferred until those lanes are current and passing.",
+      "notes": "The audit statement-lane task is complete and dismissed. The current Sound rejection is concrete and local, not a structural failure: repair BlockSigmaIntertwines.tex with the missing IncSeq citation, natural-number bound proof, orbit recursion identities, and iterate induction. Keep the audit's pinned Sound package task open and do not request Sound while this known Fail is being repaired.",
       "reviewer_lean_product": null
     }
   },
@@ -72,108 +59,71 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Run a verifier-only targeted burst on PerfectMultiRestrict with no Tablet edits. Preserve its repaired fixed-left restriction orientation: the restricted value is h(z composed with x), and RestrictionShift identifies the shifted value. Re-adjudicate the four current correspondence/substantiveness frontier nodes using current source rather than the obsolete right-composition objections: PerfectMultiRestrict, PerfectSuperToMulti, PowerPresentationEqEquivalence, and ShiftDichotomy. For PerfectSuperToMulti and ShiftDichotomy, use the current fixed-left MultiSequenceRestrict interface. For PowerPresentationEqEquivalence, verify the genuine reflexive/symmetric/transitive theorem for the current recursive matching relation; do not resurrect the deleted wrapper-shape objection. Do not request Sound verification until all statement lanes are current and clear.",
+    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex. Preserve the theorem statement and the existing two-case block argument. Add an explicit citation to IncSeq when using strict increase/order-embedding facts. Prove the needed natural-number bound n+1 <= f(n+1) by induction from f being strictly increasing, rather than asserting it. Cite OrbitPoint and explicitly unfold the orbit recursion to justify G(n+1)=g(G(n)) and g(G(n+1))=G(n+2). Also prove by induction on a the iterate identity g^[a](g(l)) = g^[a+1](l), then use it with a=f(n+1)-(n+1). Retain the citations to OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq, and make the two block inequalities and exponent arithmetic line-by-line checkable. Do not edit support nodes, add helpers, or request Sound verification in this burst.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 55,
+    "cycle": 56,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "repair-statement-correspondence",
-        "reason": "Completed: the worker added the SuperSequenceExtension value equations to BadSuperToBase and PerfectSuperToBase, made FrontPrefixUnique local and explicit, and corrected PerfectMultiRestrict to fixed-left composition. The current BadSuperToBase correspondence verifier passes."
+        "id": "clear-statement-lane-surface",
+        "reason": "Completed: after the correspondence and substantiveness passes, the live blocker set now contains only Soundness obligations. The statement-lane surface is clear, so the audit can proceed to its Sound-closing task after current Sound repairs."
       }
     ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PerfectMultiRestrict",
+    "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1275,
-        "reason": "The paper defines multi-sequences, sub-multi-sequences, and the locally constant finite-prefix interface underlying the restriction transports.",
-        "start_line": 1261
+        "end_line": 1783,
+        "reason": "The preceding manuscript lemma defines the orbit G by iterates and records the iterate/composition identity used by the block construction.",
+        "start_line": 1778
       },
       {
-        "end_line": 1374,
-        "reason": "The paper requires the full tagged, iterated powerset hierarchy and distinguishes atoms from nonempty set nodes.",
-        "start_line": 1362
+        "end_line": 1812,
+        "reason": "The Emap proof defines the two block cases and proves the monotonicity and boundary comparisons needed to move g(l) to the next block.",
+        "start_line": 1794
       },
       {
-        "end_line": 1419,
-        "reason": "The paper gives the four recursive cases for the lifted powerset relation, which contextualize the current presentation-matching equivalence.",
-        "start_line": 1404
-      },
-      {
-        "end_line": 1625,
-        "reason": "The paper derives the perfect-or-bad dichotomy from a Boolean locally constant coloring and homogeneous thinning.",
-        "start_line": 1617
-      },
-      {
-        "end_line": 1662,
-        "reason": "The paper defines perfect multi- and super-sequences and states their equivalence through perfect substructures.",
-        "start_line": 1646
+        "end_line": 1833,
+        "reason": "The manuscript proves the intertwining identity by comparing the shifted block exponent with the iterate applied to g(l).",
+        "start_line": 1815
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passages confirm the fixed-left restriction interface, the full tagged powerset semantics and its four recursive relation cases, the Boolean-coloring dichotomy, and the perfect multi/super-sequence correspondence. These are the current mathematical interfaces to use when replacing the stale statement-lane verdicts.",
+      "basis_summary": "The manuscript defines G(n)=g^n(k_g), proves the block map by its initial and half-open orbit blocks, and derives the intertwining equation by showing g(l) lies in the next block and applying the iterate identity. The worker guidance expands precisely the steps the Sound verifier found unsupported.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker completed the audited statement-correspondence repairs, and the current correspondence verifier approves BadSuperToBase. The next audit task is fresh statement-lane adjudication: reset the four still-binding substantive Fail records that the contract permits, then run correspondence and substantiveness verification on the repaired/current packages before any Sound reverification.",
-    "request_id": 237,
+    "reason": "The current Sound verifier rejects BlockSigmaIntertwines with concrete proof gaps, and the node is sound-repair-ready. Assign a focused NL proof repair; keep the Lean signature and imports unchanged and defer further Sound requests until this repaired support node is rechecked.",
+    "request_id": 241,
     "request_sound_verifier_nodes": [],
     "reset": "None",
-    "reset_blockers": [
+    "reset_blockers": [],
+    "reset_node": null,
+    "status": "Ok",
+    "stuck_math_audit": {
+      "notes": "The audit statement-lane task is complete and dismissed. The current Sound rejection is concrete and local, not a structural failure: repair BlockSigmaIntertwines.tex with the missing IncSeq citation, natural-number bound proof, orbit recursion identities, and iterate induction. Keep the audit's pinned Sound package task open and do not request Sound while this known Fail is being repaired.",
+      "reviewer_lean_product": null
+    },
+    "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "{\"own_tex\":\"81fecb3d2cb1c7dc7bf873b55f5d3fca8804ac6d93a0cd6b1fba2ce098128dd5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
+        "fingerprint": "sound-v2:d08e9886961ae21a993ae7a690038ac7691e2d2cc24d6923e2d051385a3c91a9",
+        "kind": "Soundness",
         "object": {
-          "node": "PerfectMultiRestrict",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"3288a78768b5207606f453590faa65bb2dea83775f46d0d20bc6c4a9ef4b1406\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "PerfectSuperToMulti",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "PowerPresentationEqEquivalence",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "ShiftDichotomy",
+          "node": "BlockSigmaIntertwines",
           "otype": "node"
         }
       }
     ],
-    "reset_node": null,
-    "status": "Ok",
-    "stuck_math_audit": {
-      "notes": "The active audit plan remains in force. The statement-interface repair task is complete and dismissed. Fresh correspondence and substantiveness verdicts must now clear the current four-node statement surface; keep Sound deferred until those lanes are current and passing.",
-      "reviewer_lean_product": null
-    },
-    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_237_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_241_decision.context.json"
 }
