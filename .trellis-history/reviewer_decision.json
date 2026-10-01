@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "NoBadPerfectSuper has now received a current Sound approval. ConverseGame is the held next node, has no current Sound verdict, and is requestable on the Sound frontier, so request its verification without assigning a worker or resetting any live obligation.",
-    "comments": "Leave Tablet/ConverseGame.tex and the rest of the tablet unchanged. Request a real Sound verification of ConverseGame. The verifier should check the explicit contradiction hypothesis and the PowerRel comparison at arbitrary m<n, the initial FrontBridge supplied by FrontBridgeInit, and the well-founded induction on the two tree coordinates. It should verify each bridge-preserving response using FrontBridge, FrontBridgeStep, FrontTreeOrderedExtension, and the appropriate PowerRel node/atom reduction, with the recursive value equations and strict-extension decreases made explicit. At the terminal front case, check that FrontBridgeTerminal supplies the same FiniteShift witnesses, that TildeFFrontEquation identifies both values with the displayed super-sequence values, and that BadSuperSequence is applied with explicit front-membership proofs. Check all cross-node dependencies cited in the proof against the current statements, including TildeFSingleton, TildeFHerCtbl, FrontTreeSingleton, HerCtblRel, SuperSequence, FrontBridgeInit, FrontBridgeStep, FrontBridgeTerminal, FrontTreeWellFounded, FrontTreeOrderedExtension, TildeFNonfrontEquation, TildeFFrontEquation, PowerRelNodeNode, PowerRelNodeAtom, PowerRelAtomNode, PowerRelAtomAtom, and BadSuperSequence.",
+    "reason": "ConverseGame has a current Sound approval. BqoImpliesWqo is the held next node, has no current Sound verdict, and is requestable on the Sound frontier, so request its verification without assigning a worker or resetting any live obligation.",
+    "comments": "Leave Tablet/BqoImpliesWqo.tex and the rest of the tablet unchanged. Request a real Sound verification of BqoImpliesWqo. The verifier should check that negating the sequence-based WellQuasiOrdered definition yields a single sequence a with the stated universal badness condition, and that no reflexivity or transitivity hypothesis is used. Then check the definition of MultiSequence by the map h(x)=a(x(0)), the local-constancy witness n=1 using PrefixAgree, and the strict inequality x(0)<x(1) supplied by IncSeq. Verify explicitly that ShiftMap x has first entry x(1) using ShiftMap, RightComp, and SuccSeq, so the ordinary bad-sequence inequality is exactly BadMultiSequence r h x. Finally apply Bqo with the explicit LocallyConstant and BadMultiSequence facts. Check all node-level dependencies cited in the proof, including MultiSequence, IncSeq, PrefixAgree, LocallyConstant, ShiftMap, and BadMultiSequence; the shared Preamble supplies the sequence-based WellQuasiOrdered meaning.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "ConverseGame"
+      "BqoImpliesWqo"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,19 +20,24 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1559,
-        "end_line": 1564,
-        "reason": "The manuscript defines the well-founded tree recursion and the singleton restriction used by ConverseGame."
+        "start_line": 647,
+        "end_line": 657,
+        "reason": "The manuscript defines bad ordinary sequences by failure of the relation at every increasing pair."
       },
       {
-        "start_line": 1566,
-        "end_line": 1570,
-        "reason": "The manuscript gives the copying-game contradiction, bridge evolution, and terminal finite-shift argument."
+        "start_line": 664,
+        "end_line": 670,
+        "reason": "The manuscript identifies absence of bad sequences as the relevant well-quasi-order condition."
+      },
+      {
+        "start_line": 1445,
+        "end_line": 1459,
+        "reason": "The manuscript defines shift, bad multi-sequences, and better-quasi-order via locally constant multi-sequences."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines the recursive tree values on front nodes and proves the converse by assuming a PowerRel comparison at m<n, evolving a copying bridge through the game, and reaching front members related by a finite shift. Badness then contradicts the terminal relation. The current node follows this route and should receive a direct Sound check of each recursive transition and citation."
+      "basis_summary": "The cited paper passages define a bad sequence by failure of the relation on every m<n, characterize WQO by absence of bad sequences, and define a bad multi-sequence by failure across the shift, with BQO excluding locally constant bad multi-sequences. The current proof is exactly the first-entry lift from the former bad sequence to the latter and should receive a direct Sound check of each definition-level step."
     },
     "authorized_node_ids": []
   },
@@ -45,10 +50,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/ConverseGame.tex and the rest of the tablet unchanged. Request a real Sound verification of ConverseGame. The verifier should check the explicit contradiction hypothesis and the PowerRel comparison at arbitrary m<n, the initial FrontBridge supplied by FrontBridgeInit, and the well-founded induction on the two tree coordinates. It should verify each bridge-preserving response using FrontBridge, FrontBridgeStep, FrontTreeOrderedExtension, and the appropriate PowerRel node/atom reduction, with the recursive value equations and strict-extension decreases made explicit. At the terminal front case, check that FrontBridgeTerminal supplies the same FiniteShift witnesses, that TildeFFrontEquation identifies both values with the displayed super-sequence values, and that BadSuperSequence is applied with explicit front-membership proofs. Check all cross-node dependencies cited in the proof against the current statements, including TildeFSingleton, TildeFHerCtbl, FrontTreeSingleton, HerCtblRel, SuperSequence, FrontBridgeInit, FrontBridgeStep, FrontBridgeTerminal, FrontTreeWellFounded, FrontTreeOrderedExtension, TildeFNonfrontEquation, TildeFFrontEquation, PowerRelNodeNode, PowerRelNodeAtom, PowerRelAtomNode, PowerRelAtomAtom, and BadSuperSequence.",
+    "comments": "Leave Tablet/BqoImpliesWqo.tex and the rest of the tablet unchanged. Request a real Sound verification of BqoImpliesWqo. The verifier should check that negating the sequence-based WellQuasiOrdered definition yields a single sequence a with the stated universal badness condition, and that no reflexivity or transitivity hypothesis is used. Then check the definition of MultiSequence by the map h(x)=a(x(0)), the local-constancy witness n=1 using PrefixAgree, and the strict inequality x(0)<x(1) supplied by IncSeq. Verify explicitly that ShiftMap x has first entry x(1) using ShiftMap, RightComp, and SuccSeq, so the ordinary bad-sequence inequality is exactly BadMultiSequence r h x. Finally apply Bqo with the explicit LocallyConstant and BadMultiSequence facts. Check all node-level dependencies cited in the proof, including MultiSequence, IncSeq, PrefixAgree, LocallyConstant, ShiftMap, and BadMultiSequence; the shared Preamble supplies the sequence-based WellQuasiOrdered meaning.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 162,
+    "cycle": 163,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -62,25 +67,30 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1564,
-        "reason": "The manuscript defines the well-founded tree recursion and the singleton restriction used by ConverseGame.",
-        "start_line": 1559
+        "end_line": 657,
+        "reason": "The manuscript defines bad ordinary sequences by failure of the relation at every increasing pair.",
+        "start_line": 647
       },
       {
-        "end_line": 1570,
-        "reason": "The manuscript gives the copying-game contradiction, bridge evolution, and terminal finite-shift argument.",
-        "start_line": 1566
+        "end_line": 670,
+        "reason": "The manuscript identifies absence of bad sequences as the relevant well-quasi-order condition.",
+        "start_line": 664
+      },
+      {
+        "end_line": 1459,
+        "reason": "The manuscript defines shift, bad multi-sequences, and better-quasi-order via locally constant multi-sequences.",
+        "start_line": 1445
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines the recursive tree values on front nodes and proves the converse by assuming a PowerRel comparison at m<n, evolving a copying bridge through the game, and reaching front members related by a finite shift. Badness then contradicts the terminal relation. The current node follows this route and should receive a direct Sound check of each recursive transition and citation.",
+      "basis_summary": "The cited paper passages define a bad sequence by failure of the relation on every m<n, characterize WQO by absence of bad sequences, and define a bad multi-sequence by failure across the shift, with BQO excluding locally constant bad multi-sequences. The current proof is exactly the first-entry lift from the former bad sequence to the latter and should receive a direct Sound check of each definition-level step.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "NoBadPerfectSuper has now received a current Sound approval. ConverseGame is the held next node, has no current Sound verdict, and is requestable on the Sound frontier, so request its verification without assigning a worker or resetting any live obligation.",
-    "request_id": 516,
+    "reason": "ConverseGame has a current Sound approval. BqoImpliesWqo is the held next node, has no current Sound verdict, and is requestable on the Sound frontier, so request its verification without assigning a worker or resetting any live obligation.",
+    "request_id": 518,
     "request_sound_verifier_nodes": [
-      "ConverseGame"
+      "BqoImpliesWqo"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -90,5 +100,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_516_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_518_decision.context.json"
 }
