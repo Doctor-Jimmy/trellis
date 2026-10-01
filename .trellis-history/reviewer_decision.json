@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "DecidingValue now has a fresh Sound approval. DecidingFront was changed after its previous evidence and remains SelfEditUnknown, so verify that support node before rechecking changed GBetterRelIff.",
-    "comments": "Do not edit or reassign DecidingValue: the current verifier evidence is APPROVE/SOUND. Request a real Sound verifier for DecidingFront only. Its cycle-89 repair changed the proof and added the existing InfiniteSetEnumeration support; verify the finite-prefix-to-DecidingPrefix bridge, branch minimalization, prefix-freeness, constant/nonconstant base split, and all Front fields from the explicitly cited support. Once DecidingFront passes, reverify changed GBetterRelIff, whose homogeneous-front proof depends on it. This ordering follows the recent history and the current sound-assessment statuses.",
+    "reason": "DecidingFront now has fresh Sound approval, while the changed dependent GBetterRelIff node remains SelfEditUnknown. Request its Sound verification now that the deciding-front support prerequisite is certified.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current statuses are VerifierPass for DecidingFront and DecidingValue, and SelfEditUnknown for the cycle-88 replacement of GBetterRelIff. Request one real Sound verifier for GBetterRelIff only. It should check the Boolean coloring and homogeneous-front argument, the finite-prefix local-constancy and composition transport, the converse implication, and the final better-relation/BQO specialization against the explicitly cited support. Leave all other live soundness obligations untouched.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "DecidingFront"
+      "GBetterRelIff"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,24 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1277,
-        "end_line": 1289,
-        "reason": "The paper's minimal deciding-prefix front construction underlying the changed DecidingFront support node."
+        "start_line": 1617,
+        "end_line": 1626,
+        "reason": "The paper's Boolean shift dichotomy via a deciding front and Nash-Williams homogeneity."
+      },
+      {
+        "start_line": 1713,
+        "end_line": 1715,
+        "reason": "The paper's generalized-shift equivalence used by the GBetterRelIff proof."
+      },
+      {
+        "start_line": 1731,
+        "end_line": 1745,
+        "reason": "The paper's definition of g-better-relation and the better-relation equivalence target."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines S^h, proves its minimal members form a front using density and the trivial/nontrivial base split, and then constructs the value map. It is the mathematical route behind the changed DecidingFront support node that should be freshly verified before its dependent GBetterRelIff proof."
+      "basis_summary": "The cited passages define the shift dichotomy by coloring a locally constant map and homogenizing its deciding front, state equivalence of the generalized shift with the ordinary shift, and formulate the g-better-relation and g-BQO equivalence. These are the mathematical claims covered by the changed GBetterRelIff proof and its certified DecidingFront support."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +48,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit or reassign DecidingValue: the current verifier evidence is APPROVE/SOUND. Request a real Sound verifier for DecidingFront only. Its cycle-89 repair changed the proof and added the existing InfiniteSetEnumeration support; verify the finite-prefix-to-DecidingPrefix bridge, branch minimalization, prefix-freeness, constant/nonconstant base split, and all Front fields from the explicitly cited support. Once DecidingFront passes, reverify changed GBetterRelIff, whose homogeneous-front proof depends on it. This ordering follows the recent history and the current sound-assessment statuses.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current statuses are VerifierPass for DecidingFront and DecidingValue, and SelfEditUnknown for the cycle-88 replacement of GBetterRelIff. Request one real Sound verifier for GBetterRelIff only. It should check the Boolean coloring and homogeneous-front argument, the finite-prefix local-constancy and composition transport, the converse implication, and the final better-relation/BQO specialization against the explicitly cited support. Leave all other live soundness obligations untouched.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 90,
+    "cycle": 91,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -55,20 +65,30 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1289,
-        "reason": "The paper's minimal deciding-prefix front construction underlying the changed DecidingFront support node.",
-        "start_line": 1277
+        "end_line": 1626,
+        "reason": "The paper's Boolean shift dichotomy via a deciding front and Nash-Williams homogeneity.",
+        "start_line": 1617
+      },
+      {
+        "end_line": 1715,
+        "reason": "The paper's generalized-shift equivalence used by the GBetterRelIff proof.",
+        "start_line": 1713
+      },
+      {
+        "end_line": 1745,
+        "reason": "The paper's definition of g-better-relation and the better-relation equivalence target.",
+        "start_line": 1731
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines S^h, proves its minimal members form a front using density and the trivial/nontrivial base split, and then constructs the value map. It is the mathematical route behind the changed DecidingFront support node that should be freshly verified before its dependent GBetterRelIff proof.",
+      "basis_summary": "The cited passages define the shift dichotomy by coloring a locally constant map and homogenizing its deciding front, state equivalence of the generalized shift with the ordinary shift, and formulate the g-better-relation and g-BQO equivalence. These are the mathematical claims covered by the changed GBetterRelIff proof and its certified DecidingFront support.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "DecidingValue now has a fresh Sound approval. DecidingFront was changed after its previous evidence and remains SelfEditUnknown, so verify that support node before rechecking changed GBetterRelIff.",
-    "request_id": 330,
+    "reason": "DecidingFront now has fresh Sound approval, while the changed dependent GBetterRelIff node remains SelfEditUnknown. Request its Sound verification now that the deciding-front support prerequisite is certified.",
+    "request_id": 332,
     "request_sound_verifier_nodes": [
-      "DecidingFront"
+      "GBetterRelIff"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -78,5 +98,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_330_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_332_decision.context.json"
 }
