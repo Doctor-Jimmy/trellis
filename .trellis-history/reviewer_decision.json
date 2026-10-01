@@ -1,13 +1,13 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker's target addition was valid, but it did not repair any of the unchanged substantive blockers. Route the configured SuperNW target node for a focused substantive repair and leave the other substantive failures live for later transitions.",
-    "comments": "Repair the natural-language package for SuperNW while preserving the exact paper target: every finite-valued super-sequence on a front has a constant sub-super-sequence. The current statement is the paper's corollary, but its package is essentially a one-node restatement of the equivalent NashWilliams theorem. Address Substantiveness Clause 2 by making the finite-color induction/case decomposition genuinely meaningful and paper-supported, with explicit handling of the selected color and its complement and with support statements cited precisely. Do not solve this by merely expanding prose or by wrapping NashWilliams in a trivial theorem. Preserve the exact Lean/TeX correspondence, the one-node target claim corollary:SuperNW, valid FILESPEC structure, and a complete non-SKETCH proof. Do not modify unrelated substantive blockers in this burst.",
+    "reason": "The worker changed SuperNW.tex, so its prior substantive fingerprint is no longer binding; the paper lane approves the repaired target package. Continue with one unchanged substantive obligation, BadMultiRestrict, while leaving SuperNW for ordinary substantive re-verification and without requesting soundness work yet.",
+    "comments": "Repair only Tablet/BadMultiRestrict.tex and preserve its exact Lean statement, imports, and target. Make the node's role substantive as the restriction-stability lemma for bad multi-sequences, distinct from RestrictionShift: quantify over an arbitrary enumeration x, apply badness of h to x composed with z and its shifted enumeration, then identify the restricted map at ShiftMap x using RestrictionShift, with the relation orientation and negation explicit. Ground the repair in the paper's definitions of multi-sequence badness and shift, and give a complete non-SKETCH proof in the required single theorem/proof block. Do not edit SuperNW.tex; its changed package must be re-adjudicated normally. Leave the other substantive blockers live for later transitions.",
     "task_blocker_ids": [
-      "substantiveness:node:SuperNW:{\"own_tex\":\"d1672289b768830dbb9584a348f1f6beb66a6a6347be2d74a2352cb3935b0b37\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
+      "substantiveness:node:BadMultiRestrict:{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
     ],
     "reset_blocker_ids": [],
-    "next_active": "SuperNW",
+    "next_active": "BadMultiRestrict",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -15,38 +15,23 @@
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
-    "dismiss_audit_plan": true,
-    "dismissed_tasks": [
-      {
-        "id": "hereditarily-countable-targets",
-        "reason": "The worker added BqoHerCtblWellF as the sole covering node with the exact target statement and complete proof; the paper-faithfulness verifier approved the target package, so the coverage plan is complete."
-      }
-    ],
-    "stuck_math_audit": {
-      "notes": "The coverage audit plan is complete and is dismissed. The remaining work is independent per-node substantiveness cleanup, beginning with the configured SuperNW target. Its statement is paper-faithful, but the current node package must expose a meaningful finite-color decomposition rather than functioning as a trivial restatement of NashWilliams.",
-      "reviewer_lean_product": {
-        "node": "SuperNW",
-        "paper_target": "corollary:SuperNW",
-        "paper_locus": "paper/paper.tex lines 1222-1250",
-        "repair_constraints": [
-          "Keep the exact finite-valued super-sequence conclusion and current Lean/TeX correspondence.",
-          "Make the finite-color induction and its selected-color/complement cases explicit enough to be a substantive decomposition.",
-          "Do not add a wrapper theorem or merely cite NashWilliams for the entire conclusion.",
-          "Use only real support statements and complete non-SKETCH TeX proof content."
-        ]
-      }
-    },
     "paper_focus_ranges": [
       {
         "start_line": 1222,
         "end_line": 1250,
-        "reason": "The paper states Nash-Williams and immediately gives the finite-valued constant sub-super-sequence corollary."
+        "reason": "The paper states Nash-Williams and its finite-valued constant sub-super-sequence corollary; the repaired SuperNW package must remain untouched and be rechecked against this passage."
+      },
+      {
+        "start_line": 1450,
+        "end_line": 1492,
+        "reason": "The paper defines bad multi-sequences and shift, then uses the corresponding badness argument; this grounds BadMultiRestrict's restriction-stability role."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread lines 1222-1250. The paper presents Nash-Williams as the finite-partition theorem and then states SuperNW as an equivalent finite-set-valued corollary, followed by the warning that the claim fails for infinite codomains. The repair must preserve that target while making its tablet decomposition substantively meaningful."
-    }
+      "basis_summary": "I directly reread lines 1222-1250 and 1450-1492. The first passage states SuperNW as the finite-color corollary of Nash-Williams. The second defines badness by failure of the shift comparison and develops the shift-based badness argument, which supports a distinct restriction-stability lemma without changing its Lean statement."
+    },
+    "request_sound_verifier_node_ids": []
   },
   "response": {
     "allow_new_obligations": true,
@@ -57,71 +42,58 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair the natural-language package for SuperNW while preserving the exact paper target: every finite-valued super-sequence on a front has a constant sub-super-sequence. The current statement is the paper's corollary, but its package is essentially a one-node restatement of the equivalent NashWilliams theorem. Address Substantiveness Clause 2 by making the finite-color induction/case decomposition genuinely meaningful and paper-supported, with explicit handling of the selected color and its complement and with support statements cited precisely. Do not solve this by merely expanding prose or by wrapping NashWilliams in a trivial theorem. Preserve the exact Lean/TeX correspondence, the one-node target claim corollary:SuperNW, valid FILESPEC structure, and a complete non-SKETCH proof. Do not modify unrelated substantive blockers in this burst.",
+    "comments": "Repair only Tablet/BadMultiRestrict.tex and preserve its exact Lean statement, imports, and target. Make the node's role substantive as the restriction-stability lemma for bad multi-sequences, distinct from RestrictionShift: quantify over an arbitrary enumeration x, apply badness of h to x composed with z and its shifted enumeration, then identify the restricted map at ShiftMap x using RestrictionShift, with the relation orientation and negation explicit. Ground the repair in the paper's definitions of multi-sequence badness and shift, and give a complete non-SKETCH proof in the required single theorem/proof block. Do not edit SuperNW.tex; its changed package must be re-adjudicated normally. Leave the other substantive blockers live for later transitions.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 31,
+    "cycle": 32,
     "decision": "Continue",
     "difficulty_updates": {},
-    "dismiss_audit_plan": true,
-    "dismissed_tasks": [
-      {
-        "id": "hereditarily-countable-targets",
-        "reason": "The worker added BqoHerCtblWellF as the sole covering node with the exact target statement and complete proof; the paper-faithfulness verifier approved the target package, so the coverage plan is complete."
-      }
-    ],
+    "dismiss_audit_plan": false,
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "SuperNW",
+    "next_active": "BadMultiRestrict",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1250,
-        "reason": "The paper states Nash-Williams and immediately gives the finite-valued constant sub-super-sequence corollary.",
+        "reason": "The paper states Nash-Williams and its finite-valued constant sub-super-sequence corollary; the repaired SuperNW package must remain untouched and be rechecked against this passage.",
         "start_line": 1222
+      },
+      {
+        "end_line": 1492,
+        "reason": "The paper defines bad multi-sequences and shift, then uses the corresponding badness argument; this grounds BadMultiRestrict's restriction-stability role.",
+        "start_line": 1450
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread lines 1222-1250. The paper presents Nash-Williams as the finite-partition theorem and then states SuperNW as an equivalent finite-set-valued corollary, followed by the warning that the claim fails for infinite codomains. The repair must preserve that target while making its tablet decomposition substantively meaningful.",
+      "basis_summary": "I directly reread lines 1222-1250 and 1450-1492. The first passage states SuperNW as the finite-color corollary of Nash-Williams. The second defines badness by failure of the shift comparison and develops the shift-based badness argument, which supports a distinct restriction-stability lemma without changing its Lean statement.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker's target addition was valid, but it did not repair any of the unchanged substantive blockers. Route the configured SuperNW target node for a focused substantive repair and leave the other substantive failures live for later transitions.",
-    "request_id": 160,
+    "reason": "The worker changed SuperNW.tex, so its prior substantive fingerprint is no longer binding; the paper lane approves the repaired target package. Continue with one unchanged substantive obligation, BadMultiRestrict, while leaving SuperNW for ordinary substantive re-verification and without requesting soundness work yet.",
+    "request_id": 165,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
-    "stuck_math_audit": {
-      "notes": "The coverage audit plan is complete and is dismissed. The remaining work is independent per-node substantiveness cleanup, beginning with the configured SuperNW target. Its statement is paper-faithful, but the current node package must expose a meaningful finite-color decomposition rather than functioning as a trivial restatement of NashWilliams.",
-      "reviewer_lean_product": {
-        "node": "SuperNW",
-        "paper_locus": "paper/paper.tex lines 1222-1250",
-        "paper_target": "corollary:SuperNW",
-        "repair_constraints": [
-          "Keep the exact finite-valued super-sequence conclusion and current Lean/TeX correspondence.",
-          "Make the finite-color induction and its selected-color/complement cases explicit enough to be a substantive decomposition.",
-          "Do not add a wrapper theorem or merely cite NashWilliams for the entire conclusion.",
-          "Use only real support statements and complete non-SKETCH TeX proof content."
-        ]
-      }
-    },
+    "stuck_math_audit": null,
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "{\"own_tex\":\"d1672289b768830dbb9584a348f1f6beb66a6a6347be2d74a2352cb3935b0b37\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "fingerprint": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "kind": "Substantiveness",
         "object": {
-          "node": "SuperNW",
+          "node": "BadMultiRestrict",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_160_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_165_decision.context.json"
 }
