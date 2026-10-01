@@ -33,6 +33,7 @@
 | ContMorEq | definition | definition | closed | - | - | ContMor |
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
 | ContinuousRelHom | definition | definition | closed | - | - | LocallyConstant |
+| ConverseGame | lemma | proof | open | - | Converse game | BadSuperSequence, FrontBridgeInit, FrontBridgeStep, FrontBridgeTerminal, HerCtblRel, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, TildeFSingleton |
 | DecidingFront | lemma | proof | open | - | Minimal deciding prefixes form a front | DecidingFrontSet, Front |
 | DecidingFrontSet | definition | definition | closed | - | - | DecidingPrefix, ProperInitialSegment |
 | DecidingPrefix | definition | definition | closed | - | - | LocallyConstant, ProperInitialSegment, ProperPrefixSet |
@@ -174,4 +175,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 170 nodes | **Closed:** 83 | **Open:** 87
+**Total:** 171 nodes | **Closed:** 83 | **Open:** 88

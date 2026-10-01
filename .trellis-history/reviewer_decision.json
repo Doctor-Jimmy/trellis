@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The accepted worker burst repaired the converse-game bridge package and removed the identified correspondence and substantiveness defects. Continue the audit plan with the hereditary converse-game theorem, which is the next support layer before either blocked hereditary target can be claimed.",
-    "comments": "Proceed in Global theorem-stating mode with the planned hereditary-converse-game task. Attach the new work to TildeF, both recursion equations, TildeFHerCtbl, TildeFSingleton, FrontBridge and its initialization/transition/terminal support, BadSuperSequence, and all four PowerRel reductions. Under empty notin F and a bad super-sequence f, construct the hereditary-subtype-valued singleton sequence and prove that for every m<n there is no HerCtblRel comparison from its m-value to its n-value. Start from the strengthened initial bridge and recurse on the lexicographic/product extension relation: node-node and node-atom descend on the left, atom-node descends on the right with the left fixed, and atom-atom is terminal. Preserve the bridge invariant at every recursive call; at two terminal front nodes use its FiniteShift conclusion to contradict BadSuperSequence. Do not claim BqoHerCtblWqo or BqoHerCtblWellF yet. Every new proof-bearing TeX block must be complete, explicitly cited, and non-SKETCH.",
+    "reason": "The ConverseGame support theorem was added with a complete non-SKETCH proof, its full tablet replay passes, and correspondence verification approves its Lean and TeX statements. Continue the planned bottom-up route with the BQO-to-WQO and deciding-front preparation package before claiming either blocked hereditary target.",
+    "comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo with no stronger order hypothesis than the Bqo definition: a bad ordinary sequence gives the locally constant singleton-coordinate multi-sequence x |-> a (x 0), contradicting Bqo. Then package the reverse-direction input using DecidingFront, DecidingValue, BadMultiToSuper, and IncSeqId: from a bad locally constant multi-sequence obtain its deciding front, value map, bad super-sequence, and explicitly prove that the empty prefix is not deciding under reflexivity. If the empty prefix were deciding, DecidingValue would make h constant and reflexivity would contradict badness at a sequence and its shift. Preserve universe polymorphism, cite every cross-node dependency in complete non-SKETCH TeX proofs, and do not claim BqoHerCtblWqo or BqoHerCtblWellF in this preparation layer.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
       "paperfaithfulness:target:thm BqoHerCtblWellF:"
@@ -18,46 +18,50 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1569,
-        "end_line": 1578,
-        "reason": "The paper's converse-game initialization, right-response bridge update, and continuation are the exact structural argument for the next hereditary support theorem."
+        "start_line": 1270,
+        "end_line": 1292,
+        "reason": "These lines define locally constant multi-sequences, minimal deciding fronts, and the deciding-front value map needed for the reverse hereditary WQO reduction."
+      },
+      {
+        "start_line": 1507,
+        "end_line": 1518,
+        "reason": "These lines state and prove the paper's BQO-to-WQO implication by restricting to singleton-indexed sequences."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread paper lines 1569-1578. They initialize s0=(m0), t0=(n0), u0=(m0,n0), update the finite bridge after the right response (including a fresh point when the right node is terminal), and continue until two front nodes yield the finite-shift contradiction."
+      "basis_summary": "I directly reread paper lines 1270-1292 and 1507-1518. The first passage gives local constancy, minimal deciding prefixes, and the value map on the deciding front; the second observes that singleton shifts are exactly m<n and derives WQO from BQO."
     },
     "stuck_math_audit": {
-      "notes": "The bridge-infrastructure task is complete and should be dismissed. The strengthened nonempty-right and above-the-whole-bridge hypotheses are the invariant required to make the next product induction legal; do not revert to a FiniteShift-only induction. The next audit task is the hereditary converse-game theorem, and no configured hereditary target should be claimed before it is present.",
+      "notes": "The hereditary-converse-game task is complete and should be dismissed. The next live plan task is hereditary-wqo-preparation: establish BqoImpliesWqo and the nontrivial deciding-front package needed to feed ConverseGame. Keep the empty-prefix exclusion explicit and do not claim either configured hereditary target until the preparation and target-level covering statements are in place.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "completed_task": "converse-bridge-infrastructure",
-        "next_task": "hereditary-converse-game",
+        "completed_task": "hereditary-converse-game",
+        "next_task": "hereditary-wqo-preparation",
         "required_interface": [
-          "hereditary-subtype-valued singleton sequence from TildeFSingleton",
-          "no HerCtblRel comparison for every m<n under empty notin F and BadSuperSequence",
-          "lexicographic/product induction over the extension-oriented tree relations",
-          "node-node and node-atom descend left, atom-node descends right with left fixed, atom-atom terminal",
-          "preserve the strengthened bridge at every recursive call",
-          "terminal bridge gives FiniteShift and contradicts BadSuperSequence"
+          "universe-polymorphic BqoImpliesWqo theorem",
+          "bad ordinary sequence mapped to the locally constant singleton-coordinate multi-sequence",
+          "deciding front and deciding value map for a locally constant multi-sequence",
+          "bad super-sequence on DecidingFrontSet via BadMultiToSuper",
+          "explicit empty notin DecidingFrontSet proof under reflexivity",
+          "use IncSeqId and the shift to contradict badness if the empty prefix decides"
         ],
         "constraints": [
-          "reuse FrontBridge and FrontBridgeStep strengthened package",
-          "use all four PowerRel reductions",
-          "retain empty notin F",
-          "retain the unrestricted full PowerQ route and hereditary carrier",
-          "do not claim either configured hereditary target in this support layer",
-          "new proof-bearing TeX blocks must be complete, cited, and non-SKETCH"
+          "do not strengthen BqoImpliesWqo with an unnecessary IsPreorder hypothesis",
+          "retain universe polymorphism",
+          "cite existing theorem statements rather than their proof hypotheses",
+          "new proof-bearing TeX blocks must be complete, cited, and non-SKETCH",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this support layer"
         ]
       }
     },
     "dismissed_tasks": [
       {
-        "id": "converse-bridge-infrastructure",
-        "reason": "The worker implemented the strengthened bridge definition, initialization, transition, prescribed-left legality, and terminal-to-FiniteShift package; the reported shape checks and full tablet build passed, and the current cycle has no remaining verifier evidence against this bridge layer."
+        "id": "hereditary-converse-game",
+        "reason": "The worker added ConverseGame with the planned hereditary singleton sequence, complete cited non-SKETCH proof, strengthened bridge preservation through all four PowerRel cases, and terminal finite-shift contradiction; full replay and checker passed, and correspondence verification approved it."
       }
     ]
   },
@@ -70,17 +74,17 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Proceed in Global theorem-stating mode with the planned hereditary-converse-game task. Attach the new work to TildeF, both recursion equations, TildeFHerCtbl, TildeFSingleton, FrontBridge and its initialization/transition/terminal support, BadSuperSequence, and all four PowerRel reductions. Under empty notin F and a bad super-sequence f, construct the hereditary-subtype-valued singleton sequence and prove that for every m<n there is no HerCtblRel comparison from its m-value to its n-value. Start from the strengthened initial bridge and recurse on the lexicographic/product extension relation: node-node and node-atom descend on the left, atom-node descends on the right with the left fixed, and atom-atom is terminal. Preserve the bridge invariant at every recursive call; at two terminal front nodes use its FiniteShift conclusion to contradict BadSuperSequence. Do not claim BqoHerCtblWqo or BqoHerCtblWellF yet. Every new proof-bearing TeX block must be complete, explicitly cited, and non-SKETCH.",
+    "comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo with no stronger order hypothesis than the Bqo definition: a bad ordinary sequence gives the locally constant singleton-coordinate multi-sequence x |-> a (x 0), contradicting Bqo. Then package the reverse-direction input using DecidingFront, DecidingValue, BadMultiToSuper, and IncSeqId: from a bad locally constant multi-sequence obtain its deciding front, value map, bad super-sequence, and explicitly prove that the empty prefix is not deciding under reflexivity. If the empty prefix were deciding, DecidingValue would make h constant and reflexivity would contradict badness at a sequence and its shift. Preserve universe polymorphism, cite every cross-node dependency in complete non-SKETCH TeX proofs, and do not claim BqoHerCtblWqo or BqoHerCtblWellF in this preparation layer.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 24,
+    "cycle": 25,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "converse-bridge-infrastructure",
-        "reason": "The worker implemented the strengthened bridge definition, initialization, transition, prescribed-left legality, and terminal-to-FiniteShift package; the reported shape checks and full tablet build passed, and the current cycle has no remaining verifier evidence against this bridge layer."
+        "id": "hereditary-converse-game",
+        "reason": "The worker added ConverseGame with the planned hereditary singleton sequence, complete cited non-SKETCH proof, strengthened bridge preservation through all four PowerRel cases, and terminal finite-shift contradiction; full replay and checker passed, and correspondence verification approved it."
       }
     ],
     "global_repair_request": null,
@@ -92,43 +96,47 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1578,
-        "reason": "The paper's converse-game initialization, right-response bridge update, and continuation are the exact structural argument for the next hereditary support theorem.",
-        "start_line": 1569
+        "end_line": 1292,
+        "reason": "These lines define locally constant multi-sequences, minimal deciding fronts, and the deciding-front value map needed for the reverse hereditary WQO reduction.",
+        "start_line": 1270
+      },
+      {
+        "end_line": 1518,
+        "reason": "These lines state and prove the paper's BQO-to-WQO implication by restricting to singleton-indexed sequences.",
+        "start_line": 1507
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread paper lines 1569-1578. They initialize s0=(m0), t0=(n0), u0=(m0,n0), update the finite bridge after the right response (including a fresh point when the right node is terminal), and continue until two front nodes yield the finite-shift contradiction.",
+      "basis_summary": "I directly reread paper lines 1270-1292 and 1507-1518. The first passage gives local constancy, minimal deciding prefixes, and the value map on the deciding front; the second observes that singleton shifts are exactly m<n and derives WQO from BQO.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The accepted worker burst repaired the converse-game bridge package and removed the identified correspondence and substantiveness defects. Continue the audit plan with the hereditary converse-game theorem, which is the next support layer before either blocked hereditary target can be claimed.",
-    "request_id": 134,
+    "reason": "The ConverseGame support theorem was added with a complete non-SKETCH proof, its full tablet replay passes, and correspondence verification approves its Lean and TeX statements. Continue the planned bottom-up route with the BQO-to-WQO and deciding-front preparation package before claiming either blocked hereditary target.",
+    "request_id": 138,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The bridge-infrastructure task is complete and should be dismissed. The strengthened nonempty-right and above-the-whole-bridge hypotheses are the invariant required to make the next product induction legal; do not revert to a FiniteShift-only induction. The next audit task is the hereditary converse-game theorem, and no configured hereditary target should be claimed before it is present.",
+      "notes": "The hereditary-converse-game task is complete and should be dismissed. The next live plan task is hereditary-wqo-preparation: establish BqoImpliesWqo and the nontrivial deciding-front package needed to feed ConverseGame. Keep the empty-prefix exclusion explicit and do not claim either configured hereditary target until the preparation and target-level covering statements are in place.",
       "reviewer_lean_product": {
-        "completed_task": "converse-bridge-infrastructure",
+        "completed_task": "hereditary-converse-game",
         "constraints": [
-          "reuse FrontBridge and FrontBridgeStep strengthened package",
-          "use all four PowerRel reductions",
-          "retain empty notin F",
-          "retain the unrestricted full PowerQ route and hereditary carrier",
-          "do not claim either configured hereditary target in this support layer",
-          "new proof-bearing TeX blocks must be complete, cited, and non-SKETCH"
+          "do not strengthen BqoImpliesWqo with an unnecessary IsPreorder hypothesis",
+          "retain universe polymorphism",
+          "cite existing theorem statements rather than their proof hypotheses",
+          "new proof-bearing TeX blocks must be complete, cited, and non-SKETCH",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this support layer"
         ],
-        "next_task": "hereditary-converse-game",
+        "next_task": "hereditary-wqo-preparation",
         "required_interface": [
-          "hereditary-subtype-valued singleton sequence from TildeFSingleton",
-          "no HerCtblRel comparison for every m<n under empty notin F and BadSuperSequence",
-          "lexicographic/product induction over the extension-oriented tree relations",
-          "node-node and node-atom descend left, atom-node descends right with left fixed, atom-atom terminal",
-          "preserve the strengthened bridge at every recursive call",
-          "terminal bridge gives FiniteShift and contradicts BadSuperSequence"
+          "universe-polymorphic BqoImpliesWqo theorem",
+          "bad ordinary sequence mapped to the locally constant singleton-coordinate multi-sequence",
+          "deciding front and deciding value map for a locally constant multi-sequence",
+          "bad super-sequence on DecidingFrontSet via BadMultiToSuper",
+          "explicit empty notin DecidingFrontSet proof under reflexivity",
+          "use IncSeqId and the shift to contradict badness if the empty prefix decides"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -158,5 +166,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_134_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_138_decision.context.json"
 }

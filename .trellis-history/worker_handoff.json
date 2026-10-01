@@ -1,27 +1,20 @@
 {
   "raw": {
-    "audit_request": null,
-    "comments": "Repaired the finite bridge package in the authorized global theorem-stating scope. FrontBridge now records a nonempty right node and an explicit ordered one-point insert witness for every nonterminal left state. FrontBridgeStep now requires the copied point to be above the whole bridge, preserves the nonempty-right invariant, and includes the prescribed-left legality and exact-extension conclusion. The redundant FrontBridgeLeftMove wrapper was deleted and FrontBridgeStep imports FrontBridge directly. Initialization and terminal bridge proofs were updated to match the strengthened statement and cite the finite-tail definition. The tablet shape check, bridge-node compilation, and full tablet build pass; no configured target is claimed.",
-    "deleted_nodes": [
-      "FrontBridgeLeftMove"
-    ],
-    "deviation_deletions": [],
-    "deviation_requests": {},
-    "difficulty_updates": {
-      "FrontBridge": "hard",
-      "FrontBridgeInit": "hard",
-      "FrontBridgeStep": "hard"
-    },
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
-    "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Strengthened the paper-faithful bridge invariant and transition for the converse game.",
+    "summary": "Added the paper-faithful ConverseGame support theorem: a bad super-sequence on a nontrivial full-base front yields a bad hereditary-countable singleton sequence. The complete NL proof preserves the strengthened FrontBridge through the four PowerRel cases and ends with the terminal finite-shift contradiction.",
+    "comments": "ConverseGame is theorem-shaped with a provisional Lean sorry, a complete cited non-SKETCH TeX proof, and no configured target claim. The full Tablet replay and node checker pass. The outside-fact audit is recorded in .trellis/scratch/notes.md.",
     "target_claim_updates": {
-      "FrontBridge": [],
-      "FrontBridgeInit": [],
-      "FrontBridgeStep": []
-    }
+      "ConverseGame": []
+    },
+    "difficulty_updates": {
+      "ConverseGame": "hard"
+    },
+    "deleted_nodes": [],
+    "deviation_requests": {},
+    "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "needs_restructure_suggested_nodes": [],
+    "memory_challenges": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -31,19 +24,22 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Repaired the finite bridge package in the authorized global theorem-stating scope. FrontBridge now records a nonempty right node and an explicit ordered one-point insert witness for every nonterminal left state. FrontBridgeStep now requires the copied point to be above the whole bridge, preserves the nonempty-right invariant, and includes the prescribed-left legality and exact-extension conclusion. The redundant FrontBridgeLeftMove wrapper was deleted and FrontBridgeStep imports FrontBridge directly. Initialization and terminal bridge proofs were updated to match the strengthened statement and cite the finite-tail definition. The tablet shape check, bridge-node compilation, and full tablet build pass; no configured target is claimed.",
-    "cycle": 24,
-    "deleted_nodes": [
-      "FrontBridgeLeftMove"
-    ],
+    "comments": "ConverseGame is theorem-shaped with a provisional Lean sorry, a complete cited non-SKETCH TeX proof, and no configured target claim. The full Tablet replay and node checker pass. The outside-fact audit is recorded in .trellis/scratch/notes.md.",
+    "cycle": 25,
+    "deleted_nodes": [],
     "dep_updates": {
-      "FrontBridgeLeftMove": {
-        "Set": []
-      },
-      "FrontBridgeStep": {
+      "ConverseGame": {
         "Set": [
-          "FrontBridge",
-          "FrontTreeOrderedExtension"
+          "BadSuperSequence",
+          "FrontBridgeInit",
+          "FrontBridgeStep",
+          "FrontBridgeTerminal",
+          "HerCtblRel",
+          "PowerRelAtomAtom",
+          "PowerRelAtomNode",
+          "PowerRelNodeAtom",
+          "PowerRelNodeNode",
+          "TildeFSingleton"
         ]
       }
     },
@@ -51,14 +47,22 @@
     "deviation_deletions": [],
     "deviation_requests": {},
     "difficulty_updates": {
-      "FrontBridge": {
+      "ConverseGame": {
         "Set": "Hard"
-      },
-      "FrontBridgeInit": {
-        "Set": "Hard"
-      },
-      "FrontBridgeStep": {
-        "Set": "Hard"
+      }
+    },
+    "elaboration_costs": {
+      "ConverseGame": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "ConverseGame",
+        "olean_size_bytes": 18432,
+        "peak_rss_kib": 1686128,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "48f733a40d5e4cfbbffb5dc20800439790ebd222e5cb63984953bceb4ba42ec7",
+        "walltime_ms": 2345
       }
     },
     "kind": "worker",
@@ -66,15 +70,19 @@
     "local_closure_revalidation": null,
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
-    "node_kind_updates": {},
+    "node_kind_updates": {
+      "ConverseGame": {
+        "Set": "Proof"
+      }
+    },
     "outcome": "Valid",
     "proof_node_updates": {
-      "FrontBridgeLeftMove": {
-        "Set": false
+      "ConverseGame": {
+        "Set": true
       }
     },
     "protected_semantic_change_nodes": [],
-    "request_id": 130,
+    "request_id": 135,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -108,6 +116,7 @@
         "ContMorEq": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"lean_semantic_closure\":\"80b58e7b33b5d37513c03c04054f8e3c64f228e35c2f55efec140a9b3e1abb25\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "ContinuousHom": "{\"own_tex\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"lean_semantic_closure\":\"88605943375ffcaa2a4f89b2366773e492ad59d68f444979968494327a2070c6\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"lean_semantic_closure\":\"85a8e1404bfcd6ba6240916e169cd0b49f6dbfc39c7075d445a18f5c9f9f996e\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ConverseGame": "{\"own_tex\":\"e9d7428020d704ca635b18b0cbe83159828c600122d0c3fe6745de1249557f25\",\"lean_semantic_closure\":\"2da8a6e724922bfb5a54ccaf0aa7570d91b3a2b5491a29672cbc3687ff6da12c\",\"lean_relevant_definition_descendants\":{\"BadSuperSequence\":\"e67d8ab38bd700d9d33e4fb21a4a8a980004ba9a69b1b3a1c11e643f34a19017\",\"FiniteShift\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HerCtblRel\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\",\"TildeFSingleton\":\"e16ea7dab252d65f0d9d14a4be9217d71acb25ea38e5f07cd5dc884a65cc55b2\"},\"lean_relevant_dependencies\":[\"BadSuperSequence\",\"FiniteShift\",\"Front\",\"FrontBase\",\"FrontTreeSingleton\",\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HerCtblRel\",\"HereditarilyCountable\",\"IncSeq\",\"IncSeqComp\",\"InitialSegment\",\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"RightComp\",\"ShiftMap\",\"SuccSeq\",\"SuperSequence\",\"TildeF\",\"TildeFHerCtbl\",\"TildeFSingleton\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "DecidingFront": "{\"own_tex\":\"6f44e8bd881c781f85cc932fc69c3df2806724ee5e816ac7039916052fe639a5\",\"lean_semantic_closure\":\"11aba8dc4efbe38b3e24bf5b8c6fcf7de5f9fe91fb89238b65c7e71d67b0dcad\",\"lean_relevant_definition_descendants\":{\"DecidingFrontSet\":\"0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f\",\"DecidingPrefix\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"DecidingFrontSet\",\"DecidingPrefix\",\"Front\",\"FrontBase\",\"IncSeq\",\"InitialSegment\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "DecidingFrontSet": "{\"own_tex\":\"0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f\",\"lean_semantic_closure\":\"6957a73fd20dc11ca480ee4957da3bfd7307d5da889fc9aed204b83b0e54e382\",\"lean_relevant_definition_descendants\":{\"DecidingPrefix\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"DecidingPrefix\",\"IncSeq\",\"InitialSegment\",\"MultiSequence\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "DecidingPrefix": "{\"own_tex\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"lean_semantic_closure\":\"55ba1f4f6720c5a138416c0c36f3fcf7a8b23f8ec237e87bd9f90f2cfc27f876\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"MultiSequence\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -290,6 +299,7 @@
         "BooleanInfinitePigeonhole",
         "BqoIffGeneralShift",
         "CardinalityFrontIsFront",
+        "ConverseGame",
         "DecidingFront",
         "DecidingValue",
         "EmapLemma",
@@ -412,6 +422,7 @@
         "ContMorEq",
         "ContinuousHom",
         "ContinuousRelHom",
+        "ConverseGame",
         "DecidingFront",
         "DecidingFrontSet",
         "DecidingPrefix",
@@ -846,6 +857,29 @@
           "combined_sound_fp": "sound-v2:cdef6190aba9405573f47fd82b8446eed72f5e639ccd6a2abaaa56b3612bd51a",
           "dep_statement_hashes": {},
           "own_tex_hash": "3d3394f1d0aefd824734e1449d6b48791c9f8c67d328cd91549f893664741d79"
+        },
+        "ConverseGame": {
+          "combined_sound_fp": "sound-v2:f79b45c84f74d4d463a83fe21d711a677d42b3be27d6ab57201a11cd518b177b",
+          "dep_statement_hashes": {
+            "BadSuperSequence": "e67d8ab38bd700d9d33e4fb21a4a8a980004ba9a69b1b3a1c11e643f34a19017",
+            "FrontBridge": "1de39c2a76e256e40ce5e3f03d622d8afef3fe48f91f96be7826b20f0bded6d5",
+            "FrontBridgeInit": "9b5a71a94afe993afc3af4a2fdb6bb083641c9857301e3466e02355c71437f34",
+            "FrontBridgeStep": "8c53020c41bc5e7c74c0ed6074092361fb6554132c5257e96ed2f4b1e1895b60",
+            "FrontBridgeTerminal": "6e06c37bedc3a377125f1b2c564cd6e1b41feb6c96666b397a0cef1b0fdb743f",
+            "FrontTreeOrderedExtension": "0efe748c5d2052a83baea1c0b5a79ffd95dccfd18def51fdb60764e743b59f13",
+            "FrontTreeWellFounded": "a25dad15902a1d7ea587ee0a4eaff046e22495a6f45068a4411d31a6ff21867a",
+            "HerCtblRel": "2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575",
+            "PowerRelAtomAtom": "d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db",
+            "PowerRelAtomNode": "6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a",
+            "PowerRelNodeAtom": "ea956e76419223f44187adc98f126120a8ba40e1b3c3d13f379864426ac4c31b",
+            "PowerRelNodeNode": "90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954",
+            "SuperSequence": "d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a",
+            "TildeFFrontEquation": "f342eaf310e21913f34bff6f309fda429cb606b2f8eb5ca1cacf7bb2f4980de4",
+            "TildeFHerCtbl": "c2cabe9f4d443627a18e0e6245e7589fcc6de9467ab8cb66a762f979217521f5",
+            "TildeFNonfrontEquation": "ef5d4cbc6c576d92fa20b3ac0ac22326e2ffed1059811ea7f6e96603c814c464",
+            "TildeFSingleton": "e16ea7dab252d65f0d9d14a4be9217d71acb25ea38e5f07cd5dc884a65cc55b2"
+          },
+          "own_tex_hash": "4a836256df567c3ede9c99747e2c8e16683ea6a78fe4e448f6ca4db5201e981d"
         },
         "DecidingFront": {
           "combined_sound_fp": "sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767",
@@ -1903,6 +1937,7 @@
         "ContMorEq": "sound-v2:3f0b7116f4db78ac02157f5075dfefda645fad642803d0f1e1097fd351be5b99",
         "ContinuousHom": "sound-v2:16b602e21f5ec37d44b7b78351edf43dd3ab34d642aa1d404dcd73844a8772bb",
         "ContinuousRelHom": "sound-v2:cdef6190aba9405573f47fd82b8446eed72f5e639ccd6a2abaaa56b3612bd51a",
+        "ConverseGame": "sound-v2:f79b45c84f74d4d463a83fe21d711a677d42b3be27d6ab57201a11cd518b177b",
         "DecidingFront": "sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767",
         "DecidingFrontSet": "sound-v2:7f71efc4baa79a5eef00b5431037bb6c8c3b01a8179f87cb86533b7d576b6e84",
         "DecidingPrefix": "sound-v2:3a5bc40ba324c4f28bb51662bb3d3f5761768f5dbea995b19ceb157fbed663f1",
@@ -2076,6 +2111,7 @@
         "ContMorEq": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "ContinuousHom": "{\"own_tex\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "ConverseGame": "{\"own_tex\":\"e9d7428020d704ca635b18b0cbe83159828c600122d0c3fe6745de1249557f25\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "DecidingFront": "{\"own_tex\":\"6f44e8bd881c781f85cc932fc69c3df2806724ee5e816ac7039916052fe639a5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "DecidingFrontSet": "{\"own_tex\":\"0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "DecidingPrefix": "{\"own_tex\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -2249,6 +2285,7 @@
         "ContMorEq": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"lean_semantic_closure\":\"80b58e7b33b5d37513c03c04054f8e3c64f228e35c2f55efec140a9b3e1abb25\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "ContinuousHom": "{\"own_tex\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"lean_semantic_closure\":\"88605943375ffcaa2a4f89b2366773e492ad59d68f444979968494327a2070c6\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "ContinuousRelHom": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"lean_semantic_closure\":\"85a8e1404bfcd6ba6240916e169cd0b49f6dbfc39c7075d445a18f5c9f9f996e\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "ConverseGame": "{\"own_tex\":\"e9d7428020d704ca635b18b0cbe83159828c600122d0c3fe6745de1249557f25\",\"lean_semantic_closure\":\"2da8a6e724922bfb5a54ccaf0aa7570d91b3a2b5491a29672cbc3687ff6da12c\",\"lean_relevant_definition_descendants\":{\"BadSuperSequence\":\"e67d8ab38bd700d9d33e4fb21a4a8a980004ba9a69b1b3a1c11e643f34a19017\",\"FiniteShift\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HerCtblRel\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\",\"TildeFSingleton\":\"e16ea7dab252d65f0d9d14a4be9217d71acb25ea38e5f07cd5dc884a65cc55b2\"},\"lean_relevant_dependencies\":[\"BadSuperSequence\",\"FiniteShift\",\"Front\",\"FrontBase\",\"FrontTreeSingleton\",\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HerCtblRel\",\"HereditarilyCountable\",\"IncSeq\",\"IncSeqComp\",\"InitialSegment\",\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"RightComp\",\"ShiftMap\",\"SuccSeq\",\"SuperSequence\",\"TildeF\",\"TildeFHerCtbl\",\"TildeFSingleton\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "DecidingFront": "{\"own_tex\":\"6f44e8bd881c781f85cc932fc69c3df2806724ee5e816ac7039916052fe639a5\",\"lean_semantic_closure\":\"11aba8dc4efbe38b3e24bf5b8c6fcf7de5f9fe91fb89238b65c7e71d67b0dcad\",\"lean_relevant_definition_descendants\":{\"DecidingFrontSet\":\"0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f\",\"DecidingPrefix\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"DecidingFrontSet\",\"DecidingPrefix\",\"Front\",\"FrontBase\",\"IncSeq\",\"InitialSegment\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "DecidingFrontSet": "{\"own_tex\":\"0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f\",\"lean_semantic_closure\":\"6957a73fd20dc11ca480ee4957da3bfd7307d5da889fc9aed204b83b0e54e382\",\"lean_relevant_definition_descendants\":{\"DecidingPrefix\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"DecidingPrefix\",\"IncSeq\",\"InitialSegment\",\"MultiSequence\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "DecidingPrefix": "{\"own_tex\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"lean_semantic_closure\":\"55ba1f4f6720c5a138416c0c36f3fcf7a8b23f8ec237e87bd9f90f2cfc27f876\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"MultiSequence\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2394,8 +2431,12 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Strengthened the paper-faithful bridge invariant and transition for the converse game.",
-    "target_claim_updates": {},
+    "summary": "Added the paper-faithful ConverseGame support theorem: a bad super-sequence on a nontrivial full-base front yields a bad hereditary-countable singleton sequence. The complete NL proof preserves the strengthened FrontBridge through the four PowerRel cases and ends with the terminal finite-shift contradiction.",
+    "target_claim_updates": {
+      "ConverseGame": {
+        "Set": []
+      }
+    },
     "transport_failure": false,
     "under_model_disproof": "",
     "under_model_reasoning": "",
@@ -2464,6 +2505,8 @@
     "ContinuousHom.tex": "e0bd79a7931e2a8c1830bfb22fe0be29b706d0a2cef1f9a1ace24d8e9b86a89d",
     "ContinuousRelHom.lean": "7d6856021ebeb44d381af6b8163764a1d1ecc572c3df991c0a5567bb374fa123",
     "ContinuousRelHom.tex": "3d3394f1d0aefd824734e1449d6b48791c9f8c67d328cd91549f893664741d79",
+    "ConverseGame.lean": "ba3f4bfd886a6f045dda15a47e0c9aac173df750caa78ede4ed63b05b7079439",
+    "ConverseGame.tex": "4a836256df567c3ede9c99747e2c8e16683ea6a78fe4e448f6ca4db5201e981d",
     "DecidingFront.lean": "3dcf4696b665147ed97bcac3a7639104908225bc9fdc3b24f26cea55e67a24a8",
     "DecidingFront.tex": "8159fe9398c3a7c6c50c65de89b3c7403653883c4c9211be598a12562c4ad478",
     "DecidingFrontSet.lean": "76a17531dfbadb0a22065f90059565680d828c1e37848051130b4e67cb063eea",
@@ -2538,7 +2581,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "a53ed54299f0bf638ef418cdcbbb010d53a33f6dc668ecba981814da7ed62819",
+    "INDEX.md": "6bbf4f35347f338bb27aff4f43ba12704608d30ffd96afa4e566428827569772",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -2693,7 +2736,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7",
-    "README.md": "fea1bc68061ecf37e84add094a6f61db847642de8c3b392898499f52c38aecd3",
+    "README.md": "52ed1b9e16de22488b49f465ea427f3dd5ba39ec7cd8d0f0c683c7e1d67432ce",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "8083be7d8ada8fc21dcf0ee59af2c71892a3aeafe327bf147b7d48daf1470ecb",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -2748,7 +2791,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_130_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_135_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

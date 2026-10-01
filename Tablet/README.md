@@ -41,6 +41,7 @@
 | ContMorEq | definition | - | closed |
 | ContinuousHom | definition | - | closed |
 | ContinuousRelHom | definition | - | closed |
+| ConverseGame | proof | Converse game | open |
 | DecidingFront | proof | Minimal deciding prefixes form a front | open |
 | DecidingFrontSet | definition | - | closed |
 | DecidingPrefix | definition | - | closed |
@@ -180,4 +181,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 83/170 closed
+**Summary:** 83/171 closed
