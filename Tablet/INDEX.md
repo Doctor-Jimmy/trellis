@@ -43,6 +43,12 @@
 | FirstMovedPoint | lemma | proof | open | - | - | IncSeqId, IncSeqPointwiseLe |
 | Front | definition | definition | closed | - | Explicit front | FrontBase, InitialSegment, ProperPrefixSet |
 | FrontBase | definition | definition | closed | - | - | Preamble |
+| FrontBridge | definition | definition | closed | - | Finite bridge state | Front, FrontBridgeTail, PrefixTree, ProperInitialSegment |
+| FrontBridgeInit | lemma | proof | open | - | Initial bridge | FrontBridge, FrontTreeOrderedExtension, FrontTreeSingleton |
+| FrontBridgeLeftMove | lemma | proof | open | - | The prescribed left move is legal | FrontBridge |
+| FrontBridgeStep | lemma | proof | open | - | Bridge response transition | FrontBridgeLeftMove, FrontTreeOrderedExtension |
+| FrontBridgeTail | definition | definition | closed | - | Finite bridge tail | InitialSegment |
+| FrontBridgeTerminal | lemma | proof | open | - | A terminal bridge gives a finite shift | FiniteShift, FrontBridge, InfiniteSetEnumeration |
 | FrontPrefix | definition | definition | closed | - | - | Front, IncSeq |
 | FrontPrefixExists | lemma | proof | open | - | Front member existence | FrontPrefix |
 | FrontPrefixUnique | lemma | proof | open | - | Front member uniqueness | FrontPrefix |
@@ -50,6 +56,7 @@
 | FrontRestrict | definition | definition | closed | - | - | Preamble |
 | FrontRestriction | lemma | proof | open | - | Restriction closure | Front, FrontRestrict |
 | FrontTreeImmediateExtensions | lemma | proof | open | - | Immediate extensions in the front tree | Front, PrefixTree, ProperInitialSegment |
+| FrontTreeOrderedExtension | lemma | proof | open | - | All ordered one-point extensions remain in the tree | FrontTreeWellFounded |
 | FrontTreeSingleton | lemma | proof | open | - | Singletons belong to a nontrivial full-base tree | Front, PrefixTree |
 | FrontTreeWellFounded | lemma | proof | open | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
@@ -168,4 +175,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 164 nodes | **Closed:** 81 | **Open:** 83
+**Total:** 171 nodes | **Closed:** 83 | **Open:** 88

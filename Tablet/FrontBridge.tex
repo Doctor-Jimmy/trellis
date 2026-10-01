@@ -1,0 +1,18 @@
+\begin{definition}[Finite bridge state]
+For a front $F$, finite tree nodes $s,t\in T(F)$, and a nonempty finite
+set $u$, write $\mathsf{FrontBridge}(F,s,t,u)$ when
+\begin{enumerate}
+\item if $s\notin F$, then $u$ is the proper one-point extension of $s$
+      and $u\in T(F)$;
+\item if $s\in F$, then $s$ is an initial segment of $u$;
+\item if $t\notin F$, then $t$ is exactly the tail of $u$ after its least
+      element; and
+\item if $t\in F$, then $t$ is an initial segment of that tail.
+\end{enumerate}
+Here the tail is the finite operation
+$\mathsf{FrontBridgeTail}(u)$ from \noderef{FrontBridgeTail}.
+The first two clauses describe the left side of the bridge, and the last
+two describe the right side.  In particular, before either side reaches
+the front, $u$ is the prescribed one-point extension of $s$ and its tail
+is exactly $t$.
+\end{definition}

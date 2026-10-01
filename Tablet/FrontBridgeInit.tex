@@ -1,0 +1,19 @@
+\begin{lemma}[Initial bridge]
+Let $F$ be a front on $\mathbb N$ with $\emptyset\notin F$.  If
+$m<n$, then
+\[
+  \mathsf{FrontBridge}\bigl(F,\{m\},\{n\},\{m,n\}\bigr).
+\]
+\end{lemma}
+\begin{proof}
+By \noderef{FrontTreeSingleton}, both singletons belong to $T(F)$.
+The set $\{m,n\}$ is nonempty, and its least element is $m$, so its
+finite bridge tail is $\{n\}$.  If $\{m\}\notin F$, then
+$\{m\}$ is the proper initial segment of $\{m,n\}$ and the latter belongs
+to $T(F)$: it is the ordered one-point extension supplied by
+\noderef{FrontTreeOrderedExtension}.  If $\{m\}\in F$, the required left
+initial-segment clause holds by equality.  The same two alternatives for
+$\{n\}$ give either equality with the bridge tail or the terminal
+initial-segment clause.  These are precisely all clauses of
+\noderef{FrontBridge}, so the displayed bridge state holds.
+\end{proof}

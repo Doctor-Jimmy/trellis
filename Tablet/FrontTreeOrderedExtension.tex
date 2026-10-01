@@ -1,0 +1,30 @@
+\begin{lemma}[All ordered one-point extensions remain in the tree]
+Let $F$ be a front on the full base $\mathbb N$.  If
+$s\in T(F)\setminus F$ and $n$ is such that
+$\mathsf{ProperInitialSegment}(s,s\cup\{n\})$, then
+$s\cup\{n\}\in T(F)$.
+\end{lemma}
+\begin{proof}
+Choose $t\in F$ with $s\segs t$ using the definition of
+\noderef{PrefixTree}.  Since $s\notin F$, prefix-freeness in
+\noderef{Front} implies that $s$ is a proper initial segment of $t$, in
+the sense of \noderef{ProperInitialSegment}.
+The hypothesis on $n$, interpreted using \noderef{InitialSegment}, says
+that $n$ is larger than every member of $s$;
+write $v=s\cup\{n\}$.  Consider the infinite set
+\[
+  Y=v\cup\{k\in\mathbb N\mid \max(v)<k\}.
+\]
+It is contained in the full base.  By density in \noderef{Front}, there is
+some $w\in F$ with $w\segs Y$.  If $w$ were an initial segment no longer
+than $s$, then $w$ and $s$ are comparable as initial segments of $Y$.  The
+equality case would give $s=w\in F$, contrary to the hypothesis.  If $w$
+were a proper prefix of $s$, then $w$ would also be an initial segment of
+the front member $t$ chosen above; prefix-freeness in \noderef{Front} would
+force $w=t$, contradicting that $s$ is a proper initial segment of $t$.
+Thus $w$ is strictly longer than $s$.  The next element after $s$ in the
+increasing enumeration of $Y$ is $n$, so $w$ contains $n$ and $v\segs w$.
+By the definition of \noderef{PrefixTree}, $v\in T(F)$.
+This argument is exactly the ordered-extension form of the front-density
+step used at paper lines 1569--1570.
+\end{proof}

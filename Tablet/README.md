@@ -51,6 +51,12 @@
 | FirstMovedPoint | proof | - | open |
 | Front | definition | Explicit front | closed |
 | FrontBase | definition | - | closed |
+| FrontBridge | definition | Finite bridge state | closed |
+| FrontBridgeInit | proof | Initial bridge | open |
+| FrontBridgeLeftMove | proof | The prescribed left move is legal | open |
+| FrontBridgeStep | proof | Bridge response transition | open |
+| FrontBridgeTail | definition | Finite bridge tail | closed |
+| FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | open |
 | FrontPrefix | definition | - | closed |
 | FrontPrefixExists | proof | Front member existence | open |
 | FrontPrefixUnique | proof | Front member uniqueness | open |
@@ -58,6 +64,7 @@
 | FrontRestrict | definition | - | closed |
 | FrontRestriction | proof | Restriction closure | open |
 | FrontTreeImmediateExtensions | proof | Immediate extensions in the front tree | open |
+| FrontTreeOrderedExtension | proof | All ordered one-point extensions remain in the tree | open |
 | FrontTreeSingleton | proof | Singletons belong to a nontrivial full-base tree | open |
 | FrontTreeWellFounded | proof | Well-founded prefix tree | open |
 | GBetterRel | definition | - | closed |
@@ -174,4 +181,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 81/164 closed
+**Summary:** 83/171 closed

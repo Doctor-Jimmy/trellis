@@ -1,0 +1,43 @@
+\begin{lemma}[Bridge response transition]
+Assume $F$ is a front on the full base and
+$\mathsf{FrontBridge}(F,s,t,u)$.  Choose the next left node by
+\[
+ (s\in F\text{ and }s'=s)\quad\text{or}\quad
+ (s\notin F\text{ and }s'=u).
+\]
+Suppose the right response is one of the following:
+\begin{enumerate}
+\item $t\notin F$, $t'$ is an ordered proper one-point extension of $t$
+      in $T(F)$, and for its new point $n$ we set
+      $u'=u\cup\{n\}$; or
+\item $t\in F$, $t'=t$, and we choose a fresh $k$ larger than every member
+      of $u$, setting $u'=u\cup\{k\}$.
+\end{enumerate}
+Then $\mathsf{FrontBridge}(F,s',t',u')$ holds.  The selected left node is
+legal, and it is equal to $s$ when $s$ is terminal and a proper one-point
+extension of $s$ otherwise.
+\end{lemma}
+\begin{proof}
+The left legality is \noderef{FrontBridgeLeftMove}.  We check the two
+right cases.  In the first case write $t'=t\cup\{n\}$.  Since $t$ is the
+tail of $u$ whenever it is nonterminal, and the extension is ordered, the
+tail of $u'=u\cup\{n\}$ is exactly $t'$.  If $t'$ is nonterminal this is
+the exact-tail clause; if it is terminal it implies the required
+initial-segment clause.  The old left relation to $u$ persists after the
+new largest point is added.  If the selected left node is nonterminal, it
+is $u$, and the ordered-extension conclusion
+\noderef{FrontTreeOrderedExtension} puts $u'$ in $T(F)$; if it is
+terminal, its old initial-segment relation to $u$ persists to $u'$.
+
+In the second case $t'=t$ is terminal.  The new point $k$ is larger than
+every member of $u$, so the tail of $u'$ is the old tail of $u$ followed by
+$k$.  Thus the old terminal initial-segment relation for $t$ persists.
+The same left-side argument applies: a nonterminal selected left node is
+the old $u$ and has the ordered tree extension $u'$, while a terminal one
+is an initial segment of $u'$.
+
+The tree-membership clauses for $s'$ and $t'$ are supplied respectively by
+\noderef{FrontBridgeLeftMove} and the response hypothesis.  Combining these
+facts with the nonempty bridge $u'$ and the four defining clauses of
+\noderef{FrontBridge} proves the transition.
+\end{proof}

@@ -1,54 +1,59 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The current audit identified a genuine invariant gap in the planned converse proof: FiniteShift alone does not support the legal child choices required after an arbitrary PowerRel response. The next worker must therefore build the finite bridge infrastructure first, while both hereditary target statements remain uncovered.",
-    "comments": "Continue in Global mode and execute converse-bridge-infrastructure, not the final ConverseGame theorem yet. Attach the new helpers to Front, PrefixTree, InitialSegment, ProperInitialSegment, FiniteShift, and FrontTreeWellFounded. Prove that every ordered one-point extension of a nonfront prefix-tree node remains in the tree for a front on Set.univ. Introduce an explicit finite bridge state for left node s, right node t, and finite joint set u: initialize it from m<n with singleton nodes and u={m,n}; after each right response, adjoin that response's new point, or a fresh point when the right node is terminal; choose the left extension prescribed by the bridge; and preserve the relevant initial-segment/tail conditions through the transition. Prove that a terminal bridge yields FiniteShift by appending an infinite tail. The next converse-game task must consume these operational laws. Preserve the unrestricted PowerQ and hereditary carrier, add no configured target node, and give complete cited TeX proofs for all new proof-bearing helpers.",
+    "reason": "The bridge package was mechanically accepted but the correspondence and substantiveness lanes found local statement defects that would make the next converse induction unsound. FrontBridge allows arbitrary proper extensions instead of one-point extensions, FrontBridgeStep admits an empty-tail counterexample, and FrontBridgeLeftMove is redundant projection scaffolding. Repair this bridge layer before proceeding to ConverseGame.",
+    "comments": "Continue in Global mode, anchored at FrontBridge, and repair the current bridge package. In FrontBridge replace the non-front clause ProperInitialSegment s u with an explicit immediate ordered one-point extension, for example an existential n with u = insert n s together with the ordering/tree conditions required by the existing extension predicate; the statement and TeX must say exactly one new point. In FrontBridgeStep strengthen the transition with the invariant needed by the actual play, at minimum t.Nonempty (which holds from singleton initialization and is preserved), or an equivalent condition forcing the newly adjoined bridge point above every member of u; the current case t = emptyset, u = {2} is a concrete counterexample. Merge the prescribed-left-move projection into FrontBridgeStep or delete FrontBridgeLeftMove and rewire imports, unless it is strengthened into an independently substantive invariant. Keep initialization, response transition, terminal-to-FiniteShift, and the unrestricted PowerQ route intact. Do not add either hereditary target or the final ConverseGame theorem in this repair burst; provide complete cited TeX proofs for any changed or new proof-bearing nodes.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
-      "paperfaithfulness:target:thm BqoHerCtblWellF:"
+      "paperfaithfulness:target:thm BqoHerCtblWellF:",
+      "nodecorr:node:FrontBridge:{\"own_tex\":\"e3c3750cfd8c832890a28bd82e544487ecaa5605accf48c3e646b9ca7b71ce4b\",\"lean_semantic_closure\":\"d765124f0e892990f62e531c4cd5612d73d3813ee9e40299bd0cbb411ebd612a\",\"lean_relevant_definition_descendants\":{\"FrontBridgeTail\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\"},\"lean_relevant_dependencies\":[\"FrontBridgeTail\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+      "substantiveness:node:FrontBridgeLeftMove:{\"own_tex\":\"1ad5f3a30d35988e41b2506212631bd6b558622e2e0f5adb88102e583534a218\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+      "substantiveness:node:FrontBridgeStep:{\"own_tex\":\"ae9f6aa6e428fa740dbcd5f4a4925a3696ef7e8f4cca42f0fb0a0cfd16af62a7\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
     ],
     "reset_blocker_ids": [],
-    "next_active": "",
+    "next_active": "FrontBridge",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "start_line": 1569,
         "end_line": 1570,
-        "reason": "The copying-and-shift passage motivates the finite bridge, its response transition, and the invariant needed before the converse-game induction."
+        "reason": "The paper's bridge transition requires exact one-point copying and shift alignment; this is the source of the immediate-extension and nonempty-tail repairs."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited lines explicitly maintain the joint finite set u while alternating left extensions and right PowerQ responses, then use the resulting shift relation at terminal front nodes. The audit confirms that this bridge, rather than FiniteShift alone, is the operational invariant needed for a faithful formalization."
+      "basis_summary": "The cited passage starts from singleton nodes and a finite joint set, copies each right response into the bridge, uses a prescribed left extension, and appends a fresh point when the right side is terminal. The current verifier counterexamples show the tablet statements must encode these operational restrictions explicitly."
     },
     "stuck_math_audit": {
-      "notes": "The active audit replaced the earlier converse-game route with a sharper two-step plan. The existing hereditary carrier, repaired front tree, and TildeF recursion layers are complete. Execute converse-bridge-infrastructure first: FiniteShift alone is too weak, as shown by the audit's four-element-front counterexample. Expose the ordered extension closure and the finite bridge initialization, transition, legality, and terminal-to-FiniteShift laws. Do not claim either configured hereditary target or the final ConverseGame theorem in this layer.",
+      "notes": "The bridge task is not complete despite the worker acceptance check. Correspondence rejects FrontBridge because its non-front clause permits arbitrary proper extensions; substantiveness rejects FrontBridgeLeftMove as a direct projection and FrontBridgeStep because its hypotheses admit t = emptyset with an invalid tail transition. Repair these statements before authorizing the hereditary converse-game induction. Preserve the audit's finite-bridge route and do not recurse on FiniteShift alone.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "next_task": "converse-bridge-infrastructure",
-        "following_task": "hereditary-converse-game",
-        "required_interface": [
-          "every ordered one-point extension of a nonfront PrefixTree node is in PrefixTree for a full-base front",
-          "explicit finite bridge state (s,t,u) with operational initial-segment conditions",
-          "bridge initialization from singleton nodes m<n and u={m,n}",
-          "bridge transition after a right response or a fresh terminal-side point",
-          "legality of the chosen left one-point extension",
-          "terminal bridge implies FiniteShift"
+        "repair_anchor": "FrontBridge",
+        "repair_nodes": [
+          "FrontBridge",
+          "FrontBridgeStep",
+          "FrontBridgeLeftMove"
+        ],
+        "required_repairs": [
+          "replace arbitrary ProperInitialSegment s u by exact ordered one-point extension",
+          "exclude the empty-tail FrontBridgeStep counterexample or impose an equivalent bridge invariant",
+          "merge or independently substantiate FrontBridgeLeftMove",
+          "keep bridge initialization and terminal FiniteShift implications usable by ConverseGame"
         ],
         "constraints": [
-          "do not recurse on FiniteShift alone",
-          "preserve the unrestricted full PowerQ hierarchy and HerCtblPower",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
-          "new proof-bearing TeX blocks must contain complete cited proofs"
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF",
+          "do not add the final ConverseGame theorem in this repair burst",
+          "preserve the unrestricted full PowerQ and hereditary carrier",
+          "changed proof-bearing TeX blocks must contain complete cited proofs"
         ]
       }
     }
@@ -62,10 +67,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode and execute converse-bridge-infrastructure, not the final ConverseGame theorem yet. Attach the new helpers to Front, PrefixTree, InitialSegment, ProperInitialSegment, FiniteShift, and FrontTreeWellFounded. Prove that every ordered one-point extension of a nonfront prefix-tree node remains in the tree for a front on Set.univ. Introduce an explicit finite bridge state for left node s, right node t, and finite joint set u: initialize it from m<n with singleton nodes and u={m,n}; after each right response, adjoin that response's new point, or a fresh point when the right node is terminal; choose the left extension prescribed by the bridge; and preserve the relevant initial-segment/tail conditions through the transition. Prove that a terminal bridge yields FiniteShift by appending an infinite tail. The next converse-game task must consume these operational laws. Preserve the unrestricted PowerQ and hereditary carrier, add no configured target node, and give complete cited TeX proofs for all new proof-bearing helpers.",
+    "comments": "Continue in Global mode, anchored at FrontBridge, and repair the current bridge package. In FrontBridge replace the non-front clause ProperInitialSegment s u with an explicit immediate ordered one-point extension, for example an existential n with u = insert n s together with the ordering/tree conditions required by the existing extension predicate; the statement and TeX must say exactly one new point. In FrontBridgeStep strengthen the transition with the invariant needed by the actual play, at minimum t.Nonempty (which holds from singleton initialization and is preserved), or an equivalent condition forcing the newly adjoined bridge point above every member of u; the current case t = emptyset, u = {2} is a concrete counterexample. Merge the prescribed-left-move projection into FrontBridgeStep or delete FrontBridgeLeftMove and rewire imports, unless it is strengthened into an independently substantive invariant. Keep initialization, response transition, terminal-to-FiniteShift, and the unrestricted PowerQ route intact. Do not add either hereditary target or the final ConverseGame theorem in this repair burst; provide complete cited TeX proofs for any changed or new proof-bearing nodes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 22,
+    "cycle": 23,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -73,47 +78,49 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "FrontBridge",
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "end_line": 1570,
-        "reason": "The copying-and-shift passage motivates the finite bridge, its response transition, and the invariant needed before the converse-game induction.",
+        "reason": "The paper's bridge transition requires exact one-point copying and shift alignment; this is the source of the immediate-extension and nonempty-tail repairs.",
         "start_line": 1569
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited lines explicitly maintain the joint finite set u while alternating left extensions and right PowerQ responses, then use the resulting shift relation at terminal front nodes. The audit confirms that this bridge, rather than FiniteShift alone, is the operational invariant needed for a faithful formalization.",
+      "basis_summary": "The cited passage starts from singleton nodes and a finite joint set, copies each right response into the bridge, uses a prescribed left extension, and appends a fresh point when the right side is terminal. The current verifier counterexamples show the tablet statements must encode these operational restrictions explicitly.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The current audit identified a genuine invariant gap in the planned converse proof: FiniteShift alone does not support the legal child choices required after an arbitrary PowerRel response. The next worker must therefore build the finite bridge infrastructure first, while both hereditary target statements remain uncovered.",
-    "request_id": 124,
+    "reason": "The bridge package was mechanically accepted but the correspondence and substantiveness lanes found local statement defects that would make the next converse induction unsound. FrontBridge allows arbitrary proper extensions instead of one-point extensions, FrontBridgeStep admits an empty-tail counterexample, and FrontBridgeLeftMove is redundant projection scaffolding. Repair this bridge layer before proceeding to ConverseGame.",
+    "request_id": 129,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The active audit replaced the earlier converse-game route with a sharper two-step plan. The existing hereditary carrier, repaired front tree, and TildeF recursion layers are complete. Execute converse-bridge-infrastructure first: FiniteShift alone is too weak, as shown by the audit's four-element-front counterexample. Expose the ordered extension closure and the finite bridge initialization, transition, legality, and terminal-to-FiniteShift laws. Do not claim either configured hereditary target or the final ConverseGame theorem in this layer.",
+      "notes": "The bridge task is not complete despite the worker acceptance check. Correspondence rejects FrontBridge because its non-front clause permits arbitrary proper extensions; substantiveness rejects FrontBridgeLeftMove as a direct projection and FrontBridgeStep because its hypotheses admit t = emptyset with an invalid tail transition. Repair these statements before authorizing the hereditary converse-game induction. Preserve the audit's finite-bridge route and do not recurse on FiniteShift alone.",
       "reviewer_lean_product": {
         "constraints": [
-          "do not recurse on FiniteShift alone",
-          "preserve the unrestricted full PowerQ hierarchy and HerCtblPower",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
-          "new proof-bearing TeX blocks must contain complete cited proofs"
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF",
+          "do not add the final ConverseGame theorem in this repair burst",
+          "preserve the unrestricted full PowerQ and hereditary carrier",
+          "changed proof-bearing TeX blocks must contain complete cited proofs"
         ],
-        "following_task": "hereditary-converse-game",
-        "next_task": "converse-bridge-infrastructure",
-        "required_interface": [
-          "every ordered one-point extension of a nonfront PrefixTree node is in PrefixTree for a full-base front",
-          "explicit finite bridge state (s,t,u) with operational initial-segment conditions",
-          "bridge initialization from singleton nodes m<n and u={m,n}",
-          "bridge transition after a right response or a fresh terminal-side point",
-          "legality of the chosen left one-point extension",
-          "terminal bridge implies FiniteShift"
+        "repair_anchor": "FrontBridge",
+        "repair_nodes": [
+          "FrontBridge",
+          "FrontBridgeStep",
+          "FrontBridgeLeftMove"
+        ],
+        "required_repairs": [
+          "replace arbitrary ProperInitialSegment s u by exact ordered one-point extension",
+          "exclude the empty-tail FrontBridgeStep counterexample or impose an equivalent bridge invariant",
+          "merge or independently substantiate FrontBridgeLeftMove",
+          "keep bridge initialization and terminal FiniteShift implications usable by ConverseGame"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -139,9 +146,36 @@
           "otype": "target",
           "target": "thm BqoHerCtblWqo"
         }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"e3c3750cfd8c832890a28bd82e544487ecaa5605accf48c3e646b9ca7b71ce4b\",\"lean_semantic_closure\":\"d765124f0e892990f62e531c4cd5612d73d3813ee9e40299bd0cbb411ebd612a\",\"lean_relevant_definition_descendants\":{\"FrontBridgeTail\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\"},\"lean_relevant_dependencies\":[\"FrontBridgeTail\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "kind": "NodeCorr",
+        "object": {
+          "node": "FrontBridge",
+          "otype": "node"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"1ad5f3a30d35988e41b2506212631bd6b558622e2e0f5adb88102e583534a218\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "FrontBridgeLeftMove",
+          "otype": "node"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"ae9f6aa6e428fa740dbcd5f4a4925a3696ef7e8f4cca42f0fb0a0cfd16af62a7\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "FrontBridgeStep",
+          "otype": "node"
+        }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_124_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_129_decision.context.json"
 }

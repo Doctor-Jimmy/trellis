@@ -1,0 +1,21 @@
+\begin{lemma}[A terminal bridge gives a finite shift]
+If $\mathsf{FrontBridge}(F,s,t,u)$ and both $s,t$ belong to $F$, then
+$s\mathrel{\mathsf{FiniteShift}}t$.
+\end{lemma}
+\begin{proof}
+The bridge clauses say that $s$ is an initial segment of $u$ and that $t$
+is an initial segment of the tail of $u$.  Let
+$X=u\cup\{k\mid\max(u)<k\}$.  This is infinite because it contains every
+natural number above the finite bound $\max(u)$.  By
+\noderef{InfiniteSetEnumeration}, choose an increasing enumeration $x$ of
+$X$.  In the increasing enumeration, all members of $u$ occur first and
+the remaining values are exactly the numbers above $\max(u)$.  Therefore
+$s$ is a proper prefix of $\operatorname{range}(x)$, even if $s=u$, and
+$t$ is a proper prefix of the range obtained by deleting the least member
+of $u$ and retaining that infinite continuation.  By the definition of
+\noderef{ShiftMap}, the latter range is
+$\operatorname{range}(\mathsf{ShiftMap}(x))$.  The two prefix assertions
+are exactly the two \noderef{ProperPrefixSet} conjuncts in
+\noderef{FiniteShift}, so this proves
+$s\mathrel{\mathsf{FiniteShift}}t$.
+\end{proof}
