@@ -1,4 +1,5 @@
 import Tablet.BadSuperSequence
+import Tablet.BaseShift
 import Tablet.FrontPrefixExists
 import Tablet.PerfectSuperSequence
 import Tablet.InfiniteSetEnumeration

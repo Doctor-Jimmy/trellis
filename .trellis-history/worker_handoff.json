@@ -1,14 +1,17 @@
 {
   "raw": {
-    "outcome": "valid",
-    "summary": "Repaired PerfectBaseToSuper with a detailed witness-level NL proof. The proof constructs a subbase-preserving increasing enumeration from the finite-shift witness, handles empty and cutoff-boundary cases, factors the enumeration through z, and applies the extension equation and perfectness hypotheses with explicit dependent values.",
-    "comments": "Preserved the theorem statement and conclusion. Added direct imports for all cited support nodes, including BaseIncSeq, FrontRestrict, FrontRestriction, FiniteShift, ProperPrefixSet, InfiniteSetEnumeration, IncSeq, IncSeqComp, ShiftMap, RestrictionShift, BaseRestrict, PerfectMultiSequence, PerfectSuperSequence, and SuperSequenceRestrict. Node and full-tablet validators pass; the Lean theorem retains only its intentional theorem-stating sorry.",
-    "target_claim_updates": {},
-    "difficulty_updates": {},
-    "deviation_requests": {},
-    "node_deviation_claims": {},
+    "audit_request": null,
+    "comments": "Edited only Tablet/NoBadPerfectSuper.tex and added the direct Tablet.BaseShift import needed by the proof support. The NL proof now extracts the infinite base from SuperSequence, enumerates it with InfiniteSetEnumeration, obtains explicit FrontPrefix witnesses for the original and shifted enumerations, proves the shifted range is contained in X via BaseShift, constructs the same FiniteShift witness, and applies PerfectSuperSequence and BadSuperSequence to identical dependent values. The NoBadPerfectSuper node check and full 176-node tablet check both pass.",
+    "deleted_nodes": [],
     "deviation_deletions": [],
-    "deleted_nodes": []
+    "deviation_requests": {},
+    "difficulty_updates": {},
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Repaired the detailed natural-language proof of NoBadPerfectSuper while preserving its theorem statement and support direction.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -18,31 +21,17 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the theorem statement and conclusion. Added direct imports for all cited support nodes, including BaseIncSeq, FrontRestrict, FrontRestriction, FiniteShift, ProperPrefixSet, InfiniteSetEnumeration, IncSeq, IncSeqComp, ShiftMap, RestrictionShift, BaseRestrict, PerfectMultiSequence, PerfectSuperSequence, and SuperSequenceRestrict. Node and full-tablet validators pass; the Lean theorem retains only its intentional theorem-stating sorry.",
-    "cycle": 160,
+    "comments": "Edited only Tablet/NoBadPerfectSuper.tex and added the direct Tablet.BaseShift import needed by the proof support. The NL proof now extracts the infinite base from SuperSequence, enumerates it with InfiniteSetEnumeration, obtains explicit FrontPrefix witnesses for the original and shifted enumerations, proves the shifted range is contained in X via BaseShift, constructs the same FiniteShift witness, and applies PerfectSuperSequence and BadSuperSequence to identical dependent values. The NoBadPerfectSuper node check and full 176-node tablet check both pass.",
+    "cycle": 162,
     "deleted_nodes": [],
     "dep_updates": {
-      "PerfectBaseToSuper": {
+      "NoBadPerfectSuper": {
         "Set": [
-          "BaseIncSeq",
-          "BaseRestrict",
-          "FiniteShift",
-          "Front",
-          "FrontPrefix",
-          "FrontRestrict",
-          "FrontRestriction",
-          "IncSeq",
-          "IncSeqComp",
+          "BadSuperSequence",
+          "BaseShift",
+          "FrontPrefixExists",
           "InfiniteSetEnumeration",
-          "InitialSegment",
-          "PerfectMultiSequence",
-          "PerfectSuperSequence",
-          "ProperPrefixSet",
-          "RestrictionShift",
-          "ShiftMap",
-          "SuperSequence",
-          "SuperSequenceExtension",
-          "SuperSequenceRestrict"
+          "PerfectSuperSequence"
         ]
       }
     },
@@ -51,17 +40,17 @@
     "deviation_requests": {},
     "difficulty_updates": {},
     "elaboration_costs": {
-      "PerfectBaseToSuper": {
+      "NoBadPerfectSuper": {
         "cost_version": "2",
         "heartbeats": null,
         "heartbeats_key": null,
         "measured_at_snapshot_id": "",
-        "node": "PerfectBaseToSuper",
-        "olean_size_bytes": 22360,
-        "peak_rss_kib": 1677056,
+        "node": "NoBadPerfectSuper",
+        "olean_size_bytes": 10872,
+        "peak_rss_kib": 1675776,
         "peak_rss_process": "lean",
-        "source_closure_hash": "72b21c657e4e206c522cbdbe40af49c47e47d6faea050b0f1bd483866e63d8a6",
-        "walltime_ms": 2325
+        "source_closure_hash": "0724a3486824f4354f37f8f4b9ffcf41378268ccffdc7c98c439db14186cb233",
+        "walltime_ms": 2213
       },
       "Subarr": {
         "cost_version": "2",
@@ -70,10 +59,10 @@
         "measured_at_snapshot_id": "",
         "node": "Subarr",
         "olean_size_bytes": 18736,
-        "peak_rss_kib": 1677508,
+        "peak_rss_kib": 1685000,
         "peak_rss_process": "lean",
-        "source_closure_hash": "b90ccea4f70667fa795c4c755e541681696922ae11e546665dbcdaaff08d3d60",
-        "walltime_ms": 2361
+        "source_closure_hash": "aee705694036833c9d9c4a0dadae0ee8695e8d2ff3b97e7cb5becf1a21941190",
+        "walltime_ms": 2277
       }
     },
     "kind": "worker",
@@ -85,7 +74,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 509,
+    "request_id": 514,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1427,14 +1416,20 @@
           "own_tex_hash": "0e482a2bdffff18c6ffdd9ad8d3b31e7e713294fb2cb403398b951085fed5e22"
         },
         "NoBadPerfectSuper": {
-          "combined_sound_fp": "sound-v2:cf074a97b1792ef8a42a2419d7feace0dcb01b98ce6bb4dd8a1771e87a3f3cd3",
+          "combined_sound_fp": "sound-v2:8d1493d6e84a7d4e89e0accd2e39fb079f4baa1f87e48b8e80aff27b4a188c6d",
           "dep_statement_hashes": {
             "BadSuperSequence": "e67d8ab38bd700d9d33e4fb21a4a8a980004ba9a69b1b3a1c11e643f34a19017",
+            "BaseIncSeq": "6c60e0dad52a54330a1324e014c97c8bff0c34618649f32c7de87b7b8efa6222",
+            "BaseShift": "61a06e758fbe65467cdea714f8ab0ea3685321490f3779df23547d66c09bf0fc",
+            "FiniteShift": "789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af",
+            "FrontPrefix": "328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414",
             "FrontPrefixExists": "7fa213a60b9df880691293e10b87981adedcf045f2b1908ac47266232465857c",
             "InfiniteSetEnumeration": "6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1",
-            "PerfectSuperSequence": "dc30a179671cc070d087bcbedcee438c11f19fba522fcef6018bf0bca107b231"
+            "PerfectSuperSequence": "dc30a179671cc070d087bcbedcee438c11f19fba522fcef6018bf0bca107b231",
+            "ShiftMap": "f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44",
+            "SuperSequence": "d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a"
           },
-          "own_tex_hash": "d71e1710affa4b873625fb6e3f600631a5a86d0ca5fcca416540ba4e79b28790"
+          "own_tex_hash": "21c4f2d925e7c54a30afe47fd5b092621f03172af7718bd0c74d3cda02560957"
         },
         "OrbitBlock": {
           "combined_sound_fp": "sound-v2:2a1398bb6313aaaa95692080dfa1c0322d995f3d2fe85d46766cae74e9fed86d",
@@ -2307,7 +2302,7 @@
         "MultiSequence": "sound-v2:042810595607ee9c6dfd26d3f94e47f57fe027503cdd631da334ef87eb5040d7",
         "MultiSequenceRestrict": "sound-v2:698e9299d5f874d0b6eb78b243e3b410265050de30ee7b6d4b4c28410ed94501",
         "NashWilliams": "sound-v2:a7141e7a6d2b08efb0cff741042fa24efa73b6f4674139abb9b383d5de672eba",
-        "NoBadPerfectSuper": "sound-v2:cf074a97b1792ef8a42a2419d7feace0dcb01b98ce6bb4dd8a1771e87a3f3cd3",
+        "NoBadPerfectSuper": "sound-v2:8d1493d6e84a7d4e89e0accd2e39fb079f4baa1f87e48b8e80aff27b4a188c6d",
         "OrbitBlock": "sound-v2:2a1398bb6313aaaa95692080dfa1c0322d995f3d2fe85d46766cae74e9fed86d",
         "OrbitBlockCoverage": "sound-v2:9f633d4b8a0eb6435d28145d67947110ea3e2d9fe974b49152c6d19daddc97cd",
         "OrbitEmbedding": "sound-v2:f846eeb8a35da0be6b2f11d60086a480f12b3d90254f05f8ecad075c4a21432d",
@@ -2761,7 +2756,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired PerfectBaseToSuper with a detailed witness-level NL proof. The proof constructs a subbase-preserving increasing enumeration from the finite-shift witness, handles empty and cutoff-boundary cases, factors the enumeration through z, and applies the extension equation and perfectness hypotheses with explicit dependent values.",
+    "summary": "Repaired the detailed natural-language proof of NoBadPerfectSuper while preserving its theorem statement and support direction.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2917,7 +2912,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "a1490ea5f5a62319d8e72b97039b22208b7b404209992eb220eafa0c4f3663e0",
+    "INDEX.md": "479c66601079acd0d9bfe9d25f5c9d3fe992bd721dc7107f55c65b11b4f63898",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -2942,8 +2937,8 @@
     "MultiSequenceRestrict.tex": "77f66a83bdde849391d5b44202b86ca9233d53f16533daaccba50b006ece1505",
     "NashWilliams.lean": "944239157e95e97c6f30dc713bf425b10c0e7df8aab295afe36ce5195b77a8dd",
     "NashWilliams.tex": "0e482a2bdffff18c6ffdd9ad8d3b31e7e713294fb2cb403398b951085fed5e22",
-    "NoBadPerfectSuper.lean": "cfed3697be81c0ce26911603bfbe10b8baf93a85e0fb561ec9694656fea63406",
-    "NoBadPerfectSuper.tex": "d71e1710affa4b873625fb6e3f600631a5a86d0ca5fcca416540ba4e79b28790",
+    "NoBadPerfectSuper.lean": "f2537093247771dd641416bf02926ac15ea10e7a3aa3d4808a7f3a08ee042751",
+    "NoBadPerfectSuper.tex": "21c4f2d925e7c54a30afe47fd5b092621f03172af7718bd0c74d3cda02560957",
     "OrbitBlock.lean": "0c2728053547190cd2254df9160b3bc7e913b78a08e3fa3c0ffd153c4b54fbba",
     "OrbitBlock.tex": "b9ad896c2daae80fd33b584a1ddbcf1391ec271d149eeb3c23a252d90ae5c3b2",
     "OrbitBlockCoverage.lean": "6f42387e676bb7cbe31152716aee4d11e533480da145f03d13f10a3e14b5ed0b",
@@ -3127,7 +3122,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_509_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_514_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

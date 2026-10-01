@@ -88,7 +88,7 @@
 | MultiSequence | definition | definition | closed | - | - | IncSeq |
 | MultiSequenceRestrict | definition | definition | closed | - | - | IncSeqComp, MultiSequence |
 | NashWilliams | theorem | proof | open | - | Nash--Williams | BooleanInfinitePigeonhole, Front, FrontRayClosure, FrontRestrict, FrontRestriction, FrontTreeWellFounded, SubFrontCharacterization |
-| NoBadPerfectSuper | lemma | proof | open | - | A super-sequence is not both perfect and bad | BadSuperSequence, FrontPrefixExists, InfiniteSetEnumeration, PerfectSuperSequence |
+| NoBadPerfectSuper | lemma | proof | open | - | A super-sequence is not both perfect and bad | BadSuperSequence, BaseShift, FrontPrefixExists, InfiniteSetEnumeration, PerfectSuperSequence |
 | OrbitBlock | definition | definition | closed | - | - | OrbitPoint |
 | OrbitBlockCoverage | lemma | proof | open | - | - | OrbitBlock, OrbitEmbedding, OrbitUnbounded |
 | OrbitEmbedding | lemma | proof | open | - | - | IncSeq, OrbitPoint |
