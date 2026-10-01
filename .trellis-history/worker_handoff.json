@@ -1,22 +1,34 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Added the paper-faithful reflection package for the full arbitrary-small-branching PowerQ hierarchy and the sole cor PowerQPresBqo target node. The package includes finite shift-prefix transport, finite orbit constancy, copied-orbit dependence, the reflected bad locally constant map, and complete non-SKETCH TeX proofs.",
-    "comments": "PowerQPresBqo now states [IsPreorder Q r] -> (Bqo r -> Bqo (PowerRel r)) and is proved in NL by contradiction through PowerQReflection. The reflection proof uses one shared finite terminal witness, shift stabilization, support transport, atom persistence, and the finite shift-orbit bound. All five new nodes pass the full tablet shape checker and Lean build; generated Tablet/INDEX.md and Tablet/README.md were refreshed by the checker. The direct outside-fact audit is recorded in .trellis/scratch/notes.md.",
-    "target_claim_updates": {
-      "PowerShiftIterPrefixAgree": [],
-      "PowerFiniteOrbitConstancy": [],
-      "PowerCopiedOrbitDependence": [],
-      "PowerQReflection": [],
-      "PowerQPresBqo": [
-        "cor PowerQPresBqo"
-      ]
-    },
-    "difficulty_updates": {},
+    "summary": "Added the hereditary-countable carrier layer: Nat-coded presentations, ULift-erasure into the unrestricted PowerQ hierarchy, the presentation-invariant hereditary predicate, its subtype and restricted relation, atom heredity, countable-node closure, and the induced preorder.",
+    "comments": "All nine new Lean modules build successfully. The global PowerQ remains arbitrarily indexed; only the witness code and the closure comparison use countable branching. New proof-bearing TeX blocks contain complete NL proofs with explicit dependency citations. The closure theorem is intentionally Lean-provisional with sorry, as permitted in theorem-stating mode, but its statement and paper-level witness construction are fully exposed for the next recursion task.",
+    "deleted_nodes": [],
+    "deviation_deletions": [],
     "deviation_requests": {},
     "node_deviation_claims": {},
-    "deviation_deletions": [],
-    "deleted_nodes": [],
+    "difficulty_updates": {
+      "HerCtblCode": "easy",
+      "HerCtblCodeErase": "easy",
+      "HereditarilyCountable": "easy",
+      "HerCtblPower": "easy",
+      "HerCtblRel": "easy",
+      "HereditarilyCountableAtom": "easy",
+      "HereditarilyCountablePresentationInvariant": "easy",
+      "HerCtblNodeClosure": "hard",
+      "HerCtblPowerIsPreorder": "easy"
+    },
+    "target_claim_updates": {
+      "HerCtblCode": [],
+      "HerCtblCodeErase": [],
+      "HereditarilyCountable": [],
+      "HerCtblPower": [],
+      "HerCtblRel": [],
+      "HereditarilyCountableAtom": [],
+      "HereditarilyCountablePresentationInvariant": [],
+      "HerCtblNodeClosure": [],
+      "HerCtblPowerIsPreorder": []
+    },
     "memory_challenges": [],
     "needs_restructure_suggested_nodes": []
   },
@@ -28,59 +40,144 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "PowerQPresBqo now states [IsPreorder Q r] -> (Bqo r -> Bqo (PowerRel r)) and is proved in NL by contradiction through PowerQReflection. The reflection proof uses one shared finite terminal witness, shift stabilization, support transport, atom persistence, and the finite shift-orbit bound. All five new nodes pass the full tablet shape checker and Lean build; generated Tablet/INDEX.md and Tablet/README.md were refreshed by the checker. The direct outside-fact audit is recorded in .trellis/scratch/notes.md.",
-    "cycle": 17,
+    "comments": "All nine new Lean modules build successfully. The global PowerQ remains arbitrarily indexed; only the witness code and the closure comparison use countable branching. New proof-bearing TeX blocks contain complete NL proofs with explicit dependency citations. The closure theorem is intentionally Lean-provisional with sorry, as permitted in theorem-stating mode, but its statement and paper-level witness construction are fully exposed for the next recursion task.",
+    "cycle": 19,
     "deleted_nodes": [],
     "dep_updates": {
-      "PowerCopiedOrbitDependence": {
+      "HerCtblCode": {
         "Set": [
-          "PowerCopiedLeft"
+          "Preamble"
         ]
       },
-      "PowerFiniteOrbitConstancy": {
+      "HerCtblCodeErase": {
         "Set": [
-          "LocallyConstant",
-          "PowerShiftIterPrefixAgree"
+          "HerCtblCode",
+          "PowerQ"
         ]
       },
-      "PowerQPresBqo": {
+      "HerCtblNodeClosure": {
         "Set": [
-          "Bqo",
-          "PowerQReflection"
+          "HerCtblCodeErase",
+          "HerCtblPower",
+          "PowerPresentationEqEquivalence"
         ]
       },
-      "PowerQReflection": {
+      "HerCtblPower": {
         "Set": [
-          "PowerCopiedFailureMove",
-          "PowerCopiedOrbitDependence",
-          "PowerCopiedTerminalShift",
-          "PowerCopiedTerminalSupport",
-          "PowerFiniteOrbitConstancy"
+          "HereditarilyCountable"
         ]
       },
-      "PowerShiftIterPrefixAgree": {
+      "HerCtblPowerIsPreorder": {
         "Set": [
-          "PowerShiftIter",
-          "PrefixAgree"
+          "HerCtblRel",
+          "PowerQIsPreorder"
+        ]
+      },
+      "HerCtblRel": {
+        "Set": [
+          "HerCtblPower",
+          "PowerRel"
+        ]
+      },
+      "HereditarilyCountable": {
+        "Set": [
+          "HerCtblCodeErase",
+          "PowerPresentationEq"
+        ]
+      },
+      "HereditarilyCountableAtom": {
+        "Set": [
+          "HereditarilyCountable",
+          "PowerPresentationEqEquivalence"
+        ]
+      },
+      "HereditarilyCountablePresentationInvariant": {
+        "Set": [
+          "HereditarilyCountable",
+          "PowerPresentationEqEquivalence"
         ]
       }
     },
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {},
+    "difficulty_updates": {
+      "HerCtblCode": {
+        "Set": "Easy"
+      },
+      "HerCtblCodeErase": {
+        "Set": "Easy"
+      },
+      "HerCtblNodeClosure": {
+        "Set": "Hard"
+      },
+      "HerCtblPower": {
+        "Set": "Easy"
+      },
+      "HerCtblPowerIsPreorder": {
+        "Set": "Easy"
+      },
+      "HerCtblRel": {
+        "Set": "Easy"
+      },
+      "HereditarilyCountable": {
+        "Set": "Easy"
+      },
+      "HereditarilyCountableAtom": {
+        "Set": "Easy"
+      },
+      "HereditarilyCountablePresentationInvariant": {
+        "Set": "Easy"
+      }
+    },
     "elaboration_costs": {
-      "PowerCopiedOrbitDependence": {
+      "HerCtblCode": {
         "cost_version": "2",
         "heartbeats": null,
         "heartbeats_key": null,
         "measured_at_snapshot_id": "",
-        "node": "PowerCopiedOrbitDependence",
-        "olean_size_bytes": 13016,
-        "peak_rss_kib": 1673612,
+        "node": "HerCtblCode",
+        "olean_size_bytes": 74528,
+        "peak_rss_kib": 1658700,
         "peak_rss_process": "lean",
-        "source_closure_hash": "2ccf76a7b6b273b3fa915533765251070fc39c5967242cd78e498edd495ccc8e",
-        "walltime_ms": 2293
+        "source_closure_hash": "76a3dc522484d82bf3d811b5c708a4d325448fd1ff4a4fa93805536d028c9b16",
+        "walltime_ms": 2219
+      },
+      "HerCtblCodeErase": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "HerCtblCodeErase",
+        "olean_size_bytes": 27336,
+        "peak_rss_kib": 1649436,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "f2cd20fc0ddb005c0b7813d41cb90213d5e309683def0b70204c20e1c6e296ef",
+        "walltime_ms": 2285
+      },
+      "HereditarilyCountableAtom": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "HereditarilyCountableAtom",
+        "olean_size_bytes": 6128,
+        "peak_rss_kib": 1676880,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "95478dc84752de14d1cc6e8b44b39d585294782963d7113e692d0c87570e5c4e",
+        "walltime_ms": 2237
+      },
+      "HereditarilyCountablePresentationInvariant": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "HereditarilyCountablePresentationInvariant",
+        "olean_size_bytes": 10200,
+        "peak_rss_kib": 1671308,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "40ce4c5d47719df3121d781f5b0a669db8fa6c9a4d913630f5440d4d30e36f0a",
+        "walltime_ms": 2554
       }
     },
     "kind": "worker",
@@ -89,42 +186,36 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "node_kind_updates": {
-      "PowerCopiedOrbitDependence": {
+      "HerCtblNodeClosure": {
         "Set": "Proof"
       },
-      "PowerFiniteOrbitConstancy": {
+      "HerCtblPowerIsPreorder": {
         "Set": "Proof"
       },
-      "PowerQPresBqo": {
+      "HereditarilyCountableAtom": {
         "Set": "Proof"
       },
-      "PowerQReflection": {
-        "Set": "Proof"
-      },
-      "PowerShiftIterPrefixAgree": {
+      "HereditarilyCountablePresentationInvariant": {
         "Set": "Proof"
       }
     },
     "outcome": "Valid",
     "proof_node_updates": {
-      "PowerCopiedOrbitDependence": {
+      "HerCtblNodeClosure": {
         "Set": true
       },
-      "PowerFiniteOrbitConstancy": {
+      "HerCtblPowerIsPreorder": {
         "Set": true
       },
-      "PowerQPresBqo": {
+      "HereditarilyCountableAtom": {
         "Set": true
       },
-      "PowerQReflection": {
-        "Set": true
-      },
-      "PowerShiftIterPrefixAgree": {
+      "HereditarilyCountablePresentationInvariant": {
         "Set": true
       }
     },
     "protected_semantic_change_nodes": [],
-    "request_id": 98,
+    "request_id": 105,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -178,6 +269,15 @@
         "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"60ff732087cd46180156b92f567fb2f944e5f042df3e784e945655f5f1b878a9\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"lean_semantic_closure\":\"1053fadb4baff6196bbf5a7dcdf12afc497c52f22e23b920c3378ed8ebfd0de0\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BetterRel\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"GBetterRel\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BetterRel\",\"Bqo\",\"ContinuousRelHom\",\"GBetterRel\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"lean_semantic_closure\":\"05034110930d3f30cf69eed01563a1abc0ab90764aa577dcd2182fce865e012d\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblCode": "{\"own_tex\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"lean_semantic_closure\":\"782709b70427897101c5f964fba97b97f79620e806e97ee29d41eca4a7887d9e\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblCodeErase": "{\"own_tex\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"lean_semantic_closure\":\"12e67f869e827243d37e7935c7007e679776e3390658fba0ac66d2350bc55008\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblNodeClosure": "{\"own_tex\":\"e0c6cf9ca039567da870a64a0bf49d495f9693551d8698601f2257e92226c4b4\",\"lean_semantic_closure\":\"a193a183540ea9d2ac5c6146d624aad42093acbf69bb86a116f0f14c6a603f3a\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblPower": "{\"own_tex\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"lean_semantic_closure\":\"c3cae711fc0bcc76acd2c0427395b34520152cff643510af130508456e552715\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblPowerIsPreorder": "{\"own_tex\":\"f68ca9a1f2685d726e200625c3c9a684857b55586f82f61d6eb5b454f281e57f\",\"lean_semantic_closure\":\"5b428fc5c95dabc972f7e00e2c2d150eb8da19c4dfd738a073918edbd87969ff\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HerCtblRel\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HerCtblRel\",\"HereditarilyCountable\",\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblRel": "{\"own_tex\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"lean_semantic_closure\":\"47d2fc6f838c6e5f358f9878fd92b65d45689347e07138e27a8d84c4b65878c8\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HereditarilyCountable\",\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HereditarilyCountable": "{\"own_tex\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"lean_semantic_closure\":\"b22d60efc9c22f114a5b50d94f491f36444f4c17127146168b149faf0246db99\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HereditarilyCountableAtom": "{\"own_tex\":\"593c3ba2e5b3cb602276ba89d68dfdd6edfa5cd736e9f3b04112144337c0c141\",\"lean_semantic_closure\":\"4487c6258da2d60f4abae29cd05349d441ac1e9c3c291b203a25220cb03db960\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HereditarilyCountablePresentationInvariant": "{\"own_tex\":\"dbe47203845f503f8c6a36e8173cc6d71d5ae6334aab452108fe86172107659c\",\"lean_semantic_closure\":\"c7b44439b0b6a6ada9e59e69a3efe49f3aa110166ae8d5169ce5c37ac0d38b31\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "IncSeq": "{\"own_tex\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"lean_semantic_closure\":\"2f294aa534116c66ed8e1135196c8221873b7cdde9b31ab791fe2d51fc31d42a\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"lean_semantic_closure\":\"39d055c5c38bd5cf361792d3811740d8c8cdc7efaa285f8355f8f507882b093b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"lean_semantic_closure\":\"85afef81cded08fed3d58aa4078c7d2a0229080a10dabae1c1141724bb2b1008\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -328,6 +428,7 @@
         "FrontRestriction",
         "FrontTreeWellFounded",
         "GBetterRelIff",
+        "HerCtblNodeClosure",
         "IncSeqPointwiseLe",
         "InfiniteSetEnumeration",
         "MainProp",
@@ -448,6 +549,15 @@
         "GBetterRel",
         "GBetterRelIff",
         "GoodMultiSequence",
+        "HerCtblCode",
+        "HerCtblCodeErase",
+        "HerCtblNodeClosure",
+        "HerCtblPower",
+        "HerCtblPowerIsPreorder",
+        "HerCtblRel",
+        "HereditarilyCountable",
+        "HereditarilyCountableAtom",
+        "HereditarilyCountablePresentationInvariant",
         "IncSeq",
         "IncSeqComp",
         "IncSeqId",
@@ -978,6 +1088,70 @@
           "combined_sound_fp": "sound-v2:cbd8088e853b09100edd11cea9bde319cedc80a0ce7541809fa8ae923662dfc3",
           "dep_statement_hashes": {},
           "own_tex_hash": "e2a214ee38e14cdb74e95a61fe6792faac106f3ffcebec6a6568fed66f404bc6"
+        },
+        "HerCtblCode": {
+          "combined_sound_fp": "sound-v2:d06c4c429853cf386fdb0a40aae589d32cc1bc1cd088ce775829138c7398e0f3",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "ebfc7a6c90fe09a40a42773599826d747661774c2cc8bb85c7fe4839a7416470"
+        },
+        "HerCtblCodeErase": {
+          "combined_sound_fp": "sound-v2:a3f7015db2c785d159c1dc4ac75332d90eca6dfee971e58550f7680896d59f47",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "e9596c639f7832d996af7ff4dd7980835276c05fb114e16544efc9ad5a190923"
+        },
+        "HerCtblNodeClosure": {
+          "combined_sound_fp": "sound-v2:5dcf4672f275d2db9f17d411cef74ebceebc9aedd7819b36e51995cf0e8729f2",
+          "dep_statement_hashes": {
+            "HerCtblCode": "290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262",
+            "HerCtblCodeErase": "03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca",
+            "HerCtblPower": "1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735",
+            "HereditarilyCountable": "b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0",
+            "PowerPresentationEq": "aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778",
+            "PowerPresentationEqEquivalence": "9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4"
+          },
+          "own_tex_hash": "8696a64d75825d149e16568fa7b84253570e52dfd2baff5f3e096b93b66ebfec"
+        },
+        "HerCtblPower": {
+          "combined_sound_fp": "sound-v2:60e30badf2c6caf78ad45f8f3bfc46fd40b7eb990e88dee0eddf377333373d2e",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "6c19f013b368e80c2386d5cc292a84e3873268d83494fda9bc1799c13e47fd28"
+        },
+        "HerCtblPowerIsPreorder": {
+          "combined_sound_fp": "sound-v2:08f68f807c78562110f2750bd726e9bbb87c4b52a0bbb63255e4d4044a5c8401",
+          "dep_statement_hashes": {
+            "HerCtblPower": "1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735",
+            "HerCtblRel": "2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575",
+            "PowerRelRefl": "6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a",
+            "PowerRelTrans": "de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8"
+          },
+          "own_tex_hash": "0de2a8b5d62f829257e3673b48ed5e3fdb03b277a35f8df0c8ae9fadba6ad2af"
+        },
+        "HerCtblRel": {
+          "combined_sound_fp": "sound-v2:66697e18e26e2419f8076adf174dec0d1049c69aa8f3ef793270e3fec9619e6f",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "0315d26786cbf0d137874b4b4d17f06dd34288d5f2ada2a63fdf8bc547e5df40"
+        },
+        "HereditarilyCountable": {
+          "combined_sound_fp": "sound-v2:fa3213173d751d49f5ca1805c00bb5ab7adc6de6325eb37fbdb7e48a4e19bfcf",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "50f74670e628863c6c5408d5961654fea5500fb686b433dc0a0044b6d2a5ef69"
+        },
+        "HereditarilyCountableAtom": {
+          "combined_sound_fp": "sound-v2:058d658da276f07f5a795edb8720f0e30c279dabafb15d4728b5e71727ff5d71",
+          "dep_statement_hashes": {
+            "HerCtblCodeErase": "03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca",
+            "HereditarilyCountable": "b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0",
+            "PowerPresentationEqEquivalence": "9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4"
+          },
+          "own_tex_hash": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca"
+        },
+        "HereditarilyCountablePresentationInvariant": {
+          "combined_sound_fp": "sound-v2:0d1c025a2773ddff6b4d7919181de7b1a04ad4d8ca2021d3c6048b9ee7b8ab75",
+          "dep_statement_hashes": {
+            "HereditarilyCountable": "b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0",
+            "PowerPresentationEqEquivalence": "9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4"
+          },
+          "own_tex_hash": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d"
         },
         "IncSeq": {
           "combined_sound_fp": "sound-v2:b34e10335cd8db17fa9746dbcb348dd26cb4ef88ac699d5bad2763d49a8df600",
@@ -1738,6 +1912,15 @@
         "GBetterRel": "sound-v2:b2b340eecf2f1664684205b7208a5b510ff8f6f25699284850b03314ca4d949e",
         "GBetterRelIff": "sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0",
         "GoodMultiSequence": "sound-v2:cbd8088e853b09100edd11cea9bde319cedc80a0ce7541809fa8ae923662dfc3",
+        "HerCtblCode": "sound-v2:d06c4c429853cf386fdb0a40aae589d32cc1bc1cd088ce775829138c7398e0f3",
+        "HerCtblCodeErase": "sound-v2:a3f7015db2c785d159c1dc4ac75332d90eca6dfee971e58550f7680896d59f47",
+        "HerCtblNodeClosure": "sound-v2:5dcf4672f275d2db9f17d411cef74ebceebc9aedd7819b36e51995cf0e8729f2",
+        "HerCtblPower": "sound-v2:60e30badf2c6caf78ad45f8f3bfc46fd40b7eb990e88dee0eddf377333373d2e",
+        "HerCtblPowerIsPreorder": "sound-v2:08f68f807c78562110f2750bd726e9bbb87c4b52a0bbb63255e4d4044a5c8401",
+        "HerCtblRel": "sound-v2:66697e18e26e2419f8076adf174dec0d1049c69aa8f3ef793270e3fec9619e6f",
+        "HereditarilyCountable": "sound-v2:fa3213173d751d49f5ca1805c00bb5ab7adc6de6325eb37fbdb7e48a4e19bfcf",
+        "HereditarilyCountableAtom": "sound-v2:058d658da276f07f5a795edb8720f0e30c279dabafb15d4728b5e71727ff5d71",
+        "HereditarilyCountablePresentationInvariant": "sound-v2:0d1c025a2773ddff6b4d7919181de7b1a04ad4d8ca2021d3c6048b9ee7b8ab75",
         "IncSeq": "sound-v2:b34e10335cd8db17fa9746dbcb348dd26cb4ef88ac699d5bad2763d49a8df600",
         "IncSeqComp": "sound-v2:3491f9619d33646b6122bfeae6fc2db6f076930a4947e3bc98e6f5ba25193f5d",
         "IncSeqId": "sound-v2:d73e81b50f936c249af8973fc5025ca5defc069ae787912fa99718d090a72e14",
@@ -1888,6 +2071,15 @@
         "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "HerCtblCode": "{\"own_tex\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "HerCtblCodeErase": "{\"own_tex\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "HerCtblNodeClosure": "{\"own_tex\":\"e0c6cf9ca039567da870a64a0bf49d495f9693551d8698601f2257e92226c4b4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "HerCtblPower": "{\"own_tex\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "HerCtblPowerIsPreorder": "{\"own_tex\":\"f68ca9a1f2685d726e200625c3c9a684857b55586f82f61d6eb5b454f281e57f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "HerCtblRel": "{\"own_tex\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "HereditarilyCountable": "{\"own_tex\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "HereditarilyCountableAtom": "{\"own_tex\":\"593c3ba2e5b3cb602276ba89d68dfdd6edfa5cd736e9f3b04112144337c0c141\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "HereditarilyCountablePresentationInvariant": "{\"own_tex\":\"dbe47203845f503f8c6a36e8173cc6d71d5ae6334aab452108fe86172107659c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "IncSeq": "{\"own_tex\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -2038,6 +2230,15 @@
         "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"60ff732087cd46180156b92f567fb2f944e5f042df3e784e945655f5f1b878a9\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "GBetterRelIff": "{\"own_tex\":\"ff0a49eee93465e58c221e46b641712c564ae9953d8b8de42071006dd89682b6\",\"lean_semantic_closure\":\"1053fadb4baff6196bbf5a7dcdf12afc497c52f22e23b920c3378ed8ebfd0de0\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BetterRel\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"GBetterRel\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"IncSeqId\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BetterRel\",\"Bqo\",\"ContinuousRelHom\",\"GBetterRel\",\"IncSeq\",\"IncSeqComp\",\"IncSeqId\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "GoodMultiSequence": "{\"own_tex\":\"ca4dc6bf1128ad183b0a624d8a014e5f952612d3fd676ae7665babb10f84760b\",\"lean_semantic_closure\":\"05034110930d3f30cf69eed01563a1abc0ab90764aa577dcd2182fce865e012d\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblCode": "{\"own_tex\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"lean_semantic_closure\":\"782709b70427897101c5f964fba97b97f79620e806e97ee29d41eca4a7887d9e\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblCodeErase": "{\"own_tex\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"lean_semantic_closure\":\"12e67f869e827243d37e7935c7007e679776e3390658fba0ac66d2350bc55008\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblNodeClosure": "{\"own_tex\":\"e0c6cf9ca039567da870a64a0bf49d495f9693551d8698601f2257e92226c4b4\",\"lean_semantic_closure\":\"a193a183540ea9d2ac5c6146d624aad42093acbf69bb86a116f0f14c6a603f3a\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblPower": "{\"own_tex\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"lean_semantic_closure\":\"c3cae711fc0bcc76acd2c0427395b34520152cff643510af130508456e552715\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblPowerIsPreorder": "{\"own_tex\":\"f68ca9a1f2685d726e200625c3c9a684857b55586f82f61d6eb5b454f281e57f\",\"lean_semantic_closure\":\"5b428fc5c95dabc972f7e00e2c2d150eb8da19c4dfd738a073918edbd87969ff\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HerCtblRel\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HerCtblRel\",\"HereditarilyCountable\",\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HerCtblRel": "{\"own_tex\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"lean_semantic_closure\":\"47d2fc6f838c6e5f358f9878fd92b65d45689347e07138e27a8d84c4b65878c8\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HereditarilyCountable\",\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HereditarilyCountable": "{\"own_tex\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"lean_semantic_closure\":\"b22d60efc9c22f114a5b50d94f491f36444f4c17127146168b149faf0246db99\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HereditarilyCountableAtom": "{\"own_tex\":\"593c3ba2e5b3cb602276ba89d68dfdd6edfa5cd736e9f3b04112144337c0c141\",\"lean_semantic_closure\":\"4487c6258da2d60f4abae29cd05349d441ac1e9c3c291b203a25220cb03db960\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "HereditarilyCountablePresentationInvariant": "{\"own_tex\":\"dbe47203845f503f8c6a36e8173cc6d71d5ae6334aab452108fe86172107659c\",\"lean_semantic_closure\":\"c7b44439b0b6a6ada9e59e69a3efe49f3aa110166ae8d5169ce5c37ac0d38b31\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "IncSeq": "{\"own_tex\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"lean_semantic_closure\":\"2f294aa534116c66ed8e1135196c8221873b7cdde9b31ab791fe2d51fc31d42a\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "IncSeqComp": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"lean_semantic_closure\":\"39d055c5c38bd5cf361792d3811740d8c8cdc7efaa285f8355f8f507882b093b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "IncSeqId": "{\"own_tex\":\"dc45d312ce1141fadb87bd945233b85046aac7caa72aab20215ee0371d433353\",\"lean_semantic_closure\":\"85afef81cded08fed3d58aa4078c7d2a0229080a10dabae1c1141724bb2b1008\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2140,23 +2341,33 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Added the paper-faithful reflection package for the full arbitrary-small-branching PowerQ hierarchy and the sole cor PowerQPresBqo target node. The package includes finite shift-prefix transport, finite orbit constancy, copied-orbit dependence, the reflected bad locally constant map, and complete non-SKETCH TeX proofs.",
+    "summary": "Added the hereditary-countable carrier layer: Nat-coded presentations, ULift-erasure into the unrestricted PowerQ hierarchy, the presentation-invariant hereditary predicate, its subtype and restricted relation, atom heredity, countable-node closure, and the induced preorder.",
     "target_claim_updates": {
-      "PowerCopiedOrbitDependence": {
+      "HerCtblCode": {
         "Set": []
       },
-      "PowerFiniteOrbitConstancy": {
+      "HerCtblCodeErase": {
         "Set": []
       },
-      "PowerQPresBqo": {
-        "Set": [
-          "cor PowerQPresBqo"
-        ]
-      },
-      "PowerQReflection": {
+      "HerCtblNodeClosure": {
         "Set": []
       },
-      "PowerShiftIterPrefixAgree": {
+      "HerCtblPower": {
+        "Set": []
+      },
+      "HerCtblPowerIsPreorder": {
+        "Set": []
+      },
+      "HerCtblRel": {
+        "Set": []
+      },
+      "HereditarilyCountable": {
+        "Set": []
+      },
+      "HereditarilyCountableAtom": {
+        "Set": []
+      },
+      "HereditarilyCountablePresentationInvariant": {
         "Set": []
       }
     },
@@ -2268,7 +2479,25 @@
     "GBetterRelIff.tex": "b04881587ad7f81864198af6e8b66dc551462096771feba1eab092935e268a72",
     "GoodMultiSequence.lean": "c4bd9fe7761dceaa3dda46012ddeb547f5a9fd042134d0e7600570747cb76d19",
     "GoodMultiSequence.tex": "e2a214ee38e14cdb74e95a61fe6792faac106f3ffcebec6a6568fed66f404bc6",
-    "INDEX.md": "c5fc6be2372de26d08bd3579e1f6d2883775461769525e63783b8198d3821a94",
+    "HerCtblCode.lean": "74aef05c35b6d0cb7c05f798e650f41392ef208c0d1cf69c86cd6647c56a039c",
+    "HerCtblCode.tex": "ebfc7a6c90fe09a40a42773599826d747661774c2cc8bb85c7fe4839a7416470",
+    "HerCtblCodeErase.lean": "0821884c86d5d8b14cf54a5cbf1b8f3a8a4a15e087ac7d3eace6624f8d023695",
+    "HerCtblCodeErase.tex": "e9596c639f7832d996af7ff4dd7980835276c05fb114e16544efc9ad5a190923",
+    "HerCtblNodeClosure.lean": "d1614ab3a36845af77c2fde2dabebb83205ff378dc6e16ec506a6fa10265023a",
+    "HerCtblNodeClosure.tex": "8696a64d75825d149e16568fa7b84253570e52dfd2baff5f3e096b93b66ebfec",
+    "HerCtblPower.lean": "af326051952b352a55c2941327a075ef5e26488fe07a8bc9736e4f3df7e8375d",
+    "HerCtblPower.tex": "6c19f013b368e80c2386d5cc292a84e3873268d83494fda9bc1799c13e47fd28",
+    "HerCtblPowerIsPreorder.lean": "d43cfcf875870c28ab9ea3518d850a5120fe393cdcb0b62f40455d5e0099634a",
+    "HerCtblPowerIsPreorder.tex": "0de2a8b5d62f829257e3673b48ed5e3fdb03b277a35f8df0c8ae9fadba6ad2af",
+    "HerCtblRel.lean": "b7007c3ad7e54ddb6afb5e4ab74f1b30a225c2fc12c648f51cecde5d7d2fbbd4",
+    "HerCtblRel.tex": "0315d26786cbf0d137874b4b4d17f06dd34288d5f2ada2a63fdf8bc547e5df40",
+    "HereditarilyCountable.lean": "f5caede273c687eb89b0a87986a03c969ba3182db3f8cfd4bc2073831c93c362",
+    "HereditarilyCountable.tex": "50f74670e628863c6c5408d5961654fea5500fb686b433dc0a0044b6d2a5ef69",
+    "HereditarilyCountableAtom.lean": "ecf558026177bb953fc0083a98a2b32cec521d42c5121035af2d77e9799324e8",
+    "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
+    "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
+    "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
+    "INDEX.md": "ea269f30495654fab6e979d221cc4fab219c4f4d7d96d4e10d028446f2c657dc",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -2423,7 +2652,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7",
-    "README.md": "dfe6a2fd79d27216e00fec205588b41415a3a341fdfa93fd1abb94f4b7392d9b",
+    "README.md": "02c670d15feef66f34cdcd4adafd34ea5da775abc3d99179c3daf485d3be7a9c",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "8083be7d8ada8fc21dcf0ee59af2c71892a3aeafe327bf147b7d48daf1470ecb",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -2466,7 +2695,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_98_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_105_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

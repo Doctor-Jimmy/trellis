@@ -53,6 +53,15 @@
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
 | GBetterRelIff | theorem | proof | open | - | g-BQO | BetterRel, Bqo, GBetterRel, IncSeqId, MainProp |
 | GoodMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
+| HerCtblCode | definition | definition | closed | - | - | Preamble |
+| HerCtblCodeErase | definition | definition | closed | - | - | HerCtblCode, PowerQ |
+| HerCtblNodeClosure | lemma | proof | open | - | Countable hereditary-node closure | HerCtblCodeErase, HerCtblPower, PowerPresentationEqEquivalence |
+| HerCtblPower | definition | definition | closed | - | - | HereditarilyCountable |
+| HerCtblPowerIsPreorder | lemma | proof | closed | - | The hereditary countable carrier is a preorder | HerCtblRel, PowerQIsPreorder |
+| HerCtblRel | definition | definition | closed | - | - | HerCtblPower, PowerRel |
+| HereditarilyCountable | definition | definition | closed | - | - | HerCtblCodeErase, PowerPresentationEq |
+| HereditarilyCountableAtom | lemma | proof | closed | - | Atoms are hereditarily countable | HereditarilyCountable, PowerPresentationEqEquivalence |
+| HereditarilyCountablePresentationInvariant | lemma | proof | closed | - | Hereditary countability is presentation invariant | HereditarilyCountable, PowerPresentationEqEquivalence |
 | IncSeq | definition | definition | closed | - | - | Preamble |
 | IncSeqComp | definition | definition | closed | - | - | IncSeq |
 | IncSeqId | definition | definition | closed | - | - | IncSeq |
@@ -151,4 +160,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 147 nodes | **Closed:** 71 | **Open:** 76
+**Total:** 156 nodes | **Closed:** 79 | **Open:** 77

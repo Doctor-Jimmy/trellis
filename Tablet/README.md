@@ -61,6 +61,15 @@
 | GBetterRel | definition | - | closed |
 | GBetterRelIff | proof | g-BQO | open |
 | GoodMultiSequence | definition | - | closed |
+| HerCtblCode | definition | - | closed |
+| HerCtblCodeErase | definition | - | closed |
+| HerCtblNodeClosure | proof | Countable hereditary-node closure | open |
+| HerCtblPower | definition | - | closed |
+| HerCtblPowerIsPreorder | proof | The hereditary countable carrier is a preorder | closed |
+| HerCtblRel | definition | - | closed |
+| HereditarilyCountable | definition | - | closed |
+| HereditarilyCountableAtom | proof | Atoms are hereditarily countable | closed |
+| HereditarilyCountablePresentationInvariant | proof | Hereditary countability is presentation invariant | closed |
 | IncSeq | definition | - | closed |
 | IncSeqComp | definition | - | closed |
 | IncSeqId | definition | - | closed |
@@ -157,4 +166,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 71/147 closed
+**Summary:** 79/156 closed

@@ -1,0 +1,18 @@
+\begin{lemma}[The hereditary countable carrier is a preorder]
+If $r$ is a preorder on $Q$, then
+$\mathsf{HerCtblRel}(r)$ is a preorder on
+$\mathsf{HerCtblPower}(Q)$.
+\end{lemma}
+\begin{proof}
+The carrier is the subtype specified by
+$\noderef{HerCtblPower}, and
+$\mathsf{HerCtblRel}(r)$ is defined by the restriction in
+$\noderef{HerCtblRel}$, applying $\mathsf{PowerRel}(r)$ to
+the underlying presentations.  Reflexivity follows from
+$\noderef{PowerRelRefl}$ for each underlying presentation.  If
+$\mathsf{HerCtblRel}(r)(x,y)$ and
+$\mathsf{HerCtblRel}(r)(y,z)$, their underlying statements are the two
+corresponding $\mathsf{PowerRel}(r)$ relations, so transitivity follows from
+$\noderef{PowerRelTrans}$.  The hereditary witnesses are carried by the
+subtype and require no additional closure argument.
+\end{proof}

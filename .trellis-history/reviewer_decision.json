@@ -1,11 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The latest audit confirms that the remaining hereditary target route is sound but requires a universe-lifted countable witness index. The supplied scratch probe elaborates the tagged code and erasure using ULift.{u} Nat and confirms exists_surjective_nat for arbitrary nonempty countable indices. The next worker should implement this corrected hereditary carrier core before any target theorem or front recursion work.",
-    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core as revised by the audit. Attach to PowerQ, PowerPresentationEq and its equivalence theorem, PowerRel and its congruence theorems, and PowerQIsPreorder. Define a tagged code with atoms and Nat-indexed nonempty nodes; erase nodes into full PowerQ using ULift.{u} Nat as the index type. Define HereditarilyCountable x by PowerPresentationEq-equivalence to an erased code, define HerCtblPower and the restricted HerCtblRel, prove atom heredity, presentation-equivalence invariance, and the induced preorder. Expose the reusable closure theorem for any I : Type u with Countable I and Nonempty I: a family of hereditary children yields a hereditary full-hierarchy node, using exists_surjective_nat I and an extensional comparison between the ULift Nat witness and the I-indexed node. Do not make the global PowerQ countably branching, do not claim either hereditary target in this layer, and keep new proof-bearing TeX complete and explicitly cited.",
+    "reason": "The hereditary carrier core is now present and its induced-preorder correspondence passed. The next live structural obstruction is the recorded correspondence failure on FrontTreeWellFounded: its Lean relation has the opposite orientation from the extension recursion required by the paper. Repairing that existing node and adding the immediate-extension interface is necessary before TildeF can be defined.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute front-tree-extension-repair. Restate the existing FrontTreeWellFounded declaration, rather than adding a duplicate, on the prefix-tree subtype with relation r child parent iff both nodes lie in PrefixTree F and ProperInitialSegment parent child. This is the well-founded relation whose recursion from parent to child matches the paper's definition of TildeF. Update its paired TeX as needed so the Lean and natural-language statements agree. Prove the repaired theorem from front density and prefix-freeness, and add focused helpers showing that every tree node outside F has a nonempty countable type of one-point immediate extensions in the tree and that, for a front on Set.univ with empty absent, every singleton belongs to PrefixTree F. Keep the full PowerQ and hereditary core intact, do not claim either hereditary target yet, and give complete cited TeX proofs.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
-      "paperfaithfulness:target:thm BqoHerCtblWellF:"
+      "paperfaithfulness:target:thm BqoHerCtblWellF:",
+      "nodecorr:node:FrontTreeWellFounded:{\"own_tex\":\"4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b\",\"lean_semantic_closure\":\"5ec497d761d10308a66bd58a977f51d846ef4ec9bba8de3000a1d4785ca2211c\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}"
     ],
     "reset_blocker_ids": [],
     "next_active": "",
@@ -18,45 +19,44 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1362,
-        "end_line": 1374,
-        "reason": "The paper's full transfinite nonempty powerset hierarchy, atom convention, and recursive support definition."
-      },
-      {
-        "start_line": 1580,
-        "end_line": 1584,
-        "reason": "The paper's hereditary countable nonempty carrier and its induced quasi-order."
+        "start_line": 1559,
+        "end_line": 1570,
+        "reason": "The paper's extension-oriented TildeF recursion, nontrivial-front singleton restriction, and finite-shift setup for the converse game."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The paper treats PowerQ as the full transfinite hierarchy with atoms and recursive support, then identifies the hereditary carrier as the recursively generated countable nonempty part with the induced order. The audit's elaboration probe confirms that the faithful arbitrary-universe implementation needs ULift.{u} Nat for countable witness nodes."
+      "basis_summary": "The cited passage recursively defines TildeF at a front atom and otherwise as the family of one-point extensions, requires the singleton restriction only for a nontrivial front, and uses the resulting finite-shift construction in the converse game. This requires the extension-oriented well-founded relation on the prefix tree."
     },
     "stuck_math_audit": {
-      "notes": "The fresh audit plan keeps the hereditary core as the next live task and refines it with a necessary universe detail. The scratch probe at .trellis/stuck-math-audit/cycle-18-request-103/hereditary_code_probe.lean passes: plain Nat is not the correct PowerQ.node index for arbitrary Q : Type u, while ULift.{u} Nat works, and exists_surjective_nat supplies the reindexing map for every nonempty countable I. Implement hereditary membership through PowerPresentationEq, preserve the full arbitrary-small PowerQ, and prove the generic countable-family closure before moving to the separately planned FrontTreeWellFounded repair. Neither hereditary target should be claimed in this prerequisite layer.",
+      "notes": "The hereditary-countable-core task is complete: the worker added the ULift-erasure code, presentation-invariant hereditary predicate, subtype/restricted relation, atom heredity, countable closure, and induced preorder; all modules build and HerCtblPowerIsPreorder correspondence passed. Dismiss that task. Execute front-tree-extension-repair next. The current FrontTreeWellFounded Lean statement uses ProperInitialSegment u v, but the paper's recursion needs r child parent when parent is a proper initial segment of child. Repair the existing node in place, then add the nonfront immediate-extension and nontrivial-front singleton helpers. Do not create a duplicate while leaving the mismatched theorem, and do not claim either hereditary target in this support layer.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "next_task": "hereditarily-countable-core",
-        "probe_result": "ULift.{u} Nat erasure and exists_surjective_nat I elaborate successfully for arbitrary universe u.",
+        "completed_task": "hereditarily-countable-core",
+        "next_task": "front-tree-extension-repair",
         "required_interface": [
-          "tagged hereditary code with atom and Nat-indexed node constructors",
-          "erasure into full PowerQ using ULift.{u} Nat",
-          "HereditarilyCountable defined by PowerPresentationEq to an erasure",
-          "HerCtblPower subtype, HerCtblRel restriction, atom heredity, invariance, and preorder",
-          "generic closure for nonempty countable I-indexed hereditary families via exists_surjective_nat"
+          "FrontTreeWellFounded on the prefix-tree subtype with r child parent iff ProperInitialSegment parent child",
+          "proof from front density and prefix-freeness",
+          "nonempty countable immediate-extension type for a tree node outside the front",
+          "singleton membership in PrefixTree for a front on Set.univ with empty absent"
         ],
         "constraints": [
-          "retain the full arbitrary-small-indexed PowerQ carrier",
-          "do not use plain Nat as the PowerQ.node index at arbitrary universe u",
-          "do not replace PowerQ globally by countable branching",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF before their later tasks"
+          "repair the existing FrontTreeWellFounded node rather than adding a duplicate",
+          "match the Lean relation orientation to well-founded recursion from parent to child",
+          "preserve the full PowerQ and hereditary carrier definitions",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet"
         ]
       }
     },
-    "dismissed_tasks": []
+    "dismissed_tasks": [
+      {
+        "id": "hereditarily-countable-core",
+        "reason": "Completed: the worker added the universe-correct hereditary code and erasure, extensional hereditary predicate, subtype and restricted relation, atom heredity, generic countable-node closure, and induced preorder. Build checks passed and HerCtblPowerIsPreorder correspondence passed."
+      }
+    ]
   },
   "response": {
     "allow_new_obligations": true,
@@ -67,14 +67,19 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core as revised by the audit. Attach to PowerQ, PowerPresentationEq and its equivalence theorem, PowerRel and its congruence theorems, and PowerQIsPreorder. Define a tagged code with atoms and Nat-indexed nonempty nodes; erase nodes into full PowerQ using ULift.{u} Nat as the index type. Define HereditarilyCountable x by PowerPresentationEq-equivalence to an erased code, define HerCtblPower and the restricted HerCtblRel, prove atom heredity, presentation-equivalence invariance, and the induced preorder. Expose the reusable closure theorem for any I : Type u with Countable I and Nonempty I: a family of hereditary children yields a hereditary full-hierarchy node, using exists_surjective_nat I and an extensional comparison between the ULift Nat witness and the I-indexed node. Do not make the global PowerQ countably branching, do not claim either hereditary target in this layer, and keep new proof-bearing TeX complete and explicitly cited.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute front-tree-extension-repair. Restate the existing FrontTreeWellFounded declaration, rather than adding a duplicate, on the prefix-tree subtype with relation r child parent iff both nodes lie in PrefixTree F and ProperInitialSegment parent child. This is the well-founded relation whose recursion from parent to child matches the paper's definition of TildeF. Update its paired TeX as needed so the Lean and natural-language statements agree. Prove the repaired theorem from front density and prefix-freeness, and add focused helpers showing that every tree node outside F has a nonempty countable type of one-point immediate extensions in the tree and that, for a front on Set.univ with empty absent, every singleton belongs to PrefixTree F. Keep the full PowerQ and hereditary core intact, do not claim either hereditary target yet, and give complete cited TeX proofs.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 18,
+    "cycle": 19,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "hereditarily-countable-core",
+        "reason": "Completed: the worker added the universe-correct hereditary code and erasure, extensional hereditary predicate, subtype and restricted relation, atom heredity, generic countable-node closure, and induced preorder. Build checks passed and HerCtblPowerIsPreorder correspondence passed."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -84,45 +89,39 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1374,
-        "reason": "The paper's full transfinite nonempty powerset hierarchy, atom convention, and recursive support definition.",
-        "start_line": 1362
-      },
-      {
-        "end_line": 1584,
-        "reason": "The paper's hereditary countable nonempty carrier and its induced quasi-order.",
-        "start_line": 1580
+        "end_line": 1570,
+        "reason": "The paper's extension-oriented TildeF recursion, nontrivial-front singleton restriction, and finite-shift setup for the converse game.",
+        "start_line": 1559
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The paper treats PowerQ as the full transfinite hierarchy with atoms and recursive support, then identifies the hereditary carrier as the recursively generated countable nonempty part with the induced order. The audit's elaboration probe confirms that the faithful arbitrary-universe implementation needs ULift.{u} Nat for countable witness nodes.",
+      "basis_summary": "The cited passage recursively defines TildeF at a front atom and otherwise as the family of one-point extensions, requires the singleton restriction only for a nontrivial front, and uses the resulting finite-shift construction in the converse game. This requires the extension-oriented well-founded relation on the prefix tree.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The latest audit confirms that the remaining hereditary target route is sound but requires a universe-lifted countable witness index. The supplied scratch probe elaborates the tagged code and erasure using ULift.{u} Nat and confirms exists_surjective_nat for arbitrary nonempty countable indices. The next worker should implement this corrected hereditary carrier core before any target theorem or front recursion work.",
-    "request_id": 104,
+    "reason": "The hereditary carrier core is now present and its induced-preorder correspondence passed. The next live structural obstruction is the recorded correspondence failure on FrontTreeWellFounded: its Lean relation has the opposite orientation from the extension recursion required by the paper. Repairing that existing node and adding the immediate-extension interface is necessary before TildeF can be defined.",
+    "request_id": 113,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The fresh audit plan keeps the hereditary core as the next live task and refines it with a necessary universe detail. The scratch probe at .trellis/stuck-math-audit/cycle-18-request-103/hereditary_code_probe.lean passes: plain Nat is not the correct PowerQ.node index for arbitrary Q : Type u, while ULift.{u} Nat works, and exists_surjective_nat supplies the reindexing map for every nonempty countable I. Implement hereditary membership through PowerPresentationEq, preserve the full arbitrary-small PowerQ, and prove the generic countable-family closure before moving to the separately planned FrontTreeWellFounded repair. Neither hereditary target should be claimed in this prerequisite layer.",
+      "notes": "The hereditary-countable-core task is complete: the worker added the ULift-erasure code, presentation-invariant hereditary predicate, subtype/restricted relation, atom heredity, countable closure, and induced preorder; all modules build and HerCtblPowerIsPreorder correspondence passed. Dismiss that task. Execute front-tree-extension-repair next. The current FrontTreeWellFounded Lean statement uses ProperInitialSegment u v, but the paper's recursion needs r child parent when parent is a proper initial segment of child. Repair the existing node in place, then add the nonfront immediate-extension and nontrivial-front singleton helpers. Do not create a duplicate while leaving the mismatched theorem, and do not claim either hereditary target in this support layer.",
       "reviewer_lean_product": {
+        "completed_task": "hereditarily-countable-core",
         "constraints": [
-          "retain the full arbitrary-small-indexed PowerQ carrier",
-          "do not use plain Nat as the PowerQ.node index at arbitrary universe u",
-          "do not replace PowerQ globally by countable branching",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF before their later tasks"
+          "repair the existing FrontTreeWellFounded node rather than adding a duplicate",
+          "match the Lean relation orientation to well-founded recursion from parent to child",
+          "preserve the full PowerQ and hereditary carrier definitions",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet"
         ],
-        "next_task": "hereditarily-countable-core",
-        "probe_result": "ULift.{u} Nat erasure and exists_surjective_nat I elaborate successfully for arbitrary universe u.",
+        "next_task": "front-tree-extension-repair",
         "required_interface": [
-          "tagged hereditary code with atom and Nat-indexed node constructors",
-          "erasure into full PowerQ using ULift.{u} Nat",
-          "HereditarilyCountable defined by PowerPresentationEq to an erasure",
-          "HerCtblPower subtype, HerCtblRel restriction, atom heredity, invariance, and preorder",
-          "generic closure for nonempty countable I-indexed hereditary families via exists_surjective_nat"
+          "FrontTreeWellFounded on the prefix-tree subtype with r child parent iff ProperInitialSegment parent child",
+          "proof from front density and prefix-freeness",
+          "nonempty countable immediate-extension type for a tree node outside the front",
+          "singleton membership in PrefixTree for a front on Set.univ with empty absent"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -148,9 +147,18 @@
           "otype": "target",
           "target": "thm BqoHerCtblWqo"
         }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b\",\"lean_semantic_closure\":\"5ec497d761d10308a66bd58a977f51d846ef4ec9bba8de3000a1d4785ca2211c\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "kind": "NodeCorr",
+        "object": {
+          "node": "FrontTreeWellFounded",
+          "otype": "node"
+        }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_104_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_113_decision.context.json"
 }

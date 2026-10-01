@@ -1,0 +1,14 @@
+\begin{lemma}[Hereditary countability is presentation invariant]
+If $\mathsf{PowerPresentationEq}(x,y)$, then $x$ is hereditarily
+countable if and only if $y$ is hereditarily countable.
+\end{lemma}
+\begin{proof}
+Assume first that $x$ is hereditarily countable.  By
+$\noderef{HereditarilyCountable}$, choose a code $c$ with
+$\mathsf{PowerPresentationEq}(x,\mathsf{erase}(c))$.  The assumed
+equivalence gives $\mathsf{PowerPresentationEq}(y,x)$ by symmetry in
+$\noderef{PowerPresentationEqEquivalence}$; transitivity then gives the
+same code as a witness for $y$.  Conversely, a witness code for $y$ is
+transported to $x$ by transitivity of the given equivalence with
+$\mathsf{PowerPresentationEq}(x,y)$.  This proves both implications.
+\end{proof}
