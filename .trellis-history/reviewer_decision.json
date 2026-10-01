@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerGameDescentWellFounded has a current Sound approval. Continue to PowerFiniteOrbitConstancy with an explicit finite-maximum and prefix-arithmetic expansion for its common neighborhood argument.",
-    "comments": "Edit only Tablet/PowerFiniteOrbitConstancy.tex. Preserve the Lean statement, imports, and current dependencies. The proof currently says that there are finitely many indices and then simply chooses N at least n_j+j for each; make this line-by-line checkable by defining N as the maximum of the finitely many numbers n_j+j (or by a finite induction), proving N is at least each n_j+j, and then applying \\noderef{PowerShiftIterPrefixAgree} separately for every j\u2264m. Retain the citation to \\noderef{LocallyConstant} for the local neighborhoods and explicitly conclude the same N works for all j. Do not change the theorem statement, add a helper, or rewire imports.",
+    "reason": "PowerFiniteOrbitConstancy has a current Sound approval. Continue to PowerCopiedTerminates, whose current proof compresses the well-founded termination step and should make the finite descent explicit.",
+    "comments": "Edit only Tablet/PowerCopiedTerminates.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof jumps from the legal-move facts to \"this process reaches a pair of atoms after finitely many steps\" without defining the pair sequence or showing the contradiction with well-foundedness. Cite \\noderef{PowerCopiedFailureMove}, \\noderef{PowerMove}, \\noderef{PowerGameDescent}, and \\noderef{PowerGameDescentWellFounded}; explicitly name the adjacent copied pair at each depth, split the case where the first coordinate is a node from the case where it is already an atom, and show that every nonterminal successor is a PowerGameDescent predecessor. Then argue by accessibility that an infinite nonterminal continuation is impossible, yielding a finite k, and match the resulting atom pair and depth to \\noderef{PowerCopiedTerminalAt}. Keep the badness/failed-pair condition from PowerCopiedFailureMove visible, but do not use the proof of any cited node. No statement/import/support changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerFiniteOrbitConstancy",
+    "next_active": "PowerCopiedTerminates",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -16,14 +16,19 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1264,
-        "end_line": 1271,
-        "reason": "The paper identifies finite-prefix cylinder neighborhoods and defines local constancy on them."
+        "start_line": 1383,
+        "end_line": 1397,
+        "reason": "The paper defines recursive game moves, with node choices replaced by children and atoms fixed."
+      },
+      {
+        "start_line": 1424,
+        "end_line": 1426,
+        "reason": "The paper invokes foundation to justify eventual arrival at a pair of atoms."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1264-1267 identify finite-prefix cylinder neighborhoods in the enumeration topology, and lines 1269-1271 define local constancy by constancy on one such neighborhood. The tablet proof must therefore exhibit one finite prefix that simultaneously controls the finitely many shifted evaluations."
+      "basis_summary": "Lines 1383-1397 define the copied comparison game by child moves and fixed atom moves; lines 1424-1426 say foundation forces a round where both values are atoms. The tablet proof should explicitly connect each copied failure move to PowerGameDescent and use its well-foundedness to obtain a finite terminal depth."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -38,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerFiniteOrbitConstancy.tex. Preserve the Lean statement, imports, and current dependencies. The proof currently says that there are finitely many indices and then simply chooses N at least n_j+j for each; make this line-by-line checkable by defining N as the maximum of the finitely many numbers n_j+j (or by a finite induction), proving N is at least each n_j+j, and then applying \\noderef{PowerShiftIterPrefixAgree} separately for every j\u2264m. Retain the citation to \\noderef{LocallyConstant} for the local neighborhoods and explicitly conclude the same N works for all j. Do not change the theorem statement, add a helper, or rewire imports.",
+    "comments": "Edit only Tablet/PowerCopiedTerminates.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof jumps from the legal-move facts to \"this process reaches a pair of atoms after finitely many steps\" without defining the pair sequence or showing the contradiction with well-foundedness. Cite \\noderef{PowerCopiedFailureMove}, \\noderef{PowerMove}, \\noderef{PowerGameDescent}, and \\noderef{PowerGameDescentWellFounded}; explicitly name the adjacent copied pair at each depth, split the case where the first coordinate is a node from the case where it is already an atom, and show that every nonterminal successor is a PowerGameDescent predecessor. Then argue by accessibility that an infinite nonterminal continuation is impossible, yielding a finite k, and match the resulting atom pair and depth to \\noderef{PowerCopiedTerminalAt}. Keep the badness/failed-pair condition from PowerCopiedFailureMove visible, but do not use the proof of any cited node. No statement/import/support changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 133,
+    "cycle": 134,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +54,29 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerFiniteOrbitConstancy",
+    "next_active": "PowerCopiedTerminates",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1271,
-        "reason": "The paper identifies finite-prefix cylinder neighborhoods and defines local constancy on them.",
-        "start_line": 1264
+        "end_line": 1397,
+        "reason": "The paper defines recursive game moves, with node choices replaced by children and atoms fixed.",
+        "start_line": 1383
+      },
+      {
+        "end_line": 1426,
+        "reason": "The paper invokes foundation to justify eventual arrival at a pair of atoms.",
+        "start_line": 1424
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1264-1267 identify finite-prefix cylinder neighborhoods in the enumeration topology, and lines 1269-1271 define local constancy by constancy on one such neighborhood. The tablet proof must therefore exhibit one finite prefix that simultaneously controls the finitely many shifted evaluations.",
+      "basis_summary": "Lines 1383-1397 define the copied comparison game by child moves and fixed atom moves; lines 1424-1426 say foundation forces a round where both values are atoms. The tablet proof should explicitly connect each copied failure move to PowerGameDescent and use its well-foundedness to obtain a finite terminal depth.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerGameDescentWellFounded has a current Sound approval. Continue to PowerFiniteOrbitConstancy with an explicit finite-maximum and prefix-arithmetic expansion for its common neighborhood argument.",
-    "request_id": 439,
+    "reason": "PowerFiniteOrbitConstancy has a current Sound approval. Continue to PowerCopiedTerminates, whose current proof compresses the well-founded termination step and should make the finite descent explicit.",
+    "request_id": 442,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,5 +86,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_439_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_442_decision.context.json"
 }
