@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TildeFHerCtbl is now Sound-approved. TildeFAtomIffFront is the next held target and its proof is a direct two-case consequence of the already approved front and non-front recursion equations, so request its Sound verification.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFAtomIffFront only. Check that the front case obtains the atom constructor from TildeFFrontEquation, that the non-front case obtains the node constructor from TildeFNonfrontEquation, and that the tagged PowerQ atom/node constructors are disjoint. Require the existing citations to TildeFFrontEquation, TildeFNonfrontEquation, and PowerQ.",
+    "reason": "TildeFAtomIffFront is now Sound-approved. SuperSequenceExtension is the next held target, and its proof implements the paper's unique-front-prefix construction of a locally constant extension, so request its Sound verification.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperSequenceExtension only. Check existence and uniqueness of the front prefix for each base increasing sequence, that the proposed value is well-defined through SuperSequence, and that the finite-prefix information determining the front member really yields BaseLocallyConstant. Check the final value equation and the explicit citations to FrontPrefixExists, FrontPrefixUnique, BaseLocallyConstant, and SuperSequence.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "TildeFAtomIffFront"
+      "SuperSequenceExtension"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1559,
-        "end_line": 1566,
-        "reason": "The recursion definition and the paper's explicit atom/front equivalence observation."
+        "start_line": 1258,
+        "end_line": 1275,
+        "reason": "The paper's construction of the locally constant extension from a super-sequence and its unique front prefixes."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage defines the front and non-front recursion cases and explicitly states that the recursive value lies in Q exactly when the finite node lies in F. The tablet lemma refines this to the tagged hierarchy's atom constructor and proves it from the two recursion equations."
+      "basis_summary": "The cited paper passage defines the extension by selecting the unique front member preceding each infinite base subset and then states that this extension is locally constant. SuperSequenceExtension formalizes that construction for increasing-sequence bases and records the defining value equation."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFAtomIffFront only. Check that the front case obtains the atom constructor from TildeFFrontEquation, that the non-front case obtains the node constructor from TildeFNonfrontEquation, and that the tagged PowerQ atom/node constructors are disjoint. Require the existing citations to TildeFFrontEquation, TildeFNonfrontEquation, and PowerQ.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperSequenceExtension only. Check existence and uniqueness of the front prefix for each base increasing sequence, that the proposed value is well-defined through SuperSequence, and that the finite-prefix information determining the front member really yields BaseLocallyConstant. Check the final value equation and the explicit citations to FrontPrefixExists, FrontPrefixUnique, BaseLocallyConstant, and SuperSequence.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 102,
+    "cycle": 103,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -55,20 +55,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1566,
-        "reason": "The recursion definition and the paper's explicit atom/front equivalence observation.",
-        "start_line": 1559
+        "end_line": 1275,
+        "reason": "The paper's construction of the locally constant extension from a super-sequence and its unique front prefixes.",
+        "start_line": 1258
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage defines the front and non-front recursion cases and explicitly states that the recursive value lies in Q exactly when the finite node lies in F. The tablet lemma refines this to the tagged hierarchy's atom constructor and proves it from the two recursion equations.",
+      "basis_summary": "The cited paper passage defines the extension by selecting the unique front member preceding each infinite base subset and then states that this extension is locally constant. SuperSequenceExtension formalizes that construction for increasing-sequence bases and records the defining value equation.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TildeFHerCtbl is now Sound-approved. TildeFAtomIffFront is the next held target and its proof is a direct two-case consequence of the already approved front and non-front recursion equations, so request its Sound verification.",
-    "request_id": 357,
+    "reason": "TildeFAtomIffFront is now Sound-approved. SuperSequenceExtension is the next held target, and its proof implements the paper's unique-front-prefix construction of a locally constant extension, so request its Sound verification.",
+    "request_id": 359,
     "request_sound_verifier_nodes": [
-      "TildeFAtomIffFront"
+      "SuperSequenceExtension"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -78,5 +78,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_357_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_359_decision.context.json"
 }
