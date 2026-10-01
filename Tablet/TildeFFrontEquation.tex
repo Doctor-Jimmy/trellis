@@ -1,0 +1,14 @@
+\begin{lemma}[Front recursion equation]
+For $s\in T(F)$ with $s\in F$,
+\[
+  \widetilde f(s)=\mathsf{atom}(f(s)).
+\]
+\end{lemma}
+\begin{proof}
+The defining recursion in \noderef{TildeF} tests whether the current tree
+node belongs to the front.  Under the displayed hypothesis the front branch
+is selected, and that branch returns exactly the atom carrying the value
+$f(s)$.  The subtype proof that $s\in T(F)$ is the same proof used to view
+$s$ as an element of the domain of $f$, so the displayed equality is
+independent of its particular proof by proof irrelevance.
+\end{proof}

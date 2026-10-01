@@ -1,0 +1,17 @@
+\begin{lemma}[Atoms occur exactly at front nodes]
+For every $s\in T(F)$,
+\[
+  \widetilde f(s)\text{ is an atom}
+  \quad\Longleftrightarrow\quad s\in F.
+\]
+\end{lemma}
+\begin{proof}
+If $s\in F$, the front recursion equation
+\noderef{TildeFFrontEquation} gives
+$\widetilde f(s)=\mathsf{atom}(f(s))$, so it is an atom.  Conversely, assume
+$s\notin F$.  The non-front recursion equation
+\noderef{TildeFNonfrontEquation} expresses $\widetilde f(s)$ as a value of
+the constructor $\mathsf{node}$.  The atom and node constructors of the
+tagged inductive hierarchy \noderef{PowerQ} are disjoint, so this value
+cannot be an atom.  These two implications prove the equivalence.
+\end{proof}

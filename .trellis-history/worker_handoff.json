@@ -1,22 +1,33 @@
 {
   "raw": {
-    "outcome": "valid",
-    "summary": "Repaired FrontTreeWellFounded with the extension-oriented relation on the PrefixTree subtype, and added substantive helper nodes for nonempty countable one-point extensions and singleton membership in a nontrivial full-base front tree.",
-    "comments": "The three affected Lean declarations elaborate and the full tablet acceptance check passes. FrontTreeWellFounded now states WellFounded (fun child parent => ProperInitialSegment parent.1 child.1), matching WellFounded recursion toward strict extensions. The two new proof-bearing nodes have complete, cited TeX proofs and no configured target claims. Generated Tablet/INDEX.md and Tablet/README.md entries were refreshed by the tablet checker.",
-    "target_claim_updates": {
-      "FrontTreeImmediateExtensions": [],
-      "FrontTreeSingleton": []
-    },
+    "audit_request": null,
+    "comments": "Repaired FrontTreeImmediateExtensions so its index type is the ordered proper one-point extension type required by the paper's omega/s notation. Added the extension-oriented TildeF recursion on the unrestricted PowerQ hierarchy, separate front and non-front equations, the atom/front characterization, hereditary-countability closure, and the nontrivial singleton restriction. The direct outside-fact audit is recorded in .trellis/scratch/notes.md. The full tablet shape checker and kernel replay build pass; all new proof-bearing TeX blocks are complete, cited, and non-SKETCH. No configured hereditary target is claimed in this support layer.",
+    "deleted_nodes": [],
+    "deviation_deletions": [],
+    "deviation_requests": {},
     "difficulty_updates": {
       "FrontTreeImmediateExtensions": "hard",
-      "FrontTreeSingleton": "easy"
+      "TildeF": "hard",
+      "TildeFFrontEquation": "easy",
+      "TildeFNonfrontEquation": "hard",
+      "TildeFAtomIffFront": "easy",
+      "TildeFHerCtbl": "hard",
+      "TildeFSingleton": "easy"
     },
-    "deviation_requests": {},
-    "node_deviation_claims": {},
-    "deviation_deletions": [],
-    "deleted_nodes": [],
     "memory_challenges": [],
-    "needs_restructure_suggested_nodes": []
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Built the paper-faithful extension-oriented TildeF recursion and its hereditary-countable singleton support package.",
+    "target_claim_updates": {
+      "FrontTreeImmediateExtensions": [],
+      "TildeF": [],
+      "TildeFFrontEquation": [],
+      "TildeFNonfrontEquation": [],
+      "TildeFAtomIffFront": [],
+      "TildeFHerCtbl": [],
+      "TildeFSingleton": []
+    }
   },
   "response": {
     "acceptance_check_passed": true,
@@ -26,21 +37,52 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "The three affected Lean declarations elaborate and the full tablet acceptance check passes. FrontTreeWellFounded now states WellFounded (fun child parent => ProperInitialSegment parent.1 child.1), matching WellFounded recursion toward strict extensions. The two new proof-bearing nodes have complete, cited TeX proofs and no configured target claims. Generated Tablet/INDEX.md and Tablet/README.md entries were refreshed by the tablet checker.",
-    "cycle": 20,
+    "comments": "Repaired FrontTreeImmediateExtensions so its index type is the ordered proper one-point extension type required by the paper's omega/s notation. Added the extension-oriented TildeF recursion on the unrestricted PowerQ hierarchy, separate front and non-front equations, the atom/front characterization, hereditary-countability closure, and the nontrivial singleton restriction. The direct outside-fact audit is recorded in .trellis/scratch/notes.md. The full tablet shape checker and kernel replay build pass; all new proof-bearing TeX blocks are complete, cited, and non-SKETCH. No configured hereditary target is claimed in this support layer.",
+    "cycle": 21,
     "deleted_nodes": [],
     "dep_updates": {
-      "FrontTreeImmediateExtensions": {
+      "TildeF": {
         "Set": [
-          "Front",
-          "PrefixTree",
-          "ProperInitialSegment"
+          "FrontTreeImmediateExtensions",
+          "FrontTreeWellFounded",
+          "PowerQ",
+          "SuperSequence"
         ]
       },
-      "FrontTreeSingleton": {
+      "TildeFAtomIffFront": {
         "Set": [
-          "Front",
-          "PrefixTree"
+          "TildeF",
+          "TildeFFrontEquation",
+          "TildeFNonfrontEquation"
+        ]
+      },
+      "TildeFFrontEquation": {
+        "Set": [
+          "SuperSequence",
+          "TildeF"
+        ]
+      },
+      "TildeFHerCtbl": {
+        "Set": [
+          "FrontTreeImmediateExtensions",
+          "HerCtblNodeClosure",
+          "HereditarilyCountableAtom",
+          "TildeF",
+          "TildeFFrontEquation",
+          "TildeFNonfrontEquation"
+        ]
+      },
+      "TildeFNonfrontEquation": {
+        "Set": [
+          "FrontTreeImmediateExtensions",
+          "TildeF"
+        ]
+      },
+      "TildeFSingleton": {
+        "Set": [
+          "FrontTreeSingleton",
+          "TildeF",
+          "TildeFHerCtbl"
         ]
       }
     },
@@ -51,8 +93,49 @@
       "FrontTreeImmediateExtensions": {
         "Set": "Hard"
       },
-      "FrontTreeSingleton": {
+      "TildeF": {
+        "Set": "Hard"
+      },
+      "TildeFAtomIffFront": {
         "Set": "Easy"
+      },
+      "TildeFFrontEquation": {
+        "Set": "Easy"
+      },
+      "TildeFHerCtbl": {
+        "Set": "Hard"
+      },
+      "TildeFNonfrontEquation": {
+        "Set": "Hard"
+      },
+      "TildeFSingleton": {
+        "Set": "Easy"
+      }
+    },
+    "elaboration_costs": {
+      "TildeFHerCtbl": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "TildeFHerCtbl",
+        "olean_size_bytes": 11560,
+        "peak_rss_kib": 1680128,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "47524c5e33fb3936ddec67cb05fef4c7f148fe19833e075cb9a0399cdb8349cf",
+        "walltime_ms": 2319
+      },
+      "TildeFSingleton": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "TildeFSingleton",
+        "olean_size_bytes": 10576,
+        "peak_rss_kib": 1673776,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "af934aeaa58395db1ccf3323b0220cd601b02dda401e97ee3b47057dfdf3160e",
+        "walltime_ms": 2316
       }
     },
     "kind": "worker",
@@ -61,24 +144,36 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "node_kind_updates": {
-      "FrontTreeImmediateExtensions": {
+      "TildeFAtomIffFront": {
         "Set": "Proof"
       },
-      "FrontTreeSingleton": {
+      "TildeFFrontEquation": {
+        "Set": "Proof"
+      },
+      "TildeFHerCtbl": {
+        "Set": "Proof"
+      },
+      "TildeFNonfrontEquation": {
         "Set": "Proof"
       }
     },
     "outcome": "Valid",
     "proof_node_updates": {
-      "FrontTreeImmediateExtensions": {
+      "TildeFAtomIffFront": {
         "Set": true
       },
-      "FrontTreeSingleton": {
+      "TildeFFrontEquation": {
+        "Set": true
+      },
+      "TildeFHerCtbl": {
+        "Set": true
+      },
+      "TildeFNonfrontEquation": {
         "Set": true
       }
     },
     "protected_semantic_change_nodes": [],
-    "request_id": 114,
+    "request_id": 118,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -128,7 +223,7 @@
         "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"lean_semantic_closure\":\"df88ab2fe24deb2dd9fbde1d02e356e7774c701d9685aba33bb5c014f160ecd2\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"lean_semantic_closure\":\"2bcb8b3472ad7df228c0e3ae11e029782002cde409d9fc6da22d8c760ec04364\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"lean_semantic_closure\":\"8c4986e1a9c4975f580f327324910d6d5bdd09f960c0374965ebc3ce1344bfa9\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-        "FrontTreeImmediateExtensions": "{\"own_tex\":\"4ff1104e4c20ba1c0ae206454c98d0d562837da57078760e7d741dc112601be9\",\"lean_semantic_closure\":\"b237bd6438844e5b5ec6c387ccde6f93ababd67ae05dfa4e4b56f6dabcd4963d\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontTreeImmediateExtensions": "{\"own_tex\":\"1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb\",\"lean_semantic_closure\":\"2729e231aec52612a87744145287beb13f4fe577e2d2b7b18047ac6bde147ba8\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontTreeSingleton": "{\"own_tex\":\"724d4ae1966a74405bc8342871a6026a6fb18f0cd442b906b3b596b9c55f07bd\",\"lean_semantic_closure\":\"430c15ea6f78d486058f618b48184172f8f7c870ea55b434f46725f1d4d03695\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontTreeWellFounded": "{\"own_tex\":\"a25dad15902a1d7ea587ee0a4eaff046e22495a6f45068a4411d31a6ff21867a\",\"lean_semantic_closure\":\"5e1225cdabcb2571989165c8986568cf0b0193ed9e4f77e93fffdf79016cbff4\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"60ff732087cd46180156b92f567fb2f944e5f042df3e784e945655f5f1b878a9\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -239,6 +334,12 @@
         "SuperSequenceExtension": "{\"own_tex\":\"1aa60ebc7d4266af09e432ae6dcdd9344644a36fdfd2f0d95b2cc8276c7d350e\",\"lean_semantic_closure\":\"f1dc3863d1b7f75a0f6c6420b7e1bc1a73066b4fade39819a76854ed92696d1f\",\"lean_relevant_definition_descendants\":{\"BaseIncSeq\":\"6c60e0dad52a54330a1324e014c97c8bff0c34618649f32c7de87b7b8efa6222\",\"BaseLocallyConstant\":\"4ea3922f96b6fe8c3758270c31ece74a667fbd1548d54e163ec9e54a17b3c4c0\",\"BaseMultiSequence\":\"e04b8d7d601f4074051e35072e33f8b0a13edbcb06c28bab0bc629e38c3a0f2a\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontPrefix\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"BaseIncSeq\",\"BaseLocallyConstant\",\"BaseMultiSequence\",\"Front\",\"FrontBase\",\"FrontPrefix\",\"IncSeq\",\"InitialSegment\",\"PrefixAgree\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "SuperSequenceRestrict": "{\"own_tex\":\"f15491d4e67a34d015a60cbfccc6538d4e27868caae50e9b770315897e71175c\",\"lean_semantic_closure\":\"151bf9c47303360909dd46790f6de4dae99ee33f6e9139dc19625c274a45f3ed\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "TailSet": "{\"own_tex\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\",\"lean_semantic_closure\":\"7acdc23be2a250ce5bc2df5ece0a6ff336899c8290e0a666b886eaa7bb63c11c\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeF": "{\"own_tex\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\",\"lean_semantic_closure\":\"94db876091b9989b10d6de523b1b4e7bf8cb9076cbf27142228771d72949c699\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFAtomIffFront": "{\"own_tex\":\"64b91cb5fb269e346c9a91bad583a4fcc708b084bf8a564f5c7b6c092d291dbd\",\"lean_semantic_closure\":\"d427cbbd011732443675c104c0b1499cc3e101cb5ce8ec376e7005def6976641\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFFrontEquation": "{\"own_tex\":\"f342eaf310e21913f34bff6f309fda429cb606b2f8eb5ca1cacf7bb2f4980de4\",\"lean_semantic_closure\":\"8b8168d03c2d39cc6b7c985be2a16921df343e6594922892f90b8f1ac0849fb7\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFHerCtbl": "{\"own_tex\":\"c2cabe9f4d443627a18e0e6245e7589fcc6de9467ab8cb66a762f979217521f5\",\"lean_semantic_closure\":\"f7163b2c665dce1e58e24c0692cfc14af370cdc8f3b53ac306f3977ad3761d19\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"InitialSegment\",\"PowerPresentationEq\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFNonfrontEquation": "{\"own_tex\":\"ef5d4cbc6c576d92fa20b3ac0ac22326e2ffed1059811ea7f6e96603c814c464\",\"lean_semantic_closure\":\"c6b6e89a8f42d33d8f441a95ed8759f527fa4d4cd1f2f737b9bb9eeb8328e920\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontTreeImmediateExtensions\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFSingleton": "{\"own_tex\":\"e16ea7dab252d65f0d9d14a4be9217d71acb25ea38e5f07cd5dc884a65cc55b2\",\"lean_semantic_closure\":\"f94bdb437f927fcdae66368f703b2104e6a9b95d40a2bbb53860a00768490a99\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "TripleHomogeneous": "{\"own_tex\":\"412cc17757f7a76a02418346672178fce9b4d87f2f7658f8b1ba7d1a10945dbc\",\"lean_semantic_closure\":\"9284a168ff6d8548e3e61fb79183f601b5261943d57dcd5dc0dd59c40f4fa546\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}"
       },
       "coverage": {
@@ -349,6 +450,10 @@
         "Subarr",
         "SuperNW",
         "SuperSequenceExtension",
+        "TildeFAtomIffFront",
+        "TildeFFrontEquation",
+        "TildeFHerCtbl",
+        "TildeFNonfrontEquation",
         "TripleHomogeneous"
       ],
       "paper_current_fingerprints": {
@@ -523,6 +628,12 @@
         "SuperSequenceExtension",
         "SuperSequenceRestrict",
         "TailSet",
+        "TildeF",
+        "TildeFAtomIffFront",
+        "TildeFFrontEquation",
+        "TildeFHerCtbl",
+        "TildeFNonfrontEquation",
+        "TildeFSingleton",
         "TripleHomogeneous"
       ],
       "protected_closure_nodes_per_target": {
@@ -927,13 +1038,14 @@
           "own_tex_hash": "f692a532aa03a43279f868ea4b053f317906fd9e58af2e2422c4e735c26f76c5"
         },
         "FrontTreeImmediateExtensions": {
-          "combined_sound_fp": "sound-v2:6399be6e9eb8187ab0726d4b37c9bc77d83b907bce8ab37176c5c20e648fb1ac",
+          "combined_sound_fp": "sound-v2:a1d9d27457fe5f9445577b8215fd419b9123d0447629d70da08a2202c16d18dc",
           "dep_statement_hashes": {
             "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "InitialSegment": "b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6",
             "PrefixTree": "d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1",
             "ProperInitialSegment": "3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4"
           },
-          "own_tex_hash": "b020d8c7544c004fe8456784492ce4f07560311ff8cd9aa9ee46c0d1fecc1da3"
+          "own_tex_hash": "dd038d4f255aa0514f80fa1f22ac317002d20142ed91281a5002b9be92685a2d"
         },
         "FrontTreeSingleton": {
           "combined_sound_fp": "sound-v2:18b1cfc8efe7e90271fbc346b9d481db4404d57de6cd7d3b09999972ff8f7bc8",
@@ -1736,6 +1848,53 @@
           "dep_statement_hashes": {},
           "own_tex_hash": "c7033ac7f3a695e8aabb7a0398f7edd7c8c48cc6c76e3fc82477b041895fa212"
         },
+        "TildeF": {
+          "combined_sound_fp": "sound-v2:122ed4c641323110a67a8b47888ea8c1e38e8d013917cd8417d63e0c0c32e429",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "43557b9e0b063e5e0a482a2bac8110371200b56c56a6d01655cae3b91871a089"
+        },
+        "TildeFAtomIffFront": {
+          "combined_sound_fp": "sound-v2:c4b7d8ad6cca07699207a334a5c2dbc3027f6f650810861be3062bcc71b6c685",
+          "dep_statement_hashes": {
+            "PowerQ": "5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac",
+            "TildeFFrontEquation": "f342eaf310e21913f34bff6f309fda429cb606b2f8eb5ca1cacf7bb2f4980de4",
+            "TildeFNonfrontEquation": "ef5d4cbc6c576d92fa20b3ac0ac22326e2ffed1059811ea7f6e96603c814c464"
+          },
+          "own_tex_hash": "59c167a48f34d668b25f9c00900b75825ec79c712cca7491a1243ba8a572e686"
+        },
+        "TildeFFrontEquation": {
+          "combined_sound_fp": "sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d",
+          "dep_statement_hashes": {
+            "TildeF": "0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e"
+          },
+          "own_tex_hash": "20904aa54ac4e9384ebfe652c8df27f7a98be2313fc5251074eb5add09bc65eb"
+        },
+        "TildeFHerCtbl": {
+          "combined_sound_fp": "sound-v2:abbfb58641ab718dcdf7f4b37e11da1dff6be8d682b6e109c86233a7c355d6d5",
+          "dep_statement_hashes": {
+            "FrontTreeImmediateExtensions": "1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb",
+            "FrontTreeWellFounded": "a25dad15902a1d7ea587ee0a4eaff046e22495a6f45068a4411d31a6ff21867a",
+            "HerCtblNodeClosure": "e0c6cf9ca039567da870a64a0bf49d495f9693551d8698601f2257e92226c4b4",
+            "HerCtblPower": "1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735",
+            "HereditarilyCountableAtom": "593c3ba2e5b3cb602276ba89d68dfdd6edfa5cd736e9f3b04112144337c0c141",
+            "TildeFFrontEquation": "f342eaf310e21913f34bff6f309fda429cb606b2f8eb5ca1cacf7bb2f4980de4",
+            "TildeFNonfrontEquation": "ef5d4cbc6c576d92fa20b3ac0ac22326e2ffed1059811ea7f6e96603c814c464"
+          },
+          "own_tex_hash": "a2c9d766028b82f33e6d0fc12dc12f5167e493573d8d385ae7dbe099cb01cd17"
+        },
+        "TildeFNonfrontEquation": {
+          "combined_sound_fp": "sound-v2:1980be5f28ae43f94dad7123b30951a8ec15fc471ab769aa891150f0c6033443",
+          "dep_statement_hashes": {
+            "FrontTreeImmediateExtensions": "1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb",
+            "TildeF": "0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e"
+          },
+          "own_tex_hash": "5c2a78698b9b216559dbfb82efd9d235133362c2dd8afc7e900e2e2ba4d3df05"
+        },
+        "TildeFSingleton": {
+          "combined_sound_fp": "sound-v2:63f5373163c2e210205e67a1c06eddc59f68f1e0090f24ade1de8e1543686d1b",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "d5dec79469d4f02a1666f5d62aa48a28c614195659469803e121e50ac728c53c"
+        },
         "TripleHomogeneous": {
           "combined_sound_fp": "sound-v2:330e462e4f26f88dedf042a4f9d9f2a4aa85e8c5b8d1eb9b33cef4adce43a236",
           "dep_statement_hashes": {
@@ -1794,7 +1953,7 @@
         "FrontRayClosure": "sound-v2:ba21bf414577e02ff3ef6120e69be7546e0d436c9c2c02a2884493838a58bc14",
         "FrontRestrict": "sound-v2:fdc4327d7aa648c52062803de9991bf434e69363e24d983c3d7e480104e66fa3",
         "FrontRestriction": "sound-v2:dc2368ee2f49f3a38e7d9cac16406c63d02ebe652db4cd6f5c99872f096170fe",
-        "FrontTreeImmediateExtensions": "sound-v2:6399be6e9eb8187ab0726d4b37c9bc77d83b907bce8ab37176c5c20e648fb1ac",
+        "FrontTreeImmediateExtensions": "sound-v2:a1d9d27457fe5f9445577b8215fd419b9123d0447629d70da08a2202c16d18dc",
         "FrontTreeSingleton": "sound-v2:18b1cfc8efe7e90271fbc346b9d481db4404d57de6cd7d3b09999972ff8f7bc8",
         "FrontTreeWellFounded": "sound-v2:26ac0d707490a4aaa5d7369b89ac17550fbae8d2bf3a6ab137b12b4d58cf61a2",
         "GBetterRel": "sound-v2:b2b340eecf2f1664684205b7208a5b510ff8f6f25699284850b03314ca4d949e",
@@ -1905,6 +2064,12 @@
         "SuperSequenceExtension": "sound-v2:6dde5e659da901c79c81415684ff1b00f8a519944cdf83efebf85120b0181f0b",
         "SuperSequenceRestrict": "sound-v2:afa2cb68f588a859971812b4f2cbf4b633d170b53bc979d8c9c1f195f44e9576",
         "TailSet": "sound-v2:a88539664cd43acdcbf0771bb300544b420564e9c4e9e4e1eaf238ce8944fb67",
+        "TildeF": "sound-v2:122ed4c641323110a67a8b47888ea8c1e38e8d013917cd8417d63e0c0c32e429",
+        "TildeFAtomIffFront": "sound-v2:c4b7d8ad6cca07699207a334a5c2dbc3027f6f650810861be3062bcc71b6c685",
+        "TildeFFrontEquation": "sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d",
+        "TildeFHerCtbl": "sound-v2:abbfb58641ab718dcdf7f4b37e11da1dff6be8d682b6e109c86233a7c355d6d5",
+        "TildeFNonfrontEquation": "sound-v2:1980be5f28ae43f94dad7123b30951a8ec15fc471ab769aa891150f0c6033443",
+        "TildeFSingleton": "sound-v2:63f5373163c2e210205e67a1c06eddc59f68f1e0090f24ade1de8e1543686d1b",
         "TripleHomogeneous": "sound-v2:330e462e4f26f88dedf042a4f9d9f2a4aa85e8c5b8d1eb9b33cef4adce43a236"
       },
       "substantiveness_current_fingerprints": {
@@ -1955,7 +2120,7 @@
         "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "FrontTreeImmediateExtensions": "{\"own_tex\":\"4ff1104e4c20ba1c0ae206454c98d0d562837da57078760e7d741dc112601be9\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontTreeImmediateExtensions": "{\"own_tex\":\"1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontTreeSingleton": "{\"own_tex\":\"724d4ae1966a74405bc8342871a6026a6fb18f0cd442b906b3b596b9c55f07bd\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontTreeWellFounded": "{\"own_tex\":\"a25dad15902a1d7ea587ee0a4eaff046e22495a6f45068a4411d31a6ff21867a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -2066,6 +2231,12 @@
         "SuperSequenceExtension": "{\"own_tex\":\"1aa60ebc7d4266af09e432ae6dcdd9344644a36fdfd2f0d95b2cc8276c7d350e\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "SuperSequenceRestrict": "{\"own_tex\":\"f15491d4e67a34d015a60cbfccc6538d4e27868caae50e9b770315897e71175c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "TailSet": "{\"own_tex\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "TildeF": "{\"own_tex\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "TildeFAtomIffFront": "{\"own_tex\":\"64b91cb5fb269e346c9a91bad583a4fcc708b084bf8a564f5c7b6c092d291dbd\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "TildeFFrontEquation": "{\"own_tex\":\"f342eaf310e21913f34bff6f309fda429cb606b2f8eb5ca1cacf7bb2f4980de4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "TildeFHerCtbl": "{\"own_tex\":\"c2cabe9f4d443627a18e0e6245e7589fcc6de9467ab8cb66a762f979217521f5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "TildeFNonfrontEquation": "{\"own_tex\":\"ef5d4cbc6c576d92fa20b3ac0ac22326e2ffed1059811ea7f6e96603c814c464\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "TildeFSingleton": "{\"own_tex\":\"e16ea7dab252d65f0d9d14a4be9217d71acb25ea38e5f07cd5dc884a65cc55b2\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "TripleHomogeneous": "{\"own_tex\":\"412cc17757f7a76a02418346672178fce9b4d87f2f7658f8b1ba7d1a10945dbc\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
       },
       "target_fingerprints": {
@@ -2116,7 +2287,7 @@
         "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"lean_semantic_closure\":\"df88ab2fe24deb2dd9fbde1d02e356e7774c701d9685aba33bb5c014f160ecd2\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"lean_semantic_closure\":\"2bcb8b3472ad7df228c0e3ae11e029782002cde409d9fc6da22d8c760ec04364\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"lean_semantic_closure\":\"8c4986e1a9c4975f580f327324910d6d5bdd09f960c0374965ebc3ce1344bfa9\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-        "FrontTreeImmediateExtensions": "{\"own_tex\":\"4ff1104e4c20ba1c0ae206454c98d0d562837da57078760e7d741dc112601be9\",\"lean_semantic_closure\":\"b237bd6438844e5b5ec6c387ccde6f93ababd67ae05dfa4e4b56f6dabcd4963d\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontTreeImmediateExtensions": "{\"own_tex\":\"1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb\",\"lean_semantic_closure\":\"2729e231aec52612a87744145287beb13f4fe577e2d2b7b18047ac6bde147ba8\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontTreeSingleton": "{\"own_tex\":\"724d4ae1966a74405bc8342871a6026a6fb18f0cd442b906b3b596b9c55f07bd\",\"lean_semantic_closure\":\"430c15ea6f78d486058f618b48184172f8f7c870ea55b434f46725f1d4d03695\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontTreeWellFounded": "{\"own_tex\":\"a25dad15902a1d7ea587ee0a4eaff046e22495a6f45068a4411d31a6ff21867a\",\"lean_semantic_closure\":\"5e1225cdabcb2571989165c8986568cf0b0193ed9e4f77e93fffdf79016cbff4\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "GBetterRel": "{\"own_tex\":\"d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae\",\"lean_semantic_closure\":\"60ff732087cd46180156b92f567fb2f944e5f042df3e784e945655f5f1b878a9\",\"lean_relevant_definition_descendants\":{\"ContinuousRelHom\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\"},\"lean_relevant_dependencies\":[\"ContinuousRelHom\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"RightComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2227,18 +2398,36 @@
         "SuperSequenceExtension": "{\"own_tex\":\"1aa60ebc7d4266af09e432ae6dcdd9344644a36fdfd2f0d95b2cc8276c7d350e\",\"lean_semantic_closure\":\"f1dc3863d1b7f75a0f6c6420b7e1bc1a73066b4fade39819a76854ed92696d1f\",\"lean_relevant_definition_descendants\":{\"BaseIncSeq\":\"6c60e0dad52a54330a1324e014c97c8bff0c34618649f32c7de87b7b8efa6222\",\"BaseLocallyConstant\":\"4ea3922f96b6fe8c3758270c31ece74a667fbd1548d54e163ec9e54a17b3c4c0\",\"BaseMultiSequence\":\"e04b8d7d601f4074051e35072e33f8b0a13edbcb06c28bab0bc629e38c3a0f2a\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontPrefix\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"BaseIncSeq\",\"BaseLocallyConstant\",\"BaseMultiSequence\",\"Front\",\"FrontBase\",\"FrontPrefix\",\"IncSeq\",\"InitialSegment\",\"PrefixAgree\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "SuperSequenceRestrict": "{\"own_tex\":\"f15491d4e67a34d015a60cbfccc6538d4e27868caae50e9b770315897e71175c\",\"lean_semantic_closure\":\"151bf9c47303360909dd46790f6de4dae99ee33f6e9139dc19625c274a45f3ed\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "TailSet": "{\"own_tex\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\",\"lean_semantic_closure\":\"7acdc23be2a250ce5bc2df5ece0a6ff336899c8290e0a666b886eaa7bb63c11c\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeF": "{\"own_tex\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\",\"lean_semantic_closure\":\"94db876091b9989b10d6de523b1b4e7bf8cb9076cbf27142228771d72949c699\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFAtomIffFront": "{\"own_tex\":\"64b91cb5fb269e346c9a91bad583a4fcc708b084bf8a564f5c7b6c092d291dbd\",\"lean_semantic_closure\":\"d427cbbd011732443675c104c0b1499cc3e101cb5ce8ec376e7005def6976641\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFFrontEquation": "{\"own_tex\":\"f342eaf310e21913f34bff6f309fda429cb606b2f8eb5ca1cacf7bb2f4980de4\",\"lean_semantic_closure\":\"8b8168d03c2d39cc6b7c985be2a16921df343e6594922892f90b8f1ac0849fb7\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFHerCtbl": "{\"own_tex\":\"c2cabe9f4d443627a18e0e6245e7589fcc6de9467ab8cb66a762f979217521f5\",\"lean_semantic_closure\":\"f7163b2c665dce1e58e24c0692cfc14af370cdc8f3b53ac306f3977ad3761d19\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"InitialSegment\",\"PowerPresentationEq\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFNonfrontEquation": "{\"own_tex\":\"ef5d4cbc6c576d92fa20b3ac0ac22326e2ffed1059811ea7f6e96603c814c464\",\"lean_semantic_closure\":\"c6b6e89a8f42d33d8f441a95ed8759f527fa4d4cd1f2f737b9bb9eeb8328e920\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontTreeImmediateExtensions\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "TildeFSingleton": "{\"own_tex\":\"e16ea7dab252d65f0d9d14a4be9217d71acb25ea38e5f07cd5dc884a65cc55b2\",\"lean_semantic_closure\":\"f94bdb437f927fcdae66368f703b2104e6a9b95d40a2bbb53860a00768490a99\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\",\"TildeF\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PowerQ\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"SuperSequence\",\"TildeF\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "TripleHomogeneous": "{\"own_tex\":\"412cc17757f7a76a02418346672178fce9b4d87f2f7658f8b1ba7d1a10945dbc\",\"lean_semantic_closure\":\"9284a168ff6d8548e3e61fb79183f601b5261943d57dcd5dc0dd59c40f4fa546\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}"
       }
     },
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired FrontTreeWellFounded with the extension-oriented relation on the PrefixTree subtype, and added substantive helper nodes for nonempty countable one-point extensions and singleton membership in a nontrivial full-base front tree.",
+    "summary": "Built the paper-faithful extension-oriented TildeF recursion and its hereditary-countable singleton support package.",
     "target_claim_updates": {
-      "FrontTreeImmediateExtensions": {
+      "TildeF": {
         "Set": []
       },
-      "FrontTreeSingleton": {
+      "TildeFAtomIffFront": {
+        "Set": []
+      },
+      "TildeFFrontEquation": {
+        "Set": []
+      },
+      "TildeFHerCtbl": {
+        "Set": []
+      },
+      "TildeFNonfrontEquation": {
+        "Set": []
+      },
+      "TildeFSingleton": {
         "Set": []
       }
     },
@@ -2342,8 +2531,8 @@
     "FrontRestrict.tex": "5eadc568ab62c17fe8032a3389cd9bf2aad2a699cda02858c73486415b267475",
     "FrontRestriction.lean": "68c6a7836db4a40aec467047cf165ce0a0263aa4189b5653e777ecb049e00576",
     "FrontRestriction.tex": "f692a532aa03a43279f868ea4b053f317906fd9e58af2e2422c4e735c26f76c5",
-    "FrontTreeImmediateExtensions.lean": "d4e1c1abbfa1369c2cb9620772fd9e04f33c2722de0ef526ea341c6e17b4017a",
-    "FrontTreeImmediateExtensions.tex": "b020d8c7544c004fe8456784492ce4f07560311ff8cd9aa9ee46c0d1fecc1da3",
+    "FrontTreeImmediateExtensions.lean": "c1769a179e0941e623dfcf26965b69ccb9812b49f2c4799e3529db30752ccd26",
+    "FrontTreeImmediateExtensions.tex": "dd038d4f255aa0514f80fa1f22ac317002d20142ed91281a5002b9be92685a2d",
     "FrontTreeSingleton.lean": "68c833e1ec7889f3aac4429b01302f4b09f85deae5a31787259734f09a4b771c",
     "FrontTreeSingleton.tex": "bdec1342aabe08515d409af70d8b38bb50e252afcf3c545030fed828954a5d77",
     "FrontTreeWellFounded.lean": "3943bc18810693f1b4cf03e5d637e265e344c7eaab6fe3874e3d06c83c99af40",
@@ -2372,7 +2561,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "4475e23ce2faf4cdcb342903e1318df3be0bcabeb2a8201568b1d9ed458cbac8",
+    "INDEX.md": "aec36050e3f97ed6e33ef0821772e042b340a8b083628436425462b29ef9f2a8",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -2527,7 +2716,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7",
-    "README.md": "ad89e352a7c38be81a8d5a4086f02b58fbab5b00a7a40674627c3a0815960b8c",
+    "README.md": "105fa105015e598c19df2533e3e6e934a7e8799fcc87ac33dd3b37346c4e4726",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "8083be7d8ada8fc21dcf0ee59af2c71892a3aeafe327bf147b7d48daf1470ecb",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -2566,11 +2755,23 @@
     "SuperSequenceRestrict.tex": "ff8b977bd1c9c3fec350aba5a76a25e56eae1c66cb323811a76171ea4b893207",
     "TailSet.lean": "dc281805dfe65fb00d41e2498574152619893869ea45508444e060606998fe6f",
     "TailSet.tex": "c7033ac7f3a695e8aabb7a0398f7edd7c8c48cc6c76e3fc82477b041895fa212",
+    "TildeF.lean": "f931c98da220437298f781ef147ee3a3d811b0b664e12d5f0f578b9ad4f409c3",
+    "TildeF.tex": "43557b9e0b063e5e0a482a2bac8110371200b56c56a6d01655cae3b91871a089",
+    "TildeFAtomIffFront.lean": "bfccc5dbe6d68f3ac4285b7c0705bb60008f50d39cfad501e41af3780eda7ae2",
+    "TildeFAtomIffFront.tex": "59c167a48f34d668b25f9c00900b75825ec79c712cca7491a1243ba8a572e686",
+    "TildeFFrontEquation.lean": "abe9f35f451d12d92bb97c064a3181049043985c869e080e2371921627844e82",
+    "TildeFFrontEquation.tex": "20904aa54ac4e9384ebfe652c8df27f7a98be2313fc5251074eb5add09bc65eb",
+    "TildeFHerCtbl.lean": "df4475ea222118f63befd447a5c0657842e9a13a8933eea05a86cfa2a04f7b67",
+    "TildeFHerCtbl.tex": "a2c9d766028b82f33e6d0fc12dc12f5167e493573d8d385ae7dbe099cb01cd17",
+    "TildeFNonfrontEquation.lean": "65cd6b1cb7772db216dbf4f015c29435cb882886bdd65e0432cd64807a9ac55a",
+    "TildeFNonfrontEquation.tex": "5c2a78698b9b216559dbfb82efd9d235133362c2dd8afc7e900e2e2ba4d3df05",
+    "TildeFSingleton.lean": "43f884447cc3ba28d73d147e1b27896af06ec57423b6f50186ba96bb640dd3e0",
+    "TildeFSingleton.tex": "d5dec79469d4f02a1666f5d62aa48a28c614195659469803e121e50ac728c53c",
     "TripleHomogeneous.lean": "a5a0c11e4d60b7ca3d782f69e5ebfb62d0f520824ba0de59f3d62008dfe894d0",
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_114_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_118_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

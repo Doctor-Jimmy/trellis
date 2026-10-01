@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The previous burst repaired FrontTreeWellFounded in the required extension orientation and added the immediate-extension and singleton-prefix interfaces; all three new nodes passed correspondence and the worker acceptance check passed. The next live structural step is the planned TildeF recursion package, which is required before either hereditary target can be covered faithfully.",
-    "comments": "Continue in Global mode and execute tilde-front-recursion. Define TildeF on the PrefixTree subtype by well-founded recursion using the repaired relation: front nodes map to atoms labelled by the SuperSequence value, while nonfront nodes map to the full PowerQ node of their one-point tree extensions. Use the universe-correct ULift of the countable extension index before applying PowerQ.node, and prove separate front/nonfront recursion equations, the atom iff front characterization, and hereditary-countability of every value using the generic closure theorem. Define the singleton restriction only with the nontrivial-front hypothesis empty notin F. Keep the unrestricted full PowerQ hierarchy and the hereditary carrier intact, do not claim either configured hereditary target yet, and provide complete cited TeX proofs for new proof-bearing nodes.",
+    "reason": "The previous burst completed the extension-oriented TildeF package: its front and nonfront equations, atom/front characterization, hereditary-countable closure, and nontrivial singleton restriction all passed correspondence, and the tablet acceptance check passed. The next planned support layer is the converse game that turns a bad super-sequence into a bad hereditary singleton sequence; both configured hereditary targets remain uncovered and should not be claimed yet.",
+    "comments": "Continue in Global mode and execute hereditary-converse-game. Attach the new package to TildeF, the nontrivial-front singleton restriction, FiniteShift, BadSuperSequence, and the four PowerRel constructor reductions. Formalize the paper's joint finite-shift invariant: for m < n, assume a comparison of the singleton TildeF values, use the winning PowerRel strategy to choose successive one-point extensions, preserve the joint shift witness after every response, and recurse on the product of the extension-oriented tree relations. At terminal front nodes, use the atom equations and the original bad super-sequence to contradict the alleged comparison. Keep the nontrivial-front hypothesis empty notin F explicit, preserve the full unrestricted PowerQ and hereditary carrier, and do not add either configured hereditary target node in this layer. Every new proof-bearing TeX block must contain a complete, explicitly cited proof rather than a SKETCH.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
       "paperfaithfulness:target:thm BqoHerCtblWellF:"
@@ -18,36 +18,35 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1559,
-        "end_line": 1570,
-        "reason": "The paper's extension-oriented TildeF recursion, atom/front characterization, and nontrivial-front singleton restriction establish the required support interface before the converse game."
+        "start_line": 1569,
+        "end_line": 1597,
+        "reason": "The paper's converse-game construction preserves a joint finite-shift witness through PowerQ responses, terminates at front atoms, and derives the hereditary WQO target from the resulting bad singleton sequence."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines TildeF recursively on the well-founded front tree, using the front value at terminal nodes and the family of one-point extensions otherwise; it then restricts to singleton nodes only when the front is nontrivial and records the atom iff front characterization."
+      "basis_summary": "The cited passage explicitly constructs the contradiction from a comparison of singleton TildeF values, describes the copying-and-shift invariant and terminal front values, and then states the hereditary WQO and well-foundedness consequences."
     },
     "stuck_math_audit": {
-      "notes": "The front-tree-extension-repair task is complete: FrontTreeWellFounded now has the child-parent extension relation, and the two focused helper nodes passed correspondence with a successful tablet acceptance check. Dismiss that task and execute tilde-front-recursion next. The worker must preserve the full arbitrarily indexed PowerQ and use ULift for countable extension indices, prove the recursion equations and hereditary-countability of TildeF values, and retain the hypothesis empty notin F for singleton restriction. Do not claim either hereditary target in this support layer.",
+      "notes": "The tilde-front-recursion task is complete: the worker added the repaired-index TildeF recursion on the unrestricted PowerQ, separate recursion equations, the atom iff front theorem, hereditary-countability for all tree values, and the nontrivial singleton restriction; correspondence and tablet acceptance passed. Dismiss that task and execute hereditary-converse-game next. The central requirement is the paper's joint finite-shift invariant, not merely termination of a recursion: every left extension and every right response must preserve the witness until both nodes reach F, where the atom comparison contradicts BadSuperSequence. Keep empty notin F explicit and do not claim either hereditary target yet.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "completed_task": "front-tree-extension-repair",
-        "next_task": "tilde-front-recursion",
+        "completed_task": "tilde-front-recursion",
+        "next_task": "hereditary-converse-game",
         "required_interface": [
-          "TildeF on the PrefixTree subtype by extension-oriented well-founded recursion",
-          "front equation using PowerQ.atom and nonfront equation using PowerQ.node on one-point extensions",
-          "ULift of the countable extension index before PowerQ.node",
-          "atom iff front characterization",
-          "HereditarilyCountable for every TildeF value",
-          "singleton restriction only under empty notin F"
+          "bad singleton theorem for TildeF on a nontrivial front",
+          "joint FiniteShift invariant for the pair of evolving tree nodes",
+          "product well-founded recursion over the two extension-oriented tree relations",
+          "all four PowerRel constructor reductions needed to expose terminal atoms",
+          "terminal contradiction with BadSuperSequence"
         ],
         "constraints": [
-          "preserve the unrestricted full PowerQ hierarchy",
-          "reuse the repaired FrontTreeWellFounded and immediate-extension helpers",
-          "reuse the hereditary countable-node closure theorem",
+          "retain the full unrestricted PowerQ hierarchy and HerCtblPower restriction",
+          "reuse TildeF equations and the nontrivial singleton helper",
+          "state the converse only under empty notin F",
           "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
           "new proof-bearing TeX blocks must contain complete cited proofs"
         ]
@@ -55,8 +54,8 @@
     },
     "dismissed_tasks": [
       {
-        "id": "front-tree-extension-repair",
-        "reason": "Completed: FrontTreeWellFounded was repaired to the extension-oriented relation, and the immediate-extension and nontrivial-front singleton helper nodes were added with successful correspondence and tablet acceptance checks."
+        "id": "tilde-front-recursion",
+        "reason": "Completed: the extension-oriented TildeF recursion, front and nonfront equations, atom/front characterization, hereditary-countability closure, and nontrivial singleton restriction were added; all five frontier statements passed correspondence and the tablet acceptance check passed."
       }
     ]
   },
@@ -69,17 +68,17 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode and execute tilde-front-recursion. Define TildeF on the PrefixTree subtype by well-founded recursion using the repaired relation: front nodes map to atoms labelled by the SuperSequence value, while nonfront nodes map to the full PowerQ node of their one-point tree extensions. Use the universe-correct ULift of the countable extension index before applying PowerQ.node, and prove separate front/nonfront recursion equations, the atom iff front characterization, and hereditary-countability of every value using the generic closure theorem. Define the singleton restriction only with the nontrivial-front hypothesis empty notin F. Keep the unrestricted full PowerQ hierarchy and the hereditary carrier intact, do not claim either configured hereditary target yet, and provide complete cited TeX proofs for new proof-bearing nodes.",
+    "comments": "Continue in Global mode and execute hereditary-converse-game. Attach the new package to TildeF, the nontrivial-front singleton restriction, FiniteShift, BadSuperSequence, and the four PowerRel constructor reductions. Formalize the paper's joint finite-shift invariant: for m < n, assume a comparison of the singleton TildeF values, use the winning PowerRel strategy to choose successive one-point extensions, preserve the joint shift witness after every response, and recurse on the product of the extension-oriented tree relations. At terminal front nodes, use the atom equations and the original bad super-sequence to contradict the alleged comparison. Keep the nontrivial-front hypothesis empty notin F explicit, preserve the full unrestricted PowerQ and hereditary carrier, and do not add either configured hereditary target node in this layer. Every new proof-bearing TeX block must contain a complete, explicitly cited proof rather than a SKETCH.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 20,
+    "cycle": 21,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "front-tree-extension-repair",
-        "reason": "Completed: FrontTreeWellFounded was repaired to the extension-oriented relation, and the immediate-extension and nontrivial-front singleton helper nodes were added with successful correspondence and tablet acceptance checks."
+        "id": "tilde-front-recursion",
+        "reason": "Completed: the extension-oriented TildeF recursion, front and nonfront equations, atom/front characterization, hereditary-countability closure, and nontrivial singleton restriction were added; all five frontier statements passed correspondence and the tablet acceptance check passed."
       }
     ],
     "global_repair_request": null,
@@ -91,42 +90,41 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1570,
-        "reason": "The paper's extension-oriented TildeF recursion, atom/front characterization, and nontrivial-front singleton restriction establish the required support interface before the converse game.",
-        "start_line": 1559
+        "end_line": 1597,
+        "reason": "The paper's converse-game construction preserves a joint finite-shift witness through PowerQ responses, terminates at front atoms, and derives the hereditary WQO target from the resulting bad singleton sequence.",
+        "start_line": 1569
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines TildeF recursively on the well-founded front tree, using the front value at terminal nodes and the family of one-point extensions otherwise; it then restricts to singleton nodes only when the front is nontrivial and records the atom iff front characterization.",
+      "basis_summary": "The cited passage explicitly constructs the contradiction from a comparison of singleton TildeF values, describes the copying-and-shift invariant and terminal front values, and then states the hereditary WQO and well-foundedness consequences.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The previous burst repaired FrontTreeWellFounded in the required extension orientation and added the immediate-extension and singleton-prefix interfaces; all three new nodes passed correspondence and the worker acceptance check passed. The next live structural step is the planned TildeF recursion package, which is required before either hereditary target can be covered faithfully.",
-    "request_id": 117,
+    "reason": "The previous burst completed the extension-oriented TildeF package: its front and nonfront equations, atom/front characterization, hereditary-countable closure, and nontrivial singleton restriction all passed correspondence, and the tablet acceptance check passed. The next planned support layer is the converse game that turns a bad super-sequence into a bad hereditary singleton sequence; both configured hereditary targets remain uncovered and should not be claimed yet.",
+    "request_id": 122,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The front-tree-extension-repair task is complete: FrontTreeWellFounded now has the child-parent extension relation, and the two focused helper nodes passed correspondence with a successful tablet acceptance check. Dismiss that task and execute tilde-front-recursion next. The worker must preserve the full arbitrarily indexed PowerQ and use ULift for countable extension indices, prove the recursion equations and hereditary-countability of TildeF values, and retain the hypothesis empty notin F for singleton restriction. Do not claim either hereditary target in this support layer.",
+      "notes": "The tilde-front-recursion task is complete: the worker added the repaired-index TildeF recursion on the unrestricted PowerQ, separate recursion equations, the atom iff front theorem, hereditary-countability for all tree values, and the nontrivial singleton restriction; correspondence and tablet acceptance passed. Dismiss that task and execute hereditary-converse-game next. The central requirement is the paper's joint finite-shift invariant, not merely termination of a recursion: every left extension and every right response must preserve the witness until both nodes reach F, where the atom comparison contradicts BadSuperSequence. Keep empty notin F explicit and do not claim either hereditary target yet.",
       "reviewer_lean_product": {
-        "completed_task": "front-tree-extension-repair",
+        "completed_task": "tilde-front-recursion",
         "constraints": [
-          "preserve the unrestricted full PowerQ hierarchy",
-          "reuse the repaired FrontTreeWellFounded and immediate-extension helpers",
-          "reuse the hereditary countable-node closure theorem",
+          "retain the full unrestricted PowerQ hierarchy and HerCtblPower restriction",
+          "reuse TildeF equations and the nontrivial singleton helper",
+          "state the converse only under empty notin F",
           "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
           "new proof-bearing TeX blocks must contain complete cited proofs"
         ],
-        "next_task": "tilde-front-recursion",
+        "next_task": "hereditary-converse-game",
         "required_interface": [
-          "TildeF on the PrefixTree subtype by extension-oriented well-founded recursion",
-          "front equation using PowerQ.atom and nonfront equation using PowerQ.node on one-point extensions",
-          "ULift of the countable extension index before PowerQ.node",
-          "atom iff front characterization",
-          "HereditarilyCountable for every TildeF value",
-          "singleton restriction only under empty notin F"
+          "bad singleton theorem for TildeF on a nontrivial front",
+          "joint FiniteShift invariant for the pair of evolving tree nodes",
+          "product well-founded recursion over the two extension-oriented tree relations",
+          "all four PowerRel constructor reductions needed to expose terminal atoms",
+          "terminal contradiction with BadSuperSequence"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -156,5 +154,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_117_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_122_decision.context.json"
 }
