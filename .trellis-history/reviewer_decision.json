@@ -1,31 +1,31 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "MainProp now has a fresh Sound approval. Route the next worker to repair the concrete unsupported detail in GBetterRelIff: its transport and finite-prefix fusion arguments are only sketched, and the composition/local-constancy facts need explicit support citations and line-by-line derivation.",
-    "comments": "Repair only Tablet/GBetterRelIff.tex. Preserve its Lean theorem, imports, two conjuncts, and the paper's route through MainProp. Retain citations to MainProp, GBetterRel, BetterRel, RightComp, ShiftMap, ContinuousRelHom, BadMultiSequence, and Bqo; cite ContinuousHom and ContMor when unpacking and composing continuous homomorphisms. Expand the transport argument by choosing the relevant finite output prefixes and explicitly proving composition local constancy and the action equation. Replace the phrase standard finite-prefix fusion with a line-by-line construction: state what failure of the first clause provides after each finite prefix, choose an increasing extension beyond all finitely queried coordinates, define the union enumeration, prove local constancy of each resulting restriction, and derive the complement relation for every input. In the converse, define the restriction H_f(x)=H(f composed with x), prove its local constancy and complement equation using associativity and the right-composition action, then show it cannot also be an R-homomorphism. In the quasi-order specialization, spell out the ContinuousRelHom to BadMultiSequence to Bqo implication chain. Add no helper, signature, or support change.",
+    "reason": "The Sound rejection is a valid diagnosis of the current proof route, not a paper-level obstruction. Assign a fresh worker to replace the invalid reservoir fusion in GBetterRelIff with the existing deciding-front and Nash-Williams argument, while preserving the theorem statement.",
+    "comments": "Work in Global mode but restrict the actual edit to the GBetterRelIff proof and the imports needed for its real support; do not change the Lean theorem signature, target claims, or add a helper. The rejected argument is at Tablet/GBetterRelIff.tex:75-117: its negative/positive reservoir invariant does not produce the claimed subreservoir, does not define the finite input-prefix schedule, and does not relate x composed with t_i to the maintained reservoirs. Do not attempt another version of that fusion. Replace the whole first-clause equivalence argument by the paper-faithful homogeneous-front route already exemplified by ShiftDichotomy: for a locally constant phi define the Boolean coloring c(y)=1 exactly when R(phi(y), phi(RightComp g y)); prove c is locally constant by separately bounding the finite coordinates needed for phi(y) and phi(y composed with g); cite DecidingFront and DecidingValue to obtain its deciding front and value map; apply NashWilliams to the front and the set of value-1 members; enumerate the resulting infinite base with InfiniteSetEnumeration. Front density and DecidingValue must then show, for every x, that c(z composed with x) has the same homogeneous value. If that value is 1, the restriction phi(z composed with minus) supplies the R-homomorphism required by the first clause; if it is 0, it supplies the complement homomorphism contradicting the second clause. Explicitly establish local constancy of the restriction, the associativity/right-composition equation, and the ContinuousRelHom fields. Retain the already adequate transport, converse restriction, and quasi-order paragraphs. Add citations to the actual support nodes, including DecidingFront, DecidingValue, NashWilliams, InfiniteSetEnumeration, RestrictionLocallyConstant or an equivalent local-constancy argument, MultiSequenceRestrict, IncSeqComp, and RightComp, and add the corresponding imports so the support DAG is honest. The paper passage at lines 1731-1745 states exactly the two equivalent conditions and the nonidentity g-BQO theorem.",
     "task_blocker_ids": [
-      "soundness:node:GBetterRelIff:sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0"
+      "soundness:node:GBetterRelIff:sound-v2:092a829458ad7808874a6333bdb4e64dd1ad812982e4e9394339f3fd4f56578f"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "GBetterRelIff",
-    "next_mode": "targeted",
+    "next_active": "",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
-        "start_line": 1732,
-        "end_line": 1744,
-        "reason": "The paper's g-better-relation equivalence and quasi-order specialization that GBetterRelIff must formalize."
+        "start_line": 1731,
+        "end_line": 1745,
+        "reason": "The paper definition of g-better-relation and the theorem identifying it with the ordinary better-relation."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage defines the g-better relation via the two equivalent homomorphism conditions and states that, for nonidentity g, it is equivalent to the ordinary better relation, with the bqo equivalence as the quasi-order specialization. The worker's repair should preserve this route while making the finite-prefix transport argument checkable."
+      "basis_summary": "The cited passage defines the g-better relation by the restriction and complement-homomorphism conditions, then states their nonidentity-g equivalence with the ordinary better relation and the quasi-order specialization. The next proof must preserve that statement while replacing the rejected reservoir construction by the tablet's deciding-front/Nash-Williams homogeneous restriction argument."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/GBetterRelIff.tex. Preserve its Lean theorem, imports, two conjuncts, and the paper's route through MainProp. Retain citations to MainProp, GBetterRel, BetterRel, RightComp, ShiftMap, ContinuousRelHom, BadMultiSequence, and Bqo; cite ContinuousHom and ContMor when unpacking and composing continuous homomorphisms. Expand the transport argument by choosing the relevant finite output prefixes and explicitly proving composition local constancy and the action equation. Replace the phrase standard finite-prefix fusion with a line-by-line construction: state what failure of the first clause provides after each finite prefix, choose an increasing extension beyond all finitely queried coordinates, define the union enumeration, prove local constancy of each resulting restriction, and derive the complement relation for every input. In the converse, define the restriction H_f(x)=H(f composed with x), prove its local constancy and complement equation using associativity and the right-composition action, then show it cannot also be an R-homomorphism. In the quasi-order specialization, spell out the ContinuousRelHom to BadMultiSequence to Bqo implication chain. Add no helper, signature, or support change.",
+    "comments": "Work in Global mode but restrict the actual edit to the GBetterRelIff proof and the imports needed for its real support; do not change the Lean theorem signature, target claims, or add a helper. The rejected argument is at Tablet/GBetterRelIff.tex:75-117: its negative/positive reservoir invariant does not produce the claimed subreservoir, does not define the finite input-prefix schedule, and does not relate x composed with t_i to the maintained reservoirs. Do not attempt another version of that fusion. Replace the whole first-clause equivalence argument by the paper-faithful homogeneous-front route already exemplified by ShiftDichotomy: for a locally constant phi define the Boolean coloring c(y)=1 exactly when R(phi(y), phi(RightComp g y)); prove c is locally constant by separately bounding the finite coordinates needed for phi(y) and phi(y composed with g); cite DecidingFront and DecidingValue to obtain its deciding front and value map; apply NashWilliams to the front and the set of value-1 members; enumerate the resulting infinite base with InfiniteSetEnumeration. Front density and DecidingValue must then show, for every x, that c(z composed with x) has the same homogeneous value. If that value is 1, the restriction phi(z composed with minus) supplies the R-homomorphism required by the first clause; if it is 0, it supplies the complement homomorphism contradicting the second clause. Explicitly establish local constancy of the restriction, the associativity/right-composition equation, and the ContinuousRelHom fields. Retain the already adequate transport, converse restriction, and quasi-order paragraphs. Add citations to the actual support nodes, including DecidingFront, DecidingValue, NashWilliams, InfiniteSetEnumeration, RestrictionLocallyConstant or an equivalent local-constancy argument, MultiSequenceRestrict, IncSeqComp, and RightComp, and add the corresponding imports so the support DAG is honest. The paper passage at lines 1731-1745 states exactly the two equivalent conditions and the nonidentity g-BQO theorem.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 86,
+    "cycle": 87,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "GBetterRelIff",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
-    "next_worker_context_mode": "resume",
+    "next_mode": "Global",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
-        "end_line": 1744,
-        "reason": "The paper's g-better-relation equivalence and quasi-order specialization that GBetterRelIff must formalize.",
-        "start_line": 1732
+        "end_line": 1745,
+        "reason": "The paper definition of g-better-relation and the theorem identifying it with the ordinary better-relation.",
+        "start_line": 1731
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage defines the g-better relation via the two equivalent homomorphism conditions and states that, for nonidentity g, it is equivalent to the ordinary better relation, with the bqo equivalence as the quasi-order specialization. The worker's repair should preserve this route while making the finite-prefix transport argument checkable.",
+      "basis_summary": "The cited passage defines the g-better relation by the restriction and complement-homomorphism conditions, then states their nonidentity-g equivalence with the ordinary better relation and the quasi-order specialization. The next proof must preserve that statement while replacing the rejected reservoir construction by the tablet's deciding-front/Nash-Williams homogeneous restriction argument.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "MainProp now has a fresh Sound approval. Route the next worker to repair the concrete unsupported detail in GBetterRelIff: its transport and finite-prefix fusion arguments are only sketched, and the composition/local-constancy facts need explicit support citations and line-by-line derivation.",
-    "request_id": 318,
+    "reason": "The Sound rejection is a valid diagnosis of the current proof route, not a paper-level obstruction. Assign a fresh worker to replace the invalid reservoir fusion in GBetterRelIff with the existing deciding-front and Nash-Williams argument, while preserving the theorem statement.",
+    "request_id": 321,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,7 +76,7 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0",
+        "fingerprint": "sound-v2:092a829458ad7808874a6333bdb4e64dd1ad812982e4e9394339f3fd4f56578f",
         "kind": "Soundness",
         "object": {
           "node": "GBetterRelIff",
@@ -86,5 +86,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_318_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_321_decision.context.json"
 }

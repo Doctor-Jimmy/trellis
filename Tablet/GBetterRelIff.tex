@@ -12,57 +12,164 @@ Q\text{ is $g$-bqo}\quad\Longleftrightarrow\quad Q\text{ is bqo}.
 \]
 \end{theorem}
 \begin{proof}
-Fix $g\neq\mathsf{IncSeqId}$.  By \noderef{MainProp}, choose continuous
-homomorphisms in both directions between
-$(\mathsf{IncSeq},\mathsf{RightComp}(g))$ and
-$(\mathsf{IncSeq},\mathsf{ShiftMap})$.  We first record the transport
-argument for the second clauses in \noderef{GBetterRel} and
-\noderef{BetterRel}.  If $K$ is a continuous homomorphism from a source
-system $(\mathsf{IncSeq},s)$ to $(\mathsf{IncSeq},t)$ and $H$ is a
-continuous homomorphism from $(\mathsf{IncSeq},t)$ to
-$(A,R^{\complement})$, then $H\circ K$ is locally constant and is a
-homomorphism from $(\mathsf{IncSeq},s)$ to $(A,R^{\complement})$:
-local constancy follows by first choosing a prefix deciding the required
-finite output of $K$ and then a prefix deciding $H$ on that output, while
-the homomorphism equation follows from
-$K(s(x))=t(K(x))$ and $H(t(y))$ being related by $R^{\complement}$ to
-$H(y)$.  The reverse source homomorphism gives the converse implication.
-Thus the absence of the complement homomorphism for $g$ is equivalent to
-the absence of the complement homomorphism for the ordinary shift.  The
-source actions here are the maps defined in \noderef{RightComp} and
-\noderef{ShiftMap}.
+Fix $g\neq\mathsf{IncSeqId}$.  By \noderef{MainProp},
+\noderef{ContMorEq}, and the definition of \noderef{ContMor}, choose
+continuous homomorphisms
+\[
+ K:(\mathsf{IncSeq},\mathsf{RightComp}(g))\longrightarrow
+       (\mathsf{IncSeq},\mathsf{ShiftMap}),
+ \qquad
+ L:(\mathsf{IncSeq},\mathsf{ShiftMap})\longrightarrow
+       (\mathsf{IncSeq},\mathsf{RightComp}(g)).
+\]
+Thus, by the two fields of \noderef{ContinuousHom}, $K$ and $L$ are
+prefix-continuous and satisfy
+\[
+ K(\mathsf{RightComp}(g)(x))=\mathsf{ShiftMap}(K(x)),
+ \qquad
+ L(\mathsf{ShiftMap}(x))=\mathsf{RightComp}(g)(L(x)).
+\]
 
-For completeness, the two clauses in \noderef{GBetterRel} are equivalent by
-the standard finite-prefix fusion argument.  If the first clause fails for
-a locally constant $\varphi$, recursively choose, after every finite
-prefix $u$, an extension $v$ witnessing failure of the restricted
-homomorphism.  At stage $n$ only finitely many values of $\varphi$ have
-been queried, so local constancy lets us extend the current prefix beyond
-all of them.  The increasing union of these prefixes defines an increasing
-enumeration $x$ for every input and, by the choice at each stage, the map
-$y\mapsto\varphi(x\circ y)$ is locally constant and satisfies
-$\neg R(\varphi(x\circ y),\varphi(x\circ y\circ g))$ for every $y$.
-This is a complement homomorphism, contradicting the second clause.
-Conversely, suppose $H$ is a complement homomorphism.  For every $f$, the
-restriction $x\mapsto H(f\circ x)$ is still locally constant and still
-satisfies the complement relation, because the homomorphism equation for
-$H$ can be evaluated at $f\circ x$.  It therefore cannot also be an
-$R$-homomorphism: at any $x$ that would assert both $R(a,b)$ and
-$\neg R(a,b)$.  Thus no restriction supplied by the first clause can
-exist.  The same fusion uses $\mathsf{ShiftMap}$ in place of
-$\mathsf{RightComp}(g)$ for \noderef{BetterRel}.  Hence the transported
-second clauses also transport the first clauses, proving the first
+We spell out how these maps transport complement homomorphisms.  Let
+$H:(\mathsf{IncSeq},\mathsf{ShiftMap})\to(A,R^{\complement})$ be a
+continuous homomorphism in the sense of \noderef{ContinuousRelHom}.  Define
+$J(x)=H(K(x))$.  To check local constancy at $x$, first use local constancy
+of $H$ to choose an output length $m$ such that every $z$ agreeing with
+$K(x)$ through $m$ has $H(z)=H(K(x))$.  Prefix-continuity of $K$ then gives
+an input length $k$ such that agreement with $x$ through $k$ forces
+$K(z)$ to agree with $K(x)$ through $m$.  Consequently $J(z)=J(x)$ for
+all such $z$.  For the homomorphism equation, use the first displayed
+commutation equation and then the homomorphism field of $H$:
+\[
+ R^{\complement}(J(x),J(\mathsf{RightComp}(g)(x)))
+ =R^{\complement}(H(K(x)),H(\mathsf{ShiftMap}(K(x)))) .
+\]
+Thus $J$ is a complement homomorphism for $\mathsf{RightComp}(g)$.  The
+same argument with $L$ in place of $K$ transports a complement homomorphism
+in the reverse direction.  Therefore the absence of the complement
+homomorphism in the second clause of \noderef{GBetterRel} is equivalent to
+the absence in \noderef{BetterRel}; the source actions are precisely those
+of \noderef{RightComp} and \noderef{ShiftMap}.
+
+It remains to justify, in the detail needed for the first clause of
+\noderef{GBetterRel}, why absence of an $R$-homomorphic restriction is the
+same as the existence of a complement homomorphism.  Let
+$\varphi:\mathsf{IncSeq}\to A$ be locally constant and put
+\[
+ E=\{y\in\mathsf{IncSeq}\mid
+       R(\varphi(y),\varphi(\mathsf{RightComp}(g)(y)))\}.
+\]
+The set $E$ is open in the finite-prefix topology.  Indeed, local constancy
+of $\varphi$ decides the first value at $y$, and local constancy of the
+second value is obtained as follows: the first $n$ values of
+$\mathsf{RightComp}(g)(y)=y\circ g$ depend only on the first $g(n)$ values
+of $y$.  Hence a sufficiently long prefix of $y$ decides both values in
+the definition of $E$.
+
+Assume first that the first clause fails for this $\varphi$.  Thus, for
+every increasing enumeration $f$, some $y$ satisfies
+\[
+ \neg R(\varphi(f\circ y),\varphi(f\circ y\circ g)).
+ \tag{1}
+\]
+We now give the finite-prefix fusion which turns these witnesses into one
+witness working for every input.  Call a finite increasing prefix $s$
+deciding if every increasing sequence extending $s$ belongs to $E$.  Since
+$E$ is open, every member of $E$ has a finite deciding prefix.  For a finite
+prefix $s$ and an infinite reservoir $X$ above its last entry, call $(s,X)$
+positive if every infinite increasing sequence whose prefix is $s$ and whose
+remaining entries lie in $X$ has a further finite deciding prefix; call it
+negative if no infinite subreservoir of $X$ makes $(s,\mathord{-})$
+positive.  The failure in (1) says exactly that the empty prefix is negative
+on the full set of natural numbers: a positive reservoir would enumerate an
+$f$ for which the relation in (1) never fails.
+
+We maintain the stronger fusion invariant that every finite prefix formed
+from the entries already chosen is negative on the current reservoir.  At
+stage $n$, list the finitely many such prefixes and list the finitely many
+input prefixes $t_0,\ldots,t_n$ that have been considered.  For each of
+these finitely many cases, negativity says that an infinite subreservoir
+still has a continuation witnessing failure of the $R$-relation.  Local
+constancy of $\varphi$ and of $\varphi$ after right composition by $g$
+turns that witness into a finite decision: only finitely many outer
+coordinates are queried.  Choose the next outer entry above all queried
+coordinates and shrink the reservoir above it, successively for this finite
+list.  If this finite choice were impossible for some prefix $s$, then every
+possible next entry would have a subreservoir on which $s$ was positive.
+Choosing the next entry and then the corresponding subreservoir recursively
+would give an infinite reservoir on which the preceding prefix was positive,
+contradicting its negativity.  Thus we obtain nested finite prefixes
+$u_0\subset u_1\subset\cdots$ and infinite reservoirs
+$X_{n+1}\subseteq X_n$ above $u_{n+1}$, and every decision made for one of
+the $t_i$ is preserved by all later stages.
+
+Let $x=\bigcup_n u_n$.  The prefixes are nested and the reservoirs are
+infinite and lie above the preceding prefix, so $x$ is an increasing
+enumeration.  Fix any $y\in\mathsf{IncSeq}$.  Some $t_i$ is a prefix of $y$,
+and at a later stage all outer coordinates queried by the local-constancy
+decision for $x\circ y$ and $x\circ y\circ g$ have entered the fusion.
+The corresponding finite prefix $x\circ t_i$ is among the prefixes covered
+by the negative invariant, so it has no deciding extension inside the chosen
+reservoir.  The invariant then gives
+\[
+ \neg R(\varphi(x\circ y),
+        \varphi(x\circ y\circ g))
+ \quad\text{for every }y. \tag{2}
+\]
+Define $H(y)=\varphi(x\circ y)$.  This restriction is locally constant:
+at $y$, choose from local constancy of $\varphi$ a finite output prefix of
+$x\circ y$ deciding $\varphi(x\circ y)$; the finitely many values of $y$
+needed to select those entries of $x$ form an input prefix, and every
+extension agreeing with that prefix has the same $H$-value.  Equation (2),
+with the definition of \noderef{RightComp}, is exactly
+\[
+ R^{\complement}(H(y),H(\mathsf{RightComp}(g)(y))).
+\]
+Together with local constancy, \noderef{ContinuousRelHom} shows that $H$
+is a complement homomorphism.  This contradicts the second clause.
+
+Conversely, suppose that $H:(\mathsf{IncSeq},\mathsf{RightComp}(g))
+\to(A,R^{\complement})$ is a complement homomorphism.  For every $f$,
+define its restriction by
+\[
+ H_f(y)=H(f\circ y).
+\]
+Local constancy of $H_f$ follows directly from that of $H$: a finite prefix
+of $f\circ y$ deciding $H(f\circ y)$ is determined by a finite prefix of
+$y$.  Associativity of composition and the definition of
+\noderef{RightComp} give
+\[
+\begin{aligned}
+ R^{\complement}(H_f(y),H_f(\mathsf{RightComp}(g)(y)))
+ &=R^{\complement}(H(f\circ y),H((f\circ y)\circ g))\\
+ &=R^{\complement}(H(f\circ y),H(\mathsf{RightComp}(g)(f\circ y))).
+\end{aligned}
+\]
+Thus every $H_f$ is a complement homomorphism.  It cannot at the same time
+be an $R$-homomorphism, since at any input the two homomorphism equations
+would assert both $R(a,b)$ and $R^{\complement}(a,b)$, where the latter is
+by definition $\neg R(a,b)$.  Therefore no restriction in the first clause
+can exist.  We have proved the equivalence of the two clauses in
+\noderef{GBetterRel}.  Combining it with the transport of the second clause
+to the no-complement formulation in \noderef{BetterRel} proves the first
 displayed equivalence.
 
-Suppose now that $r$ is a quasi-order on $Q$.  By \noderef{ContinuousRelHom}, a
-homomorphism from the shift into the complement relation is precisely a
-locally constant map $h:\mathsf{IncSeq}\to Q$ such that
+Finally let $r$ be a quasi-order on $Q$.  By \noderef{BetterRel}, the
+ordinary better-relation condition is the nonexistence of a
+\noderef{ContinuousRelHom} from the shift into the complement relation.
+Unpacking such a structure gives a locally constant map
+$h:\mathsf{IncSeq}\to Q$ and, for every $x$,
 \[
-\neg r(h(x),h(\mathsf{ShiftMap}(x)))
+ \neg r(h(x),h(\mathsf{ShiftMap}(x))).
 \]
-for every $x$.  By \noderef{BadMultiSequence} this says exactly that $h$
-is a bad multi-sequence, and \noderef{Bqo} says that no such locally
-constant map exists.  Therefore $\operatorname{BetterRel}(r)$ is
-equivalent to $\operatorname{Bqo}(r)$.  Combining this with the first
-equivalence gives the quasi-order specialization.
+By \noderef{BadMultiSequence}, this last condition says exactly that $h$
+is bad for $r$.  Conversely, a locally constant bad multi-sequence supplies
+the two fields of a \noderef{ContinuousRelHom} into the complement
+relation.  Therefore the absence of this homomorphism is equivalent to the
+statement in \noderef{Bqo} that every locally constant $h$ is not bad.
+Thus $\operatorname{BetterRel}(r)\leftrightarrow\operatorname{Bqo}(r)$,
+and the already proved general equivalence yields
+\[
+ \operatorname{GBetterRel}(g,r)\leftrightarrow\operatorname{Bqo}(r).
+\]
 \end{proof}

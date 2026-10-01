@@ -1,15 +1,17 @@
 {
   "raw": {
-    "outcome": "valid",
-    "summary": "Repaired MainProp.tex to identify the two ContMor directions supplied by RmapLemma and EmapLemma, and cited ContMorEq for their conjunction.",
-    "comments": "Edited only Tablet/MainProp.tex. The theorem statement, imports, and two-lemma decomposition are unchanged. The proof cites each dependency at its statement-level fact and remains aligned with the Lean signature ContMorEq (RightComp g) ShiftMap.",
-    "target_claim_updates": {},
-    "difficulty_updates": {},
-    "deviation_requests": {},
-    "node_deviation_claims": {},
-    "deviation_deletions": [],
+    "audit_request": null,
+    "comments": "Edited only Tablet/GBetterRelIff.tex. Preserved the Lean theorem, imports, two conjuncts, and support structure. The proof now cites MainProp, ContMorEq, ContMor, ContinuousHom, ContinuousRelHom, GBetterRel, BetterRel, RightComp, ShiftMap, BadMultiSequence, and Bqo; expands composition local constancy and action equations; gives an explicit finite deciding-prefix fusion with nested reservoirs; proves the converse restriction argument by associativity; and spells out the quasi-order specialization. The direct outside-fact audit is recorded in .trellis/scratch/notes.md. The paper passage at lines 1732-1744 was consulted. Targeted node and full-tablet checks pass.",
     "deleted_nodes": [],
-    "needs_restructure_suggested_nodes": []
+    "deviation_deletions": [],
+    "deviation_requests": {},
+    "difficulty_updates": {},
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Repaired GBetterRelIff.tex with a detailed paper-faithful transport, fusion, converse, and bqo specialization proof.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -19,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Edited only Tablet/MainProp.tex. The theorem statement, imports, and two-lemma decomposition are unchanged. The proof cites each dependency at its statement-level fact and remains aligned with the Lean signature ContMorEq (RightComp g) ShiftMap.",
-    "cycle": 86,
+    "comments": "Edited only Tablet/GBetterRelIff.tex. Preserved the Lean theorem, imports, two conjuncts, and support structure. The proof now cites MainProp, ContMorEq, ContMor, ContinuousHom, ContinuousRelHom, GBetterRel, BetterRel, RightComp, ShiftMap, BadMultiSequence, and Bqo; expands composition local constancy and action equations; gives an explicit finite deciding-prefix fusion with nested reservoirs; proves the converse restriction argument by associativity; and spells out the quasi-order specialization. The direct outside-fact audit is recorded in .trellis/scratch/notes.md. The paper passage at lines 1732-1744 was consulted. Targeted node and full-tablet checks pass.",
+    "cycle": 87,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -36,7 +38,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 316,
+    "request_id": 319,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1170,18 +1172,21 @@
           "own_tex_hash": "e5762c0ca6a3cf0ba19e7ecfb4a23e8ae4e554b6a4d9bbf1d78881ff070588b1"
         },
         "GBetterRelIff": {
-          "combined_sound_fp": "sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0",
+          "combined_sound_fp": "sound-v2:092a829458ad7808874a6333bdb4e64dd1ad812982e4e9394339f3fd4f56578f",
           "dep_statement_hashes": {
             "BadMultiSequence": "317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5",
             "BetterRel": "5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735",
             "Bqo": "d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b",
+            "ContMor": "462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7",
+            "ContMorEq": "ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5",
+            "ContinuousHom": "4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32",
             "ContinuousRelHom": "33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f",
             "GBetterRel": "d3ba0d6c802d47f77bf978aa40d131c648197f966feb202181b23b49520bf6ae",
             "MainProp": "eeab77584e1dd0adfa624b771d52edf0449a4103e1f925c550438b6b8f56a856",
             "RightComp": "b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0",
             "ShiftMap": "f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44"
           },
-          "own_tex_hash": "b04881587ad7f81864198af6e8b66dc551462096771feba1eab092935e268a72"
+          "own_tex_hash": "cb9f48d6602029dbcfa9d5ed503c1f4fcda0925423e0ba46683327f3ed3987a1"
         },
         "GoodMultiSequence": {
           "combined_sound_fp": "sound-v2:cbd8088e853b09100edd11cea9bde319cedc80a0ce7541809fa8ae923662dfc3",
@@ -2115,7 +2120,7 @@
         "FrontTreeSingleton": "sound-v2:9ff88f7925767312734e0f937539d5321df28bc04e9809a6b17fd74fbad031ce",
         "FrontTreeWellFounded": "sound-v2:26ac0d707490a4aaa5d7369b89ac17550fbae8d2bf3a6ab137b12b4d58cf61a2",
         "GBetterRel": "sound-v2:b2b340eecf2f1664684205b7208a5b510ff8f6f25699284850b03314ca4d949e",
-        "GBetterRelIff": "sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0",
+        "GBetterRelIff": "sound-v2:092a829458ad7808874a6333bdb4e64dd1ad812982e4e9394339f3fd4f56578f",
         "GoodMultiSequence": "sound-v2:cbd8088e853b09100edd11cea9bde319cedc80a0ce7541809fa8ae923662dfc3",
         "HerCtblCode": "sound-v2:d06c4c429853cf386fdb0a40aae589d32cc1bc1cd088ce775829138c7398e0f3",
         "HerCtblCodeErase": "sound-v2:a3f7015db2c785d159c1dc4ac75332d90eca6dfee971e58550f7680896d59f47",
@@ -2593,7 +2598,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired MainProp.tex to identify the two ContMor directions supplied by RmapLemma and EmapLemma, and cited ContMorEq for their conjunction.",
+    "summary": "Repaired GBetterRelIff.tex with a detailed paper-faithful transport, fusion, converse, and bqo specialization proof.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2726,7 +2731,7 @@
     "GBetterRel.lean": "74b2ee6d5480afc56c3d6ffb555fb3bf3a813d20b5b1645410cea52e38a12ee7",
     "GBetterRel.tex": "e5762c0ca6a3cf0ba19e7ecfb4a23e8ae4e554b6a4d9bbf1d78881ff070588b1",
     "GBetterRelIff.lean": "26744acbb629fea1f806b5ce2f9278ce3f9480fb806b3f624e49a29ed2e82418",
-    "GBetterRelIff.tex": "b04881587ad7f81864198af6e8b66dc551462096771feba1eab092935e268a72",
+    "GBetterRelIff.tex": "cb9f48d6602029dbcfa9d5ed503c1f4fcda0925423e0ba46683327f3ed3987a1",
     "GoodMultiSequence.lean": "c4bd9fe7761dceaa3dda46012ddeb547f5a9fd042134d0e7600570747cb76d19",
     "GoodMultiSequence.tex": "e2a214ee38e14cdb74e95a61fe6792faac106f3ffcebec6a6568fed66f404bc6",
     "HerCtblCode.lean": "74aef05c35b6d0cb7c05f798e650f41392ef208c0d1cf69c86cd6647c56a039c",
@@ -2959,7 +2964,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_316_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_319_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
