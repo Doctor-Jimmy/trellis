@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerPresentationEqEquivalence has a current Sound approval. Continue to PowerMoveInSupport to repair the atom-branch dependency citation while preserving its statement and support structure.",
-    "comments": "Edit only Tablet/PowerMoveInSupport.tex. Preserve the Lean statement, imports, and existing child-support argument. Independent gap: the atom branch says the support inclusion is equality, which uses the atom clause of the recursive support definition, but the current proof cites only \\noderef{PowerMove} and \\noderef{PowerChildSupport}; add \\noderef{PowerSupport} at that use. Then keep the two cases explicit: an atom move is unchanged, while a node move gives a child relation and \\noderef{PowerChildSupport} yields the required inclusion. Do not add a helper or change the theorem statement or support edges.",
+    "reason": "PowerMoveInSupport has a current Sound approval. Continue to PowerGameDescentWellFounded, whose current proof leaves the lexicographic well-foundedness step implicit and should expose the nested induction explicitly.",
+    "comments": "Edit only Tablet/PowerGameDescentWellFounded.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof asserts that a standard lexicographic-product construction applies, but does not show why it matches the displayed relation. Cite \\noderef{PowerGameDescent}, \\noderef{PowerChild}, and \\noderef{PowerChildWellFounded}, then give the line-by-line accessibility argument: use outer well-founded induction on the first coordinate with motive `for every second coordinate, the pair is accessible`; at a fixed first coordinate use inner well-founded induction on the second coordinate. For a predecessor, the first disjunct is discharged by the outer induction hypothesis, while the equal-first-coordinate second disjunct is discharged by the inner induction hypothesis. Explicitly identify these two cases with the definition of PowerGameDescent. Do not change the theorem statement or imports.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerMoveInSupport",
+    "next_active": "PowerGameDescentWellFounded",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -16,14 +16,19 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1362,
-        "end_line": 1374,
-        "reason": "The paper defines the tagged iterated hierarchy and the recursive atom-singleton/union support used by the move-support lemma."
+        "start_line": 1385,
+        "end_line": 1397,
+        "reason": "The paper defines the finite comparison game and its child-selection recursion on the two presentations."
+      },
+      {
+        "start_line": 1424,
+        "end_line": 1426,
+        "reason": "The paper invokes foundation to justify eventual termination of the recursive game descent."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1362-1374 define the nonempty iterated powerset hierarchy, distinguish atoms from nodes, and define support by giving atoms singleton support and nodes the union of child supports. The atom branch of PowerMoveInSupport must cite that support clause explicitly."
+      "basis_summary": "Lines 1385-1397 define each game round by moving to children until both coordinates reach atoms, and lines 1424-1426 explain that foundation ensures this descent terminates. The tablet's pair relation formalizes that descent, so its well-foundedness proof must explicitly handle first-coordinate descent and the equal-first-coordinate second descent."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -38,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerMoveInSupport.tex. Preserve the Lean statement, imports, and existing child-support argument. Independent gap: the atom branch says the support inclusion is equality, which uses the atom clause of the recursive support definition, but the current proof cites only \\noderef{PowerMove} and \\noderef{PowerChildSupport}; add \\noderef{PowerSupport} at that use. Then keep the two cases explicit: an atom move is unchanged, while a node move gives a child relation and \\noderef{PowerChildSupport} yields the required inclusion. Do not add a helper or change the theorem statement or support edges.",
+    "comments": "Edit only Tablet/PowerGameDescentWellFounded.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof asserts that a standard lexicographic-product construction applies, but does not show why it matches the displayed relation. Cite \\noderef{PowerGameDescent}, \\noderef{PowerChild}, and \\noderef{PowerChildWellFounded}, then give the line-by-line accessibility argument: use outer well-founded induction on the first coordinate with motive `for every second coordinate, the pair is accessible`; at a fixed first coordinate use inner well-founded induction on the second coordinate. For a predecessor, the first disjunct is discharged by the outer induction hypothesis, while the equal-first-coordinate second disjunct is discharged by the inner induction hypothesis. Explicitly identify these two cases with the definition of PowerGameDescent. Do not change the theorem statement or imports.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 131,
+    "cycle": 132,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +54,29 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerMoveInSupport",
+    "next_active": "PowerGameDescentWellFounded",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1374,
-        "reason": "The paper defines the tagged iterated hierarchy and the recursive atom-singleton/union support used by the move-support lemma.",
-        "start_line": 1362
+        "end_line": 1397,
+        "reason": "The paper defines the finite comparison game and its child-selection recursion on the two presentations.",
+        "start_line": 1385
+      },
+      {
+        "end_line": 1426,
+        "reason": "The paper invokes foundation to justify eventual termination of the recursive game descent.",
+        "start_line": 1424
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1362-1374 define the nonempty iterated powerset hierarchy, distinguish atoms from nodes, and define support by giving atoms singleton support and nodes the union of child supports. The atom branch of PowerMoveInSupport must cite that support clause explicitly.",
+      "basis_summary": "Lines 1385-1397 define each game round by moving to children until both coordinates reach atoms, and lines 1424-1426 explain that foundation ensures this descent terminates. The tablet's pair relation formalizes that descent, so its well-foundedness proof must explicitly handle first-coordinate descent and the equal-first-coordinate second descent.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerPresentationEqEquivalence has a current Sound approval. Continue to PowerMoveInSupport to repair the atom-branch dependency citation while preserving its statement and support structure.",
-    "request_id": 433,
+    "reason": "PowerMoveInSupport has a current Sound approval. Continue to PowerGameDescentWellFounded, whose current proof leaves the lexicographic well-foundedness step implicit and should expose the nested induction explicitly.",
+    "request_id": 436,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,5 +86,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_433_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_436_decision.context.json"
 }

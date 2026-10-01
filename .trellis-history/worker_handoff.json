@@ -1,17 +1,16 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Expanded only Tablet/PowerPresentationEqEquivalence.tex into a paper-faithful, explicitly cited proof of reflexivity, symmetry, and transitivity for structural presentation matching.",
-    "comments": "Preserved the Lean statement, import, and support structure. The proof now cites PowerQ for the atom/node inductive cases and PowerPresentationEq for the four relation clauses; it explicitly handles mixed-tag False cases, same-child witnesses for reflexivity, exchanged witnesses for symmetry, and forward then reverse witness composition through the middle node for transitivity. Statement-level dependency audit recorded in .trellis/scratch/notes.md. No configured target is claimed, no deviation is requested, and no node is deleted.",
+    "summary": "Added the missing PowerSupport citation for the atom branch of PowerMoveInSupport, preserving the Lean statement, imports, and explicit two-case proof.",
+    "comments": "The atom case now cites the recursive support definition for the equality of supports; the node case still cites PowerMove and PowerChildSupport.",
     "target_claim_updates": {},
     "difficulty_updates": {},
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
     "deleted_nodes": [],
-    "needs_restructure_suggested_nodes": [],
     "memory_challenges": [],
-    "audit_request": null
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,8 +20,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the Lean statement, import, and support structure. The proof now cites PowerQ for the atom/node inductive cases and PowerPresentationEq for the four relation clauses; it explicitly handles mixed-tag False cases, same-child witnesses for reflexivity, exchanged witnesses for symmetry, and forward then reverse witness composition through the middle node for transitivity. Statement-level dependency audit recorded in .trellis/scratch/notes.md. No configured target is claimed, no deviation is requested, and no node is deleted.",
-    "cycle": 131,
+    "comments": "The atom case now cites the recursive support definition for the equality of supports; the node case still cites PowerMove and PowerChildSupport.",
+    "cycle": 132,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -38,7 +37,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 431,
+    "request_id": 434,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1655,12 +1654,13 @@
           "own_tex_hash": "baf733ef3cc4ffbe326942bee909b85d3d6707e59557f578dd2b458b66223e7d"
         },
         "PowerMoveInSupport": {
-          "combined_sound_fp": "sound-v2:37af21c1d05cf8e9f59f7b7992dd8b5ba1a74068ca30b059ff5bd50d77ed552f",
+          "combined_sound_fp": "sound-v2:2611f99856d1ac00804f557656b03c74019d75aefbb0ad27a98606abd38a54cf",
           "dep_statement_hashes": {
             "PowerChildSupport": "f8665e9d848cdbb24f28bcde6b31d33707c9c8673022009afa0978fc57b2ebf3",
-            "PowerMove": "0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707"
+            "PowerMove": "0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707",
+            "PowerSupport": "f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762"
           },
-          "own_tex_hash": "7e1cd664249fc935ed91a63bf88c9412f4b97909791f3e6928638bf307bfb095"
+          "own_tex_hash": "d744ee1499c4c4bf39cbd1d0ef6f5106ea3c46968920b935ce4fb312356dfd52"
         },
         "PowerPresentationEq": {
           "combined_sound_fp": "sound-v2:08e36ef18d0f739bc01dd2dbe4b9c141452557b87d107e51429c75d38cd00f27",
@@ -2249,7 +2249,7 @@
         "PowerIResponseLegal": "sound-v2:e645835216cdc697b0381983fd9d4f1de77c9a275c348417fe8ae274923c4581",
         "PowerIResponseWitness": "sound-v2:6fd84704670ae5ba8204bed24b7f0816517eb508c7668a8123ffe264c2594c74",
         "PowerMove": "sound-v2:6380e6433a85275beadd1b3c3fb14ed85f083f411e4f9e972cb01973bbd7673a",
-        "PowerMoveInSupport": "sound-v2:37af21c1d05cf8e9f59f7b7992dd8b5ba1a74068ca30b059ff5bd50d77ed552f",
+        "PowerMoveInSupport": "sound-v2:2611f99856d1ac00804f557656b03c74019d75aefbb0ad27a98606abd38a54cf",
         "PowerPresentationEq": "sound-v2:08e36ef18d0f739bc01dd2dbe4b9c141452557b87d107e51429c75d38cd00f27",
         "PowerPresentationEqEquivalence": "sound-v2:a4b1489fb52a79ffab78d253738b41d93957495c13540117da08f671cb3e6559",
         "PowerQ": "sound-v2:6fa59c6b1f00b16b94208bab490cd36015afae248e7ce3a1a4c427d7c16a19c4",
@@ -2667,7 +2667,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Expanded only Tablet/PowerPresentationEqEquivalence.tex into a paper-faithful, explicitly cited proof of reflexivity, symmetry, and transitivity for structural presentation matching.",
+    "summary": "Added the missing PowerSupport citation for the atom branch of PowerMoveInSupport, preserving the Lean statement, imports, and explicit two-case proof.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2921,7 +2921,7 @@
     "PowerMove.lean": "37766c2f21e853ca277821e32324b20defa0790a01ad64f3b750fdb74bde3c54",
     "PowerMove.tex": "baf733ef3cc4ffbe326942bee909b85d3d6707e59557f578dd2b458b66223e7d",
     "PowerMoveInSupport.lean": "7f5535ecc4442d38f6463fdb7139662d8e305b01ce5ec7b0619f3f6d6380b11d",
-    "PowerMoveInSupport.tex": "7e1cd664249fc935ed91a63bf88c9412f4b97909791f3e6928638bf307bfb095",
+    "PowerMoveInSupport.tex": "d744ee1499c4c4bf39cbd1d0ef6f5106ea3c46968920b935ce4fb312356dfd52",
     "PowerPresentationEq.lean": "8788292bd0a1d7d0df10deec79e7bbdc42e62cbd1ff80ee6389b900fb76823d0",
     "PowerPresentationEq.tex": "63b42b4ff202524337b0791fd046207660a5cb55fc244025acf74909c8584dc3",
     "PowerPresentationEqEquivalence.lean": "76ac2540810459cb8faeec394836961e44e16eb4677119f5dbb53386739e0178",
@@ -3033,7 +3033,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_431_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_434_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
