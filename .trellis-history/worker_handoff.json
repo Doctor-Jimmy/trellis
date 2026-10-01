@@ -1,27 +1,19 @@
 {
   "raw": {
     "audit_request": null,
-    "comments": "Added a paper-faithful Rado support package: IncreasingPair, the exact two-clause RadoOrder, SetDomination, RelationEmbedding, BadPairSequence, the powerset bad-witness equivalence, CardinalityFront, and the triple and quadruple homogeneous consequences of NashWilliams. Every new proof-bearing TeX file has a complete cited proof. The full tablet shape check and Lean build pass. The exact lines 985--987 embedding theorem was not introduced because its detailed preservation/reflection proof is the downstream Rado-target task.",
+    "comments": "Added the paper-faithful Rado embedding theorem for lines 985--987. Its proof explicitly extracts a bad IncreasingPair map, rules out the negative triple and quadruple colors using well-quasi-ordering, reindexes after deleting the minimum, and proves preservation, reflection in all three cases, and injectivity. Also repaired RelationEmbedding to package Mathlib's RelEmbedding while retaining the paper-facing function predicate.",
     "deleted_nodes": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {},
     "memory_challenges": [],
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Built the Rado pair-order, powerset domination and bad-witness support, relation embeddings, and Nash-Williams thinning lemmas for triples and quadruples.",
+    "summary": "Added RadoEmbedding covering the paper theorem that a wqo with non-wqo first-level powerset domination contains an embedded copy of Rado.",
     "target_claim_updates": {
-      "IncreasingPair": [],
-      "RadoOrder": [],
-      "SetDomination": [],
-      "BadPairSequence": [],
-      "RelationEmbedding": [],
-      "CardinalityFront": [],
-      "CardinalityFrontIsFront": [],
-      "PowerWqoBadPairSequence": [],
-      "TripleHomogeneous": [],
-      "QuadrupleHomogeneous": []
+      "RadoEmbedding": [
+        "lines:985-987"
+      ]
     }
   },
   "response": {
@@ -32,62 +24,18 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Added a paper-faithful Rado support package: IncreasingPair, the exact two-clause RadoOrder, SetDomination, RelationEmbedding, BadPairSequence, the powerset bad-witness equivalence, CardinalityFront, and the triple and quadruple homogeneous consequences of NashWilliams. Every new proof-bearing TeX file has a complete cited proof. The full tablet shape check and Lean build pass. The exact lines 985--987 embedding theorem was not introduced because its detailed preservation/reflection proof is the downstream Rado-target task.",
-    "cycle": 8,
+    "comments": "Added the paper-faithful Rado embedding theorem for lines 985--987. Its proof explicitly extracts a bad IncreasingPair map, rules out the negative triple and quadruple colors using well-quasi-ordering, reindexes after deleting the minimum, and proves preservation, reflection in all three cases, and injectivity. Also repaired RelationEmbedding to package Mathlib's RelEmbedding while retaining the paper-facing function predicate.",
+    "cycle": 9,
     "deleted_nodes": [],
     "dep_updates": {
-      "BadPairSequence": {
+      "RadoEmbedding": {
         "Set": [
-          "IncreasingPair"
-        ]
-      },
-      "CardinalityFront": {
-        "Set": [
-          "Preamble"
-        ]
-      },
-      "CardinalityFrontIsFront": {
-        "Set": [
-          "CardinalityFront",
-          "Front"
-        ]
-      },
-      "IncreasingPair": {
-        "Set": [
-          "Preamble"
-        ]
-      },
-      "PowerWqoBadPairSequence": {
-        "Set": [
-          "BadPairSequence",
-          "SetDomination"
-        ]
-      },
-      "QuadrupleHomogeneous": {
-        "Set": [
-          "CardinalityFrontIsFront",
-          "NashWilliams"
-        ]
-      },
-      "RadoOrder": {
-        "Set": [
-          "IncreasingPair"
-        ]
-      },
-      "RelationEmbedding": {
-        "Set": [
-          "Preamble"
-        ]
-      },
-      "SetDomination": {
-        "Set": [
-          "Preamble"
-        ]
-      },
-      "TripleHomogeneous": {
-        "Set": [
-          "CardinalityFrontIsFront",
-          "NashWilliams"
+          "InfiniteSetEnumeration",
+          "PowerWqoBadPairSequence",
+          "QuadrupleHomogeneous",
+          "RadoOrder",
+          "RelationEmbedding",
+          "TripleHomogeneous"
         ]
       }
     },
@@ -95,42 +43,50 @@
     "deviation_deletions": [],
     "deviation_requests": {},
     "difficulty_updates": {},
+    "elaboration_costs": {
+      "RadoEmbedding": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "RadoEmbedding",
+        "olean_size_bytes": 11592,
+        "peak_rss_kib": 1681816,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "b1d5680423acd3d08575b0b635c400983e110ee1803338df5458796b1011bf2c",
+        "walltime_ms": 2280
+      },
+      "RelationEmbedding": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "RelationEmbedding",
+        "olean_size_bytes": 7016,
+        "peak_rss_kib": 1656700,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "99ef9a16460f741ac608ebfe346e20f4f827a68747af3963e30a0f5f10f7e22a",
+        "walltime_ms": 2319
+      }
+    },
     "kind": "worker",
     "local_closure_results": {},
     "local_closure_revalidation": null,
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "node_kind_updates": {
-      "CardinalityFrontIsFront": {
-        "Set": "Proof"
-      },
-      "PowerWqoBadPairSequence": {
-        "Set": "Proof"
-      },
-      "QuadrupleHomogeneous": {
-        "Set": "Proof"
-      },
-      "TripleHomogeneous": {
+      "RadoEmbedding": {
         "Set": "Proof"
       }
     },
     "outcome": "Valid",
     "proof_node_updates": {
-      "CardinalityFrontIsFront": {
-        "Set": true
-      },
-      "PowerWqoBadPairSequence": {
-        "Set": true
-      },
-      "QuadrupleHomogeneous": {
-        "Set": true
-      },
-      "TripleHomogeneous": {
+      "RadoEmbedding": {
         "Set": true
       }
     },
     "protected_semantic_change_nodes": [],
-    "request_id": 51,
+    "request_id": 57,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"lean_semantic_closure\":\"0d174505a9f44b4a8d9d7790be8d2b10ef3dd69d53fc5f9bbc300e8dd328aa39\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -217,9 +173,10 @@
         "ProperInitialSegment": "{\"own_tex\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"lean_semantic_closure\":\"326cebdb8534e5c63638eaae0d56aa8f3107190b14dd7329ae585900518684fb\",\"lean_relevant_definition_descendants\":{\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\"},\"lean_relevant_dependencies\":[\"InitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "ProperPrefixSet": "{\"own_tex\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"lean_semantic_closure\":\"0c732a23a47482a7375499076ab2ee9fca4c9dacd7472abe0fc8634380011829\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "QuadrupleHomogeneous": "{\"own_tex\":\"7f39390763d3af5849d00d9218ae9e52cdf97aa9556ac364f0aa94f1c93c8282\",\"lean_semantic_closure\":\"19b7aafe86d0f06360c5b46cfbf9d26dc312c999e107d1bcf4f00cd8d4b98d0d\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RadoEmbedding": "{\"own_tex\":\"8d193ffebc8f876f22ffb9b495ece93ebb0a104fe4b26e219eeed36ed1be0ed3\",\"lean_semantic_closure\":\"5c826935c71cf200605ca040ebe44720e0d6105fa5d6e8c499c3172710194e6f\",\"lean_relevant_definition_descendants\":{\"IncreasingPair\":\"5a70770e3196fb5b48f67712242b71d73b3f62a762107da5ed6cc6d37e972fb7\",\"RadoOrder\":\"842462327eacf96b38ffc839dce102315031106c752f5402163eea2174d47f9a\",\"RelationEmbedding\":\"e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9\",\"SetDomination\":\"c03d840f25d5b4896237ac2a491f9c141b1ec3cdfa973685142f3ec1f4e5a0bb\"},\"lean_relevant_dependencies\":[\"IncreasingPair\",\"RadoOrder\",\"RelationEmbedding\",\"SetDomination\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RadoOrder": "{\"own_tex\":\"842462327eacf96b38ffc839dce102315031106c752f5402163eea2174d47f9a\",\"lean_semantic_closure\":\"13e3ec89d236885bbb1b9cff3984ecb40a8c9ff35ceb2597b4d4e0f3e4464d19\",\"lean_relevant_definition_descendants\":{\"IncreasingPair\":\"5a70770e3196fb5b48f67712242b71d73b3f62a762107da5ed6cc6d37e972fb7\"},\"lean_relevant_dependencies\":[\"IncreasingPair\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "Ray": "{\"own_tex\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"lean_semantic_closure\":\"e809a6b908c92f6b2f9d268ebf86b7e22d6f2200af0a37b40d4d7a50f172b6fb\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-        "RelationEmbedding": "{\"own_tex\":\"e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9\",\"lean_semantic_closure\":\"00ca834d554eaa3b64b25e19bdcc72926d90fc942911e39975edd28d78e81e29\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RelationEmbedding": "{\"own_tex\":\"e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9\",\"lean_semantic_closure\":\"09d44baf00ddca4d4abd1be094992763d4829873d9357a9ab301329710fcf8c2\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RestrictionLocallyConstant": "{\"own_tex\":\"8be0ea8522f379262c937df662a931b0c01e00f5a20ceacd474bf4bb2632a8a9\",\"lean_semantic_closure\":\"7ea9bfbc68851e8faf28ce4a62713d102c6c9d7fae2bfb228e8a34d9bc16a0de\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"MultiSequenceRestrict\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RestrictionShift": "{\"own_tex\":\"d5d841aef941841d35501227a7c33143993f0ba417eb963325e0ca62e3c0ccc7\",\"lean_semantic_closure\":\"b3858ab7a234f7d7eb382d2c8a4c1a280b6e52bc7a72ad7a273445e445c0850a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RightComp": "{\"own_tex\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"lean_semantic_closure\":\"c7848464831ddf5e34dc736fff97570b28c050c51e97fe861ee6bd9d1048fae8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -257,7 +214,9 @@
         "lines:1748-1753": [
           "BqoIffGeneralShift"
         ],
-        "lines:985-987": [],
+        "lines:985-987": [
+          "RadoEmbedding"
+        ],
         "thm BqoHerCtblWellF": [],
         "thm BqoHerCtblWqo": []
       },
@@ -301,6 +260,7 @@
         "PerfectSuperToMulti",
         "PowerWqoBadPairSequence",
         "QuadrupleHomogeneous",
+        "RadoEmbedding",
         "RestrictionLocallyConstant",
         "RestrictionShift",
         "RmapLemma",
@@ -319,7 +279,7 @@
         "g-BQO": "{\"target\":\"g-BQO\",\"covering_nodes\":{\"GBetterRelIff\":\"9cce16dbf3cbe8548d1334b9f5e69a3a9b332c3eaab65c8c15624d87c89187cf\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"BetterRel\":\"43225e63c973f28ca1ec64c58845a341f0481e53714fee29d8a4f03924e9ae5d\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"ContinuousRelHom\":\"159a7c1a692c4a4cf37f42e7fe794f307112024798c478436e23c72b46877ec2\",\"GBetterRel\":\"4a086f9397fa96daa1c31fdb3a3b75a5dac4c4eeec2a1a8acca00a95bf7a7e0a\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "lem:subarr": "{\"target\":\"lem:subarr\",\"covering_nodes\":{\"Subarr\":\"8fd1469be09272523ca854590af9cce0454dbe3d7bf97e34f1aeb000d0314a65\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"BaseIncSeq\":\"b4ee445f24d19052ee032ff7ac367ba43fabffc485a0596bbec882e09a0895c2\",\"BaseLocallyConstant\":\"6d3114fceadc0f2dcacc706f2881ee2dff13afbe5a014f52c7bfa43c46ed0ec3\",\"BaseMultiSequence\":\"d84c6ac1b9b091554df66235472d7593c610b8b7346a634f8715cf8db569e086\",\"BaseRestrict\":\"b5c4a2ef4b24067b82747d1821656823ff674de2e35eb3e97c702a71f0acbe8d\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"FiniteShift\":\"7bb8c953dcde109b1541a76bf8fef4197e23f1ef40f3c5a3b4ceff1595791131\",\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PerfectMultiSequence\":\"c006694c209839739aa686c04eef0e8c8e22c71da186fe5d56a229419903274e\",\"PerfectSuperSequence\":\"d09ee457efae3251bca6479c0d1fa166d582799c4801447ae18d07b1f79c42dc\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\",\"SuperSequence\":\"e1b07dc8312697d448c83fa2070eab5b4caa1f70ed2e30e66f475fbf76419d94\",\"SuperSequenceRestrict\":\"f7a9c91d5be485c07693804fcb37b9c4644b4832ddf2859915ec1f1d9871742c\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "lines:1748-1753": "{\"target\":\"lines:1748-1753\",\"covering_nodes\":{\"BqoIffGeneralShift\":\"a03a0d03dbfe74021c99376cf490d951aae910eb709ccb4dc60aaf0ced974082\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-        "lines:985-987": "",
+        "lines:985-987": "{\"target\":\"lines:985-987\",\"covering_nodes\":{\"RadoEmbedding\":\"95d78926ac4ea6c5a69dfd3bdae86f2bcfe54ba4fec03f9ae33e3161a89e0f99\"},\"lean_relevant_definition_descendants\":{\"IncreasingPair\":\"7b7d101a1ade22da91553543930a3d16cd965da4ddb29f4f7574fe2f5bbb38aa\",\"RadoOrder\":\"e8a126353ed5cc1ce5f93ee822ea75d8b963c312844521d58225df87cdcc2e7c\",\"RelationEmbedding\":\"6a36e49339b105c105f8edaac28a8bc9b2ab47a6076e05e6f7f49b992ecd3159\",\"SetDomination\":\"42fc114a209398007e1e53642360f1d73bf6cce6208055df8454f8593d353a6e\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "thm BqoHerCtblWellF": "",
         "thm BqoHerCtblWqo": ""
       },
@@ -409,6 +369,7 @@
         "ProperInitialSegment",
         "ProperPrefixSet",
         "QuadrupleHomogeneous",
+        "RadoEmbedding",
         "RadoOrder",
         "Ray",
         "RelationEmbedding",
@@ -510,7 +471,12 @@
           "ShiftMap",
           "SuccSeq"
         ],
-        "lines:985-987": [],
+        "lines:985-987": [
+          "IncreasingPair",
+          "RadoOrder",
+          "RelationEmbedding",
+          "SetDomination"
+        ],
         "thm BqoHerCtblWellF": [],
         "thm BqoHerCtblWqo": []
       },
@@ -1051,6 +1017,19 @@
           },
           "own_tex_hash": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7"
         },
+        "RadoEmbedding": {
+          "combined_sound_fp": "sound-v2:ab5ff6761c4bfb1bca6d5d281eda98d4de9c93f969c304007bfae46352e36eaa",
+          "dep_statement_hashes": {
+            "BadPairSequence": "626ded3d7e21755927d977801695e747cb2a1b988c1c69ffe840f9c3b3ec8f2b",
+            "InfiniteSetEnumeration": "6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1",
+            "PowerWqoBadPairSequence": "a5331efb50c386e7e45c53b4569a64be12281231cf5a212dfbacc411d20140c9",
+            "QuadrupleHomogeneous": "7f39390763d3af5849d00d9218ae9e52cdf97aa9556ac364f0aa94f1c93c8282",
+            "RadoOrder": "842462327eacf96b38ffc839dce102315031106c752f5402163eea2174d47f9a",
+            "RelationEmbedding": "e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9",
+            "TripleHomogeneous": "412cc17757f7a76a02418346672178fce9b4d87f2f7658f8b1ba7d1a10945dbc"
+          },
+          "own_tex_hash": "8083be7d8ada8fc21dcf0ee59af2c71892a3aeafe327bf147b7d48daf1470ecb"
+        },
         "RadoOrder": {
           "combined_sound_fp": "sound-v2:db48c2da7c19e4b216dc972165b5219c46ca3c83ef68a8d47ab2f242eb00fc7d",
           "dep_statement_hashes": {},
@@ -1275,6 +1254,7 @@
         "ProperInitialSegment": "sound-v2:b99b127375bf144bd398d68fed3f23e338061226a9fd7d1731b823ef0ba52e04",
         "ProperPrefixSet": "sound-v2:ad9003916e97cbe6e568954e6f27ee5d1b9fbcc5bafe4906574176719aec0c31",
         "QuadrupleHomogeneous": "sound-v2:a44233cd267f778e2e37bf88c78a87aeb59f7989e98901f6bfca62c80c95701f",
+        "RadoEmbedding": "sound-v2:ab5ff6761c4bfb1bca6d5d281eda98d4de9c93f969c304007bfae46352e36eaa",
         "RadoOrder": "sound-v2:db48c2da7c19e4b216dc972165b5219c46ca3c83ef68a8d47ab2f242eb00fc7d",
         "Ray": "sound-v2:2c189c6e7bf3f568e8cf765ddde17b15a410cf935224f57a4baf3992dbcd9e09",
         "RelationEmbedding": "sound-v2:2ed9a9f5da51cd147e2575c730f9a7700c010138f88e4cd54ae0ce46775f79bf",
@@ -1380,6 +1360,7 @@
         "ProperInitialSegment": "{\"own_tex\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "ProperPrefixSet": "{\"own_tex\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "QuadrupleHomogeneous": "{\"own_tex\":\"7f39390763d3af5849d00d9218ae9e52cdf97aa9556ac364f0aa94f1c93c8282\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "RadoEmbedding": "{\"own_tex\":\"8d193ffebc8f876f22ffb9b495ece93ebb0a104fe4b26e219eeed36ed1be0ed3\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "RadoOrder": "{\"own_tex\":\"842462327eacf96b38ffc839dce102315031106c752f5402163eea2174d47f9a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "Ray": "{\"own_tex\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "RelationEmbedding": "{\"own_tex\":\"e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -1485,9 +1466,10 @@
         "ProperInitialSegment": "{\"own_tex\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"lean_semantic_closure\":\"326cebdb8534e5c63638eaae0d56aa8f3107190b14dd7329ae585900518684fb\",\"lean_relevant_definition_descendants\":{\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\"},\"lean_relevant_dependencies\":[\"InitialSegment\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "ProperPrefixSet": "{\"own_tex\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"lean_semantic_closure\":\"0c732a23a47482a7375499076ab2ee9fca4c9dacd7472abe0fc8634380011829\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "QuadrupleHomogeneous": "{\"own_tex\":\"7f39390763d3af5849d00d9218ae9e52cdf97aa9556ac364f0aa94f1c93c8282\",\"lean_semantic_closure\":\"19b7aafe86d0f06360c5b46cfbf9d26dc312c999e107d1bcf4f00cd8d4b98d0d\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RadoEmbedding": "{\"own_tex\":\"8d193ffebc8f876f22ffb9b495ece93ebb0a104fe4b26e219eeed36ed1be0ed3\",\"lean_semantic_closure\":\"5c826935c71cf200605ca040ebe44720e0d6105fa5d6e8c499c3172710194e6f\",\"lean_relevant_definition_descendants\":{\"IncreasingPair\":\"5a70770e3196fb5b48f67712242b71d73b3f62a762107da5ed6cc6d37e972fb7\",\"RadoOrder\":\"842462327eacf96b38ffc839dce102315031106c752f5402163eea2174d47f9a\",\"RelationEmbedding\":\"e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9\",\"SetDomination\":\"c03d840f25d5b4896237ac2a491f9c141b1ec3cdfa973685142f3ec1f4e5a0bb\"},\"lean_relevant_dependencies\":[\"IncreasingPair\",\"RadoOrder\",\"RelationEmbedding\",\"SetDomination\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RadoOrder": "{\"own_tex\":\"842462327eacf96b38ffc839dce102315031106c752f5402163eea2174d47f9a\",\"lean_semantic_closure\":\"13e3ec89d236885bbb1b9cff3984ecb40a8c9ff35ceb2597b4d4e0f3e4464d19\",\"lean_relevant_definition_descendants\":{\"IncreasingPair\":\"5a70770e3196fb5b48f67712242b71d73b3f62a762107da5ed6cc6d37e972fb7\"},\"lean_relevant_dependencies\":[\"IncreasingPair\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "Ray": "{\"own_tex\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"lean_semantic_closure\":\"e809a6b908c92f6b2f9d268ebf86b7e22d6f2200af0a37b40d4d7a50f172b6fb\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-        "RelationEmbedding": "{\"own_tex\":\"e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9\",\"lean_semantic_closure\":\"00ca834d554eaa3b64b25e19bdcc72926d90fc942911e39975edd28d78e81e29\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "RelationEmbedding": "{\"own_tex\":\"e4221bc0dc95340ba7620e2ac948a7583a1478b84cc81f85521e02a735066bb9\",\"lean_semantic_closure\":\"09d44baf00ddca4d4abd1be094992763d4829873d9357a9ab301329710fcf8c2\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RestrictionLocallyConstant": "{\"own_tex\":\"8be0ea8522f379262c937df662a931b0c01e00f5a20ceacd474bf4bb2632a8a9\",\"lean_semantic_closure\":\"7ea9bfbc68851e8faf28ce4a62713d102c6c9d7fae2bfb228e8a34d9bc16a0de\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"MultiSequenceRestrict\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RestrictionShift": "{\"own_tex\":\"d5d841aef941841d35501227a7c33143993f0ba417eb963325e0ca62e3c0ccc7\",\"lean_semantic_closure\":\"b3858ab7a234f7d7eb382d2c8a4c1a280b6e52bc7a72ad7a273445e445c0850a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "RightComp": "{\"own_tex\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"lean_semantic_closure\":\"c7848464831ddf5e34dc736fff97570b28c050c51e97fe861ee6bd9d1048fae8\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1509,37 +1491,12 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Built the Rado pair-order, powerset domination and bad-witness support, relation embeddings, and Nash-Williams thinning lemmas for triples and quadruples.",
+    "summary": "Added RadoEmbedding covering the paper theorem that a wqo with non-wqo first-level powerset domination contains an embedded copy of Rado.",
     "target_claim_updates": {
-      "BadPairSequence": {
-        "Set": []
-      },
-      "CardinalityFront": {
-        "Set": []
-      },
-      "CardinalityFrontIsFront": {
-        "Set": []
-      },
-      "IncreasingPair": {
-        "Set": []
-      },
-      "PowerWqoBadPairSequence": {
-        "Set": []
-      },
-      "QuadrupleHomogeneous": {
-        "Set": []
-      },
-      "RadoOrder": {
-        "Set": []
-      },
-      "RelationEmbedding": {
-        "Set": []
-      },
-      "SetDomination": {
-        "Set": []
-      },
-      "TripleHomogeneous": {
-        "Set": []
+      "RadoEmbedding": {
+        "Set": [
+          "lines:985-987"
+        ]
       }
     },
     "transport_failure": false,
@@ -1650,7 +1607,7 @@
     "GBetterRelIff.tex": "b04881587ad7f81864198af6e8b66dc551462096771feba1eab092935e268a72",
     "GoodMultiSequence.lean": "c4bd9fe7761dceaa3dda46012ddeb547f5a9fd042134d0e7600570747cb76d19",
     "GoodMultiSequence.tex": "e2a214ee38e14cdb74e95a61fe6792faac106f3ffcebec6a6568fed66f404bc6",
-    "INDEX.md": "588824929287671c4d2366a9ee225cd60c74074fd82eec2d95e365f595302f38",
+    "INDEX.md": "952094b5bd8be2006e75481a7fb99e85343ff0c80a916fb19ffe7967f140ea7e",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -1717,12 +1674,14 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7",
-    "README.md": "3ec37e7ed8d82b961d2df86d14c7b8af80725281d4493e5b7520fb7fba7010f7",
+    "README.md": "2824f725bcf20866c0c34905b6073d7cd9e4a9cf54a9a619e29ebb980da89bcd",
+    "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
+    "RadoEmbedding.tex": "8083be7d8ada8fc21dcf0ee59af2c71892a3aeafe327bf147b7d48daf1470ecb",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
     "RadoOrder.tex": "721e1106db0f774109eee56eb6db738427da66550a61bfb2d6cdd0bd95ca1fda",
     "Ray.lean": "9f4ae701ffc6c12ac0b09136ecce3ca8daa70513cba8b47ee7a5f564d1664010",
     "Ray.tex": "9859188308d0606e635e36270453ae5db6f67482781933fb6525542d7542d553",
-    "RelationEmbedding.lean": "1ba52b114f64f9bdf4972021688c5772b02c173e4990d09fb95eeae69f9db8a4",
+    "RelationEmbedding.lean": "69740807b79b4a75d92d71f32fabfc101cdc31ed10cb199f1d3f7fdd32041e7d",
     "RelationEmbedding.tex": "262c3c21b33df2e82f49097ddeb1fe4e79a2344210c657ead6b216761c5cf914",
     "RestrictionLocallyConstant.lean": "6e32264beadfb1d5585c59529938060d8a717d671be10497599ec88acaa99c1a",
     "RestrictionLocallyConstant.tex": "7815a0b352612899ce467769e161d17f1eb7a16c485033d9d09ced86469681d1",
@@ -1758,7 +1717,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_51_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_57_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

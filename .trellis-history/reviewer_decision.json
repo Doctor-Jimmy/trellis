@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Rado support package is now present and matches the manuscript's pair order, bad-witness extraction, and Nash-Williams-derived homogeneous thinning. The remaining paper-faithfulness gap is the target theorem itself: a single node must state and prove that a wqo Q with non-wqo first-level powerset domination contains an embedded copy of Rado.",
-    "comments": "Continue in Global mode, anchored at RelationEmbedding, and execute the downstream rado-embedding-target task. Add the final theorem-like node whose statement alone claims lines:985-987: under a quasi-order on Q, WellQuasiOrdered Q, and failure of WellQuasiOrdered (SetDomination r), there exists e : IncreasingPair -> Q with RelationEmbedding RadoOrder r e. Use PowerWqoBadPairSequence to obtain the bad pair map; apply the existing homogeneous-triple and homogeneous-quadruple consequences of NashWilliams; eliminate the negative colors using the wqo hypothesis; remove the minimum of the final infinite set and define the embedding on the reindexed pairs. The NL proof must spell out preservation, injectivity, and all three reflection cases from paper lines 993 onward, with explicit citations. Do not claim the target through a helper alone, do not replace relation embedding by one-way monotonicity, and do not start an independent Ramsey development. Keep first-level SetDomination separate from the full iterated hierarchy for cor PowerQPresBqo. New proof-bearing TeX must have a complete cited proof, not SKETCH; retain the repaired fixed-left restriction interface unchanged.",
+    "reason": "RadoEmbedding has cleared paper-faithfulness. The next live structural obligation is the full iterated-powerset hierarchy required by cor PowerQPresBqo; the paper defines atoms and nonempty well-founded set-nodes with a four-clause lifted relation, so the hierarchy core must precede the preservation theorem.",
+    "comments": "Continue in Global mode with no narrow node anchor so the worker can introduce the new hierarchy core as a coordinated paired package. Execute the audit task iterated-power-core before attempting the preservation target. Represent PowerQ as a tagged well-founded hierarchy with a disjoint atom case and arbitrary nonempty set-nodes, or an equivalent extensional quotient; do not identify it with Set Q, first-level SetDomination, or an untagged Lean Set. The package must expose support and the lifted relation with all four paper clauses: atom/atom uses r, atom/node is existential over the right node, node/atom is universal over the left node, and node/node is universal-existential. Include the nonemptiness/support lemmas, atom reduction, reflexivity and transitivity under the quasi-order assumptions, and extensional or presentation invariance before any preservation target cites the hierarchy. Keep the finite-game interpretation aligned with the paper and pm-0002; do not introduce the cor PowerQPresBqo theorem until the later diagonal-copying task has a faithful target package. New proof-bearing TeX must have complete cited proofs, not SKETCH, and the existing fixed-left restriction and Rado packages should remain untouched.",
     "task_blocker_ids": [
-      "paperfaithfulness:target:lines:985-987:"
+      "paperfaithfulness:target:cor PowerQPresBqo:"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "RelationEmbedding",
+    "next_active": "",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -19,39 +19,39 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 927,
-        "end_line": 949,
-        "reason": "Exact Rado pair carrier and order, plus the surrounding wqo context."
+        "start_line": 1362,
+        "end_line": 1421,
+        "reason": "Definition of the transfinite nonempty powerset hierarchy, support, game, and all four clauses of the lifted relation."
       },
       {
-        "start_line": 957,
-        "end_line": 993,
-        "reason": "Bad powerset-witness extraction and the Rado embedding proof, including homogeneous triples, quadruples, preservation, and reflection cases."
+        "start_line": 1530,
+        "end_line": 1554,
+        "reason": "The downstream diagonal-copying proposition and the exact bqo-preservation corollary that the hierarchy core must support."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines Rado by the same two order clauses used in RadoOrder, extracts a bad IncreasingPair map from non-wqo powerset domination, and proves the embedding by two homogeneous thinnings followed by preservation and three explicit reflection cases."
+      "basis_summary": "The paper constructs PowerQ by transfinite recursion from atoms and nonempty successor nodes, defines support recursively, and gives four distinct atom/set clauses for the lifted relation. It later derives preservation by copying finite game strategies from a bad hierarchy-valued sequence to an atom-valued one."
     },
     "stuck_math_audit": {
-      "notes": "The audit task rado-ramsey-support is substantively complete: the worker added IncreasingPair, RadoOrder, SetDomination, RelationEmbedding, BadPairSequence, PowerWqoBadPairSequence, CardinalityFront, and the triple/quadruple homogeneous consequences of NashWilliams. The next live audit task is rado-embedding-target; the target theorem itself remains absent and is the correct paper-faithfulness focus.",
+      "notes": "The audit task rado-embedding-target is substantively complete and its RadoEmbedding covering node has paper-faithfulness PASS. The next live task is iterated-power-core, which is required before iterated-power-preservation can cover cor PowerQPresBqo. Preserve pm-0002: the target is the full iterated hierarchy, not first-level Set Q domination.",
       "reviewer_lean_product": {
-        "target": "lines:985-987",
-        "anchor": "RelationEmbedding",
-        "premise_route": "PowerWqoBadPairSequence gives a bad IncreasingPair-valued map from failure of SetDomination wqo",
-        "required_conclusion": "exists an injective map IncreasingPair -> Q satisfying RadoOrder p q iff r (e p) (e q)",
-        "proof_checks": [
-          "negative triple color contradicts wqo via a fixed-row bad sequence",
-          "negative quadruple color contradicts wqo via separated pairs",
-          "positive colors yield preservation",
-          "reflection must cover l < j, i < k, and k < i separately"
-        ]
+        "target": "cor PowerQPresBqo",
+        "required_interface": [
+          "tagged atom versus nonempty well-founded node representation",
+          "support with a proof of nonemptiness",
+          "lifted relation with all four atom/node cases",
+          "game or equivalent inductive strategy semantics",
+          "extensional or presentation invariance for any raw tree representation"
+        ],
+        "forbidden_shortcut": "Do not define the iterated hierarchy as Set Q or reuse SetDomination as its lifted relation.",
+        "downstream_boundary": "Leave the diagonal copying and exact Bqo r -> Bqo (PowerRel r) theorem to the later preservation task."
       }
     },
     "dismissed_tasks": [
       {
-        "id": "rado-ramsey-support",
-        "reason": "Completed: the worker added the paper-faithful Rado pair/order, first-level domination, bad-witness equivalence, relation-embedding interface, and Nash-Williams-derived triple and quadruple thinning nodes."
+        "id": "rado-embedding-target",
+        "reason": "Completed: RadoEmbedding now states the exact lines:985-987 target with a genuine relation embedding, and the paper-faithfulness verifier approved its coverage."
       }
     ]
   },
@@ -64,63 +64,63 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode, anchored at RelationEmbedding, and execute the downstream rado-embedding-target task. Add the final theorem-like node whose statement alone claims lines:985-987: under a quasi-order on Q, WellQuasiOrdered Q, and failure of WellQuasiOrdered (SetDomination r), there exists e : IncreasingPair -> Q with RelationEmbedding RadoOrder r e. Use PowerWqoBadPairSequence to obtain the bad pair map; apply the existing homogeneous-triple and homogeneous-quadruple consequences of NashWilliams; eliminate the negative colors using the wqo hypothesis; remove the minimum of the final infinite set and define the embedding on the reindexed pairs. The NL proof must spell out preservation, injectivity, and all three reflection cases from paper lines 993 onward, with explicit citations. Do not claim the target through a helper alone, do not replace relation embedding by one-way monotonicity, and do not start an independent Ramsey development. Keep first-level SetDomination separate from the full iterated hierarchy for cor PowerQPresBqo. New proof-bearing TeX must have a complete cited proof, not SKETCH; retain the repaired fixed-left restriction interface unchanged.",
+    "comments": "Continue in Global mode with no narrow node anchor so the worker can introduce the new hierarchy core as a coordinated paired package. Execute the audit task iterated-power-core before attempting the preservation target. Represent PowerQ as a tagged well-founded hierarchy with a disjoint atom case and arbitrary nonempty set-nodes, or an equivalent extensional quotient; do not identify it with Set Q, first-level SetDomination, or an untagged Lean Set. The package must expose support and the lifted relation with all four paper clauses: atom/atom uses r, atom/node is existential over the right node, node/atom is universal over the left node, and node/node is universal-existential. Include the nonemptiness/support lemmas, atom reduction, reflexivity and transitivity under the quasi-order assumptions, and extensional or presentation invariance before any preservation target cites the hierarchy. Keep the finite-game interpretation aligned with the paper and pm-0002; do not introduce the cor PowerQPresBqo theorem until the later diagonal-copying task has a faithful target package. New proof-bearing TeX must have complete cited proofs, not SKETCH, and the existing fixed-left restriction and Rado packages should remain untouched.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 8,
+    "cycle": 9,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "rado-ramsey-support",
-        "reason": "Completed: the worker added the paper-faithful Rado pair/order, first-level domination, bad-witness equivalence, relation-embedding interface, and Nash-Williams-derived triple and quadruple thinning nodes."
+        "id": "rado-embedding-target",
+        "reason": "Completed: RadoEmbedding now states the exact lines:985-987 target with a genuine relation embedding, and the paper-faithfulness verifier approved its coverage."
       }
     ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "RelationEmbedding",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 949,
-        "reason": "Exact Rado pair carrier and order, plus the surrounding wqo context.",
-        "start_line": 927
+        "end_line": 1421,
+        "reason": "Definition of the transfinite nonempty powerset hierarchy, support, game, and all four clauses of the lifted relation.",
+        "start_line": 1362
       },
       {
-        "end_line": 993,
-        "reason": "Bad powerset-witness extraction and the Rado embedding proof, including homogeneous triples, quadruples, preservation, and reflection cases.",
-        "start_line": 957
+        "end_line": 1554,
+        "reason": "The downstream diagonal-copying proposition and the exact bqo-preservation corollary that the hierarchy core must support.",
+        "start_line": 1530
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines Rado by the same two order clauses used in RadoOrder, extracts a bad IncreasingPair map from non-wqo powerset domination, and proves the embedding by two homogeneous thinnings followed by preservation and three explicit reflection cases.",
+      "basis_summary": "The paper constructs PowerQ by transfinite recursion from atoms and nonempty successor nodes, defines support recursively, and gives four distinct atom/set clauses for the lifted relation. It later derives preservation by copying finite game strategies from a bad hierarchy-valued sequence to an atom-valued one.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Rado support package is now present and matches the manuscript's pair order, bad-witness extraction, and Nash-Williams-derived homogeneous thinning. The remaining paper-faithfulness gap is the target theorem itself: a single node must state and prove that a wqo Q with non-wqo first-level powerset domination contains an embedded copy of Rado.",
-    "request_id": 56,
+    "reason": "RadoEmbedding has cleared paper-faithfulness. The next live structural obligation is the full iterated-powerset hierarchy required by cor PowerQPresBqo; the paper defines atoms and nonempty well-founded set-nodes with a four-clause lifted relation, so the hierarchy core must precede the preservation theorem.",
+    "request_id": 62,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit task rado-ramsey-support is substantively complete: the worker added IncreasingPair, RadoOrder, SetDomination, RelationEmbedding, BadPairSequence, PowerWqoBadPairSequence, CardinalityFront, and the triple/quadruple homogeneous consequences of NashWilliams. The next live audit task is rado-embedding-target; the target theorem itself remains absent and is the correct paper-faithfulness focus.",
+      "notes": "The audit task rado-embedding-target is substantively complete and its RadoEmbedding covering node has paper-faithfulness PASS. The next live task is iterated-power-core, which is required before iterated-power-preservation can cover cor PowerQPresBqo. Preserve pm-0002: the target is the full iterated hierarchy, not first-level Set Q domination.",
       "reviewer_lean_product": {
-        "anchor": "RelationEmbedding",
-        "premise_route": "PowerWqoBadPairSequence gives a bad IncreasingPair-valued map from failure of SetDomination wqo",
-        "proof_checks": [
-          "negative triple color contradicts wqo via a fixed-row bad sequence",
-          "negative quadruple color contradicts wqo via separated pairs",
-          "positive colors yield preservation",
-          "reflection must cover l < j, i < k, and k < i separately"
+        "downstream_boundary": "Leave the diagonal copying and exact Bqo r -> Bqo (PowerRel r) theorem to the later preservation task.",
+        "forbidden_shortcut": "Do not define the iterated hierarchy as Set Q or reuse SetDomination as its lifted relation.",
+        "required_interface": [
+          "tagged atom versus nonempty well-founded node representation",
+          "support with a proof of nonemptiness",
+          "lifted relation with all four atom/node cases",
+          "game or equivalent inductive strategy semantics",
+          "extensional or presentation invariance for any raw tree representation"
         ],
-        "required_conclusion": "exists an injective map IncreasingPair -> Q satisfying RadoOrder p q iff r (e p) (e q)",
-        "target": "lines:985-987"
+        "target": "cor PowerQPresBqo"
       }
     },
     "task_blockers": [
@@ -130,11 +130,11 @@
         "kind": "PaperFaithfulness",
         "object": {
           "otype": "target",
-          "target": "lines:985-987"
+          "target": "cor PowerQPresBqo"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_56_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_62_decision.context.json"
 }

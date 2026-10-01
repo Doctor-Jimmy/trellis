@@ -86,6 +86,7 @@
 | ProperInitialSegment | definition | definition | closed | - | - | InitialSegment |
 | ProperPrefixSet | definition | definition | closed | - | - | Preamble |
 | QuadrupleHomogeneous | lemma | proof | open | - | Homogeneous quadruples | CardinalityFrontIsFront, NashWilliams |
+| RadoEmbedding | theorem | proof | open | - | Rado embedding | InfiniteSetEnumeration, PowerWqoBadPairSequence, QuadrupleHomogeneous, RadoOrder, RelationEmbedding, TripleHomogeneous |
 | RadoOrder | definition | definition | closed | - | Rado order | IncreasingPair |
 | Ray | definition | definition | closed | - | - | Preamble |
 | RelationEmbedding | definition | definition | closed | - | Relation embedding | Preamble |
@@ -106,4 +107,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 102 nodes | **Closed:** 55 | **Open:** 47
+**Total:** 103 nodes | **Closed:** 55 | **Open:** 48

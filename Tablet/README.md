@@ -93,6 +93,7 @@
 | ProperInitialSegment | definition | - | closed |
 | ProperPrefixSet | definition | - | closed |
 | QuadrupleHomogeneous | proof | Homogeneous quadruples | open |
+| RadoEmbedding | proof | Rado embedding | open |
 | RadoOrder | definition | Rado order | closed |
 | Ray | definition | - | closed |
 | RelationEmbedding | definition | Relation embedding | closed |
@@ -112,4 +113,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 55/102 closed
+**Summary:** 55/103 closed

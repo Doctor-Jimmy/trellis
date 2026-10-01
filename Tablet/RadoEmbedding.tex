@@ -1,0 +1,151 @@
+\begin{theorem}[Rado embedding]
+Let $r$ be a quasi-order on $Q$.  If $r$ is well-quasi-ordered and the
+first-level domination relation $\mathsf{SetDomination}(r)$ on
+$\mathcal P(Q)$ is not well-quasi-ordered, then there is a map
+
+\[
+e:\mathsf{IncreasingPair}\longrightarrow Q
+\]
+
+such that $e$ is a relation embedding from the Rado order to $r$:
+
+\[
+\mathsf{RelationEmbedding}(\mathsf{RadoOrder},r,e).
+\]
+Equivalently, $e$ is injective and, for all increasing pairs $p,q$,
+\[
+\mathsf{RadoOrder}(p,q)\quad\Longleftrightarrow\quad r(e(p),e(q)).
+\]
+\end{theorem}
+\begin{proof}
+By the bad-witness characterization \noderef{PowerWqoBadPairSequence},
+the hypothesis that $\mathsf{SetDomination}(r)$ is not well-quasi-ordered
+gives a map $f:\mathsf{IncreasingPair}\to Q$ satisfying
+\noderef{BadPairSequence}:
+\[
+ m<n<l\quad\Longrightarrow\quad
+ \neg r\bigl(f(m,n),f(n,l)\bigr).
+\]
+We use the two finite homogeneous consequences of Nash--Williams,
+namely \noderef{TripleHomogeneous} and
+\noderef{QuadrupleHomogeneous}, exactly as in the paper.
+
+Color every three-element subset $\{i,j,k\}$, written with
+$i<j<k$, by $1$ when
+\[
+r\bigl(f(i,j),f(i,k)\bigr)
+\]
+holds, and by $0$ otherwise.  Apply \noderef{TripleHomogeneous} to the
+whole set of natural numbers.  We obtain an infinite set $N$ on which
+the color is constant.  The constant color cannot be $0$: fix any
+$i\in N$ and enumerate the infinite tail $N/i$ increasingly, as allowed
+by \noderef{InfiniteSetEnumeration}.  The resulting sequence
+$t\mapsto f(i,n_t)$ has no forward related pair, because its two terms
+at indices $u<v$ occur in the colored triple
+$i<n_u<n_v$.  This contradicts $h_Q$, since
+$\mathsf{WellQuasiOrdered}(r)$ means that every sequence has indices
+$u<v$ with related values.  Thus every triple in $N$ has color $1$:
+\[
+i<j<k\text{ in }N\quad\Longrightarrow\quad
+r\bigl(f(i,j),f(i,k)\bigr).
+\tag{1}
+\]
+
+Now color every four-element subset $\{i,j,k,l\}$ of $N$, with
+$i<j<k<l$, by $1$ when
+\[
+r\bigl(f(i,j),f(k,l)\bigr)
+\]
+holds, and by $0$ otherwise.  Applying
+\noderef{QuadrupleHomogeneous} gives an infinite $M\subseteq N$ on
+which this color is constant.  The constant cannot be $0$.  Indeed,
+choose successively pairs
+\[
+i_0<j_0<i_1<j_1<i_2<j_2<\cdots
+\]
+from $M$.  If the color were $0$, then for every $u<v$ the quadruple
+$i_u<j_u<i_v<j_v$ would give
+\[
+\neg r\bigl(f(i_u,j_u),f(i_v,j_v)\bigr),
+\]
+so the sequence $u\mapsto f(i_u,j_u)$ would contradict $h_Q$.  Hence
+\[
+i<j<k<l\text{ in }M\quad\Longrightarrow\quad
+r\bigl(f(i,j),f(k,l)\bigr).
+\tag{2}
+\]
+
+Let $a=\min M$ and put $X=M\setminus\{a\}$.  This is infinite; choose
+an increasing enumeration $x:\mathbb N\to X$ using
+\noderef{InfiniteSetEnumeration}.  For an increasing pair
+$p=(i,j)$, define
+\[
+e(p)=f\bigl(x(i),x(j)\bigr).
+\]
+The inequalities needed to form the pair on the right follow from the
+strict increase of $x$.
+
+We first prove preservation of the Rado order, using the definition
+\noderef{RadoOrder}.  If $p=(i,j)$ and $q=(k,l)$ have $i=k$ and
+$j\leq l$, then either $j=l$, in which case reflexivity of the
+quasi-order gives $r(e(p),e(q))$, or $j<l$, in which case (1) gives
+$r(f(x(i),x(j)),f(x(i),x(l)))$.  If instead $j<k$, then
+$x(i)<x(j)<x(k)<x(l)$, so (2) gives
+$r(e(p),e(q))$.  Therefore
+\[
+\mathsf{RadoOrder}(p,q)\Longrightarrow r(e(p),e(q)).
+\tag{3}
+\]
+
+For reflection, assume $r(e(p),e(q))$, where $p=(i,j)$ and $q=(k,l)$.
+Suppose that $\mathsf{RadoOrder}(p,q)$ fails.  By the two clauses in
+\noderef{RadoOrder}, this means
+\[
+k\leq j\quad\text{and}\quad (i\neq k\ \text{or}\ l<j).
+\tag{4}
+\]
+There are three cases.  If $l<j$, choose any $n>j$.  The Rado order has
+$(k,l)\leq(j,n)$ by its second clause.  Preservation (3) and
+transitivity therefore give
+\[
+r\bigl(f(x(i),x(j)),f(x(j),x(n))\bigr),
+\]
+contradicting the badness of $f$ at the increasing triple
+$x(i)<x(j)<x(n)$.
+
+Assume next that $l\geq j$ and $i<k$.  Then
+$(i,k)\leq(i,j)$ by the first Rado clause.  Preservation followed by
+the assumed relation gives
+\[
+r\bigl(f(x(i),x(k)),f(x(k),x(l))\bigr),
+\]
+again contradicting badness at $x(i)<x(k)<x(l)$.
+
+The remaining possibility in (4) is $l\geq j$ and $k<i$.  Since
+$a<x(k)<x(i)$, the pair $(a,x(k))$ is an increasing pair and
+$(a,x(k))\leq(x(i),x(j))$ by the second Rado clause.  Preservation and
+transitivity now give
+\[
+r\bigl(f(a,x(k)),f(x(k),x(l))\bigr),
+\]
+contradicting badness at $a<x(k)<x(l)$.  All cases are impossible, so
+\[
+r(e(p),e(q))\Longrightarrow\mathsf{RadoOrder}(p,q).
+\tag{5}
+\]
+
+It remains to check injectivity.  If $e(p)=e(q)$, reflexivity of $r$
+gives both $r(e(p),e(q))$ and $r(e(q),e(p))$.  By (5), both Rado
+relations hold.  The two-clause definition of the Rado order is
+antisymmetric: a cross-clause relation $p\leq q$ cannot be reversed,
+and if the first clause holds in both directions then the first
+coordinates agree and antisymmetry of $\leq$ on $\mathbb N$ gives equality
+of the second coordinates.  Hence $p=q$.  Thus $e$ is injective.
+
+Combining injectivity with (3) and (5), and unfolding
+\noderef{RelationEmbedding}, proves
+\[
+\mathsf{RelationEmbedding}(\mathsf{RadoOrder},r,e).
+\]
+This is the embedding asserted in lines 985--987 of the paper.
+\end{proof}
