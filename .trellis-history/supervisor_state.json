@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 275,
+  "event_count": 278,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -951,6 +951,7 @@
     "9eba7579ba7ea815": "864654391bdeecc4fdd59f48aa7fec9b5151a14307c053da83e096243aee669b",
     "9eeea050cc68c528": "{\"own_tex\":\"1e6139ce363d203076103a20b47859ac689f2d1cbf5778c93eff4495707d1c12\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "9f0263c4cc3ce786": "569a996d72519281abb569b80e144d8dee16d7e500491cebf4a1e96ae65fef59",
+    "9f334c0feaf76899": "sound-stagnation-window: no Sound progress for >= 5 snapshots (theorem-stating)",
     "9f356f8720d2a7f2": "f4779a71ea8e19e4fe647f200b48399ebd853b1915b0c63ae63dad30f37eedb3",
     "9f64042d8f94c8b8": "7626d386b0b7f4c7d15e0b1eb30868a5fdd7571c704ee7bef0b9b18554623d33",
     "9f81889a0f42abb0": "7e1cd664249fc935ed91a63bf88c9412f4b97909791f3e6928638bf307bfb095",
@@ -59676,7 +59677,7 @@
     "committed": {
       "$r": "ea2fd6fbf5cc5dbb"
     },
-    "cycle": 51,
+    "cycle": 52,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -59691,7 +59692,65 @@
     "assumption_authoring": null,
     "attempt": 0,
     "audit_burst_retry_count": 0,
-    "audit_plan": null,
+    "audit_plan": {
+      "cone_clean_node": null,
+      "initial_plan": false,
+      "need_input_audit": false,
+      "probe_paths": [
+        ".trellis/stuck-math-audit/cycle-52-request-226/orbit_block_coverage.lean",
+        ".trellis/stuck-math-audit/cycle-52-request-226/subfront_counterexample.lean"
+      ],
+      "report": "## Claim being audited\n\nThe sound-stagnation trigger is real, but it does not show that `OrbitBlockCoverage` or the orbit-block strategy is mathematically stuck. The current lane state contains 83 ordinary open proof nodes recorded as Soundness obligations, while only `OrbitBlockCoverage` is presently `soundness: fail`. Five repaired nodes retain historical `ReviewerPinnedFail` records: `OrbitEmbedding`, `FrontRayClosure`, `InfiniteSetEnumeration`, `NashWilliams`, and `OrbitBlockCoverage`. In cycles 39--51 the first four were edited in response to their rejections, but no fresh Sound approval has yet replaced those records. This is coupled to a more fundamental gate problem: four definite correspondence failures and four definite substantiveness failures are still live, and `PROCESS_RULES.md` says requested Sound re-verification waits until all statement lanes are clear across the run. The route should therefore stop spending verification-only cycles hoping that a particular Sound request will be selected, repair and reverify the eight statement-lane blockers, and then drain the remembered Sound requests.\n\nThe active orbit claim itself is correct and should not be restructured. At paper lines 1794--1798, the map used in `EmapLemma` is defined on the initial segment below `G(0)` and on the unique half-open block `[G(n),G(n+1))`; this is exactly what `OrbitBlockCoverage` states. The probe `orbit_block_coverage.lean` proves the current signature from `OrbitUnbounded` and `OrbitEmbedding`, including the successor-witness conversion, least-index predecessor case, and both uniqueness inequalities. Thus the reviewer's pending repair of `OrbitBlockCoverage.tex` is the right local action: cite `OrbitPoint` and `OrbitBlock`, rule out an unboundedness witness at index zero, split the least-index lower-bound proof at zero/successor, and argue uniqueness in both index orders. No helper, statement change, or edit to the four orbit support nodes is warranted.\n\nThere is, however, one false support statement that must be repaired before treating the Nash--Williams package as ready. The current `SubFrontCharacterization` says, for an arbitrary fixed `Y`,\n\n```lean\nFront F' Y <-> exists Z, Z \u2286 X and Z.Infinite and F' = FrontRestrict F Z.\n```\n\nThe right side is independent of `Y`. Taking `F = CardinalityFront 1 Set.univ`, `F' = F`, and `Y = empty`, the right side holds with `Z = Set.univ`, while the left side contradicts the `Front.infinite_base` field. The current-source probe `subfront_counterexample.lean` kernel-checks this derivation. The paper proposition at lines 1204--1227 existentially quantifies the base of the sub-front; it does not assert frontness on an unrelated prescribed base. The faithful interface is therefore `(exists Y, Front F' Y) <-> exists Z, Z \u2286 X and Z.Infinite and F' = FrontRestrict F Z` (under `F' \u2286 F`). This is a signature repair, not a new helper.\n\nThe repaired `NashWilliams.tex` also still makes an invalid jump at the nested diagonal step. Applying the induction hypothesis to the full ray `F_(n_k)` can return a restriction base anywhere in `X/n_k`; it does not justify demanding a base inside the already prescribed tail `X_(k-1)/n_k`. Two arbitrary infinite subsets of a tail can be disjoint, so intersecting the returned base with the prescribed tail is not a remedy. As in the paper at lines 1242--1253, first form `K_k = F_(n_k) | (X_(k-1)/n_k)`, use `FrontRestriction` to make `K_k` a front, note that its prefix tree is a subtree of the ray tree and hence has rank below `F`, and apply the induction hypothesis to `K_k` and the restricted coloring. The corrected sub-front characterization then returns `X_k \u2286 X_(k-1)/n_k`. This repair can remain inside `NashWilliams.tex`; no additional wrapper node is needed.\n\nThe remaining statement failures divide cleanly. `BadSuperToBase` and `PerfectSuperToBase` genuinely mismatch their TeX: their Lean conclusions produce an arbitrary witness with the desired properties but omit the `SuperSequenceExtension` value equation that identifies it as the canonical extension claimed in prose. Strengthen those two Lean conclusions with that equation rather than weakening the paper-facing TeX. `FrontPrefixUnique.tex` must state its local `Front`, `IncSeq`, and two `FrontPrefix` hypotheses explicitly instead of citing theorem-like `FrontPrefixExists` for hypotheses. `PerfectMultiRestrict.tex` still says to evaluate at `x composed with z`; after the cycle-7 restriction repair it must say `z composed with x`. By contrast, the old substantive objections to `PerfectSuperToMulti`, `ShiftDichotomy`, and `PowerPresentationEqEquivalence` have already been overtaken by current source: restriction is now fixed-left composition, and `PowerPresentationEq.tex` no longer calls the recursively defined relation an equivalence. Those nodes need fresh statement-lane verdicts, not another redesign.\n\nThere is no basis for a cone clean or broad node deletion. The previous hereditary-countable coverage plan is fully completed and should remain dismissed. The successful route is a bounded statement-interface repair, followed by explicit statement-lane clearance and then fresh Sound certification of the already repaired packages. The Sound task should remain open until the returned verifier artifact names the requested node; approvals of other queued nodes do not discharge these five historical failures.",
+      "revision_audit": false,
+      "route_tex": "",
+      "tasks": [
+        {
+          "body": "Carry out the already-dispatched edit only in `Tablet/OrbitBlockCoverage.tex`. Keep the Lean signature and imports unchanged. Cite `OrbitPoint` when identifying `G(n)` with the iterate and `OrbitBlock` when unpacking the two inequalities. From `OrbitUnbounded`, obtain `r` with `l < G(r)`, rule out `r = 0` using `G(0) <= l`, and write `r = m+1`. For the least `n` with `l < G(n+1)`, prove `G(n) <= l` separately for `n=0` and `n=t+1`. Prove uniqueness in both possible strict index orders using monotonicity from `OrbitEmbedding`. Add no helper and do not edit the support nodes. Defer its fresh Sound request until the global statement lanes in the later tasks are clear.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "finish-orbit-block-coverage",
+          "title": "Finish the orbit-block prose repair"
+        },
+        {
+          "body": "Replace the false `SubFrontCharacterization` signature by the paper-faithful existential-base equivalence: under `Front F X` and `F' \u2286 F`, `(\u2203 Y, Front F' Y) \u2194 \u2203 Z, Z \u2286 X \u2227 Z.Infinite \u2227 F' = FrontRestrict F Z`. Update its TeX proof accordingly, including the trivial-front case. Then update `NashWilliams.tex` to use this interface. At recursive stage `k`, do not apply the induction hypothesis to the full ray and then demand a specially located base. Let `A_k = X_(k-1)/n_k`, form `K_k = FrontRestrict (F_(n_k)) A_k`, use `FrontRestriction`, explain `rank(K_k) <= rank(F_(n_k)) < rank(F)`, and apply the induction hypothesis to `K_k` with the coloring restricted to `K_k`. Use the corrected characterization to obtain `X_k \u2286 A_k` and identify the resulting restriction with `F_(n_k)|X_k`. Keep the `NashWilliams` target signature fixed and add no wrapper node.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "repair-subfront-and-nash-diagonal",
+          "title": "Repair the sub-front interface and Nash diagonal"
+        },
+        {
+          "body": "Strengthen `BadSuperToBase` and `PerfectSuperToBase` so the existential witness also carries the same front-prefix value equation returned by `SuperSequenceExtension`; this identifies the witness as the canonical extension claimed by each TeX node. Preserve the bad/perfect conclusions. Rewrite `FrontPrefixUnique.tex` to state explicitly that `F` is a front on `X`, `x` is an increasing enumeration, and `s,t` both satisfy `FrontPrefix F _ x`; cite `FrontPrefix` and `Front` at their uses rather than borrowing hypotheses from `FrontPrefixExists`. Finally change the one stale phrase in `PerfectMultiRestrict.tex` from evaluation at `x composed with z` to evaluation at the current fixed-left restriction `z composed with x`, using `RestrictionShift`.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "repair-statement-correspondence",
+          "title": "Repair the remaining statement mismatches"
+        },
+        {
+          "body": "After the edits above, request fresh correspondence and substantiveness verdicts until no statement-lane failure remains. The exact current frontier is `BadSuperToBase`, `FrontPrefixUnique`, `PerfectMultiRestrict`, `PerfectSuperToBase`, `PerfectSuperToMulti`, `PowerPresentationEqEquivalence`, `ShiftDichotomy`, and `SubFrontCharacterization`. Re-evaluate current source rather than repeating the cycle-6/cycle-12 reasons: `MultiSequenceRestrict` is now `h(z composed with x)`, the dependent perfect/dichotomy statements use that orientation, and `PowerPresentationEq.tex` now only defines the matching relation. Do not weaken these true paper claims merely to clear the lane. This task is complete only when all eight have current pass verdicts.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "clear-statement-lane-surface",
+          "title": "Clear all eight statement-lane blockers"
+        },
+        {
+          "body": "Once the statement-lane surface is clear, request fresh Sound verification for the repaired packages, respecting dependencies: first `OrbitEmbedding`, then `OrbitUnbounded` and the repaired `OrbitBlockCoverage`; separately `FrontRayClosure` and `InfiniteSetEnumeration`; finally the structurally repaired `NashWilliams`. `OrbitEmbedding`, `FrontRayClosure`, and `InfiniteSetEnumeration` should be reverified as currently written rather than edited again unless a fresh verifier identifies a new concrete gap. Keep this task undismissed until the returned Sound artifact actually names each requested node and records a pass; a dispatch that certifies some other queued node is useful global progress but does not clear the historical `ReviewerPinnedFail` for these nodes.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "close-pinned-soundness-records",
+          "title": "Reverify the repaired Sound packages"
+        }
+      ],
+      "trigger_at_write": {
+        "$s": "9f334c0feaf76899"
+      },
+      "written_at_cycle": 52,
+      "written_by_request": 226
+    },
     "cleanup_active_task": null,
     "cleanup_audit_burst_count": 0,
     "cleanup_audit_round": 1,
@@ -60438,9 +60497,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 51,
+    "cycle": 52,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 51,
+    "cycles_since_clean": 52,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -61171,7 +61230,7 @@
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
     "last_sound_response_cycle": 51,
-    "last_stuck_math_audit_dispatched_cycle": 30,
+    "last_stuck_math_audit_dispatched_cycle": 52,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
     "latest_corr_review_nodes": [],
@@ -61424,7 +61483,7 @@
       "paper_focus_ranges": [
         {
           "end_line": 1815,
-          "reason": "The manuscript defines the orbit-block cases used by the generalized-shift map and checks the initial segment and each interval [G(n),G(n+1)).",
+          "reason": "The paper defines the initial segment and the half-open orbit blocks [G(n),G(n+1)) used in the generalized-shift construction.",
           "start_line": 1794
         }
       ],
@@ -61470,10 +61529,10 @@
       }
     },
     "previous_substantiveness_lane_findings": {},
-    "process_memory_seq": 10,
+    "process_memory_seq": 12,
     "progress_history": {
-      "last_dispatched_index": 28,
-      "next_index": 51,
+      "last_dispatched_index": 50,
+      "next_index": 52,
       "snapshots": [
         {
           "present": [
@@ -64296,6 +64355,15 @@
             "$r": "9550d64858cb4220"
           },
           "snapshot_index": 50
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "9550d64858cb4220"
+          },
+          "snapshot_index": 51
         }
       ]
     },
@@ -64304,9 +64372,9 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 225,
+    "request_seq": 227,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Repair only Tablet/OrbitBlockCoverage.tex; keep its Lean theorem signature and imports unchanged, and do not add helpers or edit OrbitBlock, OrbitPoint, OrbitUnbounded, or OrbitEmbedding. Cite \\noderef{OrbitBlock} when unpacking the two inequalities in the block predicate, and cite \\noderef{OrbitPoint} when identifying the local notation G(n)=g^{[n]}(k) with OrbitPoint(g,k,n). In the branch l >= G(0), OrbitUnbounded gives an index r with l < OrbitPoint(g,k,r); explicitly rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, write r=m+1, and obtain l < G(m+1). Choose the least n with this upper-bound property. Prove its lower bound by cases: n=0 follows from G(0) <= l, while n=t+1 follows because minimality makes t fail the property, so not (l < G(t+1)) and hence G(n) <= l. For uniqueness, apply the OrbitBlock definition to both candidates and use OrbitEmbedding: if n<m, then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l; handle the opposite ordering symmetrically. Preserve the existing OrbitUnbounded and OrbitEmbedding citations and give a complete non-SKETCH proof.",
+    "reviewer_comments": "Work only on Tablet/OrbitBlockCoverage.tex in this burst. Keep the Lean signature and imports unchanged, add no helper, and do not edit the orbit support nodes. Follow audit task finish-orbit-block-coverage: cite \\noderef{OrbitPoint} when identifying G(n)=g^{[n]}(k) with OrbitPoint(g,k,n), and cite \\noderef{OrbitBlock} when unpacking the block inequalities. In the branch l >= G(0), apply \\noderef{OrbitUnbounded} to get r with l < OrbitPoint(g,k,r), rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, and write r=m+1 to obtain l < G(m+1). Choose the least n with l < G(n+1), and prove G(n) <= l by cases: n=0 uses G(0) <= l; n=t+1 uses minimality to obtain not (l < G(t+1)) and hence G(n) <= l. For uniqueness, unpack both OrbitBlock predicates and use \\noderef{OrbitEmbedding}; if n<m then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l, with the reverse order handled symmetrically. Give a complete non-SKETCH proof. Do not request fresh Sound verification yet: the audit defers it until the global statement-lane surface is clear.",
     "reviewer_requested_sound_verifier_nodes": [
       "BlockSigmaIntertwines",
       "FrontRayClosure",
@@ -65602,7 +65670,9 @@
       "last_reviewer_lean_product": null,
       "need_input_audit": null,
       "revision_planning": null,
-      "trigger": "sound-stagnation-window: no Sound progress for >= 5 snapshots (theorem-stating)",
+      "trigger": {
+        "$s": "9f334c0feaf76899"
+      },
       "trigger_blockers": [
         {
           "deferred": false,
@@ -67251,30 +67321,7 @@
       "TildeFSingleton": "Pass",
       "TripleHomogeneous": "Pass"
     },
-    "superseded_audit_plan": {
-      "cone_clean_node": null,
-      "initial_plan": true,
-      "need_input_audit": false,
-      "probe_paths": [
-        ".trellis/stuck-math-audit/cycle-30-request-154/hereditary_wellfounded_composition.lean"
-      ],
-      "report": "## Claim being audited\n\nThe only configured target without a covering node is still `thm BqoHerCtblWellF`. Progress against the previous plan is complete through its first three stages: `BqoImpliesWqo` and `BadMultiToNontrivialSuper` were added at cycle 27, `BqoHerCtblWqo` was added and claimed `thm BqoHerCtblWqo` at cycle 28, and `HerCtblWqoIffWellFounded` was added at cycle 29. Those tasks remain properly dismissed. In the current lane data, both `BqoHerCtblWqo` and `HerCtblWqoIffWellFounded` are Lean-closed and pass correspondence and substantiveness, so neither their statements nor the hereditary-tail construction should be reopened.\n\nThe paper route at `paper/paper.tex` lines 1592-1595 now has a literal two-edge realization in the Tablet. `BqoHerCtblWqo` states `Bqo r <-> WellQuasiOrdered (HerCtblRel r)`. `HerCtblWqoIffWellFounded` states that the latter is equivalent to well-foundedness of `fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a`. Its orientation is already the one needed by Mathlib: a descending chain has its later term related by this strict part to its earlier term. A current-source probe importing only these two nodes proves the exact target by `(BqoHerCtblWqo r).trans (HerCtblWqoIffWellFounded r)` and exits successfully.\n\nThe remaining construction is therefore one sole covering node, `BqoHerCtblWellF`, attached directly to `BqoHerCtblWqo` and `HerCtblWqoIffWellFounded`. It should state the exact universe-polymorphic equivalence under `[IsPreorder Q r]`, claim only `thm BqoHerCtblWellF`, and use equivalence transitivity. Its TeX proof should spell out both directions of that composition, cite both support nodes, identify the strict relation and its argument order, and be complete and non-`SKETCH`. It must not repeat the ULift-indexed tail argument, add another helper, or create a second target wrapper.\n\nThis is also the complete remaining work order: add and verify that target node, then dismiss the live plan. The other correspondence, substantiveness, and soundness items in the global blocker packet concern already-present nodes and are lane work; they do not call for replacement statements or additional nodes on the route to this uncovered target.",
-      "revision_audit": false,
-      "route_tex": "",
-      "tasks": [
-        {
-          "body": "Carry forward the sole undismissed task, now that both support equivalences exist. Add exactly one proof-bearing node `BqoHerCtblWellF`, importing and attaching directly to `BqoHerCtblWqo` and `HerCtblWqoIffWellFounded`, and make it the sole node claiming `thm BqoHerCtblWellF`. Its exact Lean statement should be universe-polymorphic: `theorem BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)`. Close it with `(BqoHerCtblWqo r).trans (HerCtblWqoIffWellFounded r)` (or the same composition written in two directions). In the paired TeX theorem, say that a quasi-order is BQO iff its hereditary countable nonempty hierarchy is well-founded; explicitly define the strict-part orientation as `HerCtblRel(r)(a,b)` and not `HerCtblRel(r)(b,a)`, and explain both implications by first using `BqoHerCtblWqo` and then `HerCtblWqoIffWellFounded`, or conversely. Cite both nodes, keep the proof complete and non-`SKETCH`, obey the single `-- BODY` boundary, and do not duplicate the tail construction or add any helper or wrapper node.",
-          "dismissed": true,
-          "dismissed_at_cycle": 31,
-          "dismissed_reason": "The worker added BqoHerCtblWellF as the sole covering node with the exact target statement and complete proof; the paper-faithfulness verifier approved the target package, so the coverage plan is complete.",
-          "id": "hereditarily-countable-targets",
-          "title": "Cover the hereditary well-founded equivalence"
-        }
-      ],
-      "trigger_at_write": "coverage re-planning: 1 configured target(s) with no covering node and 0 covered without a real (non-SKETCH) NL proof \u2014 assess the current plan and re-plan the route to full coverage",
-      "written_at_cycle": 30,
-      "written_by_request": 154
-    },
+    "superseded_audit_plan": null,
     "tablet_target": "lean",
     "target_claims": {
       "$r": "8b8358bcaa735e43"

@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "OrbitBlockCoverage remains an unchanged, repairable soundness failure. Route its proof package back to the worker for a citation-complete repair before requesting another soundness pass.",
-    "comments": "Repair only Tablet/OrbitBlockCoverage.tex; keep its Lean theorem signature and imports unchanged, and do not add helpers or edit OrbitBlock, OrbitPoint, OrbitUnbounded, or OrbitEmbedding. Cite \\noderef{OrbitBlock} when unpacking the two inequalities in the block predicate, and cite \\noderef{OrbitPoint} when identifying the local notation G(n)=g^{[n]}(k) with OrbitPoint(g,k,n). In the branch l >= G(0), OrbitUnbounded gives an index r with l < OrbitPoint(g,k,r); explicitly rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, write r=m+1, and obtain l < G(m+1). Choose the least n with this upper-bound property. Prove its lower bound by cases: n=0 follows from G(0) <= l, while n=t+1 follows because minimality makes t fail the property, so not (l < G(t+1)) and hence G(n) <= l. For uniqueness, apply the OrbitBlock definition to both candidates and use OrbitEmbedding: if n<m, then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l; handle the opposite ordering symmetrically. Preserve the existing OrbitUnbounded and OrbitEmbedding citations and give a complete non-SKETCH proof.",
+    "reason": "The worker made no Tablet edits, so OrbitBlockCoverage remains the unchanged soundness failure. The active audit confirms this statement is mathematically correct and makes its local prose repair the first required task; route that repair and keep the audit plan active.",
+    "comments": "Work only on Tablet/OrbitBlockCoverage.tex in this burst. Keep the Lean signature and imports unchanged, add no helper, and do not edit the orbit support nodes. Follow audit task finish-orbit-block-coverage: cite \\noderef{OrbitPoint} when identifying G(n)=g^{[n]}(k) with OrbitPoint(g,k,n), and cite \\noderef{OrbitBlock} when unpacking the block inequalities. In the branch l >= G(0), apply \\noderef{OrbitUnbounded} to get r with l < OrbitPoint(g,k,r), rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, and write r=m+1 to obtain l < G(m+1). Choose the least n with l < G(n+1), and prove G(n) <= l by cases: n=0 uses G(0) <= l; n=t+1 uses minimality to obtain not (l < G(t+1)) and hence G(n) <= l. For uniqueness, unpack both OrbitBlock predicates and use \\noderef{OrbitEmbedding}; if n<m then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l, with the reverse order handled symmetrically. Give a complete non-SKETCH proof. Do not request fresh Sound verification yet: the audit defers it until the global statement-lane surface is clear.",
     "task_blocker_ids": [
       "soundness:node:OrbitBlockCoverage:sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef"
     ],
@@ -22,12 +22,16 @@
       {
         "start_line": 1794,
         "end_line": 1815,
-        "reason": "The manuscript defines the orbit-block cases used by the generalized-shift map and checks the initial segment and each interval [G(n),G(n+1))."
+        "reason": "The paper defines the initial segment and the half-open orbit blocks [G(n),G(n+1)) used in the generalized-shift construction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), partitions the natural numbers into the initial segment below G(0) and the intervals G(n)<=l<G(n+1), and uses both inequalities to prove that the resulting map is increasing. The requested repair makes the tablet's supporting coverage lemma justify that same partition line by line."
+      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), separates l<G(0) from the intervals G(n)<=l<G(n+1), and uses the lower and upper block inequalities in the increasingness proof. The audit's probe confirms that the tablet coverage lemma has this correct mathematical content; only its line-by-line prose and dependency citations are incomplete."
+    },
+    "stuck_math_audit": {
+      "notes": "Keep the active audit plan and its five tasks. This burst executes the first task, finish-orbit-block-coverage, because the worker made no edits and the audit explicitly confirms the orbit claim is true and locally repairable. Do not dismiss any audit task, request Sound verification, or broaden to the SubFront/Nash statement repair until the worker has completed this orbit prose edit; after a changed fingerprint, omit the repaired Soundness blocker and return the package to the ordinary lanes.",
+      "reviewer_lean_product": null
     }
   },
   "response": {
@@ -39,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/OrbitBlockCoverage.tex; keep its Lean theorem signature and imports unchanged, and do not add helpers or edit OrbitBlock, OrbitPoint, OrbitUnbounded, or OrbitEmbedding. Cite \\noderef{OrbitBlock} when unpacking the two inequalities in the block predicate, and cite \\noderef{OrbitPoint} when identifying the local notation G(n)=g^{[n]}(k) with OrbitPoint(g,k,n). In the branch l >= G(0), OrbitUnbounded gives an index r with l < OrbitPoint(g,k,r); explicitly rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, write r=m+1, and obtain l < G(m+1). Choose the least n with this upper-bound property. Prove its lower bound by cases: n=0 follows from G(0) <= l, while n=t+1 follows because minimality makes t fail the property, so not (l < G(t+1)) and hence G(n) <= l. For uniqueness, apply the OrbitBlock definition to both candidates and use OrbitEmbedding: if n<m, then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l; handle the opposite ordering symmetrically. Preserve the existing OrbitUnbounded and OrbitEmbedding citations and give a complete non-SKETCH proof.",
+    "comments": "Work only on Tablet/OrbitBlockCoverage.tex in this burst. Keep the Lean signature and imports unchanged, add no helper, and do not edit the orbit support nodes. Follow audit task finish-orbit-block-coverage: cite \\noderef{OrbitPoint} when identifying G(n)=g^{[n]}(k) with OrbitPoint(g,k,n), and cite \\noderef{OrbitBlock} when unpacking the block inequalities. In the branch l >= G(0), apply \\noderef{OrbitUnbounded} to get r with l < OrbitPoint(g,k,r), rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, and write r=m+1 to obtain l < G(m+1). Choose the least n with l < G(n+1), and prove G(n) <= l by cases: n=0 uses G(0) <= l; n=t+1 uses minimality to obtain not (l < G(t+1)) and hence G(n) <= l. For uniqueness, unpack both OrbitBlock predicates and use \\noderef{OrbitEmbedding}; if n<m then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l, with the reverse order handled symmetrically. Give a complete non-SKETCH proof. Do not request fresh Sound verification yet: the audit defers it until the global statement-lane surface is clear.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 51,
+    "cycle": 52,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -57,23 +61,26 @@
     "paper_focus_ranges": [
       {
         "end_line": 1815,
-        "reason": "The manuscript defines the orbit-block cases used by the generalized-shift map and checks the initial segment and each interval [G(n),G(n+1)).",
+        "reason": "The paper defines the initial segment and the half-open orbit blocks [G(n),G(n+1)) used in the generalized-shift construction.",
         "start_line": 1794
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), partitions the natural numbers into the initial segment below G(0) and the intervals G(n)<=l<G(n+1), and uses both inequalities to prove that the resulting map is increasing. The requested repair makes the tablet's supporting coverage lemma justify that same partition line by line.",
+      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), separates l<G(0) from the intervals G(n)<=l<G(n+1), and uses the lower and upper block inequalities in the increasingness proof. The audit's probe confirms that the tablet coverage lemma has this correct mathematical content; only its line-by-line prose and dependency citations are incomplete.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "OrbitBlockCoverage remains an unchanged, repairable soundness failure. Route its proof package back to the worker for a citation-complete repair before requesting another soundness pass.",
-    "request_id": 225,
+    "reason": "The worker made no Tablet edits, so OrbitBlockCoverage remains the unchanged soundness failure. The active audit confirms this statement is mathematically correct and makes its local prose repair the first required task; route that repair and keep the audit plan active.",
+    "request_id": 227,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
-    "stuck_math_audit": null,
+    "stuck_math_audit": {
+      "notes": "Keep the active audit plan and its five tasks. This burst executes the first task, finish-orbit-block-coverage, because the worker made no edits and the audit explicitly confirms the orbit claim is true and locally repairable. Do not dismiss any audit task, request Sound verification, or broaden to the SubFront/Nash statement repair until the worker has completed this orbit prose edit; after a changed fingerprint, omit the repaired Soundness blocker and return the package to the ordinary lanes.",
+      "reviewer_lean_product": null
+    },
     "task_blockers": [
       {
         "deferred": false,
@@ -87,5 +94,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_225_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_227_decision.context.json"
 }
