@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The scheduled Sound pass approves FrontBridgeStep. FrontBridgeTerminal is the next sound-repair-ready obligation, and its current proof has a concrete citation gap plus two asserted proper-prefix facts that are not line-by-line justified.",
-    "comments": "Repair only `Tablet/FrontBridgeTerminal.tex`; preserve the Lean statement, imports, and decomposition. The proof currently says the bridge clauses give the two initial-segment facts and uses the finite tail, but it cites neither `\\noderef{FrontBridge}` nor `\\noderef{InitialSegment}` nor `\\noderef{FrontBridgeTail}`. Add those citations at the corresponding uses. Then make both proper-prefix claims explicit: using the nonemptiness of u from `\\noderef{FrontBridge}`, the increasing enumeration of X from `\\noderef{InfiniteSetEnumeration}`, and the definition of `\\noderef{ProperPrefixSet}`, show that an initial segment of u is an initial segment of range(x), and handle s=u by exhibiting a value above max(u). For t, unfold the finite tail from `\\noderef{FrontBridgeTail}`, identify range(ShiftMap x) using `\\noderef{ShiftMap}`, transfer the initial-segment or exact-tail clause, and exhibit a value after the finite prefix to establish properness. Retain the existing `\\noderef{FiniteShift}` and `\\noderef{ProperPrefixSet}` citations; do not add helpers or change support structure. The relevant paper bridge/terminal construction is line 1570 of `paper/paper.tex`.",
+    "reason": "FrontBridgeTerminal has a current Sound approval. The remaining FreshUnknown FinitePrefixExtension proof has an independently identifiable soundness defect: it uses an increasing-enumeration construction without citing IncSeq and omits the case analysis and witness verification needed for its proper-prefix conclusion.",
+    "comments": "Repair only `Tablet/FinitePrefixExtension.tex`; preserve its Lean statement, imports, and support structure. Cite `\\noderef{IncSeq}` where the constructed map is shown to be an increasing enumeration and retain `\\noderef{ProperPrefixSet}` when converting the explicit cutoff into the conclusion. Split into the empty and nonempty cases. For nonempty s, list its elements increasingly, define the enumeration by those finitely many elements followed by max(s)+1, max(s)+2, and so on, and prove strict increase, the exact range, and that max(s)+1 is a proper-prefix witness. For empty s, explicitly use the identity enumeration, prove it is in IncSeq, identify its range, and give 0 as the proper-prefix witness. Do not leave `enumerate ... then continue` as an assertion, add helpers, or change the theorem/support structure. The paper defines the initial/proper-prefix relation at lines 1078--1080 and identifies infinite subsets with increasing enumerations and finite-prefix basic sets at lines 1264--1267.",
     "task_blocker_ids": [
-      "soundness:node:FrontBridgeTerminal:sound-v2:659088d0b01c2646f6af6cedc8635e25b5ae5c54bbb87c9ffea952d5f280b524"
+      "soundness:node:FinitePrefixExtension:sound-v2:78baed9cc4fa7c1dd8888824083b42f567f261d19f7460c65cf1d21a9e667612"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontBridgeTerminal",
+    "next_active": "FinitePrefixExtension",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -18,14 +18,19 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1570,
-        "end_line": 1570,
-        "reason": "The paper's bridge transition and terminal front-node construction."
+        "start_line": 1078,
+        "end_line": 1080,
+        "reason": "The paper's definition of finite initial and proper prefixes."
+      },
+      {
+        "start_line": 1264,
+        "end_line": 1267,
+        "reason": "The paper's increasing-enumeration representation and finite-prefix basis."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Line 1570 describes the bridge play, including the finite bridge state and the eventual terminal front nodes whose relation is finite shift."
+      "basis_summary": "Lines 1078--1080 define a proper prefix by a cutoff in the larger set. Lines 1264--1267 represent infinite subsets by injective increasing enumerations and identify finite proper-prefix cylinders, which is the construction this support lemma supplies."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -39,10 +44,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontBridgeTerminal.tex`; preserve the Lean statement, imports, and decomposition. The proof currently says the bridge clauses give the two initial-segment facts and uses the finite tail, but it cites neither `\\noderef{FrontBridge}` nor `\\noderef{InitialSegment}` nor `\\noderef{FrontBridgeTail}`. Add those citations at the corresponding uses. Then make both proper-prefix claims explicit: using the nonemptiness of u from `\\noderef{FrontBridge}`, the increasing enumeration of X from `\\noderef{InfiniteSetEnumeration}`, and the definition of `\\noderef{ProperPrefixSet}`, show that an initial segment of u is an initial segment of range(x), and handle s=u by exhibiting a value above max(u). For t, unfold the finite tail from `\\noderef{FrontBridgeTail}`, identify range(ShiftMap x) using `\\noderef{ShiftMap}`, transfer the initial-segment or exact-tail clause, and exhibit a value after the finite prefix to establish properness. Retain the existing `\\noderef{FiniteShift}` and `\\noderef{ProperPrefixSet}` citations; do not add helpers or change support structure. The relevant paper bridge/terminal construction is line 1570 of `paper/paper.tex`.",
+    "comments": "Repair only `Tablet/FinitePrefixExtension.tex`; preserve its Lean statement, imports, and support structure. Cite `\\noderef{IncSeq}` where the constructed map is shown to be an increasing enumeration and retain `\\noderef{ProperPrefixSet}` when converting the explicit cutoff into the conclusion. Split into the empty and nonempty cases. For nonempty s, list its elements increasingly, define the enumeration by those finitely many elements followed by max(s)+1, max(s)+2, and so on, and prove strict increase, the exact range, and that max(s)+1 is a proper-prefix witness. For empty s, explicitly use the identity enumeration, prove it is in IncSeq, identify its range, and give 0 as the proper-prefix witness. Do not leave `enumerate ... then continue` as an assertion, add helpers, or change the theorem/support structure. The paper defines the initial/proper-prefix relation at lines 1078--1080 and identifies infinite subsets with increasing enumerations and finite-prefix basic sets at lines 1264--1267.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 77,
+    "cycle": 78,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,24 +55,29 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontBridgeTerminal",
+    "next_active": "FinitePrefixExtension",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1570,
-        "reason": "The paper's bridge transition and terminal front-node construction.",
-        "start_line": 1570
+        "end_line": 1080,
+        "reason": "The paper's definition of finite initial and proper prefixes.",
+        "start_line": 1078
+      },
+      {
+        "end_line": 1267,
+        "reason": "The paper's increasing-enumeration representation and finite-prefix basis.",
+        "start_line": 1264
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Line 1570 describes the bridge play, including the finite bridge state and the eventual terminal front nodes whose relation is finite shift.",
+      "basis_summary": "Lines 1078--1080 define a proper prefix by a cutoff in the larger set. Lines 1264--1267 represent infinite subsets by injective increasing enumerations and identify finite proper-prefix cylinders, which is the construction this support lemma supplies.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The scheduled Sound pass approves FrontBridgeStep. FrontBridgeTerminal is the next sound-repair-ready obligation, and its current proof has a concrete citation gap plus two asserted proper-prefix facts that are not line-by-line justified.",
-    "request_id": 293,
+    "reason": "FrontBridgeTerminal has a current Sound approval. The remaining FreshUnknown FinitePrefixExtension proof has an independently identifiable soundness defect: it uses an increasing-enumeration construction without citing IncSeq and omits the case analysis and witness verification needed for its proper-prefix conclusion.",
+    "request_id": 296,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -77,15 +87,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:659088d0b01c2646f6af6cedc8635e25b5ae5c54bbb87c9ffea952d5f280b524",
+        "fingerprint": "sound-v2:78baed9cc4fa7c1dd8888824083b42f567f261d19f7460c65cf1d21a9e667612",
         "kind": "Soundness",
         "object": {
-          "node": "FrontBridgeTerminal",
+          "node": "FinitePrefixExtension",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_293_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_296_decision.context.json"
 }
