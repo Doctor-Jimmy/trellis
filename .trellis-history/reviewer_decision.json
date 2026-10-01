@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The audit's front-chain prerequisites and the first three orbit prerequisites now all have current Sound approvals. The repaired block-intertwining proof is the remaining named orbit-chain verification, is requestable now, and matches the paper's calculation. No worker repair or blocker reset is warranted.",
-    "comments": "Request a verifier-only Sound burst for BlockSigmaIntertwines. Verify the current two-case proof against the paper: the initial fixed-point interval, the orbit-block successor placement, the increasing-embedding bound m <= f(m), the iterate-shift induction, and the final equality of the two block formulas. Do not edit Tablet content or assign a worker; the verification request is the warranted route for this repaired node.",
+    "reason": "The audit task is complete: FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, OrbitBlockCoverage, and BlockSigmaIntertwines all have current Sound approvals. I am closing the stale audit plan and resuming the ordinary bottom-up Sound queue with FrontTreeImmediateExtensions, whose direct support is already sound-approved or definitional.",
+    "comments": "Run a verifier-only Sound burst for FrontTreeImmediateExtensions. Preserve the current proof and check its explicit uses of PrefixTree, Front, ProperInitialSegment, and InitialSegment to obtain a one-point extension and the countability conclusion. No worker repair or blocker reset is warranted.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "BlockSigmaIntertwines"
+      "FrontTreeImmediateExtensions"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,19 +20,25 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1794,
-        "end_line": 1833,
-        "reason": "The paper's block-map proof contains the two cases, orbit-block endpoint calculation, and intertwining identity for the next Sound check."
+        "start_line": 1160,
+        "end_line": 1168,
+        "reason": "The paper's prefix-tree/ray identification and strict rank decrease ground the next foundational front-tree Sound check."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines the orbit blocks, proves the initial interval and adjacent-block inequalities, and identifies the two expressions whose equality gives the intertwining law. The current proof preserves those cases and adds explicit citations and inductions for the strict-growth, index, orbit-successor, and iterate-shift steps."
+      "basis_summary": "The cited passage identifies ray trees as successor subtrees of the front prefix tree and uses their strict rank decrease. The current FrontTreeImmediateExtensions proof establishes the corresponding local tree-extension fact from the front and prefix-tree definitions, with all cross-node dependencies explicitly cited."
     },
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage now pass; this transition requests the repaired BlockSigmaIntertwines Sound verdict, the remaining named chain item. No worker repair, reset, structural change, or human input is warranted."
+      "notes": "The audit plan's sole live task is complete: every named Sound-chain node now has a current Sound approval. The plan is dismissed, and ordinary bottom-up Sound verification resumes at FrontTreeImmediateExtensions. No worker repair, reset, structural change, or human input is warranted."
     },
-    "dismissed_tasks": []
+    "dismiss_audit_plan": true,
+    "dismissed_tasks": [
+      {
+        "id": "close-pinned-soundness-records",
+        "reason": "All listed orbit and front-chain nodes now have current Sound approvals, including the repaired BlockSigmaIntertwines node; the certification task is complete."
+      }
+    ]
   },
   "response": {
     "allow_new_obligations": true,
@@ -43,14 +49,19 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Request a verifier-only Sound burst for BlockSigmaIntertwines. Verify the current two-case proof against the paper: the initial fixed-point interval, the orbit-block successor placement, the increasing-embedding bound m <= f(m), the iterate-shift induction, and the final equality of the two block formulas. Do not edit Tablet content or assign a worker; the verification request is the warranted route for this repaired node.",
+    "comments": "Run a verifier-only Sound burst for FrontTreeImmediateExtensions. Preserve the current proof and check its explicit uses of PrefixTree, Front, ProperInitialSegment, and InitialSegment to obtain a one-point extension and the countability conclusion. No worker repair or blocker reset is warranted.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 64,
+    "cycle": 65,
     "decision": "Continue",
     "difficulty_updates": {},
-    "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismiss_audit_plan": true,
+    "dismissed_tasks": [
+      {
+        "id": "close-pinned-soundness-records",
+        "reason": "All listed orbit and front-chain nodes now have current Sound approvals, including the repaired BlockSigmaIntertwines node; the certification task is complete."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -60,31 +71,31 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1833,
-        "reason": "The paper's block-map proof contains the two cases, orbit-block endpoint calculation, and intertwining identity for the next Sound check.",
-        "start_line": 1794
+        "end_line": 1168,
+        "reason": "The paper's prefix-tree/ray identification and strict rank decrease ground the next foundational front-tree Sound check.",
+        "start_line": 1160
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines the orbit blocks, proves the initial interval and adjacent-block inequalities, and identifies the two expressions whose equality gives the intertwining law. The current proof preserves those cases and adds explicit citations and inductions for the strict-growth, index, orbit-successor, and iterate-shift steps.",
+      "basis_summary": "The cited passage identifies ray trees as successor subtrees of the front prefix tree and uses their strict rank decrease. The current FrontTreeImmediateExtensions proof establishes the corresponding local tree-extension fact from the front and prefix-tree definitions, with all cross-node dependencies explicitly cited.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The audit's front-chain prerequisites and the first three orbit prerequisites now all have current Sound approvals. The repaired block-intertwining proof is the remaining named orbit-chain verification, is requestable now, and matches the paper's calculation. No worker repair or blocker reset is warranted.",
-    "request_id": 258,
+    "reason": "The audit task is complete: FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, OrbitBlockCoverage, and BlockSigmaIntertwines all have current Sound approvals. I am closing the stale audit plan and resuming the ordinary bottom-up Sound queue with FrontTreeImmediateExtensions, whose direct support is already sound-approved or definitional.",
+    "request_id": 260,
     "request_sound_verifier_nodes": [
-      "BlockSigmaIntertwines"
+      "FrontTreeImmediateExtensions"
     ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage now pass; this transition requests the repaired BlockSigmaIntertwines Sound verdict, the remaining named chain item. No worker repair, reset, structural change, or human input is warranted.",
+      "notes": "The audit plan's sole live task is complete: every named Sound-chain node now has a current Sound approval. The plan is dismissed, and ordinary bottom-up Sound verification resumes at FrontTreeImmediateExtensions. No worker repair, reset, structural change, or human input is warranted.",
       "reviewer_lean_product": null
     },
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_258_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_260_decision.context.json"
 }

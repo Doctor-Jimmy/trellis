@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 321,
+  "event_count": 324,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -946,7 +946,6 @@
     "9eba7579ba7ea815": "864654391bdeecc4fdd59f48aa7fec9b5151a14307c053da83e096243aee669b",
     "9eeea050cc68c528": "{\"own_tex\":\"1e6139ce363d203076103a20b47859ac689f2d1cbf5778c93eff4495707d1c12\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "9f0263c4cc3ce786": "569a996d72519281abb569b80e144d8dee16d7e500491cebf4a1e96ae65fef59",
-    "9f334c0feaf76899": "sound-stagnation-window: no Sound progress for >= 5 snapshots (theorem-stating)",
     "9f356f8720d2a7f2": "f4779a71ea8e19e4fe647f200b48399ebd853b1915b0c63ae63dad30f37eedb3",
     "9f64042d8f94c8b8": "7626d386b0b7f4c7d15e0b1eb30868a5fdd7571c704ee7bef0b9b18554623d33",
     "9f81889a0f42abb0": "7e1cd664249fc935ed91a63bf88c9412f4b97909791f3e6928638bf307bfb095",
@@ -1084,7 +1083,6 @@
     "b4474bb71fa6d5a1": "{\"own_tex\":\"18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "b454795983492d1b": "74257b30987ae668de1e72a36c95e43d813d1e8b668eece33104da09eada7fbe",
     "b47382c933d45443": "ace3e0eb401c6e16973e341f57f6f0e6ec49582689be709e70f49f92476c76cf",
-    "b47d4174219139ea": "sound-v2:d08e9886961ae21a993ae7a690038ac7691e2d2cc24d6923e2d051385a3c91a9",
     "b49c301db10c0d55": "{\"own_tex\":\"412cc17757f7a76a02418346672178fce9b4d87f2f7658f8b1ba7d1a10945dbc\",\"lean_semantic_closure\":\"9284a168ff6d8548e3e61fb79183f601b5261943d57dcd5dc0dd59c40f4fa546\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "b4b4137caadf0899": "ba91e0336682219edce38f4d6d82416bd2539e85ea7d907c9957497197c93b3c",
     "b4e23f18d0cf1556": "0c9926a12fc8578ddad21242b3c007519fda76109cd8c184db9bb60c574d3f9d",
@@ -59961,7 +59959,7 @@
     "committed": {
       "$r": "afef9337c0d6b817"
     },
-    "cycle": 64,
+    "cycle": 65,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -59976,40 +59974,7 @@
     "assumption_authoring": null,
     "attempt": 0,
     "audit_burst_retry_count": 0,
-    "audit_plan": {
-      "cone_clean_node": null,
-      "initial_plan": false,
-      "need_input_audit": false,
-      "probe_paths": [
-        ".trellis/stuck-math-audit/cycle-57-request-242/block_sigma_checks.lean"
-      ],
-      "report": "## Claim being audited\n\nThe sound-stagnation signal is accurate as a process metric, but the current state no longer exhibits the structural statement-lane problem diagnosed in cycle 52. Every present node now passes Correspondence and Substantiveness, no configured paper target is blocked, and the Sound map contains seven passes, 82 unanswered obligations, and exactly one definite failure: `BlockSigmaIntertwines`. The lack of Sound progress during cycles 52--56 is explained by the necessary statement repairs and then the cycle-56 rejection of this node. It is not evidence that the block-map construction, the Nash--Williams decomposition, or the Tablet DAG must be replaced.\n\nThe current `BlockSigmaIntertwines` statement is true and matches the paper's calculation at lines 1794--1833. The current hypotheses include both `k < g(k)` and the fixed-point condition below `k`; the latter is exactly what makes the initial interval case work. The current-source probe `block_sigma_checks.lean` kernel-checks the exact theorem signature relative to its advertised support nodes. It also checks the implementation detail suppressed by the prose formula: for a point in block `n`, the `Nat.find` inside `BlockSigma` really is `n`. In the noninitial case it derives that `g(l)` lies in block `n+1`, reduces the two sides to\n\n```text\ng^[f(n+1)-n](l)\nand\ng^[f(n+1)-(n+1)](g(l)),\n```\n\nand closes them using `n+1 <= f(n+1)`, natural-number subtraction, and the iterate successor identity. This falsifies any route that changes the theorem signature, `BlockSigma`, or the orbit support merely to address the current rejection.\n\nThe Sound rejection is nevertheless correct about the present TeX proof. It invokes strict increase without citing `IncSeq`; it asserts `n+1 <= f(n+1)` without the short induction; and it calls the orbit recursion and iterate commutation elementary without proving them. The reviewer's already-dispatched repair is complete: cite `IncSeq`; prove `m <= f(m)` by induction, using strict increase in the successor step; cite `OrbitPoint` and unfold the successor iterate to get `G(n+1)=g(G(n))` and `G(n+2)=g(G(n+1))`; and prove `g^[a](g(l))=g^[a+1](l)` by induction on `a`. With `a=f(n+1)-(n+1)`, explicitly derive `a+1=f(n+1)-n`. These additions preserve the paper's two cases and require no helper node.\n\nThe undismissed task from the prior audit also remains mathematically justified, but its dependency order must be updated. `OrbitEmbedding`, `OrbitBlockCoverage`, `FrontRayClosure`, `InfiniteSetEnumeration`, and `NashWilliams` still carry historical `ReviewerPinnedFail` records even though their current TeX proofs contain the requested repairs. `OrbitEmbedding` now supplies both iterate inductions; `OrbitBlockCoverage` supplies the successor witness, least-index split, and two-order uniqueness proof; `FrontRayClosure` checks density, infinitude, both base inclusions, prefix-freeness, and decomposition; and `InfiniteSetEnumeration` supplies the finite-initial-segment and finite-cardinality arguments. The repaired `NashWilliams` now restricts each ray to the prescribed nested tail before induction, as the paper does at lines 1233--1241. Because `SubFrontCharacterization` changed in cycle 54 and is used essentially in that repaired proof, it must receive a fresh Sound pass before `NashWilliams`; this prerequisite was missing from the old task wording.\n\nThere is no basis for a cone clean, retirement, signature weakening, or another helper package. Finish the bounded `BlockSigmaIntertwines.tex` repair, then obtain named Sound results in dependency order: `OrbitEmbedding`, `OrbitUnbounded`, `OrbitBlockCoverage`, `BlockSigmaIntertwines`; separately `FrontRayClosure`, `SubFrontCharacterization`, `NashWilliams`, with `InfiniteSetEnumeration` independent. A verifier pass for some other queued node is useful global progress but does not clear these recorded failures. Once these chains pass, ordinary bottom-up Sound verification can drain the remaining unanswered nodes.",
-      "revision_audit": false,
-      "route_tex": "",
-      "tasks": [
-        {
-          "body": "Carry out the already-dispatched edit only in `Tablet/BlockSigmaIntertwines.tex`. Preserve the Lean signature, imports, and two-case proof. Cite `IncSeq` for strict increase. Prove by induction that every increasing embedding `f` satisfies `m <= f(m)`, then specialize to `m=n+1`. Cite `OrbitPoint` and explicitly unfold the iterate successor rule to obtain `G(n+1)=g(G(n))` and `G(n+2)=g(G(n+1))`. Prove by induction on `a` that `g^[a](g(l))=g^[a+1](l)`. In the block case set `a=f(n+1)-(n+1)`, derive both `a+1=f(n+1)-n` and the two inequalities placing `g(l)` in block `n+1`, and then compare the two displayed `BlockSigma` values. Retain the citations to `OrbitBlockCoverage`, `BlockSigma`, `RightComp`, and `SuccSeq`. Add no helper and change no statement or support node.",
-          "dismissed": true,
-          "dismissed_at_cycle": 58,
-          "dismissed_reason": "The worker completed the prescribed edit in Tablet/BlockSigmaIntertwines.tex, preserving the statement and support structure; deterministic node and full-tablet checks passed.",
-          "id": "finish-block-sigma-intertwines",
-          "title": "Complete the block-shift proof repair"
-        },
-        {
-          "body": "After the BlockSigma prose edit, request fresh Sound verdicts in dependency order. For the orbit package, certify `OrbitEmbedding`, then `OrbitUnbounded`, then `OrbitBlockCoverage`, and finally the repaired `BlockSigmaIntertwines`. For the front package, certify `FrontRayClosure`, then the cycle-54 version of `SubFrontCharacterization`, and then `NashWilliams`; certify `InfiniteSetEnumeration` independently. Reverify the current texts rather than editing them again unless a fresh verifier names a new concrete gap. Keep this task live until the returned Sound artifacts actually name and pass every listed node; unrelated Sound approvals do not discharge their historical `ReviewerPinnedFail` records. Afterward resume the ordinary bottom-up Sound queue rather than creating more theorem-stating infrastructure.",
-          "dismissed": false,
-          "dismissed_at_cycle": null,
-          "dismissed_reason": "",
-          "id": "close-pinned-soundness-records",
-          "title": "Certify the repaired Sound chains"
-        }
-      ],
-      "trigger_at_write": {
-        "$s": "9f334c0feaf76899"
-      },
-      "written_at_cycle": 57,
-      "written_by_request": 242
-    },
+    "audit_plan": null,
     "cleanup_active_task": null,
     "cleanup_audit_burst_count": 0,
     "cleanup_audit_round": 1,
@@ -60242,9 +60207,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 64,
+    "cycle": 65,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 64,
+    "cycles_since_clean": 65,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -60986,7 +60951,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 64,
+    "last_sound_response_cycle": 65,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61303,16 +61268,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "NashWilliams": {
+      "BlockSigmaIntertwines": {
         "v1": {
-          "comments": "No independent blocking gaps found.",
-          "node": "NashWilliams",
+          "comments": "",
+          "node": "BlockSigmaIntertwines",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The natural-language proof rigorously establishes the Nash-Williams conclusion. It justifies the well-founded rank induction and the strict rank decrease of rays, restricts each ray to an infinite diagonal tail before invoking induction, uses the cited sub-front characterization to turn the resulting homogeneous front into a restriction, and completes the increasing diagonal and infinite-pigeonhole argument. The final restriction is shown to be a front and its members are correctly pulled back through the relevant ray alternative. All cross-node dependencies used in the proof are explicitly cited with noderef references."
+            "explanation": "The proof is line-by-line checkable from the cited dependencies: it handles the initial and unique-block cases from OrbitBlockCoverage, uses the specialized block formula from BlockSigma, locates g(l) in the next block using monotonicity and the iterate endpoint identities, proves f(m) >= m, and derives the required iterate-shift equality. All cross-node dependencies used in the proof are explicitly cited with noderef."
           },
-          "summary": "SOUND: the detailed diagonal proof establishes the stated homogeneous sub-front from the cited support nodes."
+          "summary": "SOUND: the detailed two-case argument establishes the block intertwining identity from the stated support nodes and elementary arithmetic/iterate facts."
         }
       }
     },
@@ -61320,17 +61285,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 64,
+      "next_index": 65,
       "snapshots": [
-        {
-          "present": [
-            "Preamble"
-          ],
-          "progressed": [
-            "Preamble"
-          ],
-          "snapshot_index": 0
-        },
         {
           "present": [
             "BadMultiSequence",
@@ -64999,6 +64955,126 @@
             "TildeFSingleton"
           ],
           "snapshot_index": 63
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
+          "snapshot_index": 64
         }
       ]
     },
@@ -65007,17 +65083,19 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 258,
+    "request_seq": 260,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Request a verifier-only Sound burst for BlockSigmaIntertwines. Verify the current two-case proof against the paper: the initial fixed-point interval, the orbit-block successor placement, the increasing-embedding bound m <= f(m), the iterate-shift induction, and the final equality of the two block formulas. Do not edit Tablet content or assign a worker; the verification request is the warranted route for this repaired node.",
+    "reviewer_comments": "Run a verifier-only Sound burst for FrontTreeImmediateExtensions. Preserve the current proof and check its explicit uses of PrefixTree, Front, ProperInitialSegment, and InitialSegment to obtain a one-point extension and the countability conclusion. No worker repair or blocker reset is warranted.",
     "reviewer_requested_sound_verifier_nodes": [
-      "BlockSigmaIntertwines"
+      {
+        "$s": "ba060752f87266a9"
+      }
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
       "BlockSigmaIntertwines": {
-        "$s": "b47d4174219139ea"
+        "$s": "4e7307681b6d3536"
       },
       "BooleanInfinitePigeonhole": {
         "$s": "66f5b021e983ad69"
@@ -65066,29 +65144,14 @@
     "sound_assessments": {
       "BlockSigmaIntertwines": {
         "fingerprints": {
-          "combined_sound_fp": {
-            "$s": "b47d4174219139ea"
-          },
-          "dep_statement_hashes": {
-            "BlockSigma": {
-              "$s": "bc0c5bbd88b7b51f"
-            },
-            "OrbitBlockCoverage": {
-              "$s": "cc56049a9a4ce33f"
-            },
-            "RightComp": {
-              "$s": "b209b94ec41ef5b1"
-            },
-            "SuccSeq": {
-              "$s": "d77ebe27fdd71c40"
-            }
-          },
-          "own_tex_hash": "ed1f98ac903fe44135736000f7bc993be2f8a7a4883d61bf2c7c2d9dd26d8a2a"
+          "$r": "a15be2c6d022c93f"
         },
-        "lane_votes": {},
-        "origin": "ReviewerAction",
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
         "reviewer_action_id": null,
-        "status": "ReviewerPinnedFail"
+        "status": "VerifierPass"
       },
       "BooleanInfinitePigeonhole": {
         "fingerprints": {
@@ -66310,7 +66373,7 @@
       }
     },
     "sound_status": {
-      "BlockSigmaIntertwines": "Fail",
+      "BlockSigmaIntertwines": "Pass",
       "BooleanInfinitePigeonhole": "Pass",
       "FrontRayClosure": "Pass",
       "FrontRestriction": "Pass",
@@ -66328,8 +66391,8 @@
     },
     "stage": "Start",
     "stuck_math_audit": {
-      "active": true,
-      "active_since_cycle": 51,
+      "active": false,
+      "active_since_cycle": 0,
       "assumptions_lane": null,
       "gap_plan_critique": null,
       "gap_research": null,
@@ -66337,938 +66400,8 @@
       "last_reviewer_lean_product": null,
       "need_input_audit": null,
       "revision_planning": null,
-      "trigger": {
-        "$s": "9f334c0feaf76899"
-      },
-      "trigger_blockers": [
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "59bf2e83bd6c6fc1"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BadMultiRestrict",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "28a7c5feae520cf0"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "41cfa12f84c70377"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "493a4f415e39f547"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BadMultiToSuper",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "580a95f19ff1bf7e"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BadSuperRestrict",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:b402066f6f14b69adbf4dadaea4ef9aaff0c3a7c205f934319e93cc8f98a2716",
-          "kind": "Soundness",
-          "object": {
-            "node": "BadSuperToBase",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "881b907d411b3025"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BaseBqoRestriction",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "1bbd4cfa7ef8be47"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BlockSigmaContinuous",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "233cb7e424b86c4c"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BlockSigmaEmbedding",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "b47d4174219139ea"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BlockSigmaIntertwines",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "d6d8d46635239575"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BqoIffGeneralShift",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "0df651cf0c953710"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "BqoImpliesWqo",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "287c276640fc78e3"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "CardinalityFrontIsFront",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "1900c8c66df22c83"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "ConverseGame",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "3d4023d1d5cc0d0a"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "DecidingFront",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "a218eb6defa254cc"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "DecidingValue",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "81d67d6b64ee9752"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "EmapLemma",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "c15913fa7e9896d1"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FinitePrefixExtension",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "724a869c709df6f0"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FirstMovedPoint",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "cf3da6fb47233ede"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FrontBridgeInit",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "d0bbeaee8406888a"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FrontBridgeStep",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "4238703a315f30c3"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FrontBridgeTerminal",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "89447aae968af974"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FrontPrefixExists",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:719bdaa01415af3042b1603150458cbfbe59dfd7b14dbe962046ecb9f31fc34c",
-          "kind": "Soundness",
-          "object": {
-            "node": "FrontPrefixUnique",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "ffa69cfe257be431"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FrontRayClosure",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "ea8f7db52cf0e860"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "ba060752f87266a9"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "d36ae3479ad74413"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "594c04e6462b8895"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "FrontTreeSingleton",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "0cbc5eca8770d881"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "GBetterRelIff",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "a3f7ae9fd4f6f02b"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "HerCtblNodeClosure",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "8102af4c12a6c760"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "IncSeqPointwiseLe",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "c537b0af3e76d429"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "InfiniteSetEnumeration",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "9b2b2dc8d8b0c021"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "MainProp",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:0928d7f082c67b406d54caf698970ea247602ed5142830d32c82cd4046ad74a1",
-          "kind": "Soundness",
-          "object": {
-            "node": "NashWilliams",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "1ee0225c4d17461c"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "NoBadPerfectSuper",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef",
-          "kind": "Soundness",
-          "object": {
-            "node": "OrbitBlockCoverage",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "3161995d95830072"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "OrbitEmbedding",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "cd933185d925fe78"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "OrbitUnbounded",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "632f6b924a41bc5e"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PerfectBaseToSuper",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:25f79faa6141ecfb1421102068a485b8e1112b5877301b9c4d47bdd1b1aa345e",
-          "kind": "Soundness",
-          "object": {
-            "node": "PerfectMultiRestrict",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "88f758e218fce560"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PerfectMultiToSuper",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "dc616bc0cee82de3"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PerfectSuperRestrict",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:fd5f42cae8460f82a0c07c5235691fd9cb07230dd6d6ecf03f62a8ad29da60b0",
-          "kind": "Soundness",
-          "object": {
-            "node": "PerfectSuperToBase",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "c76772bab30dc138"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PerfectSuperToMulti",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "db8396ad9e79a7bf"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerChildSupport",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "7a5b10a6620c1ba8"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerCopiedFailureMove",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "10fdb85e61fdf381"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "5fd62f6199ae512b"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "b2f654651f7bc010"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "86b2632417374ebd"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "cdbd441d274eb2f2"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "9a013b8cdeb9d5ff"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "26207a3e02a7341e"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "55d1a8fd6d560eea"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "2ef4dc83731be63b"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerCopiedSupport",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "6fb4f8db00ed19f4"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "2e7a9f9ae663f9f8"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "cc79197127116931"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "c92d93fd7a69a2a5"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "916083ba2cade6b4"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerCopiedTerminates",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "c68e391b4e3495bd"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "77d96f473077081d"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "aff501ee809b3811"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "50a07aa664204053"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "89fd8712c3b0ab5b"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerMoveInSupport",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "0704d227ffac4678"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "93d700ae7b9523b8"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "3854ae118ee1e14b"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerQPresBqo",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "88f756a124a20182"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerQReflection",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "4d30484334952f49"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerRelCongrLeft",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "0880a7caaacf6766"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerRelCongrRight",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "f20329b623a6a475"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerRelRefl",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "ad2b7a41b0446cc0"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerRelTrans",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "fe53e2ce2b2d9c09"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "6947ec3a7b56b112"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "30346153e8d9fe55"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerShiftIterShift",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "a53f7884e705f66c"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerSupportInvariant",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "ceab3c0d0a6ae01f"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerSupportNonempty",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "4f0c2d7a5d7ca565"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "PowerWqoBadPairSequence",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "7bdb2a16502a15be"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "QuadrupleHomogeneous",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "4c0b63fbbdf3f86d"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "RadoEmbedding",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "42b71886d8531ec3"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "b415d99a5587255c"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "893330a3e72140a0"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "RestrictionShift",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "9bb5c8b0004896e0"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "RmapLemma",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "e21f2400a2830706"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "ShiftDichotomy",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:bff5190c16dd949ab178cfb0c9e4f809abda0375face8908feb008cd37cf8e4c",
-          "kind": "Soundness",
-          "object": {
-            "node": {
-              "$s": "b93919442f024c21"
-            },
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "76c022ed6fc806e8"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "Subarr",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "4f3efa5c8d5f0bf8"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "SuperNW",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": "sound-v2:6dde5e659da901c79c81415684ff1b00f8a519944cdf83efebf85120b0181f0b",
-          "kind": "Soundness",
-          "object": {
-            "node": "SuperSequenceExtension",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "e60f567a9067d59d"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "TildeFAtomIffFront",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "d2e7ab3bc4342b59"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "TildeFFrontEquation",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "47bad7b560a723a1"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "TildeFHerCtbl",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "69c40ce9c1812916"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "TildeFNonfrontEquation",
-            "otype": "node"
-          }
-        },
-        {
-          "deferred": false,
-          "fingerprint": {
-            "$s": "0f037a80fa25e88f"
-          },
-          "kind": "Soundness",
-          "object": {
-            "node": "TripleHomogeneous",
-            "otype": "node"
-          }
-        }
-      ]
+      "trigger": "",
+      "trigger_blockers": []
     },
     "stuck_math_audit_burst_retry_count": 0,
     "substantiveness_approved_fingerprints": {
@@ -67985,59 +67118,32 @@
       "initial_plan": false,
       "need_input_audit": false,
       "probe_paths": [
-        ".trellis/stuck-math-audit/cycle-52-request-226/orbit_block_coverage.lean",
-        ".trellis/stuck-math-audit/cycle-52-request-226/subfront_counterexample.lean"
+        ".trellis/stuck-math-audit/cycle-57-request-242/block_sigma_checks.lean"
       ],
-      "report": "## Claim being audited\n\nThe sound-stagnation trigger is real, but it does not show that `OrbitBlockCoverage` or the orbit-block strategy is mathematically stuck. The current lane state contains 83 ordinary open proof nodes recorded as Soundness obligations, while only `OrbitBlockCoverage` is presently `soundness: fail`. Five repaired nodes retain historical `ReviewerPinnedFail` records: `OrbitEmbedding`, `FrontRayClosure`, `InfiniteSetEnumeration`, `NashWilliams`, and `OrbitBlockCoverage`. In cycles 39--51 the first four were edited in response to their rejections, but no fresh Sound approval has yet replaced those records. This is coupled to a more fundamental gate problem: four definite correspondence failures and four definite substantiveness failures are still live, and `PROCESS_RULES.md` says requested Sound re-verification waits until all statement lanes are clear across the run. The route should therefore stop spending verification-only cycles hoping that a particular Sound request will be selected, repair and reverify the eight statement-lane blockers, and then drain the remembered Sound requests.\n\nThe active orbit claim itself is correct and should not be restructured. At paper lines 1794--1798, the map used in `EmapLemma` is defined on the initial segment below `G(0)` and on the unique half-open block `[G(n),G(n+1))`; this is exactly what `OrbitBlockCoverage` states. The probe `orbit_block_coverage.lean` proves the current signature from `OrbitUnbounded` and `OrbitEmbedding`, including the successor-witness conversion, least-index predecessor case, and both uniqueness inequalities. Thus the reviewer's pending repair of `OrbitBlockCoverage.tex` is the right local action: cite `OrbitPoint` and `OrbitBlock`, rule out an unboundedness witness at index zero, split the least-index lower-bound proof at zero/successor, and argue uniqueness in both index orders. No helper, statement change, or edit to the four orbit support nodes is warranted.\n\nThere is, however, one false support statement that must be repaired before treating the Nash--Williams package as ready. The current `SubFrontCharacterization` says, for an arbitrary fixed `Y`,\n\n```lean\nFront F' Y <-> exists Z, Z \u2286 X and Z.Infinite and F' = FrontRestrict F Z.\n```\n\nThe right side is independent of `Y`. Taking `F = CardinalityFront 1 Set.univ`, `F' = F`, and `Y = empty`, the right side holds with `Z = Set.univ`, while the left side contradicts the `Front.infinite_base` field. The current-source probe `subfront_counterexample.lean` kernel-checks this derivation. The paper proposition at lines 1204--1227 existentially quantifies the base of the sub-front; it does not assert frontness on an unrelated prescribed base. The faithful interface is therefore `(exists Y, Front F' Y) <-> exists Z, Z \u2286 X and Z.Infinite and F' = FrontRestrict F Z` (under `F' \u2286 F`). This is a signature repair, not a new helper.\n\nThe repaired `NashWilliams.tex` also still makes an invalid jump at the nested diagonal step. Applying the induction hypothesis to the full ray `F_(n_k)` can return a restriction base anywhere in `X/n_k`; it does not justify demanding a base inside the already prescribed tail `X_(k-1)/n_k`. Two arbitrary infinite subsets of a tail can be disjoint, so intersecting the returned base with the prescribed tail is not a remedy. As in the paper at lines 1242--1253, first form `K_k = F_(n_k) | (X_(k-1)/n_k)`, use `FrontRestriction` to make `K_k` a front, note that its prefix tree is a subtree of the ray tree and hence has rank below `F`, and apply the induction hypothesis to `K_k` and the restricted coloring. The corrected sub-front characterization then returns `X_k \u2286 X_(k-1)/n_k`. This repair can remain inside `NashWilliams.tex`; no additional wrapper node is needed.\n\nThe remaining statement failures divide cleanly. `BadSuperToBase` and `PerfectSuperToBase` genuinely mismatch their TeX: their Lean conclusions produce an arbitrary witness with the desired properties but omit the `SuperSequenceExtension` value equation that identifies it as the canonical extension claimed in prose. Strengthen those two Lean conclusions with that equation rather than weakening the paper-facing TeX. `FrontPrefixUnique.tex` must state its local `Front`, `IncSeq`, and two `FrontPrefix` hypotheses explicitly instead of citing theorem-like `FrontPrefixExists` for hypotheses. `PerfectMultiRestrict.tex` still says to evaluate at `x composed with z`; after the cycle-7 restriction repair it must say `z composed with x`. By contrast, the old substantive objections to `PerfectSuperToMulti`, `ShiftDichotomy`, and `PowerPresentationEqEquivalence` have already been overtaken by current source: restriction is now fixed-left composition, and `PowerPresentationEq.tex` no longer calls the recursively defined relation an equivalence. Those nodes need fresh statement-lane verdicts, not another redesign.\n\nThere is no basis for a cone clean or broad node deletion. The previous hereditary-countable coverage plan is fully completed and should remain dismissed. The successful route is a bounded statement-interface repair, followed by explicit statement-lane clearance and then fresh Sound certification of the already repaired packages. The Sound task should remain open until the returned verifier artifact names the requested node; approvals of other queued nodes do not discharge these five historical failures.",
+      "report": "## Claim being audited\n\nThe sound-stagnation signal is accurate as a process metric, but the current state no longer exhibits the structural statement-lane problem diagnosed in cycle 52. Every present node now passes Correspondence and Substantiveness, no configured paper target is blocked, and the Sound map contains seven passes, 82 unanswered obligations, and exactly one definite failure: `BlockSigmaIntertwines`. The lack of Sound progress during cycles 52--56 is explained by the necessary statement repairs and then the cycle-56 rejection of this node. It is not evidence that the block-map construction, the Nash--Williams decomposition, or the Tablet DAG must be replaced.\n\nThe current `BlockSigmaIntertwines` statement is true and matches the paper's calculation at lines 1794--1833. The current hypotheses include both `k < g(k)` and the fixed-point condition below `k`; the latter is exactly what makes the initial interval case work. The current-source probe `block_sigma_checks.lean` kernel-checks the exact theorem signature relative to its advertised support nodes. It also checks the implementation detail suppressed by the prose formula: for a point in block `n`, the `Nat.find` inside `BlockSigma` really is `n`. In the noninitial case it derives that `g(l)` lies in block `n+1`, reduces the two sides to\n\n```text\ng^[f(n+1)-n](l)\nand\ng^[f(n+1)-(n+1)](g(l)),\n```\n\nand closes them using `n+1 <= f(n+1)`, natural-number subtraction, and the iterate successor identity. This falsifies any route that changes the theorem signature, `BlockSigma`, or the orbit support merely to address the current rejection.\n\nThe Sound rejection is nevertheless correct about the present TeX proof. It invokes strict increase without citing `IncSeq`; it asserts `n+1 <= f(n+1)` without the short induction; and it calls the orbit recursion and iterate commutation elementary without proving them. The reviewer's already-dispatched repair is complete: cite `IncSeq`; prove `m <= f(m)` by induction, using strict increase in the successor step; cite `OrbitPoint` and unfold the successor iterate to get `G(n+1)=g(G(n))` and `G(n+2)=g(G(n+1))`; and prove `g^[a](g(l))=g^[a+1](l)` by induction on `a`. With `a=f(n+1)-(n+1)`, explicitly derive `a+1=f(n+1)-n`. These additions preserve the paper's two cases and require no helper node.\n\nThe undismissed task from the prior audit also remains mathematically justified, but its dependency order must be updated. `OrbitEmbedding`, `OrbitBlockCoverage`, `FrontRayClosure`, `InfiniteSetEnumeration`, and `NashWilliams` still carry historical `ReviewerPinnedFail` records even though their current TeX proofs contain the requested repairs. `OrbitEmbedding` now supplies both iterate inductions; `OrbitBlockCoverage` supplies the successor witness, least-index split, and two-order uniqueness proof; `FrontRayClosure` checks density, infinitude, both base inclusions, prefix-freeness, and decomposition; and `InfiniteSetEnumeration` supplies the finite-initial-segment and finite-cardinality arguments. The repaired `NashWilliams` now restricts each ray to the prescribed nested tail before induction, as the paper does at lines 1233--1241. Because `SubFrontCharacterization` changed in cycle 54 and is used essentially in that repaired proof, it must receive a fresh Sound pass before `NashWilliams`; this prerequisite was missing from the old task wording.\n\nThere is no basis for a cone clean, retirement, signature weakening, or another helper package. Finish the bounded `BlockSigmaIntertwines.tex` repair, then obtain named Sound results in dependency order: `OrbitEmbedding`, `OrbitUnbounded`, `OrbitBlockCoverage`, `BlockSigmaIntertwines`; separately `FrontRayClosure`, `SubFrontCharacterization`, `NashWilliams`, with `InfiniteSetEnumeration` independent. A verifier pass for some other queued node is useful global progress but does not clear these recorded failures. Once these chains pass, ordinary bottom-up Sound verification can drain the remaining unanswered nodes.",
       "revision_audit": false,
       "route_tex": "",
       "tasks": [
         {
-          "body": "Carry out the already-dispatched edit only in `Tablet/OrbitBlockCoverage.tex`. Keep the Lean signature and imports unchanged. Cite `OrbitPoint` when identifying `G(n)` with the iterate and `OrbitBlock` when unpacking the two inequalities. From `OrbitUnbounded`, obtain `r` with `l < G(r)`, rule out `r = 0` using `G(0) <= l`, and write `r = m+1`. For the least `n` with `l < G(n+1)`, prove `G(n) <= l` separately for `n=0` and `n=t+1`. Prove uniqueness in both possible strict index orders using monotonicity from `OrbitEmbedding`. Add no helper and do not edit the support nodes. Defer its fresh Sound request until the global statement lanes in the later tasks are clear.",
+          "body": "Carry out the already-dispatched edit only in `Tablet/BlockSigmaIntertwines.tex`. Preserve the Lean signature, imports, and two-case proof. Cite `IncSeq` for strict increase. Prove by induction that every increasing embedding `f` satisfies `m <= f(m)`, then specialize to `m=n+1`. Cite `OrbitPoint` and explicitly unfold the iterate successor rule to obtain `G(n+1)=g(G(n))` and `G(n+2)=g(G(n+1))`. Prove by induction on `a` that `g^[a](g(l))=g^[a+1](l)`. In the block case set `a=f(n+1)-(n+1)`, derive both `a+1=f(n+1)-n` and the two inequalities placing `g(l)` in block `n+1`, and then compare the two displayed `BlockSigma` values. Retain the citations to `OrbitBlockCoverage`, `BlockSigma`, `RightComp`, and `SuccSeq`. Add no helper and change no statement or support node.",
           "dismissed": true,
-          "dismissed_at_cycle": 53,
-          "dismissed_reason": "Completed: the worker changed OrbitBlockCoverage.tex and supplied the requested OrbitEmbedding, OrbitPoint, OrbitUnbounded, and OrbitBlock citations together with the successor-witness, least-index case split, and two-order uniqueness argument. Its old Soundness fingerprint is therefore omitted from this transition.",
-          "id": "finish-orbit-block-coverage",
-          "title": "Finish the orbit-block prose repair"
+          "dismissed_at_cycle": 58,
+          "dismissed_reason": "The worker completed the prescribed edit in Tablet/BlockSigmaIntertwines.tex, preserving the statement and support structure; deterministic node and full-tablet checks passed.",
+          "id": "finish-block-sigma-intertwines",
+          "title": "Complete the block-shift proof repair"
         },
         {
-          "body": "Replace the false `SubFrontCharacterization` signature by the paper-faithful existential-base equivalence: under `Front F X` and `F' \u2286 F`, `(\u2203 Y, Front F' Y) \u2194 \u2203 Z, Z \u2286 X \u2227 Z.Infinite \u2227 F' = FrontRestrict F Z`. Update its TeX proof accordingly, including the trivial-front case. Then update `NashWilliams.tex` to use this interface. At recursive stage `k`, do not apply the induction hypothesis to the full ray and then demand a specially located base. Let `A_k = X_(k-1)/n_k`, form `K_k = FrontRestrict (F_(n_k)) A_k`, use `FrontRestriction`, explain `rank(K_k) <= rank(F_(n_k)) < rank(F)`, and apply the induction hypothesis to `K_k` with the coloring restricted to `K_k`. Use the corrected characterization to obtain `X_k \u2286 A_k` and identify the resulting restriction with `F_(n_k)|X_k`. Keep the `NashWilliams` target signature fixed and add no wrapper node.",
+          "body": "After the BlockSigma prose edit, request fresh Sound verdicts in dependency order. For the orbit package, certify `OrbitEmbedding`, then `OrbitUnbounded`, then `OrbitBlockCoverage`, and finally the repaired `BlockSigmaIntertwines`. For the front package, certify `FrontRayClosure`, then the cycle-54 version of `SubFrontCharacterization`, and then `NashWilliams`; certify `InfiniteSetEnumeration` independently. Reverify the current texts rather than editing them again unless a fresh verifier names a new concrete gap. Keep this task live until the returned Sound artifacts actually name and pass every listed node; unrelated Sound approvals do not discharge their historical `ReviewerPinnedFail` records. Afterward resume the ordinary bottom-up Sound queue rather than creating more theorem-stating infrastructure.",
           "dismissed": true,
-          "dismissed_at_cycle": 54,
-          "dismissed_reason": "Completed: the worker replaced SubFrontCharacterization by the existential-base equivalence with an explicit cited proof and reworked NashWilliams.tex to restrict each ray to the prescribed nested tail before applying the lower-rank induction. The current correspondence verifier approves SubFrontCharacterization.",
-          "id": "repair-subfront-and-nash-diagonal",
-          "title": "Repair the sub-front interface and Nash diagonal"
-        },
-        {
-          "body": "Strengthen `BadSuperToBase` and `PerfectSuperToBase` so the existential witness also carries the same front-prefix value equation returned by `SuperSequenceExtension`; this identifies the witness as the canonical extension claimed by each TeX node. Preserve the bad/perfect conclusions. Rewrite `FrontPrefixUnique.tex` to state explicitly that `F` is a front on `X`, `x` is an increasing enumeration, and `s,t` both satisfy `FrontPrefix F _ x`; cite `FrontPrefix` and `Front` at their uses rather than borrowing hypotheses from `FrontPrefixExists`. Finally change the one stale phrase in `PerfectMultiRestrict.tex` from evaluation at `x composed with z` to evaluation at the current fixed-left restriction `z composed with x`, using `RestrictionShift`.",
-          "dismissed": true,
-          "dismissed_at_cycle": 55,
-          "dismissed_reason": "Completed: the worker added the SuperSequenceExtension value equations to BadSuperToBase and PerfectSuperToBase, made FrontPrefixUnique local and explicit, and corrected PerfectMultiRestrict to fixed-left composition. The current BadSuperToBase correspondence verifier passes.",
-          "id": "repair-statement-correspondence",
-          "title": "Repair the remaining statement mismatches"
-        },
-        {
-          "body": "After the edits above, request fresh correspondence and substantiveness verdicts until no statement-lane failure remains. The exact current frontier is `BadSuperToBase`, `FrontPrefixUnique`, `PerfectMultiRestrict`, `PerfectSuperToBase`, `PerfectSuperToMulti`, `PowerPresentationEqEquivalence`, `ShiftDichotomy`, and `SubFrontCharacterization`. Re-evaluate current source rather than repeating the cycle-6/cycle-12 reasons: `MultiSequenceRestrict` is now `h(z composed with x)`, the dependent perfect/dichotomy statements use that orientation, and `PowerPresentationEq.tex` now only defines the matching relation. Do not weaken these true paper claims merely to clear the lane. This task is complete only when all eight have current pass verdicts.",
-          "dismissed": true,
-          "dismissed_at_cycle": 56,
-          "dismissed_reason": "Completed: after the correspondence and substantiveness passes, the live blocker set now contains only Soundness obligations. The statement-lane surface is clear, so the audit can proceed to its Sound-closing task after current Sound repairs.",
-          "id": "clear-statement-lane-surface",
-          "title": "Clear all eight statement-lane blockers"
-        },
-        {
-          "body": "Once the statement-lane surface is clear, request fresh Sound verification for the repaired packages, respecting dependencies: first `OrbitEmbedding`, then `OrbitUnbounded` and the repaired `OrbitBlockCoverage`; separately `FrontRayClosure` and `InfiniteSetEnumeration`; finally the structurally repaired `NashWilliams`. `OrbitEmbedding`, `FrontRayClosure`, and `InfiniteSetEnumeration` should be reverified as currently written rather than edited again unless a fresh verifier identifies a new concrete gap. Keep this task undismissed until the returned Sound artifact actually names each requested node and records a pass; a dispatch that certifies some other queued node is useful global progress but does not clear the historical `ReviewerPinnedFail` for these nodes.",
-          "dismissed": false,
-          "dismissed_at_cycle": null,
-          "dismissed_reason": "",
+          "dismissed_at_cycle": 65,
+          "dismissed_reason": "All listed orbit and front-chain nodes now have current Sound approvals, including the repaired BlockSigmaIntertwines node; the certification task is complete.",
           "id": "close-pinned-soundness-records",
-          "title": "Reverify the repaired Sound packages"
+          "title": "Certify the repaired Sound chains"
         }
       ],
-      "trigger_at_write": {
-        "$s": "9f334c0feaf76899"
-      },
-      "written_at_cycle": 52,
-      "written_by_request": 226
+      "trigger_at_write": "sound-stagnation-window: no Sound progress for >= 5 snapshots (theorem-stating)",
+      "written_at_cycle": 57,
+      "written_by_request": 242
     },
     "tablet_target": "lean",
     "target_claims": {
