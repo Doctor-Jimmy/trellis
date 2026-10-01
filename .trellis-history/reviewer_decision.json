@@ -1,11 +1,9 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The repaired OrbitEmbedding package is mechanically valid but remains blocked from soundness dispatch by the global known non-sound verifier surface. The narrowest binding substantive repair is OrbitUnbounded: its Lean signature already states g, k, and k<g(k), but its TeX statement improperly cites OrbitEmbedding for those hypotheses. Route that blocker so the TeX fingerprint becomes Unknown and the ordinary verifier frontier can resume.",
-    "comments": "Repair only Tablet/OrbitUnbounded.tex. In its theorem statement, replace the phrase 'Under the hypotheses of \\noderef{OrbitEmbedding}' with explicit local hypotheses: g is an increasing embedding of the naturals, k is a natural number, and k<g(k). Keep the existing conclusion about every l and an orbit point above l. The proof may cite \\noderef{OrbitEmbedding} for strict increase of the orbit, but it must not use that theorem-like node to supply the statement's hypotheses. Do not edit OrbitEmbedding, add helpers, or touch the other substantive failures in this transition.",
-    "task_blocker_ids": [
-      "substantiveness:node:OrbitUnbounded:{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
-    ],
+    "reason": "The worker repaired OrbitUnbounded.tex by stating g, k, and k<g(k) locally, so the old substantiveness evidence no longer binds. Correspondence now passes, while the repaired node remains FreshUnknown for substantiveness and soundness. Hand the package back to the ordinary verification frontier; no reset is legal and soundness should wait until the non-soundness lanes are current.",
+    "comments": "Do not edit Tablet content in the next burst. Keep OrbitUnbounded's explicit local hypotheses and retain the OrbitEmbedding citation only for the strict-increase fact used in the proof. Run the remaining paper-faithfulness and substantiveness checks for the repaired package. Do not request soundness yet, add helpers, reopen OrbitEmbedding, or touch the other substantive failures.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
     "next_active": "OrbitUnbounded",
@@ -21,12 +19,12 @@
       {
         "start_line": 1778,
         "end_line": 1783,
-        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses its iterate growth in the generalized-shift argument."
+        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses the orbit successor identity in the generalized-shift argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states G is an increasing embedding before using the orbit successor identity. OrbitUnbounded is the elementary unboundedness support for this construction, and its TeX must state its local hypotheses explicitly rather than borrowing them from OrbitEmbedding."
+      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states that G is an increasing embedding before using the orbit successor identity. OrbitUnbounded supplies the corresponding elementary unboundedness step, and its repaired TeX now states its local hypotheses explicitly rather than borrowing them from OrbitEmbedding."
     }
   },
   "response": {
@@ -38,10 +36,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/OrbitUnbounded.tex. In its theorem statement, replace the phrase 'Under the hypotheses of \\noderef{OrbitEmbedding}' with explicit local hypotheses: g is an increasing embedding of the naturals, k is a natural number, and k<g(k). Keep the existing conclusion about every l and an orbit point above l. The proof may cite \\noderef{OrbitEmbedding} for strict increase of the orbit, but it must not use that theorem-like node to supply the statement's hypotheses. Do not edit OrbitEmbedding, add helpers, or touch the other substantive failures in this transition.",
+    "comments": "Do not edit Tablet content in the next burst. Keep OrbitUnbounded's explicit local hypotheses and retain the OrbitEmbedding citation only for the strict-increase fact used in the proof. Run the remaining paper-faithfulness and substantiveness checks for the repaired package. Do not request soundness yet, add helpers, reopen OrbitEmbedding, or touch the other substantive failures.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 42,
+    "cycle": 43,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -56,35 +54,25 @@
     "paper_focus_ranges": [
       {
         "end_line": 1783,
-        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses its iterate growth in the generalized-shift argument.",
+        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses the orbit successor identity in the generalized-shift argument.",
         "start_line": 1778
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states G is an increasing embedding before using the orbit successor identity. OrbitUnbounded is the elementary unboundedness support for this construction, and its TeX must state its local hypotheses explicitly rather than borrowing them from OrbitEmbedding.",
+      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states that G is an increasing embedding before using the orbit successor identity. OrbitUnbounded supplies the corresponding elementary unboundedness step, and its repaired TeX now states its local hypotheses explicitly rather than borrowing them from OrbitEmbedding.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The repaired OrbitEmbedding package is mechanically valid but remains blocked from soundness dispatch by the global known non-sound verifier surface. The narrowest binding substantive repair is OrbitUnbounded: its Lean signature already states g, k, and k<g(k), but its TeX statement improperly cites OrbitEmbedding for those hypotheses. Route that blocker so the TeX fingerprint becomes Unknown and the ordinary verifier frontier can resume.",
-    "request_id": 200,
+    "reason": "The worker repaired OrbitUnbounded.tex by stating g, k, and k<g(k) locally, so the old substantiveness evidence no longer binds. Correspondence now passes, while the repaired node remains FreshUnknown for substantiveness and soundness. Hand the package back to the ordinary verification frontier; no reset is legal and soundness should wait until the non-soundness lanes are current.",
+    "request_id": 204,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "OrbitUnbounded",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_200_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_204_decision.context.json"
 }
