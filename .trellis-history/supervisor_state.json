@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 271,
+  "event_count": 275,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -47728,6 +47728,17 @@
       "kind": "recursor",
       "name": "IncreasingPair.rec"
     },
+    "ccbf493f29f9347a": {
+      "deferred": false,
+      "fingerprint": {
+        "$s": "24f951a5857b1524"
+      },
+      "kind": "Soundness",
+      "object": {
+        "node": "OrbitBlockCoverage",
+        "otype": "node"
+      }
+    },
     "cccf240617ba05de": [
       {
         "$r": "bd586846940699d8"
@@ -59661,17 +59672,17 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": "OrbitBlockCoverage",
     "committed": {
       "$r": "ea2fd6fbf5cc5dbb"
     },
-    "cycle": 50,
+    "cycle": 51,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": null,
+    "active_node": "OrbitBlockCoverage",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60427,9 +60438,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 50,
+    "cycle": 51,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 50,
+    "cycles_since_clean": 51,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -61159,7 +61170,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 49,
+    "last_sound_response_cycle": 51,
     "last_stuck_math_audit_dispatched_cycle": 30,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61177,9 +61188,9 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "Repaired only the NashWilliams proof package and its direct support wiring. NashWilliams now imports SubFrontCharacterization, and its complete NL proof gives the well-founded rank induction, the ray-prefix-tree successor identification, the infinite-tail/minimum construction, the Boolean thinning, the infinite increasing image, and the nontrivial-front least-element decomposition. The direct statement-level dependency audit is recorded in .trellis/scratch/notes.md. The NashWilliams node check, full tablet structural check, Lean build, and diff hygiene checks pass; the theorem signature and configured target claims are unchanged.",
+    "latest_worker_comments": "No Tablet content was edited in this burst, as requested. The repaired NashWilliams package was inspected with its explicit rank/ray induction, SubFrontCharacterization citation, infinite-tail construction, Boolean thinning, and final restriction argument preserved. Deterministic checks pass for NashWilliams and its direct support nodes, the full 176-node tablet shape check, the 790-job Lean tablet build, and diff hygiene. The current request dispatched no paper-faithfulness, correspondence, or substantiveness lane (all corresponding request frontiers are empty), so no semantic verifier verdict is being claimed here.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Repaired NashWilliams with a detailed paper-faithful soundness proof and imported SubFrontCharacterization for the ray restriction step.",
+    "latest_worker_summary": "Audited the repaired NashWilliams package without editing Tablet; all deterministic node, tablet-shape, and Lean-build checks pass.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
@@ -61405,35 +61416,24 @@
       "allow_new_obligations": true,
       "authorized_nodes": [],
       "consumed_global_repair_grant": false,
-      "mode": "Global",
+      "mode": "Targeted",
       "must_close_active": false,
       "next_worker_context_mode": "resume",
-      "node": null,
+      "node": "OrbitBlockCoverage",
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [
         {
-          "end_line": 1148,
-          "reason": "The paper defines well-founded trees, ordinal rank, and the well-foundedness of the front prefix tree.",
-          "start_line": 1118
-        },
-        {
-          "end_line": 1168,
-          "reason": "The paper identifies ray trees with strict successor subtrees and derives strict rank decrease.",
-          "start_line": 1160
-        },
-        {
-          "end_line": 1211,
-          "reason": "The paper characterizes sub-fronts as restrictions to infinite subsets.",
-          "start_line": 1197
-        },
-        {
-          "end_line": 1242,
-          "reason": "The paper states and proves the Nash-Williams finite-thinning construction.",
-          "start_line": 1222
+          "end_line": 1815,
+          "reason": "The manuscript defines the orbit-block cases used by the generalized-shift map and checks the initial segment and each interval [G(n),G(n+1)).",
+          "start_line": 1794
         }
       ],
       "protected_semantic_change_nodes": [],
-      "task_blockers": [],
+      "task_blockers": [
+        {
+          "$r": "ccbf493f29f9347a"
+        }
+      ],
       "work_style_hint": "none"
     },
     "pending_worker_audit_request": null,
@@ -61456,16 +61456,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "NashWilliams": {
+      "OrbitBlockCoverage": {
         "v1": {
-          "comments": "1. The proof says that accessibility induction on FrontTreeWellFounded is equivalent to induction on smaller front rank and that every ray has smaller rank. FrontTreeWellFounded only states well-foundedness of the prefix-extension relation for the fixed tree of F; FrontRayClosure only states that each ray is a front and gives the decomposition. No cited statement supplies a rank, identifies the ray tree with a strict successor subtree, or establishes the induction principle needed for fronts.\n2. The induction hypothesis is used to choose an infinite X_n with either FrontRestrict (F_n, X_n) subset S_n or disjoint from S_n. The NashWilliams target statement only yields an arbitrary homogeneous front F'_n on some base, not that F'_n is the restriction of F_n. The needed equivalence is the separate SubFrontCharacterization result, which is neither cited nor a dependency of this node; FrontRestriction proves only that a restriction is a front, not the converse.\n3. The proof uses the defining clauses and nontrivial-front consequences of Front, and uses the operation F|Y from FrontRestrict, but it contains no \\noderef{Front} or \\noderef{FrontRestrict} citation. This violates the explicit cross-node dependency-citation rule.\n4. The recursive construction does not establish that every successive tail X_{k-1}/n_k is infinite, so that its minimum and the next induction application are defined, nor does it explicitly prove that the image Y={n_k | k in I} is infinite and contained in X. It also uses a least element for members of F|Y without supplying the nontrivial-front argument that empty is not in F. These omissions leave the final construction short of a line-by-line proof even after the two main structural gaps are repaired.",
-          "node": "NashWilliams",
+          "comments": "1. The proof uses the defining conjunction for OrbitBlock when it says that the least index lies in a block and when it invokes the lower-bound clause for a competing block, but it never cites \\noderef{OrbitBlock}. 2. OrbitUnbounded states that some r satisfies l < OrbitPoint(g,k,r), not directly that some m satisfies l < G(m+1). Since the proof is in the branch l >= G(0), it must rule out r = 0 and write r = m+1 (and explicitly identify OrbitPoint with the locally defined G); this is not shown. 3. That identification of G with OrbitPoint is itself a cross-node use of the OrbitPoint definition and is uncited, so the application of OrbitUnbounded and the subsequent inequalities are not fully checkable from the cited statements. 4. The assertion that minimality and l >= G(0) imply G(n) <= l suppresses the necessary case split: for n = 0 use G(0) <= l, while for n > 0 minimality applied to n-1 gives not (l < G(n)) and hence G(n) <= l.",
+          "node": "OrbitBlockCoverage",
           "overall": "REJECT",
           "soundness": {
-            "decision": "STRUCTURAL",
-            "explanation": "The proof is not line-by-line derivable from the cited support statements: its induction principle and its restriction-form induction conclusion are both unsupported by the current DAG."
+            "decision": "UNSOUND",
+            "explanation": "The proof has the correct least-index strategy, but it is not line-by-line sound under the citation and rigor rubric: it relies on uncited definitions and uses OrbitUnbounded as if it directly supplied a successor-index witness."
           },
-          "summary": "Reject NashWilliams soundness because the stated dependencies do not justify the rank induction or the passage from an arbitrary homogeneous sub-front to a restriction, and the proof also omits required dependency citations and key infinitude checks."
+          "summary": "Reject: the coverage argument is mathematically repairable but currently omits required dependency citations and essential index derivations."
         }
       }
     },
@@ -61473,7 +61473,7 @@
     "process_memory_seq": 10,
     "progress_history": {
       "last_dispatched_index": 28,
-      "next_index": 50,
+      "next_index": 51,
       "snapshots": [
         {
           "present": [
@@ -64287,6 +64287,15 @@
             "$r": "9550d64858cb4220"
           },
           "snapshot_index": 49
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "9550d64858cb4220"
+          },
+          "snapshot_index": 50
         }
       ]
     },
@@ -64295,9 +64304,9 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 222,
+    "request_seq": 225,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired NashWilliams package and preserve the theorem signature, the SubFrontCharacterization import and citation, the explicit rank/ray-tree induction, and the infinite-tail and restriction arguments. Do not reopen InfiniteSetEnumeration, add wrappers, or touch unrelated blockers.",
+    "reviewer_comments": "Repair only Tablet/OrbitBlockCoverage.tex; keep its Lean theorem signature and imports unchanged, and do not add helpers or edit OrbitBlock, OrbitPoint, OrbitUnbounded, or OrbitEmbedding. Cite \\noderef{OrbitBlock} when unpacking the two inequalities in the block predicate, and cite \\noderef{OrbitPoint} when identifying the local notation G(n)=g^{[n]}(k) with OrbitPoint(g,k,n). In the branch l >= G(0), OrbitUnbounded gives an index r with l < OrbitPoint(g,k,r); explicitly rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, write r=m+1, and obtain l < G(m+1). Choose the least n with this upper-bound property. Prove its lower bound by cases: n=0 follows from G(0) <= l, while n=t+1 follows because minimality makes t fail the property, so not (l < G(t+1)) and hence G(n) <= l. For uniqueness, apply the OrbitBlock definition to both candidates and use OrbitEmbedding: if n<m, then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l; handle the opposite ordering symmetrically. Preserve the existing OrbitUnbounded and OrbitEmbedding citations and give a complete non-SKETCH proof.",
     "reviewer_requested_sound_verifier_nodes": [
       "BlockSigmaIntertwines",
       "FrontRayClosure",
@@ -64323,6 +64332,9 @@
       },
       "NashWilliams": {
         "$s": "e89f7611038e4db0"
+      },
+      "OrbitBlockCoverage": {
+        "$s": "24f951a5857b1524"
       },
       "OrbitEmbedding": {
         "$s": "92b2e9ed743b6253"
@@ -64428,6 +64440,15 @@
             }
           },
           "own_tex_hash": "ed82e6c6a57242980b105b02b09a08e92cc25fd0222ecedb5df95644a4a93191"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
+      },
+      "OrbitBlockCoverage": {
+        "fingerprints": {
+          "$r": "4935c7bc85248818"
         },
         "lane_votes": {},
         "origin": "ReviewerAction",
@@ -65563,6 +65584,7 @@
       "FrontTreeWellFounded": "Pass",
       "InfiniteSetEnumeration": "Fail",
       "NashWilliams": "Fail",
+      "OrbitBlockCoverage": "Fail",
       "OrbitEmbedding": "Fail",
       "PowerChildWellFounded": "Pass",
       "PowerIResponseFailure": "Pass",
@@ -65571,8 +65593,8 @@
     },
     "stage": "Start",
     "stuck_math_audit": {
-      "active": false,
-      "active_since_cycle": 0,
+      "active": true,
+      "active_since_cycle": 51,
       "assumptions_lane": null,
       "gap_plan_critique": null,
       "gap_research": null,
@@ -65580,8 +65602,944 @@
       "last_reviewer_lean_product": null,
       "need_input_audit": null,
       "revision_planning": null,
-      "trigger": "",
-      "trigger_blockers": []
+      "trigger": "sound-stagnation-window: no Sound progress for >= 5 snapshots (theorem-stating)",
+      "trigger_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "59bf2e83bd6c6fc1"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BadMultiRestrict",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "28a7c5feae520cf0"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "41cfa12f84c70377"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "493a4f415e39f547"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BadMultiToSuper",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "580a95f19ff1bf7e"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BadSuperRestrict",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "ee71b2889cf7d413"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BadSuperToBase",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "881b907d411b3025"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BaseBqoRestriction",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "1bbd4cfa7ef8be47"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BlockSigmaContinuous",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "233cb7e424b86c4c"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BlockSigmaEmbedding",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "b47d4174219139ea"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BlockSigmaIntertwines",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "d6d8d46635239575"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BqoIffGeneralShift",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "0df651cf0c953710"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "BqoImpliesWqo",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "287c276640fc78e3"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "CardinalityFrontIsFront",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "1900c8c66df22c83"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "ConverseGame",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "3d4023d1d5cc0d0a"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "DecidingFront",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "a218eb6defa254cc"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "DecidingValue",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "81d67d6b64ee9752"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "EmapLemma",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "c15913fa7e9896d1"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FinitePrefixExtension",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "724a869c709df6f0"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FirstMovedPoint",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "cf3da6fb47233ede"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontBridgeInit",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "d0bbeaee8406888a"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontBridgeStep",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "4238703a315f30c3"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontBridgeTerminal",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "89447aae968af974"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontPrefixExists",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "89658406e1559859"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontPrefixUnique",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "ffa69cfe257be431"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontRayClosure",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "ea8f7db52cf0e860"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "ba060752f87266a9"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "d36ae3479ad74413"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "594c04e6462b8895"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontTreeSingleton",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "0cbc5eca8770d881"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "GBetterRelIff",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "a3f7ae9fd4f6f02b"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "HerCtblNodeClosure",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "8102af4c12a6c760"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "IncSeqPointwiseLe",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "c537b0af3e76d429"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "InfiniteSetEnumeration",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "9b2b2dc8d8b0c021"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "MainProp",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "cee7948476401466"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "NashWilliams",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "1ee0225c4d17461c"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "NoBadPerfectSuper",
+            "otype": "node"
+          }
+        },
+        {
+          "$r": "ccbf493f29f9347a"
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "3161995d95830072"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "OrbitEmbedding",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "cd933185d925fe78"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "OrbitUnbounded",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "632f6b924a41bc5e"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PerfectBaseToSuper",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "fe04fe05f6651fc8"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PerfectMultiRestrict",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "88f758e218fce560"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PerfectMultiToSuper",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "dc616bc0cee82de3"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PerfectSuperRestrict",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "711fe9d8cc1fdccb"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PerfectSuperToBase",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "c76772bab30dc138"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PerfectSuperToMulti",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "db8396ad9e79a7bf"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerChildSupport",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "7a5b10a6620c1ba8"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerCopiedFailureMove",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "10fdb85e61fdf381"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "5fd62f6199ae512b"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "b2f654651f7bc010"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "86b2632417374ebd"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "cdbd441d274eb2f2"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "9a013b8cdeb9d5ff"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "26207a3e02a7341e"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "55d1a8fd6d560eea"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "2ef4dc83731be63b"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerCopiedSupport",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "6fb4f8db00ed19f4"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "2e7a9f9ae663f9f8"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "cc79197127116931"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "c92d93fd7a69a2a5"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "916083ba2cade6b4"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerCopiedTerminates",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "c68e391b4e3495bd"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "77d96f473077081d"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "aff501ee809b3811"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "50a07aa664204053"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "89fd8712c3b0ab5b"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerMoveInSupport",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "0704d227ffac4678"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "93d700ae7b9523b8"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "3854ae118ee1e14b"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerQPresBqo",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "88f756a124a20182"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerQReflection",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "4d30484334952f49"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerRelCongrLeft",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "0880a7caaacf6766"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerRelCongrRight",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "f20329b623a6a475"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerRelRefl",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "ad2b7a41b0446cc0"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerRelTrans",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "fe53e2ce2b2d9c09"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "6947ec3a7b56b112"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "30346153e8d9fe55"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerShiftIterShift",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "a53f7884e705f66c"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerSupportInvariant",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "ceab3c0d0a6ae01f"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerSupportNonempty",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "4f0c2d7a5d7ca565"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "PowerWqoBadPairSequence",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "7bdb2a16502a15be"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "QuadrupleHomogeneous",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "4c0b63fbbdf3f86d"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "RadoEmbedding",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "42b71886d8531ec3"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "b415d99a5587255c"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "893330a3e72140a0"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "RestrictionShift",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "9bb5c8b0004896e0"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "RmapLemma",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "e21f2400a2830706"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "ShiftDichotomy",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "0723763e48fe0478"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "b93919442f024c21"
+            },
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "76c022ed6fc806e8"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "Subarr",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "4f3efa5c8d5f0bf8"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "SuperNW",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "49045e2a73293682"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "SuperSequenceExtension",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "e60f567a9067d59d"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "TildeFAtomIffFront",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "d2e7ab3bc4342b59"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "TildeFFrontEquation",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "47bad7b560a723a1"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "TildeFHerCtbl",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "69c40ce9c1812916"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "TildeFNonfrontEquation",
+            "otype": "node"
+          }
+        },
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "0f037a80fa25e88f"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "TripleHomogeneous",
+            "otype": "node"
+          }
+        }
+      ]
     },
     "stuck_math_audit_burst_retry_count": 0,
     "substantiveness_approved_fingerprints": {
@@ -66321,7 +67279,7 @@
     "target_claims": {
       "$r": "8b8358bcaa735e43"
     },
-    "target_edit_mode": "Global",
+    "target_edit_mode": "Targeted",
     "theorem_verifier_only_continuation_enabled": true,
     "transport_attempt": 0,
     "transport_invalid_review_threshold": 5,

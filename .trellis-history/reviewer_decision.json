@@ -1,14 +1,16 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The NashWilliams worker repaired the proof package and direct support wiring, including the SubFrontCharacterization import, and changed the node fingerprint. Its soundness status is therefore SelfEditUnknown with no verifier verdict for the repaired text. Omit the repaired blocker and hand the package back to the ordinary lanes; the kernel scheduler will decide when the next Sound adjudication is legal.",
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired NashWilliams package and preserve the theorem signature, the SubFrontCharacterization import and citation, the explicit rank/ray-tree induction, and the infinite-tail and restriction arguments. Do not reopen InfiniteSetEnumeration, add wrappers, or touch unrelated blockers.",
-    "task_blocker_ids": [],
+    "reason": "OrbitBlockCoverage remains an unchanged, repairable soundness failure. Route its proof package back to the worker for a citation-complete repair before requesting another soundness pass.",
+    "comments": "Repair only Tablet/OrbitBlockCoverage.tex; keep its Lean theorem signature and imports unchanged, and do not add helpers or edit OrbitBlock, OrbitPoint, OrbitUnbounded, or OrbitEmbedding. Cite \\noderef{OrbitBlock} when unpacking the two inequalities in the block predicate, and cite \\noderef{OrbitPoint} when identifying the local notation G(n)=g^{[n]}(k) with OrbitPoint(g,k,n). In the branch l >= G(0), OrbitUnbounded gives an index r with l < OrbitPoint(g,k,r); explicitly rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, write r=m+1, and obtain l < G(m+1). Choose the least n with this upper-bound property. Prove its lower bound by cases: n=0 follows from G(0) <= l, while n=t+1 follows because minimality makes t fail the property, so not (l < G(t+1)) and hence G(n) <= l. For uniqueness, apply the OrbitBlock definition to both candidates and use OrbitEmbedding: if n<m, then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l; handle the opposite ordering symmetrically. Preserve the existing OrbitUnbounded and OrbitEmbedding citations and give a complete non-SKETCH proof.",
+    "task_blocker_ids": [
+      "soundness:node:OrbitBlockCoverage:sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef"
+    ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "",
+    "next_active": "OrbitBlockCoverage",
     "next_active_coarse": "",
-    "next_mode": "global",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -18,29 +20,14 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1118,
-        "end_line": 1148,
-        "reason": "The paper defines well-founded trees, ordinal rank, and the well-foundedness of the front prefix tree."
-      },
-      {
-        "start_line": 1160,
-        "end_line": 1168,
-        "reason": "The paper identifies ray trees with strict successor subtrees and derives strict rank decrease."
-      },
-      {
-        "start_line": 1197,
-        "end_line": 1211,
-        "reason": "The paper characterizes sub-fronts as restrictions to infinite subsets."
-      },
-      {
-        "start_line": 1222,
-        "end_line": 1242,
-        "reason": "The paper states and proves the Nash-Williams finite-thinning construction."
+        "start_line": 1794,
+        "end_line": 1815,
+        "reason": "The manuscript defines the orbit-block cases used by the generalized-shift map and checks the initial segment and each interval [G(n),G(n+1))."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read all cited ranges. They define the well-founded-tree rank induction, show that every ray has smaller rank through the strict successor subtree, characterize sub-fronts as restrictions, and give the Nash-Williams recursion with infinite tails, binary thinning, and the final restriction. The repaired package now follows that route and is ready for lane verification."
+      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), partitions the natural numbers into the initial segment below G(0) and the intervals G(n)<=l<G(n+1), and uses both inequalities to prove that the resulting map is increasing. The requested repair makes the tablet's supporting coverage lemma justify that same partition line by line."
     }
   },
   "response": {
@@ -52,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired NashWilliams package and preserve the theorem signature, the SubFrontCharacterization import and citation, the explicit rank/ray-tree induction, and the infinite-tail and restriction arguments. Do not reopen InfiniteSetEnumeration, add wrappers, or touch unrelated blockers.",
+    "comments": "Repair only Tablet/OrbitBlockCoverage.tex; keep its Lean theorem signature and imports unchanged, and do not add helpers or edit OrbitBlock, OrbitPoint, OrbitUnbounded, or OrbitEmbedding. Cite \\noderef{OrbitBlock} when unpacking the two inequalities in the block predicate, and cite \\noderef{OrbitPoint} when identifying the local notation G(n)=g^{[n]}(k) with OrbitPoint(g,k,n). In the branch l >= G(0), OrbitUnbounded gives an index r with l < OrbitPoint(g,k,r); explicitly rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, write r=m+1, and obtain l < G(m+1). Choose the least n with this upper-bound property. Prove its lower bound by cases: n=0 follows from G(0) <= l, while n=t+1 follows because minimality makes t fail the property, so not (l < G(t+1)) and hence G(n) <= l. For uniqueness, apply the OrbitBlock definition to both candidates and use OrbitEmbedding: if n<m, then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l; handle the opposite ordering symmetrically. Preserve the existing OrbitUnbounded and OrbitEmbedding citations and give a complete non-SKETCH proof.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 50,
+    "cycle": 51,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -63,47 +50,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "OrbitBlockCoverage",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1148,
-        "reason": "The paper defines well-founded trees, ordinal rank, and the well-foundedness of the front prefix tree.",
-        "start_line": 1118
-      },
-      {
-        "end_line": 1168,
-        "reason": "The paper identifies ray trees with strict successor subtrees and derives strict rank decrease.",
-        "start_line": 1160
-      },
-      {
-        "end_line": 1211,
-        "reason": "The paper characterizes sub-fronts as restrictions to infinite subsets.",
-        "start_line": 1197
-      },
-      {
-        "end_line": 1242,
-        "reason": "The paper states and proves the Nash-Williams finite-thinning construction.",
-        "start_line": 1222
+        "end_line": 1815,
+        "reason": "The manuscript defines the orbit-block cases used by the generalized-shift map and checks the initial segment and each interval [G(n),G(n+1)).",
+        "start_line": 1794
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read all cited ranges. They define the well-founded-tree rank induction, show that every ray has smaller rank through the strict successor subtree, characterize sub-fronts as restrictions, and give the Nash-Williams recursion with infinite tails, binary thinning, and the final restriction. The repaired package now follows that route and is ready for lane verification.",
+      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), partitions the natural numbers into the initial segment below G(0) and the intervals G(n)<=l<G(n+1), and uses both inequalities to prove that the resulting map is increasing. The requested repair makes the tablet's supporting coverage lemma justify that same partition line by line.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The NashWilliams worker repaired the proof package and direct support wiring, including the SubFrontCharacterization import, and changed the node fingerprint. Its soundness status is therefore SelfEditUnknown with no verifier verdict for the repaired text. Omit the repaired blocker and hand the package back to the ordinary lanes; the kernel scheduler will decide when the next Sound adjudication is legal.",
-    "request_id": 222,
+    "reason": "OrbitBlockCoverage remains an unchanged, repairable soundness failure. Route its proof package back to the worker for a citation-complete repair before requesting another soundness pass.",
+    "request_id": 225,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef",
+        "kind": "Soundness",
+        "object": {
+          "node": "OrbitBlockCoverage",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_222_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_225_decision.context.json"
 }
