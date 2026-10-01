@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "DecidingFront now has fresh Sound approval, while the changed dependent GBetterRelIff node remains SelfEditUnknown. Request its Sound verification now that the deciding-front support prerequisite is certified.",
-    "comments": "Do not assign a worker or reset any soundness evidence. The current statuses are VerifierPass for DecidingFront and DecidingValue, and SelfEditUnknown for the cycle-88 replacement of GBetterRelIff. Request one real Sound verifier for GBetterRelIff only. It should check the Boolean coloring and homogeneous-front argument, the finite-prefix local-constancy and composition transport, the converse implication, and the final better-relation/BQO specialization against the explicitly cited support. Leave all other live soundness obligations untouched.",
+    "reason": "GBetterRelIff now has fresh Sound approval. BqoIffGeneralShift directly depends on that certified equivalence and remains FreshUnknown, so request its Sound verification as the next downstream step.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current verifier evidence approves GBetterRelIff, and the BqoIffGeneralShift Lean node imports it directly. Request one real Sound verifier for BqoIffGeneralShift only; check both directions of the corollary, the g = IncSeqId case, the nonidentity case using GBetterRelIff, and the final Bqo specialization from the explicitly cited support. Leave all other live obligations untouched.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "GBetterRelIff"
+      "BqoIffGeneralShift"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,24 +18,19 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1617,
-        "end_line": 1626,
-        "reason": "The paper's Boolean shift dichotomy via a deciding front and Nash-Williams homogeneity."
-      },
-      {
         "start_line": 1713,
         "end_line": 1715,
-        "reason": "The paper's generalized-shift equivalence used by the GBetterRelIff proof."
+        "reason": "The paper's equivalence of the generalized shift with the ordinary shift."
       },
       {
         "start_line": 1731,
         "end_line": 1745,
-        "reason": "The paper's definition of g-better-relation and the better-relation equivalence target."
+        "reason": "The paper's g-better-relation definition and g-BQO equivalence target."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passages define the shift dichotomy by coloring a locally constant map and homogenizing its deciding front, state equivalence of the generalized shift with the ordinary shift, and formulate the g-better-relation and g-BQO equivalence. These are the mathematical claims covered by the changed GBetterRelIff proof and its certified DecidingFront support."
+      "basis_summary": "The cited passages state the generalized-shift equivalence, define g-better-relations by the two equivalent morphism conditions, and conclude that every nonidentity increasing shift gives exactly the ordinary better-relation and BQO notions. This is the paper claim represented by BqoIffGeneralShift and its direct support is now Sound-approved."
     },
     "work_style_hint": "none"
   },
@@ -48,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. The current statuses are VerifierPass for DecidingFront and DecidingValue, and SelfEditUnknown for the cycle-88 replacement of GBetterRelIff. Request one real Sound verifier for GBetterRelIff only. It should check the Boolean coloring and homogeneous-front argument, the finite-prefix local-constancy and composition transport, the converse implication, and the final better-relation/BQO specialization against the explicitly cited support. Leave all other live soundness obligations untouched.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current verifier evidence approves GBetterRelIff, and the BqoIffGeneralShift Lean node imports it directly. Request one real Sound verifier for BqoIffGeneralShift only; check both directions of the corollary, the g = IncSeqId case, the nonidentity case using GBetterRelIff, and the final Bqo specialization from the explicitly cited support. Leave all other live obligations untouched.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 91,
+    "cycle": 92,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -65,30 +60,25 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1626,
-        "reason": "The paper's Boolean shift dichotomy via a deciding front and Nash-Williams homogeneity.",
-        "start_line": 1617
-      },
-      {
         "end_line": 1715,
-        "reason": "The paper's generalized-shift equivalence used by the GBetterRelIff proof.",
+        "reason": "The paper's equivalence of the generalized shift with the ordinary shift.",
         "start_line": 1713
       },
       {
         "end_line": 1745,
-        "reason": "The paper's definition of g-better-relation and the better-relation equivalence target.",
+        "reason": "The paper's g-better-relation definition and g-BQO equivalence target.",
         "start_line": 1731
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passages define the shift dichotomy by coloring a locally constant map and homogenizing its deciding front, state equivalence of the generalized shift with the ordinary shift, and formulate the g-better-relation and g-BQO equivalence. These are the mathematical claims covered by the changed GBetterRelIff proof and its certified DecidingFront support.",
+      "basis_summary": "The cited passages state the generalized-shift equivalence, define g-better-relations by the two equivalent morphism conditions, and conclude that every nonidentity increasing shift gives exactly the ordinary better-relation and BQO notions. This is the paper claim represented by BqoIffGeneralShift and its direct support is now Sound-approved.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "DecidingFront now has fresh Sound approval, while the changed dependent GBetterRelIff node remains SelfEditUnknown. Request its Sound verification now that the deciding-front support prerequisite is certified.",
-    "request_id": 332,
+    "reason": "GBetterRelIff now has fresh Sound approval. BqoIffGeneralShift directly depends on that certified equivalence and remains FreshUnknown, so request its Sound verification as the next downstream step.",
+    "request_id": 334,
     "request_sound_verifier_nodes": [
-      "GBetterRelIff"
+      "BqoIffGeneralShift"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -98,5 +88,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_332_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_334_decision.context.json"
 }

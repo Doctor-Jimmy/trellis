@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 422,
+  "event_count": 425,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -354,7 +354,6 @@
     "38bfb908b97a4833": "{\"own_tex\":\"33702b35b2781af4c85756eea9a3432e8376979b40fa6aa80e6052b47d73455f\",\"lean_semantic_closure\":\"85a8e1404bfcd6ba6240916e169cd0b49f6dbfc39c7075d445a18f5c9f9f996e\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "38d1262f50ddace9": "a492c8952ba4349fa66d78fc278d32ca6425806bd90c260f65273ef3f271fa4a",
     "38d671e5fb9d696c": "a6fdd5864885d3aa2e420b2ec0cc3495ee2d82b79be6d5dc59354949a6f343db",
-    "392a64b135bd8451": "sound-v2:092a829458ad7808874a6333bdb4e64dd1ad812982e4e9394339f3fd4f56578f",
     "39505117512c3b37": "f897d02741de6f2987b495628d2af4a6f4a4c34eb58995a9fd864fd22c33fd2e",
     "399cac3fccfef95d": "1e629f24f00db5660feff14da1144e91f88884228d302757c8b8a587cdb060a4",
     "39e27818bd5a66da": "sound-v2:3a5bc40ba324c4f28bb51662bb3d3f5761768f5dbea995b19ceb157fbed663f1",
@@ -59464,7 +59463,7 @@
     "committed": {
       "$r": "adaf37a071602be9"
     },
-    "cycle": 91,
+    "cycle": 92,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -59712,9 +59711,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 91,
+    "cycle": 92,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 91,
+    "cycles_since_clean": 92,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "609da8f14cdd39d8"
@@ -60492,7 +60491,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 91,
+    "last_sound_response_cycle": 92,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60809,16 +60808,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "DecidingFront": {
+      "GBetterRelIff": {
         "v1": {
-          "comments": "The proof explicitly derives finite-prefix agreement, deciding-prefix existence, minimality, density, prefix-freeness, and the constant/nonconstant base alternative, with cross-node dependencies cited.",
-          "node": "DecidingFront",
+          "comments": "",
+          "node": "GBetterRelIff",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The natural-language proof is detailed and line-by-line checkable from the cited definitions and the increasing-enumeration lemma. It establishes density, prefix-freeness, the base alternative, and infinitude of the base, matching the four fields of Front."
+            "explanation": "The proof is a detailed derivation from explicitly cited statements. It transports complement homomorphisms through the two continuous maps, proves the Boolean coloring is locally constant, applies the deciding-front value map and Nash-Williams homogeneity to obtain a locally constant homogeneous restriction, verifies the restriction action identity, and proves the converse by restricting any complement homomorphism. The final quasi-order specialization correctly identifies complement homomorphisms with bad locally constant multi-sequences and hence with Bqo."
           },
-          "summary": "SOUND: the current proof rigorously establishes that the minimal deciding prefixes form a front on the naturals."
+          "summary": "Approve: the NL proof rigorously establishes both the general g-better/better equivalence and its Bqo specialization from the cited support nodes."
         }
       }
     },
@@ -60826,315 +60825,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 91,
+      "next_index": 92,
       "snapshots": [
-        {
-          "present": [
-            "BadMultiRestrict",
-            "BadMultiSequence",
-            {
-              "$s": "41cfa12f84c70377"
-            },
-            "BadMultiToSuper",
-            "BadPairSequence",
-            "BadSuperRestrict",
-            "BadSuperSequence",
-            "BadSuperToBase",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseBqoRestriction",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "BqoImpliesWqo",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "ConverseGame",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblNodeClosure",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "NoBadPerfectSuper",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectBaseToSuper",
-            "PerfectMultiRestrict",
-            "PerfectMultiSequence",
-            "PerfectMultiToSuper",
-            "PerfectSuperRestrict",
-            "PerfectSuperSequence",
-            "PerfectSuperToBase",
-            "PerfectSuperToMulti",
-            "PowerChild",
-            "PowerChildSupport",
-            "PowerChildWellFounded",
-            "PowerCopiedFailureMove",
-            {
-              "$s": "5fd62f6199ae512b"
-            },
-            {
-              "$s": "86b2632417374ebd"
-            },
-            "PowerCopiedLeft",
-            {
-              "$s": "9a013b8cdeb9d5ff"
-            },
-            {
-              "$s": "55d1a8fd6d560eea"
-            },
-            "PowerCopiedSupport",
-            "PowerCopiedTerminalAt",
-            {
-              "$s": "2e7a9f9ae663f9f8"
-            },
-            {
-              "$s": "c92d93fd7a69a2a5"
-            },
-            "PowerCopiedTerminates",
-            {
-              "$s": "77d96f473077081d"
-            },
-            "PowerGameDescent",
-            {
-              "$s": "50a07aa664204053"
-            },
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerMoveInSupport",
-            "PowerPresentationEq",
-            {
-              "$s": "93d700ae7b9523b8"
-            },
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerQPresBqo",
-            "PowerQReflection",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelCongrLeft",
-            "PowerRelCongrRight",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerRelRefl",
-            "PowerRelTrans",
-            "PowerShiftIter",
-            {
-              "$s": "6947ec3a7b56b112"
-            },
-            "PowerShiftIterShift",
-            "PowerSupport",
-            "PowerSupportInvariant",
-            "PowerSupportNonempty",
-            "PowerWqoBadPairSequence",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "QuadrupleHomogeneous",
-            "RadoEmbedding",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            {
-              "$s": "b415d99a5587255c"
-            },
-            "RestrictionShift",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftDichotomy",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "Subarr",
-            "SuccSeq",
-            "SuperNW",
-            "SuperSequence",
-            "SuperSequenceExtension",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFAtomIffFront",
-            "TildeFFrontEquation",
-            "TildeFHerCtbl",
-            "TildeFNonfrontEquation",
-            "TildeFSingleton",
-            "TripleHomogeneous"
-          ],
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "Bqo",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "FiniteShift",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeTail",
-            "FrontPrefix",
-            "FrontRestrict",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "OrbitBlock",
-            "OrbitPoint",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "SetDomination",
-            "ShiftMap",
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 27
-        },
         {
           "present": {
             "$r": "8cb3ce517a2733c2"
@@ -64453,6 +64145,149 @@
             "TildeFSingleton"
           ],
           "snapshot_index": 90
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
+          "snapshot_index": 91
         }
       ]
     },
@@ -64461,11 +64296,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 332,
+    "request_seq": 334,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. The current statuses are VerifierPass for DecidingFront and DecidingValue, and SelfEditUnknown for the cycle-88 replacement of GBetterRelIff. Request one real Sound verifier for GBetterRelIff only. It should check the Boolean coloring and homogeneous-front argument, the finite-prefix local-constancy and composition transport, the converse implication, and the final better-relation/BQO specialization against the explicitly cited support. Leave all other live soundness obligations untouched.",
+    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. The current verifier evidence approves GBetterRelIff, and the BqoIffGeneralShift Lean node imports it directly. Request one real Sound verifier for BqoIffGeneralShift only; check both directions of the corollary, the g = IncSeqId case, the nonidentity case using GBetterRelIff, and the final Bqo specialization from the explicitly cited support. Leave all other live obligations untouched.",
     "reviewer_requested_sound_verifier_nodes": [
-      "GBetterRelIff"
+      "BqoIffGeneralShift"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -64531,7 +64366,7 @@
         "$s": "02af0d884f943dea"
       },
       "GBetterRelIff": {
-        "$s": "392a64b135bd8451"
+        "$s": "b0237a7c70dad4da"
       },
       "IncSeqPointwiseLe": {
         "$s": "97d9ae62bf2d7a8b"
@@ -64797,50 +64632,14 @@
       },
       "GBetterRelIff": {
         "fingerprints": {
-          "combined_sound_fp": {
-            "$s": "392a64b135bd8451"
-          },
-          "dep_statement_hashes": {
-            "BadMultiSequence": {
-              "$s": "4edc5c2720c632f4"
-            },
-            "BetterRel": {
-              "$s": "567509ede56f725a"
-            },
-            "Bqo": {
-              "$s": "341ef476466b1028"
-            },
-            "ContMor": {
-              "$s": "abe550e9c099ed20"
-            },
-            "ContMorEq": {
-              "$s": "e5bb93faba0fdf63"
-            },
-            "ContinuousHom": {
-              "$s": "d5b3a99f31cc6ba0"
-            },
-            "ContinuousRelHom": {
-              "$s": "99fc92c7ff7c2d82"
-            },
-            "GBetterRel": {
-              "$s": "066ac6b269a49616"
-            },
-            "MainProp": {
-              "$s": "bd6d58b17e839e99"
-            },
-            "RightComp": {
-              "$s": "b209b94ec41ef5b1"
-            },
-            "ShiftMap": {
-              "$s": "d9eb52a95b1e09e2"
-            }
-          },
-          "own_tex_hash": "cb9f48d6602029dbcfa9d5ed503c1f4fcda0925423e0ba46683327f3ed3987a1"
+          "$r": "31f4b67c0cd13968"
         },
-        "lane_votes": {},
-        "origin": "ReviewerAction",
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
         "reviewer_action_id": null,
-        "status": "ReviewerPinnedFail"
+        "status": "VerifierPass"
       },
       "IncSeqPointwiseLe": {
         "fingerprints": {
@@ -66071,7 +65870,7 @@
       "FrontTreeOrderedExtension": "Pass",
       "FrontTreeSingleton": "Pass",
       "FrontTreeWellFounded": "Pass",
-      "GBetterRelIff": "Fail",
+      "GBetterRelIff": "Pass",
       "IncSeqPointwiseLe": "Pass",
       "InfiniteSetEnumeration": "Pass",
       "MainProp": "Pass",
