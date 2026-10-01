@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "QuadrupleHomogeneous has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerWqoBadPairSequence is Sound-verifier requestable and has no current failure; request its ordinary Sound check to continue the bottom-up frontier.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerWqoBadPairSequence only. Check both directions line by line against the cited support: from failure of WellQuasiOrdered(SetDomination r), extract a bad sequence of subsets, choose for every m<n a witness q_m^n in P_m that no element of P_n is r-above, define f(m,n)=q_m^n, and use q_n^l in P_n to derive the BadPairSequence condition. Conversely, from bad f define each P_m as its row image, show f(m,n) belongs to P_m, and show no element of P_n can dominate it by writing that element as f(n,l) and applying badness. Require explicit citations to SetDomination and BadPairSequence, and verify that the sequence characterization and IncreasingPair conventions used in the extraction are either stated in the cited dependencies or explicitly justified; preserve the current Lean signature, imports, statement, and support DAG.",
+    "reason": "PowerWqoBadPairSequence has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerSupportNonempty is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerSupportNonempty only. Check the induction exactly against the cited PowerQ and PowerSupport definitions and the paper's support clauses: in the atom branch, identify the singleton support and exhibit its atom; in the node branch, use the supplied nonempty-index witness to choose a child, apply the induction hypothesis to that child, and show the resulting atom lies in the indexed union defining the parent's support. Require the citations to PowerQ and PowerSupport to support the recursive cases, and preserve the current Lean signature, imports, statement, and support DAG.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PowerWqoBadPairSequence"
+      "PowerSupportNonempty"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 955,
-        "end_line": 981,
-        "reason": "The paper's extraction of a bad sequence of sequences from powerset non-WQO and its converse."
+        "start_line": 1362,
+        "end_line": 1374,
+        "reason": "The paper's nonempty iterated powerset and recursive support definitions."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 955-981 choose witnesses q_m^n outside later domination, assemble them into a bad pair-indexed sequence, and conversely form row images P_m from a bad sequence to witness powerset non-WQO."
+      "basis_summary": "Lines 1362-1374 define nonempty iterated powersets, atoms, and support by induction: atoms have singleton support and a non-atom's support is the union of its children's supports."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerWqoBadPairSequence only. Check both directions line by line against the cited support: from failure of WellQuasiOrdered(SetDomination r), extract a bad sequence of subsets, choose for every m<n a witness q_m^n in P_m that no element of P_n is r-above, define f(m,n)=q_m^n, and use q_n^l in P_n to derive the BadPairSequence condition. Conversely, from bad f define each P_m as its row image, show f(m,n) belongs to P_m, and show no element of P_n can dominate it by writing that element as f(n,l) and applying badness. Require explicit citations to SetDomination and BadPairSequence, and verify that the sequence characterization and IncreasingPair conventions used in the extraction are either stated in the cited dependencies or explicitly justified; preserve the current Lean signature, imports, statement, and support DAG.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerSupportNonempty only. Check the induction exactly against the cited PowerQ and PowerSupport definitions and the paper's support clauses: in the atom branch, identify the singleton support and exhibit its atom; in the node branch, use the supplied nonempty-index witness to choose a child, apply the induction hypothesis to that child, and show the resulting atom lies in the indexed union defining the parent's support. Require the citations to PowerQ and PowerSupport to support the recursive cases, and preserve the current Lean signature, imports, statement, and support DAG.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 118,
+    "cycle": 119,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -57,20 +57,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 981,
-        "reason": "The paper's extraction of a bad sequence of sequences from powerset non-WQO and its converse.",
-        "start_line": 955
+        "end_line": 1374,
+        "reason": "The paper's nonempty iterated powerset and recursive support definitions.",
+        "start_line": 1362
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 955-981 choose witnesses q_m^n outside later domination, assemble them into a bad pair-indexed sequence, and conversely form row images P_m from a bad sequence to witness powerset non-WQO.",
+      "basis_summary": "Lines 1362-1374 define nonempty iterated powersets, atoms, and support by induction: atoms have singleton support and a non-atom's support is the union of its children's supports.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "QuadrupleHomogeneous has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerWqoBadPairSequence is Sound-verifier requestable and has no current failure; request its ordinary Sound check to continue the bottom-up frontier.",
-    "request_id": 396,
+    "reason": "PowerWqoBadPairSequence has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerSupportNonempty is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
+    "request_id": 398,
     "request_sound_verifier_nodes": [
-      "PowerWqoBadPairSequence"
+      "PowerSupportNonempty"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -80,5 +80,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_396_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_398_decision.context.json"
 }

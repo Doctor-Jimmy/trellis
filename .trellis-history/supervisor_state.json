@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 513,
+  "event_count": 516,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -60147,7 +60147,7 @@
     "committed": {
       "$r": "112de2ebaa0bc996"
     },
-    "cycle": 118,
+    "cycle": 119,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60395,9 +60395,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 118,
+    "cycle": 119,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 118,
+    "cycles_since_clean": 119,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -61143,7 +61143,7 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": "PowerWqoBadPairSequence",
+    "held_target": "PowerSupportNonempty",
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -61187,7 +61187,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 118,
+    "last_sound_response_cycle": 119,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61504,16 +61504,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "QuadrupleHomogeneous": {
+      "PowerWqoBadPairSequence": {
         "v1": {
-          "comments": "The proof explicitly establishes the Nash-Williams hypotheses, proves the resulting front is nontrivial and has base Y, and supplies the fixed-cardinality prefix argument showing every four-element subset of Y lies in F'.",
-          "node": "QuadrupleHomogeneous",
+          "comments": "The proof gives both implications. The sequence characterization of WellQuasiOrdered is shared Preamble context; the two node-level dependencies are explicitly cited.",
+          "node": "PowerWqoBadPairSequence",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The natural-language proof is a detailed derivation from the cited front, cardinality, enumeration, prefix, and Nash-Williams statements. It proves Y is an infinite subset of X, shows every four-element subset of Y belongs to the homogeneous sub-front, and then derives the constant Boolean color in both alternatives."
+            "explanation": "From failure of SetDomination well-quasi-ordering, the shared sequence characterization yields a sequence of subsets with no later domination. Unfolding domination via \\noderef{SetDomination} and choosing a witness for each pair produces f on IncreasingPair; the witness property gives the badness condition of \\noderef{BadPairSequence}. Conversely, for a bad f, the sets P_m={f(m,n) | m<n} contain f(m,n), while every element of P_n is f(n,l) and is not r-related to it by \\noderef{BadPairSequence}; hence no later set dominates P_m by \\noderef{SetDomination}. This is a line-by-line proof of the stated equivalence."
           },
-          "summary": "APPROVE: the revised proof closes the previously identified nontriviality and four-element prefix gaps and is sound from its explicitly cited dependencies."
+          "summary": "APPROVE: the natural-language proof rigorously establishes the bad-witness characterization from the cited child definitions and shared WQO background."
         }
       }
     },
@@ -61521,17 +61521,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 118,
+      "next_index": 119,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": {
-            "$r": "9550d64858cb4220"
-          },
-          "snapshot_index": 54
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -65746,6 +65737,168 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 117
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "PowerWqoBadPairSequence",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "QuadrupleHomogeneous",
+            "RadoEmbedding",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            {
+              "$s": "b415d99a5587255c"
+            },
+            "RestrictionShift",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftDichotomy",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "Subarr",
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFAtomIffFront",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 118
         }
       ]
     },
@@ -65754,11 +65907,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 396,
+    "request_seq": 398,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerWqoBadPairSequence only. Check both directions line by line against the cited support: from failure of WellQuasiOrdered(SetDomination r), extract a bad sequence of subsets, choose for every m<n a witness q_m^n in P_m that no element of P_n is r-above, define f(m,n)=q_m^n, and use q_n^l in P_n to derive the BadPairSequence condition. Conversely, from bad f define each P_m as its row image, show f(m,n) belongs to P_m, and show no element of P_n can dominate it by writing that element as f(n,l) and applying badness. Require explicit citations to SetDomination and BadPairSequence, and verify that the sequence characterization and IncreasingPair conventions used in the extraction are either stated in the cited dependencies or explicitly justified; preserve the current Lean signature, imports, statement, and support DAG.",
+    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerSupportNonempty only. Check the induction exactly against the cited PowerQ and PowerSupport definitions and the paper's support clauses: in the atom branch, identify the singleton support and exhibit its atom; in the node branch, use the supplied nonempty-index witness to choose a child, apply the induction hypothesis to that child, and show the resulting atom lies in the indexed union defining the parent's support. Require the citations to PowerQ and PowerSupport to support the recursive cases, and preserve the current Lean signature, imports, statement, and support DAG.",
     "reviewer_requested_sound_verifier_nodes": [
-      "PowerWqoBadPairSequence"
+      "PowerSupportNonempty"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -65867,6 +66020,9 @@
       },
       "PowerIResponseWitness": {
         "$s": "4894d612f70a8eb2"
+      },
+      "PowerWqoBadPairSequence": {
+        "$s": "4f0c2d7a5d7ca565"
       },
       "QuadrupleHomogeneous": {
         "$s": "b4c838fb530e9cf0"
@@ -66293,6 +66449,17 @@
       "PowerIResponseWitness": {
         "fingerprints": {
           "$r": "9dda7d615a49447a"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
+      "PowerWqoBadPairSequence": {
+        "fingerprints": {
+          "$r": "b97aeca882347760"
         },
         "lane_votes": {
           "v1": "Pass"
@@ -67567,6 +67734,7 @@
       "PowerIResponseFailure": "Pass",
       "PowerIResponseLegal": "Pass",
       "PowerIResponseWitness": "Pass",
+      "PowerWqoBadPairSequence": "Pass",
       "QuadrupleHomogeneous": "Pass",
       "RadoEmbedding": "Pass",
       "RestrictionLocallyConstant": "Pass",
