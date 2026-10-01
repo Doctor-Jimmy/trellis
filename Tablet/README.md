@@ -57,6 +57,8 @@
 | FrontRayClosure | proof | Ray closure | open |
 | FrontRestrict | definition | - | closed |
 | FrontRestriction | proof | Restriction closure | open |
+| FrontTreeImmediateExtensions | proof | Immediate extensions in the front tree | open |
+| FrontTreeSingleton | proof | Singletons belong to a nontrivial full-base tree | open |
 | FrontTreeWellFounded | proof | Well-founded prefix tree | open |
 | GBetterRel | definition | - | closed |
 | GBetterRelIff | proof | g-BQO | open |
@@ -166,4 +168,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 79/156 closed
+**Summary:** 79/158 closed

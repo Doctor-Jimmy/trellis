@@ -1,20 +1,27 @@
 \begin{lemma}[Well-founded prefix tree]
-For every front $F$, the proper-extension relation on its prefix tree
-$T(F)$ is well-founded.  Equivalently, $T(F)$ has no infinite branch, so
-there is no strictly increasing sequence $x(0)<x(1)<\cdots$ such that every
-finite initial set $\{x(0),\ldots,x(n-1)\}$ belongs to $T(F)$.
+For every front $F$ on $X$, let
+$T(F)=\{s\mid s\in\mathsf{PrefixTree}(F)\}$, regarded as a subtype of
+finite subsets of $\mathbb N$.  The relation on $T(F)$ given by
+\[
+  r(u,v)\quad\Longleftrightarrow\quad
+  \mathsf{ProperInitialSegment}(v,u)
+\]
+is well-founded.  Thus a recursive call from a node $v$ can proceed to a
+strict extension $u$ of $v$; equivalently, $T(F)$ has no infinite branch.
 \end{lemma}
 \begin{proof}
-Suppose an infinite branch existed and let $X'$ be its infinite range.  The
-strict increase makes its finite nodes exactly the initial segments of
-$X'$.  By the definition of \noderef{PrefixTree}, every such node is an
-initial segment of a member of $F$, so $X'\subseteq\mathsf{FrontBase}(F)$.
+Suppose an infinite branch existed.  Write its successive finite nodes as
+$s_0\subsetneq s_1\subsetneq\cdots$, and let $X'$ be the infinite set formed
+by their successive new elements.  Each $s_i$ is an initial segment of $X'$.
+By the definition of \noderef{PrefixTree}, every such node is an initial
+segment of a member of $F$, so $X'\subseteq\mathsf{FrontBase}(F)$.
 
 If $F$ is trivial, its prefix tree contains only $\emptyset$, contradicting
 the branch at length one.  Otherwise the base clause of \noderef{Front} gives
 $X'\subseteq X$.  Density in \noderef{Front} supplies $s\in F$ with
-$s\segs X'$.  Let $u$ be the next finite node on the branch after the node
-$s$; then $s$ is a proper initial segment of $u$.  Since $u\in T(F)$,
+ $s\segs X'$.  Choose a branch node $u$ with more elements than $s$.
+ Since both are initial segments of $X'$, $s$ is a proper initial segment of
+ $u$.  Since $u\in T(F)$,
 \noderef{PrefixTree} supplies $t\in F$ with $u$ an initial segment of $t$.
 Thus $s$ is an initial segment of $t$.  Prefix-freeness in
 \noderef{Front}, together with $s,t\in F$, gives $s=t$, while

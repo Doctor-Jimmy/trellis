@@ -49,6 +49,8 @@
 | FrontRayClosure | lemma | proof | open | - | Ray closure | Front, Ray, TailSet |
 | FrontRestrict | definition | definition | closed | - | - | Preamble |
 | FrontRestriction | lemma | proof | open | - | Restriction closure | Front, FrontRestrict |
+| FrontTreeImmediateExtensions | lemma | proof | open | - | Immediate extensions in the front tree | Front, PrefixTree, ProperInitialSegment |
+| FrontTreeSingleton | lemma | proof | open | - | Singletons belong to a nontrivial full-base tree | Front, PrefixTree |
 | FrontTreeWellFounded | lemma | proof | open | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
 | GBetterRelIff | theorem | proof | open | - | g-BQO | BetterRel, Bqo, GBetterRel, IncSeqId, MainProp |
@@ -160,4 +162,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 156 nodes | **Closed:** 79 | **Open:** 77
+**Total:** 158 nodes | **Closed:** 79 | **Open:** 79

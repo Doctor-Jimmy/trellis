@@ -1,12 +1,11 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The hereditary carrier core is now present and its induced-preorder correspondence passed. The next live structural obstruction is the recorded correspondence failure on FrontTreeWellFounded: its Lean relation has the opposite orientation from the extension recursion required by the paper. Repairing that existing node and adding the immediate-extension interface is necessary before TildeF can be defined.",
-    "comments": "Continue in Global mode with no narrow node anchor and execute front-tree-extension-repair. Restate the existing FrontTreeWellFounded declaration, rather than adding a duplicate, on the prefix-tree subtype with relation r child parent iff both nodes lie in PrefixTree F and ProperInitialSegment parent child. This is the well-founded relation whose recursion from parent to child matches the paper's definition of TildeF. Update its paired TeX as needed so the Lean and natural-language statements agree. Prove the repaired theorem from front density and prefix-freeness, and add focused helpers showing that every tree node outside F has a nonempty countable type of one-point immediate extensions in the tree and that, for a front on Set.univ with empty absent, every singleton belongs to PrefixTree F. Keep the full PowerQ and hereditary core intact, do not claim either hereditary target yet, and give complete cited TeX proofs.",
+    "reason": "The previous burst repaired FrontTreeWellFounded in the required extension orientation and added the immediate-extension and singleton-prefix interfaces; all three new nodes passed correspondence and the worker acceptance check passed. The next live structural step is the planned TildeF recursion package, which is required before either hereditary target can be covered faithfully.",
+    "comments": "Continue in Global mode and execute tilde-front-recursion. Define TildeF on the PrefixTree subtype by well-founded recursion using the repaired relation: front nodes map to atoms labelled by the SuperSequence value, while nonfront nodes map to the full PowerQ node of their one-point tree extensions. Use the universe-correct ULift of the countable extension index before applying PowerQ.node, and prove separate front/nonfront recursion equations, the atom iff front characterization, and hereditary-countability of every value using the generic closure theorem. Define the singleton restriction only with the nontrivial-front hypothesis empty notin F. Keep the unrestricted full PowerQ hierarchy and the hereditary carrier intact, do not claim either configured hereditary target yet, and provide complete cited TeX proofs for new proof-bearing nodes.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
-      "paperfaithfulness:target:thm BqoHerCtblWellF:",
-      "nodecorr:node:FrontTreeWellFounded:{\"own_tex\":\"4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b\",\"lean_semantic_closure\":\"5ec497d761d10308a66bd58a977f51d846ef4ec9bba8de3000a1d4785ca2211c\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}"
+      "paperfaithfulness:target:thm BqoHerCtblWellF:"
     ],
     "reset_blocker_ids": [],
     "next_active": "",
@@ -21,40 +20,43 @@
       {
         "start_line": 1559,
         "end_line": 1570,
-        "reason": "The paper's extension-oriented TildeF recursion, nontrivial-front singleton restriction, and finite-shift setup for the converse game."
+        "reason": "The paper's extension-oriented TildeF recursion, atom/front characterization, and nontrivial-front singleton restriction establish the required support interface before the converse game."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage recursively defines TildeF at a front atom and otherwise as the family of one-point extensions, requires the singleton restriction only for a nontrivial front, and uses the resulting finite-shift construction in the converse game. This requires the extension-oriented well-founded relation on the prefix tree."
+      "basis_summary": "The cited passage defines TildeF recursively on the well-founded front tree, using the front value at terminal nodes and the family of one-point extensions otherwise; it then restricts to singleton nodes only when the front is nontrivial and records the atom iff front characterization."
     },
     "stuck_math_audit": {
-      "notes": "The hereditary-countable-core task is complete: the worker added the ULift-erasure code, presentation-invariant hereditary predicate, subtype/restricted relation, atom heredity, countable closure, and induced preorder; all modules build and HerCtblPowerIsPreorder correspondence passed. Dismiss that task. Execute front-tree-extension-repair next. The current FrontTreeWellFounded Lean statement uses ProperInitialSegment u v, but the paper's recursion needs r child parent when parent is a proper initial segment of child. Repair the existing node in place, then add the nonfront immediate-extension and nontrivial-front singleton helpers. Do not create a duplicate while leaving the mismatched theorem, and do not claim either hereditary target in this support layer.",
+      "notes": "The front-tree-extension-repair task is complete: FrontTreeWellFounded now has the child-parent extension relation, and the two focused helper nodes passed correspondence with a successful tablet acceptance check. Dismiss that task and execute tilde-front-recursion next. The worker must preserve the full arbitrarily indexed PowerQ and use ULift for countable extension indices, prove the recursion equations and hereditary-countability of TildeF values, and retain the hypothesis empty notin F for singleton restriction. Do not claim either hereditary target in this support layer.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "completed_task": "hereditarily-countable-core",
-        "next_task": "front-tree-extension-repair",
+        "completed_task": "front-tree-extension-repair",
+        "next_task": "tilde-front-recursion",
         "required_interface": [
-          "FrontTreeWellFounded on the prefix-tree subtype with r child parent iff ProperInitialSegment parent child",
-          "proof from front density and prefix-freeness",
-          "nonempty countable immediate-extension type for a tree node outside the front",
-          "singleton membership in PrefixTree for a front on Set.univ with empty absent"
+          "TildeF on the PrefixTree subtype by extension-oriented well-founded recursion",
+          "front equation using PowerQ.atom and nonfront equation using PowerQ.node on one-point extensions",
+          "ULift of the countable extension index before PowerQ.node",
+          "atom iff front characterization",
+          "HereditarilyCountable for every TildeF value",
+          "singleton restriction only under empty notin F"
         ],
         "constraints": [
-          "repair the existing FrontTreeWellFounded node rather than adding a duplicate",
-          "match the Lean relation orientation to well-founded recursion from parent to child",
-          "preserve the full PowerQ and hereditary carrier definitions",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet"
+          "preserve the unrestricted full PowerQ hierarchy",
+          "reuse the repaired FrontTreeWellFounded and immediate-extension helpers",
+          "reuse the hereditary countable-node closure theorem",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
+          "new proof-bearing TeX blocks must contain complete cited proofs"
         ]
       }
     },
     "dismissed_tasks": [
       {
-        "id": "hereditarily-countable-core",
-        "reason": "Completed: the worker added the universe-correct hereditary code and erasure, extensional hereditary predicate, subtype and restricted relation, atom heredity, generic countable-node closure, and induced preorder. Build checks passed and HerCtblPowerIsPreorder correspondence passed."
+        "id": "front-tree-extension-repair",
+        "reason": "Completed: FrontTreeWellFounded was repaired to the extension-oriented relation, and the immediate-extension and nontrivial-front singleton helper nodes were added with successful correspondence and tablet acceptance checks."
       }
     ]
   },
@@ -67,17 +69,17 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode with no narrow node anchor and execute front-tree-extension-repair. Restate the existing FrontTreeWellFounded declaration, rather than adding a duplicate, on the prefix-tree subtype with relation r child parent iff both nodes lie in PrefixTree F and ProperInitialSegment parent child. This is the well-founded relation whose recursion from parent to child matches the paper's definition of TildeF. Update its paired TeX as needed so the Lean and natural-language statements agree. Prove the repaired theorem from front density and prefix-freeness, and add focused helpers showing that every tree node outside F has a nonempty countable type of one-point immediate extensions in the tree and that, for a front on Set.univ with empty absent, every singleton belongs to PrefixTree F. Keep the full PowerQ and hereditary core intact, do not claim either hereditary target yet, and give complete cited TeX proofs.",
+    "comments": "Continue in Global mode and execute tilde-front-recursion. Define TildeF on the PrefixTree subtype by well-founded recursion using the repaired relation: front nodes map to atoms labelled by the SuperSequence value, while nonfront nodes map to the full PowerQ node of their one-point tree extensions. Use the universe-correct ULift of the countable extension index before applying PowerQ.node, and prove separate front/nonfront recursion equations, the atom iff front characterization, and hereditary-countability of every value using the generic closure theorem. Define the singleton restriction only with the nontrivial-front hypothesis empty notin F. Keep the unrestricted full PowerQ hierarchy and the hereditary carrier intact, do not claim either configured hereditary target yet, and provide complete cited TeX proofs for new proof-bearing nodes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 19,
+    "cycle": 20,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "hereditarily-countable-core",
-        "reason": "Completed: the worker added the universe-correct hereditary code and erasure, extensional hereditary predicate, subtype and restricted relation, atom heredity, generic countable-node closure, and induced preorder. Build checks passed and HerCtblPowerIsPreorder correspondence passed."
+        "id": "front-tree-extension-repair",
+        "reason": "Completed: FrontTreeWellFounded was repaired to the extension-oriented relation, and the immediate-extension and nontrivial-front singleton helper nodes were added with successful correspondence and tablet acceptance checks."
       }
     ],
     "global_repair_request": null,
@@ -90,38 +92,41 @@
     "paper_focus_ranges": [
       {
         "end_line": 1570,
-        "reason": "The paper's extension-oriented TildeF recursion, nontrivial-front singleton restriction, and finite-shift setup for the converse game.",
+        "reason": "The paper's extension-oriented TildeF recursion, atom/front characterization, and nontrivial-front singleton restriction establish the required support interface before the converse game.",
         "start_line": 1559
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage recursively defines TildeF at a front atom and otherwise as the family of one-point extensions, requires the singleton restriction only for a nontrivial front, and uses the resulting finite-shift construction in the converse game. This requires the extension-oriented well-founded relation on the prefix tree.",
+      "basis_summary": "The cited passage defines TildeF recursively on the well-founded front tree, using the front value at terminal nodes and the family of one-point extensions otherwise; it then restricts to singleton nodes only when the front is nontrivial and records the atom iff front characterization.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The hereditary carrier core is now present and its induced-preorder correspondence passed. The next live structural obstruction is the recorded correspondence failure on FrontTreeWellFounded: its Lean relation has the opposite orientation from the extension recursion required by the paper. Repairing that existing node and adding the immediate-extension interface is necessary before TildeF can be defined.",
-    "request_id": 113,
+    "reason": "The previous burst repaired FrontTreeWellFounded in the required extension orientation and added the immediate-extension and singleton-prefix interfaces; all three new nodes passed correspondence and the worker acceptance check passed. The next live structural step is the planned TildeF recursion package, which is required before either hereditary target can be covered faithfully.",
+    "request_id": 117,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The hereditary-countable-core task is complete: the worker added the ULift-erasure code, presentation-invariant hereditary predicate, subtype/restricted relation, atom heredity, countable closure, and induced preorder; all modules build and HerCtblPowerIsPreorder correspondence passed. Dismiss that task. Execute front-tree-extension-repair next. The current FrontTreeWellFounded Lean statement uses ProperInitialSegment u v, but the paper's recursion needs r child parent when parent is a proper initial segment of child. Repair the existing node in place, then add the nonfront immediate-extension and nontrivial-front singleton helpers. Do not create a duplicate while leaving the mismatched theorem, and do not claim either hereditary target in this support layer.",
+      "notes": "The front-tree-extension-repair task is complete: FrontTreeWellFounded now has the child-parent extension relation, and the two focused helper nodes passed correspondence with a successful tablet acceptance check. Dismiss that task and execute tilde-front-recursion next. The worker must preserve the full arbitrarily indexed PowerQ and use ULift for countable extension indices, prove the recursion equations and hereditary-countability of TildeF values, and retain the hypothesis empty notin F for singleton restriction. Do not claim either hereditary target in this support layer.",
       "reviewer_lean_product": {
-        "completed_task": "hereditarily-countable-core",
+        "completed_task": "front-tree-extension-repair",
         "constraints": [
-          "repair the existing FrontTreeWellFounded node rather than adding a duplicate",
-          "match the Lean relation orientation to well-founded recursion from parent to child",
-          "preserve the full PowerQ and hereditary carrier definitions",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet"
+          "preserve the unrestricted full PowerQ hierarchy",
+          "reuse the repaired FrontTreeWellFounded and immediate-extension helpers",
+          "reuse the hereditary countable-node closure theorem",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
+          "new proof-bearing TeX blocks must contain complete cited proofs"
         ],
-        "next_task": "front-tree-extension-repair",
+        "next_task": "tilde-front-recursion",
         "required_interface": [
-          "FrontTreeWellFounded on the prefix-tree subtype with r child parent iff ProperInitialSegment parent child",
-          "proof from front density and prefix-freeness",
-          "nonempty countable immediate-extension type for a tree node outside the front",
-          "singleton membership in PrefixTree for a front on Set.univ with empty absent"
+          "TildeF on the PrefixTree subtype by extension-oriented well-founded recursion",
+          "front equation using PowerQ.atom and nonfront equation using PowerQ.node on one-point extensions",
+          "ULift of the countable extension index before PowerQ.node",
+          "atom iff front characterization",
+          "HereditarilyCountable for every TildeF value",
+          "singleton restriction only under empty notin F"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -147,18 +152,9 @@
           "otype": "target",
           "target": "thm BqoHerCtblWqo"
         }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"4b83ed4c1bf63f3aafd70ddc746dad3cee8d04c6632b733267b9be3ce883548b\",\"lean_semantic_closure\":\"5ec497d761d10308a66bd58a977f51d846ef4ec9bba8de3000a1d4785ca2211c\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-        "kind": "NodeCorr",
-        "object": {
-          "node": "FrontTreeWellFounded",
-          "otype": "node"
-        }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_113_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_117_decision.context.json"
 }

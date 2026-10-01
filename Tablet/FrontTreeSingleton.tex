@@ -1,0 +1,14 @@
+\begin{lemma}[Singletons belong to a nontrivial full-base tree]
+Let $F$ be a front on $\mathbb N$ and suppose $\emptyset\notin F$.  Then
+every singleton $\{n\}$ belongs to $T(F)$.
+\end{lemma}
+\begin{proof}
+The assumption $\emptyset\notin F$ excludes the trivial alternative in the
+base clause of \noderef{Front}; hence $\mathsf{FrontBase}(F)=\mathbb N$.
+Fix $n\in\mathbb N$ and consider the infinite tail
+$Y=\{n\}\cup\{k\mid n<k\}$.  It is a subset of the full base.  Density in
+\noderef{Front} gives $t\in F$ with $t\segs Y$.  Since $n$ is the least
+element of $Y$, the finite initial segment $t$ contains $n$, and therefore
+$\{n\}$ is an initial segment of $t$.  The definition of
+\noderef{PrefixTree} now gives $\{n\}\in T(F)$.
+\end{proof}
