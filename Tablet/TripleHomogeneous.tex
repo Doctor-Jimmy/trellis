@@ -4,25 +4,102 @@ three-element subsets of $X$, there are an infinite $Y\subseteq X$ and a
 color $b$ such that every three-element subset of $Y$ has color $b$.
 \end{lemma}
 \begin{proof}
-Take the front $F=\mathsf{CardinalityFront}(3,X)$ from
-\noderef{CardinalityFront}; it is a front by
-\noderef{CardinalityFrontIsFront}.  Let
-$S=\{s\in F\mid c(s)=1\}$.  Apply the Nash--Williams theorem
-\noderef{NashWilliams} to $F$ and $S$.  It gives a front $F'$ on an
-infinite $Y$, with $F'\subseteq F$, such that either
-$F'\subseteq S$ or $F'\cap S=\emptyset$.
+Let $F=\mathsf{CardinalityFront}(3,X)$, as defined in
+\noderef{CardinalityFront}.  By
+\noderef{CardinalityFrontIsFront}, $F$ is a front on $X$.  Define
 
-Since $F'$ is nontrivial (all its members have cardinality three), its
-base is the union of its members.  Every member of $F'$ belongs to $F$,
-and every member of $F$ is contained in $X$, so this also gives
-$Y\subseteq X$.
+\[
+S=\{s\in F\mid c(s)=1\}.
+\]
 
-Because every member of $F'$ has cardinality three, front density forces
-$F'$ to contain the first three elements of every infinite branch through
-$Y$: for a given three-element $s\subseteq Y$, take the infinite set
-whose first three elements are exactly $s$, and apply density of $F'$;
-the member supplied has cardinality three and hence is $s$.  Thus every
-three-element subset of $Y$ lies in $F'$.  In the first homogeneous case
-all have color $1$, and in the second all have color $0$.  Choosing the
-corresponding Boolean value gives the conclusion.
+We first check the hypothesis needed for Nash--Williams.  If $s\in S$,
+then the set-builder definition of $S$ gives $s\in F$ directly.  Hence
+$S\subseteq F$.  Applying \noderef{NashWilliams} to $F$, $X$, and $S$
+therefore gives a set $F'$ and an infinite set $Y$ such that
+
+\[
+\mathsf{Front}(F',Y),\qquad F'\subseteq F,
+\qquad F'\subseteq S\ \text{or}\ F'\cap S=\emptyset.
+\tag{1}
+\]
+
+We next show that $F'$ is not the trivial front.  The infinite-base and
+density clauses of \noderef{Front} give $Y$ infinite and, after applying
+density to the infinite subset $Y$ of this front's base parameter, a set
+$t\in F'$ with $\mathsf{ProperPrefixSet}(t,Y)$.  Since $F'\subseteq F$,
+the definition of \noderef{CardinalityFront} gives $t\subseteq X$ and
+$|t|=3$.  In particular $t\ne\emptyset$.  Thus $F'\ne\{\emptyset\}$:
+if equality held, the element $t\in F'$ just obtained would be empty,
+contradicting $|t|=3$.
+
+The base disjunction in \noderef{Front} now forces
+
+\[
+\mathsf{FrontBase}(F')=Y.
+\tag{2}
+\]
+
+Consequently $Y\subseteq X$.  Indeed, if $y\in Y$, equation (2) and
+the definition of \noderef{FrontBase} give an $s\in F'$ with $y\in s$.
+The inclusion $F'\subseteq F$, together with
+\noderef{CardinalityFront}, says that every element of $s$ belongs to
+$X$, so $y\in X$.
+
+We claim that every three-element subset of $Y$ belongs to $F'$.  Let
+$s\subseteq Y$ have three elements.  Write its elements in increasing
+order as
+
+\[
+a<b<c,\qquad s=\{a,b,c\}.
+\]
+
+The tail
+
+\[
+Y_{>c}=\{y\in Y\mid c<y\}
+\]
+
+is infinite.  For if it were finite, then
+$Y\cap\{0,1,\ldots,c\}$ would also be finite and
+
+\[
+Y=(Y\cap\{0,1,\ldots,c\})\cup Y_{>c}
+\]
+
+would be finite, contrary to the infinitude of $Y$.  Put
+
+\[
+Z=\{a,b,c\}\cup Y_{>c}.
+\]
+
+Then $Z\subseteq Y$ is infinite, and its only elements at most $c$ are
+$a,b,c$.  Apply the density clause of \noderef{Front} to $Z$.  We get
+$t\in F'$ and \mathsf{ProperPrefixSet}(t,Z)$.  Unpacking
+\noderef{ProperPrefixSet}, choose $n\in Z$ such that
+
+\[
+\forall k,\qquad k\in t\quad\Longleftrightarrow\quad
+k\in Z\ \text{and}\ k<n.
+\tag{3}
+\]
+
+Again $t\in F'\subseteq F$, so \noderef{CardinalityFront} gives
+$|t|=3$.  Since $n\in Z$, there are four possibilities.  If $n=a$,
+the right side of (3) is empty; if $n=b$, it is $\{a\}$; and if
+$n=c$, it is $\{a,b\}$.  Each of these contradicts $|t|=3$.  Thus
+$c<n$.  In this case (3) shows that $a,b,c\in t$, so
+$\{a,b,c\}\subseteq t$.  If some $y\in Y_{>c}$ also satisfied $y<n$,
+then (3) would put the four distinct elements $a,b,c,y$ in $t$,
+contradicting $|t|=3$.  Hence no element of $Y_{>c}$ is below $n$.
+Equation (3) then says precisely that $t=\{a,b,c\}=s$.  Therefore
+$s\in F'$, proving the claim.
+
+Finally consider the two alternatives in (1).  If $F'\subseteq S$,
+then every three-element $s\subseteq Y$ lies in $S$, so the definition
+of $S$ gives $c(s)=1$; choose $b=1$.  If
+$F'\cap S=\emptyset$, then every such $s$ lies in $F'$ but not in $S$.
+Since $s\in F$ and $S=\{u\in F\mid c(u)=1\}$, this means
+$c(s)\ne1$.  A Boolean value is either $0$ or $1$, so $c(s)=0$; choose
+$b=0$.  In both cases $Y\subseteq X$, $Y$ is infinite, and every
+three-element subset of $Y$ has color $b$, as required.
 \end{proof}
