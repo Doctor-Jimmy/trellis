@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerFiniteOrbitConstancy has a current Sound approval. Continue to PowerCopiedTerminates, whose current proof compresses the well-founded termination step and should make the finite descent explicit.",
-    "comments": "Edit only Tablet/PowerCopiedTerminates.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof jumps from the legal-move facts to \"this process reaches a pair of atoms after finitely many steps\" without defining the pair sequence or showing the contradiction with well-foundedness. Cite \\noderef{PowerCopiedFailureMove}, \\noderef{PowerMove}, \\noderef{PowerGameDescent}, and \\noderef{PowerGameDescentWellFounded}; explicitly name the adjacent copied pair at each depth, split the case where the first coordinate is a node from the case where it is already an atom, and show that every nonterminal successor is a PowerGameDescent predecessor. Then argue by accessibility that an infinite nonterminal continuation is impossible, yielding a finite k, and match the resulting atom pair and depth to \\noderef{PowerCopiedTerminalAt}. Keep the badness/failed-pair condition from PowerCopiedFailureMove visible, but do not use the proof of any cited node. No statement/import/support changes.",
+    "reason": "PowerCopiedTerminates has a current Sound approval. Continue to PowerCopiedTerminalSupport: its proof currently extracts q and q' as though they were supplied directly by PowerCopiedTerminates, and silently replaces PowerShiftIter(0,x) by x; both steps require explicit statement citations.",
+    "comments": "Edit only Tablet/PowerCopiedTerminalSupport.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Independent gaps: PowerCopiedTerminates yields k and PowerCopiedTerminalAt, not q,q' directly, so cite \\noderef{PowerCopiedTerminalAt} and explicitly unpack its existential to obtain the two atom equations. PowerCopiedSupport at row 0 gives inclusion into PowerSupport(h (PowerShiftIter 0 x)); cite \\noderef{PowerShiftIter} and use its zeroth-iterate equation to rewrite this to PowerSupport(h x). Then cite \\noderef{PowerSupport} for atom support {q} and spell out subset transitivity to derive q membership. Retain the existing terminal witness for the second atom; no statement/import/support changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedTerminates",
+    "next_active": "PowerCopiedTerminalSupport",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -16,19 +16,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1383,
-        "end_line": 1397,
-        "reason": "The paper defines recursive game moves, with node choices replaced by children and atoms fixed."
-      },
-      {
-        "start_line": 1424,
-        "end_line": 1426,
-        "reason": "The paper invokes foundation to justify eventual arrival at a pair of atoms."
+        "start_line": 1368,
+        "end_line": 1374,
+        "reason": "The paper identifies Q as atoms and defines support of an atom as its singleton, with recursive support for nodes."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1383-1397 define the copied comparison game by child moves and fixed atom moves; lines 1424-1426 say foundation forces a round where both values are atoms. The tablet proof should explicitly connect each copied failure move to PowerGameDescent and use its well-foundedness to obtain a finite terminal depth."
+      "basis_summary": "Lines 1368-1374 treat elements of Q as atoms and define support by the atom singleton clause and the recursive union over children. The tablet proof should therefore make both the terminal atom extraction and the row-zero iterate rewrite explicit before applying support inclusion."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -43,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerCopiedTerminates.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. The current proof jumps from the legal-move facts to \"this process reaches a pair of atoms after finitely many steps\" without defining the pair sequence or showing the contradiction with well-foundedness. Cite \\noderef{PowerCopiedFailureMove}, \\noderef{PowerMove}, \\noderef{PowerGameDescent}, and \\noderef{PowerGameDescentWellFounded}; explicitly name the adjacent copied pair at each depth, split the case where the first coordinate is a node from the case where it is already an atom, and show that every nonterminal successor is a PowerGameDescent predecessor. Then argue by accessibility that an infinite nonterminal continuation is impossible, yielding a finite k, and match the resulting atom pair and depth to \\noderef{PowerCopiedTerminalAt}. Keep the badness/failed-pair condition from PowerCopiedFailureMove visible, but do not use the proof of any cited node. No statement/import/support changes.",
+    "comments": "Edit only Tablet/PowerCopiedTerminalSupport.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Independent gaps: PowerCopiedTerminates yields k and PowerCopiedTerminalAt, not q,q' directly, so cite \\noderef{PowerCopiedTerminalAt} and explicitly unpack its existential to obtain the two atom equations. PowerCopiedSupport at row 0 gives inclusion into PowerSupport(h (PowerShiftIter 0 x)); cite \\noderef{PowerShiftIter} and use its zeroth-iterate equation to rewrite this to PowerSupport(h x). Then cite \\noderef{PowerSupport} for atom support {q} and spell out subset transitivity to derive q membership. Retain the existing terminal witness for the second atom; no statement/import/support changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 134,
+    "cycle": 135,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,29 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerCopiedTerminates",
+    "next_active": "PowerCopiedTerminalSupport",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1397,
-        "reason": "The paper defines recursive game moves, with node choices replaced by children and atoms fixed.",
-        "start_line": 1383
-      },
-      {
-        "end_line": 1426,
-        "reason": "The paper invokes foundation to justify eventual arrival at a pair of atoms.",
-        "start_line": 1424
+        "end_line": 1374,
+        "reason": "The paper identifies Q as atoms and defines support of an atom as its singleton, with recursive support for nodes.",
+        "start_line": 1368
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1383-1397 define the copied comparison game by child moves and fixed atom moves; lines 1424-1426 say foundation forces a round where both values are atoms. The tablet proof should explicitly connect each copied failure move to PowerGameDescent and use its well-foundedness to obtain a finite terminal depth.",
+      "basis_summary": "Lines 1368-1374 treat elements of Q as atoms and define support by the atom singleton clause and the recursive union over children. The tablet proof should therefore make both the terminal atom extraction and the row-zero iterate rewrite explicit before applying support inclusion.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerFiniteOrbitConstancy has a current Sound approval. Continue to PowerCopiedTerminates, whose current proof compresses the well-founded termination step and should make the finite descent explicit.",
-    "request_id": 442,
+    "reason": "PowerCopiedTerminates has a current Sound approval. Continue to PowerCopiedTerminalSupport: its proof currently extracts q and q' as though they were supplied directly by PowerCopiedTerminates, and silently replaces PowerShiftIter(0,x) by x; both steps require explicit statement citations.",
+    "request_id": 445,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -86,5 +76,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_442_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_445_decision.context.json"
 }
