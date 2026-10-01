@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BadSuperToBase has a current Sound approval. BadSuperRestrict is the held next node, has no Sound verdict or repair diagnosis, and is requestable, so request verification without assigning a worker or resetting any obligation.",
-    "comments": "Leave Tablet/BadSuperRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of BadSuperRestrict. For arbitrary s and t in the restricted front, check that the finite-shift premise is unchanged and that hsub supplies their membership in the original front. Unpack or cite SuperSequenceRestrict to identify the restricted value at each dependent front element with the original value f(s) or f(t), then apply BadSuperSequence to the same FiniteShift s t witness and rewrite the result into the defining conclusion for the restricted super-sequence. Every cross-node dependency used should be cited, especially BadSuperSequence and SuperSequenceRestrict; do not rely on the hypotheses of another theorem by citation.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "BadSuperRestrict"
+    "reason": "The Sound verifier found one concrete mandatory-citation gap in BadSuperRestrict: the proof invokes the defining implication of BadSuperSequence without citing that dependency. Assign the repair-ready blocker to a bounded worker edit while preserving the restriction argument and theorem statement.",
+    "comments": "Edit only Tablet/BadSuperRestrict.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; do not add a helper or change the theorem. In the sentence that applies badness of the original super-sequence, explicitly cite \\noderef{BadSuperSequence} and state that the previously established s,t in F with FiniteShift s t satisfy the defining negated relation. Retain the citation to SuperSequenceRestrict for the restricted value-map identification. No other repair is supported by the current verifier evidence.",
+    "task_blocker_ids": [
+      "soundness:node:BadSuperRestrict:sound-v2:a646efcd1119c5bed2234dd2c294b4df251ffeb9bba3f10b9e926c9a772aca90"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "BadSuperRestrict",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -22,12 +22,12 @@
       {
         "start_line": 1188,
         "end_line": 1198,
-        "reason": "The manuscript defines a sub-super-sequence as restriction to a front included in the original front."
+        "reason": "The manuscript defines sub-super-sequences as restrictions to fronts included in the original front."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript passage defines sub-super-sequences as restrictions to included fronts. The requested verification checks that the tablet's restriction preserves the same finite-shift witnesses and transfers original badness through the unchanged value map."
+      "basis_summary": "The cited manuscript passage defines the restriction operation underlying sub-super-sequences. The worker edit preserves that restriction argument and supplies the tablet's mandatory citation when transferring the original badness condition."
     },
     "authorized_node_ids": []
   },
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/BadSuperRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of BadSuperRestrict. For arbitrary s and t in the restricted front, check that the finite-shift premise is unchanged and that hsub supplies their membership in the original front. Unpack or cite SuperSequenceRestrict to identify the restricted value at each dependent front element with the original value f(s) or f(t), then apply BadSuperSequence to the same FiniteShift s t witness and rewrite the result into the defining conclusion for the restricted super-sequence. Every cross-node dependency used should be cited, especially BadSuperSequence and SuperSequenceRestrict; do not rely on the hypotheses of another theorem by citation.",
+    "comments": "Edit only Tablet/BadSuperRestrict.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; do not add a helper or change the theorem. In the sentence that applies badness of the original super-sequence, explicitly cite \\noderef{BadSuperSequence} and state that the previously established s,t in F with FiniteShift s t satisfy the defining negated relation. Retain the citation to SuperSequenceRestrict for the restricted value-map identification. No other repair is supported by the current verifier evidence.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 168,
+    "cycle": 169,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,34 +51,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "BadSuperRestrict",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1198,
-        "reason": "The manuscript defines a sub-super-sequence as restriction to a front included in the original front.",
+        "reason": "The manuscript defines sub-super-sequences as restrictions to fronts included in the original front.",
         "start_line": 1188
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript passage defines sub-super-sequences as restrictions to included fronts. The requested verification checks that the tablet's restriction preserves the same finite-shift witnesses and transfers original badness through the unchanged value map.",
+      "basis_summary": "The cited manuscript passage defines the restriction operation underlying sub-super-sequences. The worker edit preserves that restriction argument and supplies the tablet's mandatory citation when transferring the original badness condition.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BadSuperToBase has a current Sound approval. BadSuperRestrict is the held next node, has no Sound verdict or repair diagnosis, and is requestable, so request verification without assigning a worker or resetting any obligation.",
-    "request_id": 530,
-    "request_sound_verifier_nodes": [
-      "BadSuperRestrict"
-    ],
+    "reason": "The Sound verifier found one concrete mandatory-citation gap in BadSuperRestrict: the proof invokes the defining implication of BadSuperSequence without citing that dependency. Assign the repair-ready blocker to a bounded worker edit while preserving the restriction argument and theorem statement.",
+    "request_id": 532,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:a646efcd1119c5bed2234dd2c294b4df251ffeb9bba3f10b9e926c9a772aca90",
+        "kind": "Soundness",
+        "object": {
+          "node": "BadSuperRestrict",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_530_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_532_decision.context.json"
 }
