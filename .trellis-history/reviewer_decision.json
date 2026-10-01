@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "GBetterRelIff now has fresh Sound approval. BqoIffGeneralShift directly depends on that certified equivalence and remains FreshUnknown, so request its Sound verification as the next downstream step.",
-    "comments": "Do not assign a worker or reset any soundness evidence. The current verifier evidence approves GBetterRelIff, and the BqoIffGeneralShift Lean node imports it directly. Request one real Sound verifier for BqoIffGeneralShift only; check both directions of the corollary, the g = IncSeqId case, the nonidentity case using GBetterRelIff, and the final Bqo specialization from the explicitly cited support. Leave all other live obligations untouched.",
+    "reason": "BqoIffGeneralShift is now Sound-approved. CardinalityFrontIsFront is the remaining direct support node imported by the held target TripleHomogeneous and remains FreshUnknown, so verify it before the parent.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound evidence approves BqoIffGeneralShift and NashWilliams, while CardinalityFrontIsFront remains FreshUnknown and is imported directly by TripleHomogeneous. Request one real Sound verifier for CardinalityFrontIsFront only; check the trivial k=0 case, the base and prefix-freeness clauses, and density via the first k elements of an increasing enumeration, with the explicit Front dependency. Leave all other live obligations untouched.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "BqoIffGeneralShift"
+      "CardinalityFrontIsFront"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,19 +18,24 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1713,
-        "end_line": 1715,
-        "reason": "The paper's equivalence of the generalized shift with the ordinary shift."
+        "start_line": 1002,
+        "end_line": 1004,
+        "reason": "The paper's definition of finite subsets of fixed cardinality and increasing enumeration convention."
       },
       {
-        "start_line": 1731,
-        "end_line": 1745,
-        "reason": "The paper's g-better-relation definition and g-BQO equivalence target."
+        "start_line": 1036,
+        "end_line": 1037,
+        "reason": "The paper's explicit constant-cardinality front example, including the trivial k=0 case."
+      },
+      {
+        "start_line": 1083,
+        "end_line": 1090,
+        "reason": "The paper's three explicit front clauses used by the changed support proof."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passages state the generalized-shift equivalence, define g-better-relations by the two equivalent morphism conditions, and conclude that every nonidentity increasing shift gives exactly the ordinary better-relation and BQO notions. This is the paper claim represented by BqoIffGeneralShift and its direct support is now Sound-approved."
+      "basis_summary": "The cited passages define [X]^k, identify [X]^k as a front for every k with [X]^0 trivial, and state the explicit front requirements: the base alternative, prefix-freeness, and density. These are exactly the claims expanded in CardinalityFrontIsFront, which directly supports the held TripleHomogeneous node."
     },
     "work_style_hint": "none"
   },
@@ -43,10 +48,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. The current verifier evidence approves GBetterRelIff, and the BqoIffGeneralShift Lean node imports it directly. Request one real Sound verifier for BqoIffGeneralShift only; check both directions of the corollary, the g = IncSeqId case, the nonidentity case using GBetterRelIff, and the final Bqo specialization from the explicitly cited support. Leave all other live obligations untouched.",
+    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound evidence approves BqoIffGeneralShift and NashWilliams, while CardinalityFrontIsFront remains FreshUnknown and is imported directly by TripleHomogeneous. Request one real Sound verifier for CardinalityFrontIsFront only; check the trivial k=0 case, the base and prefix-freeness clauses, and density via the first k elements of an increasing enumeration, with the explicit Front dependency. Leave all other live obligations untouched.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 92,
+    "cycle": 93,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -60,25 +65,30 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1715,
-        "reason": "The paper's equivalence of the generalized shift with the ordinary shift.",
-        "start_line": 1713
+        "end_line": 1004,
+        "reason": "The paper's definition of finite subsets of fixed cardinality and increasing enumeration convention.",
+        "start_line": 1002
       },
       {
-        "end_line": 1745,
-        "reason": "The paper's g-better-relation definition and g-BQO equivalence target.",
-        "start_line": 1731
+        "end_line": 1037,
+        "reason": "The paper's explicit constant-cardinality front example, including the trivial k=0 case.",
+        "start_line": 1036
+      },
+      {
+        "end_line": 1090,
+        "reason": "The paper's three explicit front clauses used by the changed support proof.",
+        "start_line": 1083
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passages state the generalized-shift equivalence, define g-better-relations by the two equivalent morphism conditions, and conclude that every nonidentity increasing shift gives exactly the ordinary better-relation and BQO notions. This is the paper claim represented by BqoIffGeneralShift and its direct support is now Sound-approved.",
+      "basis_summary": "The cited passages define [X]^k, identify [X]^k as a front for every k with [X]^0 trivial, and state the explicit front requirements: the base alternative, prefix-freeness, and density. These are exactly the claims expanded in CardinalityFrontIsFront, which directly supports the held TripleHomogeneous node.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "GBetterRelIff now has fresh Sound approval. BqoIffGeneralShift directly depends on that certified equivalence and remains FreshUnknown, so request its Sound verification as the next downstream step.",
-    "request_id": 334,
+    "reason": "BqoIffGeneralShift is now Sound-approved. CardinalityFrontIsFront is the remaining direct support node imported by the held target TripleHomogeneous and remains FreshUnknown, so verify it before the parent.",
+    "request_id": 336,
     "request_sound_verifier_nodes": [
-      "BqoIffGeneralShift"
+      "CardinalityFrontIsFront"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -88,5 +98,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_334_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_336_decision.context.json"
 }
