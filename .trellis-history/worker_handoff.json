@@ -1,16 +1,16 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Rechecked BlockSigmaIntertwines and separately soundness-audited EmapLemma without changing Tablet content. Both natural-language proofs are rigorous, match their Lean statements, and use cited statement-level support.",
-    "comments": "No Tablet files were changed. Soundness audit for BlockSigmaIntertwines: OrbitBlockCoverage states that, under k<g(k), every l is either below G(0) or lies in exactly one block [G(n),G(n+1)); BlockSigma states the initial and nth-block formulas for the total block map; RightComp states RightComp(g)(f)=f composed with g; and SuccSeq states SuccSeq(n)=n+1. The local hypotheses k<g(k) and g(j)=j for j<k handle the initial segment, giving g(l)=l and both values l. In the block case, strict increase of g gives G(n+1)<=g(l)<G(n+2), so the two cited BlockSigma formulas have exponents f(n+1)-n and f(n+1)-(n+1), respectively. Since f is an increasing self-embedding, n+1<=f(n+1); setting a=f(n+1)-(n+1) gives a+1=f(n+1)-n, and the elementary iterate identity g^[a](g(l))=g^[a+1](l) proves equality. The typed IncSeq hypotheses supply the stated monotonicity facts, and the remaining iterate and Nat arithmetic identities are elementary; no dependency proof is used implicitly. Separate EmapLemma audit: FirstMovedPoint states that hg yields k_g<g(k_g) and every earlier point is fixed; BlockSigmaEmbedding supplies, for each f, an IncSeq representative sigma(f) with the BlockSigma values; BlockSigmaContinuous supplies the finite-prefix agreement condition for those values; BlockSigmaIntertwines supplies the coordinate identity once the FirstMovedPoint witness is passed through. ContMor states that existence of a prefix-continuous homomorphism is the desired relation, while ShiftMap, RightComp, and SuccSeq identify the two actions and their coordinates. Choosing one representative for each f gives a map into IncSeq, BlockSigmaContinuous gives prefix continuity, and the coordinate identity gives sigma(ShiftMap(f))=RightComp(g)(sigma(f)) for every f, so the ContMor conclusion follows. Every cross-node dependency used by these proofs is cited in the corresponding proof block; there are no soundness gaps or sketch markers.",
+    "summary": "Repaired OrbitEmbedding.tex with explicit inductions proving monotonicity of every iterate and the successor iterate identity, then derived successive orbit inequalities, injectivity, and the IncSeq order-embedding conclusion.",
+    "comments": "Only Tablet/OrbitEmbedding.tex was edited. The Lean statement, imports, and orbit definition are unchanged. The proof cites IncSeq and OrbitPoint at statement level; the support audit is recorded in .trellis/scratch/notes.md.",
     "target_claim_updates": {},
     "difficulty_updates": {},
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
     "deleted_nodes": [],
-    "needs_restructure_suggested_nodes": [],
-    "memory_challenges": []
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -20,8 +20,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "No Tablet files were changed. Soundness audit for BlockSigmaIntertwines: OrbitBlockCoverage states that, under k<g(k), every l is either below G(0) or lies in exactly one block [G(n),G(n+1)); BlockSigma states the initial and nth-block formulas for the total block map; RightComp states RightComp(g)(f)=f composed with g; and SuccSeq states SuccSeq(n)=n+1. The local hypotheses k<g(k) and g(j)=j for j<k handle the initial segment, giving g(l)=l and both values l. In the block case, strict increase of g gives G(n+1)<=g(l)<G(n+2), so the two cited BlockSigma formulas have exponents f(n+1)-n and f(n+1)-(n+1), respectively. Since f is an increasing self-embedding, n+1<=f(n+1); setting a=f(n+1)-(n+1) gives a+1=f(n+1)-n, and the elementary iterate identity g^[a](g(l))=g^[a+1](l) proves equality. The typed IncSeq hypotheses supply the stated monotonicity facts, and the remaining iterate and Nat arithmetic identities are elementary; no dependency proof is used implicitly. Separate EmapLemma audit: FirstMovedPoint states that hg yields k_g<g(k_g) and every earlier point is fixed; BlockSigmaEmbedding supplies, for each f, an IncSeq representative sigma(f) with the BlockSigma values; BlockSigmaContinuous supplies the finite-prefix agreement condition for those values; BlockSigmaIntertwines supplies the coordinate identity once the FirstMovedPoint witness is passed through. ContMor states that existence of a prefix-continuous homomorphism is the desired relation, while ShiftMap, RightComp, and SuccSeq identify the two actions and their coordinates. Choosing one representative for each f gives a map into IncSeq, BlockSigmaContinuous gives prefix continuity, and the coordinate identity gives sigma(ShiftMap(f))=RightComp(g)(sigma(f)) for every f, so the ContMor conclusion follows. Every cross-node dependency used by these proofs is cited in the corresponding proof block; there are no soundness gaps or sketch markers.",
-    "cycle": 38,
+    "comments": "Only Tablet/OrbitEmbedding.tex was edited. The Lean statement, imports, and orbit definition are unchanged. The proof cites IncSeq and OrbitPoint at statement level; the support audit is recorded in .trellis/scratch/notes.md.",
+    "cycle": 39,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -37,7 +37,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 187,
+    "request_id": 190,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1326,9 +1326,12 @@
           "own_tex_hash": "9a10debc884e91c8043df796e3debd3bba49a15f743a6d70b8cf884a4bfe9952"
         },
         "OrbitEmbedding": {
-          "combined_sound_fp": "sound-v2:26ea9727bc0c7fb947b602aea55f90228af9576324d3c3ce60bc8d8a93f9d6d4",
-          "dep_statement_hashes": {},
-          "own_tex_hash": "eba8e939d54c1834b20442e10a70eb8e1ce8fced7b1e3284ab04c5065141aec0"
+          "combined_sound_fp": "sound-v2:f846eeb8a35da0be6b2f11d60086a480f12b3d90254f05f8ecad075c4a21432d",
+          "dep_statement_hashes": {
+            "IncSeq": "62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e",
+            "OrbitPoint": "aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94"
+          },
+          "own_tex_hash": "82e5de0af7a5f5b0eadee195abb96b513fb3d3e3a9edf118c7effcca98690971"
         },
         "OrbitPoint": {
           "combined_sound_fp": "sound-v2:81ea51d8ffd747c5a13e77ba023ec99d3f1c7ebf20879ea01ffa4249c6aa1b86",
@@ -2079,7 +2082,7 @@
         "NoBadPerfectSuper": "sound-v2:cf074a97b1792ef8a42a2419d7feace0dcb01b98ce6bb4dd8a1771e87a3f3cd3",
         "OrbitBlock": "sound-v2:2a1398bb6313aaaa95692080dfa1c0322d995f3d2fe85d46766cae74e9fed86d",
         "OrbitBlockCoverage": "sound-v2:cfb78ea6d8b687f2b4f5ee593af7e31a640dd71e81f3b209a8883d42861dfd94",
-        "OrbitEmbedding": "sound-v2:26ea9727bc0c7fb947b602aea55f90228af9576324d3c3ce60bc8d8a93f9d6d4",
+        "OrbitEmbedding": "sound-v2:f846eeb8a35da0be6b2f11d60086a480f12b3d90254f05f8ecad075c4a21432d",
         "OrbitPoint": "sound-v2:81ea51d8ffd747c5a13e77ba023ec99d3f1c7ebf20879ea01ffa4249c6aa1b86",
         "OrbitUnbounded": "sound-v2:73e09b8a2f468e56aac7fc3d1be31476d35930ee7d37706d26b7b34548baf094",
         "PerfectBaseToSuper": "sound-v2:fe2f74e84a0be9f5c6694336778e849c61323436519c111ecc554102f5fed121",
@@ -2530,7 +2533,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Rechecked BlockSigmaIntertwines and separately soundness-audited EmapLemma without changing Tablet content. Both natural-language proofs are rigorous, match their Lean statements, and use cited statement-level support.",
+    "summary": "Repaired OrbitEmbedding.tex with explicit inductions proving monotonicity of every iterate and the successor iterate identity, then derived successive orbit inequalities, injectivity, and the IncSeq order-embedding conclusion.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2718,7 +2721,7 @@
     "OrbitBlockCoverage.lean": "6f42387e676bb7cbe31152716aee4d11e533480da145f03d13f10a3e14b5ed0b",
     "OrbitBlockCoverage.tex": "9a10debc884e91c8043df796e3debd3bba49a15f743a6d70b8cf884a4bfe9952",
     "OrbitEmbedding.lean": "ee6de85a671d18093193bff1eab03e3a9da8e186ecb190f3cb8836a83484b40d",
-    "OrbitEmbedding.tex": "eba8e939d54c1834b20442e10a70eb8e1ce8fced7b1e3284ab04c5065141aec0",
+    "OrbitEmbedding.tex": "82e5de0af7a5f5b0eadee195abb96b513fb3d3e3a9edf118c7effcca98690971",
     "OrbitPoint.lean": "7c117bc64a0d99983a98b485eec1d3b6beff1d8277adefa16d6b97baf5a397e1",
     "OrbitPoint.tex": "487d448cd4baf3f3c7a9e93a118db9506070f9d7b61d018620b0351a9f9db4d2",
     "OrbitUnbounded.lean": "9f7bc41dc2b7cb8b32f06625184b91334ef91df091caca20b6f11739af33f8c0",
@@ -2896,7 +2899,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_187_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_190_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
