@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BadMultiToSuper now has a current Sound approval. BadMultiToNontrivialSuper is the held next node, remains a fresh requestable Sound obligation, and has no reported failure, so request its verifier without assigning a worker or resetting any blocker.",
-    "comments": "Leave Tablet/BadMultiToNontrivialSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToNontrivialSuper. Check the construction of f first: cite DecidingFront for the front, cite DecidingValue for the value map and its exact proper-prefix equation, package the particular map v with the front as a SuperSequence, and apply BadMultiToSuper using the supplied hbad hypothesis. For nontriviality, assume empty is in DecidingFrontSet h, unfold that through DecidingFrontSet to DecidingPrefix, and explicitly show that the empty set is a proper prefix of every increasing enumeration using its first value and monotonicity. Apply the deciding-prefix equality to IncSeqId and ShiftMap(IncSeqId), citing IncSeqId, ShiftMap, and ProperPrefixSet; use Std.Refl to obtain the relation and BadMultiSequence to obtain its negation. Ensure every cross-node dependency used in these steps is cited, including DecidingFront, DecidingValue, BadMultiToSuper, BadMultiSequence, SuperSequence, DecidingFrontSet, DecidingPrefix, IncSeqId, ShiftMap, and ProperPrefixSet.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "BadMultiToNontrivialSuper"
+    "reason": "The Sound verifier found exactly two mandatory citation gaps in BadMultiToNontrivialSuper: the proof uses the DecidingPrefix equality without citing DecidingPrefix and uses the ProperPrefixSet predicate without citing ProperPrefixSet. Assign this repair-ready blocker to a bounded worker edit while preserving the accepted mathematical argument and theorem statement.",
+    "comments": "Edit only Tablet/BadMultiToNontrivialSuper.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; add no helper and do not weaken the claim. In the empty-front contradiction, explicitly cite \\noderef{ProperPrefixSet} when asserting that the empty set is a proper prefix of every increasing enumeration and when applying that fact to IncSeqId and ShiftMap(IncSeqId). Explicitly cite \\noderef{DecidingPrefix} at the step that applies the deciding-prefix equality to obtain h(IncSeqId) = h(ShiftMap(IncSeqId)). Retain the existing citations to DecidingFrontSet, IncSeqId, ShiftMap, BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingValue, and SuperSequence. No other repair is supported by the current verifier evidence.",
+    "task_blocker_ids": [
+      "soundness:node:BadMultiToNontrivialSuper:sound-v2:4dd5fc923d0c11cdb4de5bfcbbcdb1253b859ac934594e5f10e0d7292a96942c"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "BadMultiToNontrivialSuper",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -22,17 +22,17 @@
       {
         "start_line": 1277,
         "end_line": 1290,
-        "reason": "The manuscript constructs the minimal deciding front and its value map from a locally constant multi-sequence."
+        "reason": "The manuscript constructs the deciding front and its value map from a locally constant multi-sequence."
       },
       {
         "start_line": 1481,
         "end_line": 1489,
-        "reason": "The manuscript transfers badness to the deciding-front super-sequence and identifies the two values across a finite shift."
+        "reason": "The manuscript transfers badness to the deciding-front super-sequence using the two prefix values across a shift."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript passages separate the construction of the deciding-front value map from the badness argument, and the latter uses the two prefix values across a shift. The nontriviality addendum in the tablet must additionally make the empty-prefix contradiction explicit using reflexivity and the bad multi-sequence condition."
+      "basis_summary": "The cited manuscript passages support the existing two-part proof: construct the deciding-front value map and then transfer badness across a finite shift. The current verifier found no mathematical defect, only the missing explicit citations for the proper-prefix predicate and deciding-prefix equality used in the trivial-front contradiction."
     },
     "authorized_node_ids": []
   },
@@ -45,10 +45,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/BadMultiToNontrivialSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToNontrivialSuper. Check the construction of f first: cite DecidingFront for the front, cite DecidingValue for the value map and its exact proper-prefix equation, package the particular map v with the front as a SuperSequence, and apply BadMultiToSuper using the supplied hbad hypothesis. For nontriviality, assume empty is in DecidingFrontSet h, unfold that through DecidingFrontSet to DecidingPrefix, and explicitly show that the empty set is a proper prefix of every increasing enumeration using its first value and monotonicity. Apply the deciding-prefix equality to IncSeqId and ShiftMap(IncSeqId), citing IncSeqId, ShiftMap, and ProperPrefixSet; use Std.Refl to obtain the relation and BadMultiSequence to obtain its negation. Ensure every cross-node dependency used in these steps is cited, including DecidingFront, DecidingValue, BadMultiToSuper, BadMultiSequence, SuperSequence, DecidingFrontSet, DecidingPrefix, IncSeqId, ShiftMap, and ProperPrefixSet.",
+    "comments": "Edit only Tablet/BadMultiToNontrivialSuper.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; add no helper and do not weaken the claim. In the empty-front contradiction, explicitly cite \\noderef{ProperPrefixSet} when asserting that the empty set is a proper prefix of every increasing enumeration and when applying that fact to IncSeqId and ShiftMap(IncSeqId). Explicitly cite \\noderef{DecidingPrefix} at the step that applies the deciding-prefix equality to obtain h(IncSeqId) = h(ShiftMap(IncSeqId)). Retain the existing citations to DecidingFrontSet, IncSeqId, ShiftMap, BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingValue, and SuperSequence. No other repair is supported by the current verifier evidence.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 172,
+    "cycle": 173,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -56,39 +56,47 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "BadMultiToNontrivialSuper",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1290,
-        "reason": "The manuscript constructs the minimal deciding front and its value map from a locally constant multi-sequence.",
+        "reason": "The manuscript constructs the deciding front and its value map from a locally constant multi-sequence.",
         "start_line": 1277
       },
       {
         "end_line": 1489,
-        "reason": "The manuscript transfers badness to the deciding-front super-sequence and identifies the two values across a finite shift.",
+        "reason": "The manuscript transfers badness to the deciding-front super-sequence using the two prefix values across a shift.",
         "start_line": 1481
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript passages separate the construction of the deciding-front value map from the badness argument, and the latter uses the two prefix values across a shift. The nontriviality addendum in the tablet must additionally make the empty-prefix contradiction explicit using reflexivity and the bad multi-sequence condition.",
+      "basis_summary": "The cited manuscript passages support the existing two-part proof: construct the deciding-front value map and then transfer badness across a finite shift. The current verifier found no mathematical defect, only the missing explicit citations for the proper-prefix predicate and deciding-prefix equality used in the trivial-front contradiction.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BadMultiToSuper now has a current Sound approval. BadMultiToNontrivialSuper is the held next node, remains a fresh requestable Sound obligation, and has no reported failure, so request its verifier without assigning a worker or resetting any blocker.",
-    "request_id": 540,
-    "request_sound_verifier_nodes": [
-      "BadMultiToNontrivialSuper"
-    ],
+    "reason": "The Sound verifier found exactly two mandatory citation gaps in BadMultiToNontrivialSuper: the proof uses the DecidingPrefix equality without citing DecidingPrefix and uses the ProperPrefixSet predicate without citing ProperPrefixSet. Assign this repair-ready blocker to a bounded worker edit while preserving the accepted mathematical argument and theorem statement.",
+    "request_id": 542,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:4dd5fc923d0c11cdb4de5bfcbbcdb1253b859ac934594e5f10e0d7292a96942c",
+        "kind": "Soundness",
+        "object": {
+          "node": "BadMultiToNontrivialSuper",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_540_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_542_decision.context.json"
 }
