@@ -1,10 +1,10 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound rejection is a valid diagnosis of the current proof route, not a paper-level obstruction. Assign a fresh worker to replace the invalid reservoir fusion in GBetterRelIff with the existing deciding-front and Nash-Williams argument, while preserving the theorem statement.",
-    "comments": "Work in Global mode but restrict the actual edit to the GBetterRelIff proof and the imports needed for its real support; do not change the Lean theorem signature, target claims, or add a helper. The rejected argument is at Tablet/GBetterRelIff.tex:75-117: its negative/positive reservoir invariant does not produce the claimed subreservoir, does not define the finite input-prefix schedule, and does not relate x composed with t_i to the maintained reservoirs. Do not attempt another version of that fusion. Replace the whole first-clause equivalence argument by the paper-faithful homogeneous-front route already exemplified by ShiftDichotomy: for a locally constant phi define the Boolean coloring c(y)=1 exactly when R(phi(y), phi(RightComp g y)); prove c is locally constant by separately bounding the finite coordinates needed for phi(y) and phi(y composed with g); cite DecidingFront and DecidingValue to obtain its deciding front and value map; apply NashWilliams to the front and the set of value-1 members; enumerate the resulting infinite base with InfiniteSetEnumeration. Front density and DecidingValue must then show, for every x, that c(z composed with x) has the same homogeneous value. If that value is 1, the restriction phi(z composed with minus) supplies the R-homomorphism required by the first clause; if it is 0, it supplies the complement homomorphism contradicting the second clause. Explicitly establish local constancy of the restriction, the associativity/right-composition equation, and the ContinuousRelHom fields. Retain the already adequate transport, converse restriction, and quasi-order paragraphs. Add citations to the actual support nodes, including DecidingFront, DecidingValue, NashWilliams, InfiniteSetEnumeration, RestrictionLocallyConstant or an equivalent local-constancy argument, MultiSequenceRestrict, IncSeqComp, and RightComp, and add the corresponding imports so the support DAG is honest. The paper passage at lines 1731-1745 states exactly the two equivalent conditions and the nonidentity g-BQO theorem.",
+    "reason": "The scheduled DecidingFront Sound check found concrete omissions in the minimal-deciding-prefix proof. Repair that upstream support node before re-verifying the changed GBetterRelIff proof or advancing the soundness frontier.",
+    "comments": "Work in Global mode but restrict the actual edit to Tablet/DecidingFront.tex and any import needed by its existing support; preserve the Lean theorem statement and do not change target claims or add helpers. The current proof is only an outline. Cite DecidingFrontSet, DecidingPrefix, LocallyConstant, ProperPrefixSet, ProperInitialSegment, InitialSegment, Front, and FrontBase at their uses. First, from local constancy at an increasing enumeration x with witness n, define the finite set of the first n values of x, prove it is a proper-prefix set of range(x), and prove that any two increasing enumerations having that same finite-set prefix agree coordinatewise through n, so DecidingPrefix follows. For density, start with an arbitrary infinite Y subset of the base, obtain or explicitly construct an increasing enumeration with range Y, and show that repeatedly removing a proper deciding initial segment stays on that branch and terminates because the finite cardinality strictly decreases; the terminal set satisfies exactly the DecidingFrontSet minimality condition. Prove prefix-freeness by applying that minimality to two front members in the InitialSegment relation. Handle the constant case completely: empty is deciding, every nonempty deciding prefix has empty as a proper initial segment, and therefore the front is exactly {empty}. In the nonconstant case prove empty is not deciding; for each n use a branch beginning with n, obtain a nonempty minimal prefix on that branch, and unpack ProperPrefixSet to show n belongs to it, yielding FrontBase equal to the universal base. Finally explicitly discharge the infinite-base and dense fields of the Lean Front structure, rather than referring to three clauses informally. The paper construction at lines 1277-1287 is the source route. If using InfiniteSetEnumeration for arbitrary infinite bases, add its honest import and citation.",
     "task_blocker_ids": [
-      "soundness:node:GBetterRelIff:sound-v2:092a829458ad7808874a6333bdb4e64dd1ad812982e4e9394339f3fd4f56578f"
+      "soundness:node:DecidingFront:sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
-        "start_line": 1731,
-        "end_line": 1745,
-        "reason": "The paper definition of g-better-relation and the theorem identifying it with the ordinary better-relation."
+        "start_line": 1277,
+        "end_line": 1287,
+        "reason": "The paper's construction of the minimal deciding-prefix front and its density/base argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines the g-better relation by the restriction and complement-homomorphism conditions, then states their nonidentity-g equivalence with the ordinary better relation and the quasi-order specialization. The next proof must preserve that statement while replacing the rejected reservoir construction by the tablet's deciding-front/Nash-Williams homogeneous restriction argument."
+      "basis_summary": "The cited passage defines the deciding-prefix set for a locally constant multi-sequence, takes its initial-segment-minimal members, and proves density plus the trivial/nontrivial base dichotomy. The tablet proof must expand those paper steps to the explicit Finset and Front definitions used by Lean."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work in Global mode but restrict the actual edit to the GBetterRelIff proof and the imports needed for its real support; do not change the Lean theorem signature, target claims, or add a helper. The rejected argument is at Tablet/GBetterRelIff.tex:75-117: its negative/positive reservoir invariant does not produce the claimed subreservoir, does not define the finite input-prefix schedule, and does not relate x composed with t_i to the maintained reservoirs. Do not attempt another version of that fusion. Replace the whole first-clause equivalence argument by the paper-faithful homogeneous-front route already exemplified by ShiftDichotomy: for a locally constant phi define the Boolean coloring c(y)=1 exactly when R(phi(y), phi(RightComp g y)); prove c is locally constant by separately bounding the finite coordinates needed for phi(y) and phi(y composed with g); cite DecidingFront and DecidingValue to obtain its deciding front and value map; apply NashWilliams to the front and the set of value-1 members; enumerate the resulting infinite base with InfiniteSetEnumeration. Front density and DecidingValue must then show, for every x, that c(z composed with x) has the same homogeneous value. If that value is 1, the restriction phi(z composed with minus) supplies the R-homomorphism required by the first clause; if it is 0, it supplies the complement homomorphism contradicting the second clause. Explicitly establish local constancy of the restriction, the associativity/right-composition equation, and the ContinuousRelHom fields. Retain the already adequate transport, converse restriction, and quasi-order paragraphs. Add citations to the actual support nodes, including DecidingFront, DecidingValue, NashWilliams, InfiniteSetEnumeration, RestrictionLocallyConstant or an equivalent local-constancy argument, MultiSequenceRestrict, IncSeqComp, and RightComp, and add the corresponding imports so the support DAG is honest. The paper passage at lines 1731-1745 states exactly the two equivalent conditions and the nonidentity g-BQO theorem.",
+    "comments": "Work in Global mode but restrict the actual edit to Tablet/DecidingFront.tex and any import needed by its existing support; preserve the Lean theorem statement and do not change target claims or add helpers. The current proof is only an outline. Cite DecidingFrontSet, DecidingPrefix, LocallyConstant, ProperPrefixSet, ProperInitialSegment, InitialSegment, Front, and FrontBase at their uses. First, from local constancy at an increasing enumeration x with witness n, define the finite set of the first n values of x, prove it is a proper-prefix set of range(x), and prove that any two increasing enumerations having that same finite-set prefix agree coordinatewise through n, so DecidingPrefix follows. For density, start with an arbitrary infinite Y subset of the base, obtain or explicitly construct an increasing enumeration with range Y, and show that repeatedly removing a proper deciding initial segment stays on that branch and terminates because the finite cardinality strictly decreases; the terminal set satisfies exactly the DecidingFrontSet minimality condition. Prove prefix-freeness by applying that minimality to two front members in the InitialSegment relation. Handle the constant case completely: empty is deciding, every nonempty deciding prefix has empty as a proper initial segment, and therefore the front is exactly {empty}. In the nonconstant case prove empty is not deciding; for each n use a branch beginning with n, obtain a nonempty minimal prefix on that branch, and unpack ProperPrefixSet to show n belongs to it, yielding FrontBase equal to the universal base. Finally explicitly discharge the infinite-base and dense fields of the Lean Front structure, rather than referring to three clauses informally. The paper construction at lines 1277-1287 is the source route. If using InfiniteSetEnumeration for arbitrary infinite bases, add its honest import and citation.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 87,
+    "cycle": 88,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -55,18 +55,18 @@
     "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
-        "end_line": 1745,
-        "reason": "The paper definition of g-better-relation and the theorem identifying it with the ordinary better-relation.",
-        "start_line": 1731
+        "end_line": 1287,
+        "reason": "The paper's construction of the minimal deciding-prefix front and its density/base argument.",
+        "start_line": 1277
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines the g-better relation by the restriction and complement-homomorphism conditions, then states their nonidentity-g equivalence with the ordinary better relation and the quasi-order specialization. The next proof must preserve that statement while replacing the rejected reservoir construction by the tablet's deciding-front/Nash-Williams homogeneous restriction argument.",
+      "basis_summary": "The cited passage defines the deciding-prefix set for a locally constant multi-sequence, takes its initial-segment-minimal members, and proves density plus the trivial/nontrivial base dichotomy. The tablet proof must expand those paper steps to the explicit Finset and Front definitions used by Lean.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound rejection is a valid diagnosis of the current proof route, not a paper-level obstruction. Assign a fresh worker to replace the invalid reservoir fusion in GBetterRelIff with the existing deciding-front and Nash-Williams argument, while preserving the theorem statement.",
-    "request_id": 321,
+    "reason": "The scheduled DecidingFront Sound check found concrete omissions in the minimal-deciding-prefix proof. Repair that upstream support node before re-verifying the changed GBetterRelIff proof or advancing the soundness frontier.",
+    "request_id": 324,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,15 +76,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:092a829458ad7808874a6333bdb4e64dd1ad812982e4e9394339f3fd4f56578f",
+        "fingerprint": "sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767",
         "kind": "Soundness",
         "object": {
-          "node": "GBetterRelIff",
+          "node": "DecidingFront",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_321_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_324_decision.context.json"
 }

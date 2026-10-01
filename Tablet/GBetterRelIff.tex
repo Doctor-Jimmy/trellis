@@ -53,106 +53,130 @@ of \noderef{RightComp} and \noderef{ShiftMap}.
 
 It remains to justify, in the detail needed for the first clause of
 \noderef{GBetterRel}, why absence of an $R$-homomorphic restriction is the
-same as the existence of a complement homomorphism.  Let
-$\varphi:\mathsf{IncSeq}\to A$ be locally constant and put
+same as the existence of a complement homomorphism.  Fix a locally constant
+$\varphi:\mathsf{IncSeq}\to A$ and define the Boolean coloring
 \[
- E=\{y\in\mathsf{IncSeq}\mid
-       R(\varphi(y),\varphi(\mathsf{RightComp}(g)(y)))\}.
+c(y)=
+\begin{cases}
+1&\text{if }R(\varphi(y),\varphi(\mathsf{RightComp}(g)(y))),\\
+0&\text{otherwise.}
+\end{cases}
 \]
-The set $E$ is open in the finite-prefix topology.  Indeed, local constancy
-of $\varphi$ decides the first value at $y$, and local constancy of the
-second value is obtained as follows: the first $n$ values of
-$\mathsf{RightComp}(g)(y)=y\circ g$ depend only on the first $g(n)$ values
-of $y$.  Hence a sufficiently long prefix of $y$ decides both values in
-the definition of $E$.
+This is locally constant.  To check this at $y$, use
+\noderef{LocallyConstant} to choose $n$ deciding $\varphi$ at $y$ and $m$
+deciding $\varphi$ at $\mathsf{RightComp}(g)(y)$.  If $y'$ agrees with $y$
+on the first $n$ entries, then $\varphi(y')=\varphi(y)$.  If it agrees on
+the first $g(m)$ entries, then for each $i<m$ the order-embedding property
+of $g$, recorded by \noderef{IncSeq}, gives $g(i)<g(m)$, and hence
+\[
+\mathsf{RightComp}(g)(y')(i)=y'(g(i))=y(g(i))
+ =\mathsf{RightComp}(g)(y)(i).
+\]
+The evaluation identity uses \noderef{RightComp}.  Thus the two
+right-composed sequences agree through $m$, so their
+$\varphi$-values are equal as well.  By \noderef{PrefixAgree}, taking a
+prefix long enough to satisfy both bounds makes both arguments of $R$ and
+therefore $c$ constant.  This proves local constancy of $c$.
 
-Assume first that the first clause fails for this $\varphi$.  Thus, for
-every increasing enumeration $f$, some $y$ satisfies
+Let $F=F^c$ be the set of minimal deciding prefixes.  By
+\noderef{DecidingFront}, $F$ is a front on $\mathbb N$.  By
+\noderef{DecidingValue}, there is a map
+$v:F\to\{0,1\}$ such that whenever $s\in F$ and
+$\mathsf{ProperPrefixSet}(s,\operatorname{range}(x))$ in the sense of
+\noderef{ProperPrefixSet},
 \[
- \neg R(\varphi(f\circ y),\varphi(f\circ y\circ g)).
- \tag{1}
+v(s)=c(x). \tag{1}
 \]
-We now give the finite-prefix fusion which turns these witnesses into one
-witness working for every input.  Call a finite increasing prefix $s$
-deciding if every increasing sequence extending $s$ belongs to $E$.  Since
-$E$ is open, every member of $E$ has a finite deciding prefix.  For a finite
-prefix $s$ and an infinite reservoir $X$ above its last entry, call $(s,X)$
-positive if every infinite increasing sequence whose prefix is $s$ and whose
-remaining entries lie in $X$ has a further finite deciding prefix; call it
-negative if no infinite subreservoir of $X$ makes $(s,\mathord{-})$
-positive.  The failure in (1) says exactly that the empty prefix is negative
-on the full set of natural numbers: a positive reservoir would enumerate an
-$f$ for which the relation in (1) never fails.
+Let $S=\{s\in F\mid v(s)=1\}$.  Applying \noderef{NashWilliams} to
+$F$, its infinite base $\mathbb N$, and $S\subseteq F$ gives a front $F'$ on
+an infinite set $Y$, with $F'\subseteq F$, such that either
+$F'\subseteq S$ or $F'\cap S=\varnothing$.  The front conclusion and its
+infinite-base clause are part of \noderef{Front}.  Choose, using
+\noderef{InfiniteSetEnumeration}, an increasing enumeration $z$ of $Y$:
+\[
+\operatorname{range}(z)=Y. \tag{2}
+\]
 
-We maintain the stronger fusion invariant that every finite prefix formed
-from the entries already chosen is negative on the current reservoir.  At
-stage $n$, list the finitely many such prefixes and list the finitely many
-input prefixes $t_0,\ldots,t_n$ that have been considered.  For each of
-these finitely many cases, negativity says that an infinite subreservoir
-still has a continuation witnessing failure of the $R$-relation.  Local
-constancy of $\varphi$ and of $\varphi$ after right composition by $g$
-turns that witness into a finite decision: only finitely many outer
-coordinates are queried.  Choose the next outer entry above all queried
-coordinates and shrink the reservoir above it, successively for this finite
-list.  If this finite choice were impossible for some prefix $s$, then every
-possible next entry would have a subreservoir on which $s$ was positive.
-Choosing the next entry and then the corresponding subreservoir recursively
-would give an infinite reservoir on which the preceding prefix was positive,
-contradicting its negativity.  Thus we obtain nested finite prefixes
-$u_0\subset u_1\subset\cdots$ and infinite reservoirs
-$X_{n+1}\subseteq X_n$ above $u_{n+1}$, and every decision made for one of
-the $t_i$ is preserved by all later stages.
+Fix $x\in\mathsf{IncSeq}$.  The range of
+$\mathsf{IncSeqComp}(z,x)$ is an infinite subset of $Y$: it is the range of
+an increasing enumeration by \noderef{IncSeq} and \noderef{IncSeqComp}, and
+it is contained in $\operatorname{range}(z)=Y$.  The density clause of the
+front \noderef{Front} therefore gives an $s_x\in F'$ with
+\[
+\mathsf{ProperPrefixSet}(s_x,
+  \operatorname{range}(\mathsf{IncSeqComp}(z,x))). \tag{3}
+\]
+Since $s_x\in F'\subseteq F$, equation (1) gives
+\[
+v(s_x)=c(\mathsf{IncSeqComp}(z,x)). \tag{4}
+\]
+If $F'\subseteq S$, then (4) is $c(\mathsf{IncSeqComp}(z,x))=1$.
+If $F'\cap S=\varnothing$, then $s_x\notin S$; because $s_x\in F$ and
+$v(s_x)\in\{0,1\}$, (4) is instead
+$c(\mathsf{IncSeqComp}(z,x))=0$.  Thus the coloring is constant on the
+whole right ideal $z\circ\mathsf{IncSeq}$.
 
-Let $x=\bigcup_n u_n$.  The prefixes are nested and the reservoirs are
-infinite and lie above the preceding prefix, so $x$ is an increasing
-enumeration.  Fix any $y\in\mathsf{IncSeq}$.  Some $t_i$ is a prefix of $y$,
-and at a later stage all outer coordinates queried by the local-constancy
-decision for $x\circ y$ and $x\circ y\circ g$ have entered the fusion.
-The corresponding finite prefix $x\circ t_i$ is among the prefixes covered
-by the negative invariant, so it has no deciding extension inside the chosen
-reservoir.  The invariant then gives
+Put
 \[
- \neg R(\varphi(x\circ y),
-        \varphi(x\circ y\circ g))
- \quad\text{for every }y. \tag{2}
+\psi=\mathsf{MultiSequenceRestrict}(\varphi,z),
+\qquad
+\psi(x)=\varphi(\mathsf{IncSeqComp}(z,x)).
 \]
-Define $H(y)=\varphi(x\circ y)$.  This restriction is locally constant:
-at $y$, choose from local constancy of $\varphi$ a finite output prefix of
-$x\circ y$ deciding $\varphi(x\circ y)$; the finitely many values of $y$
-needed to select those entries of $x$ form an input prefix, and every
-extension agreeing with that prefix has the same $H$-value.  Equation (2),
-with the definition of \noderef{RightComp}, is exactly
+By \noderef{MultiSequenceRestrict} this is exactly restriction to the base
+enumerated by $z$, and \noderef{RestrictionLocallyConstant} makes $\psi$
+locally constant.  The required action identity is, for every $x$,
 \[
- R^{\complement}(H(y),H(\mathsf{RightComp}(g)(y))).
+\mathsf{RightComp}(g)(\mathsf{IncSeqComp}(z,x))
+ =\mathsf{IncSeqComp}(z,\mathsf{RightComp}(g)(x)). \tag{5}
 \]
-Together with local constancy, \noderef{ContinuousRelHom} shows that $H$
-is a complement homomorphism.  This contradicts the second clause.
+Indeed, by \noderef{RightComp} and \noderef{IncSeqComp}, the two sides are
+respectively $(z\circ x)\circ g$ and $z\circ(x\circ g)$, and these are
+equal by associativity of composition.
 
-Conversely, suppose that $H:(\mathsf{IncSeq},\mathsf{RightComp}(g))
-\to(A,R^{\complement})$ is a complement homomorphism.  For every $f$,
-define its restriction by
+If the homogeneous value above is $1$, the definition of $c$, equation
+(5), and the displayed formula for $\psi$ give, for every $x$,
 \[
- H_f(y)=H(f\circ y).
+R(\psi(x),\psi(\mathsf{RightComp}(g)(x))).
 \]
-Local constancy of $H_f$ follows directly from that of $H$: a finite prefix
-of $f\circ y$ deciding $H(f\circ y)$ is determined by a finite prefix of
-$y$.  Associativity of composition and the definition of
-\noderef{RightComp} give
+Together with the local-constancy field already proved, these are exactly
+the two fields of a \noderef{ContinuousRelHom}; taking $f=z$ supplies the
+first clause of \noderef{GBetterRel} for $\varphi$.  If the homogeneous value
+is $0$, the same calculation gives
 \[
-\begin{aligned}
- R^{\complement}(H_f(y),H_f(\mathsf{RightComp}(g)(y)))
- &=R^{\complement}(H(f\circ y),H((f\circ y)\circ g))\\
- &=R^{\complement}(H(f\circ y),H(\mathsf{RightComp}(g)(f\circ y))).
-\end{aligned}
+\neg R(\psi(x),\psi(\mathsf{RightComp}(g)(x)))
+\quad\text{for every }x,
 \]
-Thus every $H_f$ is a complement homomorphism.  It cannot at the same time
-be an $R$-homomorphism, since at any input the two homomorphism equations
-would assert both $R(a,b)$ and $R^{\complement}(a,b)$, where the latter is
-by definition $\neg R(a,b)$.  Therefore no restriction in the first clause
-can exist.  We have proved the equivalence of the two clauses in
-\noderef{GBetterRel}.  Combining it with the transport of the second clause
-to the no-complement formulation in \noderef{BetterRel} proves the first
-displayed equivalence.
+so the same two fields instead give a continuous homomorphism into
+$R^{\complement}$.  Consequently, if the second clause of
+\noderef{GBetterRel} holds, the zero case is impossible and the first clause
+holds for every locally constant $\varphi$.
+
+Conversely, suppose that
+$H:(\mathsf{IncSeq},\mathsf{RightComp}(g))\to(A,R^{\complement})$ is a
+continuous homomorphism in the sense of \noderef{ContinuousRelHom}.  For
+each $f\in\mathsf{IncSeq}$ define
+\[
+H_f=\mathsf{MultiSequenceRestrict}(H.\mathsf{toFun},f),
+\qquad H_f(y)=H.\mathsf{toFun}(\mathsf{IncSeqComp}(f,y)).
+\]
+The local-constancy field of $H$ and
+\noderef{RestrictionLocallyConstant} show that $H_f$ is locally constant.
+The same associativity calculation as (5), using
+\noderef{RightComp} and \noderef{IncSeqComp}, gives
+\[
+R^{\complement}(H_f(y),H_f(\mathsf{RightComp}(g)(y)))
+\]
+for every $y$, by the homomorphism field of $H$.  Hence every $H_f$ is a
+continuous complement homomorphism.  If the first clause of
+\noderef{GBetterRel} held for the locally constant map $H.\mathsf{toFun}$,
+it would provide an $f$ and an $R$-homomorphism whose function is exactly
+$H_f$.  At any input its homomorphism field would assert $R(a,b)$ while the
+preceding paragraph asserts $R^{\complement}(a,b)=\neg R(a,b)$, a
+contradiction.  Thus the first clause fails whenever a complement
+homomorphism exists, and the two clauses in \noderef{GBetterRel} are
+equivalent.  Combining this with the transport of the second clause to the
+no-complement formulation in \noderef{BetterRel} proves the first displayed
+equivalence.
 
 Finally let $r$ be a quasi-order on $Q$.  By \noderef{BetterRel}, the
 ordinary better-relation condition is the nonexistence of a

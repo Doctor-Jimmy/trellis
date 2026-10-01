@@ -64,7 +64,7 @@
 | FrontTreeSingleton | lemma | proof | open | - | Singletons belong to a nontrivial full-base tree | Front, PrefixTree |
 | FrontTreeWellFounded | lemma | proof | open | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
-| GBetterRelIff | theorem | proof | open | - | g-BQO | BetterRel, Bqo, GBetterRel, IncSeqId, MainProp |
+| GBetterRelIff | theorem | proof | open | - | g-BQO | BetterRel, Bqo, ContinuousRelHom, DecidingFront, DecidingValue, Front, GBetterRel, IncSeq, IncSeqComp, IncSeqId, InfiniteSetEnumeration, LocallyConstant, MainProp, MultiSequenceRestrict, NashWilliams, PrefixAgree, ProperPrefixSet, RestrictionLocallyConstant, RightComp |
 | GoodMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | HerCtblCode | definition | definition | closed | - | - | Preamble |
 | HerCtblCodeErase | definition | definition | closed | - | - | HerCtblCode, PowerQ |
