@@ -1,13 +1,39 @@
 \begin{definition}
-Let $g\in\mathsf{IncSeq}$ and let $k$ be a point with $k<g(k)$.  For
-$f\in\mathsf{IncSeq}$ define the block map $\sigma_f$ by
+Let $g\in\mathsf{IncSeq}$, $k\in\mathbb N$, $f\in\mathsf{IncSeq}$, and
+$l\in\mathbb N$.  Put
+\[
+G(n)=\mathsf{OrbitPoint}(g,k,n)=g^{[n]}(k).
+\]
+The total block-map value $\mathsf{BlockSigma}(g,k,f,l)$ is defined as
+follows.  If
+\[
+l<\mathsf{OrbitPoint}(g,k,0),
+\]
+then it is $l$.  Otherwise, if there exists an $n$ such that
+\[
+l<\mathsf{OrbitPoint}(g,k,n+1)=G(n+1),
+\]
+let $n_l$ be the least such $n$ and set
+\[
+\mathsf{BlockSigma}(g,k,f,l)=g^{[f(n_l)-n_l]}(l).
+\]
+If no such $n$ exists, set
+\[
+\mathsf{BlockSigma}(g,k,f,l)=l.
+\]
+
+When $k$ is the least moved point of $g$, meaning
+$k<g(k)$ and $g(j)=j$ for every $j<k$, the orbit is unbounded and every
+$l\geq G(0)$ lies in a unique block $G(n)\leq l<G(n+1)$.  Thus the final
+fallback is unreachable, and the definition specializes to the paper's
+two-case block map
 \[
 \sigma_f(l)=
 \begin{cases}
 l,&l<G(0),\\
-g^{[f(n)-n]}(l),&G(n)\leq l<G(n+1),
+g^{[f(n)-n]}(l),&G(n)\leq l<G(n+1)\text{ for the unique }n.
 \end{cases}
 \]
-where $G(n)=g^{[n]}(k)$.  The Lean definition uses the least block index;
-the coverage and uniqueness of that index are recorded separately.
+This is the block map used in \texttt{BlockSigmaIntertwines} and
+\texttt{EmapLemma}.
 \end{definition}

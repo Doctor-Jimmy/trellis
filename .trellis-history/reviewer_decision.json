@@ -1,32 +1,32 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The active BlockSigmaIntertwines package is repaired and locally validated, but its soundness obligation cannot become requestable while the direct BlockSigma support node has a live correspondence failure. BlockSigma's Lean definition is total in g, k, and f, whereas its TeX currently states only the paper's least-moved-point specialization k < g(k). Route the worker to repair that support definition package so the correspondence lane can re-adjudicate it and unblock the downstream soundness sequence.",
-    "comments": "Repair only Tablet/BlockSigma.tex. Preserve the existing Lean definition and its total behavior: the TeX definition must reflect the initial l < OrbitPoint g k 0 branch, the least n selected by the existential block-bound condition, the iterate exponent f(n)-n, and the final fallback branch. Then explain that when k is the least moved point, G(n)=g^n(k) and the definition specializes to the paper's two-case block map used by BlockSigmaIntertwines and EmapLemma. Do not edit BlockSigmaIntertwines or EmapLemma, add helpers, or alter their signatures. The BlockSigma correspondence blocker is assigned; all other blockers, including the active soundness blocker, remain live and no reset is legal.",
-    "task_blocker_ids": [
-      "nodecorr:node:BlockSigma:{\"own_tex\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}"
-    ],
+    "reason": "The worker repaired BlockSigma.tex within the assigned scope, and the subsequent paper and correspondence lanes cleared the stale BlockSigma correspondence failure. The repaired support definition is now aligned with both the total Lean implementation and the least-moved-point block construction. The next legal progress step is a soundness verification of the already-repaired BlockSigmaIntertwines proof package.",
+    "comments": "Do not edit repository content in the next burst. Recheck and soundness-verify BlockSigmaIntertwines as written, preserving its least-moved-point premise, initial-segment case, orbit-block case, and explicit exponent shift. The BlockSigma correspondence repair is complete and its old blocker is intentionally omitted because the fingerprint changed; no reset is legal. After this soundness pass, handle the still-fresh EmapLemma soundness obligation separately.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BlockSigma",
+    "request_sound_verifier_node_ids": [
+      "BlockSigmaIntertwines"
+    ],
+    "next_active": "BlockSigmaIntertwines",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1794,
-        "end_line": 1813,
-        "reason": "The paper defines the least-moved-point orbit blocks, the piecewise block map, and the boundary calculation that the BlockSigma definition must specialize to."
+        "start_line": 1788,
+        "end_line": 1834,
+        "reason": "The repaired support and intertwining packages formalize the paper's least-moved-point block map and its initial-segment and shifted-orbit verification."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. The paper chooses k_g as the least k with k < g(k), defines G(n)=g^n(k_g), and defines the block map by l below G(0) and by g iterated f(n)-n times on G(n) <= l < G(n+1), with the endpoint calculation identifying the next block. The Lean definition is a total conditional implementation, so its TeX must also expose the arbitrary-k and no-witness branches before identifying this least-moved-point specialization."
+      "basis_summary": "I directly read the cited passage. The paper defines the least moved point k_g, the orbit blocks G(n)=g^n(k_g), and the block map, then checks the two cases: below G(0) and within G(n) <= l < G(n+1). It explicitly derives the next-block inequalities and the exponent identity used in the intertwining equation. The repaired BlockSigma definition now exposes its total implementation while BlockSigmaIntertwines states and proves this specialized identity."
     }
   },
   "response": {
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/BlockSigma.tex. Preserve the existing Lean definition and its total behavior: the TeX definition must reflect the initial l < OrbitPoint g k 0 branch, the least n selected by the existential block-bound condition, the iterate exponent f(n)-n, and the final fallback branch. Then explain that when k is the least moved point, G(n)=g^n(k) and the definition specializes to the paper's two-case block map used by BlockSigmaIntertwines and EmapLemma. Do not edit BlockSigmaIntertwines or EmapLemma, add helpers, or alter their signatures. The BlockSigma correspondence blocker is assigned; all other blockers, including the active soundness blocker, remain live and no reset is legal.",
+    "comments": "Do not edit repository content in the next burst. Recheck and soundness-verify BlockSigmaIntertwines as written, preserving its least-moved-point premise, initial-segment case, orbit-block case, and explicit exponent shift. The BlockSigma correspondence repair is complete and its old blocker is intentionally omitted because the fingerprint changed; no reset is legal. After this soundness pass, handle the still-fresh EmapLemma soundness obligation separately.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 36,
+    "cycle": 37,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,42 +49,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BlockSigma",
+    "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": null,
     "next_mode": "Targeted",
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1813,
-        "reason": "The paper defines the least-moved-point orbit blocks, the piecewise block map, and the boundary calculation that the BlockSigma definition must specialize to.",
-        "start_line": 1794
+        "end_line": 1834,
+        "reason": "The repaired support and intertwining packages formalize the paper's least-moved-point block map and its initial-segment and shifted-orbit verification.",
+        "start_line": 1788
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. The paper chooses k_g as the least k with k < g(k), defines G(n)=g^n(k_g), and defines the block map by l below G(0) and by g iterated f(n)-n times on G(n) <= l < G(n+1), with the endpoint calculation identifying the next block. The Lean definition is a total conditional implementation, so its TeX must also expose the arbitrary-k and no-witness branches before identifying this least-moved-point specialization.",
+      "basis_summary": "I directly read the cited passage. The paper defines the least moved point k_g, the orbit blocks G(n)=g^n(k_g), and the block map, then checks the two cases: below G(0) and within G(n) <= l < G(n+1). It explicitly derives the next-block inequalities and the exponent identity used in the intertwining equation. The repaired BlockSigma definition now exposes its total implementation while BlockSigmaIntertwines states and proves this specialized identity.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The active BlockSigmaIntertwines package is repaired and locally validated, but its soundness obligation cannot become requestable while the direct BlockSigma support node has a live correspondence failure. BlockSigma's Lean definition is total in g, k, and f, whereas its TeX currently states only the paper's least-moved-point specialization k < g(k). Route the worker to repair that support definition package so the correspondence lane can re-adjudicate it and unblock the downstream soundness sequence.",
-    "request_id": 181,
-    "request_sound_verifier_nodes": [],
+    "reason": "The worker repaired BlockSigma.tex within the assigned scope, and the subsequent paper and correspondence lanes cleared the stale BlockSigma correspondence failure. The repaired support definition is now aligned with both the total Lean implementation and the least-moved-point block construction. The next legal progress step is a soundness verification of the already-repaired BlockSigmaIntertwines proof package.",
+    "request_id": 186,
+    "request_sound_verifier_nodes": [
+      "BlockSigmaIntertwines"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"c10aadd19de66f5c4b095106b90e866ec578762845f9727669119455983e7bed\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-        "kind": "NodeCorr",
-        "object": {
-          "node": "BlockSigma",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_181_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_186_decision.context.json"
 }
