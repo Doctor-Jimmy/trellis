@@ -1,11 +1,13 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker repaired FrontRayClosure.tex and left its Lean statement and imports unchanged. The old soundness failure has therefore been replaced by SelfEditUnknown evidence for the new fingerprint, so no reset or repair assignment is legal. Hand the repaired package back to the ordinary verification frontier; defer fresh soundness until the non-soundness lanes are current.",
-    "comments": "Do not edit Tablet content in the next burst. Verify the repaired FrontRayClosure package, preserving the explicit density, base, prefix-freeness, and decomposition arguments and the citations to Front, Ray, TailSet, FrontBase, ProperPrefixSet, and InitialSegment. Do not request soundness yet, reopen OrbitUnbounded, add helpers, or touch unrelated substantive failures.",
+    "reason": "FrontRayClosure has already been repaired and revalidated without further edits. Its current soundness state is SelfEditUnknown, so the old evidence is not a repair assignment and no reset is legal. Request a fresh soundness run for the repaired node while the ordinary paper, correspondence, and substantiveness lanes are brought current; the kernel will defer soundness until those lanes permit it.",
+    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for FrontRayClosure, preserving the repaired density, base, prefix-freeness, and decomposition proof with its explicit definition citations. A fresh soundness request is recorded for FrontRayClosure and must be served only after the non-soundness gates are current. Do not reopen OrbitUnbounded, add helpers, or touch unrelated failures.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
+    "request_sound_verifier_node_ids": [
+      "FrontRayClosure"
+    ],
     "next_active": "FrontRayClosure",
     "next_mode": "targeted",
     "reset": "none",
@@ -24,7 +26,7 @@
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread the cited manuscript passage. Lines 1061-1069 define the ray and its decomposition, lines 1078-1090 give the initial-segment and explicit-front clauses, and lines 1096-1100 prove the ray lemma. The repaired package now expands each of those obligations and cites the corresponding tablet definitions, so it should proceed to fresh lane verification."
+      "basis_summary": "I directly reread the cited manuscript passage. Lines 1061-1069 define the ray and its decomposition, lines 1078-1090 give the initial-segment and explicit-front clauses, and lines 1096-1100 prove the ray lemma. The repaired FrontRayClosure package matches this route and now awaits fresh lane verification, including soundness after the non-soundness gates."
     }
   },
   "response": {
@@ -36,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit Tablet content in the next burst. Verify the repaired FrontRayClosure package, preserving the explicit density, base, prefix-freeness, and decomposition arguments and the citations to Front, Ray, TailSet, FrontBase, ProperPrefixSet, and InitialSegment. Do not request soundness yet, reopen OrbitUnbounded, add helpers, or touch unrelated substantive failures.",
+    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for FrontRayClosure, preserving the repaired density, base, prefix-freeness, and decomposition proof with its explicit definition citations. A fresh soundness request is recorded for FrontRayClosure and must be served only after the non-soundness gates are current. Do not reopen OrbitUnbounded, add helpers, or touch unrelated failures.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 45,
+    "cycle": 46,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -59,13 +61,15 @@
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread the cited manuscript passage. Lines 1061-1069 define the ray and its decomposition, lines 1078-1090 give the initial-segment and explicit-front clauses, and lines 1096-1100 prove the ray lemma. The repaired package now expands each of those obligations and cites the corresponding tablet definitions, so it should proceed to fresh lane verification.",
+      "basis_summary": "I directly reread the cited manuscript passage. Lines 1061-1069 define the ray and its decomposition, lines 1078-1090 give the initial-segment and explicit-front clauses, and lines 1096-1100 prove the ray lemma. The repaired FrontRayClosure package matches this route and now awaits fresh lane verification, including soundness after the non-soundness gates.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker repaired FrontRayClosure.tex and left its Lean statement and imports unchanged. The old soundness failure has therefore been replaced by SelfEditUnknown evidence for the new fingerprint, so no reset or repair assignment is legal. Hand the repaired package back to the ordinary verification frontier; defer fresh soundness until the non-soundness lanes are current.",
-    "request_id": 209,
-    "request_sound_verifier_nodes": [],
+    "reason": "FrontRayClosure has already been repaired and revalidated without further edits. Its current soundness state is SelfEditUnknown, so the old evidence is not a repair assignment and no reset is legal. Request a fresh soundness run for the repaired node while the ordinary paper, correspondence, and substantiveness lanes are brought current; the kernel will defer soundness until those lanes permit it.",
+    "request_id": 212,
+    "request_sound_verifier_nodes": [
+      "FrontRayClosure"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
@@ -74,5 +78,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_209_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_212_decision.context.json"
 }
