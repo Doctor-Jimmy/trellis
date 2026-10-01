@@ -38,7 +38,7 @@
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
 | ContinuousRelHom | definition | definition | closed | - | - | LocallyConstant |
 | ConverseGame | lemma | proof | open | - | Converse game | BadSuperSequence, FrontBridgeInit, FrontBridgeStep, FrontBridgeTerminal, HerCtblRel, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, TildeFSingleton |
-| DecidingFront | lemma | proof | open | - | Minimal deciding prefixes form a front | DecidingFrontSet, Front |
+| DecidingFront | lemma | proof | open | - | Minimal deciding prefixes form a front | DecidingFrontSet, Front, InfiniteSetEnumeration |
 | DecidingFrontSet | definition | definition | closed | - | - | DecidingPrefix, ProperInitialSegment |
 | DecidingPrefix | definition | definition | closed | - | - | LocallyConstant, ProperInitialSegment, ProperPrefixSet |
 | DecidingValue | lemma | proof | open | - | Value map on the deciding front | DecidingFront, FinitePrefixExtension |

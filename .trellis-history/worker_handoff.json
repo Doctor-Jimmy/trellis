@@ -1,17 +1,17 @@
 {
   "raw": {
-    "audit_request": null,
-    "comments": "Edited only Tablet/GBetterRelIff.tex and the imports needed by its real support in Tablet/GBetterRelIff.lean. The rejected reservoir fusion is replaced by the paper-faithful Boolean coloring, deciding-front/value-map, Nash-Williams homogeneity, and infinite-base enumeration route. The proof explicitly bounds the finite coordinates for phi and phi after right composition, uses front density to obtain the homogeneous value on every z composed with x, proves the right-composition associativity equation, establishes restriction local constancy, and constructs the R or complement ContinuousRelHom fields. The converse restriction and BQO specialization remain present. No statement, target claim, helper node, or deviation was changed.",
-    "deleted_nodes": [],
-    "deviation_deletions": [],
-    "deviation_requests": {},
-    "difficulty_updates": {},
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
-    "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Replaced the unsound GBetterRelIff reservoir fusion with the detailed homogeneous-front proof route while preserving the Lean theorem and paper statement.",
-    "target_claim_updates": {}
+    "summary": "Repaired DecidingFront with a complete, paper-faithful NL proof of finite-prefix agreement, minimal deciding-prefix extraction, density, prefix-freeness, and the constant/nonconstant base split.",
+    "comments": "Preserved the Lean theorem statement and added only the existing InfiniteSetEnumeration import needed for arbitrary infinite bases. The proof cites every cross-node dependency at its statement-level use, explicitly discharges all four Front fields, and records the dependency audit in .trellis/scratch/notes.md. The DecidingFront node check, full tablet structural check, and 790-job Lean build all pass.",
+    "target_claim_updates": {},
+    "difficulty_updates": {},
+    "deviation_requests": {},
+    "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "deleted_nodes": [],
+    "needs_restructure_suggested_nodes": [],
+    "audit_request": null,
+    "memory_challenges": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,31 +21,15 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Edited only Tablet/GBetterRelIff.tex and the imports needed by its real support in Tablet/GBetterRelIff.lean. The rejected reservoir fusion is replaced by the paper-faithful Boolean coloring, deciding-front/value-map, Nash-Williams homogeneity, and infinite-base enumeration route. The proof explicitly bounds the finite coordinates for phi and phi after right composition, uses front density to obtain the homogeneous value on every z composed with x, proves the right-composition associativity equation, establishes restriction local constancy, and constructs the R or complement ContinuousRelHom fields. The converse restriction and BQO specialization remain present. No statement, target claim, helper node, or deviation was changed.",
-    "cycle": 88,
+    "comments": "Preserved the Lean theorem statement and added only the existing InfiniteSetEnumeration import needed for arbitrary infinite bases. The proof cites every cross-node dependency at its statement-level use, explicitly discharges all four Front fields, and records the dependency audit in .trellis/scratch/notes.md. The DecidingFront node check, full tablet structural check, and 790-job Lean build all pass.",
+    "cycle": 89,
     "deleted_nodes": [],
     "dep_updates": {
-      "GBetterRelIff": {
+      "DecidingFront": {
         "Set": [
-          "BetterRel",
-          "Bqo",
-          "ContinuousRelHom",
-          "DecidingFront",
-          "DecidingValue",
+          "DecidingFrontSet",
           "Front",
-          "GBetterRel",
-          "IncSeq",
-          "IncSeqComp",
-          "IncSeqId",
-          "InfiniteSetEnumeration",
-          "LocallyConstant",
-          "MainProp",
-          "MultiSequenceRestrict",
-          "NashWilliams",
-          "PrefixAgree",
-          "ProperPrefixSet",
-          "RestrictionLocallyConstant",
-          "RightComp"
+          "InfiniteSetEnumeration"
         ]
       }
     },
@@ -54,29 +38,17 @@
     "deviation_requests": {},
     "difficulty_updates": {},
     "elaboration_costs": {
-      "BqoIffGeneralShift": {
+      "DecidingFront": {
         "cost_version": "2",
         "heartbeats": null,
         "heartbeats_key": null,
         "measured_at_snapshot_id": "",
-        "node": "BqoIffGeneralShift",
-        "olean_size_bytes": 11672,
-        "peak_rss_kib": 1690636,
+        "node": "DecidingFront",
+        "olean_size_bytes": 9320,
+        "peak_rss_kib": 1676756,
         "peak_rss_process": "lean",
-        "source_closure_hash": "ac14bc38bbc4599c04432d1ead8f53bd10071175a68d1af6b5ec94999da09f96",
-        "walltime_ms": 3068
-      },
-      "GBetterRelIff": {
-        "cost_version": "2",
-        "heartbeats": null,
-        "heartbeats_key": null,
-        "measured_at_snapshot_id": "",
-        "node": "GBetterRelIff",
-        "olean_size_bytes": 13000,
-        "peak_rss_kib": 1681676,
-        "peak_rss_process": "lean",
-        "source_closure_hash": "84052b4e7e2e77419f1842b3ec174ed1ae98510f77366140377959c2e17f166e",
-        "walltime_ms": 2314
+        "source_closure_hash": "173f1b00f2d65dba7b073e54d6052ca019420f86816fdaf54bc82e1544222b4e",
+        "walltime_ms": 2391
       }
     },
     "kind": "worker",
@@ -88,7 +60,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 322,
+    "request_id": 325,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1012,12 +984,21 @@
           "own_tex_hash": "4a836256df567c3ede9c99747e2c8e16683ea6a78fe4e448f6ca4db5201e981d"
         },
         "DecidingFront": {
-          "combined_sound_fp": "sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767",
+          "combined_sound_fp": "sound-v2:a6a90a7698ac6770b8a3ca9cc5f15fd67f645e5f2d5bd680a5eb39caa3814f48",
           "dep_statement_hashes": {
+            "DecidingFrontSet": "0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f",
+            "DecidingPrefix": "f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f",
             "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
-            "LocallyConstant": "8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841"
+            "FrontBase": "5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b",
+            "IncSeq": "62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e",
+            "InfiniteSetEnumeration": "6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1",
+            "InitialSegment": "b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6",
+            "LocallyConstant": "8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841",
+            "PrefixAgree": "97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8",
+            "ProperInitialSegment": "3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4",
+            "ProperPrefixSet": "bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d"
           },
-          "own_tex_hash": "8159fe9398c3a7c6c50c65de89b3c7403653883c4c9211be598a12562c4ad478"
+          "own_tex_hash": "85399d12fd7446759d3c1b62c6667c5bd43e098ef6616ff652f0e48a88c48723"
         },
         "DecidingFrontSet": {
           "combined_sound_fp": "sound-v2:7f71efc4baa79a5eef00b5431037bb6c8c3b01a8179f87cb86533b7d576b6e84",
@@ -2156,7 +2137,7 @@
         "ContinuousHom": "sound-v2:16b602e21f5ec37d44b7b78351edf43dd3ab34d642aa1d404dcd73844a8772bb",
         "ContinuousRelHom": "sound-v2:cdef6190aba9405573f47fd82b8446eed72f5e639ccd6a2abaaa56b3612bd51a",
         "ConverseGame": "sound-v2:f79b45c84f74d4d463a83fe21d711a677d42b3be27d6ab57201a11cd518b177b",
-        "DecidingFront": "sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767",
+        "DecidingFront": "sound-v2:a6a90a7698ac6770b8a3ca9cc5f15fd67f645e5f2d5bd680a5eb39caa3814f48",
         "DecidingFrontSet": "sound-v2:7f71efc4baa79a5eef00b5431037bb6c8c3b01a8179f87cb86533b7d576b6e84",
         "DecidingPrefix": "sound-v2:3a5bc40ba324c4f28bb51662bb3d3f5761768f5dbea995b19ceb157fbed663f1",
         "DecidingValue": "sound-v2:7eb2abe4d1473a03a0743187792ff1c38cd86aee6ef31eaaba4f66f3c18048a8",
@@ -2660,7 +2641,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Replaced the unsound GBetterRelIff reservoir fusion with the detailed homogeneous-front proof route while preserving the Lean theorem and paper statement.",
+    "summary": "Repaired DecidingFront with a complete, paper-faithful NL proof of finite-prefix agreement, minimal deciding-prefix extraction, density, prefix-freeness, and the constant/nonconstant base split.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2740,8 +2721,8 @@
     "ContinuousRelHom.tex": "3d3394f1d0aefd824734e1449d6b48791c9f8c67d328cd91549f893664741d79",
     "ConverseGame.lean": "ba3f4bfd886a6f045dda15a47e0c9aac173df750caa78ede4ed63b05b7079439",
     "ConverseGame.tex": "4a836256df567c3ede9c99747e2c8e16683ea6a78fe4e448f6ca4db5201e981d",
-    "DecidingFront.lean": "3dcf4696b665147ed97bcac3a7639104908225bc9fdc3b24f26cea55e67a24a8",
-    "DecidingFront.tex": "8159fe9398c3a7c6c50c65de89b3c7403653883c4c9211be598a12562c4ad478",
+    "DecidingFront.lean": "d7a0ff6914434107859d8dfb244a5f0709408f6a8bfd8e4274adf0bebed4d80a",
+    "DecidingFront.tex": "85399d12fd7446759d3c1b62c6667c5bd43e098ef6616ff652f0e48a88c48723",
     "DecidingFrontSet.lean": "76a17531dfbadb0a22065f90059565680d828c1e37848051130b4e67cb063eea",
     "DecidingFrontSet.tex": "096ee354047fc08ebfe626f2032db4b92b9c7b7c622ba86fd170183753fcfa4b",
     "DecidingPrefix.lean": "99d2844ba3575b5444085141544fa5b7daf289fade54e70db05718b26b033bbd",
@@ -2816,7 +2797,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "17e30c1b0c193b63efd3ae54ee7689dfabd1690c84fa457ac18b2457110b6736",
+    "INDEX.md": "2508070d2e797f914838f892c514afc653f37563ca7b52187f73567cf80522bd",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3026,7 +3007,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_322_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_325_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

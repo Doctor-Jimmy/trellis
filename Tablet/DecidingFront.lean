@@ -1,5 +1,6 @@
 import Tablet.DecidingFrontSet
 import Tablet.Front
+import Tablet.InfiniteSetEnumeration
 
 universe u
 

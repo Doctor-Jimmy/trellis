@@ -1,31 +1,31 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The scheduled DecidingFront Sound check found concrete omissions in the minimal-deciding-prefix proof. Repair that upstream support node before re-verifying the changed GBetterRelIff proof or advancing the soundness frontier.",
-    "comments": "Work in Global mode but restrict the actual edit to Tablet/DecidingFront.tex and any import needed by its existing support; preserve the Lean theorem statement and do not change target claims or add helpers. The current proof is only an outline. Cite DecidingFrontSet, DecidingPrefix, LocallyConstant, ProperPrefixSet, ProperInitialSegment, InitialSegment, Front, and FrontBase at their uses. First, from local constancy at an increasing enumeration x with witness n, define the finite set of the first n values of x, prove it is a proper-prefix set of range(x), and prove that any two increasing enumerations having that same finite-set prefix agree coordinatewise through n, so DecidingPrefix follows. For density, start with an arbitrary infinite Y subset of the base, obtain or explicitly construct an increasing enumeration with range Y, and show that repeatedly removing a proper deciding initial segment stays on that branch and terminates because the finite cardinality strictly decreases; the terminal set satisfies exactly the DecidingFrontSet minimality condition. Prove prefix-freeness by applying that minimality to two front members in the InitialSegment relation. Handle the constant case completely: empty is deciding, every nonempty deciding prefix has empty as a proper initial segment, and therefore the front is exactly {empty}. In the nonconstant case prove empty is not deciding; for each n use a branch beginning with n, obtain a nonempty minimal prefix on that branch, and unpack ProperPrefixSet to show n belongs to it, yielding FrontBase equal to the universal base. Finally explicitly discharge the infinite-base and dense fields of the Lean Front structure, rather than referring to three clauses informally. The paper construction at lines 1277-1287 is the source route. If using InfiniteSetEnumeration for arbitrary infinite bases, add its honest import and citation.",
+    "reason": "DecidingValue has one concrete citation gap: its proof uses the deciding-prefix conjunct of membership in F^h without citing DecidingFrontSet. Assign a narrow repair and leave dependent Sound reverification for a later eligible slot.",
+    "comments": "Edit only Tablet/DecidingValue.tex. Preserve the Lean statement, imports, and existing finite-extension/value-independence proof. At the point where s is treated as a deciding prefix because s belongs to F^h, explicitly cite DecidingFrontSet for the defining conjunction and then cite DecidingPrefix for the value equality of two extensions. Keep the citation to FinitePrefixExtension for existence of an increasing enumeration extending s. Do not change the theorem statement, add a helper, or request Sound verification in this transition. The paper's corresponding construction of the unique value on the minimal deciding front is at lines 1282-1289.",
     "task_blocker_ids": [
-      "soundness:node:DecidingFront:sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767"
+      "soundness:node:DecidingValue:sound-v2:7eb2abe4d1473a03a0743187792ff1c38cd86aee6ef31eaaba4f66f3c18048a8"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "",
-    "next_mode": "global",
+    "next_active": "DecidingValue",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1277,
-        "end_line": 1287,
-        "reason": "The paper's construction of the minimal deciding-prefix front and its density/base argument."
+        "start_line": 1282,
+        "end_line": 1289,
+        "reason": "The paper's value-map construction on the minimal deciding front."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines the deciding-prefix set for a locally constant multi-sequence, takes its initial-segment-minimal members, and proves density plus the trivial/nontrivial base dichotomy. The tablet proof must expand those paper steps to the explicit Finset and Front definitions used by Lean."
+      "basis_summary": "The cited paper passage constructs the value map on the minimal deciding-prefix front by choosing an enumeration extending each finite prefix and using constancy on that cylinder to prove independence of the choice. The only current defect is the missing explicit citation for the definition of membership in that minimal front."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work in Global mode but restrict the actual edit to Tablet/DecidingFront.tex and any import needed by its existing support; preserve the Lean theorem statement and do not change target claims or add helpers. The current proof is only an outline. Cite DecidingFrontSet, DecidingPrefix, LocallyConstant, ProperPrefixSet, ProperInitialSegment, InitialSegment, Front, and FrontBase at their uses. First, from local constancy at an increasing enumeration x with witness n, define the finite set of the first n values of x, prove it is a proper-prefix set of range(x), and prove that any two increasing enumerations having that same finite-set prefix agree coordinatewise through n, so DecidingPrefix follows. For density, start with an arbitrary infinite Y subset of the base, obtain or explicitly construct an increasing enumeration with range Y, and show that repeatedly removing a proper deciding initial segment stays on that branch and terminates because the finite cardinality strictly decreases; the terminal set satisfies exactly the DecidingFrontSet minimality condition. Prove prefix-freeness by applying that minimality to two front members in the InitialSegment relation. Handle the constant case completely: empty is deciding, every nonempty deciding prefix has empty as a proper initial segment, and therefore the front is exactly {empty}. In the nonconstant case prove empty is not deciding; for each n use a branch beginning with n, obtain a nonempty minimal prefix on that branch, and unpack ProperPrefixSet to show n belongs to it, yielding FrontBase equal to the universal base. Finally explicitly discharge the infinite-base and dense fields of the Lean Front structure, rather than referring to three clauses informally. The paper construction at lines 1277-1287 is the source route. If using InfiniteSetEnumeration for arbitrary infinite bases, add its honest import and citation.",
+    "comments": "Edit only Tablet/DecidingValue.tex. Preserve the Lean statement, imports, and existing finite-extension/value-independence proof. At the point where s is treated as a deciding prefix because s belongs to F^h, explicitly cite DecidingFrontSet for the defining conjunction and then cite DecidingPrefix for the value equality of two extensions. Keep the citation to FinitePrefixExtension for existence of an increasing enumeration extending s. Do not change the theorem statement, add a helper, or request Sound verification in this transition. The paper's corresponding construction of the unique value on the minimal deciding front is at lines 1282-1289.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 88,
+    "cycle": 89,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "DecidingValue",
     "next_active_coarse": null,
-    "next_mode": "Global",
-    "next_worker_context_mode": "fresh",
+    "next_mode": "Targeted",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1287,
-        "reason": "The paper's construction of the minimal deciding-prefix front and its density/base argument.",
-        "start_line": 1277
+        "end_line": 1289,
+        "reason": "The paper's value-map construction on the minimal deciding front.",
+        "start_line": 1282
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines the deciding-prefix set for a locally constant multi-sequence, takes its initial-segment-minimal members, and proves density plus the trivial/nontrivial base dichotomy. The tablet proof must expand those paper steps to the explicit Finset and Front definitions used by Lean.",
+      "basis_summary": "The cited paper passage constructs the value map on the minimal deciding-prefix front by choosing an enumeration extending each finite prefix and using constancy on that cylinder to prove independence of the choice. The only current defect is the missing explicit citation for the definition of membership in that minimal front.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The scheduled DecidingFront Sound check found concrete omissions in the minimal-deciding-prefix proof. Repair that upstream support node before re-verifying the changed GBetterRelIff proof or advancing the soundness frontier.",
-    "request_id": 324,
+    "reason": "DecidingValue has one concrete citation gap: its proof uses the deciding-prefix conjunct of membership in F^h without citing DecidingFrontSet. Assign a narrow repair and leave dependent Sound reverification for a later eligible slot.",
+    "request_id": 327,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,15 +76,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:2174efc480099bcbe3b1902442ee24f173dc77a22c987049841b0fb5e7443767",
+        "fingerprint": "sound-v2:7eb2abe4d1473a03a0743187792ff1c38cd86aee6ef31eaaba4f66f3c18048a8",
         "kind": "Soundness",
         "object": {
-          "node": "DecidingFront",
+          "node": "DecidingValue",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_324_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_327_decision.context.json"
 }
