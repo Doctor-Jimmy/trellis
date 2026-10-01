@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The latest Sound result approves OrbitEmbedding. The audit's orbit dependency chain therefore advances to OrbitUnbounded, which is fresh, requestable, and explicitly supported by OrbitEmbedding. The active gated obligation has no failure verdict and is omitted from all blocker actions.",
-    "comments": "Run a verifier-only Sound burst for OrbitUnbounded with no Tablet edits. Its proof uses OrbitEmbedding to obtain a strictly increasing orbit and then gives the finite-range contradiction proving unboundedness. After this result, continue with OrbitBlockCoverage and then the repaired BlockSigmaIntertwines node; the front-chain request remains independently queued. Do not assign a worker or reset any current blocker in this transition.",
+    "reason": "The latest Sound result approves OrbitUnbounded. The orbit chain now advances to OrbitBlockCoverage, whose repaired proof is fresh, requestable, and explicitly supplies existence and uniqueness of the orbit block decomposition. The still-gated active obligation has no failure verdict and is omitted from all blocker actions.",
+    "comments": "Run a verifier-only Sound burst for OrbitBlockCoverage with no Tablet edits. The current proof uses OrbitEmbedding for the orbit map and monotonicity, OrbitPoint for the iterate interpretation, OrbitUnbounded for the successor witness, and OrbitBlock for the two inequalities; it separately handles the least-index cases and both possible strict index orders for uniqueness. After this result, continue with the repaired BlockSigmaIntertwines node in the orbit chain, while the SubFrontCharacterization request remains independent. Do not assign a worker or reset any current blocker in this transition.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "OrbitUnbounded"
+      "OrbitBlockCoverage"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,18 +20,18 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1778,
-        "end_line": 1783,
-        "reason": "The paper defines the orbit by iterates and identifies the successor relation underlying the orbit support chain."
+        "start_line": 1794,
+        "end_line": 1808,
+        "reason": "The paper defines the initial and half-open orbit-block cases and proves the boundary inequalities used by the coverage argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines G(n) as successive iterates of g at the least moved point. OrbitEmbedding formalizes the strict growth of this orbit, and OrbitUnbounded's current proof uses that growth to rule out containment in a finite initial segment."
+      "basis_summary": "The cited passage defines the block map using the initial segment below G(0) and the unique half-open intervals [G(n),G(n+1)). The current OrbitBlockCoverage proof formalizes that decomposition, including the least-index argument and uniqueness from strict orbit growth."
     },
     "dismissed_tasks": [],
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding has now passed; this transition requests the next orbit dependency, OrbitUnbounded. No worker repair, reset, structural change, or human input is warranted."
+      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding and OrbitUnbounded have passed; this transition requests OrbitBlockCoverage next. No worker repair, reset, structural change, or human input is warranted."
     }
   },
   "response": {
@@ -43,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Run a verifier-only Sound burst for OrbitUnbounded with no Tablet edits. Its proof uses OrbitEmbedding to obtain a strictly increasing orbit and then gives the finite-range contradiction proving unboundedness. After this result, continue with OrbitBlockCoverage and then the repaired BlockSigmaIntertwines node; the front-chain request remains independently queued. Do not assign a worker or reset any current blocker in this transition.",
+    "comments": "Run a verifier-only Sound burst for OrbitBlockCoverage with no Tablet edits. The current proof uses OrbitEmbedding for the orbit map and monotonicity, OrbitPoint for the iterate interpretation, OrbitUnbounded for the successor witness, and OrbitBlock for the two inequalities; it separately handles the least-index cases and both possible strict index orders for uniqueness. After this result, continue with the repaired BlockSigmaIntertwines node in the orbit chain, while the SubFrontCharacterization request remains independent. Do not assign a worker or reset any current blocker in this transition.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 60,
+    "cycle": 61,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -60,31 +60,31 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1783,
-        "reason": "The paper defines the orbit by iterates and identifies the successor relation underlying the orbit support chain.",
-        "start_line": 1778
+        "end_line": 1808,
+        "reason": "The paper defines the initial and half-open orbit-block cases and proves the boundary inequalities used by the coverage argument.",
+        "start_line": 1794
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines G(n) as successive iterates of g at the least moved point. OrbitEmbedding formalizes the strict growth of this orbit, and OrbitUnbounded's current proof uses that growth to rule out containment in a finite initial segment.",
+      "basis_summary": "The cited passage defines the block map using the initial segment below G(0) and the unique half-open intervals [G(n),G(n+1)). The current OrbitBlockCoverage proof formalizes that decomposition, including the least-index argument and uniqueness from strict orbit growth.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The latest Sound result approves OrbitEmbedding. The audit's orbit dependency chain therefore advances to OrbitUnbounded, which is fresh, requestable, and explicitly supported by OrbitEmbedding. The active gated obligation has no failure verdict and is omitted from all blocker actions.",
-    "request_id": 250,
+    "reason": "The latest Sound result approves OrbitUnbounded. The orbit chain now advances to OrbitBlockCoverage, whose repaired proof is fresh, requestable, and explicitly supplies existence and uniqueness of the orbit block decomposition. The still-gated active obligation has no failure verdict and is omitted from all blocker actions.",
+    "request_id": 252,
     "request_sound_verifier_nodes": [
-      "OrbitUnbounded"
+      "OrbitBlockCoverage"
     ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding has now passed; this transition requests the next orbit dependency, OrbitUnbounded. No worker repair, reset, structural change, or human input is warranted.",
+      "notes": "The audit plan remains active with its Sound-certification task. OrbitEmbedding and OrbitUnbounded have passed; this transition requests OrbitBlockCoverage next. No worker repair, reset, structural change, or human input is warranted.",
       "reviewer_lean_product": null
     },
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_250_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_252_decision.context.json"
 }
