@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerSupportNonempty has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerSupportInvariant is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerSupportInvariant only. Check the induction against the cited PowerPresentationEq and PowerSupport definitions: in the atom case, structural equivalence must identify the atom values and hence their singleton supports; the two mixed atom-node cases must be impossible; in the node case, prove both support inclusions by taking an atom in one indexed child support, using the corresponding child supplied by the matching relation, applying the induction hypothesis, and placing the atom in the other indexed union. Require explicit citations to PowerPresentationEq and PowerSupport for each cross-node use, and preserve the current Lean signature, imports, statement, and support DAG.",
+    "reason": "PowerSupportInvariant has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterShift is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterShift only. Check the induction against the cited PowerShiftIter definition and the paper's right-composition convention: at n=0, both sides reduce to ShiftMap(x); in the successor case, unfold PowerShiftIter on ShiftMap(x), apply the induction hypothesis under ShiftMap, and normalize the successor arithmetic so the result is exactly PowerShiftIter(n+2,x). Verify that ShiftMap is the paper's right composition by SuccSeq, and require explicit citation to PowerShiftIter and any ShiftMap or IncSeq support used. Preserve the current Lean signature, imports, statement, and support DAG.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PowerSupportInvariant"
+      "PowerShiftIterShift"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1368,
-        "end_line": 1374,
-        "reason": "The paper's atoms and recursive support definition underlying support invariance."
+        "start_line": 1690,
+        "end_line": 1709,
+        "reason": "The paper's increasing-injection and right-composition convention for the shift map."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1368-1374 distinguish atoms from non-atoms and define support recursively, with node support as the union of child supports; this is the semantic content preserved by presentation equivalence."
+      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing embeddings and define the usual shift as right composition by the successor function; the requested induction must preserve that composition convention."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerSupportInvariant only. Check the induction against the cited PowerPresentationEq and PowerSupport definitions: in the atom case, structural equivalence must identify the atom values and hence their singleton supports; the two mixed atom-node cases must be impossible; in the node case, prove both support inclusions by taking an atom in one indexed child support, using the corresponding child supplied by the matching relation, applying the induction hypothesis, and placing the atom in the other indexed union. Require explicit citations to PowerPresentationEq and PowerSupport for each cross-node use, and preserve the current Lean signature, imports, statement, and support DAG.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterShift only. Check the induction against the cited PowerShiftIter definition and the paper's right-composition convention: at n=0, both sides reduce to ShiftMap(x); in the successor case, unfold PowerShiftIter on ShiftMap(x), apply the induction hypothesis under ShiftMap, and normalize the successor arithmetic so the result is exactly PowerShiftIter(n+2,x). Verify that ShiftMap is the paper's right composition by SuccSeq, and require explicit citation to PowerShiftIter and any ShiftMap or IncSeq support used. Preserve the current Lean signature, imports, statement, and support DAG.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 120,
+    "cycle": 121,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -57,20 +57,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1374,
-        "reason": "The paper's atoms and recursive support definition underlying support invariance.",
-        "start_line": 1368
+        "end_line": 1709,
+        "reason": "The paper's increasing-injection and right-composition convention for the shift map.",
+        "start_line": 1690
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1368-1374 distinguish atoms from non-atoms and define support recursively, with node support as the union of child supports; this is the semantic content preserved by presentation equivalence.",
+      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing embeddings and define the usual shift as right composition by the successor function; the requested induction must preserve that composition convention.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerSupportNonempty has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerSupportInvariant is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
-    "request_id": 400,
+    "reason": "PowerSupportInvariant has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterShift is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
+    "request_id": 402,
     "request_sound_verifier_nodes": [
-      "PowerSupportInvariant"
+      "PowerShiftIterShift"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -80,5 +80,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_400_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_402_decision.context.json"
 }
