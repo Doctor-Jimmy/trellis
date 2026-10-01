@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "SuperSequenceExtension now has a current Sound approval. SuperNW is the next sound-front target and is ready for a real Sound verifier run.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperNW only. Check the finite-codomain induction line by line: the empty case must use front density and the impossibility of a map into the empty codomain; the chosen-color case must instantiate NashWilliams on the fiber, restrict SuperSequence along the subfront inclusion, and match the dependent value equation; the complement case must show that the values land in E\\{e}, establish strict cardinal decrease with finite codomain, apply induction, compose the subfront inclusions, and conclude constancy in the original codomain. Require explicit citations to NashWilliams and SuperSequence.",
+    "reason": "SuperNW has a current Sound approval. Subarr is the next sound-front target and is ready for a real Sound verifier run.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for Subarr only. Check the forward direction clause by clause: BaseBqoRestriction must provide the base perfect restriction, SuperSequenceExtension must provide the locally constant extension with its value equation, and PerfectBaseToSuper must transport perfection to the exact subfront and subbase. Check the converse direction from the two assumed clauses: DecidingFront and DecidingValue must produce the induced front super-sequence, BadMultiToSuper must transfer badness, BadSuperRestrict must preserve badness under the perfect restriction, and NoBadPerfectSuper must yield the contradiction. Require explicit citations to every listed support node and verify that the conclusion really closes the Bqo definition.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "SuperNW"
+      "Subarr"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1244,
-        "end_line": 1250,
-        "reason": "Finite-codomain constant sub-super-sequence statement corresponding to SuperNW."
+        "start_line": 1652,
+        "end_line": 1662,
+        "reason": "Paper statement and proof of the bqo, sub-multi-sequence, and sub-super-sequence equivalence represented by Subarr."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1244-1250 state that the finite-codomain constant sub-super-sequence theorem is equivalent to Nash-Williams, which is the target represented by SuperNW."
+      "basis_summary": "Lines 1652-1662 state the three-way Subarr equivalence and explicitly prove the bqo-to-perfect-super-sequence implication via the corresponding multi-sequence and a perfect restriction."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperNW only. Check the finite-codomain induction line by line: the empty case must use front density and the impossibility of a map into the empty codomain; the chosen-color case must instantiate NashWilliams on the fiber, restrict SuperSequence along the subfront inclusion, and match the dependent value equation; the complement case must show that the values land in E\\{e}, establish strict cardinal decrease with finite codomain, apply induction, compose the subfront inclusions, and conclude constancy in the original codomain. Require explicit citations to NashWilliams and SuperSequence.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for Subarr only. Check the forward direction clause by clause: BaseBqoRestriction must provide the base perfect restriction, SuperSequenceExtension must provide the locally constant extension with its value equation, and PerfectBaseToSuper must transport perfection to the exact subfront and subbase. Check the converse direction from the two assumed clauses: DecidingFront and DecidingValue must produce the induced front super-sequence, BadMultiToSuper must transfer badness, BadSuperRestrict must preserve badness under the perfect restriction, and NoBadPerfectSuper must yield the contradiction. Require explicit citations to every listed support node and verify that the conclusion really closes the Bqo definition.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 106,
+    "cycle": 107,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -57,20 +57,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1250,
-        "reason": "Finite-codomain constant sub-super-sequence statement corresponding to SuperNW.",
-        "start_line": 1244
+        "end_line": 1662,
+        "reason": "Paper statement and proof of the bqo, sub-multi-sequence, and sub-super-sequence equivalence represented by Subarr.",
+        "start_line": 1652
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1244-1250 state that the finite-codomain constant sub-super-sequence theorem is equivalent to Nash-Williams, which is the target represented by SuperNW.",
+      "basis_summary": "Lines 1652-1662 state the three-way Subarr equivalence and explicitly prove the bqo-to-perfect-super-sequence implication via the corresponding multi-sequence and a perfect restriction.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "SuperSequenceExtension now has a current Sound approval. SuperNW is the next sound-front target and is ready for a real Sound verifier run.",
-    "request_id": 367,
+    "reason": "SuperNW has a current Sound approval. Subarr is the next sound-front target and is ready for a real Sound verifier run.",
+    "request_id": 369,
     "request_sound_verifier_nodes": [
-      "SuperNW"
+      "Subarr"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -80,5 +80,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_367_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_369_decision.context.json"
 }

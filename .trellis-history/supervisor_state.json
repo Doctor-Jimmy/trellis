@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 472,
+  "event_count": 475,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -59597,7 +59597,7 @@
     "committed": {
       "$r": "75283b209dd086ff"
     },
-    "cycle": 106,
+    "cycle": 107,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -59845,9 +59845,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 106,
+    "cycle": 107,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 106,
+    "cycles_since_clean": 107,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -60593,7 +60593,7 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": "SuperNW",
+    "held_target": "Subarr",
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -60637,7 +60637,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 106,
+    "last_sound_response_cycle": 107,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60954,16 +60954,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "SuperSequenceExtension": {
+      "SuperNW": {
         "v1": {
-          "comments": "The repaired proof explicitly cites PrefixAgree for the coordinate extraction and explicitly supplies the front witness hF, the enumeration, and both FrontPrefix witnesses to FrontPrefixUnique. The cutoff argument proves both directions of prefix preservation, and the final dependent-value equality is justified by proof irrelevance.",
-          "node": "SuperSequenceExtension",
+          "comments": "The proof is a complete finite-codomain induction. It cites Front for nonemptiness in the empty case, NashWilliams for the fiber dichotomy, and SuperSequence for restriction and value-map handling.",
+          "node": "SuperNW",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The natural-language proof constructs a FrontPrefix witness for each base enumeration, defines the extension, and proves local constancy by choosing the index immediately after the witness cutoff. It checks both implications needed for the proper-prefix relation under PrefixAgree, applies FrontPrefixUnique with the stated front and witnesses, and handles dependent membership proofs. The final value equation follows from the selected witness and the same uniqueness argument. All cross-node dependencies used in the proof are explicitly cited."
+            "explanation": "The proof rigorously handles the empty codomain, applies NashWilliams to the chosen-color fiber, constructs the restricted constant sub-super-sequence in the selected case, and in the complement case maps into E\\{e}, uses strict finite-cardinality decrease, applies the uniform induction hypothesis, composes inclusions, and concludes constancy in E. Cross-node dependencies are explicitly cited."
           },
-          "summary": "Approve: the earlier citation and explicit-front-witness gaps are repaired, and the proof is line-by-line rigorous from the cited support statements."
+          "summary": "SuperNW has a detailed, line-by-line checkable natural-language proof from its cited dependencies."
         }
       }
     },
@@ -60971,17 +60971,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 106,
+      "next_index": 107,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": {
-            "$r": "0cbead0f925b4375"
-          },
-          "snapshot_index": 42
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -64754,6 +64745,159 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 105
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFAtomIffFront",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 106
         }
       ]
     },
@@ -64762,11 +64906,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 367,
+    "request_seq": 369,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperNW only. Check the finite-codomain induction line by line: the empty case must use front density and the impossibility of a map into the empty codomain; the chosen-color case must instantiate NashWilliams on the fiber, restrict SuperSequence along the subfront inclusion, and match the dependent value equation; the complement case must show that the values land in E\\{e}, establish strict cardinal decrease with finite codomain, apply induction, compose the subfront inclusions, and conclude constancy in the original codomain. Require explicit citations to NashWilliams and SuperSequence.",
+    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for Subarr only. Check the forward direction clause by clause: BaseBqoRestriction must provide the base perfect restriction, SuperSequenceExtension must provide the locally constant extension with its value equation, and PerfectBaseToSuper must transport perfection to the exact subfront and subbase. Check the converse direction from the two assumed clauses: DecidingFront and DecidingValue must produce the induced front super-sequence, BadMultiToSuper must transfer badness, BadSuperRestrict must preserve badness under the perfect restriction, and NoBadPerfectSuper must yield the contradiction. Require explicit citations to every listed support node and verify that the conclusion really closes the Bqo definition.",
     "reviewer_requested_sound_verifier_nodes": [
-      "SuperNW"
+      "Subarr"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -64881,6 +65025,9 @@
       },
       "SubFrontCharacterization": {
         "$s": "98f8b3f7b4b210cd"
+      },
+      "SuperNW": {
+        "$s": "4f3efa5c8d5f0bf8"
       },
       "SuperSequenceExtension": {
         "$s": "748da1bdced43686"
@@ -65302,6 +65449,17 @@
       "SubFrontCharacterization": {
         "fingerprints": {
           "$r": "ba1f869bd8a77ac3"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
+      "SuperNW": {
+        "fingerprints": {
+          "$r": "fa39bda0ebe3e02a"
         },
         "lane_votes": {
           "v1": "Pass"
@@ -66479,6 +66637,7 @@
       "PowerIResponseWitness": "Pass",
       "RmapLemma": "Pass",
       "SubFrontCharacterization": "Pass",
+      "SuperNW": "Pass",
       "SuperSequenceExtension": "Pass",
       "TildeFAtomIffFront": "Pass",
       "TildeFFrontEquation": "Pass",
