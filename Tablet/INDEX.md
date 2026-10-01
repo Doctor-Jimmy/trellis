@@ -5,6 +5,7 @@
 | BadMultiRestrict | lemma | proof | open | - | Badness under restriction | BadMultiSequence, MultiSequenceRestrict, RestrictionShift |
 | BadMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | BadMultiToSuper | lemma | proof | open | - | Multi-sequence badness gives super-sequence badness | BadMultiSequence, BadSuperSequence, DecidingFrontSet, DecidingPrefix, DecidingValue |
+| BadPairSequence | definition | definition | closed | - | Bad sequence of sequences | IncreasingPair |
 | BadSuperRestrict | lemma | proof | open | - | Badness under sub-front restriction | BadSuperSequence, SuperSequenceRestrict |
 | BadSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
 | BadSuperToBase | lemma | proof | open | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseLocallyConstant, SuperSequenceExtension |
@@ -26,6 +27,8 @@
 | BooleanInfinitePigeonhole | lemma | proof | open | - | Infinite pigeonhole | Preamble |
 | Bqo | definition | definition | closed | - | - | BadMultiSequence, LocallyConstant |
 | BqoIffGeneralShift | corollary | proof | open | - | - | BadMultiSequence, Bqo, GBetterRel, GBetterRelIff, IncSeqId, RightComp, ShiftMap, SuccSeq |
+| CardinalityFront | definition | definition | closed | - | Constant-cardinality front | Preamble |
+| CardinalityFrontIsFront | lemma | proof | open | - | - | CardinalityFront, Front |
 | ContMor | definition | definition | closed | - | - | ContinuousHom |
 | ContMorEq | definition | definition | closed | - | - | ContMor |
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
@@ -54,6 +57,7 @@
 | IncSeqComp | definition | definition | closed | - | - | IncSeq |
 | IncSeqId | definition | definition | closed | - | - | IncSeq |
 | IncSeqPointwiseLe | lemma | proof | open | - | - | IncSeq |
+| IncreasingPair | definition | definition | closed | - | - | Preamble |
 | InfiniteSetEnumeration | lemma | proof | open | - | Increasing enumeration of an infinite set | IncSeq |
 | InitialSegment | definition | definition | closed | - | - | Preamble |
 | LocallyConstant | definition | definition | closed | - | - | MultiSequence, PrefixAgree |
@@ -75,16 +79,21 @@
 | PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
 | PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, PerfectSuperSequence, SuperSequenceExtension |
 | PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, SuperSequenceRestrict |
+| PowerWqoBadPairSequence | lemma | proof | open | - | Bad-witness characterization | BadPairSequence, SetDomination |
 | Preamble | preamble | preamble | closed | - | - | - |
 | PrefixAgree | definition | definition | closed | - | - | IncSeq |
 | PrefixTree | definition | definition | closed | - | - | InitialSegment |
 | ProperInitialSegment | definition | definition | closed | - | - | InitialSegment |
 | ProperPrefixSet | definition | definition | closed | - | - | Preamble |
+| QuadrupleHomogeneous | lemma | proof | open | - | Homogeneous quadruples | CardinalityFrontIsFront, NashWilliams |
+| RadoOrder | definition | definition | closed | - | Rado order | IncreasingPair |
 | Ray | definition | definition | closed | - | - | Preamble |
+| RelationEmbedding | definition | definition | closed | - | Relation embedding | Preamble |
 | RestrictionLocallyConstant | lemma | proof | open | - | Restriction preserves local constancy | LocallyConstant, MultiSequenceRestrict |
 | RestrictionShift | lemma | proof | open | - | Restriction and shift | MultiSequenceRestrict, ShiftMap |
 | RightComp | definition | definition | closed | - | - | IncSeqComp |
 | RmapLemma | lemma | proof | open | - | - | ContMor, FirstMovedPoint, OrbitEmbedding, RightComp, ShiftMap |
+| SetDomination | definition | definition | closed | - | Domination on subsets | Preamble |
 | ShiftDichotomy | lemma | proof | open | - | Perfect-or-bad shift dichotomy | BadMultiSequence, DecidingFront, DecidingValue, InfiniteSetEnumeration, MultiSequenceRestrict, NashWilliams, PerfectMultiSequence, RestrictionShift |
 | ShiftMap | definition | definition | closed | - | - | RightComp, SuccSeq |
 | SubFrontCharacterization | lemma | proof | open | - | Sub-fronts | Front, FrontRestrict, FrontRestriction |
@@ -95,5 +104,6 @@
 | SuperSequenceExtension | lemma | proof | open | - | Extension from a front | BaseLocallyConstant, FrontPrefixExists, FrontPrefixUnique, SuperSequence |
 | SuperSequenceRestrict | definition | definition | closed | - | - | SuperSequence |
 | TailSet | definition | definition | closed | - | - | Preamble |
+| TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 92 nodes | **Closed:** 49 | **Open:** 43
+**Total:** 102 nodes | **Closed:** 55 | **Open:** 47

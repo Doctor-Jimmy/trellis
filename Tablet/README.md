@@ -13,6 +13,7 @@
 | BadMultiRestrict | proof | Badness under restriction | open |
 | BadMultiSequence | definition | - | closed |
 | BadMultiToSuper | proof | Multi-sequence badness gives super-sequence badness | open |
+| BadPairSequence | definition | Bad sequence of sequences | closed |
 | BadSuperRestrict | proof | Badness under sub-front restriction | open |
 | BadSuperSequence | definition | - | closed |
 | BadSuperToBase | proof | Super-sequence badness gives base badness | open |
@@ -34,6 +35,8 @@
 | BooleanInfinitePigeonhole | proof | Infinite pigeonhole | open |
 | Bqo | definition | - | closed |
 | BqoIffGeneralShift | proof | - | open |
+| CardinalityFront | definition | Constant-cardinality front | closed |
+| CardinalityFrontIsFront | proof | - | open |
 | ContMor | definition | - | closed |
 | ContMorEq | definition | - | closed |
 | ContinuousHom | definition | - | closed |
@@ -62,6 +65,7 @@
 | IncSeqComp | definition | - | closed |
 | IncSeqId | definition | - | closed |
 | IncSeqPointwiseLe | proof | - | open |
+| IncreasingPair | definition | - | closed |
 | InfiniteSetEnumeration | proof | Increasing enumeration of an infinite set | open |
 | InitialSegment | definition | - | closed |
 | LocallyConstant | definition | - | closed |
@@ -83,15 +87,20 @@
 | PerfectSuperSequence | definition | - | closed |
 | PerfectSuperToBase | proof | Super-sequence perfectness gives base perfectness | open |
 | PerfectSuperToMulti | proof | Perfect sub-super-sequences give perfect sub-multi-sequences | open |
+| PowerWqoBadPairSequence | proof | Bad-witness characterization | open |
 | PrefixAgree | definition | - | closed |
 | PrefixTree | definition | - | closed |
 | ProperInitialSegment | definition | - | closed |
 | ProperPrefixSet | definition | - | closed |
+| QuadrupleHomogeneous | proof | Homogeneous quadruples | open |
+| RadoOrder | definition | Rado order | closed |
 | Ray | definition | - | closed |
+| RelationEmbedding | definition | Relation embedding | closed |
 | RestrictionLocallyConstant | proof | Restriction preserves local constancy | open |
 | RestrictionShift | proof | Restriction and shift | open |
 | RightComp | definition | - | closed |
 | RmapLemma | proof | - | open |
+| SetDomination | definition | Domination on subsets | closed |
 | ShiftDichotomy | proof | Perfect-or-bad shift dichotomy | open |
 | ShiftMap | definition | - | closed |
 | SubFrontCharacterization | proof | Sub-fronts | open |
@@ -101,5 +110,6 @@
 | SuperSequenceExtension | proof | Extension from a front | open |
 | SuperSequenceRestrict | definition | - | closed |
 | TailSet | definition | - | closed |
+| TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 49/92 closed
+**Summary:** 55/102 closed

@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The fixed-left restriction cone is now paper-approved, including Subarr. The next paper-faithful DAG step is the missing Rado support package for lines:985-987, derived from Nash-Williams rather than a separate Ramsey development.",
-    "comments": "Continue in Global mode, anchored at NashWilliams. Build the Rado support package as paired Lean/TeX nodes: the increasing-pair carrier and exact two-clause Rado order; first-level domination on Set Q; the equivalence between failure of powerset wqo and a bad sequence of sequences; and the constant-cardinality front consequences of NashWilliams for triples and quadruples. Keep the two composition actions and the repaired arbitrary-base restriction interface unchanged. Do not collapse this target into the full iterated powerset hierarchy governed by pm-0002, and do not introduce an independent infinite Ramsey development, in accordance with pm-0003. If the target theorem node is introduced in this burst, its statement must be exactly the paper claim that a wqo Q with non-wqo P(Q) admits an embedding of Rado into Q; reserve the detailed embedding/reflection proof for the downstream Rado-target step if the support package is not yet complete. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
+    "reason": "The Rado support package is now present and matches the manuscript's pair order, bad-witness extraction, and Nash-Williams-derived homogeneous thinning. The remaining paper-faithfulness gap is the target theorem itself: a single node must state and prove that a wqo Q with non-wqo first-level powerset domination contains an embedded copy of Rado.",
+    "comments": "Continue in Global mode, anchored at RelationEmbedding, and execute the downstream rado-embedding-target task. Add the final theorem-like node whose statement alone claims lines:985-987: under a quasi-order on Q, WellQuasiOrdered Q, and failure of WellQuasiOrdered (SetDomination r), there exists e : IncreasingPair -> Q with RelationEmbedding RadoOrder r e. Use PowerWqoBadPairSequence to obtain the bad pair map; apply the existing homogeneous-triple and homogeneous-quadruple consequences of NashWilliams; eliminate the negative colors using the wqo hypothesis; remove the minimum of the final infinite set and define the embedding on the reindexed pairs. The NL proof must spell out preservation, injectivity, and all three reflection cases from paper lines 993 onward, with explicit citations. Do not claim the target through a helper alone, do not replace relation embedding by one-way monotonicity, and do not start an independent Ramsey development. Keep first-level SetDomination separate from the full iterated hierarchy for cor PowerQPresBqo. New proof-bearing TeX must have a complete cited proof, not SKETCH; retain the repaired fixed-left restriction interface unchanged.",
     "task_blocker_ids": [
       "paperfaithfulness:target:lines:985-987:"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "NashWilliams",
+    "next_active": "RelationEmbedding",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -20,53 +20,38 @@
     "paper_focus_ranges": [
       {
         "start_line": 927,
-        "end_line": 933,
-        "reason": "Exact definition of the Rado pair order that the target embedding must preserve and reflect."
+        "end_line": 949,
+        "reason": "Exact Rado pair carrier and order, plus the surrounding wqo context."
       },
       {
         "start_line": 957,
         "end_line": 993,
-        "reason": "Bad-witness extraction, the bad sequence-of-sequences equivalence, and the triple/quadruple thinning and reflection argument for the Rado embedding target."
+        "reason": "Bad powerset-witness extraction and the Rado embedding proof, including homogeneous triples, quadruples, preservation, and reflection cases."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited text defines Rado on increasing pairs, extracts q_m^n from a bad powerset sequence, states the bad sequence-of-sequences criterion, and proves the embedding using homogeneous triples and quadruples plus three explicit reflection cases."
+      "basis_summary": "The manuscript defines Rado by the same two order clauses used in RadoOrder, extracts a bad IncreasingPair map from non-wqo powerset domination, and proves the embedding by two homogeneous thinnings followed by preservation and three explicit reflection cases."
     },
     "stuck_math_audit": {
-      "notes": "Audit tasks replace-fixed-subbase-interface, rebuild-restriction-transports, rebuild-shift-dichotomy, and restate-subarr-target are substantively complete in the worker burst; Subarr has paper-faithfulness PASS. The live audit now moves to its Rado/Ramsey-support task. Preserve the repaired fixed-left restriction orientation while building that support.",
+      "notes": "The audit task rado-ramsey-support is substantively complete: the worker added IncreasingPair, RadoOrder, SetDomination, RelationEmbedding, BadPairSequence, PowerWqoBadPairSequence, CardinalityFront, and the triple/quadruple homogeneous consequences of NashWilliams. The next live audit task is rado-embedding-target; the target theorem itself remains absent and is the correct paper-faithfulness focus.",
       "reviewer_lean_product": {
         "target": "lines:985-987",
-        "anchor": "NashWilliams",
-        "required_support": [
-          "Rado pair carrier and exact order",
-          "first-level Set Q domination",
-          "bad powerset sequence versus bad sequence of sequences",
-          "homogeneous constant-triple and constant-quadruple front consequences"
-        ],
-        "constraints": [
-          "derive finite Ramsey instances from NashWilliams",
-          "keep first-level powerset support separate from iterated hierarchy support",
-          "include preservation and all three reflection cases in the eventual embedding theorem"
+        "anchor": "RelationEmbedding",
+        "premise_route": "PowerWqoBadPairSequence gives a bad IncreasingPair-valued map from failure of SetDomination wqo",
+        "required_conclusion": "exists an injective map IncreasingPair -> Q satisfying RadoOrder p q iff r (e p) (e q)",
+        "proof_checks": [
+          "negative triple color contradicts wqo via a fixed-row bad sequence",
+          "negative quadruple color contradicts wqo via separated pairs",
+          "positive colors yield preservation",
+          "reflection must cover l < j, i < k, and k < i separately"
         ]
       }
     },
     "dismissed_tasks": [
       {
-        "id": "replace-fixed-subbase-interface",
-        "reason": "Completed: MultiSequenceRestrict uses fixed-left IncSeqComp, BaseRestrict uses BaseIncSeq X, and the exact restriction-shift commutation is present."
-      },
-      {
-        "id": "rebuild-restriction-transports",
-        "reason": "Completed: badness/perfectness transports and the base/super bridges were propagated through the corrected fixed-subbase interface."
-      },
-      {
-        "id": "rebuild-shift-dichotomy",
-        "reason": "Completed: ShiftDichotomy now uses the Boolean comparison coloring, its deciding front, and Nash-Williams with the corrected restriction equation."
-      },
-      {
-        "id": "restate-subarr-target",
-        "reason": "Completed: Subarr states the arbitrary-infinite-base and arbitrary-front clauses, and the paper-faithfulness verifier approved its full three-clause coverage."
+        "id": "rado-ramsey-support",
+        "reason": "Completed: the worker added the paper-faithful Rado pair/order, first-level domination, bad-witness equivalence, relation-embedding interface, and Nash-Williams-derived triple and quadruple thinning nodes."
       }
     ]
   },
@@ -79,77 +64,62 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode, anchored at NashWilliams. Build the Rado support package as paired Lean/TeX nodes: the increasing-pair carrier and exact two-clause Rado order; first-level domination on Set Q; the equivalence between failure of powerset wqo and a bad sequence of sequences; and the constant-cardinality front consequences of NashWilliams for triples and quadruples. Keep the two composition actions and the repaired arbitrary-base restriction interface unchanged. Do not collapse this target into the full iterated powerset hierarchy governed by pm-0002, and do not introduce an independent infinite Ramsey development, in accordance with pm-0003. If the target theorem node is introduced in this burst, its statement must be exactly the paper claim that a wqo Q with non-wqo P(Q) admits an embedding of Rado into Q; reserve the detailed embedding/reflection proof for the downstream Rado-target step if the support package is not yet complete. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
+    "comments": "Continue in Global mode, anchored at RelationEmbedding, and execute the downstream rado-embedding-target task. Add the final theorem-like node whose statement alone claims lines:985-987: under a quasi-order on Q, WellQuasiOrdered Q, and failure of WellQuasiOrdered (SetDomination r), there exists e : IncreasingPair -> Q with RelationEmbedding RadoOrder r e. Use PowerWqoBadPairSequence to obtain the bad pair map; apply the existing homogeneous-triple and homogeneous-quadruple consequences of NashWilliams; eliminate the negative colors using the wqo hypothesis; remove the minimum of the final infinite set and define the embedding on the reindexed pairs. The NL proof must spell out preservation, injectivity, and all three reflection cases from paper lines 993 onward, with explicit citations. Do not claim the target through a helper alone, do not replace relation embedding by one-way monotonicity, and do not start an independent Ramsey development. Keep first-level SetDomination separate from the full iterated hierarchy for cor PowerQPresBqo. New proof-bearing TeX must have a complete cited proof, not SKETCH; retain the repaired fixed-left restriction interface unchanged.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 7,
+    "cycle": 8,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "replace-fixed-subbase-interface",
-        "reason": "Completed: MultiSequenceRestrict uses fixed-left IncSeqComp, BaseRestrict uses BaseIncSeq X, and the exact restriction-shift commutation is present."
-      },
-      {
-        "id": "rebuild-restriction-transports",
-        "reason": "Completed: badness/perfectness transports and the base/super bridges were propagated through the corrected fixed-subbase interface."
-      },
-      {
-        "id": "rebuild-shift-dichotomy",
-        "reason": "Completed: ShiftDichotomy now uses the Boolean comparison coloring, its deciding front, and Nash-Williams with the corrected restriction equation."
-      },
-      {
-        "id": "restate-subarr-target",
-        "reason": "Completed: Subarr states the arbitrary-infinite-base and arbitrary-front clauses, and the paper-faithfulness verifier approved its full three-clause coverage."
+        "id": "rado-ramsey-support",
+        "reason": "Completed: the worker added the paper-faithful Rado pair/order, first-level domination, bad-witness equivalence, relation-embedding interface, and Nash-Williams-derived triple and quadruple thinning nodes."
       }
     ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "NashWilliams",
+    "next_active": "RelationEmbedding",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 933,
-        "reason": "Exact definition of the Rado pair order that the target embedding must preserve and reflect.",
+        "end_line": 949,
+        "reason": "Exact Rado pair carrier and order, plus the surrounding wqo context.",
         "start_line": 927
       },
       {
         "end_line": 993,
-        "reason": "Bad-witness extraction, the bad sequence-of-sequences equivalence, and the triple/quadruple thinning and reflection argument for the Rado embedding target.",
+        "reason": "Bad powerset-witness extraction and the Rado embedding proof, including homogeneous triples, quadruples, preservation, and reflection cases.",
         "start_line": 957
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited text defines Rado on increasing pairs, extracts q_m^n from a bad powerset sequence, states the bad sequence-of-sequences criterion, and proves the embedding using homogeneous triples and quadruples plus three explicit reflection cases.",
+      "basis_summary": "The manuscript defines Rado by the same two order clauses used in RadoOrder, extracts a bad IncreasingPair map from non-wqo powerset domination, and proves the embedding by two homogeneous thinnings followed by preservation and three explicit reflection cases.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The fixed-left restriction cone is now paper-approved, including Subarr. The next paper-faithful DAG step is the missing Rado support package for lines:985-987, derived from Nash-Williams rather than a separate Ramsey development.",
-    "request_id": 50,
+    "reason": "The Rado support package is now present and matches the manuscript's pair order, bad-witness extraction, and Nash-Williams-derived homogeneous thinning. The remaining paper-faithfulness gap is the target theorem itself: a single node must state and prove that a wqo Q with non-wqo first-level powerset domination contains an embedded copy of Rado.",
+    "request_id": 56,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "Audit tasks replace-fixed-subbase-interface, rebuild-restriction-transports, rebuild-shift-dichotomy, and restate-subarr-target are substantively complete in the worker burst; Subarr has paper-faithfulness PASS. The live audit now moves to its Rado/Ramsey-support task. Preserve the repaired fixed-left restriction orientation while building that support.",
+      "notes": "The audit task rado-ramsey-support is substantively complete: the worker added IncreasingPair, RadoOrder, SetDomination, RelationEmbedding, BadPairSequence, PowerWqoBadPairSequence, CardinalityFront, and the triple/quadruple homogeneous consequences of NashWilliams. The next live audit task is rado-embedding-target; the target theorem itself remains absent and is the correct paper-faithfulness focus.",
       "reviewer_lean_product": {
-        "anchor": "NashWilliams",
-        "constraints": [
-          "derive finite Ramsey instances from NashWilliams",
-          "keep first-level powerset support separate from iterated hierarchy support",
-          "include preservation and all three reflection cases in the eventual embedding theorem"
+        "anchor": "RelationEmbedding",
+        "premise_route": "PowerWqoBadPairSequence gives a bad IncreasingPair-valued map from failure of SetDomination wqo",
+        "proof_checks": [
+          "negative triple color contradicts wqo via a fixed-row bad sequence",
+          "negative quadruple color contradicts wqo via separated pairs",
+          "positive colors yield preservation",
+          "reflection must cover l < j, i < k, and k < i separately"
         ],
-        "required_support": [
-          "Rado pair carrier and exact order",
-          "first-level Set Q domination",
-          "bad powerset sequence versus bad sequence of sequences",
-          "homogeneous constant-triple and constant-quadruple front consequences"
-        ],
+        "required_conclusion": "exists an injective map IncreasingPair -> Q satisfying RadoOrder p q iff r (e p) (e q)",
         "target": "lines:985-987"
       }
     },
@@ -166,5 +136,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_50_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_56_decision.context.json"
 }

@@ -1,0 +1,28 @@
+\begin{lemma}[Homogeneous triples]
+For every infinite $X\subseteq\mathbb N$ and every two-coloring of the
+three-element subsets of $X$, there are an infinite $Y\subseteq X$ and a
+color $b$ such that every three-element subset of $Y$ has color $b$.
+\end{lemma}
+\begin{proof}
+Take the front $F=\mathsf{CardinalityFront}(3,X)$ from
+\noderef{CardinalityFront}; it is a front by
+\noderef{CardinalityFrontIsFront}.  Let
+$S=\{s\in F\mid c(s)=1\}$.  Apply the Nash--Williams theorem
+\noderef{NashWilliams} to $F$ and $S$.  It gives a front $F'$ on an
+infinite $Y$, with $F'\subseteq F$, such that either
+$F'\subseteq S$ or $F'\cap S=\emptyset$.
+
+Since $F'$ is nontrivial (all its members have cardinality three), its
+base is the union of its members.  Every member of $F'$ belongs to $F$,
+and every member of $F$ is contained in $X$, so this also gives
+$Y\subseteq X$.
+
+Because every member of $F'$ has cardinality three, front density forces
+$F'$ to contain the first three elements of every infinite branch through
+$Y$: for a given three-element $s\subseteq Y$, take the infinite set
+whose first three elements are exactly $s$, and apply density of $F'$;
+the member supplied has cardinality three and hence is $s$.  Thus every
+three-element subset of $Y$ lies in $F'$.  In the first homogeneous case
+all have color $1$, and in the second all have color $0$.  Choosing the
+corresponding Boolean value gives the conclusion.
+\end{proof}

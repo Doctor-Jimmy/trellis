@@ -1,0 +1,21 @@
+\begin{lemma}[Homogeneous quadruples]
+For every infinite $X\subseteq\mathbb N$ and every two-coloring of the
+four-element subsets of $X$, there are an infinite $Y\subseteq X$ and a
+color $b$ such that every four-element subset of $Y$ has color $b$.
+\end{lemma}
+\begin{proof}
+Use $F=\mathsf{CardinalityFront}(4,X)$ from
+\noderef{CardinalityFront}; it is a front by
+\noderef{CardinalityFrontIsFront}, and color it by
+$S=\{s\in F\mid c(s)=1\}$.  Nash--Williams
+\noderef{NashWilliams} supplies an infinite $Y$ and a
+sub-front $F'\subseteq F$ which is either contained in $S$ or disjoint
+from $S$.  Since $F'$ is nontrivial, its base is the union of its
+members; because $F'\subseteq F$ and every member of $F$ is contained in
+$X$, this gives $Y\subseteq X$.  The fixed cardinality argument is the same as for triples:
+given any four-element $s\subseteq Y$, choose an infinite branch through
+$Y$ beginning with $s$; density of $F'$ supplies a front member on that
+branch, and its cardinality four forces it to be $s$.  Consequently all
+four-element subsets of $Y$ receive the same color, namely $1$ in the
+first case and $0$ in the second.
+\end{proof}

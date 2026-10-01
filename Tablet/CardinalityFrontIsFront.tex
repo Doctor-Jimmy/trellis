@@ -1,0 +1,16 @@
+\begin{lemma}
+If $X$ is infinite, then $\mathsf{CardinalityFront}(k,X)=[X]^k$ is a
+front on $X$ for every $k\in\mathbb N$.
+\end{lemma}
+\begin{proof}
+We use the three defining clauses of a front from \noderef{Front}.
+Every member of $[X]^k$ is a finite subset of $X$, so its union is $X$
+when $k>0$; for $k=0$ the family is the trivial front
+$\{\emptyset\}$, which is allowed by the definition.  If two members of
+$[X]^k$ are initial segments of one another, their equal cardinalities
+force them to be equal.  Finally, let $Y\subseteq X$ be infinite.  The
+first $k$ elements of the increasing enumeration of $Y$ form a member of
+$[X]^k$ and are an initial segment of $Y$ (with the empty set serving when
+$k=0$).  These are exactly the base, prefix-freeness, and density clauses
+of the front definition.
+\end{proof}
