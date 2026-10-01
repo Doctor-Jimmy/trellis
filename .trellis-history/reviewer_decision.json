@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found one concrete mandatory-citation gap in BadSuperRestrict: the proof invokes the defining implication of BadSuperSequence without citing that dependency. Assign the repair-ready blocker to a bounded worker edit while preserving the restriction argument and theorem statement.",
-    "comments": "Edit only Tablet/BadSuperRestrict.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; do not add a helper or change the theorem. In the sentence that applies badness of the original super-sequence, explicitly cite \\noderef{BadSuperSequence} and state that the previously established s,t in F with FiniteShift s t satisfy the defining negated relation. Retain the citation to SuperSequenceRestrict for the restricted value-map identification. No other repair is supported by the current verifier evidence.",
-    "task_blocker_ids": [
-      "soundness:node:BadSuperRestrict:sound-v2:a646efcd1119c5bed2234dd2c294b4df251ffeb9bba3f10b9e926c9a772aca90"
-    ],
+    "reason": "BadSuperRestrict has a current Sound approval. BadMultiToSuper is the held next node, has no Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "comments": "Leave Tablet/BadMultiToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToSuper. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, unpack the finite-shift witness x and both proper-prefix hypotheses. Apply DecidingValue separately at s with x and at t with ShiftMap x, verifying that the deciding-front membership and ProperPrefixSet hypotheses match. Use the explicit BadMultiSequence condition to derive the failed relation between h x and h (ShiftMap x), rewrite the dependent f.value terms with hf, and conclude the universal BadSuperSequence condition. Every cross-node dependency used should be cited, including DecidingValue, BadMultiSequence, BadSuperSequence, FiniteShift, ShiftMap, ProperPrefixSet, and DecidingFrontSet; do not rely on another theorem's hypotheses by citation.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BadSuperRestrict",
+    "request_sound_verifier_node_ids": [
+      "BadMultiToSuper"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -20,14 +20,14 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1188,
-        "end_line": 1198,
-        "reason": "The manuscript defines sub-super-sequences as restrictions to fronts included in the original front."
+        "start_line": 1478,
+        "end_line": 1496,
+        "reason": "The manuscript proves that a bad locally constant multi-sequence induces a bad super-sequence via an enumeration witnessing the finite shift."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript passage defines the restriction operation underlying sub-super-sequences. The worker edit preserves that restriction argument and supplies the tablet's mandatory citation when transferring the original badness condition."
+      "basis_summary": "The cited manuscript lemma gives exactly the badness transfer from a locally constant multi-sequence to its deciding-front super-sequence: a finite-shift witness supplies x and ShiftMap x, the value equation identifies the super-sequence values, and BadMultiSequence supplies the failed relation. The requested Sound check follows this argument with the tablet's explicit dependencies."
     },
     "authorized_node_ids": []
   },
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/BadSuperRestrict.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; do not add a helper or change the theorem. In the sentence that applies badness of the original super-sequence, explicitly cite \\noderef{BadSuperSequence} and state that the previously established s,t in F with FiniteShift s t satisfy the defining negated relation. Retain the citation to SuperSequenceRestrict for the restricted value-map identification. No other repair is supported by the current verifier evidence.",
+    "comments": "Leave Tablet/BadMultiToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToSuper. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, unpack the finite-shift witness x and both proper-prefix hypotheses. Apply DecidingValue separately at s with x and at t with ShiftMap x, verifying that the deciding-front membership and ProperPrefixSet hypotheses match. Use the explicit BadMultiSequence condition to derive the failed relation between h x and h (ShiftMap x), rewrite the dependent f.value terms with hf, and conclude the universal BadSuperSequence condition. Every cross-node dependency used should be cited, including DecidingValue, BadMultiSequence, BadSuperSequence, FiniteShift, ShiftMap, ProperPrefixSet, and DecidingFrontSet; do not rely on another theorem's hypotheses by citation.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 169,
+    "cycle": 170,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,42 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BadSuperRestrict",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1198,
-        "reason": "The manuscript defines sub-super-sequences as restrictions to fronts included in the original front.",
-        "start_line": 1188
+        "end_line": 1496,
+        "reason": "The manuscript proves that a bad locally constant multi-sequence induces a bad super-sequence via an enumeration witnessing the finite shift.",
+        "start_line": 1478
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript passage defines the restriction operation underlying sub-super-sequences. The worker edit preserves that restriction argument and supplies the tablet's mandatory citation when transferring the original badness condition.",
+      "basis_summary": "The cited manuscript lemma gives exactly the badness transfer from a locally constant multi-sequence to its deciding-front super-sequence: a finite-shift witness supplies x and ShiftMap x, the value equation identifies the super-sequence values, and BadMultiSequence supplies the failed relation. The requested Sound check follows this argument with the tablet's explicit dependencies.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found one concrete mandatory-citation gap in BadSuperRestrict: the proof invokes the defining implication of BadSuperSequence without citing that dependency. Assign the repair-ready blocker to a bounded worker edit while preserving the restriction argument and theorem statement.",
-    "request_id": 532,
-    "request_sound_verifier_nodes": [],
+    "reason": "BadSuperRestrict has a current Sound approval. BadMultiToSuper is the held next node, has no Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "request_id": 535,
+    "request_sound_verifier_nodes": [
+      "BadMultiToSuper"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:a646efcd1119c5bed2234dd2c294b4df251ffeb9bba3f10b9e926c9a772aca90",
-        "kind": "Soundness",
-        "object": {
-          "node": "BadSuperRestrict",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_532_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_535_decision.context.json"
 }
