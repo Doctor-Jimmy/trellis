@@ -1,46 +1,52 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker changed BadMultiRestrict.tex and its correspondence verifier approves the repaired statement, so its prior substantive fingerprint is no longer binding. Continue with one unchanged substantive obligation, BlockSigmaIntertwines, while leaving BadMultiRestrict for ordinary substantive re-verification and deferring soundness work until the remaining substantive blockers are resolved.",
-    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex, preserving its exact Lean statement, imports, and target. Make the lemma's role substantive as the coordinate-level intertwining identity used by EmapLemma, rather than a wrapper around EmapLemma or a repetition of OrbitBlockCoverage. State the two cases from the paper explicitly: the initial segment before the first orbit block, and l in [G(n), G(n+1)); in the latter case track the shifted block index and the exponent identity g^[f(n+1)-n](l) = g^[f(n+1)-(n+1)](g(l)). Cite only genuine support nodes, give a complete non-SKETCH proof in the required single theorem/proof block, and do not modify BadMultiRestrict.tex.",
-    "task_blocker_ids": [
-      "substantiveness:node:BlockSigmaIntertwines:{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
-    ],
+    "reason": "The coordinated restructure repaired the substantive statement package: BlockSigmaIntertwines now includes the least-moved-point hypothesis, and EmapLemma consumes the FirstMovedPoint witness. The substantive blocker has reverted to Unknown and is omitted. The remaining soundness blocker is fresh but not yet requestable during this restructure-to-verification transition, so the package should proceed through the normal targeted verifier sequence without further worker edits.",
+    "comments": "Do not make another repository change in this burst. Recheck both repaired TeX packages against their Lean statements and the cited paper argument, then run the ordinary correspondence and soundness lanes when eligible. In particular, verify that the initial-segment case uses the least-moved-point hypothesis, that the orbit-block exponent calculation has the correct index shift, and that EmapLemma explicitly obtains and passes the FirstMovedPoint witness. The previous substantiveness blocker is intentionally omitted because the worker changed the node fingerprint; no reset is legal or needed.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
     "next_active": "BlockSigmaIntertwines",
-    "next_mode": "targeted",
+    "next_mode": "restructure",
+    "authorized_node_ids": [
+      "BlockSigmaIntertwines",
+      "EmapLemma"
+    ],
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
+    "work_style_hint": "none",
     "paper_focus_ranges": [
       {
         "start_line": 1788,
-        "end_line": 1838,
-        "reason": "The paper states EmapLemma and proves the block-map intertwining identity by the initial-block and orbit-block cases, providing the exact support for this node."
+        "end_line": 1834,
+        "reason": "The repaired nodes formalize the paper's least-moved-point block construction and its initial-segment and orbit-block intertwining cases."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread lines 1788-1838. The paper defines the block map sigma and proves sigma(f composed with SuccSeq)(l) = sigma(f)(g(l)) by separating l before G(0) from l in the unique block [G(n),G(n+1)), then using the shifted block index and the exponent identity. This is the precise paper role of BlockSigmaIntertwines as a support lemma for EmapLemma."
-    },
-    "request_sound_verifier_node_ids": []
+      "basis_summary": "I directly read the cited passage. The paper defines k_g as the minimum k with k < g(k), sets G(n)=g^n(k_g), and proves the identity by separating l<G(0) from G(n)<=l<G(n+1). The first case uses g(l)=l below the least moved point, while the second uses G(n+1)<=g(l)<G(n+2) and the exponent identity. This is exactly the interface now exposed by BlockSigmaIntertwines and supplied by EmapLemma."
+    }
   },
   "response": {
     "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
-    "authorized_nodes": [],
+    "authorized_nodes": [
+      "BlockSigmaIntertwines",
+      "EmapLemma"
+    ],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex, preserving its exact Lean statement, imports, and target. Make the lemma's role substantive as the coordinate-level intertwining identity used by EmapLemma, rather than a wrapper around EmapLemma or a repetition of OrbitBlockCoverage. State the two cases from the paper explicitly: the initial segment before the first orbit block, and l in [G(n), G(n+1)); in the latter case track the shifted block index and the exponent identity g^[f(n+1)-n](l) = g^[f(n+1)-(n+1)](g(l)). Cite only genuine support nodes, give a complete non-SKETCH proof in the required single theorem/proof block, and do not modify BadMultiRestrict.tex.",
+    "comments": "Do not make another repository change in this burst. Recheck both repaired TeX packages against their Lean statements and the cited paper argument, then run the ordinary correspondence and soundness lanes when eligible. In particular, verify that the initial-segment case uses the least-moved-point hypothesis, that the orbit-block exponent calculation has the correct index shift, and that EmapLemma explicitly obtains and passes the FirstMovedPoint witness. The previous substantiveness blocker is intentionally omitted because the worker changed the node fingerprint; no reset is legal or needed.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 33,
+    "cycle": 34,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,40 +56,30 @@
     "must_close_active": false,
     "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Restructure",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1838,
-        "reason": "The paper states EmapLemma and proves the block-map intertwining identity by the initial-block and orbit-block cases, providing the exact support for this node.",
+        "end_line": 1834,
+        "reason": "The repaired nodes formalize the paper's least-moved-point block construction and its initial-segment and orbit-block intertwining cases.",
         "start_line": 1788
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread lines 1788-1838. The paper defines the block map sigma and proves sigma(f composed with SuccSeq)(l) = sigma(f)(g(l)) by separating l before G(0) from l in the unique block [G(n),G(n+1)), then using the shifted block index and the exponent identity. This is the precise paper role of BlockSigmaIntertwines as a support lemma for EmapLemma.",
+      "basis_summary": "I directly read the cited passage. The paper defines k_g as the minimum k with k < g(k), sets G(n)=g^n(k_g), and proves the identity by separating l<G(0) from G(n)<=l<G(n+1). The first case uses g(l)=l below the least moved point, while the second uses G(n+1)<=g(l)<G(n+2) and the exponent identity. This is exactly the interface now exposed by BlockSigmaIntertwines and supplied by EmapLemma.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker changed BadMultiRestrict.tex and its correspondence verifier approves the repaired statement, so its prior substantive fingerprint is no longer binding. Continue with one unchanged substantive obligation, BlockSigmaIntertwines, while leaving BadMultiRestrict for ordinary substantive re-verification and deferring soundness work until the remaining substantive blockers are resolved.",
-    "request_id": 169,
+    "reason": "The coordinated restructure repaired the substantive statement package: BlockSigmaIntertwines now includes the least-moved-point hypothesis, and EmapLemma consumes the FirstMovedPoint witness. The substantive blocker has reverted to Unknown and is omitted. The remaining soundness blocker is fresh but not yet requestable during this restructure-to-verification transition, so the package should proceed through the normal targeted verifier sequence without further worker edits.",
+    "request_id": 175,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "BlockSigmaIntertwines",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_169_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_175_decision.context.json"
 }

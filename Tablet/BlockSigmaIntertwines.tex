@@ -1,17 +1,40 @@
 \begin{lemma}
-For every $f\in\mathsf{IncSeq}$ and every $l\in\mathbb N$, the block maps
-satisfy
+Let $g\in\mathsf{IncSeq}$ and let $k\in\mathbb N$ satisfy
+$k<g(k)$ and $g(j)=j$ for every $j<k$.  For every
+$f\in\mathsf{IncSeq}$ and every $l\in\mathbb N$, define
+$\sigma_f(l)=\mathsf{BlockSigma}(g,k,f,l)$ as in
+\noderef{BlockSigma}.  The block maps satisfy
 \[
 \sigma_{f\circ\mathsf{SuccSeq}}(l)=\sigma_f(g(l)).
 \]
-Equivalently, $\sigma_{f\circ\mathsf{SuccSeq}}=\sigma_f\circ g$.
+Here $f\circ\mathsf{SuccSeq}$ is the right composition represented by
+$\mathsf{RightComp}(\mathsf{SuccSeq},f)$, and equivalently
+$\sigma_{f\circ\mathsf{SuccSeq}}=\sigma_f\circ g$.
 \end{lemma}
 \begin{proof}
-If $l<G(0)$, then the least moved-point property gives $g(l)=l$, and both
-sides equal $l$.  If $G(n)\leq l<G(n+1)$, strict monotonicity of $g$ gives
-$G(n+1)\leq g(l)<G(n+2)$.  The left side therefore uses exponent
-$f(n+1)-n$, whereas the right side uses exponent $f(n+1)-(n+1)$ after the
-extra application of $g$.  The identity
-$g^{[a]}(g(l))=g^{[a+1]}(l)$ makes the two values equal.  The two cases cover
-all $l$ by \noderef{OrbitBlockCoverage}.
+Put $G(n)=g^{[n]}(k)$, so $G(0)=k$.  The two cases below exhaust all
+$l$ by \noderef{OrbitBlockCoverage}.  If $l<G(0)$, then $l<k$ and the
+least-moved-point hypothesis gives $g(l)=l$.  By the piece of the block
+definition in \noderef{BlockSigma} below $G(0)$, both sides are therefore
+$l$.
+
+Otherwise, let $n$ be the unique index such that
+$G(n)\leq l<G(n+1)$.  Since $g$ is strictly increasing,
+\[
+G(n+1)=g(G(n))\leq g(l)<g(G(n+1))=G(n+2).
+\]
+Thus $g(l)$ is in the $(n+1)$st block.  Using the block formula from
+\noderef{BlockSigma} and the composition convention from
+\noderef{RightComp} and \noderef{SuccSeq}, the left-hand side is
+\[
+g^{[f(n+1)-n]}(l),
+\]
+while the right-hand side is
+\[
+g^{[f(n+1)-(n+1)]}(g(l)).
+\]
+The embedding $f$ satisfies $n+1\leq f(n+1)$, so with
+$a=f(n+1)-(n+1)$ we have $a+1=f(n+1)-n$.  Hence the elementary iterate
+identity $g^{[a]}(g(l))=g^{[a+1]}(l)$ makes these two values equal.  This
+proves the claimed identity in both cases.
 \end{proof}
