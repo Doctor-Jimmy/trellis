@@ -1,33 +1,48 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker repaired InfiniteSetEnumeration.tex and changed its fingerprint, addressing the prior missing IncSeq citation, recursive-existence argument, and surjectivity induction. There is no verifier verdict yet for the repaired text, so omit the fresh soundness blocker from task and reset lists and request the ordinary Sound verifier for this node.",
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary deterministic checks and soundness verification for InfiniteSetEnumeration, preserving the explicit IncSeq citation, the finite-initial-segment contradiction at every recursive step, and the finite-cardinality induction showing that every n in X is reached. Keep the Lean statement and imports unchanged; do not reopen FrontRayClosure or touch unrelated blockers.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "InfiniteSetEnumeration"
+    "reason": "The soundness verifier found a structural failure in NashWilliams: the proof invokes rank/accessibility induction without a cited rank-decrease or ray-tree identification, treats an arbitrary inductive sub-front as a restriction without SubFrontCharacterization, omits required Front and FrontRestrict citations, and leaves tail infinitude and the image-set construction implicit. Assign this unchanged, repair-ready blocker in a global theorem-stating burst so the support import and proof package can be repaired coherently.",
+    "comments": "Work only on the NashWilliams proof package and its direct support wiring. Preserve the existing Lean theorem signature and the exact Nash-Williams target. Add import Tablet.SubFrontCharacterization to NashWilliams.lean if needed and cite \\noderef{SubFrontCharacterization}; the induction hypothesis yields an arbitrary homogeneous sub-front, and this statement is what justifies replacing it by F_n|X_n. Replace the vague smaller-rank paragraph with a line-by-line well-founded induction argument: cite \\noderef{FrontTreeWellFounded} and explicitly identify the ray prefix tree with the strict successor subtree, using the paper's rank/ray relation. Cite \\noderef{Front}, \\noderef{FrontRestrict}, \\noderef{FrontRayClosure}, \\noderef{FrontRestriction}, and \\noderef{BooleanInfinitePigeonhole} at their actual uses. Prove each tail X_{k-1}/n_k remains infinite, justify every minimum, prove that the increasing image Y={n_k | k in I} is infinite and contained in X, and handle the nontrivial-front least-element decomposition explicitly. If the tree/ray induction needs a missing canonical support fact, add the narrowest lemma-level node with a complete non-SKETCH proof and wire it directly; do not add a wrapper or alter unrelated nodes.",
+    "task_blocker_ids": [
+      "soundness:node:NashWilliams:sound-v2:fb97881c75eae41f3368dbc2564fbddb0f39616a736f16a2bf66c1de764513b5"
     ],
-    "next_active": "InfiniteSetEnumeration",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "",
     "next_active_coarse": "",
-    "next_mode": "targeted",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [
       {
-        "start_line": 1002,
-        "end_line": 1004,
-        "reason": "The paper fixes the finite/infinite subset, increasing-order, and tail notation used by this support lemma."
+        "start_line": 1118,
+        "end_line": 1148,
+        "reason": "The paper defines well-founded trees, ordinal rank, and the well-foundedness of the front prefix tree."
+      },
+      {
+        "start_line": 1160,
+        "end_line": 1168,
+        "reason": "The paper identifies ray trees with strict successor subtrees and derives strict rank decrease."
+      },
+      {
+        "start_line": 1197,
+        "end_line": 1211,
+        "reason": "The paper proves that sub-fronts are exactly restrictions to infinite subsets."
+      },
+      {
+        "start_line": 1222,
+        "end_line": 1242,
+        "reason": "The paper states and proves the Nash-Williams finite-thinning construction being formalized."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. It defines finite and infinite subsets of omega, requires finite subsets to be ordered increasingly, and introduces the X/n tail convention used in the super-sequence argument. The repaired enumeration proof supplies the elementary canonical support result for that convention, so the next step is verifier adjudication rather than another statement edit."
+      "basis_summary": "I directly read all cited ranges. The paper's proof uses induction on the ordinal rank of the front, with each ray having strictly smaller rank because its prefix tree is the strict successor subtree of the original tree. It then applies the induction result to each ray, uses the sub-front characterization to obtain restrictions, recursively chooses infinite tails, thins the binary alternatives, and forms the final restriction F|X. The worker repair must expose these exact supports and justify the infinitude and minimum steps rather than relying on the current shorthand."
     }
   },
   "response": {
@@ -39,10 +54,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary deterministic checks and soundness verification for InfiniteSetEnumeration, preserving the explicit IncSeq citation, the finite-initial-segment contradiction at every recursive step, and the finite-cardinality induction showing that every n in X is reached. Keep the Lean statement and imports unchanged; do not reopen FrontRayClosure or touch unrelated blockers.",
+    "comments": "Work only on the NashWilliams proof package and its direct support wiring. Preserve the existing Lean theorem signature and the exact Nash-Williams target. Add import Tablet.SubFrontCharacterization to NashWilliams.lean if needed and cite \\noderef{SubFrontCharacterization}; the induction hypothesis yields an arbitrary homogeneous sub-front, and this statement is what justifies replacing it by F_n|X_n. Replace the vague smaller-rank paragraph with a line-by-line well-founded induction argument: cite \\noderef{FrontTreeWellFounded} and explicitly identify the ray prefix tree with the strict successor subtree, using the paper's rank/ray relation. Cite \\noderef{Front}, \\noderef{FrontRestrict}, \\noderef{FrontRayClosure}, \\noderef{FrontRestriction}, and \\noderef{BooleanInfinitePigeonhole} at their actual uses. Prove each tail X_{k-1}/n_k remains infinite, justify every minimum, prove that the increasing image Y={n_k | k in I} is infinite and contained in X, and handle the nontrivial-front least-element decomposition explicitly. If the tree/ray induction needs a missing canonical support fact, add the narrowest lemma-level node with a complete non-SKETCH proof and wire it directly; do not add a wrapper or alter unrelated nodes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 48,
+    "cycle": 49,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,34 +65,57 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "InfiniteSetEnumeration",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1004,
-        "reason": "The paper fixes the finite/infinite subset, increasing-order, and tail notation used by this support lemma.",
-        "start_line": 1002
+        "end_line": 1148,
+        "reason": "The paper defines well-founded trees, ordinal rank, and the well-foundedness of the front prefix tree.",
+        "start_line": 1118
+      },
+      {
+        "end_line": 1168,
+        "reason": "The paper identifies ray trees with strict successor subtrees and derives strict rank decrease.",
+        "start_line": 1160
+      },
+      {
+        "end_line": 1211,
+        "reason": "The paper proves that sub-fronts are exactly restrictions to infinite subsets.",
+        "start_line": 1197
+      },
+      {
+        "end_line": 1242,
+        "reason": "The paper states and proves the Nash-Williams finite-thinning construction being formalized.",
+        "start_line": 1222
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. It defines finite and infinite subsets of omega, requires finite subsets to be ordered increasingly, and introduces the X/n tail convention used in the super-sequence argument. The repaired enumeration proof supplies the elementary canonical support result for that convention, so the next step is verifier adjudication rather than another statement edit.",
+      "basis_summary": "I directly read all cited ranges. The paper's proof uses induction on the ordinal rank of the front, with each ray having strictly smaller rank because its prefix tree is the strict successor subtree of the original tree. It then applies the induction result to each ray, uses the sub-front characterization to obtain restrictions, recursively chooses infinite tails, thins the binary alternatives, and forms the final restriction F|X. The worker repair must expose these exact supports and justify the infinitude and minimum steps rather than relying on the current shorthand.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker repaired InfiniteSetEnumeration.tex and changed its fingerprint, addressing the prior missing IncSeq citation, recursive-existence argument, and surjectivity induction. There is no verifier verdict yet for the repaired text, so omit the fresh soundness blocker from task and reset lists and request the ordinary Sound verifier for this node.",
-    "request_id": 217,
-    "request_sound_verifier_nodes": [
-      "InfiniteSetEnumeration"
-    ],
+    "reason": "The soundness verifier found a structural failure in NashWilliams: the proof invokes rank/accessibility induction without a cited rank-decrease or ray-tree identification, treats an arbitrary inductive sub-front as a restriction without SubFrontCharacterization, omits required Front and FrontRestrict citations, and leaves tail infinitude and the image-set construction implicit. Assign this unchanged, repair-ready blocker in a global theorem-stating burst so the support import and proof package can be repaired coherently.",
+    "request_id": 220,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
-    "work_style_hint": "none"
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:fb97881c75eae41f3368dbc2564fbddb0f39616a736f16a2bf66c1de764513b5",
+        "kind": "Soundness",
+        "object": {
+          "node": "NashWilliams",
+          "otype": "node"
+        }
+      }
+    ],
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_217_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_220_decision.context.json"
 }

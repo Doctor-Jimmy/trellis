@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 264,
+  "event_count": 268,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -59622,17 +59622,17 @@
     }
   },
   "checkpoint": {
-    "active_node": "InfiniteSetEnumeration",
+    "active_node": null,
     "committed": {
       "$r": "4cac5dd4ca63c874"
     },
-    "cycle": 48,
+    "cycle": 49,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": "InfiniteSetEnumeration",
+    "active_node": null,
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60388,9 +60388,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 48,
+    "cycle": 49,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 48,
+    "cycles_since_clean": 49,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "51aa69bb19343206"
@@ -61120,7 +61120,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 47,
+    "last_sound_response_cycle": 49,
     "last_stuck_math_audit_dispatched_cycle": 30,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61138,9 +61138,9 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "Only Tablet/InfiniteSetEnumeration.tex was edited; its Lean statement and imports are unchanged. The sole cross-node fact is cited as \\noderef{IncSeq}; its statement identifies IncSeq with order embeddings. The proof otherwise uses elementary well-ordering, finite initial segments of N, and finite-cardinality induction. The induction support is explicit: for F_n={m in X | m<n}, the greatest predecessor p satisfies F_p=F_n\\\\{p}, so n is the next least available element.",
+    "latest_worker_comments": "The Lean statement and imports remain unchanged. The TeX proof preserves the explicit \\noderef{IncSeq} citation, justifies each recursive successor by the finite-initial-segment contradiction, and proves that every n in X is reached by induction on the finite cardinality of F_n={m in X | m<n}. Manual soundness audit found those to be the only cross-node dependency and the proof's outside facts are standard natural-number well-ordering and finite-set facts; the cited IncSeq statement says that IncSeq is an order-embedding type. This request dispatches no soundness verifier lane (sound_verify_node is null and verifier lists are empty), so no lane verdict is fabricated.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Repaired InfiniteSetEnumeration.tex with a detailed least-element recursion proof. Each successor choice is justified by showing that a bounded infinite set would be a subset of a finite initial segment, and surjectivity is proved by induction on the finite set of X-elements below an arbitrary n.",
+    "latest_worker_summary": "Revalidated InfiniteSetEnumeration without editing Tablet content. The node and full-tablet deterministic checks, Lean builds with kernel replay, and advisory incremental elaboration pass.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
@@ -61366,21 +61366,48 @@
       "allow_new_obligations": true,
       "authorized_nodes": [],
       "consumed_global_repair_grant": false,
-      "mode": "Targeted",
+      "mode": "Global",
       "must_close_active": false,
       "next_worker_context_mode": "resume",
-      "node": "InfiniteSetEnumeration",
+      "node": null,
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [
         {
-          "end_line": 1004,
-          "reason": "The paper fixes the finite/infinite subset, increasing-order, and tail notation used by this support lemma.",
-          "start_line": 1002
+          "end_line": 1148,
+          "reason": "The paper defines well-founded trees, ordinal rank, and the well-foundedness of the front prefix tree.",
+          "start_line": 1118
+        },
+        {
+          "end_line": 1168,
+          "reason": "The paper identifies ray trees with strict successor subtrees and derives strict rank decrease.",
+          "start_line": 1160
+        },
+        {
+          "end_line": 1211,
+          "reason": "The paper proves that sub-fronts are exactly restrictions to infinite subsets.",
+          "start_line": 1197
+        },
+        {
+          "end_line": 1242,
+          "reason": "The paper states and proves the Nash-Williams finite-thinning construction being formalized.",
+          "start_line": 1222
         }
       ],
       "protected_semantic_change_nodes": [],
-      "task_blockers": [],
-      "work_style_hint": "none"
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "e89f7611038e4db0"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "NashWilliams",
+            "otype": "node"
+          }
+        }
+      ],
+      "work_style_hint": "restructure"
     },
     "pending_worker_audit_request": null,
     "phase": "TheoremStating",
@@ -61402,16 +61429,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "InfiniteSetEnumeration": {
+      "NashWilliams": {
         "v1": {
-          "comments": "1. The proof uses the cross-node definition of IncSeq to conclude that the constructed strictly increasing map has the required type, but the proof block contains no required \\noderef{IncSeq} citation. 2. The claim that infinitude of X ensures a member of X greater than the current value is not justified: it requires the finite-initial-segment argument showing that otherwise X would be finite. 3. The surjectivity step is not line-by-line established: from finiteness of the members of X below n it does not immediately follow that the recursion reaches n at that cardinality; one must prove by induction that the recursion lists exactly those preceding X-elements and that the next least element is n.",
-          "node": "InfiniteSetEnumeration",
+          "comments": "1. The proof says that accessibility induction on FrontTreeWellFounded is equivalent to induction on smaller front rank and that every ray has smaller rank. FrontTreeWellFounded only states well-foundedness of the prefix-extension relation for the fixed tree of F; FrontRayClosure only states that each ray is a front and gives the decomposition. No cited statement supplies a rank, identifies the ray tree with a strict successor subtree, or establishes the induction principle needed for fronts.\n2. The induction hypothesis is used to choose an infinite X_n with either FrontRestrict (F_n, X_n) subset S_n or disjoint from S_n. The NashWilliams target statement only yields an arbitrary homogeneous front F'_n on some base, not that F'_n is the restriction of F_n. The needed equivalence is the separate SubFrontCharacterization result, which is neither cited nor a dependency of this node; FrontRestriction proves only that a restriction is a front, not the converse.\n3. The proof uses the defining clauses and nontrivial-front consequences of Front, and uses the operation F|Y from FrontRestrict, but it contains no \\noderef{Front} or \\noderef{FrontRestrict} citation. This violates the explicit cross-node dependency-citation rule.\n4. The recursive construction does not establish that every successive tail X_{k-1}/n_k is infinite, so that its minimum and the next induction application are defined, nor does it explicitly prove that the image Y={n_k | k in I} is infinite and contained in X. It also uses a least element for members of F|Y without supplying the nontrivial-front argument that empty is not in F. These omissions leave the final construction short of a line-by-line proof even after the two main structural gaps are repaired.",
+          "node": "NashWilliams",
           "overall": "REJECT",
           "soundness": {
-            "decision": "UNSOUND",
-            "explanation": "The construction has the correct idea, but the NL proof omits the mandatory IncSeq dependency citation and leaves both recursive-existence and the key range-equality argument insufficiently justified for the required line-by-line standard."
+            "decision": "STRUCTURAL",
+            "explanation": "The proof is not line-by-line derivable from the cited support statements: its induction principle and its restriction-form induction conclusion are both unsupported by the current DAG."
           },
-          "summary": "Reject: the proposed enumeration argument is incomplete under the strict NL soundness rubric."
+          "summary": "Reject NashWilliams soundness because the stated dependencies do not justify the rank induction or the passage from an arbitrary homogeneous sub-front to a restriction, and the proof also omits required dependency citations and key infinitude checks."
         }
       }
     },
@@ -61419,7 +61446,7 @@
     "process_memory_seq": 10,
     "progress_history": {
       "last_dispatched_index": 28,
-      "next_index": 48,
+      "next_index": 49,
       "snapshots": [
         {
           "present": [
@@ -64215,6 +64242,15 @@
             "$r": "9550d64858cb4220"
           },
           "snapshot_index": 47
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "9550d64858cb4220"
+          },
+          "snapshot_index": 48
         }
       ]
     },
@@ -64223,9 +64259,9 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 217,
+    "request_seq": 220,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not edit Tablet content in the next burst. Run the ordinary deterministic checks and soundness verification for InfiniteSetEnumeration, preserving the explicit IncSeq citation, the finite-initial-segment contradiction at every recursive step, and the finite-cardinality induction showing that every n in X is reached. Keep the Lean statement and imports unchanged; do not reopen FrontRayClosure or touch unrelated blockers.",
+    "reviewer_comments": "Work only on the NashWilliams proof package and its direct support wiring. Preserve the existing Lean theorem signature and the exact Nash-Williams target. Add import Tablet.SubFrontCharacterization to NashWilliams.lean if needed and cite \\noderef{SubFrontCharacterization}; the induction hypothesis yields an arbitrary homogeneous sub-front, and this statement is what justifies replacing it by F_n|X_n. Replace the vague smaller-rank paragraph with a line-by-line well-founded induction argument: cite \\noderef{FrontTreeWellFounded} and explicitly identify the ray prefix tree with the strict successor subtree, using the paper's rank/ray relation. Cite \\noderef{Front}, \\noderef{FrontRestrict}, \\noderef{FrontRayClosure}, \\noderef{FrontRestriction}, and \\noderef{BooleanInfinitePigeonhole} at their actual uses. Prove each tail X_{k-1}/n_k remains infinite, justify every minimum, prove that the increasing image Y={n_k | k in I} is infinite and contained in X, and handle the nontrivial-front least-element decomposition explicitly. If the tree/ray induction needs a missing canonical support fact, add the narrowest lemma-level node with a complete non-SKETCH proof and wire it directly; do not add a wrapper or alter unrelated nodes.",
     "reviewer_requested_sound_verifier_nodes": [
       "BlockSigmaIntertwines",
       "FrontRayClosure",
@@ -64248,6 +64284,9 @@
       },
       "InfiniteSetEnumeration": {
         "$s": "176eb65a6b77a487"
+      },
+      "NashWilliams": {
+        "$s": "e89f7611038e4db0"
       },
       "OrbitEmbedding": {
         "$s": "92b2e9ed743b6253"
@@ -64327,6 +64366,15 @@
           },
           "dep_statement_hashes": {},
           "own_tex_hash": "205600adf9d227a4076ce306fb6cd8fe95b04c8309d4f4574e25de6272c6e6a3"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
+      },
+      "NashWilliams": {
+        "fingerprints": {
+          "$r": "ca6ec38fc1be3ab9"
         },
         "lane_votes": {},
         "origin": "ReviewerAction",
@@ -65461,6 +65509,7 @@
       "FrontRestriction": "Pass",
       "FrontTreeWellFounded": "Pass",
       "InfiniteSetEnumeration": "Fail",
+      "NashWilliams": "Fail",
       "OrbitEmbedding": "Fail",
       "PowerChildWellFounded": "Pass",
       "PowerIResponseFailure": "Pass",
@@ -66219,7 +66268,7 @@
     "target_claims": {
       "$r": "8b8358bcaa735e43"
     },
-    "target_edit_mode": "Targeted",
+    "target_edit_mode": "Global",
     "theorem_verifier_only_continuation_enabled": true,
     "transport_attempt": 0,
     "transport_invalid_review_threshold": 5,
