@@ -1,40 +1,32 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The current Sound verdict rejects PowerCopiedSupport: its base case still derives the raw initial move from the copied-pair failure theorem, and its statement imports hypotheses through a noderef. Assign the soundness repair-ready node a focused retry.",
-    "comments": "Edit only Tablet/PowerCopiedSupport.tex, preserving the Lean statement, imports, and support DAG; do not add a helper. Repair the theorem statement first: replace the phrase \"Under the hypotheses of \\noderef{PowerCopiedFailureMove}\" with local hypotheses stating that r is a relation, h is a MultiSequence in PowerQ(Q) bad for PowerRel(r), x is an increasing enumeration, and the conclusion holds for every row n and depth k. Do not use a theorem citation to import hypotheses. In the depth-zero proof, fix n and set y=PowerShiftIter(n,x). Cite \\noderef{BadMultiSequence} to obtain the raw failure \\neg PowerRel(r)(h(y),h(ShiftMap(y))), cite \\noderef{PowerShiftIter} for PowerShiftIter(n+1,x)=ShiftMap(PowerShiftIter(n,x)), and then use the displayed \\noderef{PowerCopiedLeft} definition together with \\noderef{PowerIResponseLegal} to obtain PowerMove(h(PowerShiftIter(n,x)),L_{n,0}). Only after this apply \\noderef{PowerMoveInSupport}. In the successor step, use \\noderef{PowerCopiedFailureMove} at depth k for PowerMove(L_{n,k},L_{n,k+1}), apply PowerMoveInSupport, and compose with the induction hypothesis. Cite each dependency at the exact use; no statement/import/support changes beyond making the NL statement hypotheses local and mathematically aligned with Lean.",
-    "task_blocker_ids": [
-      "soundness:node:PowerCopiedSupport:sound-v2:e2ca83c08ce70a82acdce0195a32b29a5c8e0dbcef71645dd685e19fb16f3a4e"
-    ],
+    "reason": "PowerCopiedSupport now has current Paper, Correspondence, and Sound approval, and its repaired proof establishes the raw depth-zero failure and the induction step. No further worker edit is warranted. The direct copied-game dependency PowerCopiedFailureMove remains FreshUnknown and is Sound-verifier requestable, so it should be certified before re-verifying the parent reflection target.",
+    "comments": "Leave Tablet/PowerCopiedSupport.tex unchanged. Request a real Sound verification of PowerCopiedFailureMove; do not assign a worker or reset any blocker. The current support proof is accepted. The requested dependency is the copied adjacent-play construction whose depth-zero failure, recursive legal response, and finite copied play are the ingredients used by the reflection chain. After this verification, continue bottom-up through the remaining PowerQReflection dependencies.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedSupport",
+    "request_sound_verifier_node_ids": [
+      "PowerCopiedFailureMove"
+    ],
+    "next_active": "",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
-      {
-        "start_line": 1368,
-        "end_line": 1374,
-        "reason": "The paper defines atom support and recursive support over children."
-      },
       {
         "start_line": 1538,
         "end_line": 1549,
-        "reason": "The paper constructs copied rows from badness and shifted adjacent values."
+        "reason": "The copied adjacent-play construction, finite play, terminal failure, and shifted-row alignment underlying PowerCopiedFailureMove."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1368-1374 define support recursively, while lines 1538-1549 derive the copied rows from a bad multi-sequence and its shift. The rejected base case must therefore derive failure of the raw adjacent presentations from local badness and the shift-iterate identity before applying the canonical response legality lemma."
-    },
-    "work_style_hint": "none",
-    "authorized_node_ids": [],
-    "memory_challenges": []
+      "basis_summary": "The manuscript constructs copied plays between adjacent shifted values, states that each finite play ends in a failed atom pair, and identifies the right terminal value with the next row's corresponding value. This is the paper-level support for certifying PowerCopiedFailureMove before the reflection parent."
+    }
   },
   "response": {
     "allow_new_obligations": true,
@@ -45,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerCopiedSupport.tex, preserving the Lean statement, imports, and support DAG; do not add a helper. Repair the theorem statement first: replace the phrase \"Under the hypotheses of \\noderef{PowerCopiedFailureMove}\" with local hypotheses stating that r is a relation, h is a MultiSequence in PowerQ(Q) bad for PowerRel(r), x is an increasing enumeration, and the conclusion holds for every row n and depth k. Do not use a theorem citation to import hypotheses. In the depth-zero proof, fix n and set y=PowerShiftIter(n,x). Cite \\noderef{BadMultiSequence} to obtain the raw failure \\neg PowerRel(r)(h(y),h(ShiftMap(y))), cite \\noderef{PowerShiftIter} for PowerShiftIter(n+1,x)=ShiftMap(PowerShiftIter(n,x)), and then use the displayed \\noderef{PowerCopiedLeft} definition together with \\noderef{PowerIResponseLegal} to obtain PowerMove(h(PowerShiftIter(n,x)),L_{n,0}). Only after this apply \\noderef{PowerMoveInSupport}. In the successor step, use \\noderef{PowerCopiedFailureMove} at depth k for PowerMove(L_{n,k},L_{n,k+1}), apply PowerMoveInSupport, and compose with the induction hypothesis. Cite each dependency at the exact use; no statement/import/support changes beyond making the NL statement hypotheses local and mathematically aligned with Lean.",
+    "comments": "Leave Tablet/PowerCopiedSupport.tex unchanged. Request a real Sound verification of PowerCopiedFailureMove; do not assign a worker or reset any blocker. The current support proof is accepted. The requested dependency is the copied adjacent-play construction whose depth-zero failure, recursive legal response, and finite copied play are the ingredients used by the reflection chain. After this verification, continue bottom-up through the remaining PowerQReflection dependencies.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 138,
+    "cycle": 139,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -56,47 +48,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerCopiedSupport",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1374,
-        "reason": "The paper defines atom support and recursive support over children.",
-        "start_line": 1368
-      },
-      {
         "end_line": 1549,
-        "reason": "The paper constructs copied rows from badness and shifted adjacent values.",
+        "reason": "The copied adjacent-play construction, finite play, terminal failure, and shifted-row alignment underlying PowerCopiedFailureMove.",
         "start_line": 1538
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1368-1374 define support recursively, while lines 1538-1549 derive the copied rows from a bad multi-sequence and its shift. The rejected base case must therefore derive failure of the raw adjacent presentations from local badness and the shift-iterate identity before applying the canonical response legality lemma.",
+      "basis_summary": "The manuscript constructs copied plays between adjacent shifted values, states that each finite play ends in a failed atom pair, and identifies the right terminal value with the next row's corresponding value. This is the paper-level support for certifying PowerCopiedFailureMove before the reflection parent.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The current Sound verdict rejects PowerCopiedSupport: its base case still derives the raw initial move from the copied-pair failure theorem, and its statement imports hypotheses through a noderef. Assign the soundness repair-ready node a focused retry.",
-    "request_id": 454,
-    "request_sound_verifier_nodes": [],
+    "reason": "PowerCopiedSupport now has current Paper, Correspondence, and Sound approval, and its repaired proof establishes the raw depth-zero failure and the induction step. No further worker edit is warranted. The direct copied-game dependency PowerCopiedFailureMove remains FreshUnknown and is Sound-verifier requestable, so it should be certified before re-verifying the parent reflection target.",
+    "request_id": 459,
+    "request_sound_verifier_nodes": [
+      "PowerCopiedFailureMove"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:e2ca83c08ce70a82acdce0195a32b29a5c8e0dbcef71645dd685e19fb16f3a4e",
-        "kind": "Soundness",
-        "object": {
-          "node": "PowerCopiedSupport",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_454_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_459_decision.context.json"
 }
