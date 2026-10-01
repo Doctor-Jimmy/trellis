@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectBaseToSuper now has a current Sound approval. NoBadPerfectSuper is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
-    "comments": "Leave Tablet/NoBadPerfectSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of NoBadPerfectSuper. The verifier should check that InfiniteSetEnumeration gives an increasing enumeration with exactly range X, that the shifted enumeration has range contained in X, and that FrontPrefixExists supplies explicit front-membership and proper-prefix witnesses for the original and shifted ranges. It should then instantiate FiniteShift with those two witnesses, apply PerfectSuperSequence to obtain the relation, and apply BadSuperSequence to obtain its negation. Check that every cross-node dependency used in this chain, including FiniteShift, ShiftMap, FrontPrefix, ProperPrefixSet, PerfectSuperSequence, and BadSuperSequence, is explicitly cited or supplied by the theorem statement.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "NoBadPerfectSuper"
+    "reason": "The Sound verifier identified concrete omissions in NoBadPerfectSuper: the implication hypotheses and base infinitude are not introduced, the shifted-range containment and second front-prefix witness are missing, and the finite-shift, perfectness, and badness applications do not retain membership witnesses. Assign a local proof repair to the sound-repair-ready node.",
+    "comments": "Edit only Tablet/NoBadPerfectSuper.tex and, if needed, its Lean import preamble. Preserve the Lean theorem statement, conclusion, and support direction; add no helper and do not weaken the claim. Begin the NL proof by introducing hP : PerfectSuperSequence r f and hB : BadSuperSequence r f. Extract X.Infinite from f.front.infinite_base, citing SuperSequence, then apply InfiniteSetEnumeration to obtain x : IncSeq with range(x) = X and use that equality for range(x) subset X. Apply FrontPrefixExists to f.front and x to obtain s, hs : s in F, and ProperPrefixSet s (range x). Separately prove range(ShiftMap x) subset X, either by constructing BaseShift X from x and using its stated range containment or by explicitly unfolding ShiftMap, RightComp, and SuccSeq; cite the chosen support nodes. Apply FrontPrefixExists again to ShiftMap x to obtain t, ht : t in F, and ProperPrefixSet t (range (ShiftMap x)). Cite FiniteShift and instantiate its existential with the same x and these two proper-prefix facts. Apply hP and hB to the explicit hs and ht witnesses, display the dependent values f.value angle-bracket s,hs angle-bracket and f.value angle-bracket t,ht angle-bracket, and derive the contradiction. Ensure every cross-node dependency used in this chain, including SuperSequence, InfiniteSetEnumeration, FrontPrefixExists, BaseShift or the explicit shift definitions, FiniteShift, PerfectSuperSequence, and BadSuperSequence, is cited in the proof block. Keep the existing theorem-stating sorry in Lean and validate the node and full tablet.",
+    "task_blocker_ids": [
+      "soundness:node:NoBadPerfectSuper:sound-v2:cf074a97b1792ef8a42a2419d7feace0dcb01b98ce6bb4dd8a1771e87a3f3cd3"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "NoBadPerfectSuper",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -22,22 +22,22 @@
       {
         "start_line": 1465,
         "end_line": 1468,
-        "reason": "The manuscript defines finite shift by an infinite witness and its shifted tail."
+        "reason": "The paper defines finite shift using one infinite set and its shifted tail."
       },
       {
         "start_line": 1470,
         "end_line": 1476,
-        "reason": "The manuscript defines badness for super-sequences as the negation of every finite-shift relation."
+        "reason": "The paper defines badness by negating the relation on every finite-shift pair."
       },
       {
         "start_line": 1642,
         "end_line": 1648,
-        "reason": "The manuscript defines perfectness for super-sequences by the corresponding relation on finite shifts."
+        "reason": "The paper defines perfectness of a super-sequence on every finite-shift pair."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines finite shift through one infinite set and its tail, defines a bad super-sequence by failure of the relation on every such pair, and defines perfectness by the relation on every finite-shift pair. NoBadPerfectSuper is exactly the contradiction between these two definitions once a finite-shift pair is constructed from an enumeration of the base."
+      "basis_summary": "The cited manuscript passages define finite shift through an infinite enumeration and its successor tail, badness as failure of the relation on every such pair, and perfectness as the relation on every such pair. The required repair therefore constructs one common finite-shift witness and applies the two opposing hypotheses with explicit front membership proofs."
     },
     "authorized_node_ids": []
   },
@@ -50,10 +50,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/NoBadPerfectSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of NoBadPerfectSuper. The verifier should check that InfiniteSetEnumeration gives an increasing enumeration with exactly range X, that the shifted enumeration has range contained in X, and that FrontPrefixExists supplies explicit front-membership and proper-prefix witnesses for the original and shifted ranges. It should then instantiate FiniteShift with those two witnesses, apply PerfectSuperSequence to obtain the relation, and apply BadSuperSequence to obtain its negation. Check that every cross-node dependency used in this chain, including FiniteShift, ShiftMap, FrontPrefix, ProperPrefixSet, PerfectSuperSequence, and BadSuperSequence, is explicitly cited or supplied by the theorem statement.",
+    "comments": "Edit only Tablet/NoBadPerfectSuper.tex and, if needed, its Lean import preamble. Preserve the Lean theorem statement, conclusion, and support direction; add no helper and do not weaken the claim. Begin the NL proof by introducing hP : PerfectSuperSequence r f and hB : BadSuperSequence r f. Extract X.Infinite from f.front.infinite_base, citing SuperSequence, then apply InfiniteSetEnumeration to obtain x : IncSeq with range(x) = X and use that equality for range(x) subset X. Apply FrontPrefixExists to f.front and x to obtain s, hs : s in F, and ProperPrefixSet s (range x). Separately prove range(ShiftMap x) subset X, either by constructing BaseShift X from x and using its stated range containment or by explicitly unfolding ShiftMap, RightComp, and SuccSeq; cite the chosen support nodes. Apply FrontPrefixExists again to ShiftMap x to obtain t, ht : t in F, and ProperPrefixSet t (range (ShiftMap x)). Cite FiniteShift and instantiate its existential with the same x and these two proper-prefix facts. Apply hP and hB to the explicit hs and ht witnesses, display the dependent values f.value angle-bracket s,hs angle-bracket and f.value angle-bracket t,ht angle-bracket, and derive the contradiction. Ensure every cross-node dependency used in this chain, including SuperSequence, InfiniteSetEnumeration, FrontPrefixExists, BaseShift or the explicit shift definitions, FiniteShift, PerfectSuperSequence, and BadSuperSequence, is cited in the proof block. Keep the existing theorem-stating sorry in Lean and validate the node and full tablet.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 160,
+    "cycle": 161,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -61,44 +61,52 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "NoBadPerfectSuper",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1468,
-        "reason": "The manuscript defines finite shift by an infinite witness and its shifted tail.",
+        "reason": "The paper defines finite shift using one infinite set and its shifted tail.",
         "start_line": 1465
       },
       {
         "end_line": 1476,
-        "reason": "The manuscript defines badness for super-sequences as the negation of every finite-shift relation.",
+        "reason": "The paper defines badness by negating the relation on every finite-shift pair.",
         "start_line": 1470
       },
       {
         "end_line": 1648,
-        "reason": "The manuscript defines perfectness for super-sequences by the corresponding relation on finite shifts.",
+        "reason": "The paper defines perfectness of a super-sequence on every finite-shift pair.",
         "start_line": 1642
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines finite shift through one infinite set and its tail, defines a bad super-sequence by failure of the relation on every such pair, and defines perfectness by the relation on every finite-shift pair. NoBadPerfectSuper is exactly the contradiction between these two definitions once a finite-shift pair is constructed from an enumeration of the base.",
+      "basis_summary": "The cited manuscript passages define finite shift through an infinite enumeration and its successor tail, badness as failure of the relation on every such pair, and perfectness as the relation on every such pair. The required repair therefore constructs one common finite-shift witness and applies the two opposing hypotheses with explicit front membership proofs.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectBaseToSuper now has a current Sound approval. NoBadPerfectSuper is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
-    "request_id": 511,
-    "request_sound_verifier_nodes": [
-      "NoBadPerfectSuper"
-    ],
+    "reason": "The Sound verifier identified concrete omissions in NoBadPerfectSuper: the implication hypotheses and base infinitude are not introduced, the shifted-range containment and second front-prefix witness are missing, and the finite-shift, perfectness, and badness applications do not retain membership witnesses. Assign a local proof repair to the sound-repair-ready node.",
+    "request_id": 513,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:cf074a97b1792ef8a42a2419d7feace0dcb01b98ce6bb4dd8a1771e87a3f3cd3",
+        "kind": "Soundness",
+        "object": {
+          "node": "NoBadPerfectSuper",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_511_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_513_decision.context.json"
 }
