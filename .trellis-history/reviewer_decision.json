@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TripleHomogeneous now has fresh Sound approval. TildeFNonfrontEquation is the held target, remains FreshUnknown, and its direct extension and well-founded-tree support are Sound-approved, so request its real Sound verification now.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one Sound verifier for TildeFNonfrontEquation only. Check that the hypothesis s in T(F) minus F selects the non-front branch of the cited TildeF recursion, that FrontTreeImmediateExtensions supplies a genuinely nonempty E_s, and that every n in E_s gives exactly the proper extension and recursive call shown in the Lean/TeX statement. Check the ULift reindexing and PowerQ.node family carefully, and require explicit citations to TildeF and FrontTreeImmediateExtensions for the cross-node dependencies.",
+    "reason": "TildeFNonfrontEquation is now Sound-approved. TildeFFrontEquation is an unverified direct support for the held TildeFHerCtbl target, so certify this front branch before the hereditary-countability parent.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one Sound verifier for TildeFFrontEquation only. Check that the hypothesis s in T(F) and s in F selects the front branch of the cited TildeF recursion, that the returned value is exactly the atom carrying f.value at the subtype s, and that the displayed equality is independent of the chosen membership proof by proof irrelevance. Require the existing explicit citations to TildeF and SuperSequence, and leave TildeFHerCtbl unrequested until both its front and hereditary-node support are certified.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "TildeFNonfrontEquation"
+      "TildeFFrontEquation"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -19,13 +19,13 @@
     "paper_focus_ranges": [
       {
         "start_line": 1559,
-        "end_line": 1564,
-        "reason": "The paper's well-founded recursive definition of the extended sequence and its non-front branch."
+        "end_line": 1563,
+        "reason": "The paper's two-branch well-founded recursion, including the front-member branch."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines tilde f on the front tree by taking f on front members and, otherwise, collecting the values at all immediate proper extensions in the tree. TildeFNonfrontEquation formalizes precisely this non-front recursion branch with an explicit lifted index type."
+      "basis_summary": "The cited passage defines tilde f on the front tree by returning f(s) at front members and collecting recursive child values otherwise. TildeFFrontEquation formalizes the first of these two defining clauses, so it should be certified before the hereditary-countability induction that uses it."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one Sound verifier for TildeFNonfrontEquation only. Check that the hypothesis s in T(F) minus F selects the non-front branch of the cited TildeF recursion, that FrontTreeImmediateExtensions supplies a genuinely nonempty E_s, and that every n in E_s gives exactly the proper extension and recursive call shown in the Lean/TeX statement. Check the ULift reindexing and PowerQ.node family carefully, and require explicit citations to TildeF and FrontTreeImmediateExtensions for the cross-node dependencies.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one Sound verifier for TildeFFrontEquation only. Check that the hypothesis s in T(F) and s in F selects the front branch of the cited TildeF recursion, that the returned value is exactly the atom carrying f.value at the subtype s, and that the displayed equality is independent of the chosen membership proof by proof irrelevance. Require the existing explicit citations to TildeF and SuperSequence, and leave TildeFHerCtbl unrequested until both its front and hereditary-node support are certified.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 97,
+    "cycle": 98,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -55,20 +55,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1564,
-        "reason": "The paper's well-founded recursive definition of the extended sequence and its non-front branch.",
+        "end_line": 1563,
+        "reason": "The paper's two-branch well-founded recursion, including the front-member branch.",
         "start_line": 1559
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines tilde f on the front tree by taking f on front members and, otherwise, collecting the values at all immediate proper extensions in the tree. TildeFNonfrontEquation formalizes precisely this non-front recursion branch with an explicit lifted index type.",
+      "basis_summary": "The cited passage defines tilde f on the front tree by returning f(s) at front members and collecting recursive child values otherwise. TildeFFrontEquation formalizes the first of these two defining clauses, so it should be certified before the hereditary-countability induction that uses it.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TripleHomogeneous now has fresh Sound approval. TildeFNonfrontEquation is the held target, remains FreshUnknown, and its direct extension and well-founded-tree support are Sound-approved, so request its real Sound verification now.",
-    "request_id": 346,
+    "reason": "TildeFNonfrontEquation is now Sound-approved. TildeFFrontEquation is an unverified direct support for the held TildeFHerCtbl target, so certify this front branch before the hereditary-countability parent.",
+    "request_id": 348,
     "request_sound_verifier_nodes": [
-      "TildeFNonfrontEquation"
+      "TildeFFrontEquation"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -78,5 +78,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_346_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_348_decision.context.json"
 }
