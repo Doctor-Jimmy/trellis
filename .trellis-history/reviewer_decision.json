@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The previous burst completed the extension-oriented TildeF package: its front and nonfront equations, atom/front characterization, hereditary-countable closure, and nontrivial singleton restriction all passed correspondence, and the tablet acceptance check passed. The next planned support layer is the converse game that turns a bad super-sequence into a bad hereditary singleton sequence; both configured hereditary targets remain uncovered and should not be claimed yet.",
-    "comments": "Continue in Global mode and execute hereditary-converse-game. Attach the new package to TildeF, the nontrivial-front singleton restriction, FiniteShift, BadSuperSequence, and the four PowerRel constructor reductions. Formalize the paper's joint finite-shift invariant: for m < n, assume a comparison of the singleton TildeF values, use the winning PowerRel strategy to choose successive one-point extensions, preserve the joint shift witness after every response, and recurse on the product of the extension-oriented tree relations. At terminal front nodes, use the atom equations and the original bad super-sequence to contradict the alleged comparison. Keep the nontrivial-front hypothesis empty notin F explicit, preserve the full unrestricted PowerQ and hereditary carrier, and do not add either configured hereditary target node in this layer. Every new proof-bearing TeX block must contain a complete, explicitly cited proof rather than a SKETCH.",
+    "reason": "The current audit identified a genuine invariant gap in the planned converse proof: FiniteShift alone does not support the legal child choices required after an arbitrary PowerRel response. The next worker must therefore build the finite bridge infrastructure first, while both hereditary target statements remain uncovered.",
+    "comments": "Continue in Global mode and execute converse-bridge-infrastructure, not the final ConverseGame theorem yet. Attach the new helpers to Front, PrefixTree, InitialSegment, ProperInitialSegment, FiniteShift, and FrontTreeWellFounded. Prove that every ordered one-point extension of a nonfront prefix-tree node remains in the tree for a front on Set.univ. Introduce an explicit finite bridge state for left node s, right node t, and finite joint set u: initialize it from m<n with singleton nodes and u={m,n}; after each right response, adjoin that response's new point, or a fresh point when the right node is terminal; choose the left extension prescribed by the bridge; and preserve the relevant initial-segment/tail conditions through the transition. Prove that a terminal bridge yields FiniteShift by appending an infinite tail. The next converse-game task must consume these operational laws. Preserve the unrestricted PowerQ and hereditary carrier, add no configured target node, and give complete cited TeX proofs for all new proof-bearing helpers.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
       "paperfaithfulness:target:thm BqoHerCtblWellF:"
@@ -19,45 +19,39 @@
     "paper_focus_ranges": [
       {
         "start_line": 1569,
-        "end_line": 1597,
-        "reason": "The paper's converse-game construction preserves a joint finite-shift witness through PowerQ responses, terminates at front atoms, and derives the hereditary WQO target from the resulting bad singleton sequence."
+        "end_line": 1570,
+        "reason": "The copying-and-shift passage motivates the finite bridge, its response transition, and the invariant needed before the converse-game induction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage explicitly constructs the contradiction from a comparison of singleton TildeF values, describes the copying-and-shift invariant and terminal front values, and then states the hereditary WQO and well-foundedness consequences."
+      "basis_summary": "The cited lines explicitly maintain the joint finite set u while alternating left extensions and right PowerQ responses, then use the resulting shift relation at terminal front nodes. The audit confirms that this bridge, rather than FiniteShift alone, is the operational invariant needed for a faithful formalization."
     },
     "stuck_math_audit": {
-      "notes": "The tilde-front-recursion task is complete: the worker added the repaired-index TildeF recursion on the unrestricted PowerQ, separate recursion equations, the atom iff front theorem, hereditary-countability for all tree values, and the nontrivial singleton restriction; correspondence and tablet acceptance passed. Dismiss that task and execute hereditary-converse-game next. The central requirement is the paper's joint finite-shift invariant, not merely termination of a recursion: every left extension and every right response must preserve the witness until both nodes reach F, where the atom comparison contradicts BadSuperSequence. Keep empty notin F explicit and do not claim either hereditary target yet.",
+      "notes": "The active audit replaced the earlier converse-game route with a sharper two-step plan. The existing hereditary carrier, repaired front tree, and TildeF recursion layers are complete. Execute converse-bridge-infrastructure first: FiniteShift alone is too weak, as shown by the audit's four-element-front counterexample. Expose the ordered extension closure and the finite bridge initialization, transition, legality, and terminal-to-FiniteShift laws. Do not claim either configured hereditary target or the final ConverseGame theorem in this layer.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "completed_task": "tilde-front-recursion",
-        "next_task": "hereditary-converse-game",
+        "next_task": "converse-bridge-infrastructure",
+        "following_task": "hereditary-converse-game",
         "required_interface": [
-          "bad singleton theorem for TildeF on a nontrivial front",
-          "joint FiniteShift invariant for the pair of evolving tree nodes",
-          "product well-founded recursion over the two extension-oriented tree relations",
-          "all four PowerRel constructor reductions needed to expose terminal atoms",
-          "terminal contradiction with BadSuperSequence"
+          "every ordered one-point extension of a nonfront PrefixTree node is in PrefixTree for a full-base front",
+          "explicit finite bridge state (s,t,u) with operational initial-segment conditions",
+          "bridge initialization from singleton nodes m<n and u={m,n}",
+          "bridge transition after a right response or a fresh terminal-side point",
+          "legality of the chosen left one-point extension",
+          "terminal bridge implies FiniteShift"
         ],
         "constraints": [
-          "retain the full unrestricted PowerQ hierarchy and HerCtblPower restriction",
-          "reuse TildeF equations and the nontrivial singleton helper",
-          "state the converse only under empty notin F",
+          "do not recurse on FiniteShift alone",
+          "preserve the unrestricted full PowerQ hierarchy and HerCtblPower",
           "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
           "new proof-bearing TeX blocks must contain complete cited proofs"
         ]
       }
-    },
-    "dismissed_tasks": [
-      {
-        "id": "tilde-front-recursion",
-        "reason": "Completed: the extension-oriented TildeF recursion, front and nonfront equations, atom/front characterization, hereditary-countability closure, and nontrivial singleton restriction were added; all five frontier statements passed correspondence and the tablet acceptance check passed."
-      }
-    ]
+    }
   },
   "response": {
     "allow_new_obligations": true,
@@ -68,19 +62,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode and execute hereditary-converse-game. Attach the new package to TildeF, the nontrivial-front singleton restriction, FiniteShift, BadSuperSequence, and the four PowerRel constructor reductions. Formalize the paper's joint finite-shift invariant: for m < n, assume a comparison of the singleton TildeF values, use the winning PowerRel strategy to choose successive one-point extensions, preserve the joint shift witness after every response, and recurse on the product of the extension-oriented tree relations. At terminal front nodes, use the atom equations and the original bad super-sequence to contradict the alleged comparison. Keep the nontrivial-front hypothesis empty notin F explicit, preserve the full unrestricted PowerQ and hereditary carrier, and do not add either configured hereditary target node in this layer. Every new proof-bearing TeX block must contain a complete, explicitly cited proof rather than a SKETCH.",
+    "comments": "Continue in Global mode and execute converse-bridge-infrastructure, not the final ConverseGame theorem yet. Attach the new helpers to Front, PrefixTree, InitialSegment, ProperInitialSegment, FiniteShift, and FrontTreeWellFounded. Prove that every ordered one-point extension of a nonfront prefix-tree node remains in the tree for a front on Set.univ. Introduce an explicit finite bridge state for left node s, right node t, and finite joint set u: initialize it from m<n with singleton nodes and u={m,n}; after each right response, adjoin that response's new point, or a fresh point when the right node is terminal; choose the left extension prescribed by the bridge; and preserve the relevant initial-segment/tail conditions through the transition. Prove that a terminal bridge yields FiniteShift by appending an infinite tail. The next converse-game task must consume these operational laws. Preserve the unrestricted PowerQ and hereditary carrier, add no configured target node, and give complete cited TeX proofs for all new proof-bearing helpers.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 21,
+    "cycle": 22,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "tilde-front-recursion",
-        "reason": "Completed: the extension-oriented TildeF recursion, front and nonfront equations, atom/front characterization, hereditary-countability closure, and nontrivial singleton restriction were added; all five frontier statements passed correspondence and the tablet acceptance check passed."
-      }
-    ],
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -90,41 +79,41 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1597,
-        "reason": "The paper's converse-game construction preserves a joint finite-shift witness through PowerQ responses, terminates at front atoms, and derives the hereditary WQO target from the resulting bad singleton sequence.",
+        "end_line": 1570,
+        "reason": "The copying-and-shift passage motivates the finite bridge, its response transition, and the invariant needed before the converse-game induction.",
         "start_line": 1569
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage explicitly constructs the contradiction from a comparison of singleton TildeF values, describes the copying-and-shift invariant and terminal front values, and then states the hereditary WQO and well-foundedness consequences.",
+      "basis_summary": "The cited lines explicitly maintain the joint finite set u while alternating left extensions and right PowerQ responses, then use the resulting shift relation at terminal front nodes. The audit confirms that this bridge, rather than FiniteShift alone, is the operational invariant needed for a faithful formalization.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The previous burst completed the extension-oriented TildeF package: its front and nonfront equations, atom/front characterization, hereditary-countable closure, and nontrivial singleton restriction all passed correspondence, and the tablet acceptance check passed. The next planned support layer is the converse game that turns a bad super-sequence into a bad hereditary singleton sequence; both configured hereditary targets remain uncovered and should not be claimed yet.",
-    "request_id": 122,
+    "reason": "The current audit identified a genuine invariant gap in the planned converse proof: FiniteShift alone does not support the legal child choices required after an arbitrary PowerRel response. The next worker must therefore build the finite bridge infrastructure first, while both hereditary target statements remain uncovered.",
+    "request_id": 124,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The tilde-front-recursion task is complete: the worker added the repaired-index TildeF recursion on the unrestricted PowerQ, separate recursion equations, the atom iff front theorem, hereditary-countability for all tree values, and the nontrivial singleton restriction; correspondence and tablet acceptance passed. Dismiss that task and execute hereditary-converse-game next. The central requirement is the paper's joint finite-shift invariant, not merely termination of a recursion: every left extension and every right response must preserve the witness until both nodes reach F, where the atom comparison contradicts BadSuperSequence. Keep empty notin F explicit and do not claim either hereditary target yet.",
+      "notes": "The active audit replaced the earlier converse-game route with a sharper two-step plan. The existing hereditary carrier, repaired front tree, and TildeF recursion layers are complete. Execute converse-bridge-infrastructure first: FiniteShift alone is too weak, as shown by the audit's four-element-front counterexample. Expose the ordered extension closure and the finite bridge initialization, transition, legality, and terminal-to-FiniteShift laws. Do not claim either configured hereditary target or the final ConverseGame theorem in this layer.",
       "reviewer_lean_product": {
-        "completed_task": "tilde-front-recursion",
         "constraints": [
-          "retain the full unrestricted PowerQ hierarchy and HerCtblPower restriction",
-          "reuse TildeF equations and the nontrivial singleton helper",
-          "state the converse only under empty notin F",
+          "do not recurse on FiniteShift alone",
+          "preserve the unrestricted full PowerQ hierarchy and HerCtblPower",
           "do not claim BqoHerCtblWqo or BqoHerCtblWellF yet",
           "new proof-bearing TeX blocks must contain complete cited proofs"
         ],
-        "next_task": "hereditary-converse-game",
+        "following_task": "hereditary-converse-game",
+        "next_task": "converse-bridge-infrastructure",
         "required_interface": [
-          "bad singleton theorem for TildeF on a nontrivial front",
-          "joint FiniteShift invariant for the pair of evolving tree nodes",
-          "product well-founded recursion over the two extension-oriented tree relations",
-          "all four PowerRel constructor reductions needed to expose terminal atoms",
-          "terminal contradiction with BadSuperSequence"
+          "every ordered one-point extension of a nonfront PrefixTree node is in PrefixTree for a full-base front",
+          "explicit finite bridge state (s,t,u) with operational initial-segment conditions",
+          "bridge initialization from singleton nodes m<n and u={m,n}",
+          "bridge transition after a right response or a fresh terminal-side point",
+          "legality of the chosen left one-point extension",
+          "terminal bridge implies FiniteShift"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -154,5 +143,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_122_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_124_decision.context.json"
 }
