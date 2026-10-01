@@ -1,17 +1,17 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Repaired the two requested soundness-citation gaps in Tablet/SuperSequenceExtension.tex.",
-    "comments": "Preserved the Lean signature, imports, support DAG, and completed mathematical proof. The PrefixAgree-to-coordinate step now cites PrefixAgree explicitly. The FrontPrefixUnique application now explicitly names F, X, hF, y.1, h_y, and the newly established FrontPrefix witness for s_x. No other node or statement was changed.",
-    "target_claim_updates": {},
-    "difficulty_updates": {},
-    "deviation_requests": {},
-    "node_deviation_claims": {},
-    "deviation_deletions": [],
+    "summary": "Repaired only Tablet/ShiftDichotomy.tex with a complete cited natural-language proof, preserving the Lean signature, imports, and support DAG.",
+    "comments": "The proof explicitly constructs the finite-prefix bound for the Boolean coloring, proves the shifted PrefixAgree implication, cites all definition-level and theorem-level dependencies, verifies the composed range is an infinite subset of the thinned base, applies front density and the deciding-value equation, and handles the Boolean disjoint case before transporting both alternatives through MultiSequenceRestrict and RestrictionShift. The outside-fact audit is recorded in .trellis/scratch/notes.md. No statement, target claim, helper node, deviation, or deletion was made.",
+    "audit_request": null,
     "deleted_nodes": [],
-    "needs_restructure_suggested_nodes": [],
+    "deviation_deletions": [],
+    "deviation_requests": {},
+    "difficulty_updates": {},
     "memory_challenges": [],
-    "audit_request": null
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the Lean signature, imports, support DAG, and completed mathematical proof. The PrefixAgree-to-coordinate step now cites PrefixAgree explicitly. The FrontPrefixUnique application now explicitly names F, X, hF, y.1, h_y, and the newly established FrontPrefix witness for s_x. No other node or statement was changed.",
-    "cycle": 106,
+    "comments": "The proof explicitly constructs the finite-prefix bound for the Boolean coloring, proves the shifted PrefixAgree implication, cites all definition-level and theorem-level dependencies, verifies the composed range is an infinite subset of the thinned base, applies front density and the deciding-value equation, and handles the Boolean disjoint case before transporting both alternatives through MultiSequenceRestrict and RestrictionShift. The outside-fact audit is recorded in .trellis/scratch/notes.md. No statement, target claim, helper node, deviation, or deletion was made.",
+    "cycle": 110,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -38,7 +38,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 365,
+    "request_id": 374,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1947,18 +1947,27 @@
           "own_tex_hash": "e8e56556fc2ffce4accee7d2604027c54508ccd98be0abba515c6822808fdd15"
         },
         "ShiftDichotomy": {
-          "combined_sound_fp": "sound-v2:b1ed6f4cbc1fb6b522b6a38c005b5a2d91d41862767fcb5bcc26b57090286893",
+          "combined_sound_fp": "sound-v2:eceff9b226459c2b8a2bf96a51b9644c0a7afcd1d760e17577d8ea4af0c963ca",
           "dep_statement_hashes": {
             "BadMultiSequence": "317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5",
             "DecidingFront": "6f44e8bd881c781f85cc932fc69c3df2806724ee5e816ac7039916052fe639a5",
+            "DecidingFrontSet": "0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f",
             "DecidingValue": "d89e83c0dcbfa25ccfb8c95b62e240da165c8bdabe1c262d48b7ec26d7926286",
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "IncSeq": "62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e",
+            "IncSeqComp": "fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c",
             "InfiniteSetEnumeration": "6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1",
+            "LocallyConstant": "8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841",
+            "MultiSequence": "7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a",
             "MultiSequenceRestrict": "0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d",
             "NashWilliams": "86fecabae20ea2d0e8b51a90bc5f45c34c17099d38a9865f7631812939d8ce3a",
             "PerfectMultiSequence": "eda8449879f6345d53aeff6c08eee97ceda122b2aa4a567da72c9c72c7370edf",
-            "RestrictionShift": "d5d841aef941841d35501227a7c33143993f0ba417eb963325e0ca62e3c0ccc7"
+            "PrefixAgree": "97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8",
+            "ProperPrefixSet": "bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d",
+            "RestrictionShift": "d5d841aef941841d35501227a7c33143993f0ba417eb963325e0ca62e3c0ccc7",
+            "ShiftMap": "f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44"
           },
-          "own_tex_hash": "44f1e3ef1099eef5c7def467bc79ec6eec89ac03ff770f32893f0ba8bea85088"
+          "own_tex_hash": "00b68b9b147b4ad98476b95892171d965ee12c997847b43de8db5698d90400e3"
         },
         "ShiftMap": {
           "combined_sound_fp": "sound-v2:d6c97a32146eb05a340e699aa170c31c0e738bffd71edc74275025be5c2cbbe6",
@@ -2257,7 +2266,7 @@
         "RightComp": "sound-v2:c8c9d15954140dee4d86d7f3d7bdd04f6b0b0fc604fabd104d1a77be9befcc52",
         "RmapLemma": "sound-v2:b81d4d09e6738d9458e406ddf976c9fd436d34825788ec1b160d197bf7986e66",
         "SetDomination": "sound-v2:91b032412f60481e5ce71fe7ff58777fd7a838f729626d0651330c71af45b1f7",
-        "ShiftDichotomy": "sound-v2:b1ed6f4cbc1fb6b522b6a38c005b5a2d91d41862767fcb5bcc26b57090286893",
+        "ShiftDichotomy": "sound-v2:eceff9b226459c2b8a2bf96a51b9644c0a7afcd1d760e17577d8ea4af0c963ca",
         "ShiftMap": "sound-v2:d6c97a32146eb05a340e699aa170c31c0e738bffd71edc74275025be5c2cbbe6",
         "SubFrontCharacterization": "sound-v2:a0ed07227894dc19c761c37c55d5f49cb3255f0ecd72c3d28272dad087f01697",
         "Subarr": "sound-v2:5f23e62254acc79164009efe851387bd23620f1505736a87daa3e4dc8f084ea4",
@@ -2637,7 +2646,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired the two requested soundness-citation gaps in Tablet/SuperSequenceExtension.tex.",
+    "summary": "Repaired only Tablet/ShiftDichotomy.tex with a complete cited natural-language proof, preserving the Lean signature, imports, and support DAG.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2968,7 +2977,7 @@
     "SetDomination.lean": "c8df3dd91184d1638fd759ab69a96b91d004ede9a0c72e237b0c211c3d4a3d1d",
     "SetDomination.tex": "e8e56556fc2ffce4accee7d2604027c54508ccd98be0abba515c6822808fdd15",
     "ShiftDichotomy.lean": "679f3cd9fa0cd4c12656b10b2a170ce2404fba12ee005edcf720a277826400b4",
-    "ShiftDichotomy.tex": "44f1e3ef1099eef5c7def467bc79ec6eec89ac03ff770f32893f0ba8bea85088",
+    "ShiftDichotomy.tex": "00b68b9b147b4ad98476b95892171d965ee12c997847b43de8db5698d90400e3",
     "ShiftMap.lean": "b91fa810f87c9b2b979a4c09f5fe8645641d1a6856eb6f8d4671222b49459763",
     "ShiftMap.tex": "ced9ab97fbfaecc1f61b5f6d98a7fef71d8ef1417e3fa504d9c3deff2a58e135",
     "SubFrontCharacterization.lean": "c17fe9958a38a5379ebda7076ad492dd6be66c20abd400d9d9902f0994c63059",
@@ -3003,7 +3012,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_365_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_374_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

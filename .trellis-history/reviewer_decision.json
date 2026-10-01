@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "ShiftDichotomy has a concrete Sound rejection with several repair-ready omissions in the Boolean-coloring and front-selection proof. Assign the sound-repair-ready node to a worker for a bounded TeX-only repair.",
-    "comments": "Repair only Tablet/ShiftDichotomy.tex. Preserve the Lean signature, imports, and support DAG; add no helper, theorem, or statement change. Address every current Sound finding. First cite LocallyConstant, ShiftMap, PrefixAgree, IncSeq, IncSeqComp, Front, and ProperPrefixSet where their meanings are used. For each x, obtain finite-prefix bounds for h at x and at ShiftMap(x), choose one bound large enough to include the shifted coordinates, and prove explicitly that PrefixAgree at that bound for x and y implies PrefixAgree at the second bound for ShiftMap(x) and ShiftMap(y); then invoke LocallyConstant to prove c_h locally constant. When applying DecidingFront and DecidingValue, state the exact front member s for each enumeration u, the ProperPrefixSet witness for range(u), and the equation v(s)=c_h(u). Define S and explicitly discharge S subseteq the deciding front before applying NashWilliams. After obtaining F' on Y, prove range(z composed with x) is an infinite subset of Y, use the density clause of Front to select the required s in F', and transfer F' subseteq the original deciding front before using the value equation. In the disjoint case, spell out that v(s) is not 1 and, since the codomain is Boolean, v(s)=0, yielding the negated relation. Finish both cases with the explicit RestrictionShift and MultiSequenceRestrict equations and the cited PerfectMultiSequence or BadMultiSequence definitions.",
-    "task_blocker_ids": [
-      "soundness:node:ShiftDichotomy:sound-v2:b1ed6f4cbc1fb6b522b6a38c005b5a2d91d41862767fcb5bcc26b57090286893"
-    ],
+    "reason": "ShiftDichotomy now has a current Sound approval. RestrictionShift is the next sound-front target and is ready for a real Sound verifier run.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionShift only. Check that the proof unfolds ShiftMap with the correct composition order, uses IncSeqComp for associativity and the fixed-left/right-varying convention, and then derives the evaluation identity for MultiSequenceRestrict. Require the existing citations to ShiftMap, IncSeqComp, and MultiSequenceRestrict to support each cross-node step.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "ShiftDichotomy",
+    "request_sound_verifier_node_ids": [
+      "RestrictionShift"
+    ],
+    "next_active": "",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1617,
-        "end_line": 1622,
-        "reason": "Paper perfect-or-complement dichotomy that ShiftDichotomy formalizes."
+        "start_line": 1607,
+        "end_line": 1615,
+        "reason": "Paper definition of the shift map and the composition law for homomorphisms underlying RestrictionShift."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1617-1622 state that a continuous map into a discrete space admits an infinite restriction on which it is a homomorphism for either the relation or its complement; the requested repair expands the tablet proof of this proposition's Boolean-coloring construction."
+      "basis_summary": "Lines 1607-1615 define the shift map and explain that homomorphisms between graph maps satisfy the corresponding composition identity; RestrictionShift formalizes the commuting identity for a fixed left restriction."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/ShiftDichotomy.tex. Preserve the Lean signature, imports, and support DAG; add no helper, theorem, or statement change. Address every current Sound finding. First cite LocallyConstant, ShiftMap, PrefixAgree, IncSeq, IncSeqComp, Front, and ProperPrefixSet where their meanings are used. For each x, obtain finite-prefix bounds for h at x and at ShiftMap(x), choose one bound large enough to include the shifted coordinates, and prove explicitly that PrefixAgree at that bound for x and y implies PrefixAgree at the second bound for ShiftMap(x) and ShiftMap(y); then invoke LocallyConstant to prove c_h locally constant. When applying DecidingFront and DecidingValue, state the exact front member s for each enumeration u, the ProperPrefixSet witness for range(u), and the equation v(s)=c_h(u). Define S and explicitly discharge S subseteq the deciding front before applying NashWilliams. After obtaining F' on Y, prove range(z composed with x) is an infinite subset of Y, use the density clause of Front to select the required s in F', and transfer F' subseteq the original deciding front before using the value equation. In the disjoint case, spell out that v(s) is not 1 and, since the codomain is Boolean, v(s)=0, yielding the negated relation. Finish both cases with the explicit RestrictionShift and MultiSequenceRestrict equations and the cited PerfectMultiSequence or BadMultiSequence definitions.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionShift only. Check that the proof unfolds ShiftMap with the correct composition order, uses IncSeqComp for associativity and the fixed-left/right-varying convention, and then derives the evaluation identity for MultiSequenceRestrict. Require the existing citations to ShiftMap, IncSeqComp, and MultiSequenceRestrict to support each cross-node step.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 109,
+    "cycle": 110,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,42 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "ShiftDichotomy",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1622,
-        "reason": "Paper perfect-or-complement dichotomy that ShiftDichotomy formalizes.",
-        "start_line": 1617
+        "end_line": 1615,
+        "reason": "Paper definition of the shift map and the composition law for homomorphisms underlying RestrictionShift.",
+        "start_line": 1607
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1617-1622 state that a continuous map into a discrete space admits an infinite restriction on which it is a homomorphism for either the relation or its complement; the requested repair expands the tablet proof of this proposition's Boolean-coloring construction.",
+      "basis_summary": "Lines 1607-1615 define the shift map and explain that homomorphisms between graph maps satisfy the corresponding composition identity; RestrictionShift formalizes the commuting identity for a fixed left restriction.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "ShiftDichotomy has a concrete Sound rejection with several repair-ready omissions in the Boolean-coloring and front-selection proof. Assign the sound-repair-ready node to a worker for a bounded TeX-only repair.",
-    "request_id": 373,
-    "request_sound_verifier_nodes": [],
+    "reason": "ShiftDichotomy now has a current Sound approval. RestrictionShift is the next sound-front target and is ready for a real Sound verifier run.",
+    "request_id": 376,
+    "request_sound_verifier_nodes": [
+      "RestrictionShift"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:b1ed6f4cbc1fb6b522b6a38c005b5a2d91d41862767fcb5bcc26b57090286893",
-        "kind": "Soundness",
-        "object": {
-          "node": "ShiftDichotomy",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_373_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_376_decision.context.json"
 }
