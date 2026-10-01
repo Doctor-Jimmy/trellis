@@ -6,13 +6,12 @@ Every $X\in\mathsf{PowerQ}(Q)$ has nonempty support:
 \end{lemma}
 \begin{proof}
 Proceed by induction on the inductive presentation from
-\noderef{PowerQ}.  If $X=\mathsf{atom}(q)$, then the support equation in
-\noderef{PowerSupportEquations} identifies its support with $\{q\}$, which
-contains $q$.  If $X=\mathsf{node}(\iota,h,f)$, choose an index
+\noderef{PowerQ}.  Unfold the recursive support definition
+\noderef{PowerSupport}.  If $X=\mathsf{atom}(q)$, its support is $\{q\}$,
+which contains $q$.  If $X=\mathsf{node}(\iota,h,f)$, choose an index
 $i_0\in\iota$ using the supplied witness $h$.  The induction hypothesis
-gives an atom $q$ in the support of $f(i_0)$.  The node support equation in
-\noderef{PowerSupportEquations} says that this support is contained in the
-indexed union defining the support of $X$, so the same $q$ belongs to the
-support of $X$.  Thus every atom and every nonempty node has nonempty
-support.
+gives an atom $q$ in the support of $f(i_0)$.  By the node branch of the
+definition, that support is one of the sets in the indexed union defining
+the support of $X$, so the same $q$ belongs to the support of $X$.  Thus
+every atom and every nonempty node has nonempty support.
 \end{proof}

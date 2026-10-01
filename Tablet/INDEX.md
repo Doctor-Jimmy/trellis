@@ -82,13 +82,11 @@
 | PowerChild | definition | definition | closed | - | - | PowerQ |
 | PowerChildWellFounded | lemma | proof | open | - | Well-founded hierarchy descent | PowerChild |
 | PowerPresentationEq | definition | definition | closed | - | - | PowerQ |
-| PowerPresentationEqEquivalence | lemma | proof | open | - | Structural equivalence is an equivalence relation | PowerPresentationEqShape |
-| PowerPresentationEqShape | lemma | proof | open | - | Presentation cases | PowerPresentationEq |
+| PowerPresentationEqEquivalence | lemma | proof | open | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
 | PowerQ | definition | definition | closed | - | - | Preamble |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
-| PowerSupportEquations | lemma | proof | open | - | Support equations | PowerSupport |
-| PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEqShape, PowerSupportEquations |
-| PowerSupportNonempty | lemma | proof | open | - | Nonempty support | PowerSupportEquations |
+| PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
+| PowerSupportNonempty | lemma | proof | open | - | Nonempty support | PowerSupport |
 | PowerWqoBadPairSequence | lemma | proof | open | - | Bad-witness characterization | BadPairSequence, SetDomination |
 | Preamble | preamble | preamble | closed | - | - | - |
 | PrefixAgree | definition | definition | closed | - | - | IncSeq |
@@ -117,4 +115,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 113 nodes | **Closed:** 59 | **Open:** 54
+**Total:** 111 nodes | **Closed:** 59 | **Open:** 52

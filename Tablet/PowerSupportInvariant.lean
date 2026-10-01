@@ -1,5 +1,5 @@
-import Tablet.PowerPresentationEqShape
-import Tablet.PowerSupportEquations
+import Tablet.PowerPresentationEq
+import Tablet.PowerSupport
 
 universe u
 

@@ -91,10 +91,8 @@
 | PowerChildWellFounded | proof | Well-founded hierarchy descent | open |
 | PowerPresentationEq | definition | - | closed |
 | PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | open |
-| PowerPresentationEqShape | proof | Presentation cases | open |
 | PowerQ | definition | - | closed |
 | PowerSupport | definition | - | closed |
-| PowerSupportEquations | proof | Support equations | open |
 | PowerSupportInvariant | proof | Support respects presentation equivalence | open |
 | PowerSupportNonempty | proof | Nonempty support | open |
 | PowerWqoBadPairSequence | proof | Bad-witness characterization | open |
@@ -123,4 +121,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 59/113 closed
+**Summary:** 59/111 closed

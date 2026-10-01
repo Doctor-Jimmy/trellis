@@ -3,17 +3,20 @@ The relation $\mathsf{PowerPresentationEq}$ is reflexive, symmetric, and
 transitive on $\mathsf{PowerQ}(Q)$.
 \end{lemma}
 \begin{proof}
-For reflexivity, induct on a presentation.  An atom matches itself by
-equality.  At a node, pair each child with itself and apply the induction
-hypothesis, giving both directions of the matching condition in
-\noderef{PowerPresentationEqShape}.  For symmetry, exchange the two
-matching witnesses at every node; the induction hypotheses reverse the
-equivalence of each matched pair, and atom equality is symmetric.  For
-transitivity, compose the child matchings: a child of the first node matches
-a child of the middle node, which matches a child of the last node, so the
-induction hypothesis gives an equivalent child in the last node.  The reverse
-direction is identical.  The atom cases compose equality, and the mixed
-cases are impossible by the disjointness part of
-\noderef{PowerPresentationEqShape}.  Therefore all three equivalence laws
-hold.
+For reflexivity, unfold the recursive relation from
+\noderef{PowerPresentationEq} and induct on a presentation.  An atom matches
+itself by equality.  At a node, pair each child with itself and apply the
+induction hypothesis in both directions, which establishes both matching
+conjuncts.  For symmetry, unfold the same four tagged cases and exchange the
+two matching witnesses at every node; the induction hypotheses reverse each
+matched pair, and atom equality is symmetric.  For transitivity, consider
+three presentations.  In the atom case, compose the equalities.  In a mixed
+case, the defining relation is False.  In the node case, if a child of the
+first presentation is given, the forward matching conjunct supplies a child
+of the middle presentation matching it.  The forward matching conjunct for
+the middle and last presentations supplies a child of the last presentation
+matching that middle child.  The induction hypothesis gives a match from the
+original child to the final child.  This proves the forward conjunct; the
+backward conjunct is obtained by the same argument in reverse.  Hence the
+recursive relation is reflexive, symmetric, and transitive.
 \end{proof}

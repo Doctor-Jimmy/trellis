@@ -1,4 +1,4 @@
-import Tablet.PowerPresentationEqShape
+import Tablet.PowerPresentationEq
 
 universe u
 

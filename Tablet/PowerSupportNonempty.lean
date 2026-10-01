@@ -1,4 +1,4 @@
-import Tablet.PowerSupportEquations
+import Tablet.PowerSupport
 
 universe u
 
