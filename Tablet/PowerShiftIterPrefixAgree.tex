@@ -1,0 +1,20 @@
+\begin{lemma}[Finite-prefix agreement survives finitely many shifts]
+If two increasing enumerations agree through their first $n+j$ entries, then
+their $j$-fold shifts agree through their first $n$ entries:
+\[
+\mathsf{PrefixAgree}(n+j,x,y)
+\Longrightarrow
+\mathsf{PrefixAgree}\bigl(n,\mathsf{PowerShiftIter}(j,x),
+  \mathsf{PowerShiftIter}(j,y)\bigr).
+\]
+\end{lemma}
+\begin{proof}
+Induct on $j$.  For $j=0$ the assertion is reflexive.  At a successor,
+By the definition of \noderef{PrefixAgree}, the first $n$ entries of the shifted sequences are the entries numbered
+$1$ through $n$ of the preceding shifts, by the definitions of
+\noderef{PowerShiftIter} and \noderef{ShiftMap}.  The hypothesis
+\mathsf{PrefixAgree}(n+(j+1),x,y) supplies agreement through the longer
+prefix needed for the induction hypothesis at the preceding shift; applying
+that hypothesis and then unfolding one more use of \noderef{ShiftMap} gives
+agreement through $n$ entries.  This proves the displayed implication.
+\end{proof}

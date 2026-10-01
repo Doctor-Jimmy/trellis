@@ -1,0 +1,28 @@
+\begin{lemma}[A finite shift orbit is decided by one finite prefix]
+Let $h$ be locally constant, let $x$ be an increasing enumeration, and let
+$m\in\mathbb N$.  There is a finite prefix of $x$ which determines all of
+the finitely many values
+\[
+h(x),h(\mathsf{ShiftMap}(x)),\ldots,
+h(\mathsf{PowerShiftIter}(m,x)).
+\]
+Precisely, there is $N$ such that whenever
+$\mathsf{PrefixAgree}(N,x,y)$, then for every $j\leq m$,
+\[
+h(\mathsf{PowerShiftIter}(j,y))
+=h(\mathsf{PowerShiftIter}(j,x)).
+\]
+\end{lemma}
+\begin{proof}
+Fix $j\leq m$.  By the definition of local constancy
+\noderef{LocallyConstant}, local constancy of $h$ at
+$\mathsf{PowerShiftIter}(j,x)$ supplies a number $n_j$ such that any
+enumeration agreeing with this shifted enumeration through $n_j$ entries has
+the same $h$-value.  There are only finitely many indices $j\leq m$.
+Choose $N$ at least $n_j+j$ for each of them.  If
+$\mathsf{PrefixAgree}(N,x,y)$, then
+\noderef{PowerShiftIterPrefixAgree} gives
+\mathsf{PrefixAgree}(n_j,\mathsf{PowerShiftIter}(j,x),
+\mathsf{PowerShiftIter}(j,y)); local constancy gives the required equality.
+The same $N$ works for all $j\leq m$, which proves the lemma.
+\end{proof}

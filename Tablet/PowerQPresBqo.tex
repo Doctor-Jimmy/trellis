@@ -1,0 +1,27 @@
+\begin{corollary}
+If $Q$ is a quasi-order and $Q$ is a better-quasi-order, then the full
+tagged hierarchy $\mathsf{PowerQ}(Q)$ equipped with the four-clause relation
+$\mathsf{PowerRel}(r)$ is a better-quasi-order:
+\[
+\mathsf{Bqo}(r)\longrightarrow
+\mathsf{Bqo}(\mathsf{PowerRel}(r)).
+\]
+The node type has arbitrary nonempty small branching, as in
+\noderef{PowerQ}; it is not restricted to countable nodes.
+\end{corollary}
+\begin{proof}
+Assume $\mathsf{Bqo}(r)$ and suppose, for contradiction, that
+$\mathsf{PowerRel}(r)$ is not a better-quasi-order.  By the definition of
+better-quasi-order in \noderef{Bqo}, there is a locally constant bad
+multi-sequence
+$h:\mathsf{IncSeq}\to\mathsf{PowerQ}(Q)$.
+
+Apply the reflection proposition \noderef{PowerQReflection} to this $h$.
+It produces a locally constant $g:\mathsf{IncSeq}\to Q$ which is bad for
+$r$.  This contradicts $\mathsf{Bqo}(r)$, again using the defining
+quantifiers in \noderef{Bqo}.  Therefore no locally constant bad
+multi-sequence exists for $\mathsf{PowerRel}(r)$, which is exactly the
+claimed conclusion.  The quasi-order hypothesis is the displayed
+$\mathsf{IsPreorder}$ assumption, and the reflection construction uses the
+full arbitrary-small-indexed hierarchy supplied by \noderef{PowerQ}.
+\end{proof}

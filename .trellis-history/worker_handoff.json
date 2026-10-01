@@ -1,61 +1,24 @@
 {
   "raw": {
-    "audit_request": null,
-    "comments": "Added the paper-faithful canonical comparison-game package requested for the iterated-power-game layer. PowerMove and PowerIResponse encode legal one-coordinate moves and one global response function of raw presentations; PowerCopiedLeft computes the copied triangular rows along PowerShiftIter; the package proves failure preservation, support containment, pair-descent termination, finite dependence through shift k+2, and the row/shift stabilization identity. The direct NL dependency audit is recorded in .trellis/scratch/notes.md. No node claims cor PowerQPresBqo, and no fresh per-input strategy is introduced. lake build and the full tablet shape checker pass.",
-    "deleted_nodes": [],
-    "deviation_deletions": [],
-    "deviation_requests": {},
-    "difficulty_updates": {
-      "PowerChildSupport": "hard",
-      "PowerMove": "hard",
-      "PowerMoveInSupport": "hard",
-      "PowerIResponse": "hard",
-      "PowerIResponseWitness": "hard",
-      "PowerIResponseLegal": "hard",
-      "PowerIResponseFailure": "hard",
-      "PowerShiftIter": "hard",
-      "PowerShiftIterShift": "hard",
-      "PowerCopiedLeft": "hard",
-      "PowerGameDescent": "hard",
-      "PowerGameDescentWellFounded": "hard",
-      "PowerCopiedFailureMove": "hard",
-      "PowerCopiedSupport": "hard",
-      "PowerCopiedTerminalAt": "hard",
-      "PowerCopiedTerminates": "hard",
-      "PowerCopiedFiniteDependence": "hard",
-      "PowerCopiedShiftIdentity": "hard",
-      "PowerCopiedFiniteTerminal": "hard",
-      "PowerCopiedTerminalShift": "hard",
-      "PowerCopiedTerminalSupport": "hard"
-    },
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
-    "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Built the canonical finite copied-play and termination package for the full arbitrary-small PowerQ hierarchy.",
+    "summary": "Added the paper-faithful reflection package for the full arbitrary-small-branching PowerQ hierarchy and the sole cor PowerQPresBqo target node. The package includes finite shift-prefix transport, finite orbit constancy, copied-orbit dependence, the reflected bad locally constant map, and complete non-SKETCH TeX proofs.",
+    "comments": "PowerQPresBqo now states [IsPreorder Q r] -> (Bqo r -> Bqo (PowerRel r)) and is proved in NL by contradiction through PowerQReflection. The reflection proof uses one shared finite terminal witness, shift stabilization, support transport, atom persistence, and the finite shift-orbit bound. All five new nodes pass the full tablet shape checker and Lean build; generated Tablet/INDEX.md and Tablet/README.md were refreshed by the checker. The direct outside-fact audit is recorded in .trellis/scratch/notes.md.",
     "target_claim_updates": {
-      "PowerChildSupport": [],
-      "PowerMove": [],
-      "PowerMoveInSupport": [],
-      "PowerIResponse": [],
-      "PowerIResponseWitness": [],
-      "PowerIResponseLegal": [],
-      "PowerIResponseFailure": [],
-      "PowerShiftIter": [],
-      "PowerShiftIterShift": [],
-      "PowerCopiedLeft": [],
-      "PowerGameDescent": [],
-      "PowerGameDescentWellFounded": [],
-      "PowerCopiedFailureMove": [],
-      "PowerCopiedSupport": [],
-      "PowerCopiedTerminalAt": [],
-      "PowerCopiedTerminates": [],
-      "PowerCopiedFiniteDependence": [],
-      "PowerCopiedShiftIdentity": [],
-      "PowerCopiedFiniteTerminal": [],
-      "PowerCopiedTerminalShift": [],
-      "PowerCopiedTerminalSupport": []
-    }
+      "PowerShiftIterPrefixAgree": [],
+      "PowerFiniteOrbitConstancy": [],
+      "PowerCopiedOrbitDependence": [],
+      "PowerQReflection": [],
+      "PowerQPresBqo": [
+        "cor PowerQPresBqo"
+      ]
+    },
+    "difficulty_updates": {},
+    "deviation_requests": {},
+    "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "deleted_nodes": [],
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -65,204 +28,59 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Added the paper-faithful canonical comparison-game package requested for the iterated-power-game layer. PowerMove and PowerIResponse encode legal one-coordinate moves and one global response function of raw presentations; PowerCopiedLeft computes the copied triangular rows along PowerShiftIter; the package proves failure preservation, support containment, pair-descent termination, finite dependence through shift k+2, and the row/shift stabilization identity. The direct NL dependency audit is recorded in .trellis/scratch/notes.md. No node claims cor PowerQPresBqo, and no fresh per-input strategy is introduced. lake build and the full tablet shape checker pass.",
-    "cycle": 16,
+    "comments": "PowerQPresBqo now states [IsPreorder Q r] -> (Bqo r -> Bqo (PowerRel r)) and is proved in NL by contradiction through PowerQReflection. The reflection proof uses one shared finite terminal witness, shift stabilization, support transport, atom persistence, and the finite shift-orbit bound. All five new nodes pass the full tablet shape checker and Lean build; generated Tablet/INDEX.md and Tablet/README.md were refreshed by the checker. The direct outside-fact audit is recorded in .trellis/scratch/notes.md.",
+    "cycle": 17,
     "deleted_nodes": [],
     "dep_updates": {
-      "PowerChildSupport": {
-        "Set": [
-          "PowerChild",
-          "PowerSupport"
-        ]
-      },
-      "PowerCopiedFailureMove": {
-        "Set": [
-          "BadMultiSequence",
-          "PowerCopiedLeft",
-          "PowerIResponseFailure",
-          "PowerIResponseLegal"
-        ]
-      },
-      "PowerCopiedFiniteDependence": {
+      "PowerCopiedOrbitDependence": {
         "Set": [
           "PowerCopiedLeft"
         ]
       },
-      "PowerCopiedFiniteTerminal": {
+      "PowerFiniteOrbitConstancy": {
         "Set": [
-          "PowerCopiedFiniteDependence",
-          "PowerCopiedTerminalAt",
-          "PowerCopiedTerminates"
+          "LocallyConstant",
+          "PowerShiftIterPrefixAgree"
         ]
       },
-      "PowerCopiedLeft": {
+      "PowerQPresBqo": {
         "Set": [
-          "MultiSequence",
-          "PowerIResponse",
-          "PowerShiftIter"
+          "Bqo",
+          "PowerQReflection"
         ]
       },
-      "PowerCopiedShiftIdentity": {
-        "Set": [
-          "PowerCopiedLeft",
-          "PowerShiftIterShift"
-        ]
-      },
-      "PowerCopiedSupport": {
+      "PowerQReflection": {
         "Set": [
           "PowerCopiedFailureMove",
-          "PowerMoveInSupport"
+          "PowerCopiedOrbitDependence",
+          "PowerCopiedTerminalShift",
+          "PowerCopiedTerminalSupport",
+          "PowerFiniteOrbitConstancy"
         ]
       },
-      "PowerCopiedTerminalAt": {
+      "PowerShiftIterPrefixAgree": {
         "Set": [
-          "PowerCopiedLeft"
-        ]
-      },
-      "PowerCopiedTerminalShift": {
-        "Set": [
-          "PowerCopiedFiniteTerminal",
-          "PowerCopiedShiftIdentity"
-        ]
-      },
-      "PowerCopiedTerminalSupport": {
-        "Set": [
-          "PowerCopiedSupport",
-          "PowerCopiedTerminalAt",
-          "PowerCopiedTerminates"
-        ]
-      },
-      "PowerCopiedTerminates": {
-        "Set": [
-          "PowerCopiedFailureMove",
-          "PowerCopiedTerminalAt",
-          "PowerGameDescentWellFounded"
-        ]
-      },
-      "PowerGameDescent": {
-        "Set": [
-          "PowerChild"
-        ]
-      },
-      "PowerGameDescentWellFounded": {
-        "Set": [
-          "PowerChildWellFounded",
-          "PowerGameDescent"
-        ]
-      },
-      "PowerIResponse": {
-        "Set": [
-          "PowerMove"
-        ]
-      },
-      "PowerIResponseFailure": {
-        "Set": [
-          "PowerIResponseLegal"
-        ]
-      },
-      "PowerIResponseLegal": {
-        "Set": [
-          "PowerIResponseWitness"
-        ]
-      },
-      "PowerIResponseWitness": {
-        "Set": [
-          "PowerIResponse",
-          "PowerRelAtomAtom",
-          "PowerRelAtomNode",
-          "PowerRelNodeAtom",
-          "PowerRelNodeNode"
-        ]
-      },
-      "PowerMove": {
-        "Set": [
-          "PowerChild",
-          "PowerRel"
-        ]
-      },
-      "PowerMoveInSupport": {
-        "Set": [
-          "PowerChildSupport",
-          "PowerMove"
-        ]
-      },
-      "PowerShiftIter": {
-        "Set": [
-          "ShiftMap"
-        ]
-      },
-      "PowerShiftIterShift": {
-        "Set": [
-          "PowerShiftIter"
+          "PowerShiftIter",
+          "PrefixAgree"
         ]
       }
     },
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {
-      "PowerChildSupport": {
-        "Set": "Hard"
-      },
-      "PowerCopiedFailureMove": {
-        "Set": "Hard"
-      },
-      "PowerCopiedFiniteDependence": {
-        "Set": "Hard"
-      },
-      "PowerCopiedFiniteTerminal": {
-        "Set": "Hard"
-      },
-      "PowerCopiedLeft": {
-        "Set": "Hard"
-      },
-      "PowerCopiedShiftIdentity": {
-        "Set": "Hard"
-      },
-      "PowerCopiedSupport": {
-        "Set": "Hard"
-      },
-      "PowerCopiedTerminalAt": {
-        "Set": "Hard"
-      },
-      "PowerCopiedTerminalShift": {
-        "Set": "Hard"
-      },
-      "PowerCopiedTerminalSupport": {
-        "Set": "Hard"
-      },
-      "PowerCopiedTerminates": {
-        "Set": "Hard"
-      },
-      "PowerGameDescent": {
-        "Set": "Hard"
-      },
-      "PowerGameDescentWellFounded": {
-        "Set": "Hard"
-      },
-      "PowerIResponse": {
-        "Set": "Hard"
-      },
-      "PowerIResponseFailure": {
-        "Set": "Hard"
-      },
-      "PowerIResponseLegal": {
-        "Set": "Hard"
-      },
-      "PowerIResponseWitness": {
-        "Set": "Hard"
-      },
-      "PowerMove": {
-        "Set": "Hard"
-      },
-      "PowerMoveInSupport": {
-        "Set": "Hard"
-      },
-      "PowerShiftIter": {
-        "Set": "Hard"
-      },
-      "PowerShiftIterShift": {
-        "Set": "Hard"
+    "difficulty_updates": {},
+    "elaboration_costs": {
+      "PowerCopiedOrbitDependence": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "PowerCopiedOrbitDependence",
+        "olean_size_bytes": 13016,
+        "peak_rss_kib": 1673612,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "2ccf76a7b6b273b3fa915533765251070fc39c5967242cd78e498edd495ccc8e",
+        "walltime_ms": 2293
       }
     },
     "kind": "worker",
@@ -271,102 +89,42 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "node_kind_updates": {
-      "PowerChildSupport": {
+      "PowerCopiedOrbitDependence": {
         "Set": "Proof"
       },
-      "PowerCopiedFailureMove": {
+      "PowerFiniteOrbitConstancy": {
         "Set": "Proof"
       },
-      "PowerCopiedFiniteDependence": {
+      "PowerQPresBqo": {
         "Set": "Proof"
       },
-      "PowerCopiedFiniteTerminal": {
+      "PowerQReflection": {
         "Set": "Proof"
       },
-      "PowerCopiedShiftIdentity": {
-        "Set": "Proof"
-      },
-      "PowerCopiedSupport": {
-        "Set": "Proof"
-      },
-      "PowerCopiedTerminalShift": {
-        "Set": "Proof"
-      },
-      "PowerCopiedTerminalSupport": {
-        "Set": "Proof"
-      },
-      "PowerCopiedTerminates": {
-        "Set": "Proof"
-      },
-      "PowerGameDescentWellFounded": {
-        "Set": "Proof"
-      },
-      "PowerIResponseFailure": {
-        "Set": "Proof"
-      },
-      "PowerIResponseLegal": {
-        "Set": "Proof"
-      },
-      "PowerIResponseWitness": {
-        "Set": "Proof"
-      },
-      "PowerMoveInSupport": {
-        "Set": "Proof"
-      },
-      "PowerShiftIterShift": {
+      "PowerShiftIterPrefixAgree": {
         "Set": "Proof"
       }
     },
     "outcome": "Valid",
     "proof_node_updates": {
-      "PowerChildSupport": {
+      "PowerCopiedOrbitDependence": {
         "Set": true
       },
-      "PowerCopiedFailureMove": {
+      "PowerFiniteOrbitConstancy": {
         "Set": true
       },
-      "PowerCopiedFiniteDependence": {
+      "PowerQPresBqo": {
         "Set": true
       },
-      "PowerCopiedFiniteTerminal": {
+      "PowerQReflection": {
         "Set": true
       },
-      "PowerCopiedShiftIdentity": {
-        "Set": true
-      },
-      "PowerCopiedSupport": {
-        "Set": true
-      },
-      "PowerCopiedTerminalShift": {
-        "Set": true
-      },
-      "PowerCopiedTerminalSupport": {
-        "Set": true
-      },
-      "PowerCopiedTerminates": {
-        "Set": true
-      },
-      "PowerGameDescentWellFounded": {
-        "Set": true
-      },
-      "PowerIResponseFailure": {
-        "Set": true
-      },
-      "PowerIResponseLegal": {
-        "Set": true
-      },
-      "PowerIResponseWitness": {
-        "Set": true
-      },
-      "PowerMoveInSupport": {
-        "Set": true
-      },
-      "PowerShiftIterShift": {
+      "PowerShiftIterPrefixAgree": {
         "Set": true
       }
     },
     "protected_semantic_change_nodes": [],
-    "request_id": 90,
+    "request_id": 98,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -453,12 +211,14 @@
         "PowerCopiedFiniteDependence": "{\"own_tex\":\"e177029398f680d5989d75a985fcfc209c147767fe9e42f825b0e58219f3cc27\",\"lean_semantic_closure\":\"ab265ae64f27475df3d7980721861758fa554d9fa92f6a1ab45fba43e2fc925a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedFiniteTerminal": "{\"own_tex\":\"b7bb0e7183cf71efc5d03b8d126297530bfe0353e71f5548efed63d3a10077ac\",\"lean_semantic_closure\":\"773b952e7d74671f1f22c01b10763ff95cc4d38ed25b533686062d4ffc85ed4e\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedLeft": "{\"own_tex\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"lean_semantic_closure\":\"11a11179fcdcc93e991db75be8ba68a59f2241f836d445ad50a99fa9ca8ceb8c\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerCopiedOrbitDependence": "{\"own_tex\":\"e4bd56a0f92aff28617b8335c6634b7617cc02c88cd3540fcc203dd8ea769d32\",\"lean_semantic_closure\":\"694f4076685c186795afa9142a3d0fc481304d519058ecfa382ec49582778c04\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedShiftIdentity": "{\"own_tex\":\"433e70163ad4295e81c04e20acaf8cdeb8aa172c9aa000e4ed4f28d33ab6e2a9\",\"lean_semantic_closure\":\"231a5212ac405cd7aebbc1a6e9b3fb8d73683df9940b1309803a7412f6ed24c0\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedSupport": "{\"own_tex\":\"18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b\",\"lean_semantic_closure\":\"6710bae3084d9ef6713a394de98d773c32e78f73a06aed82c7b1242e89e28327\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"PowerSupport\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminalAt": "{\"own_tex\":\"7380d0d8b178ee967b18028b4774efb036663f89d812a5ad451f967be97f1132\",\"lean_semantic_closure\":\"15d228bf5c0701bbfbb71459ec19ea77329cb63f176ecac32dcb6ad7c062560f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminalShift": "{\"own_tex\":\"cde879f687a943925edd9aa7b44fcd6e8b35122e03075d07d17c7d07fe59a676\",\"lean_semantic_closure\":\"31cb1f5c0487e9ecdba6fc63c9d5a101b30d1c369ac563237d49a5e709a411b5\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminalSupport": "{\"own_tex\":\"a13cde141a42e657d4705d025b77142c17c345463249998f277659de43ff9a5f\",\"lean_semantic_closure\":\"8d2feaa7fbf1f73f223e42d87d14e5c88f58b6df78a284249bf414f04a9a0325\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"PowerSupport\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminates": "{\"own_tex\":\"0ab92aba88e6a186c4d6a91763526a1865c31e0dc59dcdb00950c13e734e7f73\",\"lean_semantic_closure\":\"0c70fcbecc11ca9e06dd0467f0b7e00c901a9aca9500fae899c9d6e69f217013\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerCopiedTerminalAt\":\"7380d0d8b178ee967b18028b4774efb036663f89d812a5ad451f967be97f1132\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerCopiedTerminalAt\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerFiniteOrbitConstancy": "{\"own_tex\":\"95f9da42f9de6b010a9b9a2ba3fdaea7748ae374581d3a21a740122747638204\",\"lean_semantic_closure\":\"1b012258758a9f452223639153b69f2e5a0d723fde844f178462505a8eac95f6\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PowerShiftIter\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerGameDescent": "{\"own_tex\":\"85102fb854a26fad0f1237a0f9036da649408d371bdf77efd0702a0fe04670e6\",\"lean_semantic_closure\":\"f48585e37c10f7dfee10a07e97cc6f06aeb063e5f17cbb8ba6c950c0faa5a347\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerGameDescentWellFounded": "{\"own_tex\":\"bfe0374b0de3cbf1a4a14e6f16f23d00b42cee109211044f00de68e3ff44fe57\",\"lean_semantic_closure\":\"70390173a144fd204fcbbf76bbd1275793adf3e614cdb5fa0ee453163ab45ef6\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerGameDescent\":\"85102fb854a26fad0f1237a0f9036da649408d371bdf77efd0702a0fe04670e6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerGameDescent\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerIResponse": "{\"own_tex\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"lean_semantic_closure\":\"a13b3de03443ce4d122f5a467d46f681fd870f6a9ccb63f886be40a73f253cb9\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerMove\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -471,6 +231,8 @@
         "PowerPresentationEqEquivalence": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"lean_semantic_closure\":\"34fc5cff92a4f738701eb968fb0f8a8a64c1d51997b5ad298c3f0e68852bfaf6\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerQ": "{\"own_tex\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"lean_semantic_closure\":\"2078dbf6b7ad1747d70edd478d28bf3f29c67f2fc0e3b79a98e752cccfc161c8\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerQIsPreorder": "{\"own_tex\":\"f9f56cef746b72a529f4e897044a196d176ab217e202fa55f3e08c7e5795e398\",\"lean_semantic_closure\":\"c5acd940be44a523dfcf7ca709e4afaf2009054f9377fc718ac9d5215982afa5\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerQPresBqo": "{\"own_tex\":\"3843a108b8ca11929e5518b2a95a9b287d31fe4f45b92e3df179a30812d83faf\",\"lean_semantic_closure\":\"36c3764611d7ca576207d3d981351fc5778bd4f2705eaa61969dc5789432438b\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"Bqo\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PowerChild\",\"PowerQ\",\"PowerRel\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerQReflection": "{\"own_tex\":\"e0cb0fe51b460abb51f2c9bd9240116fa5bbf35930466395c175786d35f29aba\",\"lean_semantic_closure\":\"7a8c487afbb0a1554715592c5387e95f91ccdb2b401e2fd362922c34e7952c72\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PowerChild\",\"PowerQ\",\"PowerRel\",\"PowerSupport\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRel": "{\"own_tex\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"lean_semantic_closure\":\"f23a828e90125e5fac54b86266da8c91b0e2986e95add9d4af5e115c3eb20d6d\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRelAtomAtom": "{\"own_tex\":\"d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db\",\"lean_semantic_closure\":\"6d395b9ecb041958a7c54b6f9924fdac493fbc55a9f74c804bfedd7e7347690b\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRelAtomNode": "{\"own_tex\":\"6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a\",\"lean_semantic_closure\":\"f889a5759ccd8cc78d554be471bbb0c2e251a500cb17abea9099f8dfd2f28a59\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -481,6 +243,7 @@
         "PowerRelRefl": "{\"own_tex\":\"6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a\",\"lean_semantic_closure\":\"cd7432b7bf907041237da6c0e7dccf0fbc8c9727c11375918391f8227b4677fd\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRelTrans": "{\"own_tex\":\"de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8\",\"lean_semantic_closure\":\"e6ef70d72f706fbbcb4d8c16d3576c8aeac5e702d1aef9e30afe218f29d8ac44\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerShiftIter": "{\"own_tex\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"lean_semantic_closure\":\"86039fdb943409d1fb54c4ff997323eab80e1687d7a245e0e345e54595b70c44\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerShiftIterPrefixAgree": "{\"own_tex\":\"09d3709012103ad4d5cb736a8fff8be2c82bb6017c9f24ab7de49595b599d22d\",\"lean_semantic_closure\":\"fdce648a5e8e95fecd348b7194451963663eb4c91f608064098738c168cb5fb3\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"PowerShiftIter\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerShiftIterShift": "{\"own_tex\":\"8bbbea88db1c0b0fbc148c95bfc3157cebe4f9c526459be5c8155f8c6908c49c\",\"lean_semantic_closure\":\"87a443f9286a2e6a46455d0d51bd94665c652b796637f82ccbcda9673843646b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupport": "{\"own_tex\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"lean_semantic_closure\":\"72181f193f13f0c02869d4b46d6a89b0f439707667f8e80ce48a1debea104ef4\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupportInvariant": "{\"own_tex\":\"84fb85705a6dab0c82ca7e87fa503d9b5d2b8024f5255cd165e5e032e1fd394c\",\"lean_semantic_closure\":\"6c2bb66c0c0fea5eb8d170bb939e0adff1011d3caa897e9c93047ec3cbf97603\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\",\"PowerSupport\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -517,7 +280,9 @@
         "MainProp": [
           "MainProp"
         ],
-        "cor PowerQPresBqo": [],
+        "cor PowerQPresBqo": [
+          "PowerQPresBqo"
+        ],
         "cor:NashWill": [
           "NashWilliams"
         ],
@@ -582,21 +347,26 @@
         "PowerCopiedFailureMove",
         "PowerCopiedFiniteDependence",
         "PowerCopiedFiniteTerminal",
+        "PowerCopiedOrbitDependence",
         "PowerCopiedShiftIdentity",
         "PowerCopiedSupport",
         "PowerCopiedTerminalShift",
         "PowerCopiedTerminalSupport",
         "PowerCopiedTerminates",
+        "PowerFiniteOrbitConstancy",
         "PowerGameDescentWellFounded",
         "PowerIResponseFailure",
         "PowerIResponseLegal",
         "PowerIResponseWitness",
         "PowerMoveInSupport",
         "PowerPresentationEqEquivalence",
+        "PowerQPresBqo",
+        "PowerQReflection",
         "PowerRelCongrLeft",
         "PowerRelCongrRight",
         "PowerRelRefl",
         "PowerRelTrans",
+        "PowerShiftIterPrefixAgree",
         "PowerShiftIterShift",
         "PowerSupportInvariant",
         "PowerSupportNonempty",
@@ -615,7 +385,7 @@
       ],
       "paper_current_fingerprints": {
         "MainProp": "{\"target\":\"MainProp\",\"covering_nodes\":{\"MainProp\":\"fb2fb371243a039fa491772ebdcede5e14bc5484555d5cdeab325a7a791360e5\"},\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"d021288c4bd741e074f0be580769057f7738eae46960657ffc8f995735b92f1c\",\"ContMor\":\"dfa456a882144c75ec69ddddc405b0572cc399694f5e1a09ffc2450dc5b74c62\",\"ContMorEq\":\"93c7acca9d1b2c04e8eba37751ebbc575485fa22cdfb456a4d87f6b73570be32\",\"ContinuousHom\":\"af41b3e1d4ca8047ec1cca7891559aaba7538ad15a414b60211f1cabeb49806f\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-        "cor PowerQPresBqo": "",
+        "cor PowerQPresBqo": "{\"target\":\"cor PowerQPresBqo\",\"covering_nodes\":{\"PowerQPresBqo\":\"c74a848d3fa7a5b6e5e1ff00a965d1f626c1aaa161455307050a935570cf3734\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PowerChild\":\"2e278e8f953e91271a4ae53269464000814a8cccf1ec5f8aecf60da22abd55c4\",\"PowerQ\":\"8bdf96f8b21c4683fd8dbb28579053e7c553907eb4163626ed3cb2985f5d847c\",\"PowerRel\":\"8ad4bdac40cf0cabe5725284e32639caaa0bb4b86fe0007ec6b35ac85ad40b22\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "cor:NashWill": "{\"target\":\"cor:NashWill\",\"covering_nodes\":{\"NashWilliams\":\"6b8260cddde225e6ab005429f0ff2902ec05000666065a65ee75218ec2d138c0\"},\"lean_relevant_definition_descendants\":{\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "corollary:SuperNW": "{\"target\":\"corollary:SuperNW\",\"covering_nodes\":{\"SuperNW\":\"5e23d00ee2b58e14f1b4ac87f1b630f9d0c5b756aa444aba982d91553a7eae00\"},\"lean_relevant_definition_descendants\":{\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\",\"SuperSequence\":\"e1b07dc8312697d448c83fa2070eab5b4caa1f70ed2e30e66f475fbf76419d94\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
         "g-BQO": "{\"target\":\"g-BQO\",\"covering_nodes\":{\"GBetterRelIff\":\"9cce16dbf3cbe8548d1334b9f5e69a3a9b332c3eaab65c8c15624d87c89187cf\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"BetterRel\":\"43225e63c973f28ca1ec64c58845a341f0481e53714fee29d8a4f03924e9ae5d\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"ContinuousRelHom\":\"159a7c1a692c4a4cf37f42e7fe794f307112024798c478436e23c72b46877ec2\",\"GBetterRel\":\"4a086f9397fa96daa1c31fdb3a3b75a5dac4c4eeec2a1a8acca00a95bf7a7e0a\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
@@ -711,12 +481,14 @@
         "PowerCopiedFiniteDependence",
         "PowerCopiedFiniteTerminal",
         "PowerCopiedLeft",
+        "PowerCopiedOrbitDependence",
         "PowerCopiedShiftIdentity",
         "PowerCopiedSupport",
         "PowerCopiedTerminalAt",
         "PowerCopiedTerminalShift",
         "PowerCopiedTerminalSupport",
         "PowerCopiedTerminates",
+        "PowerFiniteOrbitConstancy",
         "PowerGameDescent",
         "PowerGameDescentWellFounded",
         "PowerIResponse",
@@ -729,6 +501,8 @@
         "PowerPresentationEqEquivalence",
         "PowerQ",
         "PowerQIsPreorder",
+        "PowerQPresBqo",
+        "PowerQReflection",
         "PowerRel",
         "PowerRelAtomAtom",
         "PowerRelAtomNode",
@@ -739,6 +513,7 @@
         "PowerRelRefl",
         "PowerRelTrans",
         "PowerShiftIter",
+        "PowerShiftIterPrefixAgree",
         "PowerShiftIterShift",
         "PowerSupport",
         "PowerSupportInvariant",
@@ -785,7 +560,21 @@
           "ShiftMap",
           "SuccSeq"
         ],
-        "cor PowerQPresBqo": [],
+        "cor PowerQPresBqo": [
+          "BadMultiSequence",
+          "Bqo",
+          "IncSeq",
+          "IncSeqComp",
+          "LocallyConstant",
+          "MultiSequence",
+          "PowerChild",
+          "PowerQ",
+          "PowerRel",
+          "PrefixAgree",
+          "RightComp",
+          "ShiftMap",
+          "SuccSeq"
+        ],
         "cor:NashWill": [
           "Front",
           "FrontBase",
@@ -1407,6 +1196,14 @@
           "dep_statement_hashes": {},
           "own_tex_hash": "305984c5aa3c25e30a505cfb9d462f186f30daf13f0333e5b16dc0f19fbdeeb7"
         },
+        "PowerCopiedOrbitDependence": {
+          "combined_sound_fp": "sound-v2:b7d25bae0858812a934665bc5ad499524dc3c831d647d7e20e5a066ea0a2426a",
+          "dep_statement_hashes": {
+            "PowerCopiedLeft": "266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2",
+            "PowerIResponse": "5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5"
+          },
+          "own_tex_hash": "a97e9a50e7cdddc296a7bee85c0964b274f13189947a672d85c101c967935c06"
+        },
         "PowerCopiedShiftIdentity": {
           "combined_sound_fp": "sound-v2:4263c6754d3335161243b8c72c99b53d1f2230f575c97d677cb869fc227698a8",
           "dep_statement_hashes": {
@@ -1456,6 +1253,14 @@
             "PowerMove": "0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707"
           },
           "own_tex_hash": "e7c1af97765e0f9e504da073b8313fce5e9d45935c40afaa03f7c3bd68b2ddcd"
+        },
+        "PowerFiniteOrbitConstancy": {
+          "combined_sound_fp": "sound-v2:d0038b6e526b13f0bc3a19d9f593a10c7e8c59c4678ad6cf6618764959d65bc9",
+          "dep_statement_hashes": {
+            "LocallyConstant": "8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841",
+            "PowerShiftIterPrefixAgree": "09d3709012103ad4d5cb736a8fff8be2c82bb6017c9f24ab7de49595b599d22d"
+          },
+          "own_tex_hash": "32e487f81d709eaca3924d353e1fd57117f54bc9791b6107c7eb134301171b5a"
         },
         "PowerGameDescent": {
           "combined_sound_fp": "sound-v2:9e40bb10b6a1ab94996f31d5ea84dd0502f92f4d505c8641eefd23c1ac628f01",
@@ -1541,6 +1346,31 @@
           },
           "own_tex_hash": "8f4ed783536a20ade51692668604f358ad6191cb3bdc39f04a1934cdb2d0efd1"
         },
+        "PowerQPresBqo": {
+          "combined_sound_fp": "sound-v2:94ab85effc29caed4dc96e2253e2fc3d45e74961208b028b306003a1c86c3456",
+          "dep_statement_hashes": {
+            "Bqo": "d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b",
+            "PowerQ": "5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac",
+            "PowerQReflection": "e0cb0fe51b460abb51f2c9bd9240116fa5bbf35930466395c175786d35f29aba"
+          },
+          "own_tex_hash": "4fad87d124616e0e82409e5a67b0bc5e1e75b08aed0c2767557916425b5dd7fb"
+        },
+        "PowerQReflection": {
+          "combined_sound_fp": "sound-v2:230c83ebdde900b2a74512921748bb8ed92f4af746df561e8e5ec6717ffcf055",
+          "dep_statement_hashes": {
+            "PowerCopiedFailureMove": "1e6139ce363d203076103a20b47859ac689f2d1cbf5778c93eff4495707d1c12",
+            "PowerCopiedFiniteTerminal": "b7bb0e7183cf71efc5d03b8d126297530bfe0353e71f5548efed63d3a10077ac",
+            "PowerCopiedOrbitDependence": "e4bd56a0f92aff28617b8335c6634b7617cc02c88cd3540fcc203dd8ea769d32",
+            "PowerCopiedShiftIdentity": "433e70163ad4295e81c04e20acaf8cdeb8aa172c9aa000e4ed4f28d33ab6e2a9",
+            "PowerCopiedSupport": "18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b",
+            "PowerCopiedTerminates": "0ab92aba88e6a186c4d6a91763526a1865c31e0dc59dcdb00950c13e734e7f73",
+            "PowerFiniteOrbitConstancy": "95f9da42f9de6b010a9b9a2ba3fdaea7748ae374581d3a21a740122747638204",
+            "PowerMove": "0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707",
+            "PowerRelAtomAtom": "d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db",
+            "PowerSupport": "f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762"
+          },
+          "own_tex_hash": "e90f2bd938d732fe4746e6c002a978141d4cec50f113693c7ad2cc4edde27be3"
+        },
         "PowerRel": {
           "combined_sound_fp": "sound-v2:55bbcb1133869172175e92f9cf7dd92bd929057b42d04f894f0d7c410ab85506",
           "dep_statement_hashes": {},
@@ -1624,6 +1454,15 @@
           "combined_sound_fp": "sound-v2:2988a7a9b55b6e55c39ef2a73a089cb152081906de32340e89e5fb9a169ea1d6",
           "dep_statement_hashes": {},
           "own_tex_hash": "85f360e453fffbc145a0c950b98d92b9a305f5224c15a9fdc38c2a2549a27cf3"
+        },
+        "PowerShiftIterPrefixAgree": {
+          "combined_sound_fp": "sound-v2:7d251377d85ad02f98764a9dc6df97fd7d564dc43de90ed732594198ea7d2f95",
+          "dep_statement_hashes": {
+            "PowerShiftIter": "b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1",
+            "PrefixAgree": "97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8",
+            "ShiftMap": "f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44"
+          },
+          "own_tex_hash": "9dd22e53f8fd0afc4881f15e86e64707ef003e5f1e5a72ec823fa6f5ec7aa43a"
         },
         "PowerShiftIterShift": {
           "combined_sound_fp": "sound-v2:595402435e38cc32de39680b978547bb282d7682777953c3406e322672cb599a",
@@ -1932,12 +1771,14 @@
         "PowerCopiedFiniteDependence": "sound-v2:e303a7ee853a88b2e94d18393231d50af3819cc91275ffcc7a6d319d36c98dfc",
         "PowerCopiedFiniteTerminal": "sound-v2:f30a3a4435d162c79d2ac66a50eeee44083259d7b1fd703cbd273fe3fe836be2",
         "PowerCopiedLeft": "sound-v2:c9bcc008561bdab8d9b6f8369d26f3e987e7f9b8fd738401ab9cb603a940c2f7",
+        "PowerCopiedOrbitDependence": "sound-v2:b7d25bae0858812a934665bc5ad499524dc3c831d647d7e20e5a066ea0a2426a",
         "PowerCopiedShiftIdentity": "sound-v2:4263c6754d3335161243b8c72c99b53d1f2230f575c97d677cb869fc227698a8",
         "PowerCopiedSupport": "sound-v2:8fa451e2b5c31d513d80299dd1a74407b59de0e4a15e5f6a477ae1caef3a2980",
         "PowerCopiedTerminalAt": "sound-v2:439fbd34f9dd9b234c3c4b86ec27dcd174ad14de16d98b15f7988151a949e636",
         "PowerCopiedTerminalShift": "sound-v2:9223bbef9c1e3b332c9513859d545cd6dbcc5b548b71cabf03675c4e9e3b5983",
         "PowerCopiedTerminalSupport": "sound-v2:2439be07bba1bc8715341b19e53c5c0408462c3b7bf6b8e9f383fdca08c7a8fe",
         "PowerCopiedTerminates": "sound-v2:52691bd24805b9ad2c91aa25ada1006748cedae244ae3be929b2b3c95eaa85df",
+        "PowerFiniteOrbitConstancy": "sound-v2:d0038b6e526b13f0bc3a19d9f593a10c7e8c59c4678ad6cf6618764959d65bc9",
         "PowerGameDescent": "sound-v2:9e40bb10b6a1ab94996f31d5ea84dd0502f92f4d505c8641eefd23c1ac628f01",
         "PowerGameDescentWellFounded": "sound-v2:ac2e3c2cd93f7808ec5ab5575abc9162a3b876250daf17078f48fe24e1cfcb28",
         "PowerIResponse": "sound-v2:5b96435cb8d4a9e1883a1c4912ec1c18ce9da1b067dd81f2acab9d554ad635aa",
@@ -1950,6 +1791,8 @@
         "PowerPresentationEqEquivalence": "sound-v2:be3b39723e58bc419ca10f8ab4dee982570edc4a15f19ca7231e38590148ddb2",
         "PowerQ": "sound-v2:6fa59c6b1f00b16b94208bab490cd36015afae248e7ce3a1a4c427d7c16a19c4",
         "PowerQIsPreorder": "sound-v2:c73b8248cf127d99301ac2b612fb93f1c4ba25eb1ccdcb0d42cb8f8e60e1409c",
+        "PowerQPresBqo": "sound-v2:94ab85effc29caed4dc96e2253e2fc3d45e74961208b028b306003a1c86c3456",
+        "PowerQReflection": "sound-v2:230c83ebdde900b2a74512921748bb8ed92f4af746df561e8e5ec6717ffcf055",
         "PowerRel": "sound-v2:55bbcb1133869172175e92f9cf7dd92bd929057b42d04f894f0d7c410ab85506",
         "PowerRelAtomAtom": "sound-v2:3482a77d9cd6d0f4b21790ade1d3123e0fed31345f566ffef445e1d1a5e3155c",
         "PowerRelAtomNode": "sound-v2:9927cc0ca5e1a3c91ef93e473d3163157279a0dee333a3330a7087ac7806cb71",
@@ -1960,6 +1803,7 @@
         "PowerRelRefl": "sound-v2:4f35dd14a3ae0c6f2aa8a3311f3f566444ce8b995f675c3ddd13dc9a80645bdf",
         "PowerRelTrans": "sound-v2:74a94b7b4df83f7abbdc2446a4a9f2b5d91ce5ea17ec143b2ca22cb8b010cd3f",
         "PowerShiftIter": "sound-v2:2988a7a9b55b6e55c39ef2a73a089cb152081906de32340e89e5fb9a169ea1d6",
+        "PowerShiftIterPrefixAgree": "sound-v2:7d251377d85ad02f98764a9dc6df97fd7d564dc43de90ed732594198ea7d2f95",
         "PowerShiftIterShift": "sound-v2:595402435e38cc32de39680b978547bb282d7682777953c3406e322672cb599a",
         "PowerSupport": "sound-v2:2c944716426bc22b0aca9ef38a87c770adb8d8f149430e8f04d6c6ef61a34d29",
         "PowerSupportInvariant": "sound-v2:15219967b936ccb3134cf90196b42cddbd8ff97b8b9cfa95665a33d1ce08d9ae",
@@ -2077,12 +1921,14 @@
         "PowerCopiedFiniteDependence": "{\"own_tex\":\"e177029398f680d5989d75a985fcfc209c147767fe9e42f825b0e58219f3cc27\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedFiniteTerminal": "{\"own_tex\":\"b7bb0e7183cf71efc5d03b8d126297530bfe0353e71f5548efed63d3a10077ac\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedLeft": "{\"own_tex\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerCopiedOrbitDependence": "{\"own_tex\":\"e4bd56a0f92aff28617b8335c6634b7617cc02c88cd3540fcc203dd8ea769d32\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedShiftIdentity": "{\"own_tex\":\"433e70163ad4295e81c04e20acaf8cdeb8aa172c9aa000e4ed4f28d33ab6e2a9\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedSupport": "{\"own_tex\":\"18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedTerminalAt": "{\"own_tex\":\"7380d0d8b178ee967b18028b4774efb036663f89d812a5ad451f967be97f1132\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedTerminalShift": "{\"own_tex\":\"cde879f687a943925edd9aa7b44fcd6e8b35122e03075d07d17c7d07fe59a676\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedTerminalSupport": "{\"own_tex\":\"a13cde141a42e657d4705d025b77142c17c345463249998f277659de43ff9a5f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerCopiedTerminates": "{\"own_tex\":\"0ab92aba88e6a186c4d6a91763526a1865c31e0dc59dcdb00950c13e734e7f73\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerFiniteOrbitConstancy": "{\"own_tex\":\"95f9da42f9de6b010a9b9a2ba3fdaea7748ae374581d3a21a740122747638204\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerGameDescent": "{\"own_tex\":\"85102fb854a26fad0f1237a0f9036da649408d371bdf77efd0702a0fe04670e6\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "PowerGameDescentWellFounded": "{\"own_tex\":\"bfe0374b0de3cbf1a4a14e6f16f23d00b42cee109211044f00de68e3ff44fe57\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerIResponse": "{\"own_tex\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -2095,6 +1941,8 @@
         "PowerPresentationEqEquivalence": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerQ": "{\"own_tex\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "PowerQIsPreorder": "{\"own_tex\":\"f9f56cef746b72a529f4e897044a196d176ab217e202fa55f3e08c7e5795e398\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerQPresBqo": "{\"own_tex\":\"3843a108b8ca11929e5518b2a95a9b287d31fe4f45b92e3df179a30812d83faf\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerQReflection": "{\"own_tex\":\"e0cb0fe51b460abb51f2c9bd9240116fa5bbf35930466395c175786d35f29aba\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerRel": "{\"own_tex\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "PowerRelAtomAtom": "{\"own_tex\":\"d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerRelAtomNode": "{\"own_tex\":\"6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
@@ -2105,6 +1953,7 @@
         "PowerRelRefl": "{\"own_tex\":\"6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerRelTrans": "{\"own_tex\":\"de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerShiftIter": "{\"own_tex\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerShiftIterPrefixAgree": "{\"own_tex\":\"09d3709012103ad4d5cb736a8fff8be2c82bb6017c9f24ab7de49595b599d22d\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerShiftIterShift": "{\"own_tex\":\"8bbbea88db1c0b0fbc148c95bfc3157cebe4f9c526459be5c8155f8c6908c49c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerSupport": "{\"own_tex\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "PowerSupportInvariant": "{\"own_tex\":\"84fb85705a6dab0c82ca7e87fa503d9b5d2b8024f5255cd165e5e032e1fd394c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
@@ -2222,12 +2071,14 @@
         "PowerCopiedFiniteDependence": "{\"own_tex\":\"e177029398f680d5989d75a985fcfc209c147767fe9e42f825b0e58219f3cc27\",\"lean_semantic_closure\":\"ab265ae64f27475df3d7980721861758fa554d9fa92f6a1ab45fba43e2fc925a\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedFiniteTerminal": "{\"own_tex\":\"b7bb0e7183cf71efc5d03b8d126297530bfe0353e71f5548efed63d3a10077ac\",\"lean_semantic_closure\":\"773b952e7d74671f1f22c01b10763ff95cc4d38ed25b533686062d4ffc85ed4e\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedLeft": "{\"own_tex\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"lean_semantic_closure\":\"11a11179fcdcc93e991db75be8ba68a59f2241f836d445ad50a99fa9ca8ceb8c\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerCopiedOrbitDependence": "{\"own_tex\":\"e4bd56a0f92aff28617b8335c6634b7617cc02c88cd3540fcc203dd8ea769d32\",\"lean_semantic_closure\":\"694f4076685c186795afa9142a3d0fc481304d519058ecfa382ec49582778c04\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedShiftIdentity": "{\"own_tex\":\"433e70163ad4295e81c04e20acaf8cdeb8aa172c9aa000e4ed4f28d33ab6e2a9\",\"lean_semantic_closure\":\"231a5212ac405cd7aebbc1a6e9b3fb8d73683df9940b1309803a7412f6ed24c0\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedSupport": "{\"own_tex\":\"18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b\",\"lean_semantic_closure\":\"6710bae3084d9ef6713a394de98d773c32e78f73a06aed82c7b1242e89e28327\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"PowerSupport\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminalAt": "{\"own_tex\":\"7380d0d8b178ee967b18028b4774efb036663f89d812a5ad451f967be97f1132\",\"lean_semantic_closure\":\"15d228bf5c0701bbfbb71459ec19ea77329cb63f176ecac32dcb6ad7c062560f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminalShift": "{\"own_tex\":\"cde879f687a943925edd9aa7b44fcd6e8b35122e03075d07d17c7d07fe59a676\",\"lean_semantic_closure\":\"31cb1f5c0487e9ecdba6fc63c9d5a101b30d1c369ac563237d49a5e709a411b5\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminalSupport": "{\"own_tex\":\"a13cde141a42e657d4705d025b77142c17c345463249998f277659de43ff9a5f\",\"lean_semantic_closure\":\"8d2feaa7fbf1f73f223e42d87d14e5c88f58b6df78a284249bf414f04a9a0325\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"PowerSupport\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerCopiedTerminates": "{\"own_tex\":\"0ab92aba88e6a186c4d6a91763526a1865c31e0dc59dcdb00950c13e734e7f73\",\"lean_semantic_closure\":\"0c70fcbecc11ca9e06dd0467f0b7e00c901a9aca9500fae899c9d6e69f217013\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerCopiedLeft\":\"266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2\",\"PowerCopiedTerminalAt\":\"7380d0d8b178ee967b18028b4774efb036663f89d812a5ad451f967be97f1132\",\"PowerIResponse\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"PowerChild\",\"PowerCopiedLeft\",\"PowerCopiedTerminalAt\",\"PowerIResponse\",\"PowerMove\",\"PowerQ\",\"PowerRel\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerFiniteOrbitConstancy": "{\"own_tex\":\"95f9da42f9de6b010a9b9a2ba3fdaea7748ae374581d3a21a740122747638204\",\"lean_semantic_closure\":\"1b012258758a9f452223639153b69f2e5a0d723fde844f178462505a8eac95f6\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PowerShiftIter\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerGameDescent": "{\"own_tex\":\"85102fb854a26fad0f1237a0f9036da649408d371bdf77efd0702a0fe04670e6\",\"lean_semantic_closure\":\"f48585e37c10f7dfee10a07e97cc6f06aeb063e5f17cbb8ba6c950c0faa5a347\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerGameDescentWellFounded": "{\"own_tex\":\"bfe0374b0de3cbf1a4a14e6f16f23d00b42cee109211044f00de68e3ff44fe57\",\"lean_semantic_closure\":\"70390173a144fd204fcbbf76bbd1275793adf3e614cdb5fa0ee453163ab45ef6\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerGameDescent\":\"85102fb854a26fad0f1237a0f9036da649408d371bdf77efd0702a0fe04670e6\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerGameDescent\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerIResponse": "{\"own_tex\":\"5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5\",\"lean_semantic_closure\":\"a13b3de03443ce4d122f5a467d46f681fd870f6a9ccb63f886be40a73f253cb9\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerMove\":\"0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerMove\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2240,6 +2091,8 @@
         "PowerPresentationEqEquivalence": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"lean_semantic_closure\":\"34fc5cff92a4f738701eb968fb0f8a8a64c1d51997b5ad298c3f0e68852bfaf6\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerQ": "{\"own_tex\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"lean_semantic_closure\":\"2078dbf6b7ad1747d70edd478d28bf3f29c67f2fc0e3b79a98e752cccfc161c8\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerQIsPreorder": "{\"own_tex\":\"f9f56cef746b72a529f4e897044a196d176ab217e202fa55f3e08c7e5795e398\",\"lean_semantic_closure\":\"c5acd940be44a523dfcf7ca709e4afaf2009054f9377fc718ac9d5215982afa5\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerQPresBqo": "{\"own_tex\":\"3843a108b8ca11929e5518b2a95a9b287d31fe4f45b92e3df179a30812d83faf\",\"lean_semantic_closure\":\"36c3764611d7ca576207d3d981351fc5778bd4f2705eaa61969dc5789432438b\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"Bqo\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PowerChild\",\"PowerQ\",\"PowerRel\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerQReflection": "{\"own_tex\":\"e0cb0fe51b460abb51f2c9bd9240116fa5bbf35930466395c175786d35f29aba\",\"lean_semantic_closure\":\"7a8c487afbb0a1554715592c5387e95f91ccdb2b401e2fd362922c34e7952c72\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PowerChild\",\"PowerQ\",\"PowerRel\",\"PowerSupport\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRel": "{\"own_tex\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"lean_semantic_closure\":\"f23a828e90125e5fac54b86266da8c91b0e2986e95add9d4af5e115c3eb20d6d\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRelAtomAtom": "{\"own_tex\":\"d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db\",\"lean_semantic_closure\":\"6d395b9ecb041958a7c54b6f9924fdac493fbc55a9f74c804bfedd7e7347690b\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRelAtomNode": "{\"own_tex\":\"6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a\",\"lean_semantic_closure\":\"f889a5759ccd8cc78d554be471bbb0c2e251a500cb17abea9099f8dfd2f28a59\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2250,6 +2103,7 @@
         "PowerRelRefl": "{\"own_tex\":\"6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a\",\"lean_semantic_closure\":\"cd7432b7bf907041237da6c0e7dccf0fbc8c9727c11375918391f8227b4677fd\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerRelTrans": "{\"own_tex\":\"de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8\",\"lean_semantic_closure\":\"e6ef70d72f706fbbcb4d8c16d3576c8aeac5e702d1aef9e30afe218f29d8ac44\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerShiftIter": "{\"own_tex\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"lean_semantic_closure\":\"86039fdb943409d1fb54c4ff997323eab80e1687d7a245e0e345e54595b70c44\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerShiftIterPrefixAgree": "{\"own_tex\":\"09d3709012103ad4d5cb736a8fff8be2c82bb6017c9f24ab7de49595b599d22d\",\"lean_semantic_closure\":\"fdce648a5e8e95fecd348b7194451963663eb4c91f608064098738c168cb5fb3\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"PowerShiftIter\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerShiftIterShift": "{\"own_tex\":\"8bbbea88db1c0b0fbc148c95bfc3157cebe4f9c526459be5c8155f8c6908c49c\",\"lean_semantic_closure\":\"87a443f9286a2e6a46455d0d51bd94665c652b796637f82ccbcda9673843646b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"PowerShiftIter\":\"b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"PowerShiftIter\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupport": "{\"own_tex\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"lean_semantic_closure\":\"72181f193f13f0c02869d4b46d6a89b0f439707667f8e80ce48a1debea104ef4\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupportInvariant": "{\"own_tex\":\"84fb85705a6dab0c82ca7e87fa503d9b5d2b8024f5255cd165e5e032e1fd394c\",\"lean_semantic_closure\":\"6c2bb66c0c0fea5eb8d170bb939e0adff1011d3caa897e9c93047ec3cbf97603\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\",\"PowerSupport\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2286,69 +2140,23 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Built the canonical finite copied-play and termination package for the full arbitrary-small PowerQ hierarchy.",
+    "summary": "Added the paper-faithful reflection package for the full arbitrary-small-branching PowerQ hierarchy and the sole cor PowerQPresBqo target node. The package includes finite shift-prefix transport, finite orbit constancy, copied-orbit dependence, the reflected bad locally constant map, and complete non-SKETCH TeX proofs.",
     "target_claim_updates": {
-      "PowerChildSupport": {
+      "PowerCopiedOrbitDependence": {
         "Set": []
       },
-      "PowerCopiedFailureMove": {
+      "PowerFiniteOrbitConstancy": {
         "Set": []
       },
-      "PowerCopiedFiniteDependence": {
+      "PowerQPresBqo": {
+        "Set": [
+          "cor PowerQPresBqo"
+        ]
+      },
+      "PowerQReflection": {
         "Set": []
       },
-      "PowerCopiedFiniteTerminal": {
-        "Set": []
-      },
-      "PowerCopiedLeft": {
-        "Set": []
-      },
-      "PowerCopiedShiftIdentity": {
-        "Set": []
-      },
-      "PowerCopiedSupport": {
-        "Set": []
-      },
-      "PowerCopiedTerminalAt": {
-        "Set": []
-      },
-      "PowerCopiedTerminalShift": {
-        "Set": []
-      },
-      "PowerCopiedTerminalSupport": {
-        "Set": []
-      },
-      "PowerCopiedTerminates": {
-        "Set": []
-      },
-      "PowerGameDescent": {
-        "Set": []
-      },
-      "PowerGameDescentWellFounded": {
-        "Set": []
-      },
-      "PowerIResponse": {
-        "Set": []
-      },
-      "PowerIResponseFailure": {
-        "Set": []
-      },
-      "PowerIResponseLegal": {
-        "Set": []
-      },
-      "PowerIResponseWitness": {
-        "Set": []
-      },
-      "PowerMove": {
-        "Set": []
-      },
-      "PowerMoveInSupport": {
-        "Set": []
-      },
-      "PowerShiftIter": {
-        "Set": []
-      },
-      "PowerShiftIterShift": {
+      "PowerShiftIterPrefixAgree": {
         "Set": []
       }
     },
@@ -2460,7 +2268,7 @@
     "GBetterRelIff.tex": "b04881587ad7f81864198af6e8b66dc551462096771feba1eab092935e268a72",
     "GoodMultiSequence.lean": "c4bd9fe7761dceaa3dda46012ddeb547f5a9fd042134d0e7600570747cb76d19",
     "GoodMultiSequence.tex": "e2a214ee38e14cdb74e95a61fe6792faac106f3ffcebec6a6568fed66f404bc6",
-    "INDEX.md": "eb385a0f72dd71abeaa346622bac1725daa1eb324cdf37e6dbe5b885e9df0f8f",
+    "INDEX.md": "c5fc6be2372de26d08bd3579e1f6d2883775461769525e63783b8198d3821a94",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -2527,6 +2335,8 @@
     "PowerCopiedFiniteTerminal.tex": "7dd360a9088682993f34412094e9c572afd9fb006baf854a6db8f9e7a88fb806",
     "PowerCopiedLeft.lean": "3c964e2a6e6755495a87020ab25dccd59d1435df55af6f7ddc98555d456870e3",
     "PowerCopiedLeft.tex": "305984c5aa3c25e30a505cfb9d462f186f30daf13f0333e5b16dc0f19fbdeeb7",
+    "PowerCopiedOrbitDependence.lean": "e0c5d74e2e2c1d6671405941ab3a930cfed3b3c6897d209421c70af89b4dd15c",
+    "PowerCopiedOrbitDependence.tex": "a97e9a50e7cdddc296a7bee85c0964b274f13189947a672d85c101c967935c06",
     "PowerCopiedShiftIdentity.lean": "e95d52f10ddafd39e10427a9e807eb4046b548188bbd49de12fb70d621650e74",
     "PowerCopiedShiftIdentity.tex": "31c9d29dd3aac4cc05f029197991d63a5c53bb14d25fb7985e5dc80ecd3a1c44",
     "PowerCopiedSupport.lean": "b1f7d65f5b25e48195cf5be32199028595b37c9c7a01e995393599586de04c0c",
@@ -2539,6 +2349,8 @@
     "PowerCopiedTerminalSupport.tex": "5c7e69a02b6506146c7607345bb424c3ceb1a6f146c7a149b86db91bf5772bf0",
     "PowerCopiedTerminates.lean": "ca4eba70072b2550d470321aa5e811a2f3ab3434f9162241055e8efa17aeaa5c",
     "PowerCopiedTerminates.tex": "e7c1af97765e0f9e504da073b8313fce5e9d45935c40afaa03f7c3bd68b2ddcd",
+    "PowerFiniteOrbitConstancy.lean": "7b237e5d2d9d2451a3c5d052efc38b0553d8ed29cd779457b9af63579b40d68d",
+    "PowerFiniteOrbitConstancy.tex": "32e487f81d709eaca3924d353e1fd57117f54bc9791b6107c7eb134301171b5a",
     "PowerGameDescent.lean": "dbfff3e8e34e2f602392a7537aeef6225f242dfd6d6cfe47c1f842ce3676248e",
     "PowerGameDescent.tex": "56ec94cd52f2805d42fb4c37c9cf316824484c87ab26d88279bb98b688b4e071",
     "PowerGameDescentWellFounded.lean": "108b626c599e678d46b0e208c01db7f5d7dd209e3b25a6b10c33219ded4b6172",
@@ -2563,6 +2375,10 @@
     "PowerQ.tex": "b661ca6068e60712f3712891eca3749a3cb69485c70070b0159f52c024a0250a",
     "PowerQIsPreorder.lean": "a6e9b318c7f4289566ee9e74c2b6a73eba25040930d3c6a2852d3f79751cc0e2",
     "PowerQIsPreorder.tex": "8f4ed783536a20ade51692668604f358ad6191cb3bdc39f04a1934cdb2d0efd1",
+    "PowerQPresBqo.lean": "1ce595efd0ac281ff71af2b901110ab1302067128e47f542f1b78db36363cc83",
+    "PowerQPresBqo.tex": "4fad87d124616e0e82409e5a67b0bc5e1e75b08aed0c2767557916425b5dd7fb",
+    "PowerQReflection.lean": "baf7323a23004c0f98d7884950f3944557e9f00d7ce766f153a9bfbacd1f6e99",
+    "PowerQReflection.tex": "e90f2bd938d732fe4746e6c002a978141d4cec50f113693c7ad2cc4edde27be3",
     "PowerRel.lean": "7756274d21ab919f80d3328a011e1b11de551c71bae4c2fafba5714d466b2dc2",
     "PowerRel.tex": "dd0353d652d1806885a6238b6e6dfb273b8fbd1ce0cc537f478f4edce35caa74",
     "PowerRelAtomAtom.lean": "797e17f58ea423999e191077b6a7dcd08298680aa23575bd130174860a1298dc",
@@ -2583,6 +2399,8 @@
     "PowerRelTrans.tex": "8f7094f6bbe3f79e6452686e755b5eb4327736b946691c26181a1d8f7e43e303",
     "PowerShiftIter.lean": "297a5e814cbcd1a8706b3ff0a1aad8b565e125e476b026f127957f3361842caf",
     "PowerShiftIter.tex": "85f360e453fffbc145a0c950b98d92b9a305f5224c15a9fdc38c2a2549a27cf3",
+    "PowerShiftIterPrefixAgree.lean": "9f3d2a31741b22c8b24cc4263c04ba7598948078d3cf379137ac01293a5d8257",
+    "PowerShiftIterPrefixAgree.tex": "9dd22e53f8fd0afc4881f15e86e64707ef003e5f1e5a72ec823fa6f5ec7aa43a",
     "PowerShiftIterShift.lean": "9cf780bc8b705ac690822895b4f669043435db989898a4edb5533a98224d4ae3",
     "PowerShiftIterShift.tex": "06f17383e670daaf715c7f83fae89f95fcf5a60dd8ebca4f0c73143cbb33a731",
     "PowerSupport.lean": "b238a0c4059a72cb573e373c4cf444d4e0512687df2f9047aa511ddbfded3629",
@@ -2605,7 +2423,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7",
-    "README.md": "14b3dec680c19ccbc4ec850120b9f49abc5205ff06e6b0ce7aa1db3a341cf60c",
+    "README.md": "dfe6a2fd79d27216e00fec205588b41415a3a341fdfa93fd1abb94f4b7392d9b",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "8083be7d8ada8fc21dcf0ee59af2c71892a3aeafe327bf147b7d48daf1470ecb",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -2648,7 +2466,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_90_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_98_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

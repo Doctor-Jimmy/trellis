@@ -86,12 +86,14 @@
 | PowerCopiedFiniteDependence | lemma | proof | open | - | Finite dependence of a copied move | PowerCopiedLeft |
 | PowerCopiedFiniteTerminal | lemma | proof | open | - | Finite terminal dependence | PowerCopiedFiniteDependence, PowerCopiedTerminalAt, PowerCopiedTerminates |
 | PowerCopiedLeft | definition | definition | closed | - | - | MultiSequence, PowerIResponse, PowerShiftIter |
+| PowerCopiedOrbitDependence | lemma | proof | open | - | Finite dependence on the enumeration orbit | PowerCopiedLeft |
 | PowerCopiedShiftIdentity | lemma | proof | open | - | Stabilization under the shift | PowerCopiedLeft, PowerShiftIterShift |
 | PowerCopiedSupport | lemma | proof | open | - | Support of the copied left values | PowerCopiedFailureMove, PowerMoveInSupport |
 | PowerCopiedTerminalAt | definition | definition | closed | - | - | PowerCopiedLeft |
 | PowerCopiedTerminalShift | lemma | proof | open | - | The terminal atom stabilizes under shifting | PowerCopiedFiniteTerminal, PowerCopiedShiftIdentity |
 | PowerCopiedTerminalSupport | lemma | proof | open | - | The terminal atom lies in the original support | PowerCopiedSupport, PowerCopiedTerminalAt, PowerCopiedTerminates |
 | PowerCopiedTerminates | lemma | proof | open | - | Every copied row reaches atoms | PowerCopiedFailureMove, PowerCopiedTerminalAt, PowerGameDescentWellFounded |
+| PowerFiniteOrbitConstancy | lemma | proof | open | - | A finite shift orbit is decided by one finite prefix | LocallyConstant, PowerShiftIterPrefixAgree |
 | PowerGameDescent | definition | definition | closed | - | - | PowerChild |
 | PowerGameDescentWellFounded | lemma | proof | open | - | Well-foundedness of copied pair descent | PowerChildWellFounded, PowerGameDescent |
 | PowerIResponse | definition | definition | closed | - | - | PowerMove |
@@ -104,6 +106,8 @@
 | PowerPresentationEqEquivalence | lemma | proof | open | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
 | PowerQ | definition | definition | closed | - | - | Preamble |
 | PowerQIsPreorder | lemma | proof | closed | - | The lifted relation is a preorder | PowerRelTrans |
+| PowerQPresBqo | corollary | proof | open | - | - | Bqo, PowerQReflection |
+| PowerQReflection | theorem | proof | open | - | Reflection to the base quasi-order | PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedTerminalShift, PowerCopiedTerminalSupport, PowerFiniteOrbitConstancy |
 | PowerRel | definition | definition | closed | - | - | PowerChildWellFounded |
 | PowerRelAtomAtom | lemma | proof | closed | - | Atom--atom reduction | PowerRel |
 | PowerRelAtomNode | lemma | proof | closed | - | Atom--node reduction | PowerRel |
@@ -114,6 +118,7 @@
 | PowerRelRefl | lemma | proof | open | - | Reflexivity of the lifted relation | PowerRelCongrRight |
 | PowerRelTrans | lemma | proof | open | - | Transitivity of the lifted relation | PowerRelRefl |
 | PowerShiftIter | definition | definition | closed | - | - | ShiftMap |
+| PowerShiftIterPrefixAgree | lemma | proof | open | - | Finite-prefix agreement survives finitely many shifts | PowerShiftIter, PrefixAgree |
 | PowerShiftIterShift | lemma | proof | open | - | Shift iterates commute with the first shift | PowerShiftIter |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
 | PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
@@ -146,4 +151,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 142 nodes | **Closed:** 71 | **Open:** 71
+**Total:** 147 nodes | **Closed:** 71 | **Open:** 76

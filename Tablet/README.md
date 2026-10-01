@@ -94,12 +94,14 @@
 | PowerCopiedFiniteDependence | proof | Finite dependence of a copied move | open |
 | PowerCopiedFiniteTerminal | proof | Finite terminal dependence | open |
 | PowerCopiedLeft | definition | - | closed |
+| PowerCopiedOrbitDependence | proof | Finite dependence on the enumeration orbit | open |
 | PowerCopiedShiftIdentity | proof | Stabilization under the shift | open |
 | PowerCopiedSupport | proof | Support of the copied left values | open |
 | PowerCopiedTerminalAt | definition | - | closed |
 | PowerCopiedTerminalShift | proof | The terminal atom stabilizes under shifting | open |
 | PowerCopiedTerminalSupport | proof | The terminal atom lies in the original support | open |
 | PowerCopiedTerminates | proof | Every copied row reaches atoms | open |
+| PowerFiniteOrbitConstancy | proof | A finite shift orbit is decided by one finite prefix | open |
 | PowerGameDescent | definition | - | closed |
 | PowerGameDescentWellFounded | proof | Well-foundedness of copied pair descent | open |
 | PowerIResponse | definition | - | closed |
@@ -112,6 +114,8 @@
 | PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | open |
 | PowerQ | definition | - | closed |
 | PowerQIsPreorder | proof | The lifted relation is a preorder | closed |
+| PowerQPresBqo | proof | - | open |
+| PowerQReflection | proof | Reflection to the base quasi-order | open |
 | PowerRel | definition | - | closed |
 | PowerRelAtomAtom | proof | Atom--atom reduction | closed |
 | PowerRelAtomNode | proof | Atom--node reduction | closed |
@@ -122,6 +126,7 @@
 | PowerRelRefl | proof | Reflexivity of the lifted relation | open |
 | PowerRelTrans | proof | Transitivity of the lifted relation | open |
 | PowerShiftIter | definition | - | closed |
+| PowerShiftIterPrefixAgree | proof | Finite-prefix agreement survives finitely many shifts | open |
 | PowerShiftIterShift | proof | Shift iterates commute with the first shift | open |
 | PowerSupport | definition | - | closed |
 | PowerSupportInvariant | proof | Support respects presentation equivalence | open |
@@ -152,4 +157,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 71/142 closed
+**Summary:** 71/147 closed

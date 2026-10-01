@@ -1,0 +1,21 @@
+\begin{lemma}[Finite dependence on the enumeration orbit]
+For fixed $r,n,k$, the copied value
+$\mathsf{PowerCopiedLeft}_r(h,x,n,k)$ depends only on the finitely many
+values of $h$ on the first $n+k+2$ shifts of $x$.  Thus, if $x$ and $y$
+give the same $h$-values at all these shifts, then
+\[
+\mathsf{PowerCopiedLeft}_r(h,x,n,k)
+=\mathsf{PowerCopiedLeft}_r(h,y,n,k).
+\]
+\end{lemma}
+\begin{proof}
+Induct on $k$.  At depth zero, the definition in
+\noderef{PowerCopiedLeft} uses only the values at shifts $n$ and $n+1$,
+which are covered by the hypothesis.  At depth $k+1$, the two recursive
+inputs are the values at $(n,k)$ and $(n+1,k)$.  The induction hypotheses
+apply to these inputs because their required bounds are respectively
+$n+k+2$ and $n+k+3$, exactly the bound
+$n+(k+1)+2$.  The same deterministic response function from
+\noderef{PowerIResponse} is applied to equal recursive inputs, so the
+outputs are equal.
+\end{proof}

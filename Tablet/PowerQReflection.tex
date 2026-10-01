@@ -1,0 +1,50 @@
+\begin{theorem}[Reflection to the base quasi-order]
+Let $Q$ be a quasi-order.  If
+$h:\mathsf{IncSeq}\to\mathsf{PowerQ}(Q)$ is locally constant and bad for
+$\mathsf{PowerRel}(r)$, then there is a locally constant multi-sequence
+$g:\mathsf{IncSeq}\to Q$ which is bad for $r$ and satisfies
+\[
+g(x)\in\mathsf{PowerSupport}(h(x))
+\qquad\text{for every }x\in\mathsf{IncSeq}.
+\]
+\end{theorem}
+\begin{proof}
+Fix $x$.  The finite-terminal statement
+\noderef{PowerCopiedFiniteTerminal}, obtained from the termination theorem
+\noderef{PowerCopiedTerminates}, supplies one common depth $k$ and atoms
+$q_x,q'_x$ for the first two rows.  The failure assertion in
+\noderef{PowerCopiedFailureMove}, followed by the atom--atom reduction
+\noderef{PowerRelAtomAtom}, gives $\neg r(q_x,q'_x)$.  The shift identity
+\noderef{PowerCopiedShiftIdentity} identifies the first copied value for
+$\mathsf{ShiftMap}(x)$ at depth $k$ with the second copied value for $x$ at
+depth $k$, so it is $\mathsf{atom}(q'_x)$.  Finally,
+\noderef{PowerCopiedSupport} and the atom clause of
+\noderef{PowerSupport} give
+$q_x\in\mathsf{PowerSupport}(h(x))$ from the same first-row terminal
+witness.
+
+Once the first coordinate of a copied row is an atom, every later legal
+move leaves it unchanged, by the definition of \noderef{PowerMove} and
+the legal-move conclusion of \noderef{PowerCopiedFailureMove}.  Consequently the terminal atom is
+independent of the chosen sufficiently large terminal depth.  Define $g(x)$
+to be this unique first terminal atom.  The preceding paragraph and the
+shift-stabilization equality then give, for every $x$,
+\[
+g(x)\in\mathsf{PowerSupport}(h(x)),
+\qquad \neg r(g(x),g(\mathsf{ShiftMap}(x))).
+\]
+Thus $g$ is bad.
+
+It remains to verify local constancy, which is the point of the finite
+dependence argument.  Fix $x$ and choose a terminal depth $k$ for its first
+row.  Apply \noderef{PowerFiniteOrbitConstancy} to $h,x,k+2$.  For every
+$y$ with the resulting finite prefix in common with $x$, the values of $h$
+on the first $k+2$ shifts of $y$ and $x$ agree.  The orbit form of finite
+dependence \noderef{PowerCopiedOrbitDependence} therefore identifies the
+copied first-row value at $(y,k)$ with the one at $(x,k)$, namely
+$\mathsf{atom}(g(x))$.  Termination for $y$ from
+\noderef{PowerCopiedTerminates} and the persistence conclusion of
+\noderef{PowerCopiedFailureMove} show that the terminal atom defining $g(y)$
+is the same atom.  Hence $g$ is constant on a finite-prefix neighborhood of
+every $x$, as required.
+\end{proof}

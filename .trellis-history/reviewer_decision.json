@@ -1,10 +1,11 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The canonical comparison-game layer is now present: it supplies legal moves, a global raw-presentation response, copied triangular plays, support containment, termination, finite dependence, and the shift stabilization identity, with build and shape checks passing. The next paper-faithful step is to use that package to construct the reflected bad locally constant Q-valued map and then add the sole covering node for cor PowerQPresBqo.",
-    "comments": "Continue in Global mode with no narrow node anchor and execute iterated-power-preservation. From a bad locally constant h : MultiSequence (PowerQ Q), construct a locally constant g : MultiSequence Q with g X in PowerSupport (h X) and g X not r-related to g (ShiftMap X). Use the existing canonical response and copied-play/finite-dependence nodes; make the local-constancy argument depend on the finite shift-orbit bound and the finite-prefix lemmas, not on termination alone. The terminal right-value stabilization must identify g (ShiftMap X) with the adjacent copied row. Then add the sole target node for cor PowerQPresBqo with the paper-faithful statement [IsPreorder Q r] -> (Bqo r -> Bqo (PowerRel r)), proved by contradiction through the reflection theorem. Keep the full arbitrary-small-indexed PowerQ, cite every cross-node dependency, and give complete non-SKETCH TeX proofs. Do not begin the hereditary carrier tasks until this target package is stated.",
+    "reason": "Paper-faithfulness has passed for PowerQPresBqo. The remaining blocked targets are the hereditary wqo and well-foundedness equivalences, and the next planned prerequisite is the shared hereditary countable carrier inside the full PowerQ hierarchy. The worker's reflection package and target node passed the build and structural checks, so no reset is needed.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core. Define a tagged countably branching presentation code and an erasure into the existing full PowerQ; define HereditarilyCountable by PowerPresentationEq-equivalence to an erased code, then define the HerCtblPower subtype and HerCtblRel as the restricted PowerRel. Prove atoms are hereditary, prove invariance under presentation equivalence, and expose the induced preorder. Prove closure under every nonempty countable small-indexed family by choosing witness codes and reindexing through Nat, including repetition for finite families, so the constructed node remains in the full hierarchy. Keep countable branching only in the hereditary witness representation; do not replace PowerQ globally. This is a prerequisite layer: do not claim either hereditary target yet, and keep all new proof-bearing TeX complete and explicitly cited.",
     "task_blocker_ids": [
-      "paperfaithfulness:target:cor PowerQPresBqo:"
+      "paperfaithfulness:target:thm BqoHerCtblWqo:",
+      "paperfaithfulness:target:thm BqoHerCtblWellF:"
     ],
     "reset_blocker_ids": [],
     "next_active": "",
@@ -17,40 +18,48 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1533,
-        "end_line": 1550,
-        "reason": "The manuscript's reflection proposition: copied adjacent plays, finite dependence, terminal-value alignment, and the reflected locally constant bad map."
+        "start_line": 1362,
+        "end_line": 1374,
+        "reason": "The paper's transfinite nonempty powerset hierarchy and support definition, which the hereditary representation must preserve."
+      },
+      {
+        "start_line": 1580,
+        "end_line": 1584,
+        "reason": "The paper's definition of the hereditarily countable nonempty part of the full hierarchy and its induced quasi-order."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited proof constructs g from the terminal atoms of copied games along the shift orbit, uses dependence on finitely many values of h for local constancy, identifies the shifted terminal value with the adjacent row, and derives badness. The next target corollary is the contradiction application of this reflection proposition."
+      "basis_summary": "The paper defines PowerQ as the full transfinite hierarchy of nonempty sets with atoms and recursive support, then identifies the hereditary countable carrier as the recursively generated countable nonempty part equipped with the induced order. The next tablet layer must represent that carrier without weakening the full PowerQ target hierarchy."
     },
     "stuck_math_audit": {
-      "notes": "The audit task iterated-power-game is complete: the worker added the canonical raw-presentation response, copied triangular rows, support containment, well-founded termination, finite dependence, and the row/shift stabilization identity, with build and shape checks passing. Dismiss that task and execute iterated-power-preservation next. The reflection package must use those canonical nodes rather than fresh strategies indexed independently by X, must prove local constancy from finite dependence plus finite-prefix control, and must make the shifted terminal values agree before asserting badness. Add exactly the sole covering node for cor PowerQPresBqo after the reflection support is in place; leave the hereditary tasks for later and preserve the full PowerQ hierarchy required by pm-0002.",
+      "notes": "The audit task iterated-power-preservation is complete: PowerQReflection and the supporting finite-shift/orbit nodes are present, and the sole PowerQPresBqo target node passed paper-faithfulness, correspondence, build, and shape checks. Dismiss that task and execute hereditarily-countable-core next. Build the hereditary carrier as a representation inside full PowerQ: use tagged countably branching codes with an erasure, define hereditary membership through PowerPresentationEq rather than raw equality, restrict PowerRel, and prove closure under nonempty countable families by Nat reindexing. Countable branching must not replace the full arbitrary-small PowerQ, and neither hereditary target should be claimed until its later theorem package is present.",
       "reviewer_lean_product": {
-        "target": "cor PowerQPresBqo",
-        "completed_task": "iterated-power-game",
-        "next_task": "iterated-power-preservation",
+        "targets": [
+          "thm BqoHerCtblWqo",
+          "thm BqoHerCtblWellF"
+        ],
+        "completed_task": "iterated-power-preservation",
+        "next_task": "hereditarily-countable-core",
         "required_interface": [
-          "reflection from bad locally constant MultiSequence (PowerQ Q) to bad locally constant MultiSequence Q",
-          "support membership g X in PowerSupport (h X)",
-          "finite-prefix/local-constancy argument using the finite-dependence bound",
-          "shifted terminal-value stabilization identifying g (ShiftMap X) with the adjacent copied row",
-          "the sole target theorem Bqo r -> Bqo (PowerRel r) under IsPreorder Q r"
+          "tagged countably branching presentation code and erasure into full PowerQ",
+          "HereditarilyCountable defined by PowerPresentationEq-equivalence to an erased code",
+          "HerCtblPower subtype and HerCtblRel restriction of PowerRel",
+          "atom heredity, presentation-equivalence invariance, and induced preorder",
+          "closure under every nonempty countable small-indexed family, with finite-family repetition"
         ],
         "constraints": [
-          "use the canonical response and copied-play package already present",
-          "do not choose fresh per-input strategies",
-          "do not infer local constancy from termination alone",
-          "retain full arbitrary-small-indexed PowerQ and do not start hereditary tasks yet"
+          "retain the full arbitrary-small-indexed PowerQ carrier",
+          "use extensional presentation equivalence rather than raw equality for hereditary membership",
+          "do not replace PowerQ globally by countable branching",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this prerequisite layer"
         ]
       }
     },
     "dismissed_tasks": [
       {
-        "id": "iterated-power-game",
-        "reason": "Completed: the worker added the canonical comparison-game, copied-play, support, termination, finite-dependence, and stabilization package for the full PowerQ hierarchy; correspondence and full build/shape checks passed, and no target claim was introduced. The next work is the distinct reflection and PowerQPresBqo target package."
+        "id": "iterated-power-preservation",
+        "reason": "Completed: the worker added the reflected bad locally constant map, finite shift-prefix and orbit-constancy support, and the sole PowerQPresBqo target node with complete non-SKETCH TeX; paper-faithfulness passed and build/shape checks passed. The next work is the distinct hereditary countable carrier layer."
       }
     ]
   },
@@ -63,17 +72,17 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode with no narrow node anchor and execute iterated-power-preservation. From a bad locally constant h : MultiSequence (PowerQ Q), construct a locally constant g : MultiSequence Q with g X in PowerSupport (h X) and g X not r-related to g (ShiftMap X). Use the existing canonical response and copied-play/finite-dependence nodes; make the local-constancy argument depend on the finite shift-orbit bound and the finite-prefix lemmas, not on termination alone. The terminal right-value stabilization must identify g (ShiftMap X) with the adjacent copied row. Then add the sole target node for cor PowerQPresBqo with the paper-faithful statement [IsPreorder Q r] -> (Bqo r -> Bqo (PowerRel r)), proved by contradiction through the reflection theorem. Keep the full arbitrary-small-indexed PowerQ, cite every cross-node dependency, and give complete non-SKETCH TeX proofs. Do not begin the hereditary carrier tasks until this target package is stated.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core. Define a tagged countably branching presentation code and an erasure into the existing full PowerQ; define HereditarilyCountable by PowerPresentationEq-equivalence to an erased code, then define the HerCtblPower subtype and HerCtblRel as the restricted PowerRel. Prove atoms are hereditary, prove invariance under presentation equivalence, and expose the induced preorder. Prove closure under every nonempty countable small-indexed family by choosing witness codes and reindexing through Nat, including repetition for finite families, so the constructed node remains in the full hierarchy. Keep countable branching only in the hereditary witness representation; do not replace PowerQ globally. This is a prerequisite layer: do not claim either hereditary target yet, and keep all new proof-bearing TeX complete and explicitly cited.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 16,
+    "cycle": 17,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "iterated-power-game",
-        "reason": "Completed: the worker added the canonical comparison-game, copied-play, support, termination, finite-dependence, and stabilization package for the full PowerQ hierarchy; correspondence and full build/shape checks passed, and no target claim was introduced. The next work is the distinct reflection and PowerQPresBqo target package."
+        "id": "iterated-power-preservation",
+        "reason": "Completed: the worker added the reflected bad locally constant map, finite shift-prefix and orbit-constancy support, and the sole PowerQPresBqo target node with complete non-SKETCH TeX; paper-faithfulness passed and build/shape checks passed. The next work is the distinct hereditary countable carrier layer."
       }
     ],
     "global_repair_request": null,
@@ -85,42 +94,50 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1550,
-        "reason": "The manuscript's reflection proposition: copied adjacent plays, finite dependence, terminal-value alignment, and the reflected locally constant bad map.",
-        "start_line": 1533
+        "end_line": 1374,
+        "reason": "The paper's transfinite nonempty powerset hierarchy and support definition, which the hereditary representation must preserve.",
+        "start_line": 1362
+      },
+      {
+        "end_line": 1584,
+        "reason": "The paper's definition of the hereditarily countable nonempty part of the full hierarchy and its induced quasi-order.",
+        "start_line": 1580
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited proof constructs g from the terminal atoms of copied games along the shift orbit, uses dependence on finitely many values of h for local constancy, identifies the shifted terminal value with the adjacent row, and derives badness. The next target corollary is the contradiction application of this reflection proposition.",
+      "basis_summary": "The paper defines PowerQ as the full transfinite hierarchy of nonempty sets with atoms and recursive support, then identifies the hereditary countable carrier as the recursively generated countable nonempty part equipped with the induced order. The next tablet layer must represent that carrier without weakening the full PowerQ target hierarchy.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The canonical comparison-game layer is now present: it supplies legal moves, a global raw-presentation response, copied triangular plays, support containment, termination, finite dependence, and the shift stabilization identity, with build and shape checks passing. The next paper-faithful step is to use that package to construct the reflected bad locally constant Q-valued map and then add the sole covering node for cor PowerQPresBqo.",
-    "request_id": 97,
+    "reason": "Paper-faithfulness has passed for PowerQPresBqo. The remaining blocked targets are the hereditary wqo and well-foundedness equivalences, and the next planned prerequisite is the shared hereditary countable carrier inside the full PowerQ hierarchy. The worker's reflection package and target node passed the build and structural checks, so no reset is needed.",
+    "request_id": 102,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit task iterated-power-game is complete: the worker added the canonical raw-presentation response, copied triangular rows, support containment, well-founded termination, finite dependence, and the row/shift stabilization identity, with build and shape checks passing. Dismiss that task and execute iterated-power-preservation next. The reflection package must use those canonical nodes rather than fresh strategies indexed independently by X, must prove local constancy from finite dependence plus finite-prefix control, and must make the shifted terminal values agree before asserting badness. Add exactly the sole covering node for cor PowerQPresBqo after the reflection support is in place; leave the hereditary tasks for later and preserve the full PowerQ hierarchy required by pm-0002.",
+      "notes": "The audit task iterated-power-preservation is complete: PowerQReflection and the supporting finite-shift/orbit nodes are present, and the sole PowerQPresBqo target node passed paper-faithfulness, correspondence, build, and shape checks. Dismiss that task and execute hereditarily-countable-core next. Build the hereditary carrier as a representation inside full PowerQ: use tagged countably branching codes with an erasure, define hereditary membership through PowerPresentationEq rather than raw equality, restrict PowerRel, and prove closure under nonempty countable families by Nat reindexing. Countable branching must not replace the full arbitrary-small PowerQ, and neither hereditary target should be claimed until its later theorem package is present.",
       "reviewer_lean_product": {
-        "completed_task": "iterated-power-game",
+        "completed_task": "iterated-power-preservation",
         "constraints": [
-          "use the canonical response and copied-play package already present",
-          "do not choose fresh per-input strategies",
-          "do not infer local constancy from termination alone",
-          "retain full arbitrary-small-indexed PowerQ and do not start hereditary tasks yet"
+          "retain the full arbitrary-small-indexed PowerQ carrier",
+          "use extensional presentation equivalence rather than raw equality for hereditary membership",
+          "do not replace PowerQ globally by countable branching",
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this prerequisite layer"
         ],
-        "next_task": "iterated-power-preservation",
+        "next_task": "hereditarily-countable-core",
         "required_interface": [
-          "reflection from bad locally constant MultiSequence (PowerQ Q) to bad locally constant MultiSequence Q",
-          "support membership g X in PowerSupport (h X)",
-          "finite-prefix/local-constancy argument using the finite-dependence bound",
-          "shifted terminal-value stabilization identifying g (ShiftMap X) with the adjacent copied row",
-          "the sole target theorem Bqo r -> Bqo (PowerRel r) under IsPreorder Q r"
+          "tagged countably branching presentation code and erasure into full PowerQ",
+          "HereditarilyCountable defined by PowerPresentationEq-equivalence to an erased code",
+          "HerCtblPower subtype and HerCtblRel restriction of PowerRel",
+          "atom heredity, presentation-equivalence invariance, and induced preorder",
+          "closure under every nonempty countable small-indexed family, with finite-family repetition"
         ],
-        "target": "cor PowerQPresBqo"
+        "targets": [
+          "thm BqoHerCtblWqo",
+          "thm BqoHerCtblWellF"
+        ]
       }
     },
     "task_blockers": [
@@ -130,11 +147,20 @@
         "kind": "PaperFaithfulness",
         "object": {
           "otype": "target",
-          "target": "cor PowerQPresBqo"
+          "target": "thm BqoHerCtblWellF"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "",
+        "kind": "PaperFaithfulness",
+        "object": {
+          "otype": "target",
+          "target": "thm BqoHerCtblWqo"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_97_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_102_decision.context.json"
 }
