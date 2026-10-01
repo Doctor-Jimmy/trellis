@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "ShiftDichotomy now has a current Sound approval. RestrictionShift is the next sound-front target and is ready for a real Sound verifier run.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionShift only. Check that the proof unfolds ShiftMap with the correct composition order, uses IncSeqComp for associativity and the fixed-left/right-varying convention, and then derives the evaluation identity for MultiSequenceRestrict. Require the existing citations to ShiftMap, IncSeqComp, and MultiSequenceRestrict to support each cross-node step.",
+    "reason": "RestrictionShift has a current Sound approval. RestrictionLocallyConstant is the next sound-front target and is ready for a real Sound verifier run.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionLocallyConstant only. Check that the proof applies LocallyConstant to z composed with x, extracts a finite prefix of that composed enumeration, and explicitly uses the order-embedding and composition conventions to choose a finite prefix of x whose extensions preserve all values in the deciding prefix. Then verify that the resulting equality is exactly the definition of MultiSequenceRestrict and that the fixed-left restriction order is preserved. Require explicit citations to LocallyConstant and MultiSequenceRestrict, and to any IncSeq or composition definitions used in the finite-prefix step.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "RestrictionShift"
+      "RestrictionLocallyConstant"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1607,
-        "end_line": 1615,
-        "reason": "Paper definition of the shift map and the composition law for homomorphisms underlying RestrictionShift."
+        "start_line": 1264,
+        "end_line": 1271,
+        "reason": "Paper finite-prefix topology and local-constancy definition underlying restriction preservation."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1607-1615 define the shift map and explain that homomorphisms between graph maps satisfy the corresponding composition identity; RestrictionShift formalizes the commuting identity for a fixed left restriction."
+      "basis_summary": "Lines 1264-1271 identify finite initial-set cylinders as a basis and define local constancy by constancy on one such cylinder; RestrictionLocallyConstant formalizes preservation under an increasing-enumeration restriction."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionShift only. Check that the proof unfolds ShiftMap with the correct composition order, uses IncSeqComp for associativity and the fixed-left/right-varying convention, and then derives the evaluation identity for MultiSequenceRestrict. Require the existing citations to ShiftMap, IncSeqComp, and MultiSequenceRestrict to support each cross-node step.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionLocallyConstant only. Check that the proof applies LocallyConstant to z composed with x, extracts a finite prefix of that composed enumeration, and explicitly uses the order-embedding and composition conventions to choose a finite prefix of x whose extensions preserve all values in the deciding prefix. Then verify that the resulting equality is exactly the definition of MultiSequenceRestrict and that the fixed-left restriction order is preserved. Require explicit citations to LocallyConstant and MultiSequenceRestrict, and to any IncSeq or composition definitions used in the finite-prefix step.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 110,
+    "cycle": 111,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -57,20 +57,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1615,
-        "reason": "Paper definition of the shift map and the composition law for homomorphisms underlying RestrictionShift.",
-        "start_line": 1607
+        "end_line": 1271,
+        "reason": "Paper finite-prefix topology and local-constancy definition underlying restriction preservation.",
+        "start_line": 1264
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1607-1615 define the shift map and explain that homomorphisms between graph maps satisfy the corresponding composition identity; RestrictionShift formalizes the commuting identity for a fixed left restriction.",
+      "basis_summary": "Lines 1264-1271 identify finite initial-set cylinders as a basis and define local constancy by constancy on one such cylinder; RestrictionLocallyConstant formalizes preservation under an increasing-enumeration restriction.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "ShiftDichotomy now has a current Sound approval. RestrictionShift is the next sound-front target and is ready for a real Sound verifier run.",
-    "request_id": 376,
+    "reason": "RestrictionShift has a current Sound approval. RestrictionLocallyConstant is the next sound-front target and is ready for a real Sound verifier run.",
+    "request_id": 378,
     "request_sound_verifier_nodes": [
-      "RestrictionShift"
+      "RestrictionLocallyConstant"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -80,5 +80,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_376_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_378_decision.context.json"
 }
