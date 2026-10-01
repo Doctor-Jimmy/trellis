@@ -9,10 +9,41 @@ agrees with $h$ on the finite shift prefix
 $h(\mathsf{PowerShiftIter}(j,x))$ for $j\le k+2$.
 \end{lemma}
 \begin{proof}
-Apply \noderef{PowerCopiedTerminates} to row zero and choose a witnessing
-depth and the two atom labels.  The finite-dependence statement
-\noderef{PowerCopiedFiniteDependence}, with $n=0$, says that the first
-terminal value is unchanged under every replacement agreeing through shift
-$k+2$.  Since the original value is $\mathsf{atom}(q)$, the replacement has
-the same form and label.  This proves all three displayed assertions.
+Fix $x$.  Applying \noderef{PowerCopiedTerminates} with $n=0$ gives a
+natural number $k$ such that
+\[
+\mathsf{PowerCopiedTerminalAt}_r(h,x,0,k)
+\]
+holds.  By the definition of this terminal condition in
+\noderef{PowerCopiedTerminalAt}, unpacking its existential gives atoms
+$q,q'\in Q$ satisfying
+\[
+\mathsf{PowerCopiedLeft}_r(h,x,0,k)=\mathsf{atom}(q),
+\qquad
+\mathsf{PowerCopiedLeft}_r(h,x,1,k)=\mathsf{atom}(q').
+\]
+
+It remains to prove the final universal clause for this $k$ and $q$.
+Let $h':\mathsf{MultiSequence}(\mathsf{PowerQ}(Q))$ be arbitrary and
+assume
+\[
+\forall j\leq k+2,\qquad
+h'(\mathsf{PowerShiftIter}(j,x))
+ =h(\mathsf{PowerShiftIter}(j,x)).
+\]
+This is the hypothesis of \noderef{PowerCopiedFiniteDependence} with
+$n=0$, since its agreement condition is oriented as
+$h'(\mathsf{PowerShiftIter}(j,x))=h(\mathsf{PowerShiftIter}(j,x))$
+and its bound becomes $j\leq 0+k+2$.  Therefore
+\[
+\mathsf{PowerCopiedLeft}_r(h',x,0,k)
+ =\mathsf{PowerCopiedLeft}_r(h,x,0,k).
+\]
+Combining this equality with the first atom equation above gives
+\[
+\mathsf{PowerCopiedLeft}_r(h',x,0,k)
+ =\mathsf{PowerCopiedLeft}_r(h,x,0,k)
+ =\mathsf{atom}(q),
+\]
+which proves the required universal clause and hence the lemma.
 \end{proof}

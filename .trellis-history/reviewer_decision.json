@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedShiftIdentity has a current Sound approval. PowerCopiedFiniteTerminal has a concrete unsupported step: PowerCopiedTerminates supplies only a depth and the terminal-condition proposition, while the proof claims that it directly supplies the two atom labels. The labels must be obtained by citing and unpacking PowerCopiedTerminalAt before finite dependence is applied.",
-    "comments": "Edit only Tablet/PowerCopiedFiniteTerminal.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Apply PowerCopiedTerminates at row 0 to obtain k together with PowerCopiedTerminalAt_r(h,x,0,k), then cite PowerCopiedTerminalAt and explicitly unpack its existential to obtain q and q' and the two atom equations, including the row-1 equation. Cite PowerCopiedFiniteDependence at n=0 with an arbitrary replacement h' satisfying the displayed agreement through k+2; orient the agreement exactly as its statement requires and conclude equality of the first copied value. Rewrite that value using the original atom equation to show it is atom(q), thereby proving the final universal clause. Cite every cross-node dependency at its use and do not claim that PowerCopiedTerminates itself supplies q,q'. Change no Lean text, imports, statement, or support edge.",
-    "task_blocker_ids": [
-      "soundness:node:PowerCopiedFiniteTerminal:sound-v2:f30a3a4435d162c79d2ac66a50eeee44083259d7b1fd703cbd273fe3fe836be2"
-    ],
+    "reason": "PowerCopiedFiniteTerminal has a current Sound approval. PowerCopiedTerminalSupport is a stale Sound pass whose support dependency PowerCopiedSupport was subsequently repaired and re-approved; its current proof is already detailed, so the needed next action is a fresh Sound verification before re-verifying the stale parent PowerQReflection.",
+    "comments": "Leave Tablet/PowerCopiedTerminalSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedTerminalSupport now that PowerCopiedSupport, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, and PowerCopiedFiniteTerminal have current Sound approvals. The verifier should check the explicit PowerCopiedTerminalAt witness extraction, the zeroth PowerShiftIter rewrite, the PowerCopiedSupport inclusion, and the PowerSupport atom-membership step against the current support statements. Do not assign a worker or reset any blocker.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedFiniteTerminal",
+    "request_sound_verifier_node_ids": [
+      "PowerCopiedTerminalSupport"
+    ],
+    "next_active": "",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -20,12 +20,12 @@
       {
         "start_line": 1549,
         "end_line": 1549,
-        "reason": "The manuscript's finite copied-play dependence and adjacent-row construction underlying the terminal witness."
+        "reason": "The manuscript's finite copied play, adjacent-row matching, and terminal-value construction underlying the support step."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript describes a finite copied play whose terminal row values are determined by finitely many shift-orbit values and whose adjacent rows are linked by copying. The assigned repair makes the tablet's terminal witness and finite-dependence transfer explicit from the two cited support statements."
+      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying and a terminal value extracted from the play. The current tablet proof transfers that terminal atom into the original support, so it should now be reverified against the repaired support dependency before the reflection parent is checked."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerCopiedFiniteTerminal.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Apply PowerCopiedTerminates at row 0 to obtain k together with PowerCopiedTerminalAt_r(h,x,0,k), then cite PowerCopiedTerminalAt and explicitly unpack its existential to obtain q and q' and the two atom equations, including the row-1 equation. Cite PowerCopiedFiniteDependence at n=0 with an arbitrary replacement h' satisfying the displayed agreement through k+2; orient the agreement exactly as its statement requires and conclude equality of the first copied value. Rewrite that value using the original atom equation to show it is atom(q), thereby proving the final universal clause. Cite every cross-node dependency at its use and do not claim that PowerCopiedTerminates itself supplies q,q'. Change no Lean text, imports, statement, or support edge.",
+    "comments": "Leave Tablet/PowerCopiedTerminalSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedTerminalSupport now that PowerCopiedSupport, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, and PowerCopiedFiniteTerminal have current Sound approvals. The verifier should check the explicit PowerCopiedTerminalAt witness extraction, the zeroth PowerShiftIter rewrite, the PowerCopiedSupport inclusion, and the PowerSupport atom-membership step against the current support statements. Do not assign a worker or reset any blocker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 145,
+    "cycle": 146,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -48,42 +48,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerCopiedFiniteTerminal",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1549,
-        "reason": "The manuscript's finite copied-play dependence and adjacent-row construction underlying the terminal witness.",
+        "reason": "The manuscript's finite copied play, adjacent-row matching, and terminal-value construction underlying the support step.",
         "start_line": 1549
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript describes a finite copied play whose terminal row values are determined by finitely many shift-orbit values and whose adjacent rows are linked by copying. The assigned repair makes the tablet's terminal witness and finite-dependence transfer explicit from the two cited support statements.",
+      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying and a terminal value extracted from the play. The current tablet proof transfers that terminal atom into the original support, so it should now be reverified against the repaired support dependency before the reflection parent is checked.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedShiftIdentity has a current Sound approval. PowerCopiedFiniteTerminal has a concrete unsupported step: PowerCopiedTerminates supplies only a depth and the terminal-condition proposition, while the proof claims that it directly supplies the two atom labels. The labels must be obtained by citing and unpacking PowerCopiedTerminalAt before finite dependence is applied.",
-    "request_id": 475,
-    "request_sound_verifier_nodes": [],
+    "reason": "PowerCopiedFiniteTerminal has a current Sound approval. PowerCopiedTerminalSupport is a stale Sound pass whose support dependency PowerCopiedSupport was subsequently repaired and re-approved; its current proof is already detailed, so the needed next action is a fresh Sound verification before re-verifying the stale parent PowerQReflection.",
+    "request_id": 478,
+    "request_sound_verifier_nodes": [
+      "PowerCopiedTerminalSupport"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:f30a3a4435d162c79d2ac66a50eeee44083259d7b1fd703cbd273fe3fe836be2",
-        "kind": "Soundness",
-        "object": {
-          "node": "PowerCopiedFiniteTerminal",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_475_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_478_decision.context.json"
 }
