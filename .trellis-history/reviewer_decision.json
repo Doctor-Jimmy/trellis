@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The latest SuperSequenceExtension proof repairs the finite-prefix and dependent-value arguments, but Sound verification still finds one missing PrefixAgree citation and one implicit hF argument. Assign only this minimal structural repair.",
-    "comments": "Repair only Tablet/SuperSequenceExtension.tex. Preserve the Lean signature, imports, support DAG, and the completed mathematical proof; add no helper or theorem. At the sentence where PrefixAgree is unpacked into coordinate equalities, add an explicit noderef to PrefixAgree. In the FrontPrefixUnique application for the selected witness on y.1, explicitly state that the arguments are F, X, the already fixed front proof hF, y.1, and the two FrontPrefix witnesses h_y and the newly proved prefix for s_x; do not leave hF implicit behind 'the same front F and base X'. Make no other changes unless needed to keep these two points precise.",
-    "task_blocker_ids": [
-      "soundness:node:SuperSequenceExtension:sound-v2:c0f24f0045ae43ebc077dedb4f0b94e977216752541b27bed4d4c4c7b76735b4"
-    ],
+    "reason": "SuperSequenceExtension now has a current Sound approval. SuperNW is the next sound-front target and is ready for a real Sound verifier run.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperNW only. Check the finite-codomain induction line by line: the empty case must use front density and the impossibility of a map into the empty codomain; the chosen-color case must instantiate NashWilliams on the fiber, restrict SuperSequence along the subfront inclusion, and match the dependent value equation; the complement case must show that the values land in E\\{e}, establish strict cardinal decrease with finite codomain, apply induction, compose the subfront inclusions, and conclude constancy in the original codomain. Require explicit citations to NashWilliams and SuperSequence.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "SuperSequenceExtension",
+    "request_sound_verifier_node_ids": [
+      "SuperNW"
+    ],
+    "next_active": "",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,16 +18,18 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1258,
-        "end_line": 1275,
-        "reason": "The paper's unique-front-prefix construction and local-constancy argument for extending a super-sequence."
+        "start_line": 1244,
+        "end_line": 1250,
+        "reason": "Finite-codomain constant sub-super-sequence statement corresponding to SuperNW."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage defines the extension through a unique front prefix and says that a finite prefix determines the value. The current proof already supplies the detailed cutoff argument; this repair only makes the remaining dependency citation and front-hypothesis application explicit under the strict soundness contract."
+      "basis_summary": "Lines 1244-1250 state that the finite-codomain constant sub-super-sequence theorem is equivalent to Nash-Williams, which is the target represented by SuperNW."
     },
-    "work_style_hint": "none"
+    "work_style_hint": "none",
+    "authorized_node_ids": [],
+    "memory_challenges": []
   },
   "response": {
     "allow_new_obligations": true,
@@ -38,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/SuperSequenceExtension.tex. Preserve the Lean signature, imports, support DAG, and the completed mathematical proof; add no helper or theorem. At the sentence where PrefixAgree is unpacked into coordinate equalities, add an explicit noderef to PrefixAgree. In the FrontPrefixUnique application for the selected witness on y.1, explicitly state that the arguments are F, X, the already fixed front proof hF, y.1, and the two FrontPrefix witnesses h_y and the newly proved prefix for s_x; do not leave hF implicit behind 'the same front F and base X'. Make no other changes unless needed to keep these two points precise.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperNW only. Check the finite-codomain induction line by line: the empty case must use front density and the impossibility of a map into the empty codomain; the chosen-color case must instantiate NashWilliams on the fiber, restrict SuperSequence along the subfront inclusion, and match the dependent value equation; the complement case must show that the values land in E\\{e}, establish strict cardinal decrease with finite codomain, apply induction, compose the subfront inclusions, and conclude constancy in the original codomain. Require explicit citations to NashWilliams and SuperSequence.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 105,
+    "cycle": 106,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,42 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "SuperSequenceExtension",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1275,
-        "reason": "The paper's unique-front-prefix construction and local-constancy argument for extending a super-sequence.",
-        "start_line": 1258
+        "end_line": 1250,
+        "reason": "Finite-codomain constant sub-super-sequence statement corresponding to SuperNW.",
+        "start_line": 1244
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage defines the extension through a unique front prefix and says that a finite prefix determines the value. The current proof already supplies the detailed cutoff argument; this repair only makes the remaining dependency citation and front-hypothesis application explicit under the strict soundness contract.",
+      "basis_summary": "Lines 1244-1250 state that the finite-codomain constant sub-super-sequence theorem is equivalent to Nash-Williams, which is the target represented by SuperNW.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The latest SuperSequenceExtension proof repairs the finite-prefix and dependent-value arguments, but Sound verification still finds one missing PrefixAgree citation and one implicit hF argument. Assign only this minimal structural repair.",
-    "request_id": 364,
-    "request_sound_verifier_nodes": [],
+    "reason": "SuperSequenceExtension now has a current Sound approval. SuperNW is the next sound-front target and is ready for a real Sound verifier run.",
+    "request_id": 367,
+    "request_sound_verifier_nodes": [
+      "SuperNW"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:c0f24f0045ae43ebc077dedb4f0b94e977216752541b27bed4d4c4c7b76735b4",
-        "kind": "Soundness",
-        "object": {
-          "node": "SuperSequenceExtension",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_364_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_367_decision.context.json"
 }

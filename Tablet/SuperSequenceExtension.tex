@@ -48,7 +48,8 @@ We claim that every $y\in\mathsf{BaseIncSeq}(X)$ satisfying
   \mathsf{FrontPrefix}(F,s_x,y.1).                         \tag{2}
 \]
 
-First, agreement at the index $j<N$, together with $x_0(j)=q$, gives
+By the definition of \noderef{PrefixAgree}, agreement at the index $j<N$,
+together with $x_0(j)=q$, gives
 \[
   y.1(j)=x_0(j)=q.                                         \tag{3}
 \]
@@ -85,8 +86,10 @@ Let $(s_y,h_y)$ be the pair selected in the construction for $y$.  The
 definition of the selection gives
 \(\mathsf{FrontPrefix}(F,s_y,y.1)\), while (2) gives
 \(\mathsf{FrontPrefix}(F,s_x,y.1)\).  The uniqueness theorem
-\noderef{FrontPrefixUnique}, applied with the same front $F$, base $X$, and
-enumeration $y.1$, yields
+\noderef{FrontPrefixUnique}, applied explicitly with the front $F$, base
+$X$, the already fixed front proof $hF$, enumeration $y.1$, and the two
+FrontPrefix witnesses $h_y$ and the newly proved witness for $s_x$ in (2),
+yields
 \[
   s_y=s_x.                                                  \tag{4}
 \]
