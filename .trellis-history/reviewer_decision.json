@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "ConverseGame has a current Sound approval. BqoImpliesWqo is the held next node, has no current Sound verdict, and is requestable on the Sound frontier, so request its verification without assigning a worker or resetting any live obligation.",
-    "comments": "Leave Tablet/BqoImpliesWqo.tex and the rest of the tablet unchanged. Request a real Sound verification of BqoImpliesWqo. The verifier should check that negating the sequence-based WellQuasiOrdered definition yields a single sequence a with the stated universal badness condition, and that no reflexivity or transitivity hypothesis is used. Then check the definition of MultiSequence by the map h(x)=a(x(0)), the local-constancy witness n=1 using PrefixAgree, and the strict inequality x(0)<x(1) supplied by IncSeq. Verify explicitly that ShiftMap x has first entry x(1) using ShiftMap, RightComp, and SuccSeq, so the ordinary bad-sequence inequality is exactly BadMultiSequence r h x. Finally apply Bqo with the explicit LocallyConstant and BadMultiSequence facts. Check all node-level dependencies cited in the proof, including MultiSequence, IncSeq, PrefixAgree, LocallyConstant, ShiftMap, and BadMultiSequence; the shared Preamble supplies the sequence-based WellQuasiOrdered meaning.",
+    "reason": "BqoImpliesWqo has a current Sound approval. BaseBqoRestriction is the held next node, has no current Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "comments": "Leave Tablet/BaseBqoRestriction.tex and the rest of the tablet unchanged. Request a real Sound verification of BaseBqoRestriction. Check that InfiniteSetEnumeration gives e with range X, that IncSeqComp(e,x) has range contained in X so h is defined, and that BaseLocallyConstant transfers to global local constancy by an explicit finite-prefix argument using monotonicity of e rather than only saying that e is increasing. Then check the application of ShiftDichotomy to the pullback, exclusion of its bad alternative via the explicit Bqo hypothesis, and construction of z = e composed with u with range contained in X. Finally check the BaseRestrict and MultiSequenceRestrict composition identities that identify the base restriction with the perfect global restriction. Cross-node uses should be explicitly cited, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, and PerfectMultiSequence.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "BqoImpliesWqo"
+      "BaseBqoRestriction"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,24 +20,19 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 647,
-        "end_line": 657,
-        "reason": "The manuscript defines bad ordinary sequences by failure of the relation at every increasing pair."
+        "start_line": 1258,
+        "end_line": 1271,
+        "reason": "The manuscript defines multi-sequences and local constancy by finite prefixes of increasing enumerations."
       },
       {
-        "start_line": 664,
-        "end_line": 670,
-        "reason": "The manuscript identifies absence of bad sequences as the relevant well-quasi-order condition."
-      },
-      {
-        "start_line": 1445,
-        "end_line": 1459,
-        "reason": "The manuscript defines shift, bad multi-sequences, and better-quasi-order via locally constant multi-sequences."
+        "start_line": 1651,
+        "end_line": 1661,
+        "reason": "The manuscript uses the perfect-or-bad dichotomy and bqo to obtain a perfect restriction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passages define a bad sequence by failure of the relation on every m<n, characterize WQO by absence of bad sequences, and define a bad multi-sequence by failure across the shift, with BQO excluding locally constant bad multi-sequences. The current proof is exactly the first-entry lift from the former bad sequence to the latter and should receive a direct Sound check of each definition-level step."
+      "basis_summary": "The cited manuscript passages define the increasing-enumeration model and finite-prefix local constancy, then apply the perfect-or-bad dichotomy and use bqo to exclude the bad alternative. This supports checking the tablet's pullback from a base X to global enumerations and its return to a perfect base restriction."
     },
     "authorized_node_ids": []
   },
@@ -50,10 +45,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/BqoImpliesWqo.tex and the rest of the tablet unchanged. Request a real Sound verification of BqoImpliesWqo. The verifier should check that negating the sequence-based WellQuasiOrdered definition yields a single sequence a with the stated universal badness condition, and that no reflexivity or transitivity hypothesis is used. Then check the definition of MultiSequence by the map h(x)=a(x(0)), the local-constancy witness n=1 using PrefixAgree, and the strict inequality x(0)<x(1) supplied by IncSeq. Verify explicitly that ShiftMap x has first entry x(1) using ShiftMap, RightComp, and SuccSeq, so the ordinary bad-sequence inequality is exactly BadMultiSequence r h x. Finally apply Bqo with the explicit LocallyConstant and BadMultiSequence facts. Check all node-level dependencies cited in the proof, including MultiSequence, IncSeq, PrefixAgree, LocallyConstant, ShiftMap, and BadMultiSequence; the shared Preamble supplies the sequence-based WellQuasiOrdered meaning.",
+    "comments": "Leave Tablet/BaseBqoRestriction.tex and the rest of the tablet unchanged. Request a real Sound verification of BaseBqoRestriction. Check that InfiniteSetEnumeration gives e with range X, that IncSeqComp(e,x) has range contained in X so h is defined, and that BaseLocallyConstant transfers to global local constancy by an explicit finite-prefix argument using monotonicity of e rather than only saying that e is increasing. Then check the application of ShiftDichotomy to the pullback, exclusion of its bad alternative via the explicit Bqo hypothesis, and construction of z = e composed with u with range contained in X. Finally check the BaseRestrict and MultiSequenceRestrict composition identities that identify the base restriction with the perfect global restriction. Cross-node uses should be explicitly cited, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, and PerfectMultiSequence.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 163,
+    "cycle": 164,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -67,30 +62,25 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 657,
-        "reason": "The manuscript defines bad ordinary sequences by failure of the relation at every increasing pair.",
-        "start_line": 647
+        "end_line": 1271,
+        "reason": "The manuscript defines multi-sequences and local constancy by finite prefixes of increasing enumerations.",
+        "start_line": 1258
       },
       {
-        "end_line": 670,
-        "reason": "The manuscript identifies absence of bad sequences as the relevant well-quasi-order condition.",
-        "start_line": 664
-      },
-      {
-        "end_line": 1459,
-        "reason": "The manuscript defines shift, bad multi-sequences, and better-quasi-order via locally constant multi-sequences.",
-        "start_line": 1445
+        "end_line": 1661,
+        "reason": "The manuscript uses the perfect-or-bad dichotomy and bqo to obtain a perfect restriction.",
+        "start_line": 1651
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passages define a bad sequence by failure of the relation on every m<n, characterize WQO by absence of bad sequences, and define a bad multi-sequence by failure across the shift, with BQO excluding locally constant bad multi-sequences. The current proof is exactly the first-entry lift from the former bad sequence to the latter and should receive a direct Sound check of each definition-level step.",
+      "basis_summary": "The cited manuscript passages define the increasing-enumeration model and finite-prefix local constancy, then apply the perfect-or-bad dichotomy and use bqo to exclude the bad alternative. This supports checking the tablet's pullback from a base X to global enumerations and its return to a perfect base restriction.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "ConverseGame has a current Sound approval. BqoImpliesWqo is the held next node, has no current Sound verdict, and is requestable on the Sound frontier, so request its verification without assigning a worker or resetting any live obligation.",
-    "request_id": 518,
+    "reason": "BqoImpliesWqo has a current Sound approval. BaseBqoRestriction is the held next node, has no current Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "request_id": 520,
     "request_sound_verifier_nodes": [
-      "BqoImpliesWqo"
+      "BaseBqoRestriction"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -100,5 +90,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_518_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_520_decision.context.json"
 }
