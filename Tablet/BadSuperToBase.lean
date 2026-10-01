@@ -1,6 +1,12 @@
 import Tablet.BaseBad
+import Tablet.BaseIncSeq
 import Tablet.BaseLocallyConstant
+import Tablet.BaseShift
 import Tablet.BadSuperSequence
+import Tablet.FiniteShift
+import Tablet.FrontPrefix
+import Tablet.ProperPrefixSet
+import Tablet.SuperSequence
 import Tablet.SuperSequenceExtension
 
 -- [TABLET NODE: BadSuperToBase]

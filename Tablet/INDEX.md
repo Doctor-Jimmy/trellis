@@ -9,7 +9,7 @@
 | BadPairSequence | definition | definition | closed | - | Bad sequence of sequences | IncreasingPair |
 | BadSuperRestrict | lemma | proof | open | - | Badness under sub-front restriction | BadSuperSequence, SuperSequenceRestrict |
 | BadSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
-| BadSuperToBase | lemma | proof | open | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseLocallyConstant, SuperSequenceExtension |
+| BadSuperToBase | lemma | proof | open | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseIncSeq, BaseLocallyConstant, BaseShift, FiniteShift, FrontPrefix, ProperPrefixSet, SuperSequence, SuperSequenceExtension |
 | BaireContinuous | definition | definition | closed | - | - | PrefixAgree |
 | BaseBad | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
 | BaseBqoRestriction | lemma | proof | open | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BaseRestrict, Bqo, InfiniteSetEnumeration, PerfectMultiSequence, RestrictionLocallyConstant, ShiftDichotomy |

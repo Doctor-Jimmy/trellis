@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound rejection identifies concrete missing derivations in BadSuperToBase, and the node is repair-ready. Assign its blocker to a Global worker while preserving the theorem statement and the paper's extension construction.",
-    "comments": "Edit only Tablet/BadSuperToBase.tex and the import preamble of Tablet/BadSuperToBase.lean. Preserve the Lean statement, conclusion, and support direction; add no helper and do not weaken the claim. Add direct imports for any cited support used by the proof, in particular BaseShift, FiniteShift, and FrontPrefix if needed. For arbitrary x in BaseIncSeq X, cite BaseShift to establish that BaseShift X x is again in BaseIncSeq X before applying the SuperSequenceExtension equation. Name the witnesses s and t obtained from the extension equation at x and BaseShift X x, and unpack FrontPrefix to state s in F, t in F, and the two ProperPrefixSet relations explicitly. Form FiniteShift s t with the witness x.1, displaying both conjuncts and explicitly rewriting (BaseShift X x).1 as ShiftMap x.1 by BaseShift. Only then apply BadSuperSequence, rewrite f(s) and f(t) with the two extension equations, and quantify over arbitrary x to conclude BaseBad. Cite every cross-node dependency at its use, including SuperSequence, SuperSequenceExtension, BaseIncSeq, BaseShift, FrontPrefix, ProperPrefixSet, FiniteShift, BadSuperSequence, and BaseBad.",
-    "task_blocker_ids": [
-      "soundness:node:BadSuperToBase:sound-v2:3766ba796f2e9dc743218b8be9a8c5db0cc4cbd24e82ae9f0d0ea449ca9477d1"
-    ],
+    "reason": "BadSuperToBase has a current Sound approval. BadSuperRestrict is the held next node, has no Sound verdict or repair diagnosis, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "comments": "Leave Tablet/BadSuperRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of BadSuperRestrict. For arbitrary s and t in the restricted front, check that the finite-shift premise is unchanged and that hsub supplies their membership in the original front. Unpack or cite SuperSequenceRestrict to identify the restricted value at each dependent front element with the original value f(s) or f(t), then apply BadSuperSequence to the same FiniteShift s t witness and rewrite the result into the defining conclusion for the restricted super-sequence. Every cross-node dependency used should be cited, especially BadSuperSequence and SuperSequenceRestrict; do not rely on the hypotheses of another theorem by citation.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BadSuperToBase",
+    "request_sound_verifier_node_ids": [
+      "BadSuperRestrict"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -20,14 +20,14 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1478,
-        "end_line": 1497,
-        "reason": "The manuscript transfers badness from a super-sequence to its extension on increasing enumerations using the front prefixes of a set and its shift."
+        "start_line": 1188,
+        "end_line": 1198,
+        "reason": "The manuscript defines a sub-super-sequence as restriction to a front included in the original front."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript lemma states that a bad super-sequence induces a bad locally constant multi-sequence, and its proof chooses the unique front members prefixing an infinite set and its shift, then invokes the finite-shift relation. The assigned repair makes exactly these witnesses and rewrites explicit in the tablet proof."
+      "basis_summary": "The cited manuscript passage defines sub-super-sequences as restrictions to included fronts. The requested verification checks that the tablet's restriction preserves the same finite-shift witnesses and transfers original badness through the unchanged value map."
     },
     "authorized_node_ids": []
   },
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/BadSuperToBase.tex and the import preamble of Tablet/BadSuperToBase.lean. Preserve the Lean statement, conclusion, and support direction; add no helper and do not weaken the claim. Add direct imports for any cited support used by the proof, in particular BaseShift, FiniteShift, and FrontPrefix if needed. For arbitrary x in BaseIncSeq X, cite BaseShift to establish that BaseShift X x is again in BaseIncSeq X before applying the SuperSequenceExtension equation. Name the witnesses s and t obtained from the extension equation at x and BaseShift X x, and unpack FrontPrefix to state s in F, t in F, and the two ProperPrefixSet relations explicitly. Form FiniteShift s t with the witness x.1, displaying both conjuncts and explicitly rewriting (BaseShift X x).1 as ShiftMap x.1 by BaseShift. Only then apply BadSuperSequence, rewrite f(s) and f(t) with the two extension equations, and quantify over arbitrary x to conclude BaseBad. Cite every cross-node dependency at its use, including SuperSequence, SuperSequenceExtension, BaseIncSeq, BaseShift, FrontPrefix, ProperPrefixSet, FiniteShift, BadSuperSequence, and BaseBad.",
+    "comments": "Leave Tablet/BadSuperRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of BadSuperRestrict. For arbitrary s and t in the restricted front, check that the finite-shift premise is unchanged and that hsub supplies their membership in the original front. Unpack or cite SuperSequenceRestrict to identify the restricted value at each dependent front element with the original value f(s) or f(t), then apply BadSuperSequence to the same FiniteShift s t witness and rewrite the result into the defining conclusion for the restricted super-sequence. Every cross-node dependency used should be cited, especially BadSuperSequence and SuperSequenceRestrict; do not rely on the hypotheses of another theorem by citation.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 167,
+    "cycle": 168,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,42 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BadSuperToBase",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1497,
-        "reason": "The manuscript transfers badness from a super-sequence to its extension on increasing enumerations using the front prefixes of a set and its shift.",
-        "start_line": 1478
+        "end_line": 1198,
+        "reason": "The manuscript defines a sub-super-sequence as restriction to a front included in the original front.",
+        "start_line": 1188
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript lemma states that a bad super-sequence induces a bad locally constant multi-sequence, and its proof chooses the unique front members prefixing an infinite set and its shift, then invokes the finite-shift relation. The assigned repair makes exactly these witnesses and rewrites explicit in the tablet proof.",
+      "basis_summary": "The cited manuscript passage defines sub-super-sequences as restrictions to included fronts. The requested verification checks that the tablet's restriction preserves the same finite-shift witnesses and transfers original badness through the unchanged value map.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound rejection identifies concrete missing derivations in BadSuperToBase, and the node is repair-ready. Assign its blocker to a Global worker while preserving the theorem statement and the paper's extension construction.",
-    "request_id": 527,
-    "request_sound_verifier_nodes": [],
+    "reason": "BadSuperToBase has a current Sound approval. BadSuperRestrict is the held next node, has no Sound verdict or repair diagnosis, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "request_id": 530,
+    "request_sound_verifier_nodes": [
+      "BadSuperRestrict"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:3766ba796f2e9dc743218b8be9a8c5db0cc4cbd24e82ae9f0d0ea449ca9477d1",
-        "kind": "Soundness",
-        "object": {
-          "node": "BadSuperToBase",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_527_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_530_decision.context.json"
 }

@@ -8,20 +8,86 @@ and bad, and which satisfies the extension value equation
 \]
 \end{lemma}
 \begin{proof}
-The front and value map recorded by $f$ are part of
-\noderef{SuperSequence}.  Apply \noderef{SuperSequenceExtension} to them.
-It supplies a base multi-sequence $h$, its local constancy, and, for every
-$x\in\mathsf{BaseIncSeq}(X)$, a member $s\in F$ with
-$s\segs\operatorname{range}(x)$ and $h(x)=f(s)$.
+The structure \noderef{SuperSequence} records both the front and the value
+map.  Write $h_F=f.\mathsf{front}$ and $h_f=f.\mathsf{value}$.  Apply
+\noderef{SuperSequenceExtension} to $F$, $X$, $h_F$, and $f$.  We obtain a
+base multi-sequence $h$, a proof
+$h_{\mathrm{lc}}:\mathsf{BaseLocallyConstant}(h)$, and the extension
+equation
+\[
+ \forall y\in\mathsf{BaseIncSeq}(X),\quad
+ \exists u\in\operatorname{Finset}(\mathbb N)\;\exists p:
+ \mathsf{FrontPrefix}(F,u,y.1),\quad
+ h(y)=h_f\!\left(\langle u,p.1\rangle\right).              \tag{1}
+\]
+The type of $h$ is the base multi-sequence type, and the first component of
+the conclusion is the required local-constancy assertion by
+\noderef{BaseLocallyConstant}.
 
-It remains to prove badness.  Fix
-$x\in\mathsf{BaseIncSeq}(X)$ and apply the same extension equation to $x$
-and to $\mathsf{BaseShift}_X(x)$.  Let the resulting front members be $s$
-and $t$.  By the definition of \noderef{FiniteShift}, the two prefix
-relations, together with the shift of $x$, show
-$s\mathrel{\mathsf{FiniteShift}}t$.  The hypothesis
-\noderef{BadSuperSequence} therefore gives
-$\neg r(f(s),f(t))$.  Substituting the two extension value equations yields
-$\neg r(h(x),h(\mathsf{BaseShift}_X(x)))$.  Since $x$ was arbitrary, this is
-exactly \noderef{BaseBad}.
+We prove the remaining badness assertion.  Fix an arbitrary
+$x\in\mathsf{BaseIncSeq}(X)$.  By \noderef{BaseShift}, the shifted object
+$x':=\mathsf{BaseShift}_X(x)$ is again an element of
+$\mathsf{BaseIncSeq}(X)$, and its first component satisfies
+\[
+ x'.1=(\mathsf{BaseShift}_X(x)).1=\mathsf{ShiftMap}(x.1).       \tag{2}
+\]
+Apply (1) first to $x$ and choose witnesses $s$ and
+$p_s:\mathsf{FrontPrefix}(F,s,x.1)$, together with
+\[
+ e_s:\qquad h(x)=h_f\!\left(\langle s,p_s.1\rangle\right).    \tag{3}
+\]
+Apply (1) again to $x'$ and choose witnesses $t$ and
+$p_t:\mathsf{FrontPrefix}(F,t,x'.1)$, together with
+\[
+ e_t:\qquad h(x')=h_f\!\left(\langle t,p_t.1\rangle\right).  \tag{4}
+\]
+
+Unpack the two \noderef{FrontPrefix} witnesses.  Using the definition of
+\noderef{ProperPrefixSet}, their first components give
+\[
+ s\in F,\qquad
+ \mathsf{ProperPrefixSet}\bigl(s,\operatorname{range}(x.1)\bigr), \tag{5}
+\]
+and
+\[
+ t\in F,\qquad
+ \mathsf{ProperPrefixSet}\bigl(t,\operatorname{range}(x'.1)\bigr).
+                                                                    \tag{6}
+\]
+By (2), the second relation in (6) is exactly
+\[
+ \mathsf{ProperPrefixSet}\bigl(t,\operatorname{range}(\mathsf{ShiftMap}(x.1))\bigr).
+                                                                    \tag{7}
+\]
+Here $x.1$ is an increasing enumeration because $x$ has the subtype type
+\mathsf{BaseIncSeq}(X), as defined in \noderef{BaseIncSeq}.
+
+We now build the precise witness required by \noderef{FiniteShift}.  Use
+the increasing enumeration $x.1$ as its witness.  Relation (5) is the
+first conjunct in the definition of \mathsf{FiniteShift}, and (7) is the
+second conjunct, with the shifted enumeration written as
+\mathsf{ShiftMap}(x.1).  Therefore
+\[
+ \mathsf{FiniteShift}(s,t)                                      \tag{8}
+\]
+holds.  The membership facts $s\in F$ and $t\in F$ are precisely the
+first components of $p_s$ and $p_t$.
+
+By the definition of \noderef{BadSuperSequence}, apply the assumed
+badness of $f$ to $s$, $t$, these two membership proofs, and the finite
+shift witness (8).  We obtain
+\[
+ \neg r\!\left(h_f\!\left(\langle s,p_s.1\rangle\right),
+                 h_f\!\left(\langle t,p_t.1\rangle\right)\right). \tag{9}
+\]
+Rewrite the two arguments in (9) using the extension equations (3) and
+(4).  Since $x'=\mathsf{BaseShift}_X(x)$, this gives
+\[
+ \neg r\bigl(h(x),h(\mathsf{BaseShift}_X(x))\bigr).             \tag{10}
+\]
+The element $x\in\mathsf{BaseIncSeq}(X)$ was arbitrary, so (10) holds for
+every such $x$.  By the definition of \noderef{BaseBad}, this is exactly
+$\mathsf{BaseBad}(r,h)$.  Together with $h_{\mathrm{lc}}$, the extension
+equation (1), and the construction of $h$, it proves the stated
+conclusion.
 \end{proof}
