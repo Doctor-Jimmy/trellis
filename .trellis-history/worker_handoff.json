@@ -1,17 +1,15 @@
 {
   "raw": {
-    "audit_request": null,
-    "comments": "Repaired only Tablet/FrontTreeImmediateExtensions.tex. The proof now derives s != t directly from s notin F and t in F, proves t\\s nonempty from the unequal InitialSegment alternative before taking its minimum, and explicitly handles the final/ non-final cases when showing insert n s is an initial segment of t. Lean statement, imports, and support structure are unchanged.",
-    "deleted_nodes": [],
-    "deviation_deletions": [],
-    "deviation_requests": {},
-    "difficulty_updates": {},
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
-    "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Completed the requested line-by-line soundness repair for FrontTreeImmediateExtensions.",
-    "target_claim_updates": {}
+    "summary": "Repaired FrontPrefixUnique.tex with an explicit cutoff-witness comparison, including the equal, a<b, and b<a cases and an InitialSegment citation before applying front prefix-freeness.",
+    "comments": "Preserved the Lean statement, imports, and support structure. The active node and full-tablet deterministic checks pass. The proof cites FrontPrefix, ProperPrefixSet, InitialSegment, and Front; no new nodes, target claims, deviations, or deletions were made.",
+    "target_claim_updates": {},
+    "difficulty_updates": {},
+    "deviation_requests": {},
+    "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "deleted_nodes": [],
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,8 +19,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Repaired only Tablet/FrontTreeImmediateExtensions.tex. The proof now derives s != t directly from s notin F and t in F, proves t\\s nonempty from the unequal InitialSegment alternative before taking its minimum, and explicitly handles the final/ non-final cases when showing insert n s is an initial segment of t. Lean statement, imports, and support structure are unchanged.",
-    "cycle": 67,
+    "comments": "Preserved the Lean statement, imports, and support structure. The active node and full-tablet deterministic checks pass. The proof cites FrontPrefix, ProperPrefixSet, InitialSegment, and Front; no new nodes, target claims, deviations, or deletions were made.",
+    "cycle": 69,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -38,7 +36,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 263,
+    "request_id": 268,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1077,12 +1075,14 @@
           "own_tex_hash": "2b11c5346b8a7eb1260950694befe7aa85aa1e457b5dfe2e66c8908237bbe5d1"
         },
         "FrontPrefixUnique": {
-          "combined_sound_fp": "sound-v2:45dc06957bf9073f1419e14f425668859fbf0e2ea13b68e6967dc15716b2df98",
+          "combined_sound_fp": "sound-v2:2cf8b039ca930d08c7da258e48f7c349f2346359c7022c4713bbf6d9ca58c87b",
           "dep_statement_hashes": {
             "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
-            "FrontPrefix": "328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414"
+            "FrontPrefix": "328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414",
+            "InitialSegment": "b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6",
+            "ProperPrefixSet": "bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d"
           },
-          "own_tex_hash": "f6b391fec3b52b0e2b9a51665d8fa196c599b6be39fc7b75aa82b77ec9377384"
+          "own_tex_hash": "b3c5b27755688ced53274b11c79a1bd9c1ce560680689b2da848f95c33bcf75c"
         },
         "FrontRayClosure": {
           "combined_sound_fp": "sound-v2:8656bc256cae9d51bb7092a487df99523f044742965d6deb09e58deb7aad82db",
@@ -2075,7 +2075,7 @@
         "FrontBridgeTerminal": "sound-v2:659088d0b01c2646f6af6cedc8635e25b5ae5c54bbb87c9ffea952d5f280b524",
         "FrontPrefix": "sound-v2:9177919531134e1aff535fdcfa8b95fce6a5c46a912c994ab5e53ffe89cc71b4",
         "FrontPrefixExists": "sound-v2:e1132155b944f4e5fa1a150ee27c73f7d4552bcfcdd4b8ec6ac21217e38036da",
-        "FrontPrefixUnique": "sound-v2:45dc06957bf9073f1419e14f425668859fbf0e2ea13b68e6967dc15716b2df98",
+        "FrontPrefixUnique": "sound-v2:2cf8b039ca930d08c7da258e48f7c349f2346359c7022c4713bbf6d9ca58c87b",
         "FrontRayClosure": "sound-v2:8656bc256cae9d51bb7092a487df99523f044742965d6deb09e58deb7aad82db",
         "FrontRestrict": "sound-v2:fdc4327d7aa648c52062803de9991bf434e69363e24d983c3d7e480104e66fa3",
         "FrontRestriction": "sound-v2:dc2368ee2f49f3a38e7d9cac16406c63d02ebe652db4cd6f5c99872f096170fe",
@@ -2562,7 +2562,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Completed the requested line-by-line soundness repair for FrontTreeImmediateExtensions.",
+    "summary": "Repaired FrontPrefixUnique.tex with an explicit cutoff-witness comparison, including the equal, a<b, and b<a cases and an InitialSegment citation before applying front prefix-freeness.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2677,7 +2677,7 @@
     "FrontPrefixExists.lean": "e650cfe98ed3ef31cfcf5267b6ea5798761074f5b123ae826fd59eb54615e90f",
     "FrontPrefixExists.tex": "2b11c5346b8a7eb1260950694befe7aa85aa1e457b5dfe2e66c8908237bbe5d1",
     "FrontPrefixUnique.lean": "64a884cadf57e394e9a7a59810436f8e73b3b3dee5920aa26dbaeb023136442d",
-    "FrontPrefixUnique.tex": "f6b391fec3b52b0e2b9a51665d8fa196c599b6be39fc7b75aa82b77ec9377384",
+    "FrontPrefixUnique.tex": "b3c5b27755688ced53274b11c79a1bd9c1ce560680689b2da848f95c33bcf75c",
     "FrontRayClosure.lean": "d13861a1525d08624675bca2c8420ac3b41c8cde584441382a1df91d22c24cf2",
     "FrontRayClosure.tex": "69b39ae9c879a58ec77aa455fc7434a2ba45f171b7fae284a30a168d2030f635",
     "FrontRestrict.lean": "962e5eae1670db34fe90b25dbd0706239a790752229d243328322af8136eea76",
@@ -2928,7 +2928,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_263_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_268_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

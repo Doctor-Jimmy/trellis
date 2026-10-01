@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found a concrete repairable defect in FrontPrefixUnique: InitialSegment is used without a noderef citation, and the essential comparability of two finite prefixes of one increasing range is asserted rather than proved.",
-    "comments": "Repair only `Tablet/FrontPrefixUnique.tex`; preserve its Lean statement, imports, and support structure. Retain the FrontPrefix citations establishing s,t in F and proper prefixes of range(x). Add a noderef citation for InitialSegment. Make the comparability line-by-line: name witnesses a,b in range(x) with s={k in range(x) | k<a} and t={k in range(x) | k<b}; handle a=b, a<b, and b<a separately, showing in the latter two cases that the smaller prefix is an InitialSegment of the larger (the smaller witness belongs to the larger prefix). Then apply the prefix-free clause of Front to the two established members of F. Do not add a helper or change the statement.",
+    "reason": "FrontPrefixUnique now has a current Sound approval. Independent inspection of FrontPrefixExists shows two concrete uncited proof dependencies: the infinitude of the range of an IncSeq and the ProperPrefixSet conclusion used before FrontPrefix is invoked.",
+    "comments": "Repair only `Tablet/FrontPrefixExists.tex`; preserve its Lean statement, imports, and support structure. The current proof says that the range of an order embedding is infinite without citing `IncSeq`, and it obtains a `ProperPrefixSet` witness from `Front` without citing `ProperPrefixSet`; cite both nodes explicitly. Give a line-by-line justification that injectivity of the Nat embedding makes its range infinite, then apply the density clause of `Front` to the range using the existing range-subset hypothesis, and finally identify the resulting ProperPrefixSet statement with `FrontPrefix` via `FrontPrefix`. Add no helper or structural changes.",
     "task_blocker_ids": [
-      "soundness:node:FrontPrefixUnique:sound-v2:45dc06957bf9073f1419e14f425668859fbf0e2ea13b68e6967dc15716b2df98"
+      "soundness:node:FrontPrefixExists:sound-v2:e1132155b944f4e5fa1a150ee27c73f7d4552bcfcdd4b8ec6ac21217e38036da"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontPrefixUnique",
+    "next_active": "FrontPrefixExists",
     "next_active_coarse": "",
     "next_mode": "targeted",
     "reset": "none",
@@ -22,12 +22,12 @@
       {
         "start_line": 1258,
         "end_line": 1266,
-        "reason": "The paper identifies the unique front prefix and the finite-prefix basic sets used by this node."
+        "reason": "The paper states the front-prefix existence and uniqueness fact and defines the finite-prefix basic sets."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage states that each infinite subset has a unique front member preceding it and identifies the relevant finite-prefix basic sets. The requested repair makes the tablet's uniqueness proof explicit at exactly that finite-prefix comparison step."
+      "basis_summary": "The cited passage uses the explicit front definition to obtain a unique finite prefix for every infinite subset and identifies the finite-prefix relation used here. The repair makes the existence argument and its dependency citations explicit before the uniqueness lemma is used downstream."
     }
   },
   "response": {
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontPrefixUnique.tex`; preserve its Lean statement, imports, and support structure. Retain the FrontPrefix citations establishing s,t in F and proper prefixes of range(x). Add a noderef citation for InitialSegment. Make the comparability line-by-line: name witnesses a,b in range(x) with s={k in range(x) | k<a} and t={k in range(x) | k<b}; handle a=b, a<b, and b<a separately, showing in the latter two cases that the smaller prefix is an InitialSegment of the larger (the smaller witness belongs to the larger prefix). Then apply the prefix-free clause of Front to the two established members of F. Do not add a helper or change the statement.",
+    "comments": "Repair only `Tablet/FrontPrefixExists.tex`; preserve its Lean statement, imports, and support structure. The current proof says that the range of an order embedding is infinite without citing `IncSeq`, and it obtains a `ProperPrefixSet` witness from `Front` without citing `ProperPrefixSet`; cite both nodes explicitly. Give a line-by-line justification that injectivity of the Nat embedding makes its range infinite, then apply the density clause of `Front` to the range using the existing range-subset hypothesis, and finally identify the resulting ProperPrefixSet statement with `FrontPrefix` via `FrontPrefix`. Add no helper or structural changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 68,
+    "cycle": 69,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,24 +50,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontPrefixUnique",
+    "next_active": "FrontPrefixExists",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1266,
-        "reason": "The paper identifies the unique front prefix and the finite-prefix basic sets used by this node.",
+        "reason": "The paper states the front-prefix existence and uniqueness fact and defines the finite-prefix basic sets.",
         "start_line": 1258
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage states that each infinite subset has a unique front member preceding it and identifies the relevant finite-prefix basic sets. The requested repair makes the tablet's uniqueness proof explicit at exactly that finite-prefix comparison step.",
+      "basis_summary": "The cited passage uses the explicit front definition to obtain a unique finite prefix for every infinite subset and identifies the finite-prefix relation used here. The repair makes the existence argument and its dependency citations explicit before the uniqueness lemma is used downstream.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found a concrete repairable defect in FrontPrefixUnique: InitialSegment is used without a noderef citation, and the essential comparability of two finite prefixes of one increasing range is asserted rather than proved.",
-    "request_id": 267,
+    "reason": "FrontPrefixUnique now has a current Sound approval. Independent inspection of FrontPrefixExists shows two concrete uncited proof dependencies: the infinitude of the range of an IncSeq and the ProperPrefixSet conclusion used before FrontPrefix is invoked.",
+    "request_id": 270,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -77,15 +77,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:45dc06957bf9073f1419e14f425668859fbf0e2ea13b68e6967dc15716b2df98",
+        "fingerprint": "sound-v2:e1132155b944f4e5fa1a150ee27c73f7d4552bcfcdd4b8ec6ac21217e38036da",
         "kind": "Soundness",
         "object": {
-          "node": "FrontPrefixUnique",
+          "node": "FrontPrefixExists",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_267_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_270_decision.context.json"
 }
