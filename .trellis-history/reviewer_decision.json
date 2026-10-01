@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "RestrictionShift has a current Sound approval. RestrictionLocallyConstant is the next sound-front target and is ready for a real Sound verifier run.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionLocallyConstant only. Check that the proof applies LocallyConstant to z composed with x, extracts a finite prefix of that composed enumeration, and explicitly uses the order-embedding and composition conventions to choose a finite prefix of x whose extensions preserve all values in the deciding prefix. Then verify that the resulting equality is exactly the definition of MultiSequenceRestrict and that the fixed-left restriction order is preserved. Require explicit citations to LocallyConstant and MultiSequenceRestrict, and to any IncSeq or composition definitions used in the finite-prefix step.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "RestrictionLocallyConstant"
+    "reason": "The Sound verifier found two concrete citation gaps in RestrictionLocallyConstant: the order-embedding property of z is used without IncSeq, and coordinatewise composition/prefix preservation is used without IncSeqComp. Route a bounded TeX-only proof repair before requesting reverification.",
+    "comments": "Assign only Tablet/RestrictionLocallyConstant.tex. Preserve its Lean signature, imports, statement, and support DAG, and retain the existing LocallyConstant and MultiSequenceRestrict citations. In the proof, cite IncSeq exactly where the order-embedding property of z is used. Cite IncSeqComp when making the coordinatewise composition and finite-prefix transport explicit: after obtaining a deciding prefix for h at z composed with x, choose a finite prefix length of x and prove that every y agreeing with x through that length gives z composed with y agreeing with z composed with x through the deciding prefix. Then apply MultiSequenceRestrict to conclude equality of the restricted values. Add no helper and make no statement or dependency changes.",
+    "task_blocker_ids": [
+      "soundness:node:RestrictionLocallyConstant:sound-v2:80e0d9184cf98c71c8f24586d82cdfb84b45f81b802e4fce836cdcff7320cbf2"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "RestrictionLocallyConstant",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -25,7 +25,7 @@
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1264-1271 identify finite initial-set cylinders as a basis and define local constancy by constancy on one such cylinder; RestrictionLocallyConstant formalizes preservation under an increasing-enumeration restriction."
+      "basis_summary": "Lines 1264-1271 identify finite initial-set cylinders as a basis and define local constancy by constancy on one such cylinder; the repair makes the corresponding finite-prefix transport through z explicit."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionLocallyConstant only. Check that the proof applies LocallyConstant to z composed with x, extracts a finite prefix of that composed enumeration, and explicitly uses the order-embedding and composition conventions to choose a finite prefix of x whose extensions preserve all values in the deciding prefix. Then verify that the resulting equality is exactly the definition of MultiSequenceRestrict and that the fixed-left restriction order is preserved. Require explicit citations to LocallyConstant and MultiSequenceRestrict, and to any IncSeq or composition definitions used in the finite-prefix step.",
+    "comments": "Assign only Tablet/RestrictionLocallyConstant.tex. Preserve its Lean signature, imports, statement, and support DAG, and retain the existing LocallyConstant and MultiSequenceRestrict citations. In the proof, cite IncSeq exactly where the order-embedding property of z is used. Cite IncSeqComp when making the coordinatewise composition and finite-prefix transport explicit: after obtaining a deciding prefix for h at z composed with x, choose a finite prefix length of x and prove that every y agreeing with x through that length gives z composed with y agreeing with z composed with x through the deciding prefix. Then apply MultiSequenceRestrict to conclude equality of the restricted values. Add no helper and make no statement or dependency changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 111,
+    "cycle": 112,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,7 +51,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "RestrictionLocallyConstant",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
@@ -63,22 +63,30 @@
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1264-1271 identify finite initial-set cylinders as a basis and define local constancy by constancy on one such cylinder; RestrictionLocallyConstant formalizes preservation under an increasing-enumeration restriction.",
+      "basis_summary": "Lines 1264-1271 identify finite initial-set cylinders as a basis and define local constancy by constancy on one such cylinder; the repair makes the corresponding finite-prefix transport through z explicit.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "RestrictionShift has a current Sound approval. RestrictionLocallyConstant is the next sound-front target and is ready for a real Sound verifier run.",
-    "request_id": 378,
-    "request_sound_verifier_nodes": [
-      "RestrictionLocallyConstant"
-    ],
+    "reason": "The Sound verifier found two concrete citation gaps in RestrictionLocallyConstant: the order-embedding property of z is used without IncSeq, and coordinatewise composition/prefix preservation is used without IncSeqComp. Route a bounded TeX-only proof repair before requesting reverification.",
+    "request_id": 380,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:80e0d9184cf98c71c8f24586d82cdfb84b45f81b802e4fce836cdcff7320cbf2",
+        "kind": "Soundness",
+        "object": {
+          "node": "RestrictionLocallyConstant",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_378_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_380_decision.context.json"
 }

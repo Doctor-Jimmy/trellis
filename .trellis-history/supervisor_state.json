@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 488,
+  "event_count": 491,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -44204,6 +44204,156 @@
         "$s": "98f40baa98553db9"
       }
     },
+    "be7f895b52057539": [
+      "BadMultiSequence",
+      "BadPairSequence",
+      "BadSuperSequence",
+      "BaireContinuous",
+      "BaseBad",
+      "BaseIncSeq",
+      "BaseLocallyConstant",
+      "BaseMultiSequence",
+      "BasePerfect",
+      "BaseRestrict",
+      "BaseRightComp",
+      "BaseShift",
+      "BetterRel",
+      "BlockSigma",
+      "BlockSigmaContinuous",
+      "BlockSigmaEmbedding",
+      "BlockSigmaIntertwines",
+      {
+        "$s": "4c3bac0512a45c96"
+      },
+      "Bqo",
+      "BqoHerCtblWellF",
+      "BqoHerCtblWqo",
+      "BqoIffGeneralShift",
+      "CardinalityFront",
+      "CardinalityFrontIsFront",
+      "ContMor",
+      "ContMorEq",
+      "ContinuousHom",
+      "ContinuousRelHom",
+      "DecidingFront",
+      "DecidingFrontSet",
+      "DecidingPrefix",
+      "DecidingValue",
+      "EmapLemma",
+      "FinitePrefixExtension",
+      "FiniteShift",
+      "FirstMovedPoint",
+      "Front",
+      "FrontBase",
+      "FrontBridge",
+      "FrontBridgeInit",
+      "FrontBridgeStep",
+      "FrontBridgeTail",
+      "FrontBridgeTerminal",
+      "FrontPrefix",
+      "FrontPrefixExists",
+      "FrontPrefixUnique",
+      "FrontRayClosure",
+      "FrontRestrict",
+      "FrontRestriction",
+      {
+        "$s": "ba060752f87266a9"
+      },
+      {
+        "$s": "ce47bd99c3ed46e0"
+      },
+      "FrontTreeSingleton",
+      "FrontTreeWellFounded",
+      "GBetterRel",
+      "GBetterRelIff",
+      "GoodMultiSequence",
+      "HerCtblCode",
+      "HerCtblCodeErase",
+      "HerCtblNodeClosure",
+      "HerCtblPower",
+      "HerCtblPowerIsPreorder",
+      "HerCtblRel",
+      {
+        "$s": "19fb7b62eea67a5d"
+      },
+      "HereditarilyCountable",
+      {
+        "$s": "248a162fe13df6db"
+      },
+      {
+        "$s": "0de210e54bc47028"
+      },
+      "IncSeq",
+      "IncSeqComp",
+      "IncSeqId",
+      "IncSeqPointwiseLe",
+      "IncreasingPair",
+      "InfiniteSetEnumeration",
+      "InitialSegment",
+      "LocallyConstant",
+      "MainProp",
+      "MultiSequence",
+      "MultiSequenceRestrict",
+      "NashWilliams",
+      "OrbitBlock",
+      "OrbitBlockCoverage",
+      "OrbitEmbedding",
+      "OrbitPoint",
+      "OrbitUnbounded",
+      "PerfectMultiSequence",
+      "PerfectSuperSequence",
+      "PowerChild",
+      "PowerChildWellFounded",
+      "PowerCopiedLeft",
+      "PowerCopiedTerminalAt",
+      "PowerGameDescent",
+      "PowerIResponse",
+      "PowerIResponseFailure",
+      "PowerIResponseLegal",
+      "PowerIResponseWitness",
+      "PowerMove",
+      "PowerPresentationEq",
+      "PowerQ",
+      "PowerQIsPreorder",
+      "PowerRel",
+      "PowerRelAtomAtom",
+      "PowerRelAtomNode",
+      "PowerRelNodeAtom",
+      "PowerRelNodeNode",
+      "PowerShiftIter",
+      "PowerSupport",
+      "Preamble",
+      "PrefixAgree",
+      "PrefixTree",
+      "ProperInitialSegment",
+      "ProperPrefixSet",
+      "RadoOrder",
+      "Ray",
+      "RelationEmbedding",
+      "RestrictionShift",
+      "RightComp",
+      "RmapLemma",
+      "SetDomination",
+      "ShiftDichotomy",
+      "ShiftMap",
+      {
+        "$s": "b93919442f024c21"
+      },
+      "Subarr",
+      "SuccSeq",
+      "SuperNW",
+      "SuperSequence",
+      "SuperSequenceExtension",
+      "SuperSequenceRestrict",
+      "TailSet",
+      "TildeF",
+      "TildeFAtomIffFront",
+      "TildeFFrontEquation",
+      "TildeFHerCtbl",
+      "TildeFNonfrontEquation",
+      "TildeFSingleton",
+      "TripleHomogeneous"
+    ],
     "beac33499e79881f": {
       "consumer": "ConverseGame",
       "declaration_kind": "theorem",
@@ -59665,17 +59815,21 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": {
+      "$s": "b415d99a5587255c"
+    },
     "committed": {
       "$r": "990be1d6cce069bd"
     },
-    "cycle": 111,
+    "cycle": 112,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": null,
+    "active_node": {
+      "$s": "b415d99a5587255c"
+    },
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -59917,9 +60071,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 111,
+    "cycle": 112,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 111,
+    "cycles_since_clean": 112,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -60711,7 +60865,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 111,
+    "last_sound_response_cycle": 112,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60953,7 +61107,42 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Global",
+      "must_close_active": false,
+      "next_worker_context_mode": "resume",
+      "node": {
+        "$s": "b415d99a5587255c"
+      },
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [
+        {
+          "end_line": 1271,
+          "reason": "Paper finite-prefix topology and local-constancy definition underlying restriction preservation.",
+          "start_line": 1264
+        }
+      ],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "42b71886d8531ec3"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "b415d99a5587255c"
+            },
+            "otype": "node"
+          }
+        }
+      ],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "TheoremStating",
     "plan_review_cadence_enabled": true,
@@ -61028,16 +61217,18 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "RestrictionShift": {
+      "RestrictionLocallyConstant": {
         "v1": {
-          "comments": "The proof explicitly unfolds the shift on both sides, preserves the fixed-left composition order via IncSeqComp, and closes the equality by associativity. The final multi-sequence evaluation remark is a valid cited consequence of MultiSequenceRestrict.",
-          "node": "RestrictionShift",
-          "overall": "APPROVE",
-          "soundness": {
-            "decision": "SOUND",
-            "explanation": "Using \\noderef{ShiftMap}, the left side becomes z \\circ (x \\circ \\mathsf{SuccSeq}) and the right side becomes (z \\circ x) \\circ \\mathsf{SuccSeq}. The proof cites \\noderef{IncSeqComp} for the composition convention and invokes associativity to identify these expressions. It also correctly notes the resulting evaluation consequence for restrictions using \\noderef{MultiSequenceRestrict}; all cross-node dependencies used are explicitly cited."
+          "comments": "1. The proof explicitly uses that z is an order embedding, which is supplied by the cross-node definition \\noderef{IncSeq} but is not cited. 2. The key inference that a sufficiently long prefix of x makes z\\u2218y agree with z\\u2218x on the deciding prefix relies on the coordinatewise composition definition in \\noderef{IncSeqComp}; that dependency is also uncited. The cited LocallyConstant and MultiSequenceRestrict statements do not by themselves establish these two facts.",
+          "node": {
+            "$s": "b415d99a5587255c"
           },
-          "summary": "Approve: the natural-language proof is line-by-line sufficient for the restriction-shift identity and has complete dependency citations."
+          "overall": "REJECT",
+          "soundness": {
+            "decision": "STRUCTURAL",
+            "explanation": "The proof has the correct restriction argument, but it is not line-by-line derivable from its explicitly cited support statements: it uses the IncSeq order-embedding fact and the IncSeqComp coordinatewise prefix-preservation fact without the required cross-node citations."
+          },
+          "summary": "Reject: the mathematical idea is sound, but the proof has two mandatory dependency-citation gaps involving IncSeq and IncSeqComp."
         }
       }
     },
@@ -61045,17 +61236,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 111,
+      "next_index": 112,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": {
-            "$r": "9550d64858cb4220"
-          },
-          "snapshot_index": 47
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -65114,157 +65296,19 @@
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblNodeClosure",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RestrictionShift",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftDichotomy",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "Subarr",
-            "SuccSeq",
-            "SuperNW",
-            "SuperSequence",
-            "SuperSequenceExtension",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFAtomIffFront",
-            "TildeFFrontEquation",
-            "TildeFHerCtbl",
-            "TildeFNonfrontEquation",
-            "TildeFSingleton",
-            "TripleHomogeneous"
-          ],
+          "progressed": {
+            "$r": "be7f895b52057539"
+          },
           "snapshot_index": 110
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "be7f895b52057539"
+          },
+          "snapshot_index": 111
         }
       ]
     },
@@ -65273,14 +65317,10 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 378,
+    "request_seq": 380,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RestrictionLocallyConstant only. Check that the proof applies LocallyConstant to z composed with x, extracts a finite prefix of that composed enumeration, and explicitly uses the order-embedding and composition conventions to choose a finite prefix of x whose extensions preserve all values in the deciding prefix. Then verify that the resulting equality is exactly the definition of MultiSequenceRestrict and that the fixed-left restriction order is preserved. Require explicit citations to LocallyConstant and MultiSequenceRestrict, and to any IncSeq or composition definitions used in the finite-prefix step.",
-    "reviewer_requested_sound_verifier_nodes": [
-      {
-        "$s": "b415d99a5587255c"
-      }
-    ],
+    "reviewer_comments": "Assign only Tablet/RestrictionLocallyConstant.tex. Preserve its Lean signature, imports, statement, and support DAG, and retain the existing LocallyConstant and MultiSequenceRestrict citations. In the proof, cite IncSeq exactly where the order-embedding property of z is used. Cite IncSeqComp when making the coordinatewise composition and finite-prefix transport explicit: after obtaining a deciding prefix for h at z composed with x, choose a finite prefix length of x and prove that every y agreeing with x through that length gives z composed with y agreeing with z composed with x through the deciding prefix. Then apply MultiSequenceRestrict to conclude equality of the restricted values. Add no helper and make no statement or dependency changes.",
+    "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
@@ -65388,6 +65428,9 @@
       },
       "PowerIResponseWitness": {
         "$s": "4894d612f70a8eb2"
+      },
+      "RestrictionLocallyConstant": {
+        "$s": "42b71886d8531ec3"
       },
       "RestrictionShift": {
         "$s": "893330a3e72140a0"
@@ -65812,6 +65855,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "RestrictionLocallyConstant": {
+        "fingerprints": {
+          "$r": "66e5d8dd28e2dd27"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       },
       "RestrictionShift": {
         "fingerprints": {
@@ -67046,6 +67098,7 @@
       "PowerIResponseFailure": "Pass",
       "PowerIResponseLegal": "Pass",
       "PowerIResponseWitness": "Pass",
+      "RestrictionLocallyConstant": "Fail",
       "RestrictionShift": "Pass",
       "RmapLemma": "Pass",
       "ShiftDichotomy": "Pass",
