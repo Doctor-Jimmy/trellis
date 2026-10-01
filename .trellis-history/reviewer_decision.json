@@ -1,21 +1,21 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BqoIffGeneralShift is now Sound-approved. CardinalityFrontIsFront is the remaining direct support node imported by the held target TripleHomogeneous and remains FreshUnknown, so verify it before the parent.",
-    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound evidence approves BqoIffGeneralShift and NashWilliams, while CardinalityFrontIsFront remains FreshUnknown and is imported directly by TripleHomogeneous. Request one real Sound verifier for CardinalityFrontIsFront only; check the trivial k=0 case, the base and prefix-freeness clauses, and density via the first k elements of an increasing enumeration, with the explicit Front dependency. Leave all other live obligations untouched.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "CardinalityFrontIsFront"
+    "reason": "Sound verification rejected CardinalityFrontIsFront with concrete gaps in the reverse base inclusion, proper-prefix density witnesses, and the strict-cardinality prefix-free argument. Assign that repair before returning to TripleHomogeneous.",
+    "comments": "Repair only Tablet/CardinalityFrontIsFront.tex, preserving its Lean statement and support structure; add only imports for genuine existing dependencies if needed, and add no helper or theorem. Cite Front, InfiniteSetEnumeration, ProperPrefixSet, and InitialSegment at their uses. Treat k=0 separately: show CardinalityFront(0,X) is exactly {emptyset}, and for density give an explicit witness from the first element of the increasing enumeration. For k>0, prove FrontBase equals X in both directions: members give the easy inclusion, while for arbitrary x in X use infinitude of X to choose k-1 distinct additional elements and form a k-set containing x. For density, enumerate an arbitrary infinite Y subset X, verify membership and cardinality of the first k values, and use y(k) as the next element to prove the first k values are ProperPrefixSet of Y (with the explicit witness). For prefix-freeness, unpack InitialSegment: a strict initial segment has a witness n in the larger finite set and omits n, so it has strictly smaller cardinality, contradicting equal cardinalities. Remove the current summary assertions and make every step line-by-line checkable from the cited nodes. Do not edit TripleHomogeneous yet.",
+    "task_blocker_ids": [
+      "soundness:node:CardinalityFrontIsFront:sound-v2:1465341f591ef2fdeb690e97dc3270350e1dc78496b32a9829cd8797a77ae778"
     ],
-    "next_active": "",
-    "next_mode": "global",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "CardinalityFrontIsFront",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "start_line": 1002,
@@ -25,17 +25,17 @@
       {
         "start_line": 1036,
         "end_line": 1037,
-        "reason": "The paper's explicit constant-cardinality front example, including the trivial k=0 case."
+        "reason": "The paper's constant-cardinality front example, including the trivial k=0 case."
       },
       {
         "start_line": 1083,
         "end_line": 1090,
-        "reason": "The paper's three explicit front clauses used by the changed support proof."
+        "reason": "The paper's explicit base, prefix-freeness, and density clauses for a front."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passages define [X]^k, identify [X]^k as a front for every k with [X]^0 trivial, and state the explicit front requirements: the base alternative, prefix-freeness, and density. These are exactly the claims expanded in CardinalityFrontIsFront, which directly supports the held TripleHomogeneous node."
+      "basis_summary": "The cited paper text defines [X]^k, records [X]^k as a front for every k with [X]^0 trivial, and specifies the three explicit front obligations. The verifier's rejected proof must therefore be repaired by fully proving those obligations, including the proper-prefix witness and both directions of the base equality."
     },
     "work_style_hint": "none"
   },
@@ -48,10 +48,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound evidence approves BqoIffGeneralShift and NashWilliams, while CardinalityFrontIsFront remains FreshUnknown and is imported directly by TripleHomogeneous. Request one real Sound verifier for CardinalityFrontIsFront only; check the trivial k=0 case, the base and prefix-freeness clauses, and density via the first k elements of an increasing enumeration, with the explicit Front dependency. Leave all other live obligations untouched.",
+    "comments": "Repair only Tablet/CardinalityFrontIsFront.tex, preserving its Lean statement and support structure; add only imports for genuine existing dependencies if needed, and add no helper or theorem. Cite Front, InfiniteSetEnumeration, ProperPrefixSet, and InitialSegment at their uses. Treat k=0 separately: show CardinalityFront(0,X) is exactly {emptyset}, and for density give an explicit witness from the first element of the increasing enumeration. For k>0, prove FrontBase equals X in both directions: members give the easy inclusion, while for arbitrary x in X use infinitude of X to choose k-1 distinct additional elements and form a k-set containing x. For density, enumerate an arbitrary infinite Y subset X, verify membership and cardinality of the first k values, and use y(k) as the next element to prove the first k values are ProperPrefixSet of Y (with the explicit witness). For prefix-freeness, unpack InitialSegment: a strict initial segment has a witness n in the larger finite set and omits n, so it has strictly smaller cardinality, contradicting equal cardinalities. Remove the current summary assertions and make every step line-by-line checkable from the cited nodes. Do not edit TripleHomogeneous yet.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 93,
+    "cycle": 94,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -59,10 +59,10 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "CardinalityFrontIsFront",
     "next_active_coarse": null,
-    "next_mode": "Global",
-    "next_worker_context_mode": "resume",
+    "next_mode": "Targeted",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "end_line": 1004,
@@ -71,32 +71,40 @@
       },
       {
         "end_line": 1037,
-        "reason": "The paper's explicit constant-cardinality front example, including the trivial k=0 case.",
+        "reason": "The paper's constant-cardinality front example, including the trivial k=0 case.",
         "start_line": 1036
       },
       {
         "end_line": 1090,
-        "reason": "The paper's three explicit front clauses used by the changed support proof.",
+        "reason": "The paper's explicit base, prefix-freeness, and density clauses for a front.",
         "start_line": 1083
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passages define [X]^k, identify [X]^k as a front for every k with [X]^0 trivial, and state the explicit front requirements: the base alternative, prefix-freeness, and density. These are exactly the claims expanded in CardinalityFrontIsFront, which directly supports the held TripleHomogeneous node.",
+      "basis_summary": "The cited paper text defines [X]^k, records [X]^k as a front for every k with [X]^0 trivial, and specifies the three explicit front obligations. The verifier's rejected proof must therefore be repaired by fully proving those obligations, including the proper-prefix witness and both directions of the base equality.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BqoIffGeneralShift is now Sound-approved. CardinalityFrontIsFront is the remaining direct support node imported by the held target TripleHomogeneous and remains FreshUnknown, so verify it before the parent.",
-    "request_id": 336,
-    "request_sound_verifier_nodes": [
-      "CardinalityFrontIsFront"
-    ],
+    "reason": "Sound verification rejected CardinalityFrontIsFront with concrete gaps in the reverse base inclusion, proper-prefix density witnesses, and the strict-cardinality prefix-free argument. Assign that repair before returning to TripleHomogeneous.",
+    "request_id": 338,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:1465341f591ef2fdeb690e97dc3270350e1dc78496b32a9829cd8797a77ae778",
+        "kind": "Soundness",
+        "object": {
+          "node": "CardinalityFrontIsFront",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_336_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_338_decision.context.json"
 }
