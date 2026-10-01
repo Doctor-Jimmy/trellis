@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 626,
+  "event_count": 629,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -1339,7 +1339,6 @@
     "dd8e3f0a6234d30b": "cc5ec1f570527ece1d063b3853f1eddeefce3afaca86e2a6dc2b6323dd25bece",
     "dd9c5ae49b1646b6": "1f09ba04c7126511b91d0174529f073d5ee29978aca79ce82e11d31cb0446007",
     "de0644c07bae5960": "{\"own_tex\":\"7fa213a60b9df880691293e10b87981adedcf045f2b1908ac47266232465857c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-    "de1c5c3f1f4735c6": "sound-v2:1fe5a07fea73dba353d6627413f89c28a39cf528cba9a9d5c6977ef8321cc0b3",
     "de343fa3b194ca98": "{\"own_tex\":\"6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1\",\"lean_semantic_closure\":\"46aa42c790c7124ee3263e342750acdcc4feb9688ad232e6cd76fc22f4bd98a6\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "de3cae960584ca40": "sound-v2:2ed9a9f5da51cd147e2575c730f9a7700c010138f88e4cd54ae0ce46775f79bf",
     "de59642eef9dd9c1": "d5dec79469d4f02a1666f5d62aa48a28c614195659469803e121e50ac728c53c",
@@ -60200,7 +60199,7 @@
     "committed": {
       "$r": "c4e50a6e62c9cb02"
     },
-    "cycle": 147,
+    "cycle": 148,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60448,9 +60447,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 147,
+    "cycle": 148,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 147,
+    "cycles_since_clean": 148,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -61196,7 +61195,7 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": "PowerQReflection",
+    "held_target": "PowerChildSupport",
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -61240,7 +61239,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 147,
+    "last_sound_response_cycle": 148,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61503,18 +61502,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PowerCopiedTerminalSupport": {
+      "PowerQReflection": {
         "v1": {
-          "comments": "The dependency-only recheck does not expose a soundness gap. The changed support node still states exactly the inclusion used here.",
-          "node": {
-            "$s": "c92d93fd7a69a2a5"
-          },
+          "comments": "Rechecked after the PowerCopiedSupport dependency edit.",
+          "node": "PowerQReflection",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "From PowerCopiedTerminates at row 0, the proof obtains a terminal depth; PowerCopiedTerminalAt then supplies the two atom witnesses. PowerCopiedSupport at row 0 and depth k, together with the cited zeroth-iterate equation from PowerShiftIter and the atom clause of PowerSupport, rigorously transfers q into PowerSupport(h(x)). All cross-node dependencies used in the proof are explicitly cited."
+            "explanation": "The proof constructs the unique terminal atom label from PowerCopiedTerminates and PowerCopiedFiniteTerminal, derives badness via PowerCopiedFailureMove, PowerRelAtomAtom, and PowerCopiedShiftIdentity, obtains support containment from the current PowerCopiedSupport statement, and proves local constancy using PowerFiniteOrbitConstancy and PowerCopiedOrbitDependence. Every cross-node dependency used in the proof is explicitly cited, and the finite-depth persistence argument supplies the needed uniqueness and prefix-locality details."
           },
-          "summary": "The NL proof is a complete, line-by-line witness extraction and support-containment argument from the cited child statements."
+          "summary": "Approve: the natural-language proof rigorously establishes PowerQReflection from its cited support statements."
         }
       }
     },
@@ -61522,146 +61519,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 147,
+      "next_index": 148,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 83
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -67479,6 +67338,211 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 146
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedFailureMove",
+            {
+              "$s": "5fd62f6199ae512b"
+            },
+            {
+              "$s": "86b2632417374ebd"
+            },
+            "PowerCopiedLeft",
+            {
+              "$s": "9a013b8cdeb9d5ff"
+            },
+            {
+              "$s": "55d1a8fd6d560eea"
+            },
+            "PowerCopiedSupport",
+            "PowerCopiedTerminalAt",
+            {
+              "$s": "2e7a9f9ae663f9f8"
+            },
+            {
+              "$s": "c92d93fd7a69a2a5"
+            },
+            "PowerCopiedTerminates",
+            {
+              "$s": "77d96f473077081d"
+            },
+            "PowerGameDescent",
+            {
+              "$s": "50a07aa664204053"
+            },
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerMoveInSupport",
+            "PowerPresentationEq",
+            {
+              "$s": "93d700ae7b9523b8"
+            },
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerQPresBqo",
+            "PowerQReflection",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelCongrLeft",
+            "PowerRelCongrRight",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerRelRefl",
+            "PowerRelTrans",
+            "PowerShiftIter",
+            {
+              "$s": "6947ec3a7b56b112"
+            },
+            "PowerShiftIterShift",
+            "PowerSupport",
+            "PowerSupportInvariant",
+            "PowerSupportNonempty",
+            "PowerWqoBadPairSequence",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "QuadrupleHomogeneous",
+            "RadoEmbedding",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            {
+              "$s": "b415d99a5587255c"
+            },
+            "RestrictionShift",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftDichotomy",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "Subarr",
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFAtomIffFront",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 147
         }
       ]
     },
@@ -67487,11 +67551,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 480,
+    "request_seq": 482,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Leave Tablet/PowerQReflection.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerQReflection now that PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, PowerCopiedFiniteTerminal, PowerCopiedSupport, PowerCopiedTerminalSupport, PowerCopiedTerminalShift, PowerCopiedTerminates, and PowerFiniteOrbitConstancy have current Sound approvals. The verifier should check the copied-row definitions, terminal-label uniqueness, support transfer, badness conclusion, and finite-prefix local-constancy argument against the current cited support statements. Do not assign a worker or reset any blocker.",
+    "reviewer_comments": "Leave Tablet/PowerChildSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerChildSupport. The verifier should check that unfolding PowerChild gives a node-parent pair, that PowerSupport defines the parent support as the union of the supports of its children, and that this yields the stated subset inclusion with the recursive and atom cases matched exactly. The relevant support definition is in PowerSupport, and the child relation is in PowerChild. Do not assign a worker or reset any blocker.",
     "reviewer_requested_sound_verifier_nodes": [
-      "PowerQReflection"
+      "PowerChildSupport"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -67644,7 +67708,7 @@
         "$s": "ae58911086a7dd8c"
       },
       "PowerQReflection": {
-        "$s": "de1c5c3f1f4735c6"
+        "$s": "e59f1edf6fa5a48d"
       },
       "PowerRelCongrLeft": {
         "$s": "50ce8735d68b7af4"
@@ -68262,60 +68326,7 @@
       },
       "PowerQReflection": {
         "fingerprints": {
-          "combined_sound_fp": {
-            "$s": "de1c5c3f1f4735c6"
-          },
-          "dep_statement_hashes": {
-            "BadMultiSequence": {
-              "$s": "4edc5c2720c632f4"
-            },
-            "LocallyConstant": {
-              "$s": "ca2b7e8775c5e3de"
-            },
-            "PowerCopiedFailureMove": {
-              "$s": "e485ae801da4497d"
-            },
-            "PowerCopiedFiniteTerminal": {
-              "$s": "c1fe5fdb54d680d8"
-            },
-            "PowerCopiedLeft": {
-              "$s": "159786ffca64fd08"
-            },
-            "PowerCopiedOrbitDependence": {
-              "$s": "c68d6aa34eb76885"
-            },
-            "PowerCopiedShiftIdentity": {
-              "$s": "495d36780c18aa3d"
-            },
-            "PowerCopiedSupport": "18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b",
-            "PowerCopiedTerminalAt": {
-              "$s": "6a784a5b34fd6e70"
-            },
-            "PowerCopiedTerminates": {
-              "$s": "40aac433a14cd604"
-            },
-            "PowerFiniteOrbitConstancy": {
-              "$s": "733419d65aaa7ffe"
-            },
-            "PowerIResponse": {
-              "$s": "db1cdd27678425ee"
-            },
-            "PowerMove": {
-              "$s": "ed64d2afe21ed18d"
-            },
-            "PowerRelAtomAtom": {
-              "$s": "f7d963a3bca6d916"
-            },
-            "PowerShiftIter": {
-              "$s": "7c6c758b1b597ac2"
-            },
-            "PowerSupport": {
-              "$s": "6ccdfceab0025a62"
-            }
-          },
-          "own_tex_hash": {
-            "$s": "3a73403c2ba8fd28"
-          }
+          "$r": "530208a27547258b"
         },
         "lane_votes": {
           "v1": "Pass"

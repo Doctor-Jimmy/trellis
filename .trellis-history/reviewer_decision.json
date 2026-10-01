@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedTerminalSupport now has a current Sound approval, and all direct PowerQReflection supports are current. The remaining action is a fresh Sound verification of stale PowerQReflection; no concrete proof failure or statement/DAG issue is present.",
-    "comments": "Leave Tablet/PowerQReflection.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerQReflection now that PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, PowerCopiedFiniteTerminal, PowerCopiedSupport, PowerCopiedTerminalSupport, PowerCopiedTerminalShift, PowerCopiedTerminates, and PowerFiniteOrbitConstancy have current Sound approvals. The verifier should check the copied-row definitions, terminal-label uniqueness, support transfer, badness conclusion, and finite-prefix local-constancy argument against the current cited support statements. Do not assign a worker or reset any blocker.",
+    "reason": "PowerQReflection now has a current Sound approval, and the remaining requestable target is PowerChildSupport. Its current proof is a direct support-inclusion argument from PowerChild and PowerSupport, with no concrete failure or statement/DAG issue requiring a worker repair.",
+    "comments": "Leave Tablet/PowerChildSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerChildSupport. The verifier should check that unfolding PowerChild gives a node-parent pair, that PowerSupport defines the parent support as the union of the supports of its children, and that this yields the stated subset inclusion with the recursive and atom cases matched exactly. The relevant support definition is in PowerSupport, and the child relation is in PowerChild. Do not assign a worker or reset any blocker.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PowerQReflection"
+      "PowerChildSupport"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1549,
-        "end_line": 1549,
-        "reason": "The manuscript's finite copied play and adjacent-row matching underlying the reflection construction."
+        "start_line": 1374,
+        "end_line": 1374,
+        "reason": "The manuscript's recursive definition of support, which justifies inclusion from a child into its parent."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying, then extracts the first-row terminal value and uses the shifted adjacent row in the reflection construction. With all direct supports now current, the stale PowerQReflection proof is ready for a fresh Sound check against those statements."
+      "basis_summary": "The manuscript defines support of a non-atomic iterated-powerset object as the union of the supports of its members, while atoms contribute singleton support. Thus the child relation immediately gives support inclusion into the parent, exactly the claim of PowerChildSupport."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PowerQReflection.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerQReflection now that PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, PowerCopiedFiniteTerminal, PowerCopiedSupport, PowerCopiedTerminalSupport, PowerCopiedTerminalShift, PowerCopiedTerminates, and PowerFiniteOrbitConstancy have current Sound approvals. The verifier should check the copied-row definitions, terminal-label uniqueness, support transfer, badness conclusion, and finite-prefix local-constancy argument against the current cited support statements. Do not assign a worker or reset any blocker.",
+    "comments": "Leave Tablet/PowerChildSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerChildSupport. The verifier should check that unfolding PowerChild gives a node-parent pair, that PowerSupport defines the parent support as the union of the supports of its children, and that this yields the stated subset inclusion with the recursive and atom cases matched exactly. The relevant support definition is in PowerSupport, and the child relation is in PowerChild. Do not assign a worker or reset any blocker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 147,
+    "cycle": 148,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,20 +54,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1549,
-        "reason": "The manuscript's finite copied play and adjacent-row matching underlying the reflection construction.",
-        "start_line": 1549
+        "end_line": 1374,
+        "reason": "The manuscript's recursive definition of support, which justifies inclusion from a child into its parent.",
+        "start_line": 1374
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying, then extracts the first-row terminal value and uses the shifted adjacent row in the reflection construction. With all direct supports now current, the stale PowerQReflection proof is ready for a fresh Sound check against those statements.",
+      "basis_summary": "The manuscript defines support of a non-atomic iterated-powerset object as the union of the supports of its members, while atoms contribute singleton support. Thus the child relation immediately gives support inclusion into the parent, exactly the claim of PowerChildSupport.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedTerminalSupport now has a current Sound approval, and all direct PowerQReflection supports are current. The remaining action is a fresh Sound verification of stale PowerQReflection; no concrete proof failure or statement/DAG issue is present.",
-    "request_id": 480,
+    "reason": "PowerQReflection now has a current Sound approval, and the remaining requestable target is PowerChildSupport. Its current proof is a direct support-inclusion argument from PowerChild and PowerSupport, with no concrete failure or statement/DAG issue requiring a worker repair.",
+    "request_id": 482,
     "request_sound_verifier_nodes": [
-      "PowerQReflection"
+      "PowerChildSupport"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -77,5 +77,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_480_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_482_decision.context.json"
 }
