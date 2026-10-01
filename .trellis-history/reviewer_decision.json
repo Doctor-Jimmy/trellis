@@ -1,15 +1,15 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "DecidingValue has one concrete citation gap: its proof uses the deciding-prefix conjunct of membership in F^h without citing DecidingFrontSet. Assign a narrow repair and leave dependent Sound reverification for a later eligible slot.",
-    "comments": "Edit only Tablet/DecidingValue.tex. Preserve the Lean statement, imports, and existing finite-extension/value-independence proof. At the point where s is treated as a deciding prefix because s belongs to F^h, explicitly cite DecidingFrontSet for the defining conjunction and then cite DecidingPrefix for the value equality of two extensions. Keep the citation to FinitePrefixExtension for existence of an increasing enumeration extending s. Do not change the theorem statement, add a helper, or request Sound verification in this transition. The paper's corresponding construction of the unique value on the minimal deciding front is at lines 1282-1289.",
-    "task_blocker_ids": [
-      "soundness:node:DecidingValue:sound-v2:7eb2abe4d1473a03a0743187792ff1c38cd86aee6ef31eaaba4f66f3c18048a8"
-    ],
+    "reason": "DecidingValue now has a fresh Sound approval. DecidingFront was changed after its previous evidence and remains SelfEditUnknown, so verify that support node before rechecking changed GBetterRelIff.",
+    "comments": "Do not edit or reassign DecidingValue: the current verifier evidence is APPROVE/SOUND. Request a real Sound verifier for DecidingFront only. Its cycle-89 repair changed the proof and added the existing InfiniteSetEnumeration support; verify the finite-prefix-to-DecidingPrefix bridge, branch minimalization, prefix-freeness, constant/nonconstant base split, and all Front fields from the explicitly cited support. Once DecidingFront passes, reverify changed GBetterRelIff, whose homogeneous-front proof depends on it. This ordering follows the recent history and the current sound-assessment statuses.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "DecidingValue",
-    "next_mode": "targeted",
+    "request_sound_verifier_node_ids": [
+      "DecidingFront"
+    ],
+    "next_active": "",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1282,
+        "start_line": 1277,
         "end_line": 1289,
-        "reason": "The paper's value-map construction on the minimal deciding front."
+        "reason": "The paper's minimal deciding-prefix front construction underlying the changed DecidingFront support node."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage constructs the value map on the minimal deciding-prefix front by choosing an enumeration extending each finite prefix and using constancy on that cylinder to prove independence of the choice. The only current defect is the missing explicit citation for the definition of membership in that minimal front."
+      "basis_summary": "The cited passage defines S^h, proves its minimal members form a front using density and the trivial/nontrivial base split, and then constructs the value map. It is the mathematical route behind the changed DecidingFront support node that should be freshly verified before its dependent GBetterRelIff proof."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/DecidingValue.tex. Preserve the Lean statement, imports, and existing finite-extension/value-independence proof. At the point where s is treated as a deciding prefix because s belongs to F^h, explicitly cite DecidingFrontSet for the defining conjunction and then cite DecidingPrefix for the value equality of two extensions. Keep the citation to FinitePrefixExtension for existence of an increasing enumeration extending s. Do not change the theorem statement, add a helper, or request Sound verification in this transition. The paper's corresponding construction of the unique value on the minimal deciding front is at lines 1282-1289.",
+    "comments": "Do not edit or reassign DecidingValue: the current verifier evidence is APPROVE/SOUND. Request a real Sound verifier for DecidingFront only. Its cycle-89 repair changed the proof and added the existing InfiniteSetEnumeration support; verify the finite-prefix-to-DecidingPrefix bridge, branch minimalization, prefix-freeness, constant/nonconstant base split, and all Front fields from the explicitly cited support. Once DecidingFront passes, reverify changed GBetterRelIff, whose homogeneous-front proof depends on it. This ordering follows the recent history and the current sound-assessment statuses.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 89,
+    "cycle": 90,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,42 +49,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "DecidingValue",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1289,
-        "reason": "The paper's value-map construction on the minimal deciding front.",
-        "start_line": 1282
+        "reason": "The paper's minimal deciding-prefix front construction underlying the changed DecidingFront support node.",
+        "start_line": 1277
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage constructs the value map on the minimal deciding-prefix front by choosing an enumeration extending each finite prefix and using constancy on that cylinder to prove independence of the choice. The only current defect is the missing explicit citation for the definition of membership in that minimal front.",
+      "basis_summary": "The cited passage defines S^h, proves its minimal members form a front using density and the trivial/nontrivial base split, and then constructs the value map. It is the mathematical route behind the changed DecidingFront support node that should be freshly verified before its dependent GBetterRelIff proof.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "DecidingValue has one concrete citation gap: its proof uses the deciding-prefix conjunct of membership in F^h without citing DecidingFrontSet. Assign a narrow repair and leave dependent Sound reverification for a later eligible slot.",
-    "request_id": 327,
-    "request_sound_verifier_nodes": [],
+    "reason": "DecidingValue now has a fresh Sound approval. DecidingFront was changed after its previous evidence and remains SelfEditUnknown, so verify that support node before rechecking changed GBetterRelIff.",
+    "request_id": 330,
+    "request_sound_verifier_nodes": [
+      "DecidingFront"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:7eb2abe4d1473a03a0743187792ff1c38cd86aee6ef31eaaba4f66f3c18048a8",
-        "kind": "Soundness",
-        "object": {
-          "node": "DecidingValue",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_327_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_330_decision.context.json"
 }
