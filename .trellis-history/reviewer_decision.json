@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedFiniteDependence has a current Sound approval. The next support node PowerCopiedShiftIdentity has a concrete local proof gap: its proof fixes the row n while inducting on k, then invokes the induction hypothesis at rows n and n+1 in the successor case. This is a sound-repair-ready TeX repair, not a statement or DAG issue.",
-    "comments": "Edit only Tablet/PowerCopiedShiftIdentity.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over every row i: for each depth m, prove PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i+1) m. In the base case, cite PowerCopiedLeft for the depth-zero clause, use PowerShiftIterShift to rewrite the two shifted-input iterates to the corresponding iterates at i+1 and i+2, and cite PowerIResponse for the equal deterministic responses. In the successor case, apply the strengthened induction hypothesis at rows i and i+1, explicitly matching the recursive pairs (i,i+1) on the shifted side with (i+1,i+2) on the original side; then cite PowerCopiedLeft and PowerIResponse to conclude. Spell out the row-index arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
+    "reason": "PowerCopiedShiftIdentity has a current Sound approval. PowerCopiedFiniteTerminal has a concrete unsupported step: PowerCopiedTerminates supplies only a depth and the terminal-condition proposition, while the proof claims that it directly supplies the two atom labels. The labels must be obtained by citing and unpacking PowerCopiedTerminalAt before finite dependence is applied.",
+    "comments": "Edit only Tablet/PowerCopiedFiniteTerminal.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Apply PowerCopiedTerminates at row 0 to obtain k together with PowerCopiedTerminalAt_r(h,x,0,k), then cite PowerCopiedTerminalAt and explicitly unpack its existential to obtain q and q' and the two atom equations, including the row-1 equation. Cite PowerCopiedFiniteDependence at n=0 with an arbitrary replacement h' satisfying the displayed agreement through k+2; orient the agreement exactly as its statement requires and conclude equality of the first copied value. Rewrite that value using the original atom equation to show it is atom(q), thereby proving the final universal clause. Cite every cross-node dependency at its use and do not claim that PowerCopiedTerminates itself supplies q,q'. Change no Lean text, imports, statement, or support edge.",
     "task_blocker_ids": [
-      "soundness:node:PowerCopiedShiftIdentity:sound-v2:4263c6754d3335161243b8c72c99b53d1f2230f575c97d677cb869fc227698a8"
+      "soundness:node:PowerCopiedFiniteTerminal:sound-v2:f30a3a4435d162c79d2ac66a50eeee44083259d7b1fd703cbd273fe3fe836be2"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedShiftIdentity",
+    "next_active": "PowerCopiedFiniteTerminal",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1548,
+        "start_line": 1549,
         "end_line": 1549,
-        "reason": "The manuscript's copied-play row matching and shift relation underlying the stabilization identity."
+        "reason": "The manuscript's finite copied-play dependence and adjacent-row construction underlying the terminal witness."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript describes the copied adjacent plays and identifies the next copied row with the shifted input, yielding g(shift X) from the next row. The assigned repair makes the corresponding PowerCopiedLeft shift identity rigorous by generalizing the row index throughout the depth induction."
+      "basis_summary": "The manuscript describes a finite copied play whose terminal row values are determined by finitely many shift-orbit values and whose adjacent rows are linked by copying. The assigned repair makes the tablet's terminal witness and finite-dependence transfer explicit from the two cited support statements."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerCopiedShiftIdentity.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over every row i: for each depth m, prove PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i+1) m. In the base case, cite PowerCopiedLeft for the depth-zero clause, use PowerShiftIterShift to rewrite the two shifted-input iterates to the corresponding iterates at i+1 and i+2, and cite PowerIResponse for the equal deterministic responses. In the successor case, apply the strengthened induction hypothesis at rows i and i+1, explicitly matching the recursive pairs (i,i+1) on the shifted side with (i+1,i+2) on the original side; then cite PowerCopiedLeft and PowerIResponse to conclude. Spell out the row-index arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
+    "comments": "Edit only Tablet/PowerCopiedFiniteTerminal.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Apply PowerCopiedTerminates at row 0 to obtain k together with PowerCopiedTerminalAt_r(h,x,0,k), then cite PowerCopiedTerminalAt and explicitly unpack its existential to obtain q and q' and the two atom equations, including the row-1 equation. Cite PowerCopiedFiniteDependence at n=0 with an arbitrary replacement h' satisfying the displayed agreement through k+2; orient the agreement exactly as its statement requires and conclude equality of the first copied value. Rewrite that value using the original atom equation to show it is atom(q), thereby proving the final universal clause. Cite every cross-node dependency at its use and do not claim that PowerCopiedTerminates itself supplies q,q'. Change no Lean text, imports, statement, or support edge.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 144,
+    "cycle": 145,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -48,24 +48,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerCopiedShiftIdentity",
+    "next_active": "PowerCopiedFiniteTerminal",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1549,
-        "reason": "The manuscript's copied-play row matching and shift relation underlying the stabilization identity.",
-        "start_line": 1548
+        "reason": "The manuscript's finite copied-play dependence and adjacent-row construction underlying the terminal witness.",
+        "start_line": 1549
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript describes the copied adjacent plays and identifies the next copied row with the shifted input, yielding g(shift X) from the next row. The assigned repair makes the corresponding PowerCopiedLeft shift identity rigorous by generalizing the row index throughout the depth induction.",
+      "basis_summary": "The manuscript describes a finite copied play whose terminal row values are determined by finitely many shift-orbit values and whose adjacent rows are linked by copying. The assigned repair makes the tablet's terminal witness and finite-dependence transfer explicit from the two cited support statements.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedFiniteDependence has a current Sound approval. The next support node PowerCopiedShiftIdentity has a concrete local proof gap: its proof fixes the row n while inducting on k, then invokes the induction hypothesis at rows n and n+1 in the successor case. This is a sound-repair-ready TeX repair, not a statement or DAG issue.",
-    "request_id": 472,
+    "reason": "PowerCopiedShiftIdentity has a current Sound approval. PowerCopiedFiniteTerminal has a concrete unsupported step: PowerCopiedTerminates supplies only a depth and the terminal-condition proposition, while the proof claims that it directly supplies the two atom labels. The labels must be obtained by citing and unpacking PowerCopiedTerminalAt before finite dependence is applied.",
+    "request_id": 475,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -75,15 +75,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:4263c6754d3335161243b8c72c99b53d1f2230f575c97d677cb869fc227698a8",
+        "fingerprint": "sound-v2:f30a3a4435d162c79d2ac66a50eeee44083259d7b1fd703cbd273fe3fe836be2",
         "kind": "Soundness",
         "object": {
-          "node": "PowerCopiedShiftIdentity",
+          "node": "PowerCopiedFiniteTerminal",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_472_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_475_decision.context.json"
 }
