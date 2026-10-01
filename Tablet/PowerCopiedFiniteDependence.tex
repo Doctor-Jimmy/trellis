@@ -9,12 +9,96 @@ More precisely, if $h'$ agrees with $h$ on those values, then the two copied
 left values at row $n$ and depth $k$ are equal.
 \end{lemma}
 \begin{proof}
-Induct on $k$.  At depth zero, the recursive definition
-\noderef{PowerCopiedLeft} uses only the values at shifts $n$ and $n+1$,
-which are among the assumed values.  At depth $k+1$, the definition applies
-the same fixed function from \noderef{PowerIResponse} to the values at
-$(n,k)$ and $(n+1,k)$.  The induction hypotheses apply to these two values:
-the first needs shifts at most $n+k+2$, and the second needs shifts at most
-$n+k+3$, exactly the bound $n+(k+1)+2$.  Equal inputs to the fixed response
-function give equal outputs, completing the induction.
+We prove the following stronger assertion by induction on the depth $m$:
+for every row $i$, if
+\[
+ h'(\mathsf{PowerShiftIter}(j,x))
+ =h(\mathsf{PowerShiftIter}(j,x))
+ \qquad\text{for every }j\leq i+m+2,
+ \tag{1}
+\]
+then
+\[
+ \mathsf{PowerCopiedLeft}_r(h',x,i,m)
+ =\mathsf{PowerCopiedLeft}_r(h,x,i,m).
+ \tag{2}
+\]
+
+For the base case $m=0$, fix an arbitrary row $i$ and assume (1), so in
+particular the assumed agreement holds at $j=i$ and at $j=i+1$, since
+$i\leq i+2$ and $i+1\leq i+2$.  The depth-zero clause of
+\noderef{PowerCopiedLeft}, instantiated at $i$, gives
+\[
+\begin{aligned}
+\mathsf{PowerCopiedLeft}_r(h',x,i,0)
+  &=\mathsf{PowerIResponse}_r\bigl(
+      h'(\mathsf{PowerShiftIter}(i,x)),
+      h'(\mathsf{PowerShiftIter}(i+1,x))\bigr),\\
+\mathsf{PowerCopiedLeft}_r(h,x,i,0)
+  &=\mathsf{PowerIResponse}_r\bigl(
+      h(\mathsf{PowerShiftIter}(i,x)),
+      h(\mathsf{PowerShiftIter}(i+1,x))\bigr).
+\end{aligned}
+\tag{3}
+\]
+The two arguments in the first response in (3) equal the corresponding
+arguments in the second response by the cases $j=i$ and $j=i+1$ of (1).
+By the definition of the fixed response function
+\noderef{PowerIResponse}, equal pairs of inputs have equal responses.
+Thus (2) holds for this arbitrary $i$, and hence for every row at depth
+zero.
+
+For the successor step, assume the strengthened assertion at depth $m$.
+Fix an arbitrary row $i$ and assume agreement through the successor bound
+\[
+ j\leq i+(m+1)+2,
+ \qquad\text{equivalently }j\leq i+m+3.
+ \tag{4}
+\]
+First, if $j\leq i+m+2$, then $j\leq i+m+3$ by monotonicity of addition,
+so (4) supplies the induction hypothesis at depth $m$ for row $i$:
+\[
+ \mathsf{PowerCopiedLeft}_r(h',x,i,m)
+ =\mathsf{PowerCopiedLeft}_r(h,x,i,m).
+ \tag{5}
+\]
+Second, the same full bound (4) is the bound needed for row $i+1$, because
+\[
+ (i+1)+m+2=i+m+3.
+\]
+Consequently the induction hypothesis at depth $m$ for row $i+1$ gives
+\[
+ \mathsf{PowerCopiedLeft}_r(h',x,i+1,m)
+ =\mathsf{PowerCopiedLeft}_r(h,x,i+1,m).
+ \tag{6}
+\]
+The successor-depth clause of \noderef{PowerCopiedLeft}, applied at row
+$i$ for the two sequences, gives
+\[
+\begin{aligned}
+\mathsf{PowerCopiedLeft}_r(h',x,i,m+1)
+ &=\mathsf{PowerIResponse}_r\bigl(
+     \mathsf{PowerCopiedLeft}_r(h',x,i,m),
+     \mathsf{PowerCopiedLeft}_r(h',x,i+1,m)\bigr),\\
+\mathsf{PowerCopiedLeft}_r(h,x,i,m+1)
+ &=\mathsf{PowerIResponse}_r\bigl(
+     \mathsf{PowerCopiedLeft}_r(h,x,i,m),
+     \mathsf{PowerCopiedLeft}_r(h,x,i+1,m)\bigr).
+\end{aligned}
+\tag{7}
+\]
+The first inputs in (7) are equal by (5), and the second inputs are equal
+by (6).  Therefore the two pairs supplied to the same deterministic
+function \noderef{PowerIResponse} are equal, so the two outputs in (7) are
+equal.  This proves the strengthened assertion at depth $m+1$ for the
+arbitrary row $i$, and hence for every row.
+
+Finally instantiate the strengthened assertion at depth $k$ and row
+$i=n$.  Its premise then says that for every $j\leq n+k+2$,
+\[
+h'(\mathsf{PowerShiftIter}(j,x))
+=h(\mathsf{PowerShiftIter}(j,x)),
+\]
+which is exactly the stated hypothesis $\mathsf{hag}$; its conclusion is
+the required equality.
 \end{proof}

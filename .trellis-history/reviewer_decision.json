@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedOrbitDependence has a current Sound approval. The next reflection support node, PowerCopiedFiniteDependence, has a concrete analogous proof gap: its proof fixes n while inducting on k and then invokes the induction hypothesis at row n+1. This is a local TeX repair and the node is sound-repair-ready.",
-    "comments": "Edit only Tablet/PowerCopiedFiniteDependence.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. The current proof says \"Induct on k\" with n fixed, but its successor case applies the induction hypotheses to recursive values at rows n and n+1. Strengthen the induction invariant over every row i: for each depth m, agreement of h' and h through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, cite PowerCopiedLeft and use the depth-zero clause with the agreement at i and i+1. In the successor case, from agreement through i+m+3 restrict to j <= i+m+2 for row i and identify the same bound with (i+1)+m+2 for row i+1; apply the strengthened induction hypothesis at both rows, then cite PowerCopiedLeft and PowerIResponse to identify the equal successor responses. Finally specialize to i=n and m=k, explicitly matching the stated hag. Spell out the natural-number bound arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
+    "reason": "PowerCopiedFiniteDependence has a current Sound approval. The next support node PowerCopiedShiftIdentity has a concrete local proof gap: its proof fixes the row n while inducting on k, then invokes the induction hypothesis at rows n and n+1 in the successor case. This is a sound-repair-ready TeX repair, not a statement or DAG issue.",
+    "comments": "Edit only Tablet/PowerCopiedShiftIdentity.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over every row i: for each depth m, prove PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i+1) m. In the base case, cite PowerCopiedLeft for the depth-zero clause, use PowerShiftIterShift to rewrite the two shifted-input iterates to the corresponding iterates at i+1 and i+2, and cite PowerIResponse for the equal deterministic responses. In the successor case, apply the strengthened induction hypothesis at rows i and i+1, explicitly matching the recursive pairs (i,i+1) on the shifted side with (i+1,i+2) on the original side; then cite PowerCopiedLeft and PowerIResponse to conclude. Spell out the row-index arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
     "task_blocker_ids": [
-      "soundness:node:PowerCopiedFiniteDependence:sound-v2:e303a7ee853a88b2e94d18393231d50af3819cc91275ffcc7a6d319d36c98dfc"
+      "soundness:node:PowerCopiedShiftIdentity:sound-v2:4263c6754d3335161243b8c72c99b53d1f2230f575c97d677cb869fc227698a8"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedFiniteDependence",
+    "next_active": "PowerCopiedShiftIdentity",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -19,13 +19,13 @@
     "paper_focus_ranges": [
       {
         "start_line": 1548,
-        "end_line": 1551,
-        "reason": "The manuscript's finite-dependence observation for copied plays and its use in local constancy."
+        "end_line": 1549,
+        "reason": "The manuscript's copied-play row matching and shift relation underlying the stabilization identity."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript observes that each copied play depends only on finitely many values of h along the shift orbit, which is the paper-level role of this lemma. The assigned repair makes the tablet's finite-dependence induction rigorous by generalizing its row index before the recursive successor step."
+      "basis_summary": "The manuscript describes the copied adjacent plays and identifies the next copied row with the shifted input, yielding g(shift X) from the next row. The assigned repair makes the corresponding PowerCopiedLeft shift identity rigorous by generalizing the row index throughout the depth induction."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerCopiedFiniteDependence.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. The current proof says \"Induct on k\" with n fixed, but its successor case applies the induction hypotheses to recursive values at rows n and n+1. Strengthen the induction invariant over every row i: for each depth m, agreement of h' and h through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, cite PowerCopiedLeft and use the depth-zero clause with the agreement at i and i+1. In the successor case, from agreement through i+m+3 restrict to j <= i+m+2 for row i and identify the same bound with (i+1)+m+2 for row i+1; apply the strengthened induction hypothesis at both rows, then cite PowerCopiedLeft and PowerIResponse to identify the equal successor responses. Finally specialize to i=n and m=k, explicitly matching the stated hag. Spell out the natural-number bound arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
+    "comments": "Edit only Tablet/PowerCopiedShiftIdentity.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over every row i: for each depth m, prove PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i+1) m. In the base case, cite PowerCopiedLeft for the depth-zero clause, use PowerShiftIterShift to rewrite the two shifted-input iterates to the corresponding iterates at i+1 and i+2, and cite PowerIResponse for the equal deterministic responses. In the successor case, apply the strengthened induction hypothesis at rows i and i+1, explicitly matching the recursive pairs (i,i+1) on the shifted side with (i+1,i+2) on the original side; then cite PowerCopiedLeft and PowerIResponse to conclude. Spell out the row-index arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 143,
+    "cycle": 144,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -48,24 +48,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerCopiedFiniteDependence",
+    "next_active": "PowerCopiedShiftIdentity",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1551,
-        "reason": "The manuscript's finite-dependence observation for copied plays and its use in local constancy.",
+        "end_line": 1549,
+        "reason": "The manuscript's copied-play row matching and shift relation underlying the stabilization identity.",
         "start_line": 1548
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript observes that each copied play depends only on finitely many values of h along the shift orbit, which is the paper-level role of this lemma. The assigned repair makes the tablet's finite-dependence induction rigorous by generalizing its row index before the recursive successor step.",
+      "basis_summary": "The manuscript describes the copied adjacent plays and identifies the next copied row with the shifted input, yielding g(shift X) from the next row. The assigned repair makes the corresponding PowerCopiedLeft shift identity rigorous by generalizing the row index throughout the depth induction.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedOrbitDependence has a current Sound approval. The next reflection support node, PowerCopiedFiniteDependence, has a concrete analogous proof gap: its proof fixes n while inducting on k and then invokes the induction hypothesis at row n+1. This is a local TeX repair and the node is sound-repair-ready.",
-    "request_id": 469,
+    "reason": "PowerCopiedFiniteDependence has a current Sound approval. The next support node PowerCopiedShiftIdentity has a concrete local proof gap: its proof fixes the row n while inducting on k, then invokes the induction hypothesis at rows n and n+1 in the successor case. This is a sound-repair-ready TeX repair, not a statement or DAG issue.",
+    "request_id": 472,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -75,15 +75,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:e303a7ee853a88b2e94d18393231d50af3819cc91275ffcc7a6d319d36c98dfc",
+        "fingerprint": "sound-v2:4263c6754d3335161243b8c72c99b53d1f2230f575c97d677cb869fc227698a8",
         "kind": "Soundness",
         "object": {
-          "node": "PowerCopiedFiniteDependence",
+          "node": "PowerCopiedShiftIdentity",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_469_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_472_decision.context.json"
 }
