@@ -1,16 +1,17 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Repaired TripleHomogeneous.tex with a detailed soundness proof while preserving the Lean statement, imports, and support structure.",
-    "comments": "The proof now verifies S subseteq F before Nash-Williams, uses Front density to rule out the trivial sub-front, derives FrontBase(F') = Y and Y subseteq X, and explicitly constructs the infinite tail branch and analyzes every ProperPrefixSet cutoff for an arbitrary triple. The external statement-level facts used are recorded in .trellis/scratch/notes.md.",
-    "target_claim_updates": {},
-    "difficulty_updates": {},
-    "deviation_requests": {},
-    "node_deviation_claims": {},
-    "deviation_deletions": [],
+    "summary": "Repaired the TildeFFrontEquation natural-language proof with the requested SuperSequence citation and a precise proof-irrelevance argument, preserving the Lean statement, imports, and support DAG.",
+    "comments": "The proof now explains that hs selects the front branch, identifies the branch's internal witness hs', distinguishes s.2 : s.1 in PrefixTree F from front-membership proofs, and uses proof irrelevance to identify the two SuperSequence.value subtype arguments. No statement, target claim, helper node, or deviation was changed.",
+    "audit_request": null,
     "deleted_nodes": [],
+    "deviation_deletions": [],
+    "deviation_requests": {},
+    "difficulty_updates": {},
     "memory_challenges": [],
-    "needs_restructure_suggested_nodes": []
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -20,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "The proof now verifies S subseteq F before Nash-Williams, uses Front density to rule out the trivial sub-front, derives FrontBase(F') = Y and Y subseteq X, and explicitly constructs the infinite tail branch and analyzes every ProperPrefixSet cutoff for an arbitrary triple. The external statement-level facts used are recorded in .trellis/scratch/notes.md.",
-    "cycle": 97,
+    "comments": "The proof now explains that hs selects the front branch, identifies the branch's internal witness hs', distinguishes s.2 : s.1 in PrefixTree F from front-membership proofs, and uses proof irrelevance to identify the two SuperSequence.value subtype arguments. No statement, target claim, helper node, or deviation was changed.",
+    "cycle": 100,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -37,7 +38,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 344,
+    "request_id": 351,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2042,11 +2043,12 @@
           "own_tex_hash": "59c167a48f34d668b25f9c00900b75825ec79c712cca7491a1243ba8a572e686"
         },
         "TildeFFrontEquation": {
-          "combined_sound_fp": "sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d",
+          "combined_sound_fp": "sound-v2:81550f8410dbc28f927a3ace086dc687f7df3911d2a25aded6e8b892cf97f2f1",
           "dep_statement_hashes": {
+            "SuperSequence": "d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a",
             "TildeF": "0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e"
           },
-          "own_tex_hash": "20904aa54ac4e9384ebfe652c8df27f7a98be2313fc5251074eb5add09bc65eb"
+          "own_tex_hash": "352f6d7533c296a794c5a76235327f0a3d84a51683fb01eead2cadb44d88221c"
         },
         "TildeFHerCtbl": {
           "combined_sound_fp": "sound-v2:abbfb58641ab718dcdf7f4b37e11da1dff6be8d682b6e109c86233a7c355d6d5",
@@ -2260,7 +2262,7 @@
         "TailSet": "sound-v2:a88539664cd43acdcbf0771bb300544b420564e9c4e9e4e1eaf238ce8944fb67",
         "TildeF": "sound-v2:122ed4c641323110a67a8b47888ea8c1e38e8d013917cd8417d63e0c0c32e429",
         "TildeFAtomIffFront": "sound-v2:c4b7d8ad6cca07699207a334a5c2dbc3027f6f650810861be3062bcc71b6c685",
-        "TildeFFrontEquation": "sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d",
+        "TildeFFrontEquation": "sound-v2:81550f8410dbc28f927a3ace086dc687f7df3911d2a25aded6e8b892cf97f2f1",
         "TildeFHerCtbl": "sound-v2:abbfb58641ab718dcdf7f4b37e11da1dff6be8d682b6e109c86233a7c355d6d5",
         "TildeFNonfrontEquation": "sound-v2:1980be5f28ae43f94dad7123b30951a8ec15fc471ab769aa891150f0c6033443",
         "TildeFSingleton": "sound-v2:63f5373163c2e210205e67a1c06eddc59f68f1e0090f24ade1de8e1543686d1b",
@@ -2628,7 +2630,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired TripleHomogeneous.tex with a detailed soundness proof while preserving the Lean statement, imports, and support structure.",
+    "summary": "Repaired the TildeFFrontEquation natural-language proof with the requested SuperSequence citation and a precise proof-irrelevance argument, preserving the Lean statement, imports, and support DAG.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2983,7 +2985,7 @@
     "TildeFAtomIffFront.lean": "bfccc5dbe6d68f3ac4285b7c0705bb60008f50d39cfad501e41af3780eda7ae2",
     "TildeFAtomIffFront.tex": "59c167a48f34d668b25f9c00900b75825ec79c712cca7491a1243ba8a572e686",
     "TildeFFrontEquation.lean": "abe9f35f451d12d92bb97c064a3181049043985c869e080e2371921627844e82",
-    "TildeFFrontEquation.tex": "20904aa54ac4e9384ebfe652c8df27f7a98be2313fc5251074eb5add09bc65eb",
+    "TildeFFrontEquation.tex": "352f6d7533c296a794c5a76235327f0a3d84a51683fb01eead2cadb44d88221c",
     "TildeFHerCtbl.lean": "df4475ea222118f63befd447a5c0657842e9a13a8933eea05a86cfa2a04f7b67",
     "TildeFHerCtbl.tex": "a2c9d766028b82f33e6d0fc12dc12f5167e493573d8d385ae7dbe099cb01cd17",
     "TildeFNonfrontEquation.lean": "65cd6b1cb7772db216dbf4f015c29435cb882886bdd65e0432cd64807a9ac55a",
@@ -2994,7 +2996,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_344_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_351_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

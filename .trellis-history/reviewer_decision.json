@@ -1,31 +1,36 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TildeFFrontEquation has a concrete structural Sound failure: it omits the required SuperSequence citation and incorrectly identifies the dependent subtype proofs used in the front-branch equality. Assign a targeted NL-proof repair.",
-    "comments": "Repair only Tablet/TildeFFrontEquation.tex; preserve the Lean statement, imports, and support DAG, and add no helper or theorem. Add an explicit \\noderef{SuperSequence} where the dependent value representation f.value is used. Correct the proof-irrelevance explanation: s.2 has type s.1 in PrefixTree F, whereas the recursion branch has an internal witness hs' : s.1 in F and the theorem supplies hs : s.1 in F. Compare hs' with hs by proof irrelevance to identify f.value <s.1, hs'> with f.value <s.1, hs>; do not claim that s.2 and hs prove the same proposition. Retain the citation to TildeF and explicitly explain how the hypothesis hs selects the front branch and yields the displayed atom equality.",
-    "task_blocker_ids": [
-      "soundness:node:TildeFFrontEquation:sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d"
-    ],
+    "reason": "TildeFFrontEquation now has fresh Sound approval. HerCtblNodeClosure is the next unverified direct support for the held TildeFHerCtbl target, so request its Sound verification before revisiting the parent.",
+    "comments": "Do not assign a worker or reset any soundness evidence. TildeFFrontEquation and TildeFNonfrontEquation are Sound-approved. Request one real Sound verifier for HerCtblNodeClosure only; check its countable nonempty index construction, the HerCtblPower witness extraction, the code/erase and presentation-equivalence steps including both directions and symmetry, and its explicit cross-node citations.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "TildeFFrontEquation",
-    "next_mode": "targeted",
+    "request_sound_verifier_node_ids": [
+      "HerCtblNodeClosure"
+    ],
+    "next_active": "",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "start_line": 1559,
-        "end_line": 1563,
-        "reason": "The paper's front and non-front clauses defining the well-founded recursion."
+        "end_line": 1564,
+        "reason": "The recursive front-tree definition whose values are claimed to be hereditarily countable."
+      },
+      {
+        "start_line": 1580,
+        "end_line": 1589,
+        "reason": "The paper's hereditary-countability observation and resulting HerCtbl formulation."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines tilde f by returning f(s) on front members and recursive child values otherwise. The requested repair makes the tablet proof's front-branch unfolding and its dependent-domain identification precise without changing the mathematical recursion."
+      "basis_summary": "The cited paper passage defines the front recursion and states that its values remain hereditarily countable, then formulates the corresponding hereditary-countability layer. HerCtblNodeClosure is the countable-node closure needed by that recursive argument."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/TildeFFrontEquation.tex; preserve the Lean statement, imports, and support DAG, and add no helper or theorem. Add an explicit \\noderef{SuperSequence} where the dependent value representation f.value is used. Correct the proof-irrelevance explanation: s.2 has type s.1 in PrefixTree F, whereas the recursion branch has an internal witness hs' : s.1 in F and the theorem supplies hs : s.1 in F. Compare hs' with hs by proof irrelevance to identify f.value <s.1, hs'> with f.value <s.1, hs>; do not claim that s.2 and hs prove the same proposition. Retain the citation to TildeF and explicitly explain how the hypothesis hs selects the front branch and yields the displayed atom equality.",
+    "comments": "Do not assign a worker or reset any soundness evidence. TildeFFrontEquation and TildeFNonfrontEquation are Sound-approved. Request one real Sound verifier for HerCtblNodeClosure only; check its countable nonempty index construction, the HerCtblPower witness extraction, the code/erase and presentation-equivalence steps including both directions and symmetry, and its explicit cross-node citations.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 99,
+    "cycle": 100,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,42 +54,39 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "TildeFFrontEquation",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
-    "next_worker_context_mode": "fresh",
+    "next_mode": "Global",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1563,
-        "reason": "The paper's front and non-front clauses defining the well-founded recursion.",
+        "end_line": 1564,
+        "reason": "The recursive front-tree definition whose values are claimed to be hereditarily countable.",
         "start_line": 1559
+      },
+      {
+        "end_line": 1589,
+        "reason": "The paper's hereditary-countability observation and resulting HerCtbl formulation.",
+        "start_line": 1580
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines tilde f by returning f(s) on front members and recursive child values otherwise. The requested repair makes the tablet proof's front-branch unfolding and its dependent-domain identification precise without changing the mathematical recursion.",
+      "basis_summary": "The cited paper passage defines the front recursion and states that its values remain hereditarily countable, then formulates the corresponding hereditary-countability layer. HerCtblNodeClosure is the countable-node closure needed by that recursive argument.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TildeFFrontEquation has a concrete structural Sound failure: it omits the required SuperSequence citation and incorrectly identifies the dependent subtype proofs used in the front-branch equality. Assign a targeted NL-proof repair.",
-    "request_id": 350,
-    "request_sound_verifier_nodes": [],
+    "reason": "TildeFFrontEquation now has fresh Sound approval. HerCtblNodeClosure is the next unverified direct support for the held TildeFHerCtbl target, so request its Sound verification before revisiting the parent.",
+    "request_id": 353,
+    "request_sound_verifier_nodes": [
+      "HerCtblNodeClosure"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d",
-        "kind": "Soundness",
-        "object": {
-          "node": "TildeFFrontEquation",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_350_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_353_decision.context.json"
 }

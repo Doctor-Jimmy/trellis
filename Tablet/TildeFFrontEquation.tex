@@ -6,9 +6,23 @@ For $s\in T(F)$ with $s\in F$,
 \end{lemma}
 \begin{proof}
 The defining recursion in \noderef{TildeF} tests whether the current tree
-node belongs to the front.  Under the displayed hypothesis the front branch
-is selected, and that branch returns exactly the atom carrying the value
-$f(s)$.  The subtype proof that $s\in T(F)$ is the same proof used to view
-$s$ as an element of the domain of $f$, so the displayed equality is
-independent of its particular proof by proof irrelevance.
+node belongs to the front.  Under the displayed hypothesis $hs:s.1\in F$,
+the front branch is selected, and this branch returns
+
+\[
+  \mathsf{atom}\bigl(f.\mathsf{value}\,\langle s.1,hs\rangle\bigr).
+\]
+Here \noderef{SuperSequence} supplies the value map
+$f.\mathsf{value}:F\to Q$, so the displayed term is well-typed.  The
+subtype witness $s.2$ has type $s.1\in\mathsf{PrefixTree}(F)$; it is not a
+proof of $s.1\in F$.  In the recursive definition, the front branch carries
+its own internal witness $hs':s.1\in F$, and its returned atom is
+
+\[
+  \mathsf{atom}\bigl(f.\mathsf{value}\,\langle s.1,hs'\rangle\bigr).
+\]
+Since $hs'$ and the theorem's $hs$ prove the same proposition
+$s.1\in F$, proof irrelevance gives $hs'=hs$.  Thus the two subtype
+arguments to $f.\mathsf{value}$ are equal, and the recursion branch is exactly
+the displayed right-hand side.  This proves the claimed equality.
 \end{proof}
