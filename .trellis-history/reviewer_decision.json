@@ -1,10 +1,10 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found a concrete structural gap in PerfectSuperToBase: the current proof treats SuperSequenceExtension's conditional value equation as if it supplied front-prefix witnesses, and it leaves both the FiniteShift existential witness and the BaseShift convention implicit. Assign a bounded NL-proof repair before requesting reverification.",
-    "comments": "Repair only Tablet/PerfectSuperToBase.tex and, if needed, the import preamble of Tablet/PerfectSuperToBase.lean. Preserve the theorem statement, its support direction, and the existing construction; add no helper and do not weaken the claim. After obtaining h and its conditional extension equation from \\noderef{SuperSequenceExtension}, fix x and use \\noderef{FrontPrefixExists} explicitly for x.1 and for (BaseShift X x).1, using the corresponding range-containment hypotheses. Apply the conditional extension equation separately to the two chosen prefixes to identify h x and h (BaseShift X x) with f's values. Construct the required \\noderef{FiniteShift} witness explicitly as x.1: prove the first proper-prefix relation from the witness for x, and the second from the witness for BaseShift X x; use \\noderef{BaseShift} to rewrite the latter shifted range as Set.range (ShiftMap x.1). Then apply \\noderef{PerfectSuperSequence} with the two front-membership proofs and this FiniteShift witness, rewrite both values using the extension equations, and conclude \\noderef{BasePerfect}. Add direct imports for FrontPrefixExists and BaseShift (and FiniteShift if required by the import checker).",
+    "reason": "The second Sound verification found one remaining concrete gap in PerfectSuperToBase: the proof still introduces an existential extension equation that is not supplied by the cited NL statement of SuperSequenceExtension. The already constructed FrontPrefixExists witnesses must instead be fed directly into that dependency's conditional value equation.",
+    "comments": "Repair only Tablet/PerfectSuperToBase.tex and the import preamble of Tablet/PerfectSuperToBase.lean. Preserve the theorem statement, conclusion, and support direction; add no helper and do not weaken the claim. Remove the unsupported Ext(y) existential equation and the auxiliary witnesses s,p,t,q obtained from it. For arbitrary x, retain the witnesses s0,p0 from FrontPrefixExists for x.1 and t0,q0 from FrontPrefixExists for (BaseShift X x).1. Unpack FrontPrefix (using FrontPrefix and ProperPrefixSet as needed) to obtain s0,t0 membership in F and the two proper-prefix relations. Apply the conditional statement of SuperSequenceExtension directly to (x,s0,p0) and to (BaseShift X x,t0,q0), explicitly deriving h x = f.value \\<s0,p0.1\\> and h (BaseShift X x) = f.value \\<t0,q0.1\\>. These same two equalities supply the theorem's required existential extension witness, so state that explicitly. Construct FiniteShift s0 t0 with witness x.1, rewrite the shifted range via BaseShift and ShiftMap, apply PerfectSuperSequence using s0.1, t0.1, and this witness, then rewrite with the two direct equalities to obtain BasePerfect. The FrontPrefixUnique detour is unnecessary; remove its citation and direct import if no longer used. Keep direct imports aligned with the cited supports, including FrontPrefixExists, BaseShift, FiniteShift, FrontPrefix, and ProperPrefixSet as required by the checker.",
     "task_blocker_ids": [
-      "soundness:node:PerfectSuperToBase:sound-v2:4664ccd1f487c996b0a79f4149d1d90df202f8636a418613e1b6a969abe41720"
+      "soundness:node:PerfectSuperToBase:sound-v2:eb77d4bf1a1a219a6e38194461158c9e6db8a591c4225d06f839e7b44eb5c6a2"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -16,7 +16,7 @@
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
@@ -37,7 +37,7 @@
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines the induced multi-sequence using the unique front prefix and distinguishes perfectness for multi- and super-sequences, with the restriction argument connecting them. The repair therefore makes the Lean witness extraction and the FiniteShift/BaseShift convention explicit while preserving that correspondence."
+      "basis_summary": "The manuscript defines the induced multi-sequence using the unique front prefix and distinguishes perfectness for multi- and super-sequences, with the restriction argument connecting them. The repair must therefore use the explicit front-prefix witnesses directly in the conditional extension property while preserving the paper's perfectness correspondence."
     },
     "authorized_node_ids": []
   },
@@ -50,10 +50,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/PerfectSuperToBase.tex and, if needed, the import preamble of Tablet/PerfectSuperToBase.lean. Preserve the theorem statement, its support direction, and the existing construction; add no helper and do not weaken the claim. After obtaining h and its conditional extension equation from \\noderef{SuperSequenceExtension}, fix x and use \\noderef{FrontPrefixExists} explicitly for x.1 and for (BaseShift X x).1, using the corresponding range-containment hypotheses. Apply the conditional extension equation separately to the two chosen prefixes to identify h x and h (BaseShift X x) with f's values. Construct the required \\noderef{FiniteShift} witness explicitly as x.1: prove the first proper-prefix relation from the witness for x, and the second from the witness for BaseShift X x; use \\noderef{BaseShift} to rewrite the latter shifted range as Set.range (ShiftMap x.1). Then apply \\noderef{PerfectSuperSequence} with the two front-membership proofs and this FiniteShift witness, rewrite both values using the extension equations, and conclude \\noderef{BasePerfect}. Add direct imports for FrontPrefixExists and BaseShift (and FiniteShift if required by the import checker).",
+    "comments": "Repair only Tablet/PerfectSuperToBase.tex and the import preamble of Tablet/PerfectSuperToBase.lean. Preserve the theorem statement, conclusion, and support direction; add no helper and do not weaken the claim. Remove the unsupported Ext(y) existential equation and the auxiliary witnesses s,p,t,q obtained from it. For arbitrary x, retain the witnesses s0,p0 from FrontPrefixExists for x.1 and t0,q0 from FrontPrefixExists for (BaseShift X x).1. Unpack FrontPrefix (using FrontPrefix and ProperPrefixSet as needed) to obtain s0,t0 membership in F and the two proper-prefix relations. Apply the conditional statement of SuperSequenceExtension directly to (x,s0,p0) and to (BaseShift X x,t0,q0), explicitly deriving h x = f.value \\<s0,p0.1\\> and h (BaseShift X x) = f.value \\<t0,q0.1\\>. These same two equalities supply the theorem's required existential extension witness, so state that explicitly. Construct FiniteShift s0 t0 with witness x.1, rewrite the shifted range via BaseShift and ShiftMap, apply PerfectSuperSequence using s0.1, t0.1, and this witness, then rewrite with the two direct equalities to obtain BasePerfect. The FrontPrefixUnique detour is unnecessary; remove its citation and direct import if no longer used. Keep direct imports aligned with the cited supports, including FrontPrefixExists, BaseShift, FiniteShift, FrontPrefix, and ProperPrefixSet as required by the checker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 152,
+    "cycle": 153,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -64,7 +64,7 @@
     "next_active": "PerfectSuperToBase",
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "end_line": 1262,
@@ -83,12 +83,12 @@
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines the induced multi-sequence using the unique front prefix and distinguishes perfectness for multi- and super-sequences, with the restriction argument connecting them. The repair therefore makes the Lean witness extraction and the FiniteShift/BaseShift convention explicit while preserving that correspondence.",
+      "basis_summary": "The manuscript defines the induced multi-sequence using the unique front prefix and distinguishes perfectness for multi- and super-sequences, with the restriction argument connecting them. The repair must therefore use the explicit front-prefix witnesses directly in the conditional extension property while preserving the paper's perfectness correspondence.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found a concrete structural gap in PerfectSuperToBase: the current proof treats SuperSequenceExtension's conditional value equation as if it supplied front-prefix witnesses, and it leaves both the FiniteShift existential witness and the BaseShift convention implicit. Assign a bounded NL-proof repair before requesting reverification.",
-    "request_id": 491,
+    "reason": "The second Sound verification found one remaining concrete gap in PerfectSuperToBase: the proof still introduces an existential extension equation that is not supplied by the cited NL statement of SuperSequenceExtension. The already constructed FrontPrefixExists witnesses must instead be fed directly into that dependency's conditional value equation.",
+    "request_id": 494,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -98,7 +98,7 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:4664ccd1f487c996b0a79f4149d1d90df202f8636a418613e1b6a969abe41720",
+        "fingerprint": "sound-v2:eb77d4bf1a1a219a6e38194461158c9e6db8a591c4225d06f839e7b44eb5c6a2",
         "kind": "Soundness",
         "object": {
           "node": "PerfectSuperToBase",
@@ -108,5 +108,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_491_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_494_decision.context.json"
 }

@@ -100,7 +100,7 @@
 | PerfectMultiToSuper | lemma | proof | open | - | Multi-sequence perfectness gives super-sequence perfectness | DecidingFrontSet, DecidingPrefix, PerfectMultiSequence, PerfectSuperSequence |
 | PerfectSuperRestrict | lemma | proof | open | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
 | PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
-| PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, PerfectSuperSequence, SuperSequenceExtension |
+| PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, BaseShift, FiniteShift, FrontPrefixExists, FrontPrefixUnique, PerfectSuperSequence, ShiftMap, SuperSequenceExtension |
 | PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, DecidingValue, FiniteShift, Front, InfiniteSetEnumeration, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, RestrictionShift, SuperSequenceRestrict |
 | PowerChild | definition | definition | closed | - | - | PowerQ |
 | PowerChildSupport | lemma | proof | open | - | Support decreases along a child | PowerChild, PowerSupport |

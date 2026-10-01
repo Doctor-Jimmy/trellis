@@ -1,6 +1,11 @@
 import Tablet.BaseLocallyConstant
 import Tablet.BasePerfect
+import Tablet.BaseShift
+import Tablet.FiniteShift
+import Tablet.FrontPrefixExists
+import Tablet.FrontPrefixUnique
 import Tablet.PerfectSuperSequence
+import Tablet.ShiftMap
 import Tablet.SuperSequenceExtension
 
 -- [TABLET NODE: PerfectSuperToBase]

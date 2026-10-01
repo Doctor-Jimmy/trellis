@@ -8,16 +8,98 @@ which satisfies the extension value equation
 \]
 \end{lemma}
 \begin{proof}
-The front and value map recorded by $f$ are part of
-\noderef{SuperSequence}.  Apply \noderef{SuperSequenceExtension} to obtain
-$h$, its local constancy, and the displayed extension value equation.
+The front and value map recorded by $f$ are supplied by
+\noderef{SuperSequence}; write $h_F=f.\mathsf{front}$ and
+$h_f=f.\mathsf{value}$.  Apply \noderef{SuperSequenceExtension} to
+$F$, $X$, $h_F$, and $f$.  We obtain a base multi-sequence $h$, a proof
+$h_{\mathrm{lc}}$ of $\mathsf{BaseLocallyConstant}(h)$, and the following
+extension equation:
+\[
+ \mathsf{Ext}(y):\qquad
+ \exists u\in\operatorname{Finset}(\mathbb N)\;\exists h_u:
+ \mathsf{FrontPrefix}(F,u,y.1),\quad
+ h(y)=h_f\!\left(\langle u,h_u.1\rangle\right)
+ \tag{1}
+\]
+for every $y\in\mathsf{BaseIncSeq}(X)$.  Here the notation
+$h_u.1$ is justified by the first conjunct in the definition of
+\noderef{FrontPrefix}, and hence is a proof that $u\in F$.
 
-Fix $x\in\mathsf{BaseIncSeq}(X)$ and choose front members $s,t$ from that
-equation for $x$ and for $\mathsf{BaseShift}_X(x)$.  The prefix relations and
-the shift of $x$ make $s\mathrel{\mathsf{FiniteShift}}t$ by
-\noderef{FiniteShift}.  Perfectness of $f$, namely
-\noderef{PerfectSuperSequence}, gives $r(f(s),f(t))$.  Replacing these two
-values using the extension equation gives
-$r(h(x),h(\mathsf{BaseShift}_X(x)))$.  As $x$ was arbitrary, this is exactly
-\noderef{BasePerfect}.
+We prove the perfectness clause.  Fix an arbitrary
+$x\in\mathsf{BaseIncSeq}(X)$.  By the definition of
+\noderef{BaseIncSeq}, $x.2$ is the range-containment statement
+\[
+ \operatorname{range}(x.1)\subseteq X.                         \tag{2}
+\]
+Apply \noderef{FrontPrefixExists} to $F$, $X$, $h_F$, $x.1$, and (2).
+Choose $s_0$ and
+$p_0:\mathsf{FrontPrefix}(F,s_0,x.1)$.  The shifted enumeration also has
+range contained in $X$: its proof is the second component of
+$\mathsf{BaseShift}_X(x)$, whose definition in \noderef{BaseShift} gives
+\[
+ (\mathsf{BaseShift}_X(x)).1=\mathsf{ShiftMap}(x.1).              \tag{3}
+\]
+Here we use both the composition formula in \noderef{BaseShift} and the
+definition of that composition as \noderef{ShiftMap}.
+Thus apply \noderef{FrontPrefixExists} again, now to
+$F$, $X$, $h_F$, $(\mathsf{BaseShift}_X(x)).1$, and the containment proof
+$(\mathsf{BaseShift}_X(x)).2$.  Choose $t_0$ and
+$q_0:\mathsf{FrontPrefix}(F,t_0,(\mathsf{BaseShift}_X(x)).1)$.
+
+The equation (1), first with $y=x$, gives witnesses $s$ and
+$p:\mathsf{FrontPrefix}(F,s,x.1)$ together with
+\[
+ e_s:\qquad h(x)=h_f\!\left(\langle s,p.1\rangle\right),             \tag{4}
+\]
+and, separately with $y=\mathsf{BaseShift}_X(x)$, gives witnesses $t$ and
+$q:\mathsf{FrontPrefix}(F,t,(\mathsf{BaseShift}_X(x)).1)$ together with
+\[
+ e_t:\qquad h(\mathsf{BaseShift}_X(x))
+   =h_f\!\left(\langle t,q.1\rangle\right).                         \tag{5}
+\]
+The two front-prefix witnesses for $x.1$, namely $p_0$ and $p$, have the
+same finite set by \noderef{FrontPrefixUnique}, so $s=s_0$.  Likewise,
+applied to $q_0$ and $q$ at the shifted enumeration,
+\noderef{FrontPrefixUnique} gives $t=t_0$.  We henceforth use the names
+$s,t$ for these identified prefixes.  In particular, the proper-prefix
+parts of $p$ and $q$ give
+\[
+ \mathsf{ProperPrefixSet}(s,\operatorname{range}(x.1)),qquad
+ \mathsf{ProperPrefixSet}
+   \bigl(t,\operatorname{range}((\mathsf{BaseShift}_X(x)).1)\bigr).
+ \tag{6}
+\]
+
+We now construct the exact witness required by
+\noderef{FiniteShift}.  Take the increasing enumeration $x.1$ itself.
+The first conjunct in the definition of $\mathsf{FiniteShift}$ is the
+first assertion in (6).  For the second, use the second assertion in (6)
+and rewrite its enumeration with (3); this gives
+\[
+ \mathsf{ProperPrefixSet}\bigl(t,
+   \operatorname{range}(\mathsf{ShiftMap}(x.1))\bigr).
+\]
+Consequently
+\[
+ \mathsf{FiniteShift}(s,t)                                      \tag{7}
+\]
+holds with witness $x.1$, exactly because \noderef{FiniteShift} defines
+this relation by those two proper-prefix conditions.
+
+The first components $p.1$ and $q.1$ of the two prefix witnesses prove
+$s\in F$ and $t\in F$.  Apply the perfectness hypothesis from the lemma
+to these members and (7), using the definition in
+\noderef{PerfectSuperSequence}.  We obtain
+\[
+ r\!\left(h_f\!\left(\langle s,p.1\rangle\right),
+          h_f\!\left(\langle t,q.1\rangle\right)\right).          \tag{8}
+\]
+Substitute (4) and (5) into (8).  This yields
+\[
+ r\bigl(h(x),h(\mathsf{BaseShift}_X(x))\bigr).                    \tag{9}
+\]
+Since $x$ was arbitrary, (9) is precisely
+$\mathsf{BasePerfect}(r,h)$ by \noderef{BasePerfect}.  Together with
+$h_{\mathrm{lc}}$ and the extension equation (1), this is exactly the
+conclusion of the lemma.
 \end{proof}
