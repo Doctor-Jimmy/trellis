@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found exactly two mandatory citation gaps in BadMultiToNontrivialSuper: the proof uses the DecidingPrefix equality without citing DecidingPrefix and uses the ProperPrefixSet predicate without citing ProperPrefixSet. Assign this repair-ready blocker to a bounded worker edit while preserving the accepted mathematical argument and theorem statement.",
-    "comments": "Edit only Tablet/BadMultiToNontrivialSuper.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; add no helper and do not weaken the claim. In the empty-front contradiction, explicitly cite \\noderef{ProperPrefixSet} when asserting that the empty set is a proper prefix of every increasing enumeration and when applying that fact to IncSeqId and ShiftMap(IncSeqId). Explicitly cite \\noderef{DecidingPrefix} at the step that applies the deciding-prefix equality to obtain h(IncSeqId) = h(ShiftMap(IncSeqId)). Retain the existing citations to DecidingFrontSet, IncSeqId, ShiftMap, BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingValue, and SuperSequence. No other repair is supported by the current verifier evidence.",
-    "task_blocker_ids": [
-      "soundness:node:BadMultiToNontrivialSuper:sound-v2:4dd5fc923d0c11cdb4de5bfcbbcdb1253b859ac934594e5f10e0d7292a96942c"
-    ],
+    "reason": "BadMultiToNontrivialSuper now has a current Sound approval. BadMultiRestrict is the sole remaining fresh, requestable Sound obligation and has no reported failure, so request its verifier without assigning a worker or resetting any blocker.",
+    "comments": "Leave Tablet/BadMultiRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiRestrict. For arbitrary x in IncSeq, cite \\noderef{BadMultiSequence} to apply badness of h to the increasing enumeration z composed with x, obtaining the negated relation for h(z composed with x) and h(ShiftMap(z composed with x)). Cite \\noderef{RestrictionShift} for z composed with ShiftMap(x) = ShiftMap(z composed with x), and cite \\noderef{MultiSequenceRestrict} to rewrite both restricted values. If the proof uses that z composed with x is an increasing enumeration, make that support explicit with \\noderef{IncSeqComp}. Then conclude the universal badness condition for the restricted multi-sequence, citing \\noderef{BadMultiSequence} again as the defining condition. All cross-node dependencies used must be cited; do not alter the statement or add a helper.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BadMultiToNontrivialSuper",
+    "request_sound_verifier_node_ids": [
+      "BadMultiRestrict"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -20,19 +20,19 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1277,
-        "end_line": 1290,
-        "reason": "The manuscript constructs the deciding front and its value map from a locally constant multi-sequence."
+        "start_line": 1258,
+        "end_line": 1267,
+        "reason": "The manuscript defines multi-sequences, their restrictions to infinite subbases, and the increasing-enumeration representation used by the tablet proof."
       },
       {
-        "start_line": 1481,
-        "end_line": 1489,
-        "reason": "The manuscript transfers badness to the deciding-front super-sequence using the two prefix values across a shift."
+        "start_line": 1651,
+        "end_line": 1662,
+        "reason": "The manuscript uses restriction of a multi-sequence to an infinite subbase in the surrounding better-quasi-order argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript passages support the existing two-part proof: construct the deciding-front value map and then transfer badness across a finite shift. The current verifier found no mathematical defect, only the missing explicit citations for the proper-prefix predicate and deciding-prefix equality used in the trivial-front contradiction."
+      "basis_summary": "The cited manuscript passages define sub-multi-sequences as restrictions to infinite subbases represented by increasing enumerations and use that restriction operation in the surrounding argument. The requested Sound check follows the tablet's explicit composition and shift identities to prove that badness is preserved."
     },
     "authorized_node_ids": []
   },
@@ -45,10 +45,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/BadMultiToNontrivialSuper.tex. Preserve the Lean statement, imports, support direction, and all existing mathematics; add no helper and do not weaken the claim. In the empty-front contradiction, explicitly cite \\noderef{ProperPrefixSet} when asserting that the empty set is a proper prefix of every increasing enumeration and when applying that fact to IncSeqId and ShiftMap(IncSeqId). Explicitly cite \\noderef{DecidingPrefix} at the step that applies the deciding-prefix equality to obtain h(IncSeqId) = h(ShiftMap(IncSeqId)). Retain the existing citations to DecidingFrontSet, IncSeqId, ShiftMap, BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingValue, and SuperSequence. No other repair is supported by the current verifier evidence.",
+    "comments": "Leave Tablet/BadMultiRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiRestrict. For arbitrary x in IncSeq, cite \\noderef{BadMultiSequence} to apply badness of h to the increasing enumeration z composed with x, obtaining the negated relation for h(z composed with x) and h(ShiftMap(z composed with x)). Cite \\noderef{RestrictionShift} for z composed with ShiftMap(x) = ShiftMap(z composed with x), and cite \\noderef{MultiSequenceRestrict} to rewrite both restricted values. If the proof uses that z composed with x is an increasing enumeration, make that support explicit with \\noderef{IncSeqComp}. Then conclude the universal badness condition for the restricted multi-sequence, citing \\noderef{BadMultiSequence} again as the defining condition. All cross-node dependencies used must be cited; do not alter the statement or add a helper.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 173,
+    "cycle": 174,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -56,47 +56,39 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BadMultiToNontrivialSuper",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1290,
-        "reason": "The manuscript constructs the deciding front and its value map from a locally constant multi-sequence.",
-        "start_line": 1277
+        "end_line": 1267,
+        "reason": "The manuscript defines multi-sequences, their restrictions to infinite subbases, and the increasing-enumeration representation used by the tablet proof.",
+        "start_line": 1258
       },
       {
-        "end_line": 1489,
-        "reason": "The manuscript transfers badness to the deciding-front super-sequence using the two prefix values across a shift.",
-        "start_line": 1481
+        "end_line": 1662,
+        "reason": "The manuscript uses restriction of a multi-sequence to an infinite subbase in the surrounding better-quasi-order argument.",
+        "start_line": 1651
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript passages support the existing two-part proof: construct the deciding-front value map and then transfer badness across a finite shift. The current verifier found no mathematical defect, only the missing explicit citations for the proper-prefix predicate and deciding-prefix equality used in the trivial-front contradiction.",
+      "basis_summary": "The cited manuscript passages define sub-multi-sequences as restrictions to infinite subbases represented by increasing enumerations and use that restriction operation in the surrounding argument. The requested Sound check follows the tablet's explicit composition and shift identities to prove that badness is preserved.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found exactly two mandatory citation gaps in BadMultiToNontrivialSuper: the proof uses the DecidingPrefix equality without citing DecidingPrefix and uses the ProperPrefixSet predicate without citing ProperPrefixSet. Assign this repair-ready blocker to a bounded worker edit while preserving the accepted mathematical argument and theorem statement.",
-    "request_id": 542,
-    "request_sound_verifier_nodes": [],
+    "reason": "BadMultiToNontrivialSuper now has a current Sound approval. BadMultiRestrict is the sole remaining fresh, requestable Sound obligation and has no reported failure, so request its verifier without assigning a worker or resetting any blocker.",
+    "request_id": 545,
+    "request_sound_verifier_nodes": [
+      "BadMultiRestrict"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:4dd5fc923d0c11cdb4de5bfcbbcdb1253b859ac934594e5f10e0d7292a96942c",
-        "kind": "Soundness",
-        "object": {
-          "node": "BadMultiToNontrivialSuper",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_542_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_545_decision.context.json"
 }

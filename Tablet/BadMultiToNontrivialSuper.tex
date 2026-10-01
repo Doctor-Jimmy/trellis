@@ -30,12 +30,14 @@ $\mathsf{BadSuperSequence}(r,f)$.
 It remains to prove that the front is nontrivial.  Suppose instead that
 $\emptyset\in F^h$.  Unfolding \noderef{DecidingFrontSet}, this gives
 $\mathsf{DecidingPrefix}(h,\emptyset)$.  For every increasing enumeration
-$x$, the empty set is a proper prefix of its range: use the first value
+$x$, the empty set is a proper prefix of its range by \noderef{ProperPrefixSet}: use the first value
 $x(0)$ as the witnessing next element, and use monotonicity of $x$ to show
-that no element of its range is below $x(0)$.  In particular this holds for
+that no element of its range is below $x(0)$.  In particular, this application of
+\noderef{ProperPrefixSet} holds for
 $\mathsf{IncSeqId}$ and for $\mathsf{ShiftMap}(\mathsf{IncSeqId})$, where
 the relevant increasing enumerations are supplied by
-\noderef{IncSeqId} and \noderef{ShiftMap}.  The deciding-prefix equation
+\noderef{IncSeqId} and \noderef{ShiftMap}.  The deciding-prefix equality from
+\noderef{DecidingPrefix}, applied to these two proper-prefix instances,
 therefore gives
 \[
 h(\mathsf{IncSeqId})
