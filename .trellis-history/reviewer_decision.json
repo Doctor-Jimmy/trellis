@@ -1,10 +1,9 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The BQO-to-WQO and nontrivial deciding-front preparation task is complete: both nodes compile, pass structural checks, have complete non-SKETCH TeX proofs, and pass correspondence verification. The next planned step is the first configured target, the hereditary WQO equivalence.",
-    "comments": "Proceed in Global theorem-stating mode with the sole covering node for thm BqoHerCtblWqo. State it universe-polymorphically as BqoHerCtblWqo {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellQuasiOrdered (HerCtblRel r). Make the TeX statement match this exact equivalence and do not add a second target wrapper. For the forward implication, apply PowerQPresBqo and BqoImpliesWqo to PowerRel r, then restrict the resulting WQO comparison to the underlying values of an arbitrary sequence in HerCtblPower Q, identifying the relation definitionally with HerCtblRel r. For the reverse implication, negate Bqo, obtain a bad locally constant multi-sequence, use BadMultiToNontrivialSuper to obtain a bad super-sequence on DecidingFrontSet with empty absent, and apply ConverseGame with TildeFSingleton and TildeFHerCtbl to contradict hereditary WQO. Cite every support node in the complete non-SKETCH proof, preserve the full PowerQ hierarchy and hereditary subtype, and do not add or claim BqoHerCtblWellF in this burst.",
+    "reason": "The paper-faithfulness failure for thm BqoHerCtblWqo is cleared: its sole covering node matches the paper target and the verifier approved it. Continue with the planned carrier-specific WQO-to-well-founded helper before adding the remaining target node.",
+    "comments": "Add a focused helper HerCtblWqoIffWellFounded with [IsPreorder Q r], attached to HerCtblNodeClosure, HerCtblRel, PowerRelNodeNode, and HerCtblPowerIsPreorder. State exactly WellQuasiOrdered (HerCtblRel r) \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a). Prove the forward implication with WellQuasiOrdered.wellFounded. For the converse, negate WQO to obtain a bad Nat-indexed sequence, form the hereditary tails as PowerQ.node objects indexed by ULift.{u} Nat with child k equal to (a (n + k.down)).1, and use HerCtblNodeClosure for the hereditary witness. Establish T (n+1) \u2264 T n by the offset k+1 and reflexivity; show T n \u2264 T (n+1) is impossible from badness at n < n+1+k. Finish with wellFounded_iff_isEmpty_descending_chain, keeping the strict relation orientation explicit. Do not state a general well-founded-implies-WQO result and do not claim BqoHerCtblWellF in this helper burst. Keep the new TeX proof complete, non-SKETCH, and cite every cross-node dependency.",
     "task_blocker_ids": [
-      "paperfaithfulness:target:thm BqoHerCtblWqo:",
       "paperfaithfulness:target:thm BqoHerCtblWellF:"
     ],
     "reset_blocker_ids": [],
@@ -16,51 +15,49 @@
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
+    "dismissed_tasks": [
+      {
+        "id": "hereditarily-countable-wqo",
+        "reason": "The worker added the sole BqoHerCtblWqo covering node with the exact universe-polymorphic target statement, a complete non-SKETCH proof, and passing Lean, structural, correspondence, and paper-faithfulness checks."
+      }
+    ],
+    "stuck_math_audit": {
+      "notes": "The WQO target is now covered and should not be reopened. The remaining route is the audited carrier-specific tail construction: prove the hereditary WQO/strict-part well-founded equivalence, then compose it with BqoHerCtblWqo in the final target node. Preserve the ULift tail construction and the strict relation orientation from the paper; do not introduce a general well-founded-implies-WQO lemma.",
+      "reviewer_lean_product": {
+        "completed_task": "hereditarily-countable-wqo",
+        "next_task": "hereditary-tail-descent",
+        "helper_interface": "HerCtblWqoIffWellFounded {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : WellQuasiOrdered (HerCtblRel r) <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)",
+        "construction": [
+          "Use the forward method WellQuasiOrdered.wellFounded.",
+          "For the reverse, use a bad Nat-indexed hereditary sequence and tails T n indexed by ULift.{u} Nat.",
+          "The tail node at n has child k equal to (a (n + k.down)).1 and gets its hereditary witness from HerCtblNodeClosure.",
+          "Show T (n+1) <= T n by matching k with k+1 and using reflexivity.",
+          "Refute T n <= T (n+1) with PowerRelNodeNode and the original badness at n < n+1+k.",
+          "Apply wellFounded_iff_isEmpty_descending_chain with the strict-part orientation shown in the helper interface."
+        ],
+        "constraints": [
+          "Do not assert well-founded implies WQO in general.",
+          "Do not claim the configured BqoHerCtblWellF target in the helper node.",
+          "Every new proof-bearing TeX block must be complete and non-SKETCH with explicit noderef citations."
+        ]
+      }
+    },
     "paper_focus_ranges": [
       {
-        "start_line": 1582,
-        "end_line": 1595,
-        "reason": "This passage states the hereditary WQO equivalence, its two proof directions, and the transition to the separate well-foundedness theorem."
+        "start_line": 1589,
+        "end_line": 1598,
+        "reason": "The paper's hereditary WQO argument and its transition to well-foundedness."
+      },
+      {
+        "start_line": 749,
+        "end_line": 775,
+        "reason": "The paper's countable-subset equivalence and bad-sequence tail descent construction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread paper lines 1582-1595. They state that BQO is equivalent to WQO of the hereditarily countable carrier, use PowerQPresBqo in the forward direction, use a bad super-sequence and ConverseGame in the reverse direction, and reserve well-foundedness for the following theorem."
-    },
-    "stuck_math_audit": {
-      "notes": "The hereditary-wqo-preparation task is complete and should be dismissed. The next live task is the first configured target BqoHerCtblWqo. Its covering set should be exactly one target node with the universe-polymorphic equivalence from the audit plan; use the accepted preparation and ConverseGame support, and do not fold the later well-founded target into it.",
-      "reviewer_lean_product": {
-        "targets": [
-          "thm BqoHerCtblWqo",
-          "thm BqoHerCtblWellF"
-        ],
-        "completed_task": "hereditary-wqo-preparation",
-        "next_task": "hereditarily-countable-wqo",
-        "target_statement": "BqoHerCtblWqo {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellQuasiOrdered (HerCtblRel r)",
-        "required_support": [
-          "PowerQPresBqo",
-          "BqoImpliesWqo",
-          "BadMultiToNontrivialSuper",
-          "ConverseGame",
-          "TildeFSingleton",
-          "TildeFHerCtbl"
-        ],
-        "constraints": [
-          "one sole covering node for BqoHerCtblWqo",
-          "forward direction restricts WQO on full PowerQ to the hereditary subtype",
-          "reverse direction uses a bad locally constant multi-sequence, nontrivial deciding front, and ConverseGame",
-          "preserve the universe-polymorphic full hereditary carrier and exact IsPreorder assumption",
-          "do not claim or duplicate BqoHerCtblWellF",
-          "complete cited non-SKETCH TeX proof"
-        ]
-      }
-    },
-    "dismissed_tasks": [
-      {
-        "id": "hereditary-wqo-preparation",
-        "reason": "The worker added BqoImpliesWqo and BadMultiToNontrivialSuper with the planned universe-polymorphic and reflexive interfaces; both paired artifacts compile, the full tablet structural check passes, their TeX proofs are complete and non-SKETCH, and correspondence verification approves both."
-      }
-    ]
+      "basis_summary": "I directly reread both cited passages. Lines 1589-1598 state the hereditary WQO target and invoke the equivalence between WQO and well-foundedness on countable subsets; lines 749-775 prove the relevant direction by turning a bad sequence into its decreasing tail sets."
+    }
   },
   "response": {
     "allow_new_obligations": true,
@@ -71,17 +68,17 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Proceed in Global theorem-stating mode with the sole covering node for thm BqoHerCtblWqo. State it universe-polymorphically as BqoHerCtblWqo {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellQuasiOrdered (HerCtblRel r). Make the TeX statement match this exact equivalence and do not add a second target wrapper. For the forward implication, apply PowerQPresBqo and BqoImpliesWqo to PowerRel r, then restrict the resulting WQO comparison to the underlying values of an arbitrary sequence in HerCtblPower Q, identifying the relation definitionally with HerCtblRel r. For the reverse implication, negate Bqo, obtain a bad locally constant multi-sequence, use BadMultiToNontrivialSuper to obtain a bad super-sequence on DecidingFrontSet with empty absent, and apply ConverseGame with TildeFSingleton and TildeFHerCtbl to contradict hereditary WQO. Cite every support node in the complete non-SKETCH proof, preserve the full PowerQ hierarchy and hereditary subtype, and do not add or claim BqoHerCtblWellF in this burst.",
+    "comments": "Add a focused helper HerCtblWqoIffWellFounded with [IsPreorder Q r], attached to HerCtblNodeClosure, HerCtblRel, PowerRelNodeNode, and HerCtblPowerIsPreorder. State exactly WellQuasiOrdered (HerCtblRel r) \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a). Prove the forward implication with WellQuasiOrdered.wellFounded. For the converse, negate WQO to obtain a bad Nat-indexed sequence, form the hereditary tails as PowerQ.node objects indexed by ULift.{u} Nat with child k equal to (a (n + k.down)).1, and use HerCtblNodeClosure for the hereditary witness. Establish T (n+1) \u2264 T n by the offset k+1 and reflexivity; show T n \u2264 T (n+1) is impossible from badness at n < n+1+k. Finish with wellFounded_iff_isEmpty_descending_chain, keeping the strict relation orientation explicit. Do not state a general well-founded-implies-WQO result and do not claim BqoHerCtblWellF in this helper burst. Keep the new TeX proof complete, non-SKETCH, and cite every cross-node dependency.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 27,
+    "cycle": 28,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "hereditary-wqo-preparation",
-        "reason": "The worker added BqoImpliesWqo and BadMultiToNontrivialSuper with the planned universe-polymorphic and reflexive interfaces; both paired artifacts compile, the full tablet structural check passes, their TeX proofs are complete and non-SKETCH, and correspondence verification approves both."
+        "id": "hereditarily-countable-wqo",
+        "reason": "The worker added the sole BqoHerCtblWqo covering node with the exact universe-polymorphic target statement, a complete non-SKETCH proof, and passing Lean, structural, correspondence, and paper-faithfulness checks."
       }
     ],
     "global_repair_request": null,
@@ -93,49 +90,47 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1595,
-        "reason": "This passage states the hereditary WQO equivalence, its two proof directions, and the transition to the separate well-foundedness theorem.",
-        "start_line": 1582
+        "end_line": 1598,
+        "reason": "The paper's hereditary WQO argument and its transition to well-foundedness.",
+        "start_line": 1589
+      },
+      {
+        "end_line": 775,
+        "reason": "The paper's countable-subset equivalence and bad-sequence tail descent construction.",
+        "start_line": 749
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread paper lines 1582-1595. They state that BQO is equivalent to WQO of the hereditarily countable carrier, use PowerQPresBqo in the forward direction, use a bad super-sequence and ConverseGame in the reverse direction, and reserve well-foundedness for the following theorem.",
+      "basis_summary": "I directly reread both cited passages. Lines 1589-1598 state the hereditary WQO target and invoke the equivalence between WQO and well-foundedness on countable subsets; lines 749-775 prove the relevant direction by turning a bad sequence into its decreasing tail sets.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The BQO-to-WQO and nontrivial deciding-front preparation task is complete: both nodes compile, pass structural checks, have complete non-SKETCH TeX proofs, and pass correspondence verification. The next planned step is the first configured target, the hereditary WQO equivalence.",
-    "request_id": 144,
+    "reason": "The paper-faithfulness failure for thm BqoHerCtblWqo is cleared: its sole covering node matches the paper target and the verifier approved it. Continue with the planned carrier-specific WQO-to-well-founded helper before adding the remaining target node.",
+    "request_id": 149,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The hereditary-wqo-preparation task is complete and should be dismissed. The next live task is the first configured target BqoHerCtblWqo. Its covering set should be exactly one target node with the universe-polymorphic equivalence from the audit plan; use the accepted preparation and ConverseGame support, and do not fold the later well-founded target into it.",
+      "notes": "The WQO target is now covered and should not be reopened. The remaining route is the audited carrier-specific tail construction: prove the hereditary WQO/strict-part well-founded equivalence, then compose it with BqoHerCtblWqo in the final target node. Preserve the ULift tail construction and the strict relation orientation from the paper; do not introduce a general well-founded-implies-WQO lemma.",
       "reviewer_lean_product": {
-        "completed_task": "hereditary-wqo-preparation",
+        "completed_task": "hereditarily-countable-wqo",
         "constraints": [
-          "one sole covering node for BqoHerCtblWqo",
-          "forward direction restricts WQO on full PowerQ to the hereditary subtype",
-          "reverse direction uses a bad locally constant multi-sequence, nontrivial deciding front, and ConverseGame",
-          "preserve the universe-polymorphic full hereditary carrier and exact IsPreorder assumption",
-          "do not claim or duplicate BqoHerCtblWellF",
-          "complete cited non-SKETCH TeX proof"
+          "Do not assert well-founded implies WQO in general.",
+          "Do not claim the configured BqoHerCtblWellF target in the helper node.",
+          "Every new proof-bearing TeX block must be complete and non-SKETCH with explicit noderef citations."
         ],
-        "next_task": "hereditarily-countable-wqo",
-        "required_support": [
-          "PowerQPresBqo",
-          "BqoImpliesWqo",
-          "BadMultiToNontrivialSuper",
-          "ConverseGame",
-          "TildeFSingleton",
-          "TildeFHerCtbl"
+        "construction": [
+          "Use the forward method WellQuasiOrdered.wellFounded.",
+          "For the reverse, use a bad Nat-indexed hereditary sequence and tails T n indexed by ULift.{u} Nat.",
+          "The tail node at n has child k equal to (a (n + k.down)).1 and gets its hereditary witness from HerCtblNodeClosure.",
+          "Show T (n+1) <= T n by matching k with k+1 and using reflexivity.",
+          "Refute T n <= T (n+1) with PowerRelNodeNode and the original badness at n < n+1+k.",
+          "Apply wellFounded_iff_isEmpty_descending_chain with the strict-part orientation shown in the helper interface."
         ],
-        "target_statement": "BqoHerCtblWqo {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellQuasiOrdered (HerCtblRel r)",
-        "targets": [
-          "thm BqoHerCtblWqo",
-          "thm BqoHerCtblWellF"
-        ]
+        "helper_interface": "HerCtblWqoIffWellFounded {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : WellQuasiOrdered (HerCtblRel r) <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)",
+        "next_task": "hereditary-tail-descent"
       }
     },
     "task_blockers": [
@@ -147,18 +142,9 @@
           "otype": "target",
           "target": "thm BqoHerCtblWellF"
         }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "",
-        "kind": "PaperFaithfulness",
-        "object": {
-          "otype": "target",
-          "target": "thm BqoHerCtblWqo"
-        }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_144_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_149_decision.context.json"
 }
