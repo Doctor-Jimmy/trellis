@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerQReflection has a current Sound approval, so advance the global worker to the held target PowerQPresBqo and complete the preservation corollary from the established reflection result.",
-    "comments": "Edit only Tablet/PowerQPresBqo.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerQReflection or add a helper. State the contradiction through the exact definition in \\noderef{Bqo}: from Bqo(r) and failure of Bqo(PowerRel(r)), obtain a locally constant bad h into the full hierarchy, apply \\noderef{PowerQReflection}, and use the resulting locally constant bad g into Q to contradict Bqo(r). Match the Bqo quantifiers and the displayed IsPreorder hypothesis exactly. Cite \\noderef{Bqo}, \\noderef{PowerQReflection}, and \\noderef{PowerQ}; explain that PowerQ supplies arbitrary nonempty small branching and that PowerRel is the four-clause lifted relation without adding extra claims or changing support edges.",
+    "reason": "PowerQPresBqo has current Paper and Sound approvals. Continue to PowerPresentationEqEquivalence, whose proof needs one concrete support citation and an explicit case-by-case equivalence argument.",
+    "comments": "Edit only Tablet/PowerPresentationEqEquivalence.tex. Preserve its Lean statement, import, and the PowerPresentationEq support structure. Independent gap: the current proof says it inducts on a presentation, splits atoms from nodes, and reasons about children, but cites only \\noderef{PowerPresentationEq}; those steps use the inductive carrier and constructors supplied by \\noderef{PowerQ}, so add that citation. Give explicit proofs of reflexivity, symmetry, and transitivity. Include the mixed-tag False cases, and in the node cases spell out the matching witnesses and the induction hypotheses; for transitivity compose a forward witness through the middle presentation and repeat the construction in the reverse direction. Do not change the theorem statement, add a helper, or rewire imports.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerQPresBqo",
+    "next_active": "PowerPresentationEqEquivalence",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -16,19 +16,19 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1399,
-        "end_line": 1420,
-        "reason": "The paper defines the lifted relation and gives its four recursive clauses on the full tagged hierarchy."
+        "start_line": 1362,
+        "end_line": 1374,
+        "reason": "The paper defines the full nonempty iterated hierarchy and distinguishes atoms from recursively built set nodes."
       },
       {
-        "start_line": 1425,
-        "end_line": 1443,
-        "reason": "The paper explains termination and the copied-strategy construction that turns failure of the lift into a bad base-valued multi-sequence."
+        "start_line": 1404,
+        "end_line": 1420,
+        "reason": "The paper records the recursive atom/node cases of the lifted relation, motivating the explicit tagged case split."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1399-1420 define the lifted relation on the full tagged hierarchy by its four atom/node clauses. Lines 1425-1443 explain why the copied game terminates and produces a locally constant bad base-valued multi-sequence, which is the paper-level mechanism reflected by PowerQReflection and its preservation corollary."
+      "basis_summary": "Lines 1362-1374 define the nonempty iterated hierarchy and distinguish Q-atoms from recursively constructed nodes. Lines 1404-1420 make the atom/node case structure explicit for the lifted relation, so the equivalence proof should expose the same tagged cases and compose node witnesses in both directions."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -43,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerQPresBqo.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerQReflection or add a helper. State the contradiction through the exact definition in \\noderef{Bqo}: from Bqo(r) and failure of Bqo(PowerRel(r)), obtain a locally constant bad h into the full hierarchy, apply \\noderef{PowerQReflection}, and use the resulting locally constant bad g into Q to contradict Bqo(r). Match the Bqo quantifiers and the displayed IsPreorder hypothesis exactly. Cite \\noderef{Bqo}, \\noderef{PowerQReflection}, and \\noderef{PowerQ}; explain that PowerQ supplies arbitrary nonempty small branching and that PowerRel is the four-clause lifted relation without adding extra claims or changing support edges.",
+    "comments": "Edit only Tablet/PowerPresentationEqEquivalence.tex. Preserve its Lean statement, import, and the PowerPresentationEq support structure. Independent gap: the current proof says it inducts on a presentation, splits atoms from nodes, and reasons about children, but cites only \\noderef{PowerPresentationEq}; those steps use the inductive carrier and constructors supplied by \\noderef{PowerQ}, so add that citation. Give explicit proofs of reflexivity, symmetry, and transitivity. Include the mixed-tag False cases, and in the node cases spell out the matching witnesses and the induction hypotheses; for transitivity compose a forward witness through the middle presentation and repeat the construction in the reverse direction. Do not change the theorem statement, add a helper, or rewire imports.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 129,
+    "cycle": 130,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,29 +54,29 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerQPresBqo",
+    "next_active": "PowerPresentationEqEquivalence",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1420,
-        "reason": "The paper defines the lifted relation and gives its four recursive clauses on the full tagged hierarchy.",
-        "start_line": 1399
+        "end_line": 1374,
+        "reason": "The paper defines the full nonempty iterated hierarchy and distinguishes atoms from recursively built set nodes.",
+        "start_line": 1362
       },
       {
-        "end_line": 1443,
-        "reason": "The paper explains termination and the copied-strategy construction that turns failure of the lift into a bad base-valued multi-sequence.",
-        "start_line": 1425
+        "end_line": 1420,
+        "reason": "The paper records the recursive atom/node cases of the lifted relation, motivating the explicit tagged case split.",
+        "start_line": 1404
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1399-1420 define the lifted relation on the full tagged hierarchy by its four atom/node clauses. Lines 1425-1443 explain why the copied game terminates and produces a locally constant bad base-valued multi-sequence, which is the paper-level mechanism reflected by PowerQReflection and its preservation corollary.",
+      "basis_summary": "Lines 1362-1374 define the nonempty iterated hierarchy and distinguish Q-atoms from recursively constructed nodes. Lines 1404-1420 make the atom/node case structure explicit for the lifted relation, so the equivalence proof should expose the same tagged cases and compose node witnesses in both directions.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerQReflection has a current Sound approval, so advance the global worker to the held target PowerQPresBqo and complete the preservation corollary from the established reflection result.",
-    "request_id": 424,
+    "reason": "PowerQPresBqo has current Paper and Sound approvals. Continue to PowerPresentationEqEquivalence, whose proof needs one concrete support citation and an explicit case-by-case equivalence argument.",
+    "request_id": 430,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -86,5 +86,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_424_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_430_decision.context.json"
 }
