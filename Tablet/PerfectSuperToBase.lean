@@ -2,8 +2,9 @@ import Tablet.BaseLocallyConstant
 import Tablet.BasePerfect
 import Tablet.BaseShift
 import Tablet.FiniteShift
+import Tablet.FrontPrefix
 import Tablet.FrontPrefixExists
-import Tablet.FrontPrefixUnique
+import Tablet.ProperPrefixSet
 import Tablet.PerfectSuperSequence
 import Tablet.ShiftMap
 import Tablet.SuperSequenceExtension

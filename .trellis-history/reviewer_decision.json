@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The second Sound verification found one remaining concrete gap in PerfectSuperToBase: the proof still introduces an existential extension equation that is not supplied by the cited NL statement of SuperSequenceExtension. The already constructed FrontPrefixExists witnesses must instead be fed directly into that dependency's conditional value equation.",
-    "comments": "Repair only Tablet/PerfectSuperToBase.tex and the import preamble of Tablet/PerfectSuperToBase.lean. Preserve the theorem statement, conclusion, and support direction; add no helper and do not weaken the claim. Remove the unsupported Ext(y) existential equation and the auxiliary witnesses s,p,t,q obtained from it. For arbitrary x, retain the witnesses s0,p0 from FrontPrefixExists for x.1 and t0,q0 from FrontPrefixExists for (BaseShift X x).1. Unpack FrontPrefix (using FrontPrefix and ProperPrefixSet as needed) to obtain s0,t0 membership in F and the two proper-prefix relations. Apply the conditional statement of SuperSequenceExtension directly to (x,s0,p0) and to (BaseShift X x,t0,q0), explicitly deriving h x = f.value \\<s0,p0.1\\> and h (BaseShift X x) = f.value \\<t0,q0.1\\>. These same two equalities supply the theorem's required existential extension witness, so state that explicitly. Construct FiniteShift s0 t0 with witness x.1, rewrite the shifted range via BaseShift and ShiftMap, apply PerfectSuperSequence using s0.1, t0.1, and this witness, then rewrite with the two direct equalities to obtain BasePerfect. The FrontPrefixUnique detour is unnecessary; remove its citation and direct import if no longer used. Keep direct imports aligned with the cited supports, including FrontPrefixExists, BaseShift, FiniteShift, FrontPrefix, and ProperPrefixSet as required by the checker.",
-    "task_blocker_ids": [
-      "soundness:node:PerfectSuperToBase:sound-v2:eb77d4bf1a1a219a6e38194461158c9e6db8a591c4225d06f839e7b44eb5c6a2"
-    ],
+    "reason": "PerfectSuperToBase now has a current Sound approval and is absent from the live blocker list, so there is no repair to assign or reset. Advance the held target by requesting a real Sound verification of the fresh PerfectSuperRestrict obligation.",
+    "comments": "Leave Tablet/PerfectSuperToBase and the rest of the tablet unchanged. Request Sound verification of PerfectSuperRestrict. The verifier should check the arbitrary s,t in the restricted front, the use of the subset hypothesis to obtain their membership in the original front, the unchanged FiniteShift premise, and the exact value-preservation statement supplied by SuperSequenceRestrict before applying PerfectSuperSequence. The manuscript defines perfectness for super-sequences at lines 1642--1647 and then uses restriction of a super-sequence in the perfectness argument at line 1661; check the node against those statements. Do not assign a worker or reset any blocker.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "PerfectSuperToBase",
+    "request_sound_verifier_node_ids": [
+      "PerfectSuperRestrict"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -16,14 +16,9 @@
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "work_style_hint": "none",
     "paper_focus_ranges": [
-      {
-        "start_line": 1258,
-        "end_line": 1262,
-        "reason": "The manuscript's induced multi-sequence and restriction correspondence."
-      },
       {
         "start_line": 1642,
         "end_line": 1647,
@@ -32,12 +27,12 @@
       {
         "start_line": 1661,
         "end_line": 1661,
-        "reason": "The manuscript's restriction argument relating the two notions."
+        "reason": "The manuscript's restriction argument relating super-sequence perfectness."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines the induced multi-sequence using the unique front prefix and distinguishes perfectness for multi- and super-sequences, with the restriction argument connecting them. The repair must therefore use the explicit front-prefix witnesses directly in the conditional extension property while preserving the paper's perfectness correspondence."
+      "basis_summary": "The manuscript defines super-sequence perfectness by the finite-shift implication and later transfers perfectness to a restricted front by retaining the original values on the restricted members. These are exactly the two support facts the requested Sound verifier should check for PerfectSuperRestrict."
     },
     "authorized_node_ids": []
   },
@@ -50,10 +45,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/PerfectSuperToBase.tex and the import preamble of Tablet/PerfectSuperToBase.lean. Preserve the theorem statement, conclusion, and support direction; add no helper and do not weaken the claim. Remove the unsupported Ext(y) existential equation and the auxiliary witnesses s,p,t,q obtained from it. For arbitrary x, retain the witnesses s0,p0 from FrontPrefixExists for x.1 and t0,q0 from FrontPrefixExists for (BaseShift X x).1. Unpack FrontPrefix (using FrontPrefix and ProperPrefixSet as needed) to obtain s0,t0 membership in F and the two proper-prefix relations. Apply the conditional statement of SuperSequenceExtension directly to (x,s0,p0) and to (BaseShift X x,t0,q0), explicitly deriving h x = f.value \\<s0,p0.1\\> and h (BaseShift X x) = f.value \\<t0,q0.1\\>. These same two equalities supply the theorem's required existential extension witness, so state that explicitly. Construct FiniteShift s0 t0 with witness x.1, rewrite the shifted range via BaseShift and ShiftMap, apply PerfectSuperSequence using s0.1, t0.1, and this witness, then rewrite with the two direct equalities to obtain BasePerfect. The FrontPrefixUnique detour is unnecessary; remove its citation and direct import if no longer used. Keep direct imports aligned with the cited supports, including FrontPrefixExists, BaseShift, FiniteShift, FrontPrefix, and ProperPrefixSet as required by the checker.",
+    "comments": "Leave Tablet/PerfectSuperToBase and the rest of the tablet unchanged. Request Sound verification of PerfectSuperRestrict. The verifier should check the arbitrary s,t in the restricted front, the use of the subset hypothesis to obtain their membership in the original front, the unchanged FiniteShift premise, and the exact value-preservation statement supplied by SuperSequenceRestrict before applying PerfectSuperSequence. The manuscript defines perfectness for super-sequences at lines 1642--1647 and then uses restriction of a super-sequence in the perfectness argument at line 1661; check the node against those statements. Do not assign a worker or reset any blocker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 153,
+    "cycle": 154,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -61,16 +56,11 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PerfectSuperToBase",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
-      {
-        "end_line": 1262,
-        "reason": "The manuscript's induced multi-sequence and restriction correspondence.",
-        "start_line": 1258
-      },
       {
         "end_line": 1647,
         "reason": "The manuscript definitions of perfect multi- and super-sequences.",
@@ -78,35 +68,27 @@
       },
       {
         "end_line": 1661,
-        "reason": "The manuscript's restriction argument relating the two notions.",
+        "reason": "The manuscript's restriction argument relating super-sequence perfectness.",
         "start_line": 1661
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines the induced multi-sequence using the unique front prefix and distinguishes perfectness for multi- and super-sequences, with the restriction argument connecting them. The repair must therefore use the explicit front-prefix witnesses directly in the conditional extension property while preserving the paper's perfectness correspondence.",
+      "basis_summary": "The manuscript defines super-sequence perfectness by the finite-shift implication and later transfers perfectness to a restricted front by retaining the original values on the restricted members. These are exactly the two support facts the requested Sound verifier should check for PerfectSuperRestrict.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The second Sound verification found one remaining concrete gap in PerfectSuperToBase: the proof still introduces an existential extension equation that is not supplied by the cited NL statement of SuperSequenceExtension. The already constructed FrontPrefixExists witnesses must instead be fed directly into that dependency's conditional value equation.",
-    "request_id": 494,
-    "request_sound_verifier_nodes": [],
+    "reason": "PerfectSuperToBase now has a current Sound approval and is absent from the live blocker list, so there is no repair to assign or reset. Advance the held target by requesting a real Sound verification of the fresh PerfectSuperRestrict obligation.",
+    "request_id": 497,
+    "request_sound_verifier_nodes": [
+      "PerfectSuperRestrict"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:eb77d4bf1a1a219a6e38194461158c9e6db8a591c4225d06f839e7b44eb5c6a2",
-        "kind": "Soundness",
-        "object": {
-          "node": "PerfectSuperToBase",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_494_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_497_decision.context.json"
 }
