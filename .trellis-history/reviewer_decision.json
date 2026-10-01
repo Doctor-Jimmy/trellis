@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "EmapLemma has a current Sound approval. RmapLemma is the remaining paper-level shift-support map and its proof has concrete unsupported continuity and orbit-identity steps that require a bounded NL repair.",
-    "comments": "Repair only `Tablet/RmapLemma.tex`; preserve its Lean statement, imports, and paper construction. Retain `\\noderef{FirstMovedPoint}` and `\\noderef{OrbitEmbedding}`, and add citations to `\\noderef{OrbitPoint}`, `\\noderef{IncSeq}`, `\\noderef{BaireContinuous}` or the applicable continuity definition, `\\noderef{ContMor}`, `\\noderef{RightComp}`, `\\noderef{ShiftMap}`, and `\\noderef{SuccSeq}` at their uses. For `rho(f)=f\\circ G`, explicitly prove the output is an increasing embedding from composition of the two cited `IncSeq` maps. Give the finite-prefix witness: handle output length zero, and for positive length m choose an input prefix long enough to contain every `G(n)` with n<m; unpack prefix agreement to show the composed outputs agree coordinatewise. Do not merely assert that composition with G is continuous. In the homomorphism equation, use `G(n)=OrbitPoint(g,k_g,n)=g^[n](k_g)` and unfold the successor rule to prove `g(G(n))=G(n+1)`, then identify the actions with `RightComp`, `ShiftMap`, and `SuccSeq`. Do not rely on the proof of `OrbitEmbedding` for this identity. Add no helper or statement/import change. The corresponding paper construction is at lines 1787--1792 of `paper/paper.tex`.",
+    "reason": "RmapLemma now has a current Sound approval. IncSeqPointwiseLe is the next upstream orbit-support obligation; its induction is correct but invokes strict monotonicity without citing the IncSeq definition that supplies it.",
+    "comments": "Repair only `Tablet/IncSeqPointwiseLe.tex`; preserve its Lean statement, import, and proof structure. Add `\\noderef{IncSeq}` at the use of the fact that an `IncSeq` is an order embedding. Make the successor step explicit: from n<n+1, the order-embedding property gives f(n)<f(n+1), hence f(n)+1<=f(n+1); combine this with the induction hypothesis n<=f(n) to obtain n+1<=f(n+1). Do not introduce helpers or alter the theorem signature. The paper's increasing-enumeration convention, which justifies this order-embedding use, is at lines 1264--1267 of `paper/paper.tex`.",
     "task_blocker_ids": [
-      "soundness:node:RmapLemma:sound-v2:befb3feeac838183c7f684414658b072062d458c50a90a147544173c000d9f93"
+      "soundness:node:IncSeqPointwiseLe:sound-v2:4388761857d6e0745fe1a3954446812e871cbac0dbdc8501926c05bac8e13ae0"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "RmapLemma",
+    "next_active": "IncSeqPointwiseLe",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1787,
-        "end_line": 1792,
-        "reason": "The paper's right-composition-to-shift construction and coordinate equation."
+        "start_line": 1264,
+        "end_line": 1267,
+        "reason": "The paper's increasing-enumeration representation for IncSeq."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1787--1792 define the orbit enumeration G from the least moved point, set rho(f)=f composed with G, assert its continuity and increasing-image property, and compute rho(f composed with g) coordinatewise as rho(f) composed with the successor. The tablet proof must expand the paper's terse continuity assertion into the finite-prefix witness required by Lean."
+      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations, matching the tablet's IncSeq order-embedding representation. The pointwise inequality follows directly from that order-embedding property by induction on the index."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/RmapLemma.tex`; preserve its Lean statement, imports, and paper construction. Retain `\\noderef{FirstMovedPoint}` and `\\noderef{OrbitEmbedding}`, and add citations to `\\noderef{OrbitPoint}`, `\\noderef{IncSeq}`, `\\noderef{BaireContinuous}` or the applicable continuity definition, `\\noderef{ContMor}`, `\\noderef{RightComp}`, `\\noderef{ShiftMap}`, and `\\noderef{SuccSeq}` at their uses. For `rho(f)=f\\circ G`, explicitly prove the output is an increasing embedding from composition of the two cited `IncSeq` maps. Give the finite-prefix witness: handle output length zero, and for positive length m choose an input prefix long enough to contain every `G(n)` with n<m; unpack prefix agreement to show the composed outputs agree coordinatewise. Do not merely assert that composition with G is continuous. In the homomorphism equation, use `G(n)=OrbitPoint(g,k_g,n)=g^[n](k_g)` and unfold the successor rule to prove `g(G(n))=G(n+1)`, then identify the actions with `RightComp`, `ShiftMap`, and `SuccSeq`. Do not rely on the proof of `OrbitEmbedding` for this identity. Add no helper or statement/import change. The corresponding paper construction is at lines 1787--1792 of `paper/paper.tex`.",
+    "comments": "Repair only `Tablet/IncSeqPointwiseLe.tex`; preserve its Lean statement, import, and proof structure. Add `\\noderef{IncSeq}` at the use of the fact that an `IncSeq` is an order embedding. Make the successor step explicit: from n<n+1, the order-embedding property gives f(n)<f(n+1), hence f(n)+1<=f(n+1); combine this with the induction hypothesis n<=f(n) to obtain n+1<=f(n+1). Do not introduce helpers or alter the theorem signature. The paper's increasing-enumeration convention, which justifies this order-embedding use, is at lines 1264--1267 of `paper/paper.tex`.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 83,
+    "cycle": 84,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,24 +50,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "RmapLemma",
+    "next_active": "IncSeqPointwiseLe",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1792,
-        "reason": "The paper's right-composition-to-shift construction and coordinate equation.",
-        "start_line": 1787
+        "end_line": 1267,
+        "reason": "The paper's increasing-enumeration representation for IncSeq.",
+        "start_line": 1264
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1787--1792 define the orbit enumeration G from the least moved point, set rho(f)=f composed with G, assert its continuity and increasing-image property, and compute rho(f composed with g) coordinatewise as rho(f) composed with the successor. The tablet proof must expand the paper's terse continuity assertion into the finite-prefix witness required by Lean.",
+      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations, matching the tablet's IncSeq order-embedding representation. The pointwise inequality follows directly from that order-embedding property by induction on the index.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "EmapLemma has a current Sound approval. RmapLemma is the remaining paper-level shift-support map and its proof has concrete unsupported continuity and orbit-identity steps that require a bounded NL repair.",
-    "request_id": 309,
+    "reason": "RmapLemma now has a current Sound approval. IncSeqPointwiseLe is the next upstream orbit-support obligation; its induction is correct but invokes strict monotonicity without citing the IncSeq definition that supplies it.",
+    "request_id": 312,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -77,15 +77,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:befb3feeac838183c7f684414658b072062d458c50a90a147544173c000d9f93",
+        "fingerprint": "sound-v2:4388761857d6e0745fe1a3954446812e871cbac0dbdc8501926c05bac8e13ae0",
         "kind": "Soundness",
         "object": {
-          "node": "RmapLemma",
+          "node": "IncSeqPointwiseLe",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_309_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_312_decision.context.json"
 }
