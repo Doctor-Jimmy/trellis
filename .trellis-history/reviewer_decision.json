@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "SuperNW has a current Sound approval. Subarr is the next sound-front target and is ready for a real Sound verifier run.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for Subarr only. Check the forward direction clause by clause: BaseBqoRestriction must provide the base perfect restriction, SuperSequenceExtension must provide the locally constant extension with its value equation, and PerfectBaseToSuper must transport perfection to the exact subfront and subbase. Check the converse direction from the two assumed clauses: DecidingFront and DecidingValue must produce the induced front super-sequence, BadMultiToSuper must transfer badness, BadSuperRestrict must preserve badness under the perfect restriction, and NoBadPerfectSuper must yield the contradiction. Require explicit citations to every listed support node and verify that the conclusion really closes the Bqo definition.",
+    "reason": "Subarr has a current Sound approval. ShiftDichotomy is the next sound-front target and is ready for a real Sound verifier run.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for ShiftDichotomy only. Check first that the Boolean map c_h is locally constant from the given local constancy of h and the finite-prefix behavior of ShiftMap, rather than accepting the tail assertion without justification. Check the DecidingFront and DecidingValue hypotheses and value equation, the NashWilliams application to the value-one fiber, the enumeration of the homogeneous base, and why the front member selected by every z composed with x lies in the homogeneous subfront. In the value-one case explicitly identify the RestrictionShift and MultiSequenceRestrict equations and conclude PerfectMultiSequence; in the value-zero case establish the complementary relation and conclude BadMultiSequence. Require explicit citations to DecidingFront, DecidingValue, NashWilliams, InfiniteSetEnumeration, RestrictionShift, MultiSequenceRestrict, PerfectMultiSequence, and BadMultiSequence.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "Subarr"
+      "ShiftDichotomy"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1652,
-        "end_line": 1662,
-        "reason": "Paper statement and proof of the bqo, sub-multi-sequence, and sub-super-sequence equivalence represented by Subarr."
+        "start_line": 1617,
+        "end_line": 1622,
+        "reason": "Paper perfect-or-complement dichotomy for locally constant maps under the shift."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1652-1662 state the three-way Subarr equivalence and explicitly prove the bqo-to-perfect-super-sequence implication via the corresponding multi-sequence and a perfect restriction."
+      "basis_summary": "Lines 1617-1622 state the dichotomy: a continuous map and a binary relation admit an infinite restriction on which the map is a continuous homomorphism for either the relation or its complement."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for Subarr only. Check the forward direction clause by clause: BaseBqoRestriction must provide the base perfect restriction, SuperSequenceExtension must provide the locally constant extension with its value equation, and PerfectBaseToSuper must transport perfection to the exact subfront and subbase. Check the converse direction from the two assumed clauses: DecidingFront and DecidingValue must produce the induced front super-sequence, BadMultiToSuper must transfer badness, BadSuperRestrict must preserve badness under the perfect restriction, and NoBadPerfectSuper must yield the contradiction. Require explicit citations to every listed support node and verify that the conclusion really closes the Bqo definition.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for ShiftDichotomy only. Check first that the Boolean map c_h is locally constant from the given local constancy of h and the finite-prefix behavior of ShiftMap, rather than accepting the tail assertion without justification. Check the DecidingFront and DecidingValue hypotheses and value equation, the NashWilliams application to the value-one fiber, the enumeration of the homogeneous base, and why the front member selected by every z composed with x lies in the homogeneous subfront. In the value-one case explicitly identify the RestrictionShift and MultiSequenceRestrict equations and conclude PerfectMultiSequence; in the value-zero case establish the complementary relation and conclude BadMultiSequence. Require explicit citations to DecidingFront, DecidingValue, NashWilliams, InfiniteSetEnumeration, RestrictionShift, MultiSequenceRestrict, PerfectMultiSequence, and BadMultiSequence.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 107,
+    "cycle": 108,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -57,20 +57,20 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1662,
-        "reason": "Paper statement and proof of the bqo, sub-multi-sequence, and sub-super-sequence equivalence represented by Subarr.",
-        "start_line": 1652
+        "end_line": 1622,
+        "reason": "Paper perfect-or-complement dichotomy for locally constant maps under the shift.",
+        "start_line": 1617
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1652-1662 state the three-way Subarr equivalence and explicitly prove the bqo-to-perfect-super-sequence implication via the corresponding multi-sequence and a perfect restriction.",
+      "basis_summary": "Lines 1617-1622 state the dichotomy: a continuous map and a binary relation admit an infinite restriction on which the map is a continuous homomorphism for either the relation or its complement.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "SuperNW has a current Sound approval. Subarr is the next sound-front target and is ready for a real Sound verifier run.",
-    "request_id": 369,
+    "reason": "Subarr has a current Sound approval. ShiftDichotomy is the next sound-front target and is ready for a real Sound verifier run.",
+    "request_id": 371,
     "request_sound_verifier_nodes": [
-      "Subarr"
+      "ShiftDichotomy"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -80,5 +80,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_369_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_371_decision.context.json"
 }

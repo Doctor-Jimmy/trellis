@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 475,
+  "event_count": 478,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -4996,109 +4996,6 @@
       "kind": "definition",
       "name": "HerCtblCodeErase._unsafe_rec"
     },
-    "0cbead0f925b4375": [
-      "BadMultiSequence",
-      "BadPairSequence",
-      "BadSuperSequence",
-      "BaireContinuous",
-      "BaseBad",
-      "BaseIncSeq",
-      "BaseLocallyConstant",
-      "BaseMultiSequence",
-      "BasePerfect",
-      "BaseRestrict",
-      "BaseRightComp",
-      "BaseShift",
-      "BetterRel",
-      "BlockSigma",
-      {
-        "$s": "4c3bac0512a45c96"
-      },
-      "Bqo",
-      "BqoHerCtblWellF",
-      "BqoHerCtblWqo",
-      "CardinalityFront",
-      "ContMor",
-      "ContMorEq",
-      "ContinuousHom",
-      "ContinuousRelHom",
-      "DecidingFrontSet",
-      "DecidingPrefix",
-      "FiniteShift",
-      "Front",
-      "FrontBase",
-      "FrontBridge",
-      "FrontBridgeTail",
-      "FrontPrefix",
-      "FrontRestrict",
-      "FrontRestriction",
-      "FrontTreeWellFounded",
-      "GBetterRel",
-      "GoodMultiSequence",
-      "HerCtblCode",
-      "HerCtblCodeErase",
-      "HerCtblPower",
-      "HerCtblPowerIsPreorder",
-      "HerCtblRel",
-      {
-        "$s": "19fb7b62eea67a5d"
-      },
-      "HereditarilyCountable",
-      {
-        "$s": "248a162fe13df6db"
-      },
-      {
-        "$s": "0de210e54bc47028"
-      },
-      "IncSeq",
-      "IncSeqComp",
-      "IncSeqId",
-      "IncreasingPair",
-      "InitialSegment",
-      "LocallyConstant",
-      "MultiSequence",
-      "MultiSequenceRestrict",
-      "OrbitBlock",
-      "OrbitPoint",
-      "PerfectMultiSequence",
-      "PerfectSuperSequence",
-      "PowerChild",
-      "PowerChildWellFounded",
-      "PowerCopiedLeft",
-      "PowerCopiedTerminalAt",
-      "PowerGameDescent",
-      "PowerIResponse",
-      "PowerIResponseLegal",
-      "PowerIResponseWitness",
-      "PowerMove",
-      "PowerPresentationEq",
-      "PowerQ",
-      "PowerQIsPreorder",
-      "PowerRel",
-      "PowerRelAtomAtom",
-      "PowerRelAtomNode",
-      "PowerRelNodeAtom",
-      "PowerRelNodeNode",
-      "PowerShiftIter",
-      "PowerSupport",
-      "Preamble",
-      "PrefixAgree",
-      "PrefixTree",
-      "ProperInitialSegment",
-      "ProperPrefixSet",
-      "RadoOrder",
-      "Ray",
-      "RelationEmbedding",
-      "RightComp",
-      "SetDomination",
-      "ShiftMap",
-      "SuccSeq",
-      "SuperSequence",
-      "SuperSequenceRestrict",
-      "TailSet",
-      "TildeF",
-      "TildeFSingleton"
-    ],
     "0cdd89bbf97c6a37": {
       "BadMultiToSuper": {
         "$s": "f27e5b704412180b"
@@ -59597,7 +59494,7 @@
     "committed": {
       "$r": "75283b209dd086ff"
     },
-    "cycle": 107,
+    "cycle": 108,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -59845,9 +59742,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 107,
+    "cycle": 108,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 107,
+    "cycles_since_clean": 108,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -60593,7 +60490,7 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": "Subarr",
+    "held_target": "ShiftDichotomy",
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -60637,7 +60534,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 107,
+    "last_sound_response_cycle": 108,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60954,16 +60851,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "SuperNW": {
+      "Subarr": {
         "v1": {
-          "comments": "The proof is a complete finite-codomain induction. It cites Front for nonemptiness in the empty case, NashWilliams for the fiber dichotomy, and SuperSequence for restriction and value-map handling.",
-          "node": "SuperNW",
+          "comments": "The proof matches the three clauses of the statement and explicitly supplies the hypotheses needed at each cited theorem application.",
+          "node": "Subarr",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The proof rigorously handles the empty codomain, applies NashWilliams to the chosen-color fiber, constructs the restricted constant sub-super-sequence in the selected case, and in the complement case maps into E\\{e}, uses strict finite-cardinality decrease, applies the uniform induction hypothesis, composes inclusions, and concludes constancy in E. Cross-node dependencies are explicitly cited."
+            "explanation": "The proof establishes both directions of the stated equivalence. The forward direction uses BaseBqoRestriction for clause (2), and uses SuperSequenceExtension, BaseBqoRestriction, and PerfectBaseToSuper with the required hypotheses for clause (3). Conversely, it applies DecidingFront and DecidingValue, then BadMultiToSuper, the clause-(3) perfect restriction, BadSuperRestrict, and NoBadPerfectSuper to rule out a bad locally constant multi-sequence. Every cross-node theorem dependency used in the proof is explicitly cited with noderef syntax."
           },
-          "summary": "SuperNW has a detailed, line-by-line checkable natural-language proof from its cited dependencies."
+          "summary": "Subarr has a rigorous NL proof from its cited support nodes; no structural or dependency-citation gap was found."
         }
       }
     },
@@ -60971,24 +60868,115 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 107,
+      "next_index": 108,
       "snapshots": [
         {
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": {
-            "$r": "0cbead0f925b4375"
-          },
-          "snapshot_index": 43
-        },
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": {
-            "$r": "0cbead0f925b4375"
-          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitPoint",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
           "snapshot_index": 44
         },
         {
@@ -64898,6 +64886,160 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 106
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "Subarr",
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFAtomIffFront",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 107
         }
       ]
     },
@@ -64906,11 +65048,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 369,
+    "request_seq": 371,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for Subarr only. Check the forward direction clause by clause: BaseBqoRestriction must provide the base perfect restriction, SuperSequenceExtension must provide the locally constant extension with its value equation, and PerfectBaseToSuper must transport perfection to the exact subfront and subbase. Check the converse direction from the two assumed clauses: DecidingFront and DecidingValue must produce the induced front super-sequence, BadMultiToSuper must transfer badness, BadSuperRestrict must preserve badness under the perfect restriction, and NoBadPerfectSuper must yield the contradiction. Require explicit citations to every listed support node and verify that the conclusion really closes the Bqo definition.",
+    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for ShiftDichotomy only. Check first that the Boolean map c_h is locally constant from the given local constancy of h and the finite-prefix behavior of ShiftMap, rather than accepting the tail assertion without justification. Check the DecidingFront and DecidingValue hypotheses and value equation, the NashWilliams application to the value-one fiber, the enumeration of the homogeneous base, and why the front member selected by every z composed with x lies in the homogeneous subfront. In the value-one case explicitly identify the RestrictionShift and MultiSequenceRestrict equations and conclude PerfectMultiSequence; in the value-zero case establish the complementary relation and conclude BadMultiSequence. Require explicit citations to DecidingFront, DecidingValue, NashWilliams, InfiniteSetEnumeration, RestrictionShift, MultiSequenceRestrict, PerfectMultiSequence, and BadMultiSequence.",
     "reviewer_requested_sound_verifier_nodes": [
-      "Subarr"
+      "ShiftDichotomy"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -65025,6 +65167,9 @@
       },
       "SubFrontCharacterization": {
         "$s": "98f8b3f7b4b210cd"
+      },
+      "Subarr": {
+        "$s": "76c022ed6fc806e8"
       },
       "SuperNW": {
         "$s": "4f3efa5c8d5f0bf8"
@@ -65449,6 +65594,17 @@
       "SubFrontCharacterization": {
         "fingerprints": {
           "$r": "ba1f869bd8a77ac3"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
+      "Subarr": {
+        "fingerprints": {
+          "$r": "8e7bdab697bcbf64"
         },
         "lane_votes": {
           "v1": "Pass"
@@ -66637,6 +66793,7 @@
       "PowerIResponseWitness": "Pass",
       "RmapLemma": "Pass",
       "SubFrontCharacterization": "Pass",
+      "Subarr": "Pass",
       "SuperNW": "Pass",
       "SuperSequenceExtension": "Pass",
       "TildeFAtomIffFront": "Pass",
