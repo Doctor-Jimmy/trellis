@@ -1,33 +1,33 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Soundness rejected FrontTreeImmediateExtensions for a concrete invalid inference and an omitted nonemptiness obligation. The node is sound-repair-ready, so the correct next step is a narrowly scoped NL-proof repair before requesting Sound again.",
-    "comments": "Repair only `Tablet/FrontTreeImmediateExtensions.tex`; preserve its Lean statement, imports, and theorem decomposition. After `PrefixTree` supplies t in F with s an initial segment of t, do not invoke prefix-freeness with s not in F. Instead prove s != t directly from s notin F and t in F, then use the InitialSegment facts to establish that s is a proper initial segment of t. Explicitly prove t\\s is nonempty (otherwise the initial-segment inclusions force s=t) before invoking well-ordering of Nat to choose its least element. Retain the existing PrefixTree and InitialSegment steps and the countability conclusion; do not add helpers or change support structure.",
-    "task_blocker_ids": [
-      "soundness:node:FrontTreeImmediateExtensions:sound-v2:a1d9d27457fe5f9445577b8215fd419b9123d0447629d70da08a2202c16d18dc"
-    ],
+    "reason": "FrontTreeImmediateExtensions now has a current Sound approval. The next safe bottom-up Sound check is FrontPrefixUnique, whose current proof has explicit support for both front membership and the prefix comparison.",
+    "comments": "Run a verifier-only Sound burst for FrontPrefixUnique. Verify that FrontPrefix supplies s and t in F as proper prefixes of the same range, that the initial-segment comparison is valid for finite increasing prefixes, and that Front's prefix-free clause is applied only to those two members. Do not edit Tablet content, assign a worker, or reset any blocker.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "FrontTreeImmediateExtensions",
+    "request_sound_verifier_node_ids": [
+      "FrontPrefixUnique"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
-    "next_mode": "targeted",
-    "next_worker_context_mode": "resume",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
+    "next_worker_context_mode": "resume",
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1160,
-        "end_line": 1168,
-        "reason": "The paper's front-tree/ray passage supplies the relevant prefix-tree context for this local repair."
+        "start_line": 1258,
+        "end_line": 1258,
+        "reason": "The paper states existence and uniqueness of the front member preceding each infinite range."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage identifies the front prefix tree and its successor subtrees, the context in which the node's one-point extension lemma is used. The requested repair makes the local strict-extension argument valid from the current PrefixTree and InitialSegment support."
+      "basis_summary": "The cited paper line states that every infinite subset of the base has a unique front member with the finite-prefix relation. FrontPrefixUnique formalizes the uniqueness half by comparing two such members and applying prefix-freeness."
     }
   },
   "response": {
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontTreeImmediateExtensions.tex`; preserve its Lean statement, imports, and theorem decomposition. After `PrefixTree` supplies t in F with s an initial segment of t, do not invoke prefix-freeness with s not in F. Instead prove s != t directly from s notin F and t in F, then use the InitialSegment facts to establish that s is a proper initial segment of t. Explicitly prove t\\s is nonempty (otherwise the initial-segment inclusions force s=t) before invoking well-ordering of Nat to choose its least element. Retain the existing PrefixTree and InitialSegment steps and the countability conclusion; do not add helpers or change support structure.",
+    "comments": "Run a verifier-only Sound burst for FrontPrefixUnique. Verify that FrontPrefix supplies s and t in F as proper prefixes of the same range, that the initial-segment comparison is valid for finite increasing prefixes, and that Front's prefix-free clause is applied only to those two members. Do not edit Tablet content, assign a worker, or reset any blocker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 66,
+    "cycle": 67,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,42 +50,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontTreeImmediateExtensions",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1168,
-        "reason": "The paper's front-tree/ray passage supplies the relevant prefix-tree context for this local repair.",
-        "start_line": 1160
+        "end_line": 1258,
+        "reason": "The paper states existence and uniqueness of the front member preceding each infinite range.",
+        "start_line": 1258
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage identifies the front prefix tree and its successor subtrees, the context in which the node's one-point extension lemma is used. The requested repair makes the local strict-extension argument valid from the current PrefixTree and InitialSegment support.",
+      "basis_summary": "The cited paper line states that every infinite subset of the base has a unique front member with the finite-prefix relation. FrontPrefixUnique formalizes the uniqueness half by comparing two such members and applying prefix-freeness.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Soundness rejected FrontTreeImmediateExtensions for a concrete invalid inference and an omitted nonemptiness obligation. The node is sound-repair-ready, so the correct next step is a narrowly scoped NL-proof repair before requesting Sound again.",
-    "request_id": 262,
-    "request_sound_verifier_nodes": [],
+    "reason": "FrontTreeImmediateExtensions now has a current Sound approval. The next safe bottom-up Sound check is FrontPrefixUnique, whose current proof has explicit support for both front membership and the prefix comparison.",
+    "request_id": 265,
+    "request_sound_verifier_nodes": [
+      "FrontPrefixUnique"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:a1d9d27457fe5f9445577b8215fd419b9123d0447629d70da08a2202c16d18dc",
-        "kind": "Soundness",
-        "object": {
-          "node": "FrontTreeImmediateExtensions",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_262_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_265_decision.context.json"
 }
