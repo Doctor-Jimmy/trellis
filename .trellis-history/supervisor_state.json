@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 246,
+  "event_count": 250,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -59495,17 +59495,17 @@
     }
   },
   "checkpoint": {
-    "active_node": "OrbitUnbounded",
+    "active_node": "FrontRayClosure",
     "committed": {
       "$r": "5097ea68b34536ed"
     },
-    "cycle": 43,
+    "cycle": 44,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": "OrbitUnbounded",
+    "active_node": "FrontRayClosure",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60261,9 +60261,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 43,
+    "cycle": 44,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 43,
+    "cycles_since_clean": 44,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "51aa69bb19343206"
@@ -60993,7 +60993,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 42,
+    "last_sound_response_cycle": 44,
     "last_stuck_math_audit_dispatched_cycle": 30,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61011,9 +61011,9 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "Only Tablet/OrbitUnbounded.tex was edited. The proof cites OrbitEmbedding for strict increase of the orbit, while the theorem statement no longer delegates its hypotheses to that theorem-like node. The Lean node elaborates successfully with its existing sorry.",
+    "latest_worker_comments": "No Tablet files were changed. OrbitUnbounded passes check_node, the full 176-node check_tablet, and lake build with kernel replay. Manual paper-faithfulness audit: this support lemma expresses the unboundedness implicit in the orbit/block construction and does not alter any configured target covering set. Manual substantiveness audit: its conclusion is genuinely used by OrbitBlockCoverage and is not a wrapper for OrbitEmbedding, whose distinct conclusion is strict orbit embedding. The current request dispatches no verifier lane, so no paper or substantiveness lane verdict is fabricated; the repaired package is ready for those ordinary verifier checks. No target claims, dependencies, deviations, difficulty classifications, or nodes changed.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Repaired OrbitUnbounded by stating its local hypotheses explicitly in TeX: g is an increasing embedding of the naturals, k is natural, and k<g(k). The existing unbounded-orbit conclusion and proof support are preserved.",
+    "latest_worker_summary": "Revalidated OrbitUnbounded without editing Tablet content. Its explicit local hypotheses, paper-used unbounded-orbit conclusion, and distinct substantive role remain correct; all deterministic checks pass.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
@@ -61242,17 +61242,29 @@
       "mode": "Targeted",
       "must_close_active": false,
       "next_worker_context_mode": "resume",
-      "node": "OrbitUnbounded",
+      "node": "FrontRayClosure",
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [
         {
-          "end_line": 1783,
-          "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses the orbit successor identity in the generalized-shift argument.",
-          "start_line": 1778
+          "end_line": 1101,
+          "reason": "The paper defines rays, states the ray decomposition, and gives the detailed proof of density, base, prefix-freeness, and decomposition for a nontrivial front.",
+          "start_line": 1059
         }
       ],
       "protected_semantic_change_nodes": [],
-      "task_blockers": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "2d9f9616a33622ec"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "FrontRayClosure",
+            "otype": "node"
+          }
+        }
+      ],
       "work_style_hint": "none"
     },
     "pending_worker_audit_request": null,
@@ -61275,18 +61287,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "BooleanInfinitePigeonhole": {
+      "FrontRayClosure": {
         "v1": {
-          "comments": "",
-          "node": {
-            "$s": "4c3bac0512a45c96"
-          },
-          "overall": "APPROVE",
+          "comments": "1. The proof never establishes that TailSet X n is infinite, which is the infinite_base field required by Front in both the trivial and nontrivial ray cases. The same omitted tail argument is needed to justify that {k} union (X/n)/k is an infinite subset of X/n before applying the ray density. 2. 'Since F is nontrivial, u != empty' is not immediate from F != {empty}; it requires using the base disjunction and prefix-freeness to show that a front containing empty must equal {empty}. The proof also never explicitly derives FrontBase(F)=X from the nontriviality hypothesis, although that equality is needed both for this step and for the final claim that an arbitrary member's least element lies in X. 3. From a proper prefix of {n} union Y, the assertion that removing the first element yields a proper prefix of Y is left as 'shows'; this requires the actual ProperPrefixSet semantics and is not line-by-line justified. 4. The base-condition argument only proves that each k in X/n occurs in some ray member. It does not prove the reverse inclusion FrontBase(Ray F n) subset X/n; that needs the Ray inequalities together with FrontBase(F)=X. Thus 'Hence its base is X/n' is unsupported. 5. Prefix-freeness is asserted to be inherited without proving that, for s and t whose elements all exceed n, InitialSegment s t implies InitialSegment (insert n s) (insert n t). 6. The proof uses the cross-node meanings of TailSet, FrontBase, ProperPrefixSet, and InitialSegment but cites only Front and Ray; the required noderef citations are missing.",
+          "node": "FrontRayClosure",
+          "overall": "REJECT",
           "soundness": {
-            "decision": "SOUND",
-            "explanation": "The proof establishes the stated claim: the two color classes partition the naturals, and if both were finite then their union would be finite, contradicting that the naturals are infinite. No cross-node dependency is used."
+            "decision": "UNSOUND",
+            "explanation": "The NL argument has the intended construction but omits required Front fields, the reverse base inclusion, and several derivations needed for the prefix operations. It also fails the dependency-citation rule for the imported definitions it uses, so it is not a rigorous line-by-line proof."
           },
-          "summary": "The natural-language proof is rigorous and complete at the paper's detail level."
+          "summary": "Reject: the ray-density outline is plausible, but the proof does not establish all four Front obligations or the final decomposition from the stated dependencies."
         }
       }
     },
@@ -61294,7 +61304,7 @@
     "process_memory_seq": 10,
     "progress_history": {
       "last_dispatched_index": 28,
-      "next_index": 43,
+      "next_index": 44,
       "snapshots": [
         {
           "present": [
@@ -64045,6 +64055,15 @@
             "$r": "0cbead0f925b4375"
           },
           "snapshot_index": 42
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "0cbead0f925b4375"
+          },
+          "snapshot_index": 43
         }
       ]
     },
@@ -64053,9 +64072,9 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 204,
+    "request_seq": 207,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not edit Tablet content in the next burst. Keep OrbitUnbounded's explicit local hypotheses and retain the OrbitEmbedding citation only for the strict-increase fact used in the proof. Run the remaining paper-faithfulness and substantiveness checks for the repaired package. Do not request soundness yet, add helpers, reopen OrbitEmbedding, or touch the other substantive failures.",
+    "reviewer_comments": "Repair only Tablet/FrontRayClosure.tex. Keep the Lean statement and imports unchanged. In the proof, for arbitrary infinite Y in TailSet X n explicitly show that insert n Y is infinite and contained in X, use Front density, and derive the selected prefix is nonempty from nontriviality plus prefix-freeness. Prove both inclusions of FrontBase (Ray F n) = TailSet X n in the nontrivial-ray case, handle the trivial-ray case through the Front base disjunction, and justify that InitialSegment is preserved and reflected when the common least element n is inserted. Finish both directions of the displayed decomposition. Cite Front, Ray, TailSet, FrontBase, ProperPrefixSet, and InitialSegment wherever their meanings are used. Do not edit OrbitUnbounded, add helpers, or touch unrelated substantive failures.",
     "reviewer_requested_sound_verifier_nodes": [
       "BlockSigmaIntertwines"
     ],
@@ -64064,6 +64083,9 @@
     "sound_approved_fingerprints": {
       "BooleanInfinitePigeonhole": {
         "$s": "66f5b021e983ad69"
+      },
+      "FrontRayClosure": {
+        "$s": "2d9f9616a33622ec"
       },
       "FrontRestriction": {
         "$s": "1e101301f8c29f2a"
@@ -64096,6 +64118,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "FrontRayClosure": {
+        "fingerprints": {
+          "$r": "c938c5b96e851c45"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       },
       "FrontRestriction": {
         "fingerprints": {
@@ -65232,6 +65263,7 @@
     },
     "sound_status": {
       "BooleanInfinitePigeonhole": "Pass",
+      "FrontRayClosure": "Fail",
       "FrontRestriction": "Pass",
       "FrontTreeWellFounded": "Pass",
       "OrbitEmbedding": "Fail",

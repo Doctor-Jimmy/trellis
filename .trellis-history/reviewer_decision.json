@@ -1,12 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker repaired OrbitUnbounded.tex by stating g, k, and k<g(k) locally, so the old substantiveness evidence no longer binds. Correspondence now passes, while the repaired node remains FreshUnknown for substantiveness and soundness. Hand the package back to the ordinary verification frontier; no reset is legal and soundness should wait until the non-soundness lanes are current.",
-    "comments": "Do not edit Tablet content in the next burst. Keep OrbitUnbounded's explicit local hypotheses and retain the OrbitEmbedding citation only for the strict-increase fact used in the proof. Run the remaining paper-faithfulness and substantiveness checks for the repaired package. Do not request soundness yet, add helpers, reopen OrbitEmbedding, or touch the other substantive failures.",
-    "task_blocker_ids": [],
+    "reason": "The automatic soundness verifier rejected the unchanged FrontRayClosure proof. Its outline matches the paper, but it omits the infinite-base argument, the derivation that a nontrivial front cannot contain the empty set, the reverse inclusion in the ray-base equality, the insertion argument for prefix-freeness, and required citations for imported definitions. FrontRayClosure is repair-ready, so route that binding failure for a focused TeX repair; do not reset it.",
+    "comments": "Repair only Tablet/FrontRayClosure.tex. Keep the Lean statement and imports unchanged. In the proof, for arbitrary infinite Y in TailSet X n explicitly show that insert n Y is infinite and contained in X, use Front density, and derive the selected prefix is nonempty from nontriviality plus prefix-freeness. Prove both inclusions of FrontBase (Ray F n) = TailSet X n in the nontrivial-ray case, handle the trivial-ray case through the Front base disjunction, and justify that InitialSegment is preserved and reflected when the common least element n is inserted. Finish both directions of the displayed decomposition. Cite Front, Ray, TailSet, FrontBase, ProperPrefixSet, and InitialSegment wherever their meanings are used. Do not edit OrbitUnbounded, add helpers, or touch unrelated substantive failures.",
+    "task_blocker_ids": [
+      "soundness:node:FrontRayClosure:sound-v2:ba21bf414577e02ff3ef6120e69be7546e0d436c9c2c02a2884493838a58bc14"
+    ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "OrbitUnbounded",
+    "next_active": "FrontRayClosure",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -17,14 +19,14 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1778,
-        "end_line": 1783,
-        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses the orbit successor identity in the generalized-shift argument."
+        "start_line": 1059,
+        "end_line": 1101,
+        "reason": "The paper defines rays, states the ray decomposition, and gives the detailed proof of density, base, prefix-freeness, and decomposition for a nontrivial front."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states that G is an increasing embedding before using the orbit successor identity. OrbitUnbounded supplies the corresponding elementary unboundedness step, and its repaired TeX now states its local hypotheses explicitly rather than borrowing them from OrbitEmbedding."
+      "basis_summary": "I directly read the cited manuscript passage. Lines 1061-1069 define the ray and its decomposition, lines 1078-1090 give the initial-segment and explicit-front clauses, and lines 1096-1100 prove the ray lemma. The worker repair should expand that proof to make each Front obligation, both base inclusions, the insertion-prefix argument, and all cross-node definition uses line-by-line explicit."
     }
   },
   "response": {
@@ -36,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit Tablet content in the next burst. Keep OrbitUnbounded's explicit local hypotheses and retain the OrbitEmbedding citation only for the strict-increase fact used in the proof. Run the remaining paper-faithfulness and substantiveness checks for the repaired package. Do not request soundness yet, add helpers, reopen OrbitEmbedding, or touch the other substantive failures.",
+    "comments": "Repair only Tablet/FrontRayClosure.tex. Keep the Lean statement and imports unchanged. In the proof, for arbitrary infinite Y in TailSet X n explicitly show that insert n Y is infinite and contained in X, use Front density, and derive the selected prefix is nonempty from nontriviality plus prefix-freeness. Prove both inclusions of FrontBase (Ray F n) = TailSet X n in the nontrivial-ray case, handle the trivial-ray case through the Front base disjunction, and justify that InitialSegment is preserved and reflected when the common least element n is inserted. Finish both directions of the displayed decomposition. Cite Front, Ray, TailSet, FrontBase, ProperPrefixSet, and InitialSegment wherever their meanings are used. Do not edit OrbitUnbounded, add helpers, or touch unrelated substantive failures.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 43,
+    "cycle": 44,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -47,32 +49,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "OrbitUnbounded",
+    "next_active": "FrontRayClosure",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1783,
-        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses the orbit successor identity in the generalized-shift argument.",
-        "start_line": 1778
+        "end_line": 1101,
+        "reason": "The paper defines rays, states the ray decomposition, and gives the detailed proof of density, base, prefix-freeness, and decomposition for a nontrivial front.",
+        "start_line": 1059
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states that G is an increasing embedding before using the orbit successor identity. OrbitUnbounded supplies the corresponding elementary unboundedness step, and its repaired TeX now states its local hypotheses explicitly rather than borrowing them from OrbitEmbedding.",
+      "basis_summary": "I directly read the cited manuscript passage. Lines 1061-1069 define the ray and its decomposition, lines 1078-1090 give the initial-segment and explicit-front clauses, and lines 1096-1100 prove the ray lemma. The worker repair should expand that proof to make each Front obligation, both base inclusions, the insertion-prefix argument, and all cross-node definition uses line-by-line explicit.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker repaired OrbitUnbounded.tex by stating g, k, and k<g(k) locally, so the old substantiveness evidence no longer binds. Correspondence now passes, while the repaired node remains FreshUnknown for substantiveness and soundness. Hand the package back to the ordinary verification frontier; no reset is legal and soundness should wait until the non-soundness lanes are current.",
-    "request_id": 204,
+    "reason": "The automatic soundness verifier rejected the unchanged FrontRayClosure proof. Its outline matches the paper, but it omits the infinite-base argument, the derivation that a nontrivial front cannot contain the empty set, the reverse inclusion in the ray-base equality, the insertion argument for prefix-freeness, and required citations for imported definitions. FrontRayClosure is repair-ready, so route that binding failure for a focused TeX repair; do not reset it.",
+    "request_id": 207,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:ba21bf414577e02ff3ef6120e69be7546e0d436c9c2c02a2884493838a58bc14",
+        "kind": "Soundness",
+        "object": {
+          "node": "FrontRayClosure",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_204_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_207_decision.context.json"
 }
