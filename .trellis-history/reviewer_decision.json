@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The ConverseGame support theorem was added with a complete non-SKETCH proof, its full tablet replay passes, and correspondence verification approves its Lean and TeX statements. Continue the planned bottom-up route with the BQO-to-WQO and deciding-front preparation package before claiming either blocked hereditary target.",
-    "comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo with no stronger order hypothesis than the Bqo definition: a bad ordinary sequence gives the locally constant singleton-coordinate multi-sequence x |-> a (x 0), contradicting Bqo. Then package the reverse-direction input using DecidingFront, DecidingValue, BadMultiToSuper, and IncSeqId: from a bad locally constant multi-sequence obtain its deciding front, value map, bad super-sequence, and explicitly prove that the empty prefix is not deciding under reflexivity. If the empty prefix were deciding, DecidingValue would make h constant and reflexivity would contradict badness at a sequence and its shift. Preserve universe polymorphism, cite every cross-node dependency in complete non-SKETCH TeX proofs, and do not claim BqoHerCtblWqo or BqoHerCtblWellF in this preparation layer.",
+    "reason": "The refreshed audit confirms that the bridge and ConverseGame support layers are complete and that the remaining route is preparation, then the hereditary WQO target, then the carrier-specific tail equivalence and final target. The preparation artifacts are not yet present, so continue with that planned support task.",
+    "comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo {Q : Type u} (r : Q -> Q -> Prop) : Bqo r -> WellQuasiOrdered r without an order-class hypothesis. Use a bad ordinary sequence a to form h x = a (x 0), prove local constancy from agreement at the first coordinate, and use strict monotonicity at 0 < 1 to obtain badness. Also add a focused theorem such as BadMultiToNontrivialSuper, attaching to DecidingFront, DecidingValue, BadMultiToSuper, DecidingFrontSet, BadMultiSequence, ShiftMap, and IncSeqId: under minimal reflexivity, produce the deciding-front super-sequence and prove the empty prefix is absent. If the empty prefix decided h, the deciding-value equation would identify h x with h (ShiftMap x), contradicting badness and reflexivity. Preserve universe polymorphism, give complete cited non-SKETCH TeX proofs, and do not claim either configured hereditary target in this layer.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
       "paperfaithfulness:target:thm BqoHerCtblWellF:"
@@ -20,50 +20,47 @@
       {
         "start_line": 1270,
         "end_line": 1292,
-        "reason": "These lines define locally constant multi-sequences, minimal deciding fronts, and the deciding-front value map needed for the reverse hereditary WQO reduction."
+        "reason": "The paper defines local constancy, minimal deciding fronts, and the associated value map in this passage."
       },
       {
         "start_line": 1507,
-        "end_line": 1518,
-        "reason": "These lines state and prove the paper's BQO-to-WQO implication by restricting to singleton-indexed sequences."
+        "end_line": 1519,
+        "reason": "The paper derives WQO from BQO by observing that singleton shifts are exactly the strict order m<n."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread paper lines 1270-1292 and 1507-1518. The first passage gives local constancy, minimal deciding prefixes, and the value map on the deciding front; the second observes that singleton shifts are exactly m<n and derives WQO from BQO."
+      "basis_summary": "I directly reread paper lines 1270-1292 and 1507-1519. These passages support the deciding-front/value-map construction and the singleton-coordinate proof that every BQO is WQO."
     },
     "stuck_math_audit": {
-      "notes": "The hereditary-converse-game task is complete and should be dismissed. The next live plan task is hereditary-wqo-preparation: establish BqoImpliesWqo and the nontrivial deciding-front package needed to feed ConverseGame. Keep the empty-prefix exclusion explicit and do not claim either configured hereditary target until the preparation and target-level covering statements are in place.",
+      "notes": "The audit plan is current and its completed bridge and ConverseGame tasks remain dismissed. The next live task is hereditary-wqo-preparation. Build the two support theorems with the minimal hypotheses stated by the plan, especially the explicit empty-prefix exclusion under reflexivity, and leave both configured hereditary targets unclaimed.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "completed_task": "hereditary-converse-game",
+        "completed_tasks": [
+          "converse-bridge-infrastructure",
+          "hereditary-converse-game"
+        ],
         "next_task": "hereditary-wqo-preparation",
         "required_interface": [
-          "universe-polymorphic BqoImpliesWqo theorem",
+          "universe-polymorphic BqoImpliesWqo with no order-class assumption",
           "bad ordinary sequence mapped to the locally constant singleton-coordinate multi-sequence",
           "deciding front and deciding value map for a locally constant multi-sequence",
           "bad super-sequence on DecidingFrontSet via BadMultiToSuper",
           "explicit empty notin DecidingFrontSet proof under reflexivity",
-          "use IncSeqId and the shift to contradict badness if the empty prefix decides"
+          "use IncSeqId and ShiftMap to contradict badness if the empty prefix decides"
         ],
         "constraints": [
-          "do not strengthen BqoImpliesWqo with an unnecessary IsPreorder hypothesis",
           "retain universe polymorphism",
-          "cite existing theorem statements rather than their proof hypotheses",
+          "use only minimal reflexivity for the nontriviality theorem",
+          "cite theorem statements rather than proof-only hypotheses",
           "new proof-bearing TeX blocks must be complete, cited, and non-SKETCH",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this support layer"
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this preparation layer"
         ]
       }
-    },
-    "dismissed_tasks": [
-      {
-        "id": "hereditary-converse-game",
-        "reason": "The worker added ConverseGame with the planned hereditary singleton sequence, complete cited non-SKETCH proof, strengthened bridge preservation through all four PowerRel cases, and terminal finite-shift contradiction; full replay and checker passed, and correspondence verification approved it."
-      }
-    ]
+    }
   },
   "response": {
     "allow_new_obligations": true,
@@ -74,19 +71,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo with no stronger order hypothesis than the Bqo definition: a bad ordinary sequence gives the locally constant singleton-coordinate multi-sequence x |-> a (x 0), contradicting Bqo. Then package the reverse-direction input using DecidingFront, DecidingValue, BadMultiToSuper, and IncSeqId: from a bad locally constant multi-sequence obtain its deciding front, value map, bad super-sequence, and explicitly prove that the empty prefix is not deciding under reflexivity. If the empty prefix were deciding, DecidingValue would make h constant and reflexivity would contradict badness at a sequence and its shift. Preserve universe polymorphism, cite every cross-node dependency in complete non-SKETCH TeX proofs, and do not claim BqoHerCtblWqo or BqoHerCtblWellF in this preparation layer.",
+    "comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo {Q : Type u} (r : Q -> Q -> Prop) : Bqo r -> WellQuasiOrdered r without an order-class hypothesis. Use a bad ordinary sequence a to form h x = a (x 0), prove local constancy from agreement at the first coordinate, and use strict monotonicity at 0 < 1 to obtain badness. Also add a focused theorem such as BadMultiToNontrivialSuper, attaching to DecidingFront, DecidingValue, BadMultiToSuper, DecidingFrontSet, BadMultiSequence, ShiftMap, and IncSeqId: under minimal reflexivity, produce the deciding-front super-sequence and prove the empty prefix is absent. If the empty prefix decided h, the deciding-value equation would identify h x with h (ShiftMap x), contradicting badness and reflexivity. Preserve universe polymorphism, give complete cited non-SKETCH TeX proofs, and do not claim either configured hereditary target in this layer.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 25,
+    "cycle": 26,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "hereditary-converse-game",
-        "reason": "The worker added ConverseGame with the planned hereditary singleton sequence, complete cited non-SKETCH proof, strengthened bridge preservation through all four PowerRel cases, and terminal finite-shift contradiction; full replay and checker passed, and correspondence verification approved it."
-      }
-    ],
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -97,46 +89,49 @@
     "paper_focus_ranges": [
       {
         "end_line": 1292,
-        "reason": "These lines define locally constant multi-sequences, minimal deciding fronts, and the deciding-front value map needed for the reverse hereditary WQO reduction.",
+        "reason": "The paper defines local constancy, minimal deciding fronts, and the associated value map in this passage.",
         "start_line": 1270
       },
       {
-        "end_line": 1518,
-        "reason": "These lines state and prove the paper's BQO-to-WQO implication by restricting to singleton-indexed sequences.",
+        "end_line": 1519,
+        "reason": "The paper derives WQO from BQO by observing that singleton shifts are exactly the strict order m<n.",
         "start_line": 1507
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread paper lines 1270-1292 and 1507-1518. The first passage gives local constancy, minimal deciding prefixes, and the value map on the deciding front; the second observes that singleton shifts are exactly m<n and derives WQO from BQO.",
+      "basis_summary": "I directly reread paper lines 1270-1292 and 1507-1519. These passages support the deciding-front/value-map construction and the singleton-coordinate proof that every BQO is WQO.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The ConverseGame support theorem was added with a complete non-SKETCH proof, its full tablet replay passes, and correspondence verification approves its Lean and TeX statements. Continue the planned bottom-up route with the BQO-to-WQO and deciding-front preparation package before claiming either blocked hereditary target.",
-    "request_id": 138,
+    "reason": "The refreshed audit confirms that the bridge and ConverseGame support layers are complete and that the remaining route is preparation, then the hereditary WQO target, then the carrier-specific tail equivalence and final target. The preparation artifacts are not yet present, so continue with that planned support task.",
+    "request_id": 140,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The hereditary-converse-game task is complete and should be dismissed. The next live plan task is hereditary-wqo-preparation: establish BqoImpliesWqo and the nontrivial deciding-front package needed to feed ConverseGame. Keep the empty-prefix exclusion explicit and do not claim either configured hereditary target until the preparation and target-level covering statements are in place.",
+      "notes": "The audit plan is current and its completed bridge and ConverseGame tasks remain dismissed. The next live task is hereditary-wqo-preparation. Build the two support theorems with the minimal hypotheses stated by the plan, especially the explicit empty-prefix exclusion under reflexivity, and leave both configured hereditary targets unclaimed.",
       "reviewer_lean_product": {
-        "completed_task": "hereditary-converse-game",
+        "completed_tasks": [
+          "converse-bridge-infrastructure",
+          "hereditary-converse-game"
+        ],
         "constraints": [
-          "do not strengthen BqoImpliesWqo with an unnecessary IsPreorder hypothesis",
           "retain universe polymorphism",
-          "cite existing theorem statements rather than their proof hypotheses",
+          "use only minimal reflexivity for the nontriviality theorem",
+          "cite theorem statements rather than proof-only hypotheses",
           "new proof-bearing TeX blocks must be complete, cited, and non-SKETCH",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this support layer"
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this preparation layer"
         ],
         "next_task": "hereditary-wqo-preparation",
         "required_interface": [
-          "universe-polymorphic BqoImpliesWqo theorem",
+          "universe-polymorphic BqoImpliesWqo with no order-class assumption",
           "bad ordinary sequence mapped to the locally constant singleton-coordinate multi-sequence",
           "deciding front and deciding value map for a locally constant multi-sequence",
           "bad super-sequence on DecidingFrontSet via BadMultiToSuper",
           "explicit empty notin DecidingFrontSet proof under reflexivity",
-          "use IncSeqId and the shift to contradict badness if the empty prefix decides"
+          "use IncSeqId and ShiftMap to contradict badness if the empty prefix decides"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -166,5 +161,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_138_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_140_decision.context.json"
 }

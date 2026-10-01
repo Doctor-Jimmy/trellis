@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 162,
+  "event_count": 165,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -682,7 +682,6 @@
     "74236bc6af4c0c7b": "{\"own_tex\":\"a3c462a59007baafae10231b7c3cea782a793f3e3d5edc257761a36a59fbc022\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "743d6c070d048fc9": "{\"own_tex\":\"03f5b930671537a2367b17e00ea584ce5333294bfd77bb73ef6e3e21c012c7b1\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "7464f7c50da2eb72": "{\"own_tex\":\"cde879f687a943925edd9aa7b44fcd6e8b35122e03075d07d17c7d07fe59a676\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-    "7487a373ae4ddaa1": ".trellis/stuck-math-audit/cycle-18-request-103/hereditary_code_probe.lean",
     "754856b759ea7015": "05775db8a2b0f18739fe8c2c9dcc12b7a81f7d1db93c7655b44095a044480a65",
     "75a04cebf05ae5d5": "sound-v2:cbd8088e853b09100edd11cea9bde319cedc80a0ce7541809fa8ae923662dfc3",
     "75a4c16c5731e1b3": "{\"own_tex\":\"e67d8ab38bd700d9d33e4fb21a4a8a980004ba9a69b1b3a1c11e643f34a19017\",\"lean_semantic_closure\":\"1a2c2f2025eab1b845cdecbfef5e47188387e77e43b4f169e135dc7175a75388\",\"lean_relevant_definition_descendants\":{\"FiniteShift\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"FiniteShift\",\"Front\",\"FrontBase\",\"IncSeq\",\"IncSeqComp\",\"InitialSegment\",\"ProperPrefixSet\",\"RightComp\",\"ShiftMap\",\"SuccSeq\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -25157,11 +25156,6 @@
     "70bc07866ee82666": [
       {
         "$r": "4f29fd304caf441c"
-      }
-    ],
-    "70bfb228c82bd5f8": [
-      {
-        "$s": "7487a373ae4ddaa1"
       }
     ],
     "70e0b8484f7b346c": {
@@ -56090,7 +56084,7 @@
     "committed": {
       "$r": "8d1ef48d95da8591"
     },
-    "cycle": 25,
+    "cycle": 26,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -56109,31 +56103,15 @@
       "cone_clean_node": null,
       "initial_plan": true,
       "need_input_audit": false,
-      "probe_paths": {
-        "$r": "70bfb228c82bd5f8"
-      },
-      "report": "## Claim being audited\n\nEight configured targets remain covered, and the only targets without covering nodes are `thm BqoHerCtblWqo` and `thm BqoHerCtblWellF`. The first three hereditary layers from the prior plan are now complete and should stay dismissed: the Tablet contains the universe-correct hereditary code and carrier through `HerCtblNodeClosure` and `HerCtblPowerIsPreorder`; the repaired extension-oriented front tree through `FrontTreeWellFounded`, `FrontTreeImmediateExtensions`, and `FrontTreeSingleton`; and the full `TildeF` recursion through its two equations, atom characterization, hereditary-countability theorem, and nontrivial singleton restriction. The cycle-21 correspondence results pass all five new `TildeF` statements. No hereditary target node or converse-game node is present yet.\n\nThe remaining mathematical route is still the paper's route at lines 1566-1595, but the old converse-game task needs a sharper invariant. A hypothesis `FiniteShift s t` by itself does not retain enough alignment to choose a legal left child and absorb whichever right child is extracted from `PowerRel`. For example, in the front of all four-element subsets, `s={0,1,2}` and `t={1}` are finite-shift related and both nonfront, while the legal right extension `{1,3}` cannot be the shifted prefix of any infinite set whose prefix still extends `{0,1,2}`. The reachable states in the paper avoid this problem by carrying the finite bridge `u_i`: initially `u_0={m,n}`; while the left node is nonterminal, `u_i` is its next one-point extension; while the right node is nonterminal, it is exactly the tail of `u_i`; once either side is terminal it remains an initial segment of the corresponding side of the bridge. After a right response, adjoining its new point (or a fresh dummy point when the right side is already terminal) creates `u_{i+1}`. A terminal bridge extends to an infinite enumeration and hence yields `FiniteShift`.\n\nThe next worker should therefore first add the elementary front-density and bridge transition statements, then prove the converse by well-founded induction on the lexicographic product of the two repaired extension relations. `PowerRelNodeNode` descends the left component after the bridge chooses its prescribed child; `PowerRelNodeAtom` also descends left; `PowerRelAtomNode` keeps the terminal left component and descends right; and `PowerRelAtomAtom` exposes the final `r`-comparison. At two front nodes the bridge gives `FiniteShift`, so `BadSuperSequence` contradicts that comparison. This yields a bad sequence valued in `HerCtblPower Q`, using `TildeFHerCtbl` for the subtype witnesses. No target should be claimed before this theorem exists.\n\nFor `thm BqoHerCtblWqo`, add the universe-polymorphic paper proposition `BqoImpliesWqo`: if a sequence has no increasing pair, `x \\mapsto a (x 0)` is locally constant and bad. In the reverse direction, a bad locally constant multi-sequence has a deciding front and deciding value by the existing nodes; its deciding front cannot contain the empty prefix, since `DecidingValue` would then make the map constant and reflexivity would contradict badness. `BadMultiToSuper` and the converse-game theorem then give a bad hereditary singleton sequence. The sole covering statement should be\n\n```text\nBqoHerCtblWqo [IsPreorder Q r] :\n  Bqo r <-> WellQuasiOrdered (HerCtblRel r).\n```\n\nIts forward implication runs through `PowerQPresBqo`, `BqoImpliesWqo`, and restriction of the resulting WQO from the full `PowerQ Q` to the hereditary subtype; its reverse implication is the deciding-front argument above. This target must precede the well-founded target.\n\nFor `thm BqoHerCtblWellF`, retain the carrier-specific tail construction from the prior plan. From a bad sequence `a : Nat -> HerCtblPower Q`, let `T n` be the `ULift.{u} Nat`-indexed hereditary node with children `a (n+k)`. `HerCtblNodeClosure` supplies its carrier witness. The node-node reduction and reflexivity show `T (n+1) <= T n` by matching child `k` to child `k+1`; if `T n <= T (n+1)`, the response to the zeroth child would compare `a n` with some `a (n+1+k)`, contradicting badness. Thus `n \\mapsto T n` is an infinite descending chain for the strict part. Together with `WellQuasiOrdered.wellFounded`, this proves the carrier-specific WQO/well-founded equivalence and then the sole covering statement\n\n```text\nBqoHerCtblWellF [IsPreorder Q r] :\n  Bqo r <-> WellFounded\n    (fun a b : HerCtblPower Q =>\n      HerCtblRel r a b and not HerCtblRel r b a).\n```\n\nProceed through the tasks below in order. The existing statement-lane debts on older covered branches, including the recorded assessment of `PowerPresentationEqEquivalence`, are global verification/repair work but do not invalidate or replace these six construction tasks: the theorem itself has the exact equivalence interface already used by the accepted hereditary closure layer. Every new proof-bearing TeX node must give the complete argument, with no `SKETCH` marker.",
+      "probe_paths": [
+        ".trellis/stuck-math-audit/cycle-26-request-139/hereditary_remaining_probe.lean"
+      ],
+      "report": "## Claim being audited\n\nEight configured targets still have covering nodes, and the only uncovered targets remain `thm BqoHerCtblWqo` and `thm BqoHerCtblWellF`. Progress against the previous plan is real: the bridge infrastructure was completed and dismissed at cycle 24, and `ConverseGame` was added and dismissed at cycle 25. The latter now has passing correspondence and substantiveness verdicts and states exactly the hereditary singleton bad-sequence conclusion needed downstream. Those completed tasks should not be reopened.\n\nThe remaining route is the paper's route at lines 1582-1595, with the already accepted deciding-front and converse-game machinery filling in the paper's compressed assertion that a non-BQO yields a bad super-sequence. First add the universe-polymorphic implication `Bqo r -> WellQuasiOrdered r`. Its proof needs no preorder hypothesis: for an ordinary bad sequence `a`, the map `h x = a (x 0)` is locally constant from agreement at coordinate zero, while strict monotonicity gives `x 0 < x 1` and makes `h` bad. In the same preparation layer, package `DecidingFront`, `DecidingValue`, and `BadMultiToSuper` into a theorem saying that a bad locally constant multi-sequence under reflexivity yields a bad super-sequence on `DecidingFrontSet h` and that the empty set is not in that front. If the empty set were deciding, its deciding-prefix equality (equivalently the deciding-value equation) would identify `h x` with `h (ShiftMap x)`; reflexivity contradicts badness.\n\nThe first covering node should then claim only `thm BqoHerCtblWqo` with the statement `[IsPreorder Q r] : Bqo r <-> WellQuasiOrdered (HerCtblRel r)`. Forward, `PowerQPresBqo` and `BqoImpliesWqo` give WQO on the full `PowerQ Q`; apply it to the underlying values of an arbitrary `Nat -> HerCtblPower Q`. Reverse, unpack failure of `Bqo`, apply the nontrivial deciding-front package, and use `ConverseGame` to produce a hereditary sequence with no increasing pair, contradicting hereditary WQO. This node attaches to `PowerQPresBqo`, the preparation nodes, `ConverseGame`, `TildeFSingleton`, and `TildeFHerCtbl`.\n\nFor the well-founded target, retain the carrier-specific tail construction rather than attempting the false general implication well-founded implies WQO. Prove a helper equivalence `WellQuasiOrdered (HerCtblRel r) <-> WellFounded (fun a b => HerCtblRel r a b and not HerCtblRel r b a)`. The forward implication is `WellQuasiOrdered.wellFounded`. For the converse, a WQO-bad sequence `a` gives the `ULift.{u} Nat`-indexed hereditary tail node `T n` with child `k` equal to `a (n + k.down)`; `HerCtblNodeClosure` supplies the subtype witness. `PowerRelNodeNode` and reflexivity give `T (n+1) <= T n` by matching child `k` with offset `k+1`, while `T n <= T (n+1)` would compare `a n` with `a (n+1+k)`, contradicting badness. This is an infinite descending chain for exactly the strict-part orientation used by Mathlib's `wellFounded_iff_isEmpty_descending_chain`. The final covering node for `thm BqoHerCtblWellF` should merely compose this helper with `BqoHerCtblWqo`.\n\nThe work order remains preparation, hereditary WQO target, tail-descent equivalence, then hereditary well-founded target. The scratch probe `.trellis/stuck-math-audit/cycle-26-request-139/hereditary_remaining_probe.lean` elaborates this full chain, including the universe lift and relation orientation, against the current Tablet. It passes Lean with only deprecation warnings in scratch code. Existing correspondence, substantiveness, and soundness debts elsewhere in the 172-node Tablet remain verification work; they do not require changing this construction plan or adding replacement target statements. Every new proof-bearing TeX node must contain a complete non-`SKETCH` proof and cite all cross-node dependencies.",
       "revision_audit": false,
       "route_tex": "",
       "tasks": [
         {
-          "body": "Attach to `Front`, `PrefixTree`, `InitialSegment`, `ProperInitialSegment`, `FiniteShift`, and the repaired `FrontTreeWellFounded`. Add the focused fact used implicitly at paper lines 1569-1570: for a front on `Set.univ`, every ordered one-point extension of a nonfront prefix-tree node is again in the prefix tree (not merely that some extension exists). Define an explicit finite bridge state for tree nodes `s,t` and a finite joint set `u`: before termination, `u` is the prescribed one-point extension of the left node and its finite tail is the right node; after one side reaches the front, retain the corresponding initial-segment condition. Prove initialization from `m<n` with `s={m}`, `t={n}`, `u={m,n}`; prove the transition that adjoins a right response, or a fresh point when the right side is terminal; prove the chosen left extension is legal; and prove that a bridge with both sides terminal implies `FiniteShift s t` by appending an infinite tail. Statements may use an equivalent bridge representation, but must expose exactly these operational laws. Do not claim a configured target.",
-          "dismissed": true,
-          "dismissed_at_cycle": 24,
-          "dismissed_reason": "The worker implemented the strengthened bridge definition, initialization, transition, prescribed-left legality, and terminal-to-FiniteShift package; the reported shape checks and full tablet build passed, and the current cycle has no remaining verifier evidence against this bridge layer.",
-          "id": "converse-bridge-infrastructure",
-          "title": "Build the converse-game bridge"
-        },
-        {
-          "body": "Carry forward the prior converse task, now downstream of the bridge package. Attach to `TildeF`, both recursion equations, `TildeFHerCtbl`, `TildeFSingleton`, the bridge lemmas, `BadSuperSequence`, and all four reductions `PowerRelAtomAtom`, `PowerRelAtomNode`, `PowerRelNodeAtom`, and `PowerRelNodeNode`. If useful, define the hereditary-subtype-valued singleton sequence whose underlying value is `TildeFSingleton`. For `empty notin F` and a bad super-sequence `f`, prove that for every `m<n` there is no `HerCtblRel r` comparison from the singleton value at `m` to that at `n`. Starting with the initial bridge, recurse on the lexicographic product of the two extension-oriented tree relations: node-node and node-atom descend left, atom-node descends right with left fixed, and atom-atom terminates. Preserve the bridge at every recursive call and use its terminal-to-`FiniteShift` theorem plus `BadSuperSequence` for the contradiction. This is the paper's `lem: ConverseGame`; do not claim either hereditary configured target here.",
-          "dismissed": true,
-          "dismissed_at_cycle": 25,
-          "dismissed_reason": "The worker added ConverseGame with the planned hereditary singleton sequence, complete cited non-SKETCH proof, strengthened bridge preservation through all four PowerRel cases, and terminal finite-shift contradiction; full replay and checker passed, and correspondence verification approved it.",
-          "id": "hereditary-converse-game",
-          "title": "Prove the nontrivial hereditary converse"
-        },
-        {
-          "body": "Add a universe-polymorphic theorem `BqoImpliesWqo` stating `Bqo r -> WellQuasiOrdered r` (no stronger order hypothesis is needed): from a sequence with no increasing pair, use the locally constant multi-sequence `x |-> a (x 0)` and the strict increase `x 0 < x 1`. Then attach to `DecidingFront`, `DecidingValue`, `BadMultiToSuper`, and `IncSeqId` to package the reverse-direction input: under reflexivity, a bad locally constant multi-sequence yields a bad super-sequence on `DecidingFrontSet h` together with `empty notin DecidingFrontSet h`. Prove nontriviality explicitly: if empty is deciding, `DecidingValue` identifies every value of `h` with the same deciding value, contradicting `BadMultiSequence` at any sequence and its shift. Give complete TeX proofs and claim no configured target.",
+          "body": "Carry forward this open task downstream of the now-complete `ConverseGame`. Add a universe-polymorphic theorem `BqoImpliesWqo {Q : Type u} (r : Q -> Q -> Prop) : Bqo r -> WellQuasiOrdered r`, with no order-class assumption. Prove it using `h x = a (x 0)`, prefix agreement of length one, and `x.strictMono` at `0 < 1`. Add a second focused theorem, for example `BadMultiToNontrivialSuper`, attaching to `DecidingFront`, `DecidingValue`, `BadMultiToSuper`, `DecidingFrontSet`, `BadMultiSequence`, `ShiftMap`, and `IncSeqId`: under `[Std.Refl r]` (or an equivalently minimal reflexivity assumption), a locally constant bad `h` yields `f : SuperSequence (DecidingFrontSet h) Set.univ Q` with `BadSuperSequence r f` and `emptyset` not in `DecidingFrontSet h`. Build `f` from the deciding value map. Prove nontriviality explicitly using the empty deciding-prefix equality or deciding-value equation on an increasing sequence and its shift, then reflexivity. Give complete non-`SKETCH` TeX proofs and claim neither configured target.",
           "dismissed": false,
           "dismissed_at_cycle": null,
           "dismissed_reason": "",
@@ -56141,7 +56119,7 @@
           "title": "Prepare the BQO-to-WQO reductions"
         },
         {
-          "body": "Carry forward the prior WQO target task after the converse and preparation nodes. Add the sole node claiming `thm BqoHerCtblWqo`, with universe-polymorphic statement `[IsPreorder Q r] -> (Bqo r <-> WellQuasiOrdered (HerCtblRel r))`. Forward: apply `PowerQPresBqo`, then `BqoImpliesWqo` to `PowerRel r`, and restrict the resulting increasing pair to any sequence in `HerCtblPower Q`. Reverse: negate `Bqo r`, extract a bad locally constant multi-sequence, use the nontrivial deciding-front package to obtain a bad super-sequence, and apply the hereditary converse theorem to contradict the assumed hereditary WQO. The TeX proof must cite these nodes and reproduce both implications completely.",
+          "body": "After the preparation nodes, add the sole node claiming `thm BqoHerCtblWqo`, with universe-polymorphic statement `BqoHerCtblWqo {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellQuasiOrdered (HerCtblRel r)`. Forward, apply `PowerQPresBqo` and `BqoImpliesWqo` to `PowerRel r`, then feed the resulting WQO the underlying full-hierarchy sequence `fun n => (a n).1`; the returned relation is definitionally `HerCtblRel r`. Reverse, unfold failure of `Bqo`, use the nontrivial deciding-front package to obtain `f`, and apply hereditary WQO to the singleton sequence from `TildeFSingleton` and `TildeFHerCtbl`; `ConverseGame` contradicts its increasing pair. Attach explicitly to `PowerQPresBqo`, both preparation nodes, `ConverseGame`, `TildeFSingleton`, and `TildeFHerCtbl`. The TeX proof must reproduce both implications completely.",
           "dismissed": false,
           "dismissed_at_cycle": null,
           "dismissed_reason": "",
@@ -56149,15 +56127,15 @@
           "title": "Cover the hereditary WQO equivalence"
         },
         {
-          "body": "Attach to `HerCtblNodeClosure`, `PowerRelNodeNode`, and `HerCtblPowerIsPreorder`. For a sequence `a : Nat -> HerCtblPower Q`, define its tail node `T n` as a full `PowerQ.node` indexed by `ULift.{u} Nat` with child `k` equal to `a (n+k.down)`, and package its hereditary witness via `HerCtblNodeClosure`. If `a` is bad in the WQO sense, prove `HerCtblRel r (T (n+1)) (T n)` by matching left child `k` with right child `k+1` and reflexivity, and prove the reverse relation false by applying a supposed node-node comparison to the zeroth left child and contradicting badness at `n < n+1+k`. Use this descending sequence and `wellFounded_iff_isEmpty_descending_chain` (or an equivalent standard lemma), together with `WellQuasiOrdered.wellFounded` in the other direction, to prove the carrier-specific equivalence `WellQuasiOrdered (HerCtblRel r) <-> WellFounded (fun a b => HerCtblRel r a b and not HerCtblRel r b a)`. Do not state a false general well-founded-implies-WQO theorem and do not claim the configured target yet.",
+          "body": "Carry forward the carrier-specific descent task. Attach to `HerCtblNodeClosure`, `HerCtblRel`, `PowerRelNodeNode`, and `HerCtblPowerIsPreorder`, and add a helper theorem such as `HerCtblWqoIffWellFounded` stating `[IsPreorder Q r] : WellQuasiOrdered (HerCtblRel r) <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)`. The forward implication is `WellQuasiOrdered.wellFounded`. For the reverse implication, negate WQO to obtain `a : Nat -> HerCtblPower Q` with no later comparison. Define locally, or in one focused definition node, `T n` as the `PowerQ.node` indexed by `ULift.{u} Nat` whose child `k` is `(a (n + k.down)).1`, and use `HerCtblNodeClosure` for its hereditary witness. Prove `T (n+1) <= T n` by choosing right offset `k+1` and reflexivity; refute `T n <= T (n+1)` by applying `PowerRelNodeNode` to the zeroth child and using badness at `n < n+1+k`. Feed these strict steps to `wellFounded_iff_isEmpty_descending_chain`. Do not state a general well-founded-implies-WQO lemma and do not claim a configured target here.",
           "dismissed": false,
           "dismissed_at_cycle": null,
           "dismissed_reason": "",
           "id": "hereditary-tail-descent",
-          "title": "Build the hereditary tail descent"
+          "title": "Prove the hereditary tail equivalence"
         },
         {
-          "body": "Carry forward the final prior task downstream of `BqoHerCtblWqo` and the carrier-specific tail-descent equivalence. Add the sole node claiming `thm BqoHerCtblWellF`, with `[IsPreorder Q r]` and statement `Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)`. Prove it by composing `BqoHerCtblWqo` with the carrier-specific WQO/strict-well-founded equivalence. The statement and complete TeX proof must make the strict-part relation and its orientation explicit.",
+          "body": "After both `BqoHerCtblWqo` and the carrier-specific WQO/well-founded helper exist, add the sole node claiming `thm BqoHerCtblWellF`. Its exact universe-polymorphic statement should be `BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)`. Prove it by transitivity of equivalence, composing `BqoHerCtblWqo` with `HerCtblWqoIffWellFounded`. Keep the strict relation's argument order explicit in both Lean and the complete TeX proof; do not duplicate the tail construction in this target node.",
           "dismissed": false,
           "dismissed_at_cycle": null,
           "dismissed_reason": "",
@@ -56168,8 +56146,8 @@
       "trigger_at_write": {
         "$s": "6fafa34458d5e889"
       },
-      "written_at_cycle": 22,
-      "written_by_request": 123
+      "written_at_cycle": 26,
+      "written_by_request": 139
     },
     "cleanup_active_task": null,
     "cleanup_audit_burst_count": 0,
@@ -56877,9 +56855,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 25,
+    "cycle": 26,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 25,
+    "cycles_since_clean": 26,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "5b9140e8333aaba6"
@@ -57540,7 +57518,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_stuck_math_audit_dispatched_cycle": 22,
+    "last_stuck_math_audit_dispatched_cycle": 26,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
     "latest_corr_review_nodes": [],
@@ -57811,12 +57789,12 @@
       "paper_focus_ranges": [
         {
           "end_line": 1292,
-          "reason": "These lines define locally constant multi-sequences, minimal deciding fronts, and the deciding-front value map needed for the reverse hereditary WQO reduction.",
+          "reason": "The paper defines local constancy, minimal deciding fronts, and the associated value map in this passage.",
           "start_line": 1270
         },
         {
-          "end_line": 1518,
-          "reason": "These lines state and prove the paper's BQO-to-WQO implication by restricting to singleton-indexed sequences.",
+          "end_line": 1519,
+          "reason": "The paper derives WQO from BQO by observing that singleton shifts are exactly the strict order m<n.",
           "start_line": 1507
         }
       ],
@@ -57866,8 +57844,8 @@
     "previous_substantiveness_lane_findings": {},
     "process_memory_seq": 10,
     "progress_history": {
-      "last_dispatched_index": 20,
-      "next_index": 25,
+      "last_dispatched_index": 24,
+      "next_index": 26,
       "snapshots": [
         {
           "present": [
@@ -59569,6 +59547,15 @@
             "$r": "6c710e6cd1df123e"
           },
           "snapshot_index": 24
+        },
+        {
+          "present": {
+            "$r": "4752714fed8d9476"
+          },
+          "progressed": {
+            "$r": "6c710e6cd1df123e"
+          },
+          "snapshot_index": 25
         }
       ]
     },
@@ -59577,9 +59564,9 @@
     "proof_nodes": {
       "$r": "f9fe40519275b786"
     },
-    "request_seq": 138,
+    "request_seq": 140,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo with no stronger order hypothesis than the Bqo definition: a bad ordinary sequence gives the locally constant singleton-coordinate multi-sequence x |-> a (x 0), contradicting Bqo. Then package the reverse-direction input using DecidingFront, DecidingValue, BadMultiToSuper, and IncSeqId: from a bad locally constant multi-sequence obtain its deciding front, value map, bad super-sequence, and explicitly prove that the empty prefix is not deciding under reflexivity. If the empty prefix were deciding, DecidingValue would make h constant and reflexivity would contradict badness at a sequence and its shift. Preserve universe polymorphism, cite every cross-node dependency in complete non-SKETCH TeX proofs, and do not claim BqoHerCtblWqo or BqoHerCtblWellF in this preparation layer.",
+    "reviewer_comments": "Proceed in Global theorem-stating mode with hereditary-wqo-preparation. Add the universe-polymorphic theorem BqoImpliesWqo {Q : Type u} (r : Q -> Q -> Prop) : Bqo r -> WellQuasiOrdered r without an order-class hypothesis. Use a bad ordinary sequence a to form h x = a (x 0), prove local constancy from agreement at the first coordinate, and use strict monotonicity at 0 < 1 to obtain badness. Also add a focused theorem such as BadMultiToNontrivialSuper, attaching to DecidingFront, DecidingValue, BadMultiToSuper, DecidingFrontSet, BadMultiSequence, ShiftMap, and IncSeqId: under minimal reflexivity, produce the deciding-front super-sequence and prove the empty prefix is absent. If the empty prefix decided h, the deciding-value equation would identify h x with h (ShiftMap x), contradicting badness and reflexivity. Preserve universe polymorphism, give complete cited non-SKETCH TeX proofs, and do not claim either configured hereditary target in this layer.",
     "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -61331,47 +61318,39 @@
       "cone_clean_node": null,
       "initial_plan": true,
       "need_input_audit": false,
-      "probe_paths": {
-        "$r": "70bfb228c82bd5f8"
-      },
-      "report": "## Claim being audited\n\nEight configured targets now have covering nodes. In particular, `PowerQPresBqo` and its reflection package have completed the first three tasks of the prior plan and now cover `cor PowerQPresBqo`; those tasks remain dismissed. The only uncovered targets are `thm BqoHerCtblWqo` and `thm BqoHerCtblWellF`. No `HerCtblPower`, hereditary predicate, `TildeF`, converse-game theorem, or hereditary target node is present, so the four hereditary tasks from the prior plan remain mathematically live.\n\nThe carrier route remains sound, with one universe refinement. Use a tagged code with atoms and `Nat`-indexed nonempty nodes, erase it into the existing full `PowerQ`, and define `HereditarilyCountable x` by `PowerPresentationEq` to an erasure. A scratch elaboration check showed that plain `Nat` cannot be passed to `PowerQ.node` for arbitrary `Q : Type u`, because the constructor requires an index in exactly `Type u`. The erasure, every countable `TildeF` node, and the tail nodes used for well-foundedness must therefore use `ULift.{u}` of the countable index. The probe also confirms that `exists_surjective_nat` is available for every nonempty countable index type. Thus the core closure theorem should say that the full-hierarchy node on any `I : Type u` with `[Countable I]` and `[Nonempty I]`, whose children are hereditary, is hereditary; its witness code uses a surjection `Nat -> I` and presentation equivalence. Countable branching must remain a witness property, not a replacement for `PowerQ`.\n\nThe front recursion task needs a substantive correction to the previous framing. `FrontTreeWellFounded.tex` already states the paper's no-infinite-branch theorem, but the Lean declaration currently uses `ProperInitialSegment u v` in the relation `r u v`. Since `WellFounded r` recurses from `v` to `u` when `r u v`, that Lean statement is the finite-length, prefix-directed relation, not the extension-directed relation claimed by the TeX and needed at paper lines 1559-1563. The correspondence lane records a failure on this node. Repair the existing `FrontTreeWellFounded` declaration to a relation on the prefix-tree subtype with `r child parent` iff `parent` is a proper initial segment of `child`; do not add a duplicate theorem while leaving the mismatched node in place. Then isolate the elementary tree facts that every nonfront tree node has a one-point extension in the tree and that every singleton is in the tree for a front on `Set.univ` with `empty` absent.\n\nWith that repair, define `TildeF` by extension-oriented well-founded recursion. At a front node it is the atom labelled by the super-sequence; at a nonfront node it is the full `PowerQ` node of its immediate extensions, with the countable child index universe-lifted. Prove both recursion equations and prove every value hereditary by the countable-family closure theorem. The converse theorem must retain the nontrivial-front hypothesis required by paper lines 1559-1567. Its central induction should maintain the paper's joint finite-shift witness while descending in the product of the two extension-well-founded trees. The four `PowerRel` reduction nodes then turn a supposed comparison of singleton values into terminal front nodes `s,t` with `FiniteShift s t` and `r (f s) (f t)`, contradicting `BadSuperSequence`. Merely observing termination is insufficient; the finite-shift invariant from the construction at paper lines 1569-1570 must be formalized.\n\nThe two covering statements should be introduced in this order:\n\n```text\nBqoHerCtblWqo: [IsPreorder Q r] ->\n  (Bqo r <-> WellQuasiOrdered (HerCtblRel r))\n\nBqoHerCtblWellF: [IsPreorder Q r] ->\n  (Bqo r <-> WellFounded\n    (fun a b => HerCtblRel r a b and not HerCtblRel r b a))\n```\n\nFor the first, prove the elementary universe-polymorphic `BqoImpliesWqo`, restrict the WQO on the full hierarchy obtained from `PowerQPresBqo`, and use the deciding-front package plus the nontrivial hereditary converse for the reverse implication. The deciding front is nontrivial because an empty deciding prefix makes the bad locally constant map constant, contradicting reflexivity. For the second, use `WellQuasiOrdered.wellFounded` in the forward direction. For the converse, follow paper lines 1592-1595 directly: a bad sequence `a` yields hereditary tail nodes `T n` containing `a (n+k)`. Reflexivity gives `T (n+1) <= T n`, while badness at `n < n+1+k` refutes `T n <= T (n+1)`, producing a descending chain for the strict part. This is a carrier-specific closure argument, not a general implication from well-foundedness to WQO.\n\nProceed through the tasks below in order and claim the WQO target before the well-founded target. Existing statement-lane debts on unrelated covered branches are not reasons to reopen the completed hierarchy/reflection tasks; `FrontTreeWellFounded` is included because its recorded mismatch lies directly on the remaining construction route.",
+      "probe_paths": [
+        ".trellis/stuck-math-audit/cycle-18-request-103/hereditary_code_probe.lean"
+      ],
+      "report": "## Claim being audited\n\nEight configured targets remain covered, and the only targets without covering nodes are `thm BqoHerCtblWqo` and `thm BqoHerCtblWellF`. The first three hereditary layers from the prior plan are now complete and should stay dismissed: the Tablet contains the universe-correct hereditary code and carrier through `HerCtblNodeClosure` and `HerCtblPowerIsPreorder`; the repaired extension-oriented front tree through `FrontTreeWellFounded`, `FrontTreeImmediateExtensions`, and `FrontTreeSingleton`; and the full `TildeF` recursion through its two equations, atom characterization, hereditary-countability theorem, and nontrivial singleton restriction. The cycle-21 correspondence results pass all five new `TildeF` statements. No hereditary target node or converse-game node is present yet.\n\nThe remaining mathematical route is still the paper's route at lines 1566-1595, but the old converse-game task needs a sharper invariant. A hypothesis `FiniteShift s t` by itself does not retain enough alignment to choose a legal left child and absorb whichever right child is extracted from `PowerRel`. For example, in the front of all four-element subsets, `s={0,1,2}` and `t={1}` are finite-shift related and both nonfront, while the legal right extension `{1,3}` cannot be the shifted prefix of any infinite set whose prefix still extends `{0,1,2}`. The reachable states in the paper avoid this problem by carrying the finite bridge `u_i`: initially `u_0={m,n}`; while the left node is nonterminal, `u_i` is its next one-point extension; while the right node is nonterminal, it is exactly the tail of `u_i`; once either side is terminal it remains an initial segment of the corresponding side of the bridge. After a right response, adjoining its new point (or a fresh dummy point when the right side is already terminal) creates `u_{i+1}`. A terminal bridge extends to an infinite enumeration and hence yields `FiniteShift`.\n\nThe next worker should therefore first add the elementary front-density and bridge transition statements, then prove the converse by well-founded induction on the lexicographic product of the two repaired extension relations. `PowerRelNodeNode` descends the left component after the bridge chooses its prescribed child; `PowerRelNodeAtom` also descends left; `PowerRelAtomNode` keeps the terminal left component and descends right; and `PowerRelAtomAtom` exposes the final `r`-comparison. At two front nodes the bridge gives `FiniteShift`, so `BadSuperSequence` contradicts that comparison. This yields a bad sequence valued in `HerCtblPower Q`, using `TildeFHerCtbl` for the subtype witnesses. No target should be claimed before this theorem exists.\n\nFor `thm BqoHerCtblWqo`, add the universe-polymorphic paper proposition `BqoImpliesWqo`: if a sequence has no increasing pair, `x \\mapsto a (x 0)` is locally constant and bad. In the reverse direction, a bad locally constant multi-sequence has a deciding front and deciding value by the existing nodes; its deciding front cannot contain the empty prefix, since `DecidingValue` would then make the map constant and reflexivity would contradict badness. `BadMultiToSuper` and the converse-game theorem then give a bad hereditary singleton sequence. The sole covering statement should be\n\n```text\nBqoHerCtblWqo [IsPreorder Q r] :\n  Bqo r <-> WellQuasiOrdered (HerCtblRel r).\n```\n\nIts forward implication runs through `PowerQPresBqo`, `BqoImpliesWqo`, and restriction of the resulting WQO from the full `PowerQ Q` to the hereditary subtype; its reverse implication is the deciding-front argument above. This target must precede the well-founded target.\n\nFor `thm BqoHerCtblWellF`, retain the carrier-specific tail construction from the prior plan. From a bad sequence `a : Nat -> HerCtblPower Q`, let `T n` be the `ULift.{u} Nat`-indexed hereditary node with children `a (n+k)`. `HerCtblNodeClosure` supplies its carrier witness. The node-node reduction and reflexivity show `T (n+1) <= T n` by matching child `k` to child `k+1`; if `T n <= T (n+1)`, the response to the zeroth child would compare `a n` with some `a (n+1+k)`, contradicting badness. Thus `n \\mapsto T n` is an infinite descending chain for the strict part. Together with `WellQuasiOrdered.wellFounded`, this proves the carrier-specific WQO/well-founded equivalence and then the sole covering statement\n\n```text\nBqoHerCtblWellF [IsPreorder Q r] :\n  Bqo r <-> WellFounded\n    (fun a b : HerCtblPower Q =>\n      HerCtblRel r a b and not HerCtblRel r b a).\n```\n\nProceed through the tasks below in order. The existing statement-lane debts on older covered branches, including the recorded assessment of `PowerPresentationEqEquivalence`, are global verification/repair work but do not invalidate or replace these six construction tasks: the theorem itself has the exact equivalence interface already used by the accepted hereditary closure layer. Every new proof-bearing TeX node must give the complete argument, with no `SKETCH` marker.",
       "revision_audit": false,
       "route_tex": "",
       "tasks": [
         {
-          "body": "Attach to `PowerQ`, `PowerPresentationEq`, its equivalence theorem, `PowerRel`, its congruence theorems, and `PowerQIsPreorder`. Define a tagged hereditary code with atoms and `Nat`-indexed nodes, and erase it into the full hierarchy using `ULift.{u} Nat` as the `PowerQ.node` index. Define `HereditarilyCountable x` by presentation equivalence to an erased code, `HerCtblPower Q` as the subtype, and `HerCtblRel r` as the restriction of `PowerRel r`. Prove atoms hereditary, invariance under `PowerPresentationEq`, and the induced preorder. Most importantly, expose a reusable hereditary-node constructor/closure theorem: for `I : Type u` with `[Countable I]` and `[Nonempty I]`, any family `f : I -> HerCtblPower Q` gives a hereditary full-hierarchy node indexed by `I`. Choose codes, use `exists_surjective_nat I`, and compare the erased `ULift Nat`-node with the `I`-node by `PowerPresentationEq`. Do not redefine the global hierarchy to be countably branching, and do not claim a configured target here.",
+          "body": "Attach to `Front`, `PrefixTree`, `InitialSegment`, `ProperInitialSegment`, `FiniteShift`, and the repaired `FrontTreeWellFounded`. Add the focused fact used implicitly at paper lines 1569-1570: for a front on `Set.univ`, every ordered one-point extension of a nonfront prefix-tree node is again in the prefix tree (not merely that some extension exists). Define an explicit finite bridge state for tree nodes `s,t` and a finite joint set `u`: before termination, `u` is the prescribed one-point extension of the left node and its finite tail is the right node; after one side reaches the front, retain the corresponding initial-segment condition. Prove initialization from `m<n` with `s={m}`, `t={n}`, `u={m,n}`; prove the transition that adjoins a right response, or a fresh point when the right side is terminal; prove the chosen left extension is legal; and prove that a bridge with both sides terminal implies `FiniteShift s t` by appending an infinite tail. Statements may use an equivalent bridge representation, but must expose exactly these operational laws. Do not claim a configured target.",
           "dismissed": true,
-          "dismissed_at_cycle": 19,
-          "dismissed_reason": "Completed: the worker added the universe-correct hereditary code and erasure, extensional hereditary predicate, subtype and restricted relation, atom heredity, generic countable-node closure, and induced preorder. Build checks passed and HerCtblPowerIsPreorder correspondence passed.",
-          "id": "hereditarily-countable-core",
-          "title": "Define the hereditary countable carrier"
+          "dismissed_at_cycle": 24,
+          "dismissed_reason": "The worker implemented the strengthened bridge definition, initialization, transition, prescribed-left legality, and terminal-to-FiniteShift package; the reported shape checks and full tablet build passed, and the current cycle has no remaining verifier evidence against this bridge layer.",
+          "id": "converse-bridge-infrastructure",
+          "title": "Build the converse-game bridge"
         },
         {
-          "body": "Repair the existing correspondence-failing `FrontTreeWellFounded` statement instead of creating a duplicate. Its Lean conclusion should be well-foundedness on the prefix-tree subtype of the relation `child parent` defined by `ProperInitialSegment parent.1 child.1`, matching its TeX and the paper's no-infinite-branch theorem. Prove it from front density and prefix-freeness. Then add focused helpers showing that a tree node outside the front has a nonempty countable type of one-point immediate extensions in the tree, and that for a front on `Set.univ` with `empty` not in the front every singleton lies in `PrefixTree F`. These statements attach to `Front`, `PrefixTree`, `ProperInitialSegment`, and `FrontTreeWellFounded` and provide the exact recursion interface needed next.",
+          "body": "Carry forward the prior converse task, now downstream of the bridge package. Attach to `TildeF`, both recursion equations, `TildeFHerCtbl`, `TildeFSingleton`, the bridge lemmas, `BadSuperSequence`, and all four reductions `PowerRelAtomAtom`, `PowerRelAtomNode`, `PowerRelNodeAtom`, and `PowerRelNodeNode`. If useful, define the hereditary-subtype-valued singleton sequence whose underlying value is `TildeFSingleton`. For `empty notin F` and a bad super-sequence `f`, prove that for every `m<n` there is no `HerCtblRel r` comparison from the singleton value at `m` to that at `n`. Starting with the initial bridge, recurse on the lexicographic product of the two extension-oriented tree relations: node-node and node-atom descend left, atom-node descends right with left fixed, and atom-atom terminates. Preserve the bridge at every recursive call and use its terminal-to-`FiniteShift` theorem plus `BadSuperSequence` for the contradiction. This is the paper's `lem: ConverseGame`; do not claim either hereditary configured target here.",
           "dismissed": true,
-          "dismissed_at_cycle": 20,
-          "dismissed_reason": "Completed: FrontTreeWellFounded was repaired to the extension-oriented relation, and the immediate-extension and nontrivial-front singleton helper nodes were added with successful correspondence and tablet acceptance checks.",
-          "id": "front-tree-extension-repair",
-          "title": "Repair extension-oriented front recursion"
-        },
-        {
-          "body": "Attach to the repaired extension well-foundedness, the immediate-extension helpers, `SuperSequence`, and the hereditary closure theorem. For `f : SuperSequence F Set.univ Q`, define `TildeF` on the prefix-tree subtype by well-founded recursion: a member of `F` maps to `PowerQ.atom (f.value ...)`, and a nonfront node maps to the nonempty family of `TildeF` values on its one-point extensions. Universe-lift the immediate-extension index before applying `PowerQ.node`. Prove separate front and nonfront recursion equations, the atom/front characterization needed by the game, and `HereditarilyCountable (TildeF f s)` for every tree node by well-founded induction and countable closure. Define the singleton restriction only under the nontriviality hypothesis `empty notin F`. Do not claim a configured target in this layer.",
-          "dismissed": true,
-          "dismissed_at_cycle": 21,
-          "dismissed_reason": "Completed: the extension-oriented TildeF recursion, front and nonfront equations, atom/front characterization, hereditary-countability closure, and nontrivial singleton restriction were added; all five frontier statements passed correspondence and the tablet acceptance check passed.",
-          "id": "tilde-front-recursion",
-          "title": "Construct the hereditary front tree map"
-        },
-        {
-          "body": "Attach to `TildeF`, `FiniteShift`, `BadSuperSequence`, and all four constructor reductions for `PowerRel`. For a bad super-sequence on a front over `Set.univ` with `empty notin F`, prove that the singleton sequence in `HerCtblPower Q` is bad: for every `m < n`, its value at `m` is not `HerCtblRel r`-below its value at `n`. Formalize the paper's joint finite-set invariant from lines 1569-1570 so that a left immediate extension can be chosen, every right response supplied by the `PowerRel` clause extends the joint witness, and the resulting pair still satisfies `FiniteShift`. Recurse using the product of the two extension-oriented well-founded tree relations; terminal values are front atoms, where the alleged comparison contradicts badness of the super-sequence. State this theorem only for a nontrivial front.",
-          "dismissed": false,
-          "dismissed_at_cycle": null,
-          "dismissed_reason": "",
+          "dismissed_at_cycle": 25,
+          "dismissed_reason": "The worker added ConverseGame with the planned hereditary singleton sequence, complete cited non-SKETCH proof, strengthened bridge preservation through all four PowerRel cases, and terminal finite-shift contradiction; full replay and checker passed, and correspondence verification approved it.",
           "id": "hereditary-converse-game",
           "title": "Prove the nontrivial hereditary converse"
         },
         {
-          "body": "First add a universe-polymorphic `BqoImpliesWqo`: from a sequence with no increasing pair, the map `x |-> a (x 0)` is locally constant and bad. Next package `DecidingFront`, `DecidingValue`, and `BadMultiToSuper` into a helper that turns any bad locally constant multi-sequence for a reflexive relation into a bad super-sequence on its deciding front and proves `empty` is not in that front; if empty decided the map, it would be constant, contradicting badness and reflexivity. Then add the sole node claiming `thm BqoHerCtblWqo`, with `[IsPreorder Q r]` and statement `Bqo r <-> WellQuasiOrdered (HerCtblRel r)`. Prove forward using `PowerQPresBqo`, `BqoImpliesWqo`, and restriction to `HerCtblPower`; prove reverse contrapositively using the nontrivial bad-super-sequence helper and the hereditary converse theorem. Give every new proof-bearing TeX node a complete proof.",
+          "body": "Add a universe-polymorphic theorem `BqoImpliesWqo` stating `Bqo r -> WellQuasiOrdered r` (no stronger order hypothesis is needed): from a sequence with no increasing pair, use the locally constant multi-sequence `x |-> a (x 0)` and the strict increase `x 0 < x 1`. Then attach to `DecidingFront`, `DecidingValue`, `BadMultiToSuper`, and `IncSeqId` to package the reverse-direction input: under reflexivity, a bad locally constant multi-sequence yields a bad super-sequence on `DecidingFrontSet h` together with `empty notin DecidingFrontSet h`. Prove nontriviality explicitly: if empty is deciding, `DecidingValue` identifies every value of `h` with the same deciding value, contradicting `BadMultiSequence` at any sequence and its shift. Give complete TeX proofs and claim no configured target.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "hereditary-wqo-preparation",
+          "title": "Prepare the BQO-to-WQO reductions"
+        },
+        {
+          "body": "Carry forward the prior WQO target task after the converse and preparation nodes. Add the sole node claiming `thm BqoHerCtblWqo`, with universe-polymorphic statement `[IsPreorder Q r] -> (Bqo r <-> WellQuasiOrdered (HerCtblRel r))`. Forward: apply `PowerQPresBqo`, then `BqoImpliesWqo` to `PowerRel r`, and restrict the resulting increasing pair to any sequence in `HerCtblPower Q`. Reverse: negate `Bqo r`, extract a bad locally constant multi-sequence, use the nontrivial deciding-front package to obtain a bad super-sequence, and apply the hereditary converse theorem to contradict the assumed hereditary WQO. The TeX proof must cite these nodes and reproduce both implications completely.",
           "dismissed": false,
           "dismissed_at_cycle": null,
           "dismissed_reason": "",
@@ -61379,7 +61358,15 @@
           "title": "Cover the hereditary WQO equivalence"
         },
         {
-          "body": "Downstream of `BqoHerCtblWqo`, prove the carrier-specific equivalence between `WellQuasiOrdered (HerCtblRel r)` and well-foundedness of its strict part. The forward implication is `WellQuasiOrdered.wellFounded`. For the reverse, argue contrapositively from a bad sequence `a : Nat -> HerCtblPower Q`: define `T n` as the hereditary node whose `ULift Nat`-indexed children are `a (n+k)`, using the core closure theorem. The node-node reduction and reflexivity give `HerCtblRel r (T (n+1)) (T n)` by choosing the shifted child; badness at `n < n+1+k` refutes the reverse relation using the zeroth child. Convert `n |-> T n` into a descending chain for the strict relation. Finally add the sole node claiming `thm BqoHerCtblWellF` with statement `Bqo r <-> WellFounded (fun a b => HerCtblRel r a b and not HerCtblRel r b a)`, combining this equivalence with `BqoHerCtblWqo`. Do not invoke a false general well-founded-implies-WQO principle.",
+          "body": "Attach to `HerCtblNodeClosure`, `PowerRelNodeNode`, and `HerCtblPowerIsPreorder`. For a sequence `a : Nat -> HerCtblPower Q`, define its tail node `T n` as a full `PowerQ.node` indexed by `ULift.{u} Nat` with child `k` equal to `a (n+k.down)`, and package its hereditary witness via `HerCtblNodeClosure`. If `a` is bad in the WQO sense, prove `HerCtblRel r (T (n+1)) (T n)` by matching left child `k` with right child `k+1` and reflexivity, and prove the reverse relation false by applying a supposed node-node comparison to the zeroth left child and contradicting badness at `n < n+1+k`. Use this descending sequence and `wellFounded_iff_isEmpty_descending_chain` (or an equivalent standard lemma), together with `WellQuasiOrdered.wellFounded` in the other direction, to prove the carrier-specific equivalence `WellQuasiOrdered (HerCtblRel r) <-> WellFounded (fun a b => HerCtblRel r a b and not HerCtblRel r b a)`. Do not state a false general well-founded-implies-WQO theorem and do not claim the configured target yet.",
+          "dismissed": false,
+          "dismissed_at_cycle": null,
+          "dismissed_reason": "",
+          "id": "hereditary-tail-descent",
+          "title": "Build the hereditary tail descent"
+        },
+        {
+          "body": "Carry forward the final prior task downstream of `BqoHerCtblWqo` and the carrier-specific tail-descent equivalence. Add the sole node claiming `thm BqoHerCtblWellF`, with `[IsPreorder Q r]` and statement `Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)`. Prove it by composing `BqoHerCtblWqo` with the carrier-specific WQO/strict-well-founded equivalence. The statement and complete TeX proof must make the strict-part relation and its orientation explicit.",
           "dismissed": false,
           "dismissed_at_cycle": null,
           "dismissed_reason": "",
@@ -61390,8 +61377,8 @@
       "trigger_at_write": {
         "$s": "6fafa34458d5e889"
       },
-      "written_at_cycle": 18,
-      "written_by_request": 103
+      "written_at_cycle": 22,
+      "written_by_request": 123
     },
     "tablet_target": "lean",
     "target_claims": {
