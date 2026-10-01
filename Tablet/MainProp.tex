@@ -10,9 +10,14 @@ are continuously homomorphically equivalent:
 \]
 \end{theorem}
 \begin{proof}
-The node \noderef{RmapLemma} supplies a prefix-continuous homomorphism from
-right composition by $g$ to the shift.  The node \noderef{EmapLemma} supplies
-a prefix-continuous homomorphism in the reverse direction.  These are exactly
-the two conjuncts in the definition of continuous homomorphic equivalence,
-so the displayed systems are continuously homomorphically equivalent.
+The node \noderef{RmapLemma} supplies
+\(\mathsf{ContMor}(\mathsf{RightComp}(g),\mathsf{ShiftMap})\), namely a
+prefix-continuous homomorphism from right composition by $g$ to the shift.
+The node \noderef{EmapLemma} supplies
+\(\mathsf{ContMor}(\mathsf{ShiftMap},\mathsf{RightComp}(g))\), namely a
+prefix-continuous homomorphism in the reverse direction.  By
+\noderef{ContMorEq}, continuous homomorphic equivalence is exactly the
+conjunction of these two statements.  Hence the two supplied homomorphisms
+establish that the displayed systems are continuously homomorphically
+equivalent.
 \end{proof}

@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "IncSeqPointwiseLe now has a current Sound approval. MainProp is the next central shift target; its two supporting homomorphisms are cited and sufficient, but the proof invokes the ContMorEq definition without an explicit support citation.",
-    "comments": "Repair only `Tablet/MainProp.tex`; preserve the theorem statement, imports, and two-lemma decomposition. Retain `\\noderef{RmapLemma}` and `\\noderef{EmapLemma}`, and add `\\noderef{ContMorEq}` at the sentence identifying the two supplied homomorphisms with the two conjuncts of continuous homomorphic equivalence. Make clear that the first node proves `ContMor (RightComp g) ShiftMap`, the second proves the reverse direction, and `ContMorEq` is exactly their conjunction. Add no helper, signature change, or support rewiring. The paper states this aggregation at lines 1713--1719 of `paper/paper.tex`.",
+    "reason": "MainProp now has a fresh Sound approval. Route the next worker to repair the concrete unsupported detail in GBetterRelIff: its transport and finite-prefix fusion arguments are only sketched, and the composition/local-constancy facts need explicit support citations and line-by-line derivation.",
+    "comments": "Repair only Tablet/GBetterRelIff.tex. Preserve its Lean theorem, imports, two conjuncts, and the paper's route through MainProp. Retain citations to MainProp, GBetterRel, BetterRel, RightComp, ShiftMap, ContinuousRelHom, BadMultiSequence, and Bqo; cite ContinuousHom and ContMor when unpacking and composing continuous homomorphisms. Expand the transport argument by choosing the relevant finite output prefixes and explicitly proving composition local constancy and the action equation. Replace the phrase standard finite-prefix fusion with a line-by-line construction: state what failure of the first clause provides after each finite prefix, choose an increasing extension beyond all finitely queried coordinates, define the union enumeration, prove local constancy of each resulting restriction, and derive the complement relation for every input. In the converse, define the restriction H_f(x)=H(f composed with x), prove its local constancy and complement equation using associativity and the right-composition action, then show it cannot also be an R-homomorphism. In the quasi-order specialization, spell out the ContinuousRelHom to BadMultiSequence to Bqo implication chain. Add no helper, signature, or support change.",
     "task_blocker_ids": [
-      "soundness:node:MainProp:sound-v2:e586de76c8ae33307277ca66e8b6ea6e2c27d1919a001a0f5fb29d6bbe11e654"
+      "soundness:node:GBetterRelIff:sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "MainProp",
+    "next_active": "GBetterRelIff",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -18,17 +18,16 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1713,
-        "end_line": 1719,
-        "reason": "The paper's MainProp statement and its reduction to RmapLemma and EmapLemma."
+        "start_line": 1732,
+        "end_line": 1744,
+        "reason": "The paper's g-better-relation equivalence and quasi-order specialization that GBetterRelIff must formalize."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1713--1719 state the equivalence of right composition by g with the ordinary shift and explicitly say that MainProp follows from the two directional lemmas below. The tablet proof correctly aggregates those lemmas; it only needs to cite the ContMorEq definition used to identify their conjunction with the conclusion."
+      "basis_summary": "The cited paper passage defines the g-better relation via the two equivalent homomorphism conditions and states that, for nonidentity g, it is equivalent to the ordinary better relation, with the bqo equivalence as the quasi-order specialization. The worker's repair should preserve this route while making the finite-prefix transport argument checkable."
     },
-    "work_style_hint": "none",
-    "authorized_node_ids": []
+    "work_style_hint": "none"
   },
   "response": {
     "allow_new_obligations": true,
@@ -39,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/MainProp.tex`; preserve the theorem statement, imports, and two-lemma decomposition. Retain `\\noderef{RmapLemma}` and `\\noderef{EmapLemma}`, and add `\\noderef{ContMorEq}` at the sentence identifying the two supplied homomorphisms with the two conjuncts of continuous homomorphic equivalence. Make clear that the first node proves `ContMor (RightComp g) ShiftMap`, the second proves the reverse direction, and `ContMorEq` is exactly their conjunction. Add no helper, signature change, or support rewiring. The paper states this aggregation at lines 1713--1719 of `paper/paper.tex`.",
+    "comments": "Repair only Tablet/GBetterRelIff.tex. Preserve its Lean theorem, imports, two conjuncts, and the paper's route through MainProp. Retain citations to MainProp, GBetterRel, BetterRel, RightComp, ShiftMap, ContinuousRelHom, BadMultiSequence, and Bqo; cite ContinuousHom and ContMor when unpacking and composing continuous homomorphisms. Expand the transport argument by choosing the relevant finite output prefixes and explicitly proving composition local constancy and the action equation. Replace the phrase standard finite-prefix fusion with a line-by-line construction: state what failure of the first clause provides after each finite prefix, choose an increasing extension beyond all finitely queried coordinates, define the union enumeration, prove local constancy of each resulting restriction, and derive the complement relation for every input. In the converse, define the restriction H_f(x)=H(f composed with x), prove its local constancy and complement equation using associativity and the right-composition action, then show it cannot also be an R-homomorphism. In the quasi-order specialization, spell out the ContinuousRelHom to BadMultiSequence to Bqo implication chain. Add no helper, signature, or support change.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 85,
+    "cycle": 86,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,24 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "MainProp",
+    "next_active": "GBetterRelIff",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1719,
-        "reason": "The paper's MainProp statement and its reduction to RmapLemma and EmapLemma.",
-        "start_line": 1713
+        "end_line": 1744,
+        "reason": "The paper's g-better-relation equivalence and quasi-order specialization that GBetterRelIff must formalize.",
+        "start_line": 1732
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1713--1719 state the equivalence of right composition by g with the ordinary shift and explicitly say that MainProp follows from the two directional lemmas below. The tablet proof correctly aggregates those lemmas; it only needs to cite the ContMorEq definition used to identify their conjunction with the conclusion.",
+      "basis_summary": "The cited paper passage defines the g-better relation via the two equivalent homomorphism conditions and states that, for nonidentity g, it is equivalent to the ordinary better relation, with the bqo equivalence as the quasi-order specialization. The worker's repair should preserve this route while making the finite-prefix transport argument checkable.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "IncSeqPointwiseLe now has a current Sound approval. MainProp is the next central shift target; its two supporting homomorphisms are cited and sufficient, but the proof invokes the ContMorEq definition without an explicit support citation.",
-    "request_id": 315,
+    "reason": "MainProp now has a fresh Sound approval. Route the next worker to repair the concrete unsupported detail in GBetterRelIff: its transport and finite-prefix fusion arguments are only sketched, and the composition/local-constancy facts need explicit support citations and line-by-line derivation.",
+    "request_id": 318,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -77,15 +76,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:e586de76c8ae33307277ca66e8b6ea6e2c27d1919a001a0f5fb29d6bbe11e654",
+        "fingerprint": "sound-v2:c33bf3ab390556ebfca129ca57c0a56807f463a86307dd49c18f9f4f096a1ef0",
         "kind": "Soundness",
         "object": {
-          "node": "MainProp",
+          "node": "GBetterRelIff",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_315_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_318_decision.context.json"
 }

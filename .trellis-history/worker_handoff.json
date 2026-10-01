@@ -1,17 +1,15 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Repaired the natural-language proof of IncSeqPointwiseLe with the required IncSeq citation and explicit successor inequalities, preserving its Lean statement, import, and proof structure.",
-    "comments": "Edited only Tablet/IncSeqPointwiseLe.tex. The proof cites IncSeq for the order-embedding property, applies it to n < n+1 to obtain f(n) < f(n+1), converts this to f(n)+1 <= f(n+1), derives n+1 <= f(n)+1 from the induction hypothesis by successor monotonicity, and concludes by transitivity. The cited IncSeq statement defines IncSeq as an order embedding, so the outside-fact audit is complete; no new node, target claim, deviation, or support change was introduced.",
+    "summary": "Repaired MainProp.tex to identify the two ContMor directions supplied by RmapLemma and EmapLemma, and cited ContMorEq for their conjunction.",
+    "comments": "Edited only Tablet/MainProp.tex. The theorem statement, imports, and two-lemma decomposition are unchanged. The proof cites each dependency at its statement-level fact and remains aligned with the Lean signature ContMorEq (RightComp g) ShiftMap.",
     "target_claim_updates": {},
     "difficulty_updates": {},
-    "deleted_nodes": [],
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
-    "needs_restructure_suggested_nodes": [],
-    "memory_challenges": [],
-    "audit_request": null
+    "deleted_nodes": [],
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,8 +19,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Edited only Tablet/IncSeqPointwiseLe.tex. The proof cites IncSeq for the order-embedding property, applies it to n < n+1 to obtain f(n) < f(n+1), converts this to f(n)+1 <= f(n+1), derives n+1 <= f(n)+1 from the induction hypothesis by successor monotonicity, and concludes by transitivity. The cited IncSeq statement defines IncSeq as an order embedding, so the outside-fact audit is complete; no new node, target claim, deviation, or support change was introduced.",
-    "cycle": 85,
+    "comments": "Edited only Tablet/MainProp.tex. The theorem statement, imports, and two-lemma decomposition are unchanged. The proof cites each dependency at its statement-level fact and remains aligned with the Lean signature ContMorEq (RightComp g) ShiftMap.",
+    "cycle": 86,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -38,7 +36,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 313,
+    "request_id": 316,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1311,12 +1309,13 @@
           "own_tex_hash": "84dae52510dd2eb7ef0cd12dc3e4a420340ca8004d6a8144df3e81032a9dcd59"
         },
         "MainProp": {
-          "combined_sound_fp": "sound-v2:e586de76c8ae33307277ca66e8b6ea6e2c27d1919a001a0f5fb29d6bbe11e654",
+          "combined_sound_fp": "sound-v2:e77367328fad120c4bd4dcbe996e0196b6744e321372242fc5032d7dd92b5a39",
           "dep_statement_hashes": {
+            "ContMorEq": "ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5",
             "EmapLemma": "21b33d67303624dd2b5611e477765e910011f1e089275d9b22d7deccd94a2a9d",
             "RmapLemma": "03f5b930671537a2367b17e00ea584ce5333294bfd77bb73ef6e3e21c012c7b1"
           },
-          "own_tex_hash": "3865bd5d6e62fa54e8d2471ff2597357c3014b84c0322428ffc505de45b9bc25"
+          "own_tex_hash": "5cae1ca100f31b1816c930de52b5ae830d3492d2eb0743ab9d969ccabd3708ae"
         },
         "MultiSequence": {
           "combined_sound_fp": "sound-v2:042810595607ee9c6dfd26d3f94e47f57fe027503cdd631da334ef87eb5040d7",
@@ -2136,7 +2135,7 @@
         "InfiniteSetEnumeration": "sound-v2:0a9f535b9858b7f2ecc112f9c490475a1f60314c4f33fba04aa7639a9225daca",
         "InitialSegment": "sound-v2:7b9f757734bbb49f5fbac42e44fc1345ec8847dfa20c2cfd531e9059d7290d39",
         "LocallyConstant": "sound-v2:776fb53207b38594e8951256b9e943a8658beff116a2f5ec9e66189a66f37364",
-        "MainProp": "sound-v2:e586de76c8ae33307277ca66e8b6ea6e2c27d1919a001a0f5fb29d6bbe11e654",
+        "MainProp": "sound-v2:e77367328fad120c4bd4dcbe996e0196b6744e321372242fc5032d7dd92b5a39",
         "MultiSequence": "sound-v2:042810595607ee9c6dfd26d3f94e47f57fe027503cdd631da334ef87eb5040d7",
         "MultiSequenceRestrict": "sound-v2:698e9299d5f874d0b6eb78b243e3b410265050de30ee7b6d4b4c28410ed94501",
         "NashWilliams": "sound-v2:a7141e7a6d2b08efb0cff741042fa24efa73b6f4674139abb9b383d5de672eba",
@@ -2594,7 +2593,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired the natural-language proof of IncSeqPointwiseLe with the required IncSeq citation and explicit successor inequalities, preserving its Lean statement, import, and proof structure.",
+    "summary": "Repaired MainProp.tex to identify the two ContMor directions supplied by RmapLemma and EmapLemma, and cited ContMorEq for their conjunction.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2768,7 +2767,7 @@
     "LocallyConstant.lean": "60300fdc681b145408d08df3f35c3510e5720e2323a41919caf32d6c3aae96ee",
     "LocallyConstant.tex": "84dae52510dd2eb7ef0cd12dc3e4a420340ca8004d6a8144df3e81032a9dcd59",
     "MainProp.lean": "46105044e63546437ff44755ae903c2a36b83937c2354a83199ab3058c7c660d",
-    "MainProp.tex": "3865bd5d6e62fa54e8d2471ff2597357c3014b84c0322428ffc505de45b9bc25",
+    "MainProp.tex": "5cae1ca100f31b1816c930de52b5ae830d3492d2eb0743ab9d969ccabd3708ae",
     "MultiSequence.lean": "d710c33e7ff14d3e739e06a5c2e79bd2070d3b16df6e1db9adf98eeb94f3175e",
     "MultiSequence.tex": "5f9b678e770549a93fb8b46882f88226da73f996bdc9d1014ea8d5a9008dc63f",
     "MultiSequenceRestrict.lean": "3909a5a54bcdfa48a6bb5b88e56b00f2c9232733b5dbf6971a7b70373f4d0b22",
@@ -2960,7 +2959,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_313_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_316_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
