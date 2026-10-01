@@ -1,7 +1,20 @@
 import Tablet.BaseRestrict
+import Tablet.BaseIncSeq
+import Tablet.Front
+import Tablet.FrontPrefix
+import Tablet.FrontRestrict
 import Tablet.FrontRestriction
+import Tablet.FiniteShift
+import Tablet.IncSeq
+import Tablet.IncSeqComp
+import Tablet.InitialSegment
+import Tablet.InfiniteSetEnumeration
 import Tablet.PerfectMultiSequence
 import Tablet.PerfectSuperSequence
+import Tablet.ProperPrefixSet
+import Tablet.RestrictionShift
+import Tablet.ShiftMap
+import Tablet.SuperSequence
 import Tablet.SuperSequenceExtension
 import Tablet.SuperSequenceRestrict
 

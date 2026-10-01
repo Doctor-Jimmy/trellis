@@ -6,17 +6,195 @@ $x\mapsto h(z\circ x)$ is perfect, then $f$ has a perfect restriction to a
 sub-front on the exact subbase $Y=\operatorname{range}(z)$.
 \end{lemma}
 \begin{proof}
-Put $Y=\operatorname{range}(z)$.  Since $z$ is an increasing enumeration,
-$Y$ is infinite and $Y\subseteq X$.  By \noderef{FrontRestriction}, the
-restriction $F\mathbin{|}Y$ is a front on $Y$ and is a subfamily of $F$.
-Take $F'=F\mathbin{|}Y$.  If $s,t\in F'$ satisfy
-$s\mathrel{\mathsf{FiniteShift}}t$, choose an increasing enumeration $x$ of
-a subset of $Y$ witnessing this relation.  The extension equation in the
-statement identifies the values of $s$ and $t$ with
-$h(z\circ u)$ and $h(z\circ\mathsf{ShiftMap}(u))$ for the corresponding
-enumeration $u$ of a subset of $\mathbb N$.  These are respectively the
-values of $\mathsf{BaseRestrict}(h,z)$ at $u$ and at
-$\mathsf{ShiftMap}(u)$.  Its perfectness gives the required relation.
-Unfolding \noderef{SuperSequenceRestrict} then proves that the restricted
-super-sequence on $F'$ is perfect.
+Write $Y=\operatorname{range}(z)$.  By the definition of
+\noderef{BaseIncSeq}, $z$ is an element of \mathsf{IncSeq} and
+$Y\subseteq X$.  The set $Y$ is infinite: if it had $N$ elements, then the
+$N+1$ values $z(0),\ldots,z(N)$ would be pairwise distinct by the order
+embedding property in \noderef{IncSeq}, contradicting that they all belong
+to a set with only $N$ elements.  Thus $Y$ is an infinite subset of $X$.
+
+Define
+\[
+ F'=F\mathbin{|}Y=\mathsf{FrontRestrict}(F,Y).
+\]
+The definition of \noderef{FrontRestrict} gives the inclusion
+$F'\subseteq F$: if $s\in F'$, then $s\in F$ and every member of $s$ lies
+in $Y$.  Apply \noderef{FrontRestriction} to the front
+$f.\mathsf{front}$ recorded by \noderef{SuperSequence}, the inclusion
+$Y\subseteq X$, and the infinitude just proved.  We obtain
+\[
+ hF':\mathsf{Front}(F',Y).
+\]
+We now prove the last component of the existential conclusion, namely
+\[
+ \mathsf{PerfectSuperSequence}(r,
+   \mathsf{SuperSequenceRestrict}(f,F',Y,hF',F'\subseteq F)).
+\]
+Unfolding \noderef{PerfectSuperSequence}, fix $s,t\in F'$ with membership
+proofs $h_s,h_t$ and assume
+$\mathsf{FiniteShift}(s,t)$.  The definition \noderef{FrontRestrict}
+supplies $s,t\in F$, and \noderef{FiniteShift} supplies an
+$x\in\mathsf{IncSeq}$ together with
+\[
+ p_s:\mathsf{ProperPrefixSet}(s,\operatorname{range}(x)),\qquad
+ p_t:\mathsf{ProperPrefixSet}(t,\operatorname{range}(\mathsf{ShiftMap}(x))).
+ \tag{1}
+\]
+
+We first replace this witness by one whose range is contained in $Y$.  The
+empty case must be separated because there need not be an element of $Y$
+below an arbitrary first element of the original witness.  If exactly one
+of $s,t$ were empty, the nonempty one would have the empty set as an
+initial segment: take its least element in the definition of
+\noderef{InitialSegment}.  This contradicts the prefix-free field of the
+front \noderef{Front}, since both sets belong to $F$.  Hence either
+$s=t=\emptyset$, which is also the only possibility for a trivial front,
+or both are nonempty.
+
+Suppose first that $s=t=\emptyset$.  By \noderef{InfiniteSetEnumeration}
+choose $y\in\mathsf{IncSeq}$ with $\operatorname{range}(y)=Y$.  The first
+value $y(0)$ is the least value in its range, and the first value of
+$\mathsf{ShiftMap}(y)$ is $y(1)$ and is the least value in that shifted
+range, by \noderef{IncSeq} and \noderef{ShiftMap}.  Therefore the two
+empty sets satisfy
+\[
+ \mathsf{ProperPrefixSet}(\emptyset,\operatorname{range}(y)),\qquad
+ \mathsf{ProperPrefixSet}(\emptyset,
+       \operatorname{range}(\mathsf{ShiftMap}(y))).                \tag{2}
+\]
+
+It remains to treat the nonempty case.  Unpack the two assertions in (1)
+using \noderef{ProperPrefixSet}.  There are cutoffs
+$a\in\operatorname{range}(x)$ and
+$b\in\operatorname{range}(\mathsf{ShiftMap}(x))$ such that
+\[
+ s=\{k\in\operatorname{range}(x):k<a\},\qquad
+ t=\{k\in\operatorname{range}(\mathsf{ShiftMap}(x)):k<b\}.          \tag{3}
+\]
+Choose $i,j\in\mathbb N$ with $a=x(i)$ and
+$b=\mathsf{ShiftMap}(x)(j)=x(j+1)$; the last equality is the definition
+of the shift in \noderef{ShiftMap}.  Since $x$ is an order embedding, (3)
+becomes
+\[
+ s=\{x(k):k<i\},\qquad t=\{x(k):1\leq k\leq j\}.                 \tag{4}
+\]
+Indeed, order reflection says $x(k)<x(i)$ exactly when $k<i$, and the
+same argument applied to the shifted sequence gives the second equality.
+
+Put $L=\max(i,j+1)$.  In the nonempty case $i\geq1$.  Every entry
+$x(k)$ with $k<L$ lies in $s\cup t$: entries with $k<i$ lie in $s$, and
+the remaining entries have $i\leq k\leq j$ and lie in $t$.  Since
+$s,t\in F'$ and \noderef{FrontRestrict} says that members of $F'$ are
+subsets of $Y$, the finite set
+\[
+ P=\{x(k):k<L\}
+\]
+is contained in $Y$.  Let $p=x(L-1)$.  The tail
+\[
+ Y_{>p}=\{n\in Y:p<n\}
+\]
+is infinite.  Otherwise $Y$ would be the union of the finite initial
+segment $\{n:n\leq p\}$ and the finite set $Y_{>p}$, contradicting the
+infinitude of $Y$.  Use \noderef{InfiniteSetEnumeration} to choose
+$v\in\mathsf{IncSeq}$ with range $Y_{>p}$.  Define $y$ by concatenating
+the finite list
+\[
+ x(0),x(1),\ldots,x(L-1)
+\]
+with the increasing sequence $v$.  Every entry of the first list lies in
+$Y$, and every entry of $v$ is in $Y$ and is larger than $p$; consequently
+the concatenation is an increasing embedding, hence an element of
+\mathsf{IncSeq} by \noderef{IncSeq}, and
+$\operatorname{range}(y)\subseteq Y$.
+
+We check both cutoffs, including the boundary cases.  For $s$, if
+$i<L$, then $i\leq j$ and $i\geq1$, so $x(i)\in t\subseteq Y$ and is
+the $i$-th entry of $y.  If $i=L$, the first value of $v$ is instead the
+cutoff.  In either case, the entries of $y$ strictly below the chosen
+cutoff are exactly $x(0),\ldots,x(i-1)$, which is $s$ by (4).  Thus
+\[
+ \mathsf{ProperPrefixSet}(s,\operatorname{range}(y)).               \tag{5}
+\]
+For $t$, if $j+1<L$, then $j+1<i$ and $x(j+1)\in s\subseteq Y$ is an
+entry of $y$; if $j+1=L$, the first value of $v$ is the cutoff.  After
+shifting $y$, the entries strictly below that cutoff are exactly
+$x(1),\ldots,x(j)$, namely $t$.  Hence
+\[
+ \mathsf{ProperPrefixSet}(t,
+       \operatorname{range}(\mathsf{ShiftMap}(y))).                 \tag{6}
+\]
+Equations (5) and (6) give the required subbase-preserving witness in the
+nonempty case, while (2) gives it in the empty case.
+
+We now factor this $y$ through the fixed enumeration $z$.  Since
+$\operatorname{range}(y)\subseteq Y=\operatorname{range}(z)$, for every
+$n$ there is a unique $u(n)$ with $z(u(n))=y(n)$, uniqueness following
+from injectivity in \noderef{IncSeq}.  If $n<m$, then
+$y(n)<y(m)$, so order reflection for $z$ gives $u(n)<u(m)$.  Thus
+$u\in\mathsf{IncSeq}$, and pointwise $y(n)=z(u(n))$ gives
+\[
+ y=\mathsf{IncSeqComp}(z,u).                                      \tag{7}
+\]
+The composition statement \noderef{IncSeqComp} also shows that
+$\mathsf{IncSeqComp}(z,u)$ and
+$\mathsf{IncSeqComp}(z,\mathsf{ShiftMap}(u))$ are increasing
+embeddings.  Their ranges are contained in $\operatorname{range}(z)$,
+and hence in $X$ by \noderef{BaseIncSeq}.  They therefore define
+\[
+ x_0=\langle\mathsf{IncSeqComp}(z,u),\ \operatorname{range}\subseteq X\rangle,
+ \qquad
+ x_1=\langle\mathsf{IncSeqComp}(z,\mathsf{ShiftMap}(u)),\ \operatorname{range}\subseteq X\rangle
+ \tag{8}
+\]
+as elements of \mathsf{BaseIncSeq}(X).  By (7) and
+\noderef{RestrictionShift},
+\[
+ x_0.1=y,\qquad
+ x_1.1=\mathsf{ShiftMap}(y).                                      \tag{9}
+\]
+
+The first components of the two \noderef{FrontRestrict} membership proofs
+give $s,t\in F$.  Combining these memberships with (5) and (6), or with
+(2) in the empty case, and using \noderef{FrontPrefix}, we obtain
+\[
+ q_s:\mathsf{FrontPrefix}(F,s,x_0.1),\qquad
+ q_t:\mathsf{FrontPrefix}(F,t,x_1.1).                              \tag{10}
+\]
+Apply the extension equation in the theorem statement first to
+$(x_0,s,q_s)$ and then to $(x_1,t,q_t)$.  It gives the two dependent-value
+equalities
+\[
+ h(x_0)=f.\mathsf{value}\langle s,q_s.1\rangle,qquad
+ h(x_1)=f.\mathsf{value}\langle t,q_t.1\rangle.                  \tag{11}
+\]
+By the definition of \noderef{BaseRestrict}, the two left sides in (11)
+are respectively
+\[
+ (\mathsf{BaseRestrict}(h,z))(u),\qquad
+ (\mathsf{BaseRestrict}(h,z))(\mathsf{ShiftMap}(u)).                \tag{12}
+\]
+The hypotheses $q_s.1$ and $q_t.1$ are proofs that $s,t\in F$; proof
+irrelevance identifies them with the membership proofs obtained from
+$F'\subseteq F$.  Thus (11) also identifies the right sides with the
+values of the restricted super-sequence at the dependent subtype points
+$\langle s,h_s\rangle$ and $\langle t,h_t\rangle$.
+
+Finally, unfold \noderef{PerfectMultiSequence} in the hypothesis $hp$ and
+instantiate it at $u$.  Using (12), it yields
+\[
+ r\bigl(h(x_0),h(x_1)\bigr).                                      \tag{13}
+\]
+Unfolding \noderef{SuperSequenceRestrict} replaces the two values of the
+restricted super-sequence by the two right sides of (11), and (11) then
+rewrites (13) as
+\[
+ r\Bigl(\mathsf{SuperSequenceRestrict}(f,F',Y,hF',F'\subseteq F).value
+       \langle s,h_s\rangle,
+       \mathsf{SuperSequenceRestrict}(f,F',Y,hF',F'\subseteq F).value
+       \langle t,h_t\rangle\Bigr).
+\]
+This is the required implication for arbitrary $s,t$ in $F'$, so the
+unfolded \noderef{PerfectSuperSequence} predicate holds.  Together with
+$hF'$ and the inclusion supplied by \noderef{FrontRestrict}, this is the
+claimed existential conclusion.
 \end{proof}
