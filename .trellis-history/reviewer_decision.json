@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerQReflection now has a current Sound approval, and the remaining requestable target is PowerChildSupport. Its current proof is a direct support-inclusion argument from PowerChild and PowerSupport, with no concrete failure or statement/DAG issue requiring a worker repair.",
-    "comments": "Leave Tablet/PowerChildSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerChildSupport. The verifier should check that unfolding PowerChild gives a node-parent pair, that PowerSupport defines the parent support as the union of the supports of its children, and that this yields the stated subset inclusion with the recursive and atom cases matched exactly. The relevant support definition is in PowerSupport, and the child relation is in PowerChild. Do not assign a worker or reset any blocker.",
+    "reason": "PowerChildSupport now has a current Sound approval, and the remaining held target is PerfectSuperToMulti. Its current proof has no reported concrete failure; request a fresh Sound verification of the restriction, value-identification, finite-shift, and perfectness steps before any further routing.",
+    "comments": "Leave Tablet/PerfectSuperToMulti.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectSuperToMulti. The verifier should check the increasing enumeration z of the sub-front base, the identification of the restricted super-sequence value with h (z composed with x), the use of sub-front density and inclusion in DecidingFrontSet h, the finite-shift relation between the selected front members for x and ShiftMap x, and the final application of PerfectSuperSequence to obtain PerfectMultiSequence. The proof's cross-node dependencies are MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, and the current super-sequence restriction supports. Do not assign a worker or reset any blocker.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PowerChildSupport"
+      "PerfectSuperToMulti"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -18,14 +18,19 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1374,
-        "end_line": 1374,
-        "reason": "The manuscript's recursive definition of support, which justifies inclusion from a child into its parent."
+        "start_line": 1642,
+        "end_line": 1647,
+        "reason": "The manuscript definitions of perfect multi-sequences and perfect super-sequences."
+      },
+      {
+        "start_line": 1661,
+        "end_line": 1661,
+        "reason": "The manuscript's restriction argument relating perfect multi-sequences and perfect sub-super-sequences."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript defines support of a non-atomic iterated-powerset object as the union of the supports of its members, while atoms contribute singleton support. Thus the child relation immediately gives support inclusion into the parent, exactly the claim of PowerChildSupport."
+      "basis_summary": "The manuscript defines perfectness for a multi-sequence by the shift relation and for a super-sequence by the finite-extension relation, then explicitly derives perfectness of a restricted super-sequence from a perfect restricted multi-sequence. These passages provide the paper-level relation that the current reverse restriction lemma must establish from its cited value and front supports."
     }
   },
   "response": {
@@ -37,10 +42,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PowerChildSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerChildSupport. The verifier should check that unfolding PowerChild gives a node-parent pair, that PowerSupport defines the parent support as the union of the supports of its children, and that this yields the stated subset inclusion with the recursive and atom cases matched exactly. The relevant support definition is in PowerSupport, and the child relation is in PowerChild. Do not assign a worker or reset any blocker.",
+    "comments": "Leave Tablet/PerfectSuperToMulti.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectSuperToMulti. The verifier should check the increasing enumeration z of the sub-front base, the identification of the restricted super-sequence value with h (z composed with x), the use of sub-front density and inclusion in DecidingFrontSet h, the finite-shift relation between the selected front members for x and ShiftMap x, and the final application of PerfectSuperSequence to obtain PerfectMultiSequence. The proof's cross-node dependencies are MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, and the current super-sequence restriction supports. Do not assign a worker or reset any blocker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 148,
+    "cycle": 149,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,20 +59,25 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1374,
-        "reason": "The manuscript's recursive definition of support, which justifies inclusion from a child into its parent.",
-        "start_line": 1374
+        "end_line": 1647,
+        "reason": "The manuscript definitions of perfect multi-sequences and perfect super-sequences.",
+        "start_line": 1642
+      },
+      {
+        "end_line": 1661,
+        "reason": "The manuscript's restriction argument relating perfect multi-sequences and perfect sub-super-sequences.",
+        "start_line": 1661
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript defines support of a non-atomic iterated-powerset object as the union of the supports of its members, while atoms contribute singleton support. Thus the child relation immediately gives support inclusion into the parent, exactly the claim of PowerChildSupport.",
+      "basis_summary": "The manuscript defines perfectness for a multi-sequence by the shift relation and for a super-sequence by the finite-extension relation, then explicitly derives perfectness of a restricted super-sequence from a perfect restricted multi-sequence. These passages provide the paper-level relation that the current reverse restriction lemma must establish from its cited value and front supports.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerQReflection now has a current Sound approval, and the remaining requestable target is PowerChildSupport. Its current proof is a direct support-inclusion argument from PowerChild and PowerSupport, with no concrete failure or statement/DAG issue requiring a worker repair.",
-    "request_id": 482,
+    "reason": "PowerChildSupport now has a current Sound approval, and the remaining held target is PerfectSuperToMulti. Its current proof has no reported concrete failure; request a fresh Sound verification of the restriction, value-identification, finite-shift, and perfectness steps before any further routing.",
+    "request_id": 484,
     "request_sound_verifier_nodes": [
-      "PowerChildSupport"
+      "PerfectSuperToMulti"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -77,5 +87,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_482_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_484_decision.context.json"
 }
