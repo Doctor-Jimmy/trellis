@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectSuperRestrict has a current Sound approval, and no repair evidence is present for the next held target. Request a real Sound verification of the fresh PerfectMultiToSuper obligation.",
-    "comments": "Leave the tablet unchanged and do not assign a worker or reset any blocker. Request Sound verification of PerfectMultiToSuper. The verifier should check an arbitrary FiniteShift witness x for s and t, use the two ProperPrefixSet clauses with x and ShiftMap x, apply the local coherence hypothesis hf with those exact enumerations to identify f.value s and f.value t with h x and h (ShiftMap x), and then apply the PerfectMultiSequence hypothesis before invoking the defining PerfectSuperSequence implication. Check the induced-super-sequence correspondence against the manuscript's construction at lines 1277--1289, the finite-shift definition at lines 1465--1468, and the perfectness definitions at lines 1642--1647.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "PerfectMultiToSuper"
+    "reason": "The Sound verifier found a concrete structural failure in PerfectMultiToSuper: the proof does not instantiate the defining perfect-super-sequence predicate, unpack the finite-shift witness and local coherence hypothesis, or derive and rewrite the exact relation required by the conclusion. The node is sound-repair-ready, so assign a bounded NL-proof repair.",
+    "comments": "Edit only Tablet/PerfectMultiToSuper.tex and, if needed, the import preamble of Tablet/PerfectMultiToSuper.lean. Preserve the Lean theorem statement, imports' support direction, and no-helper scope; do not weaken the hypotheses or conclusion. For arbitrary s and t in DecidingFrontSet h, explicitly fix membership proofs hs and ht and unfold or cite PerfectSuperSequence to state that FiniteShift s.1 t.1 implies the desired relation between f.value <s,hs> and f.value <t,ht>. Unpack the FiniteShift witness as an increasing enumeration x with ProperPrefixSet s.1 (Set.range x) and ProperPrefixSet t.1 (Set.range (ShiftMap x)); cite FiniteShift and ShiftMap as needed. Apply the local coherence hypothesis hf twice, first to the subtype front member <s,hs> and x, then to <t,ht> and ShiftMap x, displaying the resulting equalities f.value <s,hs> = h x and f.value <t,ht> = h (ShiftMap x). Cite PerfectMultiSequence and instantiate hh at x to obtain the explicit relation r (h x) (h (ShiftMap x)). Rewrite the two coherence equalities in the correct directions and conclude the exact PerfectSuperSequence implication. Cite DecidingFrontSet when explaining the front-membership data, and add direct imports for any newly cited support nodes such as FiniteShift, ShiftMap, or ProperPrefixSet if the import checker requires them. The manuscript passages at lines 1277--1289, 1465--1468, and 1642--1647 describe the corresponding induced-super-sequence, finite-shift, and perfectness constructions.",
+    "task_blocker_ids": [
+      "soundness:node:PerfectMultiToSuper:sound-v2:bdfc3c378a3c5f1a172cd36af0a307da74ae021a5c8386cd63f0f47aafe6ea5a"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "PerfectMultiToSuper",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -37,7 +37,7 @@
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript constructs the induced super-sequence from deciding prefixes, defines finite shift through one enumeration and its tail, and defines perfectness by the corresponding shift implications. The requested Sound verifier should check that the tablet proof instantiates these three steps with the exact coherence hypothesis and shifted enumeration."
+      "basis_summary": "The manuscript constructs the induced super-sequence from deciding prefixes, defines finite shift through an enumeration and its tail, and defines perfectness by the resulting shift implications. The repair makes each of those three steps explicit in the tablet proof using the theorem's dependent front-membership and coherence hypotheses."
     },
     "authorized_node_ids": []
   },
@@ -50,10 +50,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave the tablet unchanged and do not assign a worker or reset any blocker. Request Sound verification of PerfectMultiToSuper. The verifier should check an arbitrary FiniteShift witness x for s and t, use the two ProperPrefixSet clauses with x and ShiftMap x, apply the local coherence hypothesis hf with those exact enumerations to identify f.value s and f.value t with h x and h (ShiftMap x), and then apply the PerfectMultiSequence hypothesis before invoking the defining PerfectSuperSequence implication. Check the induced-super-sequence correspondence against the manuscript's construction at lines 1277--1289, the finite-shift definition at lines 1465--1468, and the perfectness definitions at lines 1642--1647.",
+    "comments": "Edit only Tablet/PerfectMultiToSuper.tex and, if needed, the import preamble of Tablet/PerfectMultiToSuper.lean. Preserve the Lean theorem statement, imports' support direction, and no-helper scope; do not weaken the hypotheses or conclusion. For arbitrary s and t in DecidingFrontSet h, explicitly fix membership proofs hs and ht and unfold or cite PerfectSuperSequence to state that FiniteShift s.1 t.1 implies the desired relation between f.value <s,hs> and f.value <t,ht>. Unpack the FiniteShift witness as an increasing enumeration x with ProperPrefixSet s.1 (Set.range x) and ProperPrefixSet t.1 (Set.range (ShiftMap x)); cite FiniteShift and ShiftMap as needed. Apply the local coherence hypothesis hf twice, first to the subtype front member <s,hs> and x, then to <t,ht> and ShiftMap x, displaying the resulting equalities f.value <s,hs> = h x and f.value <t,ht> = h (ShiftMap x). Cite PerfectMultiSequence and instantiate hh at x to obtain the explicit relation r (h x) (h (ShiftMap x)). Rewrite the two coherence equalities in the correct directions and conclude the exact PerfectSuperSequence implication. Cite DecidingFrontSet when explaining the front-membership data, and add direct imports for any newly cited support nodes such as FiniteShift, ShiftMap, or ProperPrefixSet if the import checker requires them. The manuscript passages at lines 1277--1289, 1465--1468, and 1642--1647 describe the corresponding induced-super-sequence, finite-shift, and perfectness constructions.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 155,
+    "cycle": 156,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -61,7 +61,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "PerfectMultiToSuper",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
@@ -83,22 +83,30 @@
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript constructs the induced super-sequence from deciding prefixes, defines finite shift through one enumeration and its tail, and defines perfectness by the corresponding shift implications. The requested Sound verifier should check that the tablet proof instantiates these three steps with the exact coherence hypothesis and shifted enumeration.",
+      "basis_summary": "The manuscript constructs the induced super-sequence from deciding prefixes, defines finite shift through an enumeration and its tail, and defines perfectness by the resulting shift implications. The repair makes each of those three steps explicit in the tablet proof using the theorem's dependent front-membership and coherence hypotheses.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectSuperRestrict has a current Sound approval, and no repair evidence is present for the next held target. Request a real Sound verification of the fresh PerfectMultiToSuper obligation.",
-    "request_id": 499,
-    "request_sound_verifier_nodes": [
-      "PerfectMultiToSuper"
-    ],
+    "reason": "The Sound verifier found a concrete structural failure in PerfectMultiToSuper: the proof does not instantiate the defining perfect-super-sequence predicate, unpack the finite-shift witness and local coherence hypothesis, or derive and rewrite the exact relation required by the conclusion. The node is sound-repair-ready, so assign a bounded NL-proof repair.",
+    "request_id": 501,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:bdfc3c378a3c5f1a172cd36af0a307da74ae021a5c8386cd63f0f47aafe6ea5a",
+        "kind": "Soundness",
+        "object": {
+          "node": "PerfectMultiToSuper",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_499_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_501_decision.context.json"
 }
