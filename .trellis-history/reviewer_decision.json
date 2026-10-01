@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectMultiToSuper now has a current Sound approval. PerfectMultiRestrict is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
-    "comments": "Leave Tablet/PerfectMultiRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectMultiRestrict. The verifier should check the arbitrary increasing enumeration x, the exact MultiSequenceRestrict value at x, and the identification of the shifted restricted value with the original value at ShiftMap(z composed with x) supplied by RestrictionShift. It should then instantiate the PerfectMultiSequence hypothesis for h at z composed with x and rewrite both values to obtain the defining relation for MultiSequenceRestrict h z. Check the cited MultiSequenceRestrict, RestrictionShift, and PerfectMultiSequence statements against the current theorem signature and proof.",
+    "reason": "PerfectMultiRestrict has a current Sound approval. PerfectBaseToSuper is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
+    "comments": "Leave Tablet/PerfectBaseToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectBaseToSuper. The verifier should check that z gives an infinite subbase Y contained in X, that FrontRestriction supplies F' = F restricted to Y as a front and subset of F, and that arbitrary finite-shift-related s,t in F' admit the stated enumeration witness. Check that the hext equation is instantiated at the corresponding BaseIncSeq enumerations to identify the super-sequence values with BaseRestrict h z at u and ShiftMap(u), that hp supplies the relation between those values, and that SuperSequenceRestrict transfers it to the exact perfectness conclusion. Check all cross-node dependencies, including FrontRestriction, BaseRestrict, SuperSequenceExtension, PerfectMultiSequence, and SuperSequenceRestrict, against the current theorem statement.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PerfectMultiRestrict"
+      "PerfectBaseToSuper"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,19 +20,24 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1260,
-        "end_line": 1271,
-        "reason": "The manuscript defines multi-sequences and sub-multi-sequences by restriction, together with the enumeration-based domain interpretation."
+        "start_line": 1192,
+        "end_line": 1209,
+        "reason": "The manuscript defines sub-super-sequences and proves that restriction of a front to an infinite subbase is a front and subfamily."
       },
       {
         "start_line": 1642,
         "end_line": 1648,
-        "reason": "The manuscript defines perfect multi-sequences by the shift implication that the restricted proof must establish."
+        "reason": "The manuscript defines perfectness for multi-sequences and super-sequences using the shift relation."
+      },
+      {
+        "start_line": 1651,
+        "end_line": 1662,
+        "reason": "The manuscript explicitly transfers perfectness of a restricted multi-sequence to the corresponding restricted super-sequence."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript passage defines a sub-multi-sequence as restriction along an infinite base and identifies infinite subsets with increasing enumerations; the later definition makes perfectness the relation between a sequence and its shift. These are exactly the two identities the current PerfectMultiRestrict proof must connect through MultiSequenceRestrict and RestrictionShift."
+      "basis_summary": "The manuscript characterizes a sub-super-sequence as a restriction to a front contained in the original front, proves the canonical front restriction construction on an infinite subbase, and then states that perfectness of the corresponding restricted multi-sequence yields perfectness of the restricted super-sequence. These are precisely the structural and perfectness steps checked by PerfectBaseToSuper."
     },
     "authorized_node_ids": []
   },
@@ -45,10 +50,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PerfectMultiRestrict.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectMultiRestrict. The verifier should check the arbitrary increasing enumeration x, the exact MultiSequenceRestrict value at x, and the identification of the shifted restricted value with the original value at ShiftMap(z composed with x) supplied by RestrictionShift. It should then instantiate the PerfectMultiSequence hypothesis for h at z composed with x and rewrite both values to obtain the defining relation for MultiSequenceRestrict h z. Check the cited MultiSequenceRestrict, RestrictionShift, and PerfectMultiSequence statements against the current theorem signature and proof.",
+    "comments": "Leave Tablet/PerfectBaseToSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of PerfectBaseToSuper. The verifier should check that z gives an infinite subbase Y contained in X, that FrontRestriction supplies F' = F restricted to Y as a front and subset of F, and that arbitrary finite-shift-related s,t in F' admit the stated enumeration witness. Check that the hext equation is instantiated at the corresponding BaseIncSeq enumerations to identify the super-sequence values with BaseRestrict h z at u and ShiftMap(u), that hp supplies the relation between those values, and that SuperSequenceRestrict transfers it to the exact perfectness conclusion. Check all cross-node dependencies, including FrontRestriction, BaseRestrict, SuperSequenceExtension, PerfectMultiSequence, and SuperSequenceRestrict, against the current theorem statement.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 157,
+    "cycle": 158,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -62,25 +67,30 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1271,
-        "reason": "The manuscript defines multi-sequences and sub-multi-sequences by restriction, together with the enumeration-based domain interpretation.",
-        "start_line": 1260
+        "end_line": 1209,
+        "reason": "The manuscript defines sub-super-sequences and proves that restriction of a front to an infinite subbase is a front and subfamily.",
+        "start_line": 1192
       },
       {
         "end_line": 1648,
-        "reason": "The manuscript defines perfect multi-sequences by the shift implication that the restricted proof must establish.",
+        "reason": "The manuscript defines perfectness for multi-sequences and super-sequences using the shift relation.",
         "start_line": 1642
+      },
+      {
+        "end_line": 1662,
+        "reason": "The manuscript explicitly transfers perfectness of a restricted multi-sequence to the corresponding restricted super-sequence.",
+        "start_line": 1651
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript passage defines a sub-multi-sequence as restriction along an infinite base and identifies infinite subsets with increasing enumerations; the later definition makes perfectness the relation between a sequence and its shift. These are exactly the two identities the current PerfectMultiRestrict proof must connect through MultiSequenceRestrict and RestrictionShift.",
+      "basis_summary": "The manuscript characterizes a sub-super-sequence as a restriction to a front contained in the original front, proves the canonical front restriction construction on an infinite subbase, and then states that perfectness of the corresponding restricted multi-sequence yields perfectness of the restricted super-sequence. These are precisely the structural and perfectness steps checked by PerfectBaseToSuper.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectMultiToSuper now has a current Sound approval. PerfectMultiRestrict is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
-    "request_id": 504,
+    "reason": "PerfectMultiRestrict has a current Sound approval. PerfectBaseToSuper is the held next node, has no current Sound verdict, and is verifier-requestable; request its Sound verification without assigning a worker or resetting any live blocker.",
+    "request_id": 506,
     "request_sound_verifier_nodes": [
-      "PerfectMultiRestrict"
+      "PerfectBaseToSuper"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -90,5 +100,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_504_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_506_decision.context.json"
 }
