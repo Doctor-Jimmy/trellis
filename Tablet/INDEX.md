@@ -4,6 +4,7 @@
 |------|-----|------|--------|--------|-------|---------|
 | BadMultiRestrict | lemma | proof | open | - | Badness under restriction | BadMultiSequence, MultiSequenceRestrict, RestrictionShift |
 | BadMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
+| BadMultiToNontrivialSuper | lemma | proof | open | - | A bad multi-sequence has a nontrivial deciding front | BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingFrontSet, DecidingValue, IncSeqId, ShiftMap |
 | BadMultiToSuper | lemma | proof | open | - | Multi-sequence badness gives super-sequence badness | BadMultiSequence, BadSuperSequence, DecidingFrontSet, DecidingPrefix, DecidingValue |
 | BadPairSequence | definition | definition | closed | - | Bad sequence of sequences | IncreasingPair |
 | BadSuperRestrict | lemma | proof | open | - | Badness under sub-front restriction | BadSuperSequence, SuperSequenceRestrict |
@@ -27,6 +28,7 @@
 | BooleanInfinitePigeonhole | lemma | proof | open | - | Infinite pigeonhole | Preamble |
 | Bqo | definition | definition | closed | - | - | BadMultiSequence, LocallyConstant |
 | BqoIffGeneralShift | corollary | proof | open | - | - | BadMultiSequence, Bqo, GBetterRel, GBetterRelIff, IncSeqId, RightComp, ShiftMap, SuccSeq |
+| BqoImpliesWqo | lemma | proof | open | - | Better quasi-order implies well quasi-order | Bqo |
 | CardinalityFront | definition | definition | closed | - | Constant-cardinality front | Preamble |
 | CardinalityFrontIsFront | lemma | proof | open | - | - | CardinalityFront, Front |
 | ContMor | definition | definition | closed | - | - | ContinuousHom |
@@ -175,4 +177,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 171 nodes | **Closed:** 83 | **Open:** 88
+**Total:** 173 nodes | **Closed:** 83 | **Open:** 90

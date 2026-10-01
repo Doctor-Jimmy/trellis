@@ -12,6 +12,7 @@
 |------|------|-------|--------|
 | BadMultiRestrict | proof | Badness under restriction | open |
 | BadMultiSequence | definition | - | closed |
+| BadMultiToNontrivialSuper | proof | A bad multi-sequence has a nontrivial deciding front | open |
 | BadMultiToSuper | proof | Multi-sequence badness gives super-sequence badness | open |
 | BadPairSequence | definition | Bad sequence of sequences | closed |
 | BadSuperRestrict | proof | Badness under sub-front restriction | open |
@@ -35,6 +36,7 @@
 | BooleanInfinitePigeonhole | proof | Infinite pigeonhole | open |
 | Bqo | definition | - | closed |
 | BqoIffGeneralShift | proof | - | open |
+| BqoImpliesWqo | proof | Better quasi-order implies well quasi-order | open |
 | CardinalityFront | definition | Constant-cardinality front | closed |
 | CardinalityFrontIsFront | proof | - | open |
 | ContMor | definition | - | closed |
@@ -181,4 +183,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 83/171 closed
+**Summary:** 83/173 closed
