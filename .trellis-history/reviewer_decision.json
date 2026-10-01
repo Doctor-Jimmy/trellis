@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "OrbitEmbedding.tex was repaired within scope: the proof now cites IncSeq and OrbitPoint, proves monotonicity of every iterate and the successor-iterate identity by induction, and derives the orbit embedding. Its changed fingerprint means the prior soundness Fail is no longer binding and has reverted to SelfEditUnknown. Hand the repaired package back to the ordinary verifier sequence without assigning another repair or requesting soundness prematurely.",
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper, correspondence, and substantiveness checks for the repaired OrbitEmbedding package, then schedule soundness only once those lanes are current. Preserve the explicit IncSeq citation, both inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The prior OrbitEmbedding soundness blocker is intentionally omitted because the worker changed the TeX fingerprint; no reset is legal. Do not reopen BlockSigmaIntertwines or add helpers.",
+    "reason": "The worker revalidated the repaired OrbitEmbedding package without edits. Its changed fingerprint is SelfEditUnknown, so the prior soundness Fail is not binding; no fresh OrbitEmbedding verifier lane ran in this burst. Hand the package to the ordinary paper, correspondence, and substantiveness verification sequence before scheduling soundness.",
+    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired OrbitEmbedding package, then schedule soundness only once those lanes are current. Preserve the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The prior OrbitEmbedding soundness blocker is intentionally omitted because the worker changed the TeX fingerprint; no reset is legal. Do not reopen BlockSigmaIntertwines or add helpers.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -19,12 +19,12 @@
       {
         "start_line": 1781,
         "end_line": 1783,
-        "reason": "The paper's preceding orbit construction chooses the moved point, defines G by iterates, and asserts that G is an increasing embedding."
+        "reason": "The paper chooses the least moved point, defines the orbit by iterates, asserts that it is an increasing embedding, and uses the successor iterate identity."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. The paper selects k_g with k_g<g(k_g), defines G(n)=g^n(k_g) using the identity and successor clauses for iterates, and states that G belongs to the increasing-embedding class. The repaired OrbitEmbedding proof now supplies the previously missing monotonicity induction, iterate identity induction, and explicit support citations needed to justify that assertion."
+      "basis_summary": "I directly read the cited passage. It selects k_g with k_g<g(k_g), defines G(n)=g^n(k_g) using the identity and successor clauses for iterates, and states that G belongs to the increasing-embedding class. The repaired OrbitEmbedding proof supplies the explicit monotonicity induction, iterate identity induction, and support citations needed for that assertion."
     }
   },
   "response": {
@@ -36,10 +36,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper, correspondence, and substantiveness checks for the repaired OrbitEmbedding package, then schedule soundness only once those lanes are current. Preserve the explicit IncSeq citation, both inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The prior OrbitEmbedding soundness blocker is intentionally omitted because the worker changed the TeX fingerprint; no reset is legal. Do not reopen BlockSigmaIntertwines or add helpers.",
+    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired OrbitEmbedding package, then schedule soundness only once those lanes are current. Preserve the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The prior OrbitEmbedding soundness blocker is intentionally omitted because the worker changed the TeX fingerprint; no reset is legal. Do not reopen BlockSigmaIntertwines or add helpers.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 39,
+    "cycle": 40,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,17 +54,17 @@
     "paper_focus_ranges": [
       {
         "end_line": 1783,
-        "reason": "The paper's preceding orbit construction chooses the moved point, defines G by iterates, and asserts that G is an increasing embedding.",
+        "reason": "The paper chooses the least moved point, defines the orbit by iterates, asserts that it is an increasing embedding, and uses the successor iterate identity.",
         "start_line": 1781
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. The paper selects k_g with k_g<g(k_g), defines G(n)=g^n(k_g) using the identity and successor clauses for iterates, and states that G belongs to the increasing-embedding class. The repaired OrbitEmbedding proof now supplies the previously missing monotonicity induction, iterate identity induction, and explicit support citations needed to justify that assertion.",
+      "basis_summary": "I directly read the cited passage. It selects k_g with k_g<g(k_g), defines G(n)=g^n(k_g) using the identity and successor clauses for iterates, and states that G belongs to the increasing-embedding class. The repaired OrbitEmbedding proof supplies the explicit monotonicity induction, iterate identity induction, and support citations needed for that assertion.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "OrbitEmbedding.tex was repaired within scope: the proof now cites IncSeq and OrbitPoint, proves monotonicity of every iterate and the successor-iterate identity by induction, and derives the orbit embedding. Its changed fingerprint means the prior soundness Fail is no longer binding and has reverted to SelfEditUnknown. Hand the repaired package back to the ordinary verifier sequence without assigning another repair or requesting soundness prematurely.",
-    "request_id": 191,
+    "reason": "The worker revalidated the repaired OrbitEmbedding package without edits. Its changed fingerprint is SelfEditUnknown, so the prior soundness Fail is not binding; no fresh OrbitEmbedding verifier lane ran in this burst. Hand the package to the ordinary paper, correspondence, and substantiveness verification sequence before scheduling soundness.",
+    "request_id": 194,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -74,5 +74,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_191_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_194_decision.context.json"
 }
