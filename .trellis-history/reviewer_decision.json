@@ -1,10 +1,10 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found a structural domain mismatch in the final reflection case of RadoEmbedding: preservation for e is stated on index pairs, but the proof applies it to value pairs involving min M even though e was built from M minus its minimum. Assign a proof-only repair that makes the enumeration and preservation applications use the same domain.",
-    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency change. Replace the proof construction based on an enumeration x of X=M\\{min M} with an increasing enumeration y of all of M, and define e(i,j)=f(y(i),y(j)); this is still the paper's Rado copy on an infinite ordered set and leaves the theorem statement unchanged. Rewrite the preservation and reflection calculations consistently with y. In the final reflection case k<i, use the index pair (0,k), where y(0)=min M, and the Rado-order relation (0,k) <= (i,j) from k<i; apply preservation to obtain the relation between f(y(0),y(k)) and f(y(i),y(j)), compose it with the assumed relation to f(y(k),y(l)), and contradict badness at y(0)<y(k)<y(l). Do not apply index-level preservation directly to value pairs. Retain and make explicit the required citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding, and keep the other two reflection cases line by line in the same index/value convention.",
+    "reason": "The revised RadoEmbedding proof still applies index-level preservation to (0,k), but (0,k) is not an IncreasingPair when k=0. Route a second bounded proof repair that separates the direct homogeneous-set monotonicity fact from preservation of the constructed e.",
+    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency. Return to the paper's construction with a=min M, X=M minus {a}, an increasing enumeration x of X, and e(i,j)=f(x(i),x(j)). Before defining e, state and prove inside the natural-language proof the direct M-monotonicity fact: for any two literal increasing pairs (u,v) and (s,t) with all entries in M, RadoOrder((u,v),(s,t)) implies r(f(u,v),f(s,t)); prove its same-first-coordinate case from the triple homogeneity and its separated-pair case from the quadruple homogeneity, with the RadoOrder citation. Use this fact, not e-preservation, in all reflection cases. In particular, when k<i use the literal increasing pair (a,x(k)) <= (x(i),x(j)); since a is the minimum of M and x(k) lies in X, this pair is valid even for k=0. Compose the resulting relation with the assumed r(e(p),e(q)) and invoke BadPairSequence at a<x(k)<x(l). Keep the preservation proof for e restricted to X, and retain explicit citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding.",
     "task_blocker_ids": [
-      "soundness:node:RadoEmbedding:sound-v2:ab5ff6761c4bfb1bca6d5d281eda98d4de9c93f969c304007bfae46352e36eaa"
+      "soundness:node:RadoEmbedding:sound-v2:92d6c5ec68b4081041fe47e1f22a21054ff54bada14f7f60cccee7d314e55f2e"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -20,12 +20,12 @@
       {
         "start_line": 986,
         "end_line": 994,
-        "reason": "Paper Rado embedding proof, including homogeneous thinning and the three reflection cases."
+        "reason": "Paper Rado embedding proof, especially the M-monotonicity sentence and the final minimum-element reflection case."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 986-994 construct the Rado copy from the homogeneous set M and handle reflection by the cases l<j, i<k, and k<i; the last case uses min M, so the tablet proof must explicitly align that value with an index in the chosen enumeration."
+      "basis_summary": "Lines 986-994 remove the minimum from M for the Rado copy and then use the homogeneous properties of M on literal pairs, including the pair formed from min M in the final reflection case; the repair makes that value-level fact explicit instead of applying e-preservation outside its domain."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency change. Replace the proof construction based on an enumeration x of X=M\\{min M} with an increasing enumeration y of all of M, and define e(i,j)=f(y(i),y(j)); this is still the paper's Rado copy on an infinite ordered set and leaves the theorem statement unchanged. Rewrite the preservation and reflection calculations consistently with y. In the final reflection case k<i, use the index pair (0,k), where y(0)=min M, and the Rado-order relation (0,k) <= (i,j) from k<i; apply preservation to obtain the relation between f(y(0),y(k)) and f(y(i),y(j)), compose it with the assumed relation to f(y(k),y(l)), and contradict badness at y(0)<y(k)<y(l). Do not apply index-level preservation directly to value pairs. Retain and make explicit the required citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding, and keep the other two reflection cases line by line in the same index/value convention.",
+    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency. Return to the paper's construction with a=min M, X=M minus {a}, an increasing enumeration x of X, and e(i,j)=f(x(i),x(j)). Before defining e, state and prove inside the natural-language proof the direct M-monotonicity fact: for any two literal increasing pairs (u,v) and (s,t) with all entries in M, RadoOrder((u,v),(s,t)) implies r(f(u,v),f(s,t)); prove its same-first-coordinate case from the triple homogeneity and its separated-pair case from the quadruple homogeneity, with the RadoOrder citation. Use this fact, not e-preservation, in all reflection cases. In particular, when k<i use the literal increasing pair (a,x(k)) <= (x(i),x(j)); since a is the minimum of M and x(k) lies in X, this pair is valid even for k=0. Compose the resulting relation with the assumed r(e(p),e(q)) and invoke BadPairSequence at a<x(k)<x(l). Keep the preservation proof for e restricted to X, and retain explicit citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 114,
+    "cycle": 115,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -58,17 +58,17 @@
     "paper_focus_ranges": [
       {
         "end_line": 994,
-        "reason": "Paper Rado embedding proof, including homogeneous thinning and the three reflection cases.",
+        "reason": "Paper Rado embedding proof, especially the M-monotonicity sentence and the final minimum-element reflection case.",
         "start_line": 986
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 986-994 construct the Rado copy from the homogeneous set M and handle reflection by the cases l<j, i<k, and k<i; the last case uses min M, so the tablet proof must explicitly align that value with an index in the chosen enumeration.",
+      "basis_summary": "Lines 986-994 remove the minimum from M for the Rado copy and then use the homogeneous properties of M on literal pairs, including the pair formed from min M in the final reflection case; the repair makes that value-level fact explicit instead of applying e-preservation outside its domain.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found a structural domain mismatch in the final reflection case of RadoEmbedding: preservation for e is stated on index pairs, but the proof applies it to value pairs involving min M even though e was built from M minus its minimum. Assign a proof-only repair that makes the enumeration and preservation applications use the same domain.",
-    "request_id": 385,
+    "reason": "The revised RadoEmbedding proof still applies index-level preservation to (0,k), but (0,k) is not an IncreasingPair when k=0. Route a second bounded proof repair that separates the direct homogeneous-set monotonicity fact from preservation of the constructed e.",
+    "request_id": 388,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -78,7 +78,7 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:ab5ff6761c4bfb1bca6d5d281eda98d4de9c93f969c304007bfae46352e36eaa",
+        "fingerprint": "sound-v2:92d6c5ec68b4081041fe47e1f22a21054ff54bada14f7f60cccee7d314e55f2e",
         "kind": "Soundness",
         "object": {
           "node": "RadoEmbedding",
@@ -88,5 +88,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_385_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_388_decision.context.json"
 }

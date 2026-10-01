@@ -75,23 +75,24 @@ r\bigl(f(i,j),f(k,l)\bigr).
 \tag{2}
 \]
 
-Let $a=\min M$ and put $X=M\setminus\{a\}$.  This is infinite; choose
-an increasing enumeration $x:\mathbb N\to X$ using
-\noderef{InfiniteSetEnumeration}.  For an increasing pair
+Use \noderef{InfiniteSetEnumeration} to choose an increasing enumeration
+$y:\mathbb N\to M$.  Since $y$ is increasing and its range is all of
+$M$, $y(0)$ is the least element of $M$.  For an increasing pair
 $p=(i,j)$, define
 \[
-e(p)=f\bigl(x(i),x(j)\bigr).
+e(p)=f\bigl(y(i),y(j)\bigr).
 \]
-The inequalities needed to form the pair on the right follow from the
-strict increase of $x$.
+The strict increase of $y$ gives $y(i)<y(j)$, so the displayed argument
+of $f$ is an increasing pair and \noderef{BadPairSequence} applies to it.
 
 We first prove preservation of the Rado order, using the definition
 \noderef{RadoOrder}.  If $p=(i,j)$ and $q=(k,l)$ have $i=k$ and
 $j\leq l$, then either $j=l$, in which case reflexivity of the
 quasi-order gives $r(e(p),e(q))$, or $j<l$, in which case (1) gives
-$r(f(x(i),x(j)),f(x(i),x(l)))$.  If instead $j<k$, then
-$x(i)<x(j)<x(k)<x(l)$, so (2) gives
-$r(e(p),e(q))$.  Therefore
+$r(f(y(i),y(j)),f(y(i),y(l)))$.  If instead $j<k$, then
+$y(i)<y(j)<y(k)<y(l)$, so (2) gives
+$r(e(p),e(q))$.  These are exactly the two alternatives in
+\noderef{RadoOrder}, and therefore
 \[
 \mathsf{RadoOrder}(p,q)\Longrightarrow r(e(p),e(q)).
 \tag{3}
@@ -105,30 +106,42 @@ k\leq j\quad\text{and}\quad (i\neq k\ \text{or}\ l<j).
 \tag{4}
 \]
 There are three cases.  If $l<j$, choose any $n>j$.  The Rado order has
-$(k,l)\leq(j,n)$ by its second clause.  Preservation (3) and
-transitivity therefore give
+$(k,l)\leq(j,n)$ by its second clause.  Preservation (3) is being
+applied to these index pairs, so it gives
 \[
-r\bigl(f(x(i),x(j)),f(x(j),x(n))\bigr),
+r\bigl(f(y(k),y(l)),f(y(j),y(n))\bigr).
+\]
+Composing this with the assumed relation and using transitivity gives
+\[
+r\bigl(f(y(i),y(j)),f(y(j),y(n))\bigr),
 \]
 contradicting the badness of $f$ at the increasing triple
-$x(i)<x(j)<x(n)$.
+$y(i)<y(j)<y(n)$.
 
 Assume next that $l\geq j$ and $i<k$.  Then
 $(i,k)\leq(i,j)$ by the first Rado clause.  Preservation followed by
 the assumed relation gives
 \[
-r\bigl(f(x(i),x(k)),f(x(k),x(l))\bigr),
+r\bigl(f(y(i),y(k)),f(y(i),y(j))\bigr)
+\quad\text{and hence}\quad
+r\bigl(f(y(i),y(k)),f(y(k),y(l))\bigr).
 \]
-again contradicting badness at $x(i)<x(k)<x(l)$.
+The second relation is obtained by transitivity with the assumed
+$r(f(y(i),y(j)),f(y(k),y(l)))$, and contradicts badness at
+$y(i)<y(k)<y(l)$.
 
-The remaining possibility in (4) is $l\geq j$ and $k<i$.  Since
-$a<x(k)<x(i)$, the pair $(a,x(k))$ is an increasing pair and
-$(a,x(k))\leq(x(i),x(j))$ by the second Rado clause.  Preservation and
-transitivity now give
+The remaining possibility in (4) is $l\geq j$ and $k<i$.  Since the
+minimum of $M$ is $y(0)$, use the index pair $(0,k)$.  The second Rado
+clause gives $(0,k)\leq(i,j)$ from $k<i$.  Preservation is again
+applied to index pairs, so it gives
 \[
-r\bigl(f(a,x(k)),f(x(k),x(l))\bigr),
+r\bigl(f(y(0),y(k)),f(y(i),y(j))\bigr).
 \]
-contradicting badness at $a<x(k)<x(l)$.  All cases are impossible, so
+Composing with the assumed relation gives
+\[
+r\bigl(f(y(0),y(k)),f(y(k),y(l))\bigr),
+\]
+contradicting badness at $y(0)<y(k)<y(l)$.  All cases are impossible, so
 \[
 r(e(p),e(q))\Longrightarrow\mathsf{RadoOrder}(p,q).
 \tag{5}
@@ -136,7 +149,7 @@ r(e(p),e(q))\Longrightarrow\mathsf{RadoOrder}(p,q).
 
 It remains to check injectivity.  If $e(p)=e(q)$, reflexivity of $r$
 gives both $r(e(p),e(q))$ and $r(e(q),e(p))$.  By (5), both Rado
-relations hold.  The two-clause definition of the Rado order is
+relations hold.  The two-clause definition in \noderef{RadoOrder} is
 antisymmetric: a cross-clause relation $p\leq q$ cannot be reversed,
 and if the first clause holds in both directions then the first
 coordinates agree and antisymmetry of $\leq$ on $\mathbb N$ gives equality
