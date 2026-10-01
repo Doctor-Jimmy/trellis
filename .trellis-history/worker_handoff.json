@@ -1,14 +1,16 @@
 {
   "raw": {
-    "outcome": "valid",
-    "summary": "Expanded PowerRelCongrLeft.tex into a detailed well-founded induction proof with atom, mixed-tag, node-atom, and node-node cases, including explicit child descent and both witness-transport directions.",
-    "comments": "Preserved the Lean statement, imports, and support structure. The proof cites PowerChildWellFounded, PowerChild, PowerRel, all four PowerRel reduction nodes, PowerPresentationEq, and PowerPresentationEqEquivalence.",
-    "target_claim_updates": {},
-    "difficulty_updates": {},
-    "deviation_requests": {},
-    "node_deviation_claims": {},
+    "comments": "Edited only Tablet/PowerQReflection.tex. The proof now follows the copied-row recurrence, chooses terminal atoms with the stated finite dependence, proves terminal-label persistence and uniqueness from the legal-move and atom clauses, derives badness via the shift identity and atom reduction, proves support membership, and proves local constancy using the k+2 finite-orbit bound and copied-orbit dependence. The cited support statements were reread and the soundness audit is recorded in .trellis/scratch/notes.md.",
+    "deleted_nodes": [],
     "deviation_deletions": [],
-    "deleted_nodes": []
+    "deviation_requests": {},
+    "difficulty_updates": {},
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Expanded the PowerQReflection natural-language proof into a detailed, paper-aligned copied-row argument while preserving the Lean statement, imports, and support DAG.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -18,8 +20,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the Lean statement, imports, and support structure. The proof cites PowerChildWellFounded, PowerChild, PowerRel, all four PowerRel reduction nodes, PowerPresentationEq, and PowerPresentationEqEquivalence.",
-    "cycle": 128,
+    "comments": "Edited only Tablet/PowerQReflection.tex. The proof now follows the copied-row recurrence, chooses terminal atoms with the stated finite dependence, proves terminal-label persistence and uniqueness from the legal-move and atom clauses, derives badness via the shift identity and atom reduction, proves support membership, and proves local constancy using the k+2 finite-orbit bound and copied-orbit dependence. The cited support statements were reread and the soundness audit is recorded in .trellis/scratch/notes.md.",
+    "cycle": 129,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -35,7 +37,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 419,
+    "request_id": 422,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1694,20 +1696,26 @@
           "own_tex_hash": "4fad87d124616e0e82409e5a67b0bc5e1e75b08aed0c2767557916425b5dd7fb"
         },
         "PowerQReflection": {
-          "combined_sound_fp": "sound-v2:230c83ebdde900b2a74512921748bb8ed92f4af746df561e8e5ec6717ffcf055",
+          "combined_sound_fp": "sound-v2:1fe5a07fea73dba353d6627413f89c28a39cf528cba9a9d5c6977ef8321cc0b3",
           "dep_statement_hashes": {
+            "BadMultiSequence": "317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5",
+            "LocallyConstant": "8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841",
             "PowerCopiedFailureMove": "1e6139ce363d203076103a20b47859ac689f2d1cbf5778c93eff4495707d1c12",
             "PowerCopiedFiniteTerminal": "b7bb0e7183cf71efc5d03b8d126297530bfe0353e71f5548efed63d3a10077ac",
+            "PowerCopiedLeft": "266123fc89a42d0c08e9d4d6259b2135ca0ed30e2b38c857cb35204840572aa2",
             "PowerCopiedOrbitDependence": "e4bd56a0f92aff28617b8335c6634b7617cc02c88cd3540fcc203dd8ea769d32",
             "PowerCopiedShiftIdentity": "433e70163ad4295e81c04e20acaf8cdeb8aa172c9aa000e4ed4f28d33ab6e2a9",
             "PowerCopiedSupport": "18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b",
+            "PowerCopiedTerminalAt": "7380d0d8b178ee967b18028b4774efb036663f89d812a5ad451f967be97f1132",
             "PowerCopiedTerminates": "0ab92aba88e6a186c4d6a91763526a1865c31e0dc59dcdb00950c13e734e7f73",
             "PowerFiniteOrbitConstancy": "95f9da42f9de6b010a9b9a2ba3fdaea7748ae374581d3a21a740122747638204",
+            "PowerIResponse": "5328da6c932eaf3ff83a7e34b6f3a49fb18298b76836c13c1edcd6376294d6c5",
             "PowerMove": "0120ea580c21afed9e173258e4e1210f45c7cdcc44784fc71e1fb1fb10ec6707",
             "PowerRelAtomAtom": "d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db",
+            "PowerShiftIter": "b2ec8e28849257bede2c94cbc7d869f50ea641096a4cdbabd036a0a46ecfa4a1",
             "PowerSupport": "f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762"
           },
-          "own_tex_hash": "e90f2bd938d732fe4746e6c002a978141d4cec50f113693c7ad2cc4edde27be3"
+          "own_tex_hash": "3abbab1e165290858980191bc62cd0dfbac8c67088cb9af454819c66cb3252b6"
         },
         "PowerRel": {
           "combined_sound_fp": "sound-v2:55bbcb1133869172175e92f9cf7dd92bd929057b42d04f894f0d7c410ab85506",
@@ -2246,7 +2254,7 @@
         "PowerQ": "sound-v2:6fa59c6b1f00b16b94208bab490cd36015afae248e7ce3a1a4c427d7c16a19c4",
         "PowerQIsPreorder": "sound-v2:c73b8248cf127d99301ac2b612fb93f1c4ba25eb1ccdcb0d42cb8f8e60e1409c",
         "PowerQPresBqo": "sound-v2:94ab85effc29caed4dc96e2253e2fc3d45e74961208b028b306003a1c86c3456",
-        "PowerQReflection": "sound-v2:230c83ebdde900b2a74512921748bb8ed92f4af746df561e8e5ec6717ffcf055",
+        "PowerQReflection": "sound-v2:1fe5a07fea73dba353d6627413f89c28a39cf528cba9a9d5c6977ef8321cc0b3",
         "PowerRel": "sound-v2:55bbcb1133869172175e92f9cf7dd92bd929057b42d04f894f0d7c410ab85506",
         "PowerRelAtomAtom": "sound-v2:3482a77d9cd6d0f4b21790ade1d3123e0fed31345f566ffef445e1d1a5e3155c",
         "PowerRelAtomNode": "sound-v2:9927cc0ca5e1a3c91ef93e473d3163157279a0dee333a3330a7087ac7806cb71",
@@ -2658,7 +2666,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Expanded PowerRelCongrLeft.tex into a detailed well-founded induction proof with atom, mixed-tag, node-atom, and node-node cases, including explicit child descent and both witness-transport directions.",
+    "summary": "Expanded the PowerQReflection natural-language proof into a detailed, paper-aligned copied-row argument while preserving the Lean statement, imports, and support DAG.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2924,7 +2932,7 @@
     "PowerQPresBqo.lean": "1ce595efd0ac281ff71af2b901110ab1302067128e47f542f1b78db36363cc83",
     "PowerQPresBqo.tex": "4fad87d124616e0e82409e5a67b0bc5e1e75b08aed0c2767557916425b5dd7fb",
     "PowerQReflection.lean": "baf7323a23004c0f98d7884950f3944557e9f00d7ce766f153a9bfbacd1f6e99",
-    "PowerQReflection.tex": "e90f2bd938d732fe4746e6c002a978141d4cec50f113693c7ad2cc4edde27be3",
+    "PowerQReflection.tex": "3abbab1e165290858980191bc62cd0dfbac8c67088cb9af454819c66cb3252b6",
     "PowerRel.lean": "7756274d21ab919f80d3328a011e1b11de551c71bae4c2fafba5714d466b2dc2",
     "PowerRel.tex": "dd0353d652d1806885a6238b6e6dfb273b8fbd1ce0cc537f478f4edce35caa74",
     "PowerRelAtomAtom.lean": "797e17f58ea423999e191077b6a7dcd08298680aa23575bd130174860a1298dc",
@@ -3024,7 +3032,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_419_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_422_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
