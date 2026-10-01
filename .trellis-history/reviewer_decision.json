@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedTerminates has a current Sound approval. Continue to PowerCopiedTerminalSupport: its proof currently extracts q and q' as though they were supplied directly by PowerCopiedTerminates, and silently replaces PowerShiftIter(0,x) by x; both steps require explicit statement citations.",
-    "comments": "Edit only Tablet/PowerCopiedTerminalSupport.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Independent gaps: PowerCopiedTerminates yields k and PowerCopiedTerminalAt, not q,q' directly, so cite \\noderef{PowerCopiedTerminalAt} and explicitly unpack its existential to obtain the two atom equations. PowerCopiedSupport at row 0 gives inclusion into PowerSupport(h (PowerShiftIter 0 x)); cite \\noderef{PowerShiftIter} and use its zeroth-iterate equation to rewrite this to PowerSupport(h x). Then cite \\noderef{PowerSupport} for atom support {q} and spell out subset transitivity to derive q membership. Retain the existing terminal witness for the second atom; no statement/import/support changes.",
+    "reason": "PowerCopiedTerminalSupport has a current Sound approval. Continue to PowerCopiedTerminalShift; its proof cites the right two results but abbreviates the existential instantiation and the n=0 arithmetic as \"the last displayed value\", so the shift equality should be made line-by-line checkable.",
+    "comments": "Edit only Tablet/PowerCopiedTerminalShift.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Expand the \\noderef{PowerCopiedFiniteTerminal} instantiation to explicitly record k,q,q' and both terminal atom equations. Then instantiate \\noderef{PowerCopiedShiftIdentity} at n=0 and the same k, write the resulting equality for \\mathsf{PowerCopiedLeft}_r(h,\\mathsf{ShiftMap}(x),0,k), simplify 0+1 to 1, and identify its right-hand side exactly with the second terminal equation. Cite both results at their uses and do not rely on their proofs. No statement/import/support changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedTerminalSupport",
+    "next_active": "PowerCopiedTerminalShift",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -16,14 +16,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1368,
-        "end_line": 1374,
-        "reason": "The paper identifies Q as atoms and defines support of an atom as its singleton, with recursive support for nodes."
+        "start_line": 1538,
+        "end_line": 1549,
+        "reason": "The paper's copied strategy construction identifies the next row's terminal value with the shifted input's terminal value."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1368-1374 treat elements of Q as atoms and define support by the atom singleton clause and the recursive union over children. The tablet proof should therefore make both the terminal atom extraction and the row-zero iterate rewrite explicit before applying support inclusion."
+      "basis_summary": "Lines 1538-1549 construct the copied rows and state that the next-row value is the value obtained after shifting the input. The tablet proof should expose the corresponding n=0 instance of the copied shift identity and its exact identification with the second terminal atom."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerCopiedTerminalSupport.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Independent gaps: PowerCopiedTerminates yields k and PowerCopiedTerminalAt, not q,q' directly, so cite \\noderef{PowerCopiedTerminalAt} and explicitly unpack its existential to obtain the two atom equations. PowerCopiedSupport at row 0 gives inclusion into PowerSupport(h (PowerShiftIter 0 x)); cite \\noderef{PowerShiftIter} and use its zeroth-iterate equation to rewrite this to PowerSupport(h x). Then cite \\noderef{PowerSupport} for atom support {q} and spell out subset transitivity to derive q membership. Retain the existing terminal witness for the second atom; no statement/import/support changes.",
+    "comments": "Edit only Tablet/PowerCopiedTerminalShift.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Expand the \\noderef{PowerCopiedFiniteTerminal} instantiation to explicitly record k,q,q' and both terminal atom equations. Then instantiate \\noderef{PowerCopiedShiftIdentity} at n=0 and the same k, write the resulting equality for \\mathsf{PowerCopiedLeft}_r(h,\\mathsf{ShiftMap}(x),0,k), simplify 0+1 to 1, and identify its right-hand side exactly with the second terminal equation. Cite both results at their uses and do not rely on their proofs. No statement/import/support changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 135,
+    "cycle": 136,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerCopiedTerminalSupport",
+    "next_active": "PowerCopiedTerminalShift",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1374,
-        "reason": "The paper identifies Q as atoms and defines support of an atom as its singleton, with recursive support for nodes.",
-        "start_line": 1368
+        "end_line": 1549,
+        "reason": "The paper's copied strategy construction identifies the next row's terminal value with the shifted input's terminal value.",
+        "start_line": 1538
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1368-1374 treat elements of Q as atoms and define support by the atom singleton clause and the recursive union over children. The tablet proof should therefore make both the terminal atom extraction and the row-zero iterate rewrite explicit before applying support inclusion.",
+      "basis_summary": "Lines 1538-1549 construct the copied rows and state that the next-row value is the value obtained after shifting the input. The tablet proof should expose the corresponding n=0 instance of the copied shift identity and its exact identification with the second terminal atom.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedTerminates has a current Sound approval. Continue to PowerCopiedTerminalSupport: its proof currently extracts q and q' as though they were supplied directly by PowerCopiedTerminates, and silently replaces PowerShiftIter(0,x) by x; both steps require explicit statement citations.",
-    "request_id": 445,
+    "reason": "PowerCopiedTerminalSupport has a current Sound approval. Continue to PowerCopiedTerminalShift; its proof cites the right two results but abbreviates the existential instantiation and the n=0 arithmetic as \"the last displayed value\", so the shift equality should be made line-by-line checkable.",
+    "request_id": 448,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,5 +76,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_445_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_448_decision.context.json"
 }
