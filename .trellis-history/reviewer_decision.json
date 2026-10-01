@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerRelCongrRight has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrLeft, its symmetric left-presentation invariance lemma.",
-    "comments": "Edit only Tablet/PowerRelCongrLeft.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelCongrRight or add a helper. Give the proof as well-founded induction on the compared left presentation, citing PowerChildWellFounded, PowerChild, and PowerRel. Split atom-atom, mixed-tag, node-atom, and node-node cases. For equivalent atoms use PowerPresentationEq to identify the Q values; explain why mixed tags are impossible. In node cases, use the forward matching conjunct to replace each left child by an equivalent child and apply the induction hypothesis to the recursive comparison with the fixed right presentation; preserve the universal left-child quantifier in PowerRelNodeAtom and transport the existential right-child witness in PowerRelNodeNode. Prove the reverse implication with the backward matching conjunct, justify each descent by an explicit PowerChild witness, and use PowerPresentationEqEquivalence for symmetry or composition when needed. Cite PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
+    "reason": "PowerRelCongrLeft has a current Sound approval, so advance the global worker to the held target PowerQReflection and continue the bottom-up proof-bearing development.",
+    "comments": "Edit only Tablet/PowerQReflection.tex. Preserve the Lean statement, imports, and support DAG; do not alter the already-approved relation nodes or add a helper. Follow the copied-row construction line by line. For fixed x, use \\noderef{PowerCopiedFiniteTerminal} and \\noderef{PowerCopiedTerminates} to choose a depth k and first/second terminal atoms q_x,q'_x. Use \\noderef{PowerCopiedFailureMove} and \\noderef{PowerRelAtomAtom} to derive not r(q_x,q'_x), then \\noderef{PowerCopiedShiftIdentity} to identify the shifted first-row value with q'_x, and \\noderef{PowerCopiedSupport} plus the atom clause of \\noderef{PowerSupport} to prove q_x is in PowerSupport(h(x)). Explain persistence under later legal moves via \\noderef{PowerMove} and \\noderef{PowerCopiedFailureMove}, so g(x) is independent of terminal depth and yields BadMultiSequence r g. For local constancy, apply \\noderef{PowerFiniteOrbitConstancy} at m=k+2, use \\noderef{PowerCopiedOrbitDependence} to identify the copied value for any finite-prefix neighbor y, and use \\noderef{PowerCopiedTerminates} plus persistence to show g(y)=g(x). Explicitly tie the final statements to LocallyConstant and BadMultiSequence, retaining citations to every cross-node dependency and changing no theorem statement or support edge.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerRelCongrLeft",
+    "next_active": "PowerQReflection",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -16,14 +16,19 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1404,
-        "end_line": 1420,
-        "reason": "The paper's four recursive atom/node clauses determine how left-child universal and right-child existential witnesses are transported."
+        "start_line": 1264,
+        "end_line": 1271,
+        "reason": "The paper defines the finite-prefix topology and local constancy used in the final g construction."
+      },
+      {
+        "start_line": 1428,
+        "end_line": 1443,
+        "reason": "The paper constructs the base-valued multi-sequence from copied game rows and proves badness by the shift identity."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; left presentation invariance must preserve the universal quantification over left children and the existential witnesses on the right."
+      "basis_summary": "Lines 1264-1271 define local constancy by finite initial segments, while lines 1428-1443 describe the copied game rows, finite terminal dependence, shift stabilization, and the resulting badness argument. The worker should preserve those two mechanisms in PowerQReflection."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -38,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerRelCongrLeft.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelCongrRight or add a helper. Give the proof as well-founded induction on the compared left presentation, citing PowerChildWellFounded, PowerChild, and PowerRel. Split atom-atom, mixed-tag, node-atom, and node-node cases. For equivalent atoms use PowerPresentationEq to identify the Q values; explain why mixed tags are impossible. In node cases, use the forward matching conjunct to replace each left child by an equivalent child and apply the induction hypothesis to the recursive comparison with the fixed right presentation; preserve the universal left-child quantifier in PowerRelNodeAtom and transport the existential right-child witness in PowerRelNodeNode. Prove the reverse implication with the backward matching conjunct, justify each descent by an explicit PowerChild witness, and use PowerPresentationEqEquivalence for symmetry or composition when needed. Cite PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
+    "comments": "Edit only Tablet/PowerQReflection.tex. Preserve the Lean statement, imports, and support DAG; do not alter the already-approved relation nodes or add a helper. Follow the copied-row construction line by line. For fixed x, use \\noderef{PowerCopiedFiniteTerminal} and \\noderef{PowerCopiedTerminates} to choose a depth k and first/second terminal atoms q_x,q'_x. Use \\noderef{PowerCopiedFailureMove} and \\noderef{PowerRelAtomAtom} to derive not r(q_x,q'_x), then \\noderef{PowerCopiedShiftIdentity} to identify the shifted first-row value with q'_x, and \\noderef{PowerCopiedSupport} plus the atom clause of \\noderef{PowerSupport} to prove q_x is in PowerSupport(h(x)). Explain persistence under later legal moves via \\noderef{PowerMove} and \\noderef{PowerCopiedFailureMove}, so g(x) is independent of terminal depth and yields BadMultiSequence r g. For local constancy, apply \\noderef{PowerFiniteOrbitConstancy} at m=k+2, use \\noderef{PowerCopiedOrbitDependence} to identify the copied value for any finite-prefix neighbor y, and use \\noderef{PowerCopiedTerminates} plus persistence to show g(y)=g(x). Explicitly tie the final statements to LocallyConstant and BadMultiSequence, retaining citations to every cross-node dependency and changing no theorem statement or support edge.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 127,
+    "cycle": 128,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +54,29 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerRelCongrLeft",
+    "next_active": "PowerQReflection",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1420,
-        "reason": "The paper's four recursive atom/node clauses determine how left-child universal and right-child existential witnesses are transported.",
-        "start_line": 1404
+        "end_line": 1271,
+        "reason": "The paper defines the finite-prefix topology and local constancy used in the final g construction.",
+        "start_line": 1264
+      },
+      {
+        "end_line": 1443,
+        "reason": "The paper constructs the base-valued multi-sequence from copied game rows and proves badness by the shift identity.",
+        "start_line": 1428
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; left presentation invariance must preserve the universal quantification over left children and the existential witnesses on the right.",
+      "basis_summary": "Lines 1264-1271 define local constancy by finite initial segments, while lines 1428-1443 describe the copied game rows, finite terminal dependence, shift stabilization, and the resulting badness argument. The worker should preserve those two mechanisms in PowerQReflection.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerRelCongrRight has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrLeft, its symmetric left-presentation invariance lemma.",
-    "request_id": 418,
+    "reason": "PowerRelCongrLeft has a current Sound approval, so advance the global worker to the held target PowerQReflection and continue the bottom-up proof-bearing development.",
+    "request_id": 421,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,5 +86,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_418_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_421_decision.context.json"
 }

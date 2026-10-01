@@ -7,23 +7,100 @@ $Y\in\mathsf{PowerQ}(Q)$,
 \]
 \end{lemma}
 \begin{proof}
-Induct on the well-founded child descent of the compared left
-presentations, using the recursive definition in \noderef{PowerRel}.  If
-both left presentations are atoms, \noderef{PowerPresentationEq} gives
-equality of their $Q$-values, so the atom--atom and atom--node reductions
-from \noderef{PowerRelAtomAtom} and \noderef{PowerRelAtomNode} give the same
-proposition.  A mixed atom--node pair cannot satisfy the equivalence
-hypothesis, since that branch of \noderef{PowerPresentationEq} is false.
+We use well-founded induction on the left presentation $X$ for the child
+relation \noderef{PowerChild}, which is well-founded by
+\noderef{PowerChildWellFounded}.  More precisely, the induction assertion at
+$X$ is that, for every $X'$ and every $Y$, a hypothesis
+$\mathsf{PowerPresentationEq}(X,X')$ implies
+\[
+ \mathsf{PowerRel}(r)(X,Y)\longleftrightarrow
+ \mathsf{PowerRel}(r)(X',Y).
+\]
+The induction hypothesis is therefore available whenever a child of $X$ is
+compared with any structurally equivalent presentation.  The recursive
+comparisons below are the ones specified by \noderef{PowerRel}; every descent
+from a node $X=\mathsf{node}(\iota,h,f)$ is justified explicitly by
+\[
+ \mathsf{PowerChild}(f(i),X),
+\]
+using the witness $i$ in the definition \noderef{PowerChild}.
 
-In the remaining case both presentations are nodes.  For each child of the
-first node, the forward conjunct in \noderef{PowerPresentationEq} supplies a
-child of the second node structurally equivalent to it; the induction
-hypothesis transfers the recursive comparison with any fixed right child.
-This transports the existential right-child witnesses in the node--node
-reduction \noderef{PowerRelNodeNode}.  The node--atom reduction
-\noderef{PowerRelNodeAtom} is handled in the same way, with the universal
-quantifier over left children.  The reverse implication uses the backward
-matching conjunct.  Symmetry and transitivity of structural matching are
-available from \noderef{PowerPresentationEqEquivalence}, so the induction
-remains valid when matching witnesses are composed.
+First suppose that $X=\mathsf{atom}(q)$.  If $X'$ is a node, then the
+atom--node clause of \noderef{PowerPresentationEq} is false, contradicting
+the hypothesis.  If $X'=\mathsf{atom}(q')$, that hypothesis reduces to
+$q=q'$.  When $Y=\mathsf{atom}(t)$, the reductions in
+\noderef{PowerRelAtomAtom} identify the two sides with $r(q,t)$ and
+$r(q',t)$, respectively, and these are equal after substituting $q=q'$.
+When $Y=\mathsf{node}(\lambda,k,u)$, the reduction in
+\noderef{PowerRelAtomNode} identifies the two sides with
+\[
+ \exists \ell\in\lambda\;\mathsf{PowerRel}(r)(\mathsf{atom}(q),u(\ell))
+ \quad\text{and}\quad
+ \exists \ell\in\lambda\;\mathsf{PowerRel}(r)(\mathsf{atom}(q'),u(\ell)),
+\]
+which again agree after the same substitution.  This proves the atom case.
+
+Now suppose that $X=\mathsf{node}(\iota,h,f)$.  A mixed $X'$ is impossible:
+the node--atom clause of \noderef{PowerPresentationEq} is false.  Thus write
+$X'=\mathsf{node}(\kappa,h',g)$.  Unfolding the node--node clause of
+\noderef{PowerPresentationEq}, write its two matching conjuncts as
+\[
+ H_{\to}:\ \forall i\in\iota\;\exists j\in\kappa,
+   \mathsf{PowerPresentationEq}(f(i),g(j)),
+ \qquad
+ H_{\leftarrow}:\ \forall j\in\kappa\;\exists i\in\iota,
+   \mathsf{PowerPresentationEq}(f(i),g(j)).
+\]
+The equivalence properties in \noderef{PowerPresentationEqEquivalence}
+permit a matching witness to be reversed by symmetry, or two such witnesses
+to be composed by transitivity; the direct applications below use the
+orientations displayed in $H_{\to}$ and $H_{\leftarrow}$.
+
+Consider first $Y=\mathsf{atom}(q)$.  By the node--atom reduction
+\noderef{PowerRelNodeAtom}, the desired equivalence is
+\[
+ \Bigl(\forall i\in\iota\;\mathsf{PowerRel}(r)(f(i),\mathsf{atom}(q))\Bigr)
+ \longleftrightarrow
+ \Bigl(\forall j\in\kappa\;\mathsf{PowerRel}(r)(g(j),\mathsf{atom}(q))\Bigr).
+\]
+For the forward implication, assume the left universal statement and fix
+$j\in\kappa$.  Choose $i\in\iota$ from $H_{\leftarrow}$, and let
+$e:\mathsf{PowerPresentationEq}(f(i),g(j))$ be the resulting match.  The
+explicit witness $i$ gives \(\mathsf{PowerChild}(f(i),X)\) by
+\noderef{PowerChild}, so the induction hypothesis at $f(i)$, applied to $e$
+and the fixed right presentation $\mathsf{atom}(q)$, transfers
+\(\mathsf{PowerRel}(r)(f(i),\mathsf{atom}(q))\) to
+\(\mathsf{PowerRel}(r)(g(j),\mathsf{atom}(q))\).  Since $j$ was arbitrary,
+the right universal statement follows.  Conversely, fix $i\in\iota$, choose
+$j\in\kappa$ from $H_{\to}$, and apply the same induction hypothesis to the
+explicit descent witness \(\mathsf{PowerChild}(f(i),X)\); the right
+universal hypothesis supplies the comparison with $g(j)$, and the induction
+hypothesis transfers it back to $f(i)$.  This proves the node--atom case
+without weakening its universal left-child quantifier.
+
+Finally let $Y=\mathsf{node}(\lambda,k,u)$.  By the node--node reduction
+\noderef{PowerRelNodeNode}, the desired equivalence is
+\[
+ \Bigl(\forall i\in\iota\;\exists \ell\in\lambda\;
+      \mathsf{PowerRel}(r)(f(i),u(\ell))\Bigr)
+ \longleftrightarrow
+ \Bigl(\forall j\in\kappa\;\exists \ell\in\lambda\;
+      \mathsf{PowerRel}(r)(g(j),u(\ell))\Bigr).
+\]
+For the forward implication, fix $j\in\kappa$ and choose $i$ and
+$e:\mathsf{PowerPresentationEq}(f(i),g(j))$ from $H_{\leftarrow}$.  The
+assumed left statement gives a witness $\ell\in\lambda$ with
+$\mathsf{PowerRel}(r)(f(i),u(\ell))$.  As above,
+$\mathsf{PowerChild}(f(i),X)$ is witnessed by $i$, so the induction
+hypothesis with the fixed right presentation $u(\ell)$ changes this to
+$\mathsf{PowerRel}(r)(g(j),u(\ell))$.  Thus the same $\ell$ is a valid
+right-child witness, and the right universal-existential statement follows.
+For the reverse implication, fix $i\in\iota$ and choose $j$ and
+$e:\mathsf{PowerPresentationEq}(f(i),g(j))$ from $H_{\to}$.  The assumed
+right statement supplies $\ell\in\lambda$ with
+$\mathsf{PowerRel}(r)(g(j),u(\ell))$.  Applying the induction hypothesis at
+the explicitly witnessed child $f(i)$ transfers this comparison back to
+$\mathsf{PowerRel}(r)(f(i),u(\ell))$.  This preserves the existential
+right-child witness and proves the reverse implication, completing the
+well-founded induction.
 \end{proof}
