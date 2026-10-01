@@ -1,15 +1,15 @@
 \begin{lemma}[Restriction and shift]
-For every multi-sequence $h$, every $z\in\mathsf{IncSeq}$, and every
-$x\in\mathsf{IncSeq}$,
+For every $z,x\in\mathsf{IncSeq}$,
 \[
-(h\mathbin{|}z)(\mathsf{ShiftMap}(x))
-=
-(h\mathbin{|}(\mathsf{SuccSeq}\circ z))(x).
+z\circ\mathsf{ShiftMap}(x)
+=\mathsf{ShiftMap}(z\circ x).
 \]
 \end{lemma}
 \begin{proof}
-Expand \noderef{MultiSequenceRestrict} and \noderef{ShiftMap}.  Both sides
-are $h$ evaluated at the composition
-$x\circ\mathsf{SuccSeq}\circ z$.  Associativity of composition proves the
-identity; \noderef{IncSeqComp} records the displayed order of composition.
+By \noderef{ShiftMap}, the left side is
+$z\circ(x\circ\mathsf{SuccSeq})$.  The right side is
+$(z\circ x)\circ\mathsf{SuccSeq}$.  These are equal by associativity of
+composition, with the order recorded by \noderef{IncSeqComp}.  Applying
+any multi-sequence to this equality gives the corresponding evaluation
+identity for \noderef{MultiSequenceRestrict}.
 \end{proof}

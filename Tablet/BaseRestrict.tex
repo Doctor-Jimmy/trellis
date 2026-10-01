@@ -1,9 +1,14 @@
 \begin{definition}
-The restriction of a base multi-sequence $h$ along $z\in\mathsf{IncSeq}$
-is the base multi-sequence
+Let $h:\mathsf{BaseIncSeq}(X)\to E$ and let
+$z\in\mathsf{BaseIncSeq}(X)$.  The restriction of $h$ to the infinite
+subbase enumerated by $z$ is represented in global coordinates by the
+multi-sequence
 \[
-h\mathbin{|}z=h\circ\mathsf{BaseRightComp}_X(z).
+h\mathbin{|}z:\mathsf{IncSeq}\to E,\qquad
+(h\mathbin{|}z)(x)=h(z\circ x).
 \]
-It is the increasing-enumeration form of passing to the infinite subbase
-enumerated by $z$.
+The range of $z\circ x$ is contained in $X$, so the right-hand side is
+defined.  This is the increasing-enumeration form of passing to the
+infinite subbase enumerated by $z$; it deliberately differs from the
+right-composition operation $x\mapsto x\circ z$.
 \end{definition}

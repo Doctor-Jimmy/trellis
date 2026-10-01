@@ -1,244 +1,170 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The fresh StuckMathAudit confirms that the cycle-5 restriction route was structurally wrong and requires a coordinated theorem-stating restructure. Continue on the false restriction cone before pursuing any downstream target construction.",
-    "comments": "Execute the audit plan as one coordinated restructure anchored at MultiSequenceRestrict. Keep RightComp, SuccSeq, and ShiftMap unchanged. Rewrite MultiSequenceRestrict so its value at x is h evaluated on z composed with x, not x composed with z. Rewrite BaseRestrict to take z : BaseIncSeq X and return the global-coordinate pullback; resolve the BaseIncSeq/BaseMultiSequence statement convention so infinitude is explicit wherever required. Replace RestrictionShift by the exact commutation of left-fixed restriction with ShiftMap, then repair local constancy, badness, and perfectness transports. Rebuild ShiftDichotomy from the Boolean locally constant coloring c_h(x) recording r (h x) (h (ShiftMap x)), followed by its deciding front and Nash-Williams homogeneity; do not compare h with an unspecified finite shift. Restate Subarr on arbitrary infinite bases using BaseMultiSequence and BaseIncSeq, and retain the arbitrary-front clause with the genuine subbase range. Every changed node must have Lean/NL statements that agree, and every new or revised proof-bearing TeX block must be complete and cite statement-level dependencies. Do not work on Rado or powerset targets in this burst, and do not alter the already-valid generalized-shift or front foundations.",
+    "reason": "The fixed-left restriction cone is now paper-approved, including Subarr. The next paper-faithful DAG step is the missing Rado support package for lines:985-987, derived from Nash-Williams rather than a separate Ramsey development.",
+    "comments": "Continue in Global mode, anchored at NashWilliams. Build the Rado support package as paired Lean/TeX nodes: the increasing-pair carrier and exact two-clause Rado order; first-level domination on Set Q; the equivalence between failure of powerset wqo and a bad sequence of sequences; and the constant-cardinality front consequences of NashWilliams for triples and quadruples. Keep the two composition actions and the repaired arbitrary-base restriction interface unchanged. Do not collapse this target into the full iterated powerset hierarchy governed by pm-0002, and do not introduce an independent infinite Ramsey development, in accordance with pm-0003. If the target theorem node is introduced in this burst, its statement must be exactly the paper claim that a wqo Q with non-wqo P(Q) admits an embedding of Rado into Q; reserve the detailed embedding/reflection proof for the downstream Rado-target step if the support package is not yet complete. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
     "task_blocker_ids": [
-      "substantiveness:node:BadMultiRestrict:{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:BaseBqoRestriction:{\"own_tex\":\"6c21a3f11f8e2d82a2013fb7453f8c52adef86ce2c5b365db762dd11fd042273\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:BaseRestrict:{\"own_tex\":\"fcd3c88164bbc75522f292080529169bc62629cf97273604bbe7bcfeee237cbb\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:MultiSequenceRestrict:{\"own_tex\":\"f39aaefc21b3e2a311d0bda0c6b6a491469c056ca9465a5097f5a76aa1366d01\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:PerfectBaseToSuper:{\"own_tex\":\"c46bd1df4dd82b93810bf69530f8c050bc1f7ffb302a54261ef7f84a5a39fc0b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:PerfectMultiRestrict:{\"own_tex\":\"81fecb3d2cb1c7dc7bf873b55f5d3fca8804ac6d93a0cd6b1fba2ce098128dd5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:PerfectSuperToMulti:{\"own_tex\":\"3288a78768b5207606f453590faa65bb2dea83775f46d0d20bc6c4a9ef4b1406\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:ShiftDichotomy:{\"own_tex\":\"a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-      "substantiveness:node:Subarr:{\"own_tex\":\"d5b83dec3da22255555e8af7f49c8b635989d5b8d389e35128b00ca1fc7b0f1a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
+      "paperfaithfulness:target:lines:985-987:"
     ],
     "reset_blocker_ids": [],
-    "next_active": "MultiSequenceRestrict",
-    "next_mode": "restructure",
-    "next_active_coarse": "",
-    "authorized_node_ids": [
-      "BaseIncSeq",
-      "BaseMultiSequence",
-      "BaseRestrict",
-      "BadMultiRestrict",
-      "BaseBqoRestriction",
-      "MultiSequenceRestrict",
-      "RestrictionShift",
-      "RestrictionLocallyConstant",
-      "PerfectMultiRestrict",
-      "PerfectBaseToSuper",
-      "PerfectSuperToMulti",
-      "ShiftDichotomy",
-      "Subarr"
-    ],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "NashWilliams",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "request_sound_verifier_node_ids": [],
-    "next_worker_context_mode": "fresh",
-    "work_style_hint": "restructure",
+    "next_worker_context_mode": "resume",
+    "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1258,
-        "end_line": 1270,
-        "reason": "The paper's multi-sequence restriction and increasing-enumeration/local-constancy interface."
+        "start_line": 927,
+        "end_line": 933,
+        "reason": "Exact definition of the Rado pair order that the target embedding must preserve and reflect."
       },
       {
-        "start_line": 1617,
-        "end_line": 1662,
-        "reason": "The Boolean shift dichotomy, perfectness definitions, and exact Subarr equivalence."
-      },
-      {
-        "start_line": 1697,
-        "end_line": 1709,
-        "reason": "The paper's distinction between fixed-left subbase composition and right-composition shift."
+        "start_line": 957,
+        "end_line": 993,
+        "reason": "Bad-witness extraction, the bad sequence-of-sequences equivalence, and the triple/quadruple thinning and reflection argument for the Rado embedding target."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read all cited passages. The paper defines a sub-multi-sequence by restriction to an infinite subbase, identifies that subbase by fixed-left composition f_X composed with g, defines shift by right composition with successor, and obtains the perfect-or-complement alternative by first coloring h(x) versus h(ShiftMap x), then applying Nash-Williams to the deciding front of that Boolean coloring. Subarr is stated for arbitrary multi-sequences and super-sequences, so the repaired base clause must retain arbitrary infinite bases rather than silently specialize to global IncSeq."
+      "basis_summary": "The cited text defines Rado on increasing pairs, extracts q_m^n from a bad powerset sequence, states the bad sequence-of-sequences criterion, and proves the embedding using homogeneous triples and quadruples plus three explicit reflection cases."
     },
     "stuck_math_audit": {
-      "notes": "The audit report is authoritative for this transition. It overturns the earlier right-composition restriction route and requires a single restructure of the false cone, including the Boolean-coloring repair of ShiftDichotomy and the arbitrary-base restatement of Subarr. The audit probe verified the corrected composition orientation and its commutation with ShiftMap. The remaining Rado, iterated-powerset, and hereditary tasks stay downstream.",
+      "notes": "Audit tasks replace-fixed-subbase-interface, rebuild-restriction-transports, rebuild-shift-dichotomy, and restate-subarr-target are substantively complete in the worker burst; Subarr has paper-faithfulness PASS. The live audit now moves to its Rado/Ramsey-support task. Preserve the repaired fixed-left restriction orientation while building that support.",
       "reviewer_lean_product": {
-        "root_equations": [
-          "RightComp z x = x composed with z",
-          "correct restriction at x = h (z composed with x)",
-          "z composed with ShiftMap x = ShiftMap (z composed with x)"
+        "target": "lines:985-987",
+        "anchor": "NashWilliams",
+        "required_support": [
+          "Rado pair carrier and exact order",
+          "first-level Set Q domination",
+          "bad powerset sequence versus bad sequence of sequences",
+          "homogeneous constant-triple and constant-quadruple front consequences"
         ],
-        "authorized_restructure": "Replace the false restriction cone and restate Subarr together; preserve RightComp, ShiftMap, the front foundations, and the generalized-shift branch."
+        "constraints": [
+          "derive finite Ramsey instances from NashWilliams",
+          "keep first-level powerset support separate from iterated hierarchy support",
+          "include preservation and all three reflection cases in the eventual embedding theorem"
+        ]
       }
     },
-    "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
-    "memory_challenges": []
+    "dismissed_tasks": [
+      {
+        "id": "replace-fixed-subbase-interface",
+        "reason": "Completed: MultiSequenceRestrict uses fixed-left IncSeqComp, BaseRestrict uses BaseIncSeq X, and the exact restriction-shift commutation is present."
+      },
+      {
+        "id": "rebuild-restriction-transports",
+        "reason": "Completed: badness/perfectness transports and the base/super bridges were propagated through the corrected fixed-subbase interface."
+      },
+      {
+        "id": "rebuild-shift-dichotomy",
+        "reason": "Completed: ShiftDichotomy now uses the Boolean comparison coloring, its deciding front, and Nash-Williams with the corrected restriction equation."
+      },
+      {
+        "id": "restate-subarr-target",
+        "reason": "Completed: Subarr states the arbitrary-infinite-base and arbitrary-front clauses, and the paper-faithfulness verifier approved its full three-clause coverage."
+      }
+    ]
   },
   "response": {
     "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
-    "authorized_nodes": [
-      "BadMultiRestrict",
-      "BaseBqoRestriction",
-      "BaseIncSeq",
-      "BaseMultiSequence",
-      "BaseRestrict",
-      "MultiSequenceRestrict",
-      "PerfectBaseToSuper",
-      "PerfectMultiRestrict",
-      "PerfectSuperToMulti",
-      "RestrictionLocallyConstant",
-      "RestrictionShift",
-      "ShiftDichotomy",
-      "Subarr"
-    ],
+    "authorized_nodes": [],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Execute the audit plan as one coordinated restructure anchored at MultiSequenceRestrict. Keep RightComp, SuccSeq, and ShiftMap unchanged. Rewrite MultiSequenceRestrict so its value at x is h evaluated on z composed with x, not x composed with z. Rewrite BaseRestrict to take z : BaseIncSeq X and return the global-coordinate pullback; resolve the BaseIncSeq/BaseMultiSequence statement convention so infinitude is explicit wherever required. Replace RestrictionShift by the exact commutation of left-fixed restriction with ShiftMap, then repair local constancy, badness, and perfectness transports. Rebuild ShiftDichotomy from the Boolean locally constant coloring c_h(x) recording r (h x) (h (ShiftMap x)), followed by its deciding front and Nash-Williams homogeneity; do not compare h with an unspecified finite shift. Restate Subarr on arbitrary infinite bases using BaseMultiSequence and BaseIncSeq, and retain the arbitrary-front clause with the genuine subbase range. Every changed node must have Lean/NL statements that agree, and every new or revised proof-bearing TeX block must be complete and cite statement-level dependencies. Do not work on Rado or powerset targets in this burst, and do not alter the already-valid generalized-shift or front foundations.",
+    "comments": "Continue in Global mode, anchored at NashWilliams. Build the Rado support package as paired Lean/TeX nodes: the increasing-pair carrier and exact two-clause Rado order; first-level domination on Set Q; the equivalence between failure of powerset wqo and a bad sequence of sequences; and the constant-cardinality front consequences of NashWilliams for triples and quadruples. Keep the two composition actions and the repaired arbitrary-base restriction interface unchanged. Do not collapse this target into the full iterated powerset hierarchy governed by pm-0002, and do not introduce an independent infinite Ramsey development, in accordance with pm-0003. If the target theorem node is introduced in this burst, its statement must be exactly the paper claim that a wqo Q with non-wqo P(Q) admits an embedding of Rado into Q; reserve the detailed embedding/reflection proof for the downstream Rado-target step if the support package is not yet complete. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 6,
+    "cycle": 7,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "replace-fixed-subbase-interface",
+        "reason": "Completed: MultiSequenceRestrict uses fixed-left IncSeqComp, BaseRestrict uses BaseIncSeq X, and the exact restriction-shift commutation is present."
+      },
+      {
+        "id": "rebuild-restriction-transports",
+        "reason": "Completed: badness/perfectness transports and the base/super bridges were propagated through the corrected fixed-subbase interface."
+      },
+      {
+        "id": "rebuild-shift-dichotomy",
+        "reason": "Completed: ShiftDichotomy now uses the Boolean comparison coloring, its deciding front, and Nash-Williams with the corrected restriction equation."
+      },
+      {
+        "id": "restate-subarr-target",
+        "reason": "Completed: Subarr states the arbitrary-infinite-base and arbitrary-front clauses, and the paper-faithfulness verifier approved its full three-clause coverage."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "MultiSequenceRestrict",
+    "next_active": "NashWilliams",
     "next_active_coarse": null,
-    "next_mode": "Restructure",
-    "next_worker_context_mode": "fresh",
+    "next_mode": "Global",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1270,
-        "reason": "The paper's multi-sequence restriction and increasing-enumeration/local-constancy interface.",
-        "start_line": 1258
+        "end_line": 933,
+        "reason": "Exact definition of the Rado pair order that the target embedding must preserve and reflect.",
+        "start_line": 927
       },
       {
-        "end_line": 1662,
-        "reason": "The Boolean shift dichotomy, perfectness definitions, and exact Subarr equivalence.",
-        "start_line": 1617
-      },
-      {
-        "end_line": 1709,
-        "reason": "The paper's distinction between fixed-left subbase composition and right-composition shift.",
-        "start_line": 1697
+        "end_line": 993,
+        "reason": "Bad-witness extraction, the bad sequence-of-sequences equivalence, and the triple/quadruple thinning and reflection argument for the Rado embedding target.",
+        "start_line": 957
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read all cited passages. The paper defines a sub-multi-sequence by restriction to an infinite subbase, identifies that subbase by fixed-left composition f_X composed with g, defines shift by right composition with successor, and obtains the perfect-or-complement alternative by first coloring h(x) versus h(ShiftMap x), then applying Nash-Williams to the deciding front of that Boolean coloring. Subarr is stated for arbitrary multi-sequences and super-sequences, so the repaired base clause must retain arbitrary infinite bases rather than silently specialize to global IncSeq.",
+      "basis_summary": "The cited text defines Rado on increasing pairs, extracts q_m^n from a bad powerset sequence, states the bad sequence-of-sequences criterion, and proves the embedding using homogeneous triples and quadruples plus three explicit reflection cases.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The fresh StuckMathAudit confirms that the cycle-5 restriction route was structurally wrong and requires a coordinated theorem-stating restructure. Continue on the false restriction cone before pursuing any downstream target construction.",
-    "request_id": 42,
+    "reason": "The fixed-left restriction cone is now paper-approved, including Subarr. The next paper-faithful DAG step is the missing Rado support package for lines:985-987, derived from Nash-Williams rather than a separate Ramsey development.",
+    "request_id": 50,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit report is authoritative for this transition. It overturns the earlier right-composition restriction route and requires a single restructure of the false cone, including the Boolean-coloring repair of ShiftDichotomy and the arbitrary-base restatement of Subarr. The audit probe verified the corrected composition orientation and its commutation with ShiftMap. The remaining Rado, iterated-powerset, and hereditary tasks stay downstream.",
+      "notes": "Audit tasks replace-fixed-subbase-interface, rebuild-restriction-transports, rebuild-shift-dichotomy, and restate-subarr-target are substantively complete in the worker burst; Subarr has paper-faithfulness PASS. The live audit now moves to its Rado/Ramsey-support task. Preserve the repaired fixed-left restriction orientation while building that support.",
       "reviewer_lean_product": {
-        "authorized_restructure": "Replace the false restriction cone and restate Subarr together; preserve RightComp, ShiftMap, the front foundations, and the generalized-shift branch.",
-        "root_equations": [
-          "RightComp z x = x composed with z",
-          "correct restriction at x = h (z composed with x)",
-          "z composed with ShiftMap x = ShiftMap (z composed with x)"
-        ]
+        "anchor": "NashWilliams",
+        "constraints": [
+          "derive finite Ramsey instances from NashWilliams",
+          "keep first-level powerset support separate from iterated hierarchy support",
+          "include preservation and all three reflection cases in the eventual embedding theorem"
+        ],
+        "required_support": [
+          "Rado pair carrier and exact order",
+          "first-level Set Q domination",
+          "bad powerset sequence versus bad sequence of sequences",
+          "homogeneous constant-triple and constant-quadruple front consequences"
+        ],
+        "target": "lines:985-987"
       }
     },
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
+        "fingerprint": "",
+        "kind": "PaperFaithfulness",
         "object": {
-          "node": "BadMultiRestrict",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"6c21a3f11f8e2d82a2013fb7453f8c52adef86ce2c5b365db762dd11fd042273\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "BaseBqoRestriction",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"fcd3c88164bbc75522f292080529169bc62629cf97273604bbe7bcfeee237cbb\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "BaseRestrict",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"f39aaefc21b3e2a311d0bda0c6b6a491469c056ca9465a5097f5a76aa1366d01\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "MultiSequenceRestrict",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"c46bd1df4dd82b93810bf69530f8c050bc1f7ffb302a54261ef7f84a5a39fc0b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "PerfectBaseToSuper",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"81fecb3d2cb1c7dc7bf873b55f5d3fca8804ac6d93a0cd6b1fba2ce098128dd5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "PerfectMultiRestrict",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"3288a78768b5207606f453590faa65bb2dea83775f46d0d20bc6c4a9ef4b1406\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "PerfectSuperToMulti",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "ShiftDichotomy",
-          "otype": "node"
-        }
-      },
-      {
-        "deferred": false,
-        "fingerprint": "{\"own_tex\":\"d5b83dec3da22255555e8af7f49c8b635989d5b8d389e35128b00ca1fc7b0f1a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-        "kind": "Substantiveness",
-        "object": {
-          "node": "Subarr",
-          "otype": "node"
+          "otype": "target",
+          "target": "lines:985-987"
         }
       }
     ],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_42_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_50_decision.context.json"
 }

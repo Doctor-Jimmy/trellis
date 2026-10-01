@@ -1,17 +1,22 @@
 \begin{lemma}[Perfect base extensions yield perfect sub-super-sequences]
-Let $f:F\to Q$ be a super-sequence on $X$, and let $h$ be a locally
-constant extension satisfying the value equation of
-\noderef{SuperSequenceExtension}.  If a restriction of $h$ is perfect, then
-$f$ has a perfect restriction to a sub-front on an infinite subbase of $X$.
+Let $f:F\to Q$ be a super-sequence on $X$, and let $h$ be a base
+multi-sequence satisfying the value equation for the front extension.  If
+$z\in\mathsf{BaseIncSeq}(X)$ and the global-coordinate restriction
+$x\mapsto h(z\circ x)$ is perfect, then $f$ has a perfect restriction to a
+sub-front on the exact subbase $Y=\operatorname{range}(z)$.
 \end{lemma}
 \begin{proof}
-Let $x_0$ enumerate $X$ by \noderef{InfiniteSetEnumeration}, and let $Y$ be
-the range of $x_0\circ z$; it is an
-infinite subset of $X$.  By \noderef{FrontRestriction}, $F\mathbin{|}Y$ is
-a front on $Y$.  Any two of its members related by a finite shift are the
-front members selected by two consecutive base enumerations in the
-restricted base multi-sequence.  The extension equation identifies their
-values with the corresponding values of $\mathsf{BaseRestrict}(h,z)$.
-Its perfectness therefore proves perfectness of the restricted
-super-sequence, using \noderef{SuperSequenceRestrict}.
+Put $Y=\operatorname{range}(z)$.  Since $z$ is an increasing enumeration,
+$Y$ is infinite and $Y\subseteq X$.  By \noderef{FrontRestriction}, the
+restriction $F\mathbin{|}Y$ is a front on $Y$ and is a subfamily of $F$.
+Take $F'=F\mathbin{|}Y$.  If $s,t\in F'$ satisfy
+$s\mathrel{\mathsf{FiniteShift}}t$, choose an increasing enumeration $x$ of
+a subset of $Y$ witnessing this relation.  The extension equation in the
+statement identifies the values of $s$ and $t$ with
+$h(z\circ u)$ and $h(z\circ\mathsf{ShiftMap}(u))$ for the corresponding
+enumeration $u$ of a subset of $\mathbb N$.  These are respectively the
+values of $\mathsf{BaseRestrict}(h,z)$ at $u$ and at
+$\mathsf{ShiftMap}(u)$.  Its perfectness gives the required relation.
+Unfolding \noderef{SuperSequenceRestrict} then proves that the restricted
+super-sequence on $F'$ is perfect.
 \end{proof}

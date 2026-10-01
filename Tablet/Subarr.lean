@@ -14,8 +14,10 @@ import Tablet.SuperSequenceExtension
 -- [TABLET NODE: Subarr]
 theorem Subarr {Q : Type} (r : Q → Q → Prop) [IsPreorder Q r] :
     Bqo r ↔
-      (∀ h : MultiSequence Q, LocallyConstant h →
-        ∃ z : IncSeq, PerfectMultiSequence r (MultiSequenceRestrict h z)) ∧
+      (∀ (X : Set Nat), X.Infinite →
+        ∀ h : BaseMultiSequence X Q, BaseLocallyConstant h →
+          ∃ z : BaseIncSeq X,
+            PerfectMultiSequence r (BaseRestrict h z)) ∧
       (∀ (F : Set (Finset Nat)) (X : Set Nat)
           (f : SuperSequence F X Q),
         ∃ F' : Set (Finset Nat), ∃ Y : Set Nat,

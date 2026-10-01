@@ -1,17 +1,31 @@
 \begin{lemma}[Base invariance of the bqo restriction property]
 Assume that $r$ is a quasi-order and $Q$ is bqo.  For every infinite base
-$X$ and every locally constant base multi-sequence on $X$, there is an
-increasing embedding $z$ such that the restriction along $z$ is perfect.
+$X$ and every locally constant $h:\mathsf{BaseIncSeq}(X)\to Q$, there is
+an enumeration $z\in\mathsf{BaseIncSeq}(X)$ such that the global-coordinate
+restriction $x\mapsto h(z\circ x)$ is perfect.
 \end{lemma}
 \begin{proof}
-Choose the increasing enumeration of $X$ by
-\noderef{InfiniteSetEnumeration}, and pull the base multi-sequence
-back along it to a locally constant multi-sequence on
-$\mathsf{IncSeq}$.  Local constancy is preserved because finite prefixes are
-preserved by composition with an increasing embedding.  Apply the bqo
-definition \noderef{Bqo} and the shift dichotomy \noderef{ShiftDichotomy}:
-the bad alternative is impossible, so a perfect restriction exists.  Push
-the resulting restriction forward along the enumeration of $X$.  The
-composition identities in \noderef{BaseRightComp} and
-\noderef{BaseRestrict} give the asserted base restriction.
+Choose an increasing enumeration $e\in\mathsf{IncSeq}$ of $X$ by
+\noderef{InfiniteSetEnumeration}.  Define the pullback
+$\widetilde h:\mathsf{IncSeq}\to Q$ by
+\[
+\widetilde h(x)=h(e\circ x).
+\]
+The range of $e\circ x$ is contained in $X$, so this is defined.  If a
+finite prefix decides $h$ at $e\circ x$, then a sufficiently long finite
+prefix of $x$ decides the same value, since $e$ is increasing; hence
+$\widetilde h$ is locally constant.  Apply \noderef{ShiftDichotomy} to
+$\widetilde h$.  Its bad alternative contradicts \noderef{Bqo}, because
+$Q$ is bqo and $\widetilde h$ is locally constant.  Thus there is a
+$u\in\mathsf{IncSeq}$ for which $\widetilde h\mathbin{|}u$ is perfect.
+
+Set $z=e\circ u$.  Its range is contained in $X$, so
+$z\in\mathsf{BaseIncSeq}(X)$.  For every $x$,
+\[
+(\mathsf{BaseRestrict}(h,z))(x)=h(z\circ x)
+=h(e\circ(u\circ x))
+=(\widetilde h\mathbin{|}u)(x),
+\]
+using \noderef{BaseRestrict} and \noderef{MultiSequenceRestrict}.  The
+right-hand side is perfect, so the displayed base restriction is perfect.
 \end{proof}

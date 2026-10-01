@@ -2,7 +2,10 @@
 For a multi-sequence $h:\mathsf{IncSeq}\to E$ and $z\in\mathsf{IncSeq}$,
 define its sub-multi-sequence by
 \[
-(h\mathbin{|}z)(x)=h(x\circ z).
+(h\mathbin{|}z)(x)=h(z\circ x).
 \]
-This is restriction to the infinite subbase enumerated by $z$.
+Here $z$ is fixed on the left and $x$ varies on the right.  Thus the range
+of $z\circ x$ is contained in the fixed range of $z$, so this is precisely
+restriction to the infinite subbase enumerated by $z$; it is not the right
+composition operation $x\mapsto x\circ z$.
 \end{definition}

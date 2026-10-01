@@ -3,11 +3,11 @@ If $h$ is a locally constant multi-sequence and $z\in\mathsf{IncSeq}$,
 then the restricted multi-sequence $h\mathbin{|}z$ is locally constant.
 \end{lemma}
 \begin{proof}
-Fix $x$.  A deciding prefix for $h$ at $x\circ z$ is supplied by
+Fix $x$.  A deciding prefix for $h$ at $z\circ x$ is supplied by
 \noderef{LocallyConstant}.  Since $z$ is an order embedding, only finitely
-many values of $x$ are needed to determine that finite prefix of $x\circ z$.
+many values of $x$ are needed to determine that finite prefix of $z\circ x$.
 Choose a prefix of $x$ long enough to include those values.  Any $y$ with
-that prefix has $y\circ z$ agreeing with $x\circ z$ on the deciding prefix,
+that prefix has $z\circ y$ agreeing with $z\circ x$ on the deciding prefix,
 so \noderef{MultiSequenceRestrict} gives
 $(h\mathbin{|}z)(y)=(h\mathbin{|}z)(x)$.
 \end{proof}

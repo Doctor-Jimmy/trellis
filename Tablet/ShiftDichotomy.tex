@@ -3,16 +3,40 @@ For every relation $r$ and every locally constant multi-sequence $h$, there
 is an infinite restriction on which $h$ is either perfect or bad.
 \end{lemma}
 \begin{proof}
-Form the minimal deciding front $F^h$ using
-\noderef{DecidingFront}; its value map exists by
-\noderef{DecidingValue}.  Color $s\in F^h$ according to whether its value
-is related by $r$ to the value at a finite shift of $s$.  This is a binary
-coloring of a front.  Apply \noderef{NashWilliams} to obtain an infinite
-sub-front on which the color is constant.  If the constant color is the
-positive color, the induced restriction satisfies
-\noderef{PerfectMultiSequence}; if it is the negative color, the same
-finite-shift calculation gives \noderef{BadMultiSequence}.  Reindexing the
-infinite subbase by an increasing embedding gives the displayed $z$, and
-\noderef{MultiSequenceRestrict} identifies the resulting sequence with the
-restriction of $h$.
+Define the Boolean multi-sequence
+\[
+c_h(x)=\begin{cases}1&\text{if }r(h(x),h(\mathsf{ShiftMap}(x))),\\
+0&\text{otherwise.}\end{cases}
+\]
+The shift changes only the tail of an increasing enumeration, so a finite
+prefix deciding $h$ at $x$ together with a finite prefix deciding $h$ at
+$\mathsf{ShiftMap}(x)$ gives a finite prefix deciding $c_h$ at $x$.
+Thus $c_h$ is locally constant.  Apply \noderef{DecidingFront} and
+\noderef{DecidingValue} to $c_h$: they give a deciding front $F^{c_h}$ and
+a value map $v:F^{c_h}\to\{0,1\}$ whose value on the front member chosen
+by an enumeration is $c_h$ at that enumeration.
+
+Let $S=\{s\in F^{c_h}\mid v(s)=1\}$.  By \noderef{NashWilliams}, there
+are a sub-front $F'\subseteq F^{c_h}$ on an infinite base $Y$ such that
+either $F'\subseteq S$ or $F'\cap S=\emptyset$.  Choose the increasing
+enumeration $z$ of $Y$ using \noderef{InfiniteSetEnumeration}.  For each
+$x\in\mathsf{IncSeq}$, the front member selected by the range of
+$z\circ x$ belongs to $F'$, so the value equation for $v$ makes
+$c_h(z\circ x)$ constantly $1$ in the first case and constantly $0$ in
+the second.
+
+In the first case, the definition of $c_h$ gives
+
+\[
+r(h(z\circ x),h(\mathsf{ShiftMap}(z\circ x))).
+\]
+
+By \noderef{RestrictionShift}, the second argument is
+$h(z\circ\mathsf{ShiftMap}(x))$.  By
+\noderef{MultiSequenceRestrict}, these are respectively the values of
+$\mathsf{MultiSequenceRestrict}(h,z)$ at $x$ and at
+$\mathsf{ShiftMap}(x)$; hence \noderef{PerfectMultiSequence} holds.  In the
+second case the same calculation gives the negation of this relation for
+every $x$, which is \noderef{BadMultiSequence}.  This proves the displayed
+perfect-or-bad alternative.
 \end{proof}
