@@ -1,55 +1,65 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker completed the audited SubFrontCharacterization and NashWilliams repairs, and the current correspondence verifier approves SubFrontCharacterization. The completed audit task is dismissed; the next legal step is the audit's remaining coordinated statement-correspondence repair before any Sound reverification.",
-    "comments": "Continue in Global mode with next_active BadSuperToBase. Execute only audit task repair-statement-correspondence: strengthen BadSuperToBase and PerfectSuperToBase so each existential witness includes the SuperSequenceExtension front-prefix value equation identifying the canonical extension, while preserving the bad/perfect conclusions. Rewrite FrontPrefixUnique.tex so its statement explicitly gives a front F on X, an increasing enumeration x, and two local FrontPrefix hypotheses for s and t; cite FrontPrefix and Front rather than borrowing hypotheses from FrontPrefixExists. Correct the stale PerfectMultiRestrict.tex evaluation from x composed with z to the fixed-left restriction z composed with x, citing RestrictionShift. Keep the changes paper-faithful, preserve explicit dependency citations, add no wrapper or unrelated helper, and do not request Sound verification yet.",
+    "reason": "The worker completed the audited statement-correspondence repairs, and the current correspondence verifier approves BadSuperToBase. The next audit task is fresh statement-lane adjudication: reset the four still-binding substantive Fail records that the contract permits, then run correspondence and substantiveness verification on the repaired/current packages before any Sound reverification.",
+    "comments": "Run a verifier-only targeted burst on PerfectMultiRestrict with no Tablet edits. Preserve its repaired fixed-left restriction orientation: the restricted value is h(z composed with x), and RestrictionShift identifies the shifted value. Re-adjudicate the four current correspondence/substantiveness frontier nodes using current source rather than the obsolete right-composition objections: PerfectMultiRestrict, PerfectSuperToMulti, PowerPresentationEqEquivalence, and ShiftDichotomy. For PerfectSuperToMulti and ShiftDichotomy, use the current fixed-left MultiSequenceRestrict interface. For PowerPresentationEqEquivalence, verify the genuine reflexive/symmetric/transitive theorem for the current recursive matching relation; do not resurrect the deleted wrapper-shape objection. Do not request Sound verification until all statement lanes are current and clear.",
     "task_blocker_ids": [],
-    "reset_blocker_ids": [],
+    "reset_blocker_ids": [
+      "substantiveness:node:PerfectMultiRestrict:{\"own_tex\":\"81fecb3d2cb1c7dc7bf873b55f5d3fca8804ac6d93a0cd6b1fba2ce098128dd5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+      "substantiveness:node:PerfectSuperToMulti:{\"own_tex\":\"3288a78768b5207606f453590faa65bb2dea83775f46d0d20bc6c4a9ef4b1406\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+      "substantiveness:node:PowerPresentationEqEquivalence:{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+      "substantiveness:node:ShiftDichotomy:{\"own_tex\":\"a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
+    ],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BadSuperToBase",
+    "next_active": "PerfectMultiRestrict",
     "next_active_coarse": "",
-    "next_mode": "global",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1085,
-        "end_line": 1091,
-        "reason": "The explicit front axioms provide the local membership, prefix-freeness, and density facts needed for the FrontPrefixUnique statement."
-      },
-      {
-        "start_line": 1258,
+        "start_line": 1261,
         "end_line": 1275,
-        "reason": "The paper defines the canonical extension by the unique front prefix and records its locally constant multi-sequence meaning."
+        "reason": "The paper defines multi-sequences, sub-multi-sequences, and the locally constant finite-prefix interface underlying the restriction transports."
       },
       {
-        "start_line": 1467,
-        "end_line": 1485,
-        "reason": "The paper states badness for super-sequences and proves that the canonical extension preserves badness."
+        "start_line": 1362,
+        "end_line": 1374,
+        "reason": "The paper requires the full tagged, iterated powerset hierarchy and distinguishes atoms from nonempty set nodes."
+      },
+      {
+        "start_line": 1404,
+        "end_line": 1419,
+        "reason": "The paper gives the four recursive cases for the lifted powerset relation, which contextualize the current presentation-matching equivalence."
+      },
+      {
+        "start_line": 1617,
+        "end_line": 1625,
+        "reason": "The paper derives the perfect-or-bad dichotomy from a Boolean locally constant coloring and homogeneous thinning."
       },
       {
         "start_line": 1646,
         "end_line": 1662,
-        "reason": "The paper defines perfectness for super-sequences and derives perfect restricted super-sequences from the multi-sequence restriction argument."
+        "reason": "The paper defines perfect multi- and super-sequences and states their equivalence through perfect substructures."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited front passage supplies the exact explicit axioms underlying uniqueness. The extension passage identifies the unique-prefix value equation that the two base witnesses must retain. The badness and perfectness passages justify preserving the respective conclusions and the restriction orientation while repairing only the interfaces and proof statement package."
+      "basis_summary": "The cited passages confirm the fixed-left restriction interface, the full tagged powerset semantics and its four recursive relation cases, the Boolean-coloring dichotomy, and the perfect multi/super-sequence correspondence. These are the current mathematical interfaces to use when replacing the stale statement-lane verdicts."
     },
     "dismissed_tasks": [
       {
-        "id": "repair-subfront-and-nash-diagonal",
-        "reason": "Completed: the worker replaced SubFrontCharacterization by the existential-base equivalence with an explicit cited proof and reworked NashWilliams.tex to restrict each ray to the prescribed nested tail before applying the lower-rank induction. The current correspondence verifier approves SubFrontCharacterization."
+        "id": "repair-statement-correspondence",
+        "reason": "Completed: the worker added the SuperSequenceExtension value equations to BadSuperToBase and PerfectSuperToBase, made FrontPrefixUnique local and explicit, and corrected PerfectMultiRestrict to fixed-left composition. The current BadSuperToBase correspondence verifier passes."
       }
     ],
     "stuck_math_audit": {
-      "notes": "The active audit plan remains in force. The SubFront/Nash diagonal task is complete and dismissed. Route the next worker through repair-statement-correspondence, then return the changed packages to the statement lanes. Keep the Sound task deferred until the statement-lane surface is clear; do not weaken true paper-facing claims or add wrappers.",
+      "notes": "The active audit plan remains in force. The statement-interface repair task is complete and dismissed. Fresh correspondence and substantiveness verdicts must now clear the current four-node statement surface; keep Sound deferred until those lanes are current and passing.",
       "reviewer_lean_product": null
     }
   },
@@ -62,66 +72,108 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode with next_active BadSuperToBase. Execute only audit task repair-statement-correspondence: strengthen BadSuperToBase and PerfectSuperToBase so each existential witness includes the SuperSequenceExtension front-prefix value equation identifying the canonical extension, while preserving the bad/perfect conclusions. Rewrite FrontPrefixUnique.tex so its statement explicitly gives a front F on X, an increasing enumeration x, and two local FrontPrefix hypotheses for s and t; cite FrontPrefix and Front rather than borrowing hypotheses from FrontPrefixExists. Correct the stale PerfectMultiRestrict.tex evaluation from x composed with z to the fixed-left restriction z composed with x, citing RestrictionShift. Keep the changes paper-faithful, preserve explicit dependency citations, add no wrapper or unrelated helper, and do not request Sound verification yet.",
+    "comments": "Run a verifier-only targeted burst on PerfectMultiRestrict with no Tablet edits. Preserve its repaired fixed-left restriction orientation: the restricted value is h(z composed with x), and RestrictionShift identifies the shifted value. Re-adjudicate the four current correspondence/substantiveness frontier nodes using current source rather than the obsolete right-composition objections: PerfectMultiRestrict, PerfectSuperToMulti, PowerPresentationEqEquivalence, and ShiftDichotomy. For PerfectSuperToMulti and ShiftDichotomy, use the current fixed-left MultiSequenceRestrict interface. For PowerPresentationEqEquivalence, verify the genuine reflexive/symmetric/transitive theorem for the current recursive matching relation; do not resurrect the deleted wrapper-shape objection. Do not request Sound verification until all statement lanes are current and clear.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 54,
+    "cycle": 55,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "repair-subfront-and-nash-diagonal",
-        "reason": "Completed: the worker replaced SubFrontCharacterization by the existential-base equivalence with an explicit cited proof and reworked NashWilliams.tex to restrict each ray to the prescribed nested tail before applying the lower-rank induction. The current correspondence verifier approves SubFrontCharacterization."
+        "id": "repair-statement-correspondence",
+        "reason": "Completed: the worker added the SuperSequenceExtension value equations to BadSuperToBase and PerfectSuperToBase, made FrontPrefixUnique local and explicit, and corrected PerfectMultiRestrict to fixed-left composition. The current BadSuperToBase correspondence verifier passes."
       }
     ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BadSuperToBase",
+    "next_active": "PerfectMultiRestrict",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1091,
-        "reason": "The explicit front axioms provide the local membership, prefix-freeness, and density facts needed for the FrontPrefixUnique statement.",
-        "start_line": 1085
-      },
-      {
         "end_line": 1275,
-        "reason": "The paper defines the canonical extension by the unique front prefix and records its locally constant multi-sequence meaning.",
-        "start_line": 1258
+        "reason": "The paper defines multi-sequences, sub-multi-sequences, and the locally constant finite-prefix interface underlying the restriction transports.",
+        "start_line": 1261
       },
       {
-        "end_line": 1485,
-        "reason": "The paper states badness for super-sequences and proves that the canonical extension preserves badness.",
-        "start_line": 1467
+        "end_line": 1374,
+        "reason": "The paper requires the full tagged, iterated powerset hierarchy and distinguishes atoms from nonempty set nodes.",
+        "start_line": 1362
+      },
+      {
+        "end_line": 1419,
+        "reason": "The paper gives the four recursive cases for the lifted powerset relation, which contextualize the current presentation-matching equivalence.",
+        "start_line": 1404
+      },
+      {
+        "end_line": 1625,
+        "reason": "The paper derives the perfect-or-bad dichotomy from a Boolean locally constant coloring and homogeneous thinning.",
+        "start_line": 1617
       },
       {
         "end_line": 1662,
-        "reason": "The paper defines perfectness for super-sequences and derives perfect restricted super-sequences from the multi-sequence restriction argument.",
+        "reason": "The paper defines perfect multi- and super-sequences and states their equivalence through perfect substructures.",
         "start_line": 1646
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited front passage supplies the exact explicit axioms underlying uniqueness. The extension passage identifies the unique-prefix value equation that the two base witnesses must retain. The badness and perfectness passages justify preserving the respective conclusions and the restriction orientation while repairing only the interfaces and proof statement package.",
+      "basis_summary": "The cited passages confirm the fixed-left restriction interface, the full tagged powerset semantics and its four recursive relation cases, the Boolean-coloring dichotomy, and the perfect multi/super-sequence correspondence. These are the current mathematical interfaces to use when replacing the stale statement-lane verdicts.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker completed the audited SubFrontCharacterization and NashWilliams repairs, and the current correspondence verifier approves SubFrontCharacterization. The completed audit task is dismissed; the next legal step is the audit's remaining coordinated statement-correspondence repair before any Sound reverification.",
-    "request_id": 233,
+    "reason": "The worker completed the audited statement-correspondence repairs, and the current correspondence verifier approves BadSuperToBase. The next audit task is fresh statement-lane adjudication: reset the four still-binding substantive Fail records that the contract permits, then run correspondence and substantiveness verification on the repaired/current packages before any Sound reverification.",
+    "request_id": 237,
     "request_sound_verifier_nodes": [],
     "reset": "None",
-    "reset_blockers": [],
+    "reset_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"81fecb3d2cb1c7dc7bf873b55f5d3fca8804ac6d93a0cd6b1fba2ce098128dd5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "PerfectMultiRestrict",
+          "otype": "node"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"3288a78768b5207606f453590faa65bb2dea83775f46d0d20bc6c4a9ef4b1406\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "PerfectSuperToMulti",
+          "otype": "node"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "PowerPresentationEqEquivalence",
+          "otype": "node"
+        }
+      },
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "ShiftDichotomy",
+          "otype": "node"
+        }
+      }
+    ],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The active audit plan remains in force. The SubFront/Nash diagonal task is complete and dismissed. Route the next worker through repair-statement-correspondence, then return the changed packages to the statement lanes. Keep the Sound task deferred until the statement-lane surface is clear; do not weaken true paper-facing claims or add wrappers.",
+      "notes": "The active audit plan remains in force. The statement-interface repair task is complete and dismissed. Fresh correspondence and substantiveness verdicts must now clear the current four-node statement surface; keep Sound deferred until those lanes are current and passing.",
       "reviewer_lean_product": null
     },
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_233_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_237_decision.context.json"
 }

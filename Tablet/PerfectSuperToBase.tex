@@ -1,11 +1,23 @@
 \begin{lemma}[Super-sequence perfectness gives base perfectness]
-If $f:F\to Q$ is perfect, then the locally constant extension
-$f^{\upcl}$ on $X$ is perfect as a base multi-sequence.
+If $f:F\to Q$ is perfect, then there is a base multi-sequence
+$h:\mathsf{BaseIncSeq}(X)\to Q$ which is locally constant and perfect, and
+which satisfies the extension value equation
+\[
+\forall x\in\mathsf{BaseIncSeq}(X)\;\exists s\in F\;\bigl(
+  s\segs\operatorname{range}(x)\mathbin{\wedge}h(x)=f(s)\bigr).
+\]
 \end{lemma}
 \begin{proof}
-Use \noderef{SuperSequenceExtension} to obtain the extension.  For an
-enumeration $x$ of a subset of $X$, the front members selected for $x$ and
-its shift form a finite shift.  Perfectness of $f$ therefore gives the
-relation between the two extension values.  This is precisely
+The front and value map recorded by $f$ are part of
+\noderef{SuperSequence}.  Apply \noderef{SuperSequenceExtension} to obtain
+$h$, its local constancy, and the displayed extension value equation.
+
+Fix $x\in\mathsf{BaseIncSeq}(X)$ and choose front members $s,t$ from that
+equation for $x$ and for $\mathsf{BaseShift}_X(x)$.  The prefix relations and
+the shift of $x$ make $s\mathrel{\mathsf{FiniteShift}}t$ by
+\noderef{FiniteShift}.  Perfectness of $f$, namely
+\noderef{PerfectSuperSequence}, gives $r(f(s),f(t))$.  Replacing these two
+values using the extension equation gives
+$r(h(x),h(\mathsf{BaseShift}_X(x)))$.  As $x$ was arbitrary, this is exactly
 \noderef{BasePerfect}.
 \end{proof}

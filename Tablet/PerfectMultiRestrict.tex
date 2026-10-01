@@ -3,8 +3,12 @@ If a multi-sequence is perfect, then every sub-multi-sequence obtained by
 restriction along an increasing embedding is perfect.
 \end{lemma}
 \begin{proof}
-Evaluate the original perfectness assertion at $x\circ z$.  The second
-value is the shift of this enumeration, and \noderef{RestrictionShift}
-identifies it with the shifted value of $h\mathbin{|}z$.  This is exactly
-the definition of \noderef{PerfectMultiSequence}.
+For an increasing enumeration $x$, evaluate the original perfectness
+assertion at the fixed-left restriction $z\circ x$.  By
+\noderef{MultiSequenceRestrict}, the restricted value at $x$ is
+$h(z\circ x)$.  Its shifted value is $h(z\circ\mathsf{ShiftMap}(x))$,
+which \noderef{RestrictionShift} identifies with
+$h(\mathsf{ShiftMap}(z\circ x))$.  The original perfectness assertion
+therefore gives the required relation, exactly the definition of
+\noderef{PerfectMultiSequence} for $h\mathbin{|}z$.
 \end{proof}

@@ -1,10 +1,16 @@
 \begin{lemma}[Front member uniqueness]
-Under the hypotheses of \noderef{FrontPrefixExists}, the member of $F$
-which is an initial segment of the range of $x$ is unique.
+Let $F$ be a family of finite subsets which is a front on $X$, let $x$ be
+an increasing enumeration, and let $s,t$ be finite subsets such that
+$\mathsf{FrontPrefix}(F,s,x)$ and
+$\mathsf{FrontPrefix}(F,t,x)$.
+Then $s=t$.
 \end{lemma}
 \begin{proof}
-If $s$ and $t$ both satisfy \(\mathsf{FrontPrefix}(F,-,x)\), then both are
-members of $F$ and both are initial segments of the same increasing set.
-Consequently one is an initial segment of the other.  The prefix-free clause
-of \noderef{Front} forces $s=t$.
+By \noderef{FrontPrefix}, both hypotheses say that $s,t\in F$ and that
+each is a proper prefix of $\operatorname{range}(x)$.  Hence the increasing
+enumeration of one of $s,t$ is an initial segment of the increasing
+enumeration of the other, so either
+$\mathsf{InitialSegment}(s,t)$ or
+$\mathsf{InitialSegment}(t,s)$ holds.  The prefix-free clause in the front
+hypothesis \noderef{Front} then forces $s=t$.
 \end{proof}

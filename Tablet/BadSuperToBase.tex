@@ -1,14 +1,27 @@
 \begin{lemma}[Super-sequence badness gives base badness]
-If $f:F\to Q$ is a bad super-sequence on a front on $X$, then its extension
-$f^{\upcl}$ from \noderef{SuperSequenceExtension} is a bad base
-multi-sequence on $X$.
+If $f:F\to Q$ is a bad super-sequence on a front on $X$, then there is a
+base multi-sequence $h:\mathsf{BaseIncSeq}(X)\to Q$ which is locally constant
+and bad, and which satisfies the extension value equation
+\[
+\forall x\in\mathsf{BaseIncSeq}(X)\;\exists s\in F\;\bigl(
+  s\segs\operatorname{range}(x)\mathbin{\wedge}h(x)=f(s)\bigr).
+\]
 \end{lemma}
 \begin{proof}
-The extension is locally constant by \noderef{SuperSequenceExtension}.
-For $x\in\mathsf{BaseIncSeq}(X)$, choose the unique front members $s,t$
-which prefix $x$ and its shift.  These members satisfy
-$s\mathrel{\mathsf{FiniteShift}}t$, witnessed by $x$.  Badness of $f$ and
-the extension value equations give
-\(\neg r(f^{\upcl}(x),f^{\upcl}(\mathsf{BaseShift}_X(x)))\).
-Thus the extension is bad in the sense of \noderef{BaseBad}.
+The front and value map recorded by $f$ are part of
+\noderef{SuperSequence}.  Apply \noderef{SuperSequenceExtension} to them.
+It supplies a base multi-sequence $h$, its local constancy, and, for every
+$x\in\mathsf{BaseIncSeq}(X)$, a member $s\in F$ with
+$s\segs\operatorname{range}(x)$ and $h(x)=f(s)$.
+
+It remains to prove badness.  Fix
+$x\in\mathsf{BaseIncSeq}(X)$ and apply the same extension equation to $x$
+and to $\mathsf{BaseShift}_X(x)$.  Let the resulting front members be $s$
+and $t$.  By the definition of \noderef{FiniteShift}, the two prefix
+relations, together with the shift of $x$, show
+$s\mathrel{\mathsf{FiniteShift}}t$.  The hypothesis
+\noderef{BadSuperSequence} therefore gives
+$\neg r(f(s),f(t))$.  Substituting the two extension value equations yields
+$\neg r(h(x),h(\mathsf{BaseShift}_X(x)))$.  Since $x$ was arbitrary, this is
+exactly \noderef{BaseBad}.
 \end{proof}
