@@ -1,10 +1,10 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontPrefixExists now has a current Sound approval. Independent inspection found a concrete invalid inference in FrontTreeOrderedExtension.tex: prefix-freeness of Front is invoked with s not in F.",
-    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. After PrefixTree supplies t in F with s an initial segment of t, do not apply Front prefix-freeness to s. Instead use s notin F and t in F to prove s != t, then use the InitialSegment witness to establish that s is a proper initial segment of t, citing the relevant support. In the later density argument, apply prefix-freeness only to pairs actually known to lie in F: handle w=s by s notin F, and if w is a proper prefix of s, use w in F and t in F with w an initial segment of t. Keep the explicit n/witness argument showing v=s union {n} is a PrefixTree node. The current proof's reference to paper lines 1569--1570 should be aligned with the tree argument at lines 1145--1148. Add no helper or structural changes.",
+    "reason": "The fresh Sound verdict found two concrete gaps remaining in FrontTreeOrderedExtension: the proof does not handle the permitted case w=v, and it asserts the cutoff consequence of ProperInitialSegment(s,s union {n}) without deriving it from InitialSegment.",
+    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. First unfold the InitialSegment witness for s in v=s union {n}: show the cutoff cannot lie in s, because the defining equality would then both contain and omit that cutoff, and since v\\s={n}, conclude the cutoff is n and every element of s is below n. In the density step, after proving w is strictly longer than s, split w=v from w\\ne v. If w=v, use w in F directly to conclude v in PrefixTree. If w\\ne v, choose the least element of w\\v after the inserted n and explicitly prove InitialSegment(v,w), hence the PrefixTree conclusion. Retain the valid front-membership prefix-freeness argument and the paper reference to lines 1145--1148. Add no helper or structural changes.",
     "task_blocker_ids": [
-      "soundness:node:FrontTreeOrderedExtension:sound-v2:966ffde6d3ab89a713934dda561176b609b43dce98aace6bd197e4bff6e7d96b"
+      "soundness:node:FrontTreeOrderedExtension:sound-v2:fb22c8a7bab2048e96121f06f249e934ae4612e9adfefff29d50907dad09d148"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -32,7 +32,7 @@
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The paper defines T(F) by finite initial segments of front members and, in the tree proof, obtains a front witness extending the one-point extension before using the contradiction F contains a proper initial-segment pair. Those lines support the requested repair while requiring prefix-freeness to be applied only to members of F."
+      "basis_summary": "The paper defines T(F) through initial segments and uses the inserted least new point to produce a front member extending the branch prefix, then derives a contradiction from two front members in a proper initial-segment relation. These lines support the explicit cutoff and equality-case analysis requested here."
     }
   },
   "response": {
@@ -44,10 +44,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. After PrefixTree supplies t in F with s an initial segment of t, do not apply Front prefix-freeness to s. Instead use s notin F and t in F to prove s != t, then use the InitialSegment witness to establish that s is a proper initial segment of t, citing the relevant support. In the later density argument, apply prefix-freeness only to pairs actually known to lie in F: handle w=s by s notin F, and if w is a proper prefix of s, use w in F and t in F with w an initial segment of t. Keep the explicit n/witness argument showing v=s union {n} is a PrefixTree node. The current proof's reference to paper lines 1569--1570 should be aligned with the tree argument at lines 1145--1148. Add no helper or structural changes.",
+    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. First unfold the InitialSegment witness for s in v=s union {n}: show the cutoff cannot lie in s, because the defining equality would then both contain and omit that cutoff, and since v\\s={n}, conclude the cutoff is n and every element of s is below n. In the density step, after proving w is strictly longer than s, split w=v from w\\ne v. If w=v, use w in F directly to conclude v in PrefixTree. If w\\ne v, choose the least element of w\\v after the inserted n and explicitly prove InitialSegment(v,w), hence the PrefixTree conclusion. Retain the valid front-membership prefix-freeness argument and the paper reference to lines 1145--1148. Add no helper or structural changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 70,
+    "cycle": 71,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -72,12 +72,12 @@
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The paper defines T(F) by finite initial segments of front members and, in the tree proof, obtains a front witness extending the one-point extension before using the contradiction F contains a proper initial-segment pair. Those lines support the requested repair while requiring prefix-freeness to be applied only to members of F.",
+      "basis_summary": "The paper defines T(F) through initial segments and uses the inserted least new point to produce a front member extending the branch prefix, then derives a contradiction from two front members in a proper initial-segment relation. These lines support the explicit cutoff and equality-case analysis requested here.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontPrefixExists now has a current Sound approval. Independent inspection found a concrete invalid inference in FrontTreeOrderedExtension.tex: prefix-freeness of Front is invoked with s not in F.",
-    "request_id": 273,
+    "reason": "The fresh Sound verdict found two concrete gaps remaining in FrontTreeOrderedExtension: the proof does not handle the permitted case w=v, and it asserts the cutoff consequence of ProperInitialSegment(s,s union {n}) without deriving it from InitialSegment.",
+    "request_id": 276,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -87,7 +87,7 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:966ffde6d3ab89a713934dda561176b609b43dce98aace6bd197e4bff6e7d96b",
+        "fingerprint": "sound-v2:fb22c8a7bab2048e96121f06f249e934ae4612e9adfefff29d50907dad09d148",
         "kind": "Soundness",
         "object": {
           "node": "FrontTreeOrderedExtension",
@@ -97,5 +97,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_273_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_276_decision.context.json"
 }
