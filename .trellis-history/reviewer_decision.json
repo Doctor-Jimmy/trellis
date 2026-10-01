@@ -1,27 +1,27 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontTreeOrderedExtension now has a current Sound approval. Independent inspection of FrontTreeSingleton.tex found a concrete unsupported step: Front density supplies a member t of F with the proper-prefix relation to Y, but the proof immediately asserts that t contains n without first excluding the empty witness. Route a bounded repair for this next support node.",
-    "comments": "Repair only `Tablet/FrontTreeSingleton.tex`; preserve its Lean statement, imports, and support structure. The sentence `Since n is the least element of Y, the finite initial segment t contains n` is not justified until the t = empty case is excluded. Use t in F together with empty notin F to prove t is nonempty, then unfold or cite the proper-prefix relation (`ProperPrefixSet`) to show that a nonempty finite prefix of Y contains its least element n. Explicitly establish that {n} is an InitialSegment of t before invoking PrefixTree. Retain the Front and PrefixTree citations; add no helper or structural changes.",
-    "task_blocker_ids": [
-      "soundness:node:FrontTreeSingleton:sound-v2:18b1cfc8efe7e90271fbc346b9d481db4404d57de6cd7d3b09999972ff8f7bc8"
-    ],
+    "reason": "FrontTreeSingleton has a current Sound approval. FrontBridgeInit is the next fresh Sound obligation, and its current proof appears to follow the paper's initial bridge construction without a concrete unsupported step; request a verifier-only Sound run rather than assigning a repair.",
+    "comments": "Run a verifier-only Sound burst for `FrontBridgeInit`; do not edit Tablet content, assign a worker, or reset a blocker. Check the construction of u={m,n}, the two singleton tree-membership uses of `FrontTreeSingleton`, the nonterminal left case via `FrontTreeOrderedExtension`, and all four `FrontBridge` clauses, including the exact finite-tail equalities supplied by `FrontBridgeTail`. The paper's corresponding initial-play construction is at lines 1569--1570.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "FrontTreeSingleton",
-    "next_mode": "targeted",
+    "request_sound_verifier_node_ids": [
+      "FrontBridgeInit"
+    ],
+    "next_active": "",
+    "next_mode": "global",
     "next_active_coarse": "",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1559,
-        "end_line": 1564,
-        "reason": "The paper's nontrivial-front argument that all singleton sets lie in the prefix tree."
+        "start_line": 1569,
+        "end_line": 1570,
+        "reason": "The paper's initial bridge state and first response construction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Paper lines 1559-1564 state that when the front is nontrivial, every singleton belongs to its prefix tree. The current tablet lemma models this claim, and the requested repair makes the density witness argument explicitly exclude the empty front member before extracting the least element."
+      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front and extend the bridge accordingly. FrontBridgeInit formalizes exactly this initial state for m<n."
     },
     "reset": "none",
     "reset_node": "",
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontTreeSingleton.tex`; preserve its Lean statement, imports, and support structure. The sentence `Since n is the least element of Y, the finite initial segment t contains n` is not justified until the t = empty case is excluded. Use t in F together with empty notin F to prove t is nonempty, then unfold or cite the proper-prefix relation (`ProperPrefixSet`) to show that a nonempty finite prefix of Y contains its least element n. Explicitly establish that {n} is an InitialSegment of t before invoking PrefixTree. Retain the Front and PrefixTree citations; add no helper or structural changes.",
+    "comments": "Run a verifier-only Sound burst for `FrontBridgeInit`; do not edit Tablet content, assign a worker, or reset a blocker. Check the construction of u={m,n}, the two singleton tree-membership uses of `FrontTreeSingleton`, the nonterminal left case via `FrontTreeOrderedExtension`, and all four `FrontBridge` clauses, including the exact finite-tail equalities supplied by `FrontBridgeTail`. The paper's corresponding initial-play construction is at lines 1569--1570.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 72,
+    "cycle": 73,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,42 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontTreeSingleton",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1564,
-        "reason": "The paper's nontrivial-front argument that all singleton sets lie in the prefix tree.",
-        "start_line": 1559
+        "end_line": 1570,
+        "reason": "The paper's initial bridge state and first response construction.",
+        "start_line": 1569
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Paper lines 1559-1564 state that when the front is nontrivial, every singleton belongs to its prefix tree. The current tablet lemma models this claim, and the requested repair makes the density witness argument explicitly exclude the empty front member before extracting the least element.",
+      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front and extend the bridge accordingly. FrontBridgeInit formalizes exactly this initial state for m<n.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontTreeOrderedExtension now has a current Sound approval. Independent inspection of FrontTreeSingleton.tex found a concrete unsupported step: Front density supplies a member t of F with the proper-prefix relation to Y, but the proof immediately asserts that t contains n without first excluding the empty witness. Route a bounded repair for this next support node.",
-    "request_id": 279,
-    "request_sound_verifier_nodes": [],
+    "reason": "FrontTreeSingleton has a current Sound approval. FrontBridgeInit is the next fresh Sound obligation, and its current proof appears to follow the paper's initial bridge construction without a concrete unsupported step; request a verifier-only Sound run rather than assigning a repair.",
+    "request_id": 282,
+    "request_sound_verifier_nodes": [
+      "FrontBridgeInit"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:18b1cfc8efe7e90271fbc346b9d481db4404d57de6cd7d3b09999972ff8f7bc8",
-        "kind": "Soundness",
-        "object": {
-          "node": "FrontTreeSingleton",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_279_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_282_decision.context.json"
 }

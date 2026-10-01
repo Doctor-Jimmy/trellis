@@ -7,8 +7,27 @@ The assumption $\emptyset\notin F$ excludes the trivial alternative in the
 base clause of \noderef{Front}; hence $\mathsf{FrontBase}(F)=\mathbb N$.
 Fix $n\in\mathbb N$ and consider the infinite tail
 $Y=\{n\}\cup\{k\mid n<k\}$.  It is a subset of the full base.  Density in
-\noderef{Front} gives $t\in F$ with $t\segs Y$.  Since $n$ is the least
-element of $Y$, the finite initial segment $t$ contains $n$, and therefore
-$\{n\}$ is an initial segment of $t$.  The definition of
+\noderef{Front} gives $t\in F$ with $\mathsf{ProperPrefixSet}(t,Y)$, using
+the paper notation $t\segs Y$ from \noderef{ProperPrefixSet}.  The witness
+$t$ is nonempty: otherwise $t=\emptyset$, contradicting $t\in F$ and the
+hypothesis $\emptyset\notin F$.
+
+Unfolding \noderef{ProperPrefixSet}, choose $m\in Y$ such that
+
+\[
+t=\{k\in Y\mid k<m\}.
+\]
+
+The number $n$ is the least element of $Y$.  If $m=n$, the displayed set is
+empty, contrary to the nonemptiness of $t$; hence $n<m$, and consequently
+$n\in t$.  We now verify explicitly that $\{n\}$ is an initial segment of
+$t$ in the sense of \noderef{InitialSegment}.  If $t=\{n\}$, this is the
+equality case.  Otherwise, the finite set $t\setminus\{n\}$ is nonempty;
+let $q$ be its least element.  Every element of $t$ other than $n$ is at
+least $q$, while $n<q$, so
+\[
+\{k\in t\mid k<q\}=\{n\}.
+\]
+Thus $\{n\}$ is an initial segment of $t$.  The definition of
 \noderef{PrefixTree} now gives $\{n\}\in T(F)$.
 \end{proof}
