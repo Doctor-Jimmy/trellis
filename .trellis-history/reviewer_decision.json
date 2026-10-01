@@ -1,31 +1,31 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "RestrictionLocallyConstant has a current Sound approval, so no repair is warranted. The held target is RadoEmbedding, whose existing proof is ready for a focused Sound verification.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RadoEmbedding only. Check the bad-witness extraction from PowerWqoBadPairSequence and BadPairSequence, the two WQO contradictions after applying TripleHomogeneous and QuadrupleHomogeneous, and the explicit use of InfiniteSetEnumeration for tails, pair selection, and the final enumeration. Then verify preservation and reflection against both clauses of RadoOrder, including all three reflection cases and the use of badness, followed by the injectivity argument and the final RelationEmbedding conclusion. Require the existing cross-node citations to RadoOrder and RelationEmbedding as well as the named support nodes. Use the paper's lines 986-993 as the proof route: triple homogeneity forces the forward color, quadruple homogeneity forces the separated-pair color, and the three reflection cases establish the converse.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "RadoEmbedding"
+    "reason": "The Sound verifier found a structural domain mismatch in the final reflection case of RadoEmbedding: preservation for e is stated on index pairs, but the proof applies it to value pairs involving min M even though e was built from M minus its minimum. Assign a proof-only repair that makes the enumeration and preservation applications use the same domain.",
+    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency change. Replace the proof construction based on an enumeration x of X=M\\{min M} with an increasing enumeration y of all of M, and define e(i,j)=f(y(i),y(j)); this is still the paper's Rado copy on an infinite ordered set and leaves the theorem statement unchanged. Rewrite the preservation and reflection calculations consistently with y. In the final reflection case k<i, use the index pair (0,k), where y(0)=min M, and the Rado-order relation (0,k) <= (i,j) from k<i; apply preservation to obtain the relation between f(y(0),y(k)) and f(y(i),y(j)), compose it with the assumed relation to f(y(k),y(l)), and contradict badness at y(0)<y(k)<y(l). Do not apply index-level preservation directly to value pairs. Retain and make explicit the required citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding, and keep the other two reflection cases line by line in the same index/value convention.",
+    "task_blocker_ids": [
+      "soundness:node:RadoEmbedding:sound-v2:ab5ff6761c4bfb1bca6d5d281eda98d4de9c93f969c304007bfae46352e36eaa"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "RadoEmbedding",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "start_line": 986,
-        "end_line": 993,
-        "reason": "Paper statement and proof of the Rado embedding via triple and quadruple homogeneous thinning."
+        "end_line": 994,
+        "reason": "Paper Rado embedding proof, including homogeneous thinning and the three reflection cases."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 986-993 state the universality claim and prove it by first thinning triples, then thinning quadruples, ruling out the bad colors using WQO, and checking preservation and reflection through the three Rado-order cases."
+      "basis_summary": "Lines 986-994 construct the Rado copy from the homogeneous set M and handle reflection by the cases l<j, i<k, and k<i; the last case uses min M, so the tablet proof must explicitly align that value with an index in the chosen enumeration."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for RadoEmbedding only. Check the bad-witness extraction from PowerWqoBadPairSequence and BadPairSequence, the two WQO contradictions after applying TripleHomogeneous and QuadrupleHomogeneous, and the explicit use of InfiniteSetEnumeration for tails, pair selection, and the final enumeration. Then verify preservation and reflection against both clauses of RadoOrder, including all three reflection cases and the use of badness, followed by the injectivity argument and the final RelationEmbedding conclusion. Require the existing cross-node citations to RadoOrder and RelationEmbedding as well as the named support nodes. Use the paper's lines 986-993 as the proof route: triple homogeneity forces the forward color, quadruple homogeneity forces the separated-pair color, and the three reflection cases establish the converse.",
+    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency change. Replace the proof construction based on an enumeration x of X=M\\{min M} with an increasing enumeration y of all of M, and define e(i,j)=f(y(i),y(j)); this is still the paper's Rado copy on an infinite ordered set and leaves the theorem statement unchanged. Rewrite the preservation and reflection calculations consistently with y. In the final reflection case k<i, use the index pair (0,k), where y(0)=min M, and the Rado-order relation (0,k) <= (i,j) from k<i; apply preservation to obtain the relation between f(y(0),y(k)) and f(y(i),y(j)), compose it with the assumed relation to f(y(k),y(l)), and contradict badness at y(0)<y(k)<y(l). Do not apply index-level preservation directly to value pairs. Retain and make explicit the required citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding, and keep the other two reflection cases line by line in the same index/value convention.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 113,
+    "cycle": 114,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,34 +51,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "RadoEmbedding",
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
-        "end_line": 993,
-        "reason": "Paper statement and proof of the Rado embedding via triple and quadruple homogeneous thinning.",
+        "end_line": 994,
+        "reason": "Paper Rado embedding proof, including homogeneous thinning and the three reflection cases.",
         "start_line": 986
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 986-993 state the universality claim and prove it by first thinning triples, then thinning quadruples, ruling out the bad colors using WQO, and checking preservation and reflection through the three Rado-order cases.",
+      "basis_summary": "Lines 986-994 construct the Rado copy from the homogeneous set M and handle reflection by the cases l<j, i<k, and k<i; the last case uses min M, so the tablet proof must explicitly align that value with an index in the chosen enumeration.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "RestrictionLocallyConstant has a current Sound approval, so no repair is warranted. The held target is RadoEmbedding, whose existing proof is ready for a focused Sound verification.",
-    "request_id": 383,
-    "request_sound_verifier_nodes": [
-      "RadoEmbedding"
-    ],
+    "reason": "The Sound verifier found a structural domain mismatch in the final reflection case of RadoEmbedding: preservation for e is stated on index pairs, but the proof applies it to value pairs involving min M even though e was built from M minus its minimum. Assign a proof-only repair that makes the enumeration and preservation applications use the same domain.",
+    "request_id": 385,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:ab5ff6761c4bfb1bca6d5d281eda98d4de9c93f969c304007bfae46352e36eaa",
+        "kind": "Soundness",
+        "object": {
+          "node": "RadoEmbedding",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_383_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_385_decision.context.json"
 }
