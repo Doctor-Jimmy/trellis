@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BqoImpliesWqo has a current Sound approval. BaseBqoRestriction is the held next node, has no current Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
-    "comments": "Leave Tablet/BaseBqoRestriction.tex and the rest of the tablet unchanged. Request a real Sound verification of BaseBqoRestriction. Check that InfiniteSetEnumeration gives e with range X, that IncSeqComp(e,x) has range contained in X so h is defined, and that BaseLocallyConstant transfers to global local constancy by an explicit finite-prefix argument using monotonicity of e rather than only saying that e is increasing. Then check the application of ShiftDichotomy to the pullback, exclusion of its bad alternative via the explicit Bqo hypothesis, and construction of z = e composed with u with range contained in X. Finally check the BaseRestrict and MultiSequenceRestrict composition identities that identify the base restriction with the perfect global restriction. Cross-node uses should be explicitly cited, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, and PerfectMultiSequence.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "BaseBqoRestriction"
+    "reason": "The Sound verifier found a supported structural gap in BaseBqoRestriction: the bad alternative concerns the restricted pullback, but RestrictionLocallyConstant is absent from the node's import and citation closure. Assign the repair-ready blocker to a Global worker while preserving the theorem statement.",
+    "comments": "Edit only Tablet/BaseBqoRestriction.tex and the import preamble of Tablet/BaseBqoRestriction.lean; do not change the theorem signature, weaken its hypotheses or conclusion, modify RestrictionLocallyConstant, or add a redundant helper. Add the existing Tablet.RestrictionLocallyConstant support to the import closure and cite it in the proof. For the pullback tilde h, apply BaseLocallyConstant at e composed with an arbitrary x, where InfiniteSetEnumeration supplies e with range X. For an arbitrary y, explicitly form e composed with y, transfer PrefixAgree from x and y to the two compositions coordinate by coordinate using IncSeqComp and the monotonicity/range facts, and conclude tilde h(y)=tilde h(x). Apply ShiftDichotomy to this locally constant pullback. In the bad branch, first use RestrictionLocallyConstant to obtain local constancy of MultiSequenceRestrict tilde h u, then apply the stated Bqo hypothesis to that restricted sequence before deriving the contradiction. In the perfect branch set z=e composed with u, prove z is in BaseIncSeq X, and use BaseRestrict and MultiSequenceRestrict with the explicit composition identity to identify BaseRestrict h z pointwise with the perfect restricted pullback. Invoke the defining universal condition from PerfectMultiSequence explicitly. Keep all cross-node citations explicit, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, RestrictionLocallyConstant, and PerfectMultiSequence.",
+    "task_blocker_ids": [
+      "soundness:node:BaseBqoRestriction:sound-v2:d8540e34b1b639af0ae7f6cfce880201d71bc5e81822ccd6006ccd6d22c9cd40"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "BaseBqoRestriction",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -20,19 +20,19 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1258,
+        "start_line": 1264,
         "end_line": 1271,
-        "reason": "The manuscript defines multi-sequences and local constancy by finite prefixes of increasing enumerations."
+        "reason": "The manuscript models infinite subsets by increasing enumerations and defines local constancy by finite initial segments."
       },
       {
         "start_line": 1651,
         "end_line": 1661,
-        "reason": "The manuscript uses the perfect-or-bad dichotomy and bqo to obtain a perfect restriction."
+        "reason": "The manuscript applies the perfect-or-bad dichotomy and excludes the bad restriction in a bqo."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript passages define the increasing-enumeration model and finite-prefix local constancy, then apply the perfect-or-bad dichotomy and use bqo to exclude the bad alternative. This supports checking the tablet's pullback from a base X to global enumerations and its return to a perfect base restriction."
+      "basis_summary": "The cited manuscript passages justify the tablet's pullback along an increasing enumeration, the finite-prefix local-constancy transfer, and the final use of the perfect-or-bad dichotomy with bqo excluding the bad alternative."
     },
     "authorized_node_ids": []
   },
@@ -45,10 +45,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/BaseBqoRestriction.tex and the rest of the tablet unchanged. Request a real Sound verification of BaseBqoRestriction. Check that InfiniteSetEnumeration gives e with range X, that IncSeqComp(e,x) has range contained in X so h is defined, and that BaseLocallyConstant transfers to global local constancy by an explicit finite-prefix argument using monotonicity of e rather than only saying that e is increasing. Then check the application of ShiftDichotomy to the pullback, exclusion of its bad alternative via the explicit Bqo hypothesis, and construction of z = e composed with u with range contained in X. Finally check the BaseRestrict and MultiSequenceRestrict composition identities that identify the base restriction with the perfect global restriction. Cross-node uses should be explicitly cited, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, and PerfectMultiSequence.",
+    "comments": "Edit only Tablet/BaseBqoRestriction.tex and the import preamble of Tablet/BaseBqoRestriction.lean; do not change the theorem signature, weaken its hypotheses or conclusion, modify RestrictionLocallyConstant, or add a redundant helper. Add the existing Tablet.RestrictionLocallyConstant support to the import closure and cite it in the proof. For the pullback tilde h, apply BaseLocallyConstant at e composed with an arbitrary x, where InfiniteSetEnumeration supplies e with range X. For an arbitrary y, explicitly form e composed with y, transfer PrefixAgree from x and y to the two compositions coordinate by coordinate using IncSeqComp and the monotonicity/range facts, and conclude tilde h(y)=tilde h(x). Apply ShiftDichotomy to this locally constant pullback. In the bad branch, first use RestrictionLocallyConstant to obtain local constancy of MultiSequenceRestrict tilde h u, then apply the stated Bqo hypothesis to that restricted sequence before deriving the contradiction. In the perfect branch set z=e composed with u, prove z is in BaseIncSeq X, and use BaseRestrict and MultiSequenceRestrict with the explicit composition identity to identify BaseRestrict h z pointwise with the perfect restricted pullback. Invoke the defining universal condition from PerfectMultiSequence explicitly. Keep all cross-node citations explicit, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, RestrictionLocallyConstant, and PerfectMultiSequence.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 164,
+    "cycle": 165,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -56,39 +56,47 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "BaseBqoRestriction",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1271,
-        "reason": "The manuscript defines multi-sequences and local constancy by finite prefixes of increasing enumerations.",
-        "start_line": 1258
+        "reason": "The manuscript models infinite subsets by increasing enumerations and defines local constancy by finite initial segments.",
+        "start_line": 1264
       },
       {
         "end_line": 1661,
-        "reason": "The manuscript uses the perfect-or-bad dichotomy and bqo to obtain a perfect restriction.",
+        "reason": "The manuscript applies the perfect-or-bad dichotomy and excludes the bad restriction in a bqo.",
         "start_line": 1651
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript passages define the increasing-enumeration model and finite-prefix local constancy, then apply the perfect-or-bad dichotomy and use bqo to exclude the bad alternative. This supports checking the tablet's pullback from a base X to global enumerations and its return to a perfect base restriction.",
+      "basis_summary": "The cited manuscript passages justify the tablet's pullback along an increasing enumeration, the finite-prefix local-constancy transfer, and the final use of the perfect-or-bad dichotomy with bqo excluding the bad alternative.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BqoImpliesWqo has a current Sound approval. BaseBqoRestriction is the held next node, has no current Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
-    "request_id": 520,
-    "request_sound_verifier_nodes": [
-      "BaseBqoRestriction"
-    ],
+    "reason": "The Sound verifier found a supported structural gap in BaseBqoRestriction: the bad alternative concerns the restricted pullback, but RestrictionLocallyConstant is absent from the node's import and citation closure. Assign the repair-ready blocker to a Global worker while preserving the theorem statement.",
+    "request_id": 522,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:d8540e34b1b639af0ae7f6cfce880201d71bc5e81822ccd6006ccd6d22c9cd40",
+        "kind": "Soundness",
+        "object": {
+          "node": "BaseBqoRestriction",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_520_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_522_decision.context.json"
 }
