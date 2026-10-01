@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 222,
+  "event_count": 226,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -59382,17 +59382,17 @@
     }
   },
   "checkpoint": {
-    "active_node": "BlockSigmaIntertwines",
+    "active_node": "OrbitEmbedding",
     "committed": {
       "$r": "7fcf3b9c059ad397"
     },
-    "cycle": 37,
+    "cycle": 38,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": "BlockSigmaIntertwines",
+    "active_node": "OrbitEmbedding",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60144,9 +60144,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 37,
+    "cycle": 38,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 37,
+    "cycles_since_clean": 38,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "51aa69bb19343206"
@@ -60876,7 +60876,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 36,
+    "last_sound_response_cycle": 38,
     "last_stuck_math_audit_dispatched_cycle": 30,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60894,9 +60894,9 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "Repaired only Tablet/BlockSigma.tex. The definition now states the unchanged Lean behavior for arbitrary g, k, f, and l: the initial l < OrbitPoint(g,k,0) branch, the existential upper-bound test, the least witness n_l, the iterate exponent f(n_l)-n_l, and the final fallback l. It then specializes to the least-moved-point k, where G(n)=g^[n](k), the fallback is unreachable, and the result is exactly the paper's two-case block map used by BlockSigmaIntertwines and EmapLemma. No Lean declarations, neighboring nodes, imports, or signatures were changed.",
+    "latest_worker_comments": "No Tablet files were changed. Soundness audit for BlockSigmaIntertwines: OrbitBlockCoverage states that, under k<g(k), every l is either below G(0) or lies in exactly one block [G(n),G(n+1)); BlockSigma states the initial and nth-block formulas for the total block map; RightComp states RightComp(g)(f)=f composed with g; and SuccSeq states SuccSeq(n)=n+1. The local hypotheses k<g(k) and g(j)=j for j<k handle the initial segment, giving g(l)=l and both values l. In the block case, strict increase of g gives G(n+1)<=g(l)<G(n+2), so the two cited BlockSigma formulas have exponents f(n+1)-n and f(n+1)-(n+1), respectively. Since f is an increasing self-embedding, n+1<=f(n+1); setting a=f(n+1)-(n+1) gives a+1=f(n+1)-n, and the elementary iterate identity g^[a](g(l))=g^[a+1](l) proves equality. The typed IncSeq hypotheses supply the stated monotonicity facts, and the remaining iterate and Nat arithmetic identities are elementary; no dependency proof is used implicitly. Separate EmapLemma audit: FirstMovedPoint states that hg yields k_g<g(k_g) and every earlier point is fixed; BlockSigmaEmbedding supplies, for each f, an IncSeq representative sigma(f) with the BlockSigma values; BlockSigmaContinuous supplies the finite-prefix agreement condition for those values; BlockSigmaIntertwines supplies the coordinate identity once the FirstMovedPoint witness is passed through. ContMor states that existence of a prefix-continuous homomorphism is the desired relation, while ShiftMap, RightComp, and SuccSeq identify the two actions and their coordinates. Choosing one representative for each f gives a map into IncSeq, BlockSigmaContinuous gives prefix continuity, and the coordinate identity gives sigma(ShiftMap(f))=RightComp(g)(sigma(f)) for every f, so the ContMor conclusion follows. Every cross-node dependency used by these proofs is cited in the corresponding proof block; there are no soundness gaps or sketch markers.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Aligned BlockSigma.tex with the total Lean definition and its least-moved-point specialization.",
+    "latest_worker_summary": "Rechecked BlockSigmaIntertwines and separately soundness-audited EmapLemma without changing Tablet content. Both natural-language proofs are rigorous, match their Lean statements, and use cited statement-level support.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
@@ -61124,18 +61124,30 @@
       "consumed_global_repair_grant": false,
       "mode": "Targeted",
       "must_close_active": false,
-      "next_worker_context_mode": "resume",
-      "node": "BlockSigmaIntertwines",
+      "next_worker_context_mode": "fresh",
+      "node": "OrbitEmbedding",
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [
         {
-          "end_line": 1834,
-          "reason": "The repaired support and intertwining packages formalize the paper's least-moved-point block map and its initial-segment and shifted-orbit verification.",
-          "start_line": 1788
+          "end_line": 1784,
+          "reason": "The paper's preceding orbit construction chooses the moved point, defines G by iterates, and uses G as an increasing embedding.",
+          "start_line": 1781
         }
       ],
       "protected_semantic_change_nodes": [],
-      "task_blockers": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "92b2e9ed743b6253"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "OrbitEmbedding",
+            "otype": "node"
+          }
+        }
+      ],
       "work_style_hint": "none"
     },
     "pending_worker_audit_request": null,
@@ -61194,16 +61206,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "FrontRestriction": {
+      "OrbitEmbedding": {
         "v1": {
-          "comments": "",
-          "node": "FrontRestriction",
-          "overall": "APPROVE",
+          "comments": "1. The proof relies on the fact that g is a strictly increasing/order-embedding map because g : IncSeq, but it cites no cross-node dependency with \\noderef{IncSeq}. 2. The key assertion that applying g^[n] preserves the strict inequality is not justified: the proof does not establish by induction that every iterate of a strictly increasing map is strictly increasing, and this fact is not supplied by the shared background. 3. The identity g^[n](g(k)) = g^[n+1](k) is asserted without an argument or cited support, so the displayed successor inequality is not fully line-by-line checkable.",
+          "node": "OrbitEmbedding",
+          "overall": "REJECT",
           "soundness": {
-            "decision": "SOUND",
-            "explanation": "The proof establishes prefix-freeness by inheritance, density by applying the stated front density to every infinite subset of Y and using the restriction definition, and the base condition by proving both inclusions. The trivial restriction is handled by the exceptional clause in the cited Front definition; otherwise the density witness for {n} union Y/n is nonempty and therefore contains n. The cross-node dependencies are explicitly cited."
+            "decision": "UNSOUND",
+            "explanation": "The proof has the right mathematical outline, but it fails the mandatory dependency-citation rule for IncSeq and leaves the iterate-monotonicity step and iterate recursion identity unproved. Therefore it is not a rigorous, line-by-line NL proof under the soundness rubric."
           },
-          "summary": "The natural-language proof is a rigorous proof of the restriction-closure statement from Front and FrontRestrict."
+          "summary": "Reject: the orbit argument is incomplete and omits the required citation to the IncSeq support node."
         }
       }
     },
@@ -61211,7 +61223,7 @@
     "process_memory_seq": 10,
     "progress_history": {
       "last_dispatched_index": 28,
-      "next_index": 37,
+      "next_index": 38,
       "snapshots": [
         {
           "present": [
@@ -63715,6 +63727,15 @@
             "$r": "177ebc969a30d95d"
           },
           "snapshot_index": 36
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "177ebc969a30d95d"
+          },
+          "snapshot_index": 37
         }
       ]
     },
@@ -63723,9 +63744,9 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 186,
+    "request_seq": 189,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not edit repository content in the next burst. Recheck and soundness-verify BlockSigmaIntertwines as written, preserving its least-moved-point premise, initial-segment case, orbit-block case, and explicit exponent shift. The BlockSigma correspondence repair is complete and its old blocker is intentionally omitted because the fingerprint changed; no reset is legal. After this soundness pass, handle the still-fresh EmapLemma soundness obligation separately.",
+    "reviewer_comments": "Repair only Tablet/OrbitEmbedding.tex, preserving its Lean statement, imports, and definition of the orbit. In the proof, cite IncSeq explicitly with \\noderef{IncSeq}; prove by induction on n that every iterate of the strictly increasing g is strictly increasing, then apply that fact to k<g(k). Also prove by induction from the iterate definition that g^[n](g(k)) = g^[n+1](k), rather than asserting it. Use these displayed steps to establish successive orbit inequalities, then conclude strict monotonicity and injectivity. Do not edit BlockSigmaIntertwines, EmapLemma, or add helpers. The active BlockSigmaIntertwines soundness blocker remains live and is intentionally omitted; no reset is legal.",
     "reviewer_requested_sound_verifier_nodes": [
       "BlockSigmaIntertwines"
     ],
@@ -63737,6 +63758,9 @@
       },
       "FrontTreeWellFounded": {
         "$s": "02af0d884f943dea"
+      },
+      "OrbitEmbedding": {
+        "$s": "92b2e9ed743b6253"
       },
       "PowerChildWellFounded": {
         "$s": "e886eeb58a1ae9e3"
@@ -63765,6 +63789,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "OrbitEmbedding": {
+        "fingerprints": {
+          "$r": "25a9188f672257b1"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       },
       "PowerChildWellFounded": {
         "fingerprints": {
@@ -64845,6 +64878,7 @@
     "sound_status": {
       "FrontRestriction": "Pass",
       "FrontTreeWellFounded": "Pass",
+      "OrbitEmbedding": "Fail",
       "PowerChildWellFounded": "Pass"
     },
     "stage": "Start",

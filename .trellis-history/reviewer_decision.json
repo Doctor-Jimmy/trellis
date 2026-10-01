@@ -1,32 +1,32 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker repaired BlockSigma.tex within the assigned scope, and the subsequent paper and correspondence lanes cleared the stale BlockSigma correspondence failure. The repaired support definition is now aligned with both the total Lean implementation and the least-moved-point block construction. The next legal progress step is a soundness verification of the already-repaired BlockSigmaIntertwines proof package.",
-    "comments": "Do not edit repository content in the next burst. Recheck and soundness-verify BlockSigmaIntertwines as written, preserving its least-moved-point premise, initial-segment case, orbit-block case, and explicit exponent shift. The BlockSigma correspondence repair is complete and its old blocker is intentionally omitted because the fingerprint changed; no reset is legal. After this soundness pass, handle the still-fresh EmapLemma soundness obligation separately.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "BlockSigmaIntertwines"
+    "reason": "The scheduled soundness verifier rejected OrbitEmbedding for a local proof-rigor defect: its proof omits the required IncSeq dependency citation and asserts iterate monotonicity and the iterate recursion identity without line-by-line justification. OrbitEmbedding is sound-repair-ready and legally targetable, so assign that blocker for a focused TeX proof repair. The already-audited BlockSigmaIntertwines package is not reopened.",
+    "comments": "Repair only Tablet/OrbitEmbedding.tex, preserving its Lean statement, imports, and definition of the orbit. In the proof, cite IncSeq explicitly with \\noderef{IncSeq}; prove by induction on n that every iterate of the strictly increasing g is strictly increasing, then apply that fact to k<g(k). Also prove by induction from the iterate definition that g^[n](g(k)) = g^[n+1](k), rather than asserting it. Use these displayed steps to establish successive orbit inequalities, then conclude strict monotonicity and injectivity. Do not edit BlockSigmaIntertwines, EmapLemma, or add helpers. The active BlockSigmaIntertwines soundness blocker remains live and is intentionally omitted; no reset is legal.",
+    "task_blocker_ids": [
+      "soundness:node:OrbitEmbedding:sound-v2:26ea9727bc0c7fb947b602aea55f90228af9576324d3c3ce60bc8d8a93f9d6d4"
     ],
-    "next_active": "BlockSigmaIntertwines",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "OrbitEmbedding",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1788,
-        "end_line": 1834,
-        "reason": "The repaired support and intertwining packages formalize the paper's least-moved-point block map and its initial-segment and shifted-orbit verification."
+        "start_line": 1781,
+        "end_line": 1784,
+        "reason": "The paper's preceding orbit construction chooses the moved point, defines G by iterates, and uses G as an increasing embedding."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. The paper defines the least moved point k_g, the orbit blocks G(n)=g^n(k_g), and the block map, then checks the two cases: below G(0) and within G(n) <= l < G(n+1). It explicitly derives the next-block inequalities and the exponent identity used in the intertwining equation. The repaired BlockSigma definition now exposes its total implementation while BlockSigmaIntertwines states and proves this specialized identity."
+      "basis_summary": "I directly read the cited passage. The paper chooses k_g with k_g<g(k_g), defines G(n)=g^n(k_g), and states that G is an element of the increasing-embedding class before using its coordinate identity. The tablet's OrbitEmbedding statement isolates that increasing-orbit fact, so its proof must explicitly cite the IncSeq meaning and justify both iterate monotonicity and the successor-iterate identity by induction."
     }
   },
   "response": {
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit repository content in the next burst. Recheck and soundness-verify BlockSigmaIntertwines as written, preserving its least-moved-point premise, initial-segment case, orbit-block case, and explicit exponent shift. The BlockSigma correspondence repair is complete and its old blocker is intentionally omitted because the fingerprint changed; no reset is legal. After this soundness pass, handle the still-fresh EmapLemma soundness obligation separately.",
+    "comments": "Repair only Tablet/OrbitEmbedding.tex, preserving its Lean statement, imports, and definition of the orbit. In the proof, cite IncSeq explicitly with \\noderef{IncSeq}; prove by induction on n that every iterate of the strictly increasing g is strictly increasing, then apply that fact to k<g(k). Also prove by induction from the iterate definition that g^[n](g(k)) = g^[n+1](k), rather than asserting it. Use these displayed steps to establish successive orbit inequalities, then conclude strict monotonicity and injectivity. Do not edit BlockSigmaIntertwines, EmapLemma, or add helpers. The active BlockSigmaIntertwines soundness blocker remains live and is intentionally omitted; no reset is legal.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 37,
+    "cycle": 38,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,34 +49,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BlockSigmaIntertwines",
+    "next_active": "OrbitEmbedding",
     "next_active_coarse": null,
     "next_mode": "Targeted",
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
-        "end_line": 1834,
-        "reason": "The repaired support and intertwining packages formalize the paper's least-moved-point block map and its initial-segment and shifted-orbit verification.",
-        "start_line": 1788
+        "end_line": 1784,
+        "reason": "The paper's preceding orbit construction chooses the moved point, defines G by iterates, and uses G as an increasing embedding.",
+        "start_line": 1781
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. The paper defines the least moved point k_g, the orbit blocks G(n)=g^n(k_g), and the block map, then checks the two cases: below G(0) and within G(n) <= l < G(n+1). It explicitly derives the next-block inequalities and the exponent identity used in the intertwining equation. The repaired BlockSigma definition now exposes its total implementation while BlockSigmaIntertwines states and proves this specialized identity.",
+      "basis_summary": "I directly read the cited passage. The paper chooses k_g with k_g<g(k_g), defines G(n)=g^n(k_g), and states that G is an element of the increasing-embedding class before using its coordinate identity. The tablet's OrbitEmbedding statement isolates that increasing-orbit fact, so its proof must explicitly cite the IncSeq meaning and justify both iterate monotonicity and the successor-iterate identity by induction.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker repaired BlockSigma.tex within the assigned scope, and the subsequent paper and correspondence lanes cleared the stale BlockSigma correspondence failure. The repaired support definition is now aligned with both the total Lean implementation and the least-moved-point block construction. The next legal progress step is a soundness verification of the already-repaired BlockSigmaIntertwines proof package.",
-    "request_id": 186,
-    "request_sound_verifier_nodes": [
-      "BlockSigmaIntertwines"
-    ],
+    "reason": "The scheduled soundness verifier rejected OrbitEmbedding for a local proof-rigor defect: its proof omits the required IncSeq dependency citation and asserts iterate monotonicity and the iterate recursion identity without line-by-line justification. OrbitEmbedding is sound-repair-ready and legally targetable, so assign that blocker for a focused TeX proof repair. The already-audited BlockSigmaIntertwines package is not reopened.",
+    "request_id": 189,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:26ea9727bc0c7fb947b602aea55f90228af9576324d3c3ce60bc8d8a93f9d6d4",
+        "kind": "Soundness",
+        "object": {
+          "node": "OrbitEmbedding",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_186_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_189_decision.context.json"
 }
