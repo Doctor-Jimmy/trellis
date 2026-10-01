@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The planned HerCtblWqoIffWellFounded helper is complete, compiles, passes the structural check, and has approved correspondence. The remaining paper-faithfulness blocker is the uncovered thm BqoHerCtblWellF target, which should now be covered by one final composition node.",
-    "comments": "Add the sole covering node for thm BqoHerCtblWellF. State exactly, universe-polymorphically, Bqo r \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a), under [IsPreorder Q r]. Its proof should compose BqoHerCtblWqo with HerCtblWqoIffWellFounded in both directions, with no duplicated tail construction and no additional target wrapper. The TeX statement must match the paper's theorem that a quasi-order is BQO iff its hereditary countable carrier is well-founded; explicitly identify the strict-part relation orientation and cite both support nodes. Keep the proof complete, non-SKETCH, and cite every cross-node dependency.",
+    "reason": "The audit confirms that both support equivalences are complete and that the only uncovered configured target is thm BqoHerCtblWellF. Continue by adding its single paper-faithful composition node.",
+    "comments": "Add exactly one proof-bearing node BqoHerCtblWellF, importing and attaching directly to BqoHerCtblWqo and HerCtblWqoIffWellFounded. Use the exact universe-polymorphic statement Bqo r \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a), under [IsPreorder Q r], and make it the sole node claiming thm BqoHerCtblWellF. Close the Lean proof by transitivity of the two accepted equivalences. In TeX, match the paper theorem that a quasi-order is BQO iff its hereditary countable nonempty hierarchy is well-founded, spell out the strict-part orientation, cite both support nodes, and give a complete non-SKETCH proof of both directions. Do not duplicate the ULift tail construction, add a helper, or add a wrapper target.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWellF:"
     ],
@@ -15,27 +15,18 @@
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
-    "dismissed_tasks": [
-      {
-        "id": "hereditary-tail-descent",
-        "reason": "The worker added HerCtblWqoIffWellFounded with the planned strict-part equivalence, ULift-indexed hereditary tails, complete cited TeX proof, successful Lean compilation, and passing structural check; correspondence verification approves it."
-      }
-    ],
     "stuck_math_audit": {
-      "notes": "The carrier-specific descent helper is now complete and should not be reopened. The final remaining route is the paper-faithful composition of BqoHerCtblWqo and HerCtblWqoIffWellFounded into the sole BqoHerCtblWellF target node. Preserve the strict-part orientation and avoid duplicating the already accepted tail construction.",
+      "notes": "The audit's sole remaining task is current and unchanged: add the final BqoHerCtblWellF target node by composing the already accepted BqoHerCtblWqo and HerCtblWqoIffWellFounded statements. Keep the strict-part relation orientation explicit and do not reopen either support node or reproduce the tail descent.",
       "reviewer_lean_product": {
-        "completed_task": "hereditary-tail-descent",
-        "next_task": "hereditarily-countable-targets",
-        "target_interface": "BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)",
-        "composition": [
-          "Use BqoHerCtblWqo for Bqo r <-> WellQuasiOrdered (HerCtblRel r).",
-          "Use HerCtblWqoIffWellFounded for WellQuasiOrdered (HerCtblRel r) <-> WellFounded of the displayed strict part.",
-          "Compose the equivalences in both directions and keep the relation argument order explicit."
+        "target_statement": "BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)",
+        "support_edges": [
+          "BqoHerCtblWqo r : Bqo r <-> WellQuasiOrdered (HerCtblRel r)",
+          "HerCtblWqoIffWellFounded r : WellQuasiOrdered (HerCtblRel r) <-> WellFounded of the displayed strict part"
         ],
         "constraints": [
-          "Create only the sole configured target covering node.",
-          "Do not duplicate the hereditary-tail descent proof.",
-          "Use complete non-SKETCH TeX with explicit noderef citations to both support nodes."
+          "Claim only thm BqoHerCtblWellF in this burst.",
+          "Use one covering node and no duplicate tail construction.",
+          "Provide complete non-SKETCH TeX with explicit citations to both support nodes."
         ]
       }
     },
@@ -43,17 +34,12 @@
       {
         "start_line": 1589,
         "end_line": 1600,
-        "reason": "The paper's hereditary WQO argument, WQO/well-foundedness transition, and exact final target theorem."
-      },
-      {
-        "start_line": 749,
-        "end_line": 775,
-        "reason": "The paper's countable-subset well-foundedness equivalence supporting the already completed helper."
+        "reason": "The paper's hereditary WQO-to-well-foundedness transition and exact final target theorem."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread both cited passages. Lines 1589-1600 state that the hereditary countable carrier is WQO exactly when it is well-founded and then state the BQO equivalence target. Lines 749-775 give the countable-subset criterion and the bad-sequence tail-chain argument represented by the accepted helper."
+      "basis_summary": "I directly reread lines 1589-1600. They state that the hereditary countable carrier is WQO iff well-founded, then state the target that a quasi-order is BQO iff its hereditary countable hierarchy is well-founded. The two accepted Tablet equivalences are the direct decomposition of this passage."
     }
   },
   "response": {
@@ -65,19 +51,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Add the sole covering node for thm BqoHerCtblWellF. State exactly, universe-polymorphically, Bqo r \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a), under [IsPreorder Q r]. Its proof should compose BqoHerCtblWqo with HerCtblWqoIffWellFounded in both directions, with no duplicated tail construction and no additional target wrapper. The TeX statement must match the paper's theorem that a quasi-order is BQO iff its hereditary countable carrier is well-founded; explicitly identify the strict-part relation orientation and cite both support nodes. Keep the proof complete, non-SKETCH, and cite every cross-node dependency.",
+    "comments": "Add exactly one proof-bearing node BqoHerCtblWellF, importing and attaching directly to BqoHerCtblWqo and HerCtblWqoIffWellFounded. Use the exact universe-polymorphic statement Bqo r \u2194 WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a), under [IsPreorder Q r], and make it the sole node claiming thm BqoHerCtblWellF. Close the Lean proof by transitivity of the two accepted equivalences. In TeX, match the paper theorem that a quasi-order is BQO iff its hereditary countable nonempty hierarchy is well-founded, spell out the strict-part orientation, cite both support nodes, and give a complete non-SKETCH proof of both directions. Do not duplicate the ULift tail construction, add a helper, or add a wrapper target.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 29,
+    "cycle": 30,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "hereditary-tail-descent",
-        "reason": "The worker added HerCtblWqoIffWellFounded with the planned strict-part equivalence, ULift-indexed hereditary tails, complete cited TeX proof, successful Lean compilation, and passing structural check; correspondence verification approves it."
-      }
-    ],
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -88,43 +69,35 @@
     "paper_focus_ranges": [
       {
         "end_line": 1600,
-        "reason": "The paper's hereditary WQO argument, WQO/well-foundedness transition, and exact final target theorem.",
+        "reason": "The paper's hereditary WQO-to-well-foundedness transition and exact final target theorem.",
         "start_line": 1589
-      },
-      {
-        "end_line": 775,
-        "reason": "The paper's countable-subset well-foundedness equivalence supporting the already completed helper.",
-        "start_line": 749
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread both cited passages. Lines 1589-1600 state that the hereditary countable carrier is WQO exactly when it is well-founded and then state the BQO equivalence target. Lines 749-775 give the countable-subset criterion and the bad-sequence tail-chain argument represented by the accepted helper.",
+      "basis_summary": "I directly reread lines 1589-1600. They state that the hereditary countable carrier is WQO iff well-founded, then state the target that a quasi-order is BQO iff its hereditary countable hierarchy is well-founded. The two accepted Tablet equivalences are the direct decomposition of this passage.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The planned HerCtblWqoIffWellFounded helper is complete, compiles, passes the structural check, and has approved correspondence. The remaining paper-faithfulness blocker is the uncovered thm BqoHerCtblWellF target, which should now be covered by one final composition node.",
-    "request_id": 153,
+    "reason": "The audit confirms that both support equivalences are complete and that the only uncovered configured target is thm BqoHerCtblWellF. Continue by adding its single paper-faithful composition node.",
+    "request_id": 155,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The carrier-specific descent helper is now complete and should not be reopened. The final remaining route is the paper-faithful composition of BqoHerCtblWqo and HerCtblWqoIffWellFounded into the sole BqoHerCtblWellF target node. Preserve the strict-part orientation and avoid duplicating the already accepted tail construction.",
+      "notes": "The audit's sole remaining task is current and unchanged: add the final BqoHerCtblWellF target node by composing the already accepted BqoHerCtblWqo and HerCtblWqoIffWellFounded statements. Keep the strict-part relation orientation explicit and do not reopen either support node or reproduce the tail descent.",
       "reviewer_lean_product": {
-        "completed_task": "hereditary-tail-descent",
-        "composition": [
-          "Use BqoHerCtblWqo for Bqo r <-> WellQuasiOrdered (HerCtblRel r).",
-          "Use HerCtblWqoIffWellFounded for WellQuasiOrdered (HerCtblRel r) <-> WellFounded of the displayed strict part.",
-          "Compose the equivalences in both directions and keep the relation argument order explicit."
-        ],
         "constraints": [
-          "Create only the sole configured target covering node.",
-          "Do not duplicate the hereditary-tail descent proof.",
-          "Use complete non-SKETCH TeX with explicit noderef citations to both support nodes."
+          "Claim only thm BqoHerCtblWellF in this burst.",
+          "Use one covering node and no duplicate tail construction.",
+          "Provide complete non-SKETCH TeX with explicit citations to both support nodes."
         ],
-        "next_task": "hereditarily-countable-targets",
-        "target_interface": "BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)"
+        "support_edges": [
+          "BqoHerCtblWqo r : Bqo r <-> WellQuasiOrdered (HerCtblRel r)",
+          "HerCtblWqoIffWellFounded r : WellQuasiOrdered (HerCtblRel r) <-> WellFounded of the displayed strict part"
+        ],
+        "target_statement": "BqoHerCtblWellF {Q : Type u} (r : Q -> Q -> Prop) [IsPreorder Q r] : Bqo r <-> WellFounded (fun a b : HerCtblPower Q => HerCtblRel r a b and not HerCtblRel r b a)"
       }
     },
     "task_blockers": [
@@ -140,5 +113,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_153_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_155_decision.context.json"
 }
