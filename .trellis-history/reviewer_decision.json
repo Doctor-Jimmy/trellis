@@ -1,39 +1,35 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The fresh Sound verdict found two concrete gaps remaining in FrontTreeOrderedExtension: the proof does not handle the permitted case w=v, and it asserts the cutoff consequence of ProperInitialSegment(s,s union {n}) without deriving it from InitialSegment.",
-    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. First unfold the InitialSegment witness for s in v=s union {n}: show the cutoff cannot lie in s, because the defining equality would then both contain and omit that cutoff, and since v\\s={n}, conclude the cutoff is n and every element of s is below n. In the density step, after proving w is strictly longer than s, split w=v from w\\ne v. If w=v, use w in F directly to conclude v in PrefixTree. If w\\ne v, choose the least element of w\\v after the inserted n and explicitly prove InitialSegment(v,w), hence the PrefixTree conclusion. Retain the valid front-membership prefix-freeness argument and the paper reference to lines 1145--1148. Add no helper or structural changes.",
+    "reason": "FrontTreeOrderedExtension now has a current Sound approval. Independent inspection of FrontTreeSingleton.tex found a concrete unsupported step: Front density supplies a member t of F with the proper-prefix relation to Y, but the proof immediately asserts that t contains n without first excluding the empty witness. Route a bounded repair for this next support node.",
+    "comments": "Repair only `Tablet/FrontTreeSingleton.tex`; preserve its Lean statement, imports, and support structure. The sentence `Since n is the least element of Y, the finite initial segment t contains n` is not justified until the t = empty case is excluded. Use t in F together with empty notin F to prove t is nonempty, then unfold or cite the proper-prefix relation (`ProperPrefixSet`) to show that a nonempty finite prefix of Y contains its least element n. Explicitly establish that {n} is an InitialSegment of t before invoking PrefixTree. Retain the Front and PrefixTree citations; add no helper or structural changes.",
     "task_blocker_ids": [
-      "soundness:node:FrontTreeOrderedExtension:sound-v2:fb22c8a7bab2048e96121f06f249e934ae4612e9adfefff29d50907dad09d148"
+      "soundness:node:FrontTreeSingleton:sound-v2:18b1cfc8efe7e90271fbc346b9d481db4404d57de6cd7d3b09999972ff8f7bc8"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontTreeOrderedExtension",
-    "next_active_coarse": "",
+    "next_active": "FrontTreeSingleton",
     "next_mode": "targeted",
+    "next_active_coarse": "",
+    "next_worker_context_mode": "resume",
+    "paper_focus_ranges": [
+      {
+        "start_line": 1559,
+        "end_line": 1564,
+        "reason": "The paper's nontrivial-front argument that all singleton sets lie in the prefix tree."
+      }
+    ],
+    "paper_grounding": {
+      "consulted_cited_ranges": true,
+      "basis_summary": "Paper lines 1559-1564 state that when the front is nontrivial, every singleton belongs to its prefix tree. The current tablet lemma models this claim, and the requested repair makes the density witness argument explicitly exclude the empty front member before extracting the least element."
+    },
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
-    "paper_focus_ranges": [
-      {
-        "start_line": 1079,
-        "end_line": 1080,
-        "reason": "The paper defines initial and proper initial segments for finite subsets."
-      },
-      {
-        "start_line": 1135,
-        "end_line": 1148,
-        "reason": "The paper defines the front tree and gives the density/prefix-free extension argument."
-      }
-    ],
-    "paper_grounding": {
-      "consulted_cited_ranges": true,
-      "basis_summary": "The paper defines T(F) through initial segments and uses the inserted least new point to produce a front member extending the branch prefix, then derives a contradiction from two front members in a proper initial-segment relation. These lines support the explicit cutoff and equality-case analysis requested here."
-    }
+    "authorized_node_ids": [],
+    "work_style_hint": "none"
   },
   "response": {
     "allow_new_obligations": true,
@@ -44,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. First unfold the InitialSegment witness for s in v=s union {n}: show the cutoff cannot lie in s, because the defining equality would then both contain and omit that cutoff, and since v\\s={n}, conclude the cutoff is n and every element of s is below n. In the density step, after proving w is strictly longer than s, split w=v from w\\ne v. If w=v, use w in F directly to conclude v in PrefixTree. If w\\ne v, choose the least element of w\\v after the inserted n and explicitly prove InitialSegment(v,w), hence the PrefixTree conclusion. Retain the valid front-membership prefix-freeness argument and the paper reference to lines 1145--1148. Add no helper or structural changes.",
+    "comments": "Repair only `Tablet/FrontTreeSingleton.tex`; preserve its Lean statement, imports, and support structure. The sentence `Since n is the least element of Y, the finite initial segment t contains n` is not justified until the t = empty case is excluded. Use t in F together with empty notin F to prove t is nonempty, then unfold or cite the proper-prefix relation (`ProperPrefixSet`) to show that a nonempty finite prefix of Y contains its least element n. Explicitly establish that {n} is an InitialSegment of t before invoking PrefixTree. Retain the Front and PrefixTree citations; add no helper or structural changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 71,
+    "cycle": 72,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -55,29 +51,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontTreeOrderedExtension",
+    "next_active": "FrontTreeSingleton",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1080,
-        "reason": "The paper defines initial and proper initial segments for finite subsets.",
-        "start_line": 1079
-      },
-      {
-        "end_line": 1148,
-        "reason": "The paper defines the front tree and gives the density/prefix-free extension argument.",
-        "start_line": 1135
+        "end_line": 1564,
+        "reason": "The paper's nontrivial-front argument that all singleton sets lie in the prefix tree.",
+        "start_line": 1559
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The paper defines T(F) through initial segments and uses the inserted least new point to produce a front member extending the branch prefix, then derives a contradiction from two front members in a proper initial-segment relation. These lines support the explicit cutoff and equality-case analysis requested here.",
+      "basis_summary": "Paper lines 1559-1564 state that when the front is nontrivial, every singleton belongs to its prefix tree. The current tablet lemma models this claim, and the requested repair makes the density witness argument explicitly exclude the empty front member before extracting the least element.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The fresh Sound verdict found two concrete gaps remaining in FrontTreeOrderedExtension: the proof does not handle the permitted case w=v, and it asserts the cutoff consequence of ProperInitialSegment(s,s union {n}) without deriving it from InitialSegment.",
-    "request_id": 276,
+    "reason": "FrontTreeOrderedExtension now has a current Sound approval. Independent inspection of FrontTreeSingleton.tex found a concrete unsupported step: Front density supplies a member t of F with the proper-prefix relation to Y, but the proof immediately asserts that t contains n without first excluding the empty witness. Route a bounded repair for this next support node.",
+    "request_id": 279,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -87,15 +78,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:fb22c8a7bab2048e96121f06f249e934ae4612e9adfefff29d50907dad09d148",
+        "fingerprint": "sound-v2:18b1cfc8efe7e90271fbc346b9d481db4404d57de6cd7d3b09999972ff8f7bc8",
         "kind": "Soundness",
         "object": {
-          "node": "FrontTreeOrderedExtension",
+          "node": "FrontTreeSingleton",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_276_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_279_decision.context.json"
 }
