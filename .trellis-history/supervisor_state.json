@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 522,
+  "event_count": 525,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -60043,7 +60043,7 @@
     "committed": {
       "$r": "112de2ebaa0bc996"
     },
-    "cycle": 121,
+    "cycle": 122,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60291,9 +60291,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 121,
+    "cycle": 122,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 121,
+    "cycles_since_clean": 122,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -61039,7 +61039,9 @@
     "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": false,
-    "held_target": "PowerShiftIterShift",
+    "held_target": {
+      "$s": "6947ec3a7b56b112"
+    },
     "human_input_outstanding": false,
     "in_flight_request": null,
     "invalid_attempt": false,
@@ -61083,7 +61085,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 121,
+    "last_sound_response_cycle": 122,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61400,16 +61402,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PowerSupportInvariant": {
+      "PowerShiftIterShift": {
         "v1": {
-          "comments": "",
-          "node": "PowerSupportInvariant",
+          "comments": "The proof gives a complete induction: the zero case uses the defining zeroth-iterate equation, and the successor case unfolds the recursive equation, applies the induction hypothesis through ShiftMap, and matches the successor equation on the right.",
+          "node": "PowerShiftIterShift",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The proof explicitly cites PowerPresentationEq and PowerSupport, unfolds their recursive clauses, and performs the required atom, mixed-tag, and node cases. In the node case it proves both support inclusions by unpacking indexed-union membership, selecting the matching child from the appropriate matching conjunct, applying the induction hypothesis, and reinserting the atom into the other indexed union before using set extensionality."
+            "explanation": "The cited definition PowerShiftIter supplies the recursion used in both cases. The induction proves the stated equality for every n and arbitrary increasing enumeration x, with no unstated cross-node dependency."
           },
-          "summary": "SOUND: the natural-language induction is line-by-line sufficient for support invariance and all cross-node dependencies are explicitly cited."
+          "summary": "The natural-language proof rigorously establishes the iterate-shift identity by induction from PowerShiftIter's defining recursion."
         }
       }
     },
@@ -61417,119 +61419,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 121,
+      "next_index": 122,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "FiniteShift",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeTail",
-            "FrontPrefix",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "OrbitBlock",
-            "OrbitPoint",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "SetDomination",
-            "ShiftMap",
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 57
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -66104,6 +65995,171 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 120
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerShiftIterShift",
+            "PowerSupport",
+            "PowerSupportInvariant",
+            "PowerSupportNonempty",
+            "PowerWqoBadPairSequence",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "QuadrupleHomogeneous",
+            "RadoEmbedding",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            {
+              "$s": "b415d99a5587255c"
+            },
+            "RestrictionShift",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftDichotomy",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "Subarr",
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFAtomIffFront",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 121
         }
       ]
     },
@@ -66112,11 +66168,13 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 402,
+    "request_seq": 404,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterShift only. Check the induction against the cited PowerShiftIter definition and the paper's right-composition convention: at n=0, both sides reduce to ShiftMap(x); in the successor case, unfold PowerShiftIter on ShiftMap(x), apply the induction hypothesis under ShiftMap, and normalize the successor arithmetic so the result is exactly PowerShiftIter(n+2,x). Verify that ShiftMap is the paper's right composition by SuccSeq, and require explicit citation to PowerShiftIter and any ShiftMap or IncSeq support used. Preserve the current Lean signature, imports, statement, and support DAG.",
+    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterPrefixAgree only. Check the induction against PrefixAgree, PowerShiftIter, and ShiftMap: the zero case must identify the conclusion with the hypothesis; in the successor case, use PrefixAgree(n+(j+1),x,y) to supply the longer prefix required by the induction hypothesis at the preceding shift, then unfold the recursive PowerShiftIter and right-composed ShiftMap definitions to show agreement through the first n entries after the additional shift. Require the index arithmetic and the entry correspondence to be explicit, and preserve the current Lean signature, imports, statement, and support DAG.",
     "reviewer_requested_sound_verifier_nodes": [
-      "PowerShiftIterShift"
+      {
+        "$s": "6947ec3a7b56b112"
+      }
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -66225,6 +66283,9 @@
       },
       "PowerIResponseWitness": {
         "$s": "4894d612f70a8eb2"
+      },
+      "PowerShiftIterShift": {
+        "$s": "30346153e8d9fe55"
       },
       "PowerSupportInvariant": {
         "$s": "a53f7884e705f66c"
@@ -66660,6 +66721,17 @@
       "PowerIResponseWitness": {
         "fingerprints": {
           "$r": "9dda7d615a49447a"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
+      "PowerShiftIterShift": {
+        "fingerprints": {
+          "$r": "70e0b8484f7b346c"
         },
         "lane_votes": {
           "v1": "Pass"
@@ -67967,6 +68039,7 @@
       "PowerIResponseFailure": "Pass",
       "PowerIResponseLegal": "Pass",
       "PowerIResponseWitness": "Pass",
+      "PowerShiftIterShift": "Pass",
       "PowerSupportInvariant": "Pass",
       "PowerSupportNonempty": "Pass",
       "PowerWqoBadPairSequence": "Pass",

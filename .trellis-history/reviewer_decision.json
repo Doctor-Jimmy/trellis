@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerSupportInvariant has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterShift is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterShift only. Check the induction against the cited PowerShiftIter definition and the paper's right-composition convention: at n=0, both sides reduce to ShiftMap(x); in the successor case, unfold PowerShiftIter on ShiftMap(x), apply the induction hypothesis under ShiftMap, and normalize the successor arithmetic so the result is exactly PowerShiftIter(n+2,x). Verify that ShiftMap is the paper's right composition by SuccSeq, and require explicit citation to PowerShiftIter and any ShiftMap or IncSeq support used. Preserve the current Lean signature, imports, statement, and support DAG.",
+    "reason": "PowerShiftIterShift has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterPrefixAgree is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterPrefixAgree only. Check the induction against PrefixAgree, PowerShiftIter, and ShiftMap: the zero case must identify the conclusion with the hypothesis; in the successor case, use PrefixAgree(n+(j+1),x,y) to supply the longer prefix required by the induction hypothesis at the preceding shift, then unfold the recursive PowerShiftIter and right-composed ShiftMap definitions to show agreement through the first n entries after the additional shift. Require the index arithmetic and the entry correspondence to be explicit, and preserve the current Lean signature, imports, statement, and support DAG.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PowerShiftIterShift"
+      "PowerShiftIterPrefixAgree"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -20,12 +20,12 @@
       {
         "start_line": 1690,
         "end_line": 1709,
-        "reason": "The paper's increasing-injection and right-composition convention for the shift map."
+        "reason": "The paper's increasing-enumeration and right-composition shift convention used by the finite-prefix induction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing embeddings and define the usual shift as right composition by the successor function; the requested induction must preserve that composition convention."
+      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing enumerations and define shift as right composition by successor; the finite-prefix proof must use that convention when unfolding each iterate."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterShift only. Check the induction against the cited PowerShiftIter definition and the paper's right-composition convention: at n=0, both sides reduce to ShiftMap(x); in the successor case, unfold PowerShiftIter on ShiftMap(x), apply the induction hypothesis under ShiftMap, and normalize the successor arithmetic so the result is exactly PowerShiftIter(n+2,x). Verify that ShiftMap is the paper's right composition by SuccSeq, and require explicit citation to PowerShiftIter and any ShiftMap or IncSeq support used. Preserve the current Lean signature, imports, statement, and support DAG.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterPrefixAgree only. Check the induction against PrefixAgree, PowerShiftIter, and ShiftMap: the zero case must identify the conclusion with the hypothesis; in the successor case, use PrefixAgree(n+(j+1),x,y) to supply the longer prefix required by the induction hypothesis at the preceding shift, then unfold the recursive PowerShiftIter and right-composed ShiftMap definitions to show agreement through the first n entries after the additional shift. Require the index arithmetic and the entry correspondence to be explicit, and preserve the current Lean signature, imports, statement, and support DAG.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 121,
+    "cycle": 122,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -58,19 +58,19 @@
     "paper_focus_ranges": [
       {
         "end_line": 1709,
-        "reason": "The paper's increasing-injection and right-composition convention for the shift map.",
+        "reason": "The paper's increasing-enumeration and right-composition shift convention used by the finite-prefix induction.",
         "start_line": 1690
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing embeddings and define the usual shift as right composition by the successor function; the requested induction must preserve that composition convention.",
+      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing enumerations and define shift as right composition by successor; the finite-prefix proof must use that convention when unfolding each iterate.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerSupportInvariant has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterShift is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
-    "request_id": 402,
+    "reason": "PowerShiftIterShift has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterPrefixAgree is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
+    "request_id": 404,
     "request_sound_verifier_nodes": [
-      "PowerShiftIterShift"
+      "PowerShiftIterPrefixAgree"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -80,5 +80,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_402_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_404_decision.context.json"
 }
