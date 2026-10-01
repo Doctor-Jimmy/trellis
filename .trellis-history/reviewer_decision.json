@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier identified a concrete gap in PowerCopiedOrbitDependence: the proof fixes the row n while its successor case invokes the induction hypothesis at row n+1. This is a local proof-detail defect, not a statement or DAG problem, and the node is sound-repair-ready.",
-    "comments": "Edit only Tablet/PowerCopiedOrbitDependence.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over all row indices: for each depth m, prove for every row i that agreement through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, instantiate the PowerCopiedLeft depth-zero clause at arbitrary i and explicitly use the bound through i+2. In the successor case, start with agreement through i+m+3, restrict it to j <= i+m+2 for the row-i induction hypothesis and use the full bound as j <= (i+1)+m+2 for the row-(i+1) hypothesis. Then cite PowerCopiedLeft for both successor recursive equations and cite PowerIResponse for the same deterministic response on equal inputs. Finally instantiate the strengthened depth-k result at i=n and identify its premise with the stated hag. Spell out the natural-number bound arithmetic and cite every cross-node dependency at its exact use. Change no Lean text, imports, statement, or support edge.",
+    "reason": "PowerCopiedOrbitDependence has a current Sound approval. The next reflection support node, PowerCopiedFiniteDependence, has a concrete analogous proof gap: its proof fixes n while inducting on k and then invokes the induction hypothesis at row n+1. This is a local TeX repair and the node is sound-repair-ready.",
+    "comments": "Edit only Tablet/PowerCopiedFiniteDependence.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. The current proof says \"Induct on k\" with n fixed, but its successor case applies the induction hypotheses to recursive values at rows n and n+1. Strengthen the induction invariant over every row i: for each depth m, agreement of h' and h through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, cite PowerCopiedLeft and use the depth-zero clause with the agreement at i and i+1. In the successor case, from agreement through i+m+3 restrict to j <= i+m+2 for row i and identify the same bound with (i+1)+m+2 for row i+1; apply the strengthened induction hypothesis at both rows, then cite PowerCopiedLeft and PowerIResponse to identify the equal successor responses. Finally specialize to i=n and m=k, explicitly matching the stated hag. Spell out the natural-number bound arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
     "task_blocker_ids": [
-      "soundness:node:PowerCopiedOrbitDependence:sound-v2:b7d25bae0858812a934665bc5ad499524dc3c831d647d7e20e5a066ea0a2426a"
+      "soundness:node:PowerCopiedFiniteDependence:sound-v2:e303a7ee853a88b2e94d18393231d50af3819cc91275ffcc7a6d319d36c98dfc"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedOrbitDependence",
+    "next_active": "PowerCopiedFiniteDependence",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -25,7 +25,7 @@
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript explicitly observes that each copied play depends only on finitely many values of h along the shift orbit and uses this finite dependence to obtain local constancy. The assigned repair makes the tablet's corresponding finite-dependence induction rigorous by generalizing its row index."
+      "basis_summary": "The manuscript observes that each copied play depends only on finitely many values of h along the shift orbit, which is the paper-level role of this lemma. The assigned repair makes the tablet's finite-dependence induction rigorous by generalizing its row index before the recursive successor step."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerCopiedOrbitDependence.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over all row indices: for each depth m, prove for every row i that agreement through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, instantiate the PowerCopiedLeft depth-zero clause at arbitrary i and explicitly use the bound through i+2. In the successor case, start with agreement through i+m+3, restrict it to j <= i+m+2 for the row-i induction hypothesis and use the full bound as j <= (i+1)+m+2 for the row-(i+1) hypothesis. Then cite PowerCopiedLeft for both successor recursive equations and cite PowerIResponse for the same deterministic response on equal inputs. Finally instantiate the strengthened depth-k result at i=n and identify its premise with the stated hag. Spell out the natural-number bound arithmetic and cite every cross-node dependency at its exact use. Change no Lean text, imports, statement, or support edge.",
+    "comments": "Edit only Tablet/PowerCopiedFiniteDependence.tex. Preserve its Lean statement, imports, and support DAG; do not add a helper. The current proof says \"Induct on k\" with n fixed, but its successor case applies the induction hypotheses to recursive values at rows n and n+1. Strengthen the induction invariant over every row i: for each depth m, agreement of h' and h through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, cite PowerCopiedLeft and use the depth-zero clause with the agreement at i and i+1. In the successor case, from agreement through i+m+3 restrict to j <= i+m+2 for row i and identify the same bound with (i+1)+m+2 for row i+1; apply the strengthened induction hypothesis at both rows, then cite PowerCopiedLeft and PowerIResponse to identify the equal successor responses. Finally specialize to i=n and m=k, explicitly matching the stated hag. Spell out the natural-number bound arithmetic and cite each cross-node dependency at its use. Change no Lean text, imports, statement, or support edge.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 142,
+    "cycle": 143,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -48,7 +48,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerCopiedOrbitDependence",
+    "next_active": "PowerCopiedFiniteDependence",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
@@ -60,12 +60,12 @@
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript explicitly observes that each copied play depends only on finitely many values of h along the shift orbit and uses this finite dependence to obtain local constancy. The assigned repair makes the tablet's corresponding finite-dependence induction rigorous by generalizing its row index.",
+      "basis_summary": "The manuscript observes that each copied play depends only on finitely many values of h along the shift orbit, which is the paper-level role of this lemma. The assigned repair makes the tablet's finite-dependence induction rigorous by generalizing its row index before the recursive successor step.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier identified a concrete gap in PowerCopiedOrbitDependence: the proof fixes the row n while its successor case invokes the induction hypothesis at row n+1. This is a local proof-detail defect, not a statement or DAG problem, and the node is sound-repair-ready.",
-    "request_id": 466,
+    "reason": "PowerCopiedOrbitDependence has a current Sound approval. The next reflection support node, PowerCopiedFiniteDependence, has a concrete analogous proof gap: its proof fixes n while inducting on k and then invokes the induction hypothesis at row n+1. This is a local TeX repair and the node is sound-repair-ready.",
+    "request_id": 469,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -75,15 +75,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:b7d25bae0858812a934665bc5ad499524dc3c831d647d7e20e5a066ea0a2426a",
+        "fingerprint": "sound-v2:e303a7ee853a88b2e94d18393231d50af3819cc91275ffcc7a6d319d36c98dfc",
         "kind": "Soundness",
         "object": {
-          "node": "PowerCopiedOrbitDependence",
+          "node": "PowerCopiedFiniteDependence",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_466_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_469_decision.context.json"
 }
