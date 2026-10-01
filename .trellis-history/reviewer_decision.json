@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TildeFFrontEquation now has fresh Sound approval. HerCtblNodeClosure is the next unverified direct support for the held TildeFHerCtbl target, so request its Sound verification before revisiting the parent.",
-    "comments": "Do not assign a worker or reset any soundness evidence. TildeFFrontEquation and TildeFNonfrontEquation are Sound-approved. Request one real Sound verifier for HerCtblNodeClosure only; check its countable nonempty index construction, the HerCtblPower witness extraction, the code/erase and presentation-equivalence steps including both directions and symmetry, and its explicit cross-node citations.",
+    "reason": "The direct support for TildeFHerCtbl is now Sound-approved: TildeFFrontEquation, TildeFNonfrontEquation, and HerCtblNodeClosure all have current passes. Request the parent Sound verification next.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFHerCtbl only. Check the well-founded induction on the extension-oriented tree relation, the front and non-front case split, the recursive induction family in HerCtblPower, the nonempty/countable extension index and its universe lift, and the exact identification of the non-front recursion node supplied by HerCtblNodeClosure. Require the existing citations to FrontTreeWellFounded, TildeFFrontEquation, TildeFNonfrontEquation, HereditarilyCountableAtom, FrontTreeImmediateExtensions, HerCtblPower, and HerCtblNodeClosure.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "HerCtblNodeClosure"
+      "TildeFHerCtbl"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -20,17 +20,17 @@
       {
         "start_line": 1559,
         "end_line": 1564,
-        "reason": "The recursive front-tree definition whose values are claimed to be hereditarily countable."
+        "reason": "The recursive front-tree definition and its front/non-front cases."
       },
       {
         "start_line": 1580,
         "end_line": 1589,
-        "reason": "The paper's hereditary-countability observation and resulting HerCtbl formulation."
+        "reason": "The paper's hereditary-countability observation and the surrounding hereditary-countability theorem."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage defines the front recursion and states that its values remain hereditarily countable, then formulates the corresponding hereditary-countability layer. HerCtblNodeClosure is the countable-node closure needed by that recursive argument."
+      "basis_summary": "The cited paper passage defines the well-founded recursion whose front values are atoms and whose non-front values are countable nodes, then states that all values are hereditarily countable before formulating the hereditary-countability equivalence. TildeFHerCtbl is the tablet lemma implementing that two-case argument."
     },
     "work_style_hint": "none"
   },
@@ -43,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. TildeFFrontEquation and TildeFNonfrontEquation are Sound-approved. Request one real Sound verifier for HerCtblNodeClosure only; check its countable nonempty index construction, the HerCtblPower witness extraction, the code/erase and presentation-equivalence steps including both directions and symmetry, and its explicit cross-node citations.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for TildeFHerCtbl only. Check the well-founded induction on the extension-oriented tree relation, the front and non-front case split, the recursive induction family in HerCtblPower, the nonempty/countable extension index and its universe lift, and the exact identification of the non-front recursion node supplied by HerCtblNodeClosure. Require the existing citations to FrontTreeWellFounded, TildeFFrontEquation, TildeFNonfrontEquation, HereditarilyCountableAtom, FrontTreeImmediateExtensions, HerCtblPower, and HerCtblNodeClosure.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 100,
+    "cycle": 101,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -61,24 +61,24 @@
     "paper_focus_ranges": [
       {
         "end_line": 1564,
-        "reason": "The recursive front-tree definition whose values are claimed to be hereditarily countable.",
+        "reason": "The recursive front-tree definition and its front/non-front cases.",
         "start_line": 1559
       },
       {
         "end_line": 1589,
-        "reason": "The paper's hereditary-countability observation and resulting HerCtbl formulation.",
+        "reason": "The paper's hereditary-countability observation and the surrounding hereditary-countability theorem.",
         "start_line": 1580
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage defines the front recursion and states that its values remain hereditarily countable, then formulates the corresponding hereditary-countability layer. HerCtblNodeClosure is the countable-node closure needed by that recursive argument.",
+      "basis_summary": "The cited paper passage defines the well-founded recursion whose front values are atoms and whose non-front values are countable nodes, then states that all values are hereditarily countable before formulating the hereditary-countability equivalence. TildeFHerCtbl is the tablet lemma implementing that two-case argument.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TildeFFrontEquation now has fresh Sound approval. HerCtblNodeClosure is the next unverified direct support for the held TildeFHerCtbl target, so request its Sound verification before revisiting the parent.",
-    "request_id": 353,
+    "reason": "The direct support for TildeFHerCtbl is now Sound-approved: TildeFFrontEquation, TildeFNonfrontEquation, and HerCtblNodeClosure all have current passes. Request the parent Sound verification next.",
+    "request_id": 355,
     "request_sound_verifier_nodes": [
-      "HerCtblNodeClosure"
+      "TildeFHerCtbl"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -88,5 +88,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_353_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_355_decision.context.json"
 }
