@@ -1,0 +1,18 @@
+\begin{lemma}[Perfect-or-bad shift dichotomy]
+For every relation $r$ and every locally constant multi-sequence $h$, there
+is an infinite restriction on which $h$ is either perfect or bad.
+\end{lemma}
+\begin{proof}
+Form the minimal deciding front $F^h$ using
+\noderef{DecidingFront}; its value map exists by
+\noderef{DecidingValue}.  Color $s\in F^h$ according to whether its value
+is related by $r$ to the value at a finite shift of $s$.  This is a binary
+coloring of a front.  Apply \noderef{NashWilliams} to obtain an infinite
+sub-front on which the color is constant.  If the constant color is the
+positive color, the induced restriction satisfies
+\noderef{PerfectMultiSequence}; if it is the negative color, the same
+finite-shift calculation gives \noderef{BadMultiSequence}.  Reindexing the
+infinite subbase by an increasing embedding gives the displayed $z$, and
+\noderef{MultiSequenceRestrict} identifies the resulting sequence with the
+restriction of $h$.
+\end{proof}

@@ -1,0 +1,12 @@
+\begin{lemma}[Front member existence]
+Let $F$ be a front on $X$, and let $x$ be an increasing enumeration whose
+range is contained in $X$.  Then there is an $s\in F$ with
+$s\segs\operatorname{range}(x)$.
+\end{lemma}
+\begin{proof}
+The range of an order embedding of $\mathbb N$ is infinite.  Applying the
+density clause of the front definition \noderef{Front} to this range gives
+a finite $s\in F$ with
+\(\mathsf{ProperPrefixSet}(s,\operatorname{range}(x))\), which is exactly
+\(\mathsf{FrontPrefix}(F,s,x)\) by \noderef{FrontPrefix}.
+\end{proof}

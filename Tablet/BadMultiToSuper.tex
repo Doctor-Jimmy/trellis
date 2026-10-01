@@ -1,0 +1,14 @@
+\begin{lemma}[Multi-sequence badness gives super-sequence badness]
+Let $h$ be a bad locally constant multi-sequence, let $F^h$ be its
+deciding front, and let $h^{\dcl}:F^h\to Q$ satisfy the value equation of
+\noderef{DecidingValue}.  Then $h^{\dcl}$ is a bad super-sequence.
+\end{lemma}
+\begin{proof}
+Suppose $s,t\in F^h$ and $s\mathrel{\mathsf{FiniteShift}}t$.  Choose an
+enumeration $x$ witnessing the finite shift.  The value equation in
+\noderef{DecidingValue} identifies the values at $s$ and $t$ with
+$h(x)$ and $h(\mathsf{ShiftMap}(x))$, respectively.  Badness of $h$,
+\noderef{BadMultiSequence}, says that the latter relation fails.  Since
+this holds for every finite shift, \noderef{BadSuperSequence} gives the
+claim.
+\end{proof}

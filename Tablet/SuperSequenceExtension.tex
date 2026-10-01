@@ -1,0 +1,16 @@
+\begin{lemma}[Extension from a front]
+Let $f:F\to E$ be a super-sequence on a front $F$ on an arbitrary infinite
+base $X$.  There is a locally constant base multi-sequence
+$f^{\upcl}:\mathsf{BaseIncSeq}(X)\to E$ such that, whenever
+$s\segs\operatorname{range}(x)$ with $s\in F$, its value at $x$ is $f(s)$.
+\end{lemma}
+\begin{proof}
+For each $x\in\mathsf{BaseIncSeq}(X)$, existence of a suitable front member
+is \noderef{FrontPrefixExists}, and uniqueness is \noderef{FrontPrefixUnique}.
+Define $f^{\upcl}(x)$ to be the value of $f$ at this unique member.  If a
+finite prefix of $x$ already determines that member, every enumeration with
+the same prefix has the same value.  Such a prefix exists by the local
+finite-prefix description of the front member and the front construction;
+therefore the resulting base multi-sequence is locally constant.  The
+defining equation gives the final assertion.
+\end{proof}

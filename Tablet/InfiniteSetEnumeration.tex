@@ -1,0 +1,13 @@
+\begin{lemma}[Increasing enumeration of an infinite set]
+Every infinite $X\subseteq\mathbb N$ has a strictly increasing enumeration
+$x\in\mathsf{IncSeq}$ whose range is exactly $X$.
+\end{lemma}
+\begin{proof}
+Define $x(0)$ to be the least element of $X$, and recursively let $x(n+1)$
+be the least member of $X$ greater than $x(n)$.  Infinitude of $X$ ensures
+that each recursive choice exists.  The resulting map is strictly
+increasing, hence an element of $\mathsf{IncSeq}$, and every value lies in
+$X$.  Conversely, if $n\in X$, the finite set of members of $X$ below $n$
+has a finite cardinality, so the recursion reaches $n$ at that index.
+Thus the range is $X$.
+\end{proof}

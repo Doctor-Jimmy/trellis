@@ -1,0 +1,10 @@
+\begin{lemma}[Badness under restriction]
+If a multi-sequence $h$ is bad, then every restriction
+$h\mathbin{|}z$ is bad.
+\end{lemma}
+\begin{proof}
+At $x$, badness of $h$ is applied to the enumeration $x\circ z$.  Its
+shift is $(x\circ z)\circ\mathsf{SuccSeq}$, which is the same enumeration
+appearing in $(h\mathbin{|}z)(\mathsf{ShiftMap}(x))$ by
+\noderef{RestrictionShift}.  Thus the required relation fails.
+\end{proof}

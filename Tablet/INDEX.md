@@ -2,8 +2,22 @@
 
 | Name | Env | Kind | Status | Labels | Title | Imports |
 |------|-----|------|--------|--------|-------|---------|
+| BadMultiRestrict | lemma | proof | open | - | Badness under restriction | BadMultiSequence, MultiSequenceRestrict, RestrictionShift |
 | BadMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
+| BadMultiToSuper | lemma | proof | open | - | Multi-sequence badness gives super-sequence badness | BadMultiSequence, BadSuperSequence, DecidingFrontSet, DecidingPrefix, DecidingValue |
+| BadSuperRestrict | lemma | proof | open | - | Badness under sub-front restriction | BadSuperSequence, SuperSequenceRestrict |
+| BadSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
+| BadSuperToBase | lemma | proof | open | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseLocallyConstant, SuperSequenceExtension |
 | BaireContinuous | definition | definition | closed | - | - | PrefixAgree |
+| BaseBad | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
+| BaseBqoRestriction | lemma | proof | open | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BasePerfect, BaseRestrict, Bqo, InfiniteSetEnumeration, ShiftDichotomy |
+| BaseIncSeq | definition | definition | closed | - | - | IncSeq |
+| BaseLocallyConstant | definition | definition | closed | - | - | BaseMultiSequence, PrefixAgree |
+| BaseMultiSequence | definition | definition | closed | - | - | BaseIncSeq |
+| BasePerfect | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
+| BaseRestrict | definition | definition | closed | - | - | BaseMultiSequence, BaseRightComp |
+| BaseRightComp | definition | definition | closed | - | - | BaseIncSeq, RightComp |
+| BaseShift | definition | definition | closed | - | - | BaseIncSeq, ShiftMap |
 | BetterRel | definition | definition | closed | - | - | ContinuousRelHom, ShiftMap |
 | BlockSigma | definition | definition | closed | - | - | OrbitPoint |
 | BlockSigmaContinuous | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, PrefixAgree |
@@ -16,10 +30,19 @@
 | ContMorEq | definition | definition | closed | - | - | ContMor |
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
 | ContinuousRelHom | definition | definition | closed | - | - | LocallyConstant |
+| DecidingFront | lemma | proof | open | - | Minimal deciding prefixes form a front | DecidingFrontSet, Front |
+| DecidingFrontSet | definition | definition | closed | - | - | DecidingPrefix, ProperInitialSegment |
+| DecidingPrefix | definition | definition | closed | - | - | LocallyConstant, ProperInitialSegment, ProperPrefixSet |
+| DecidingValue | lemma | proof | open | - | Value map on the deciding front | DecidingFront, FinitePrefixExtension |
 | EmapLemma | lemma | proof | open | - | - | BlockSigmaContinuous, BlockSigmaEmbedding, BlockSigmaIntertwines, ContMor, FirstMovedPoint, RightComp, ShiftMap |
+| FinitePrefixExtension | lemma | proof | open | - | Infinite extension of a finite prefix | IncSeq, ProperPrefixSet |
+| FiniteShift | definition | definition | closed | - | - | ProperPrefixSet, ShiftMap |
 | FirstMovedPoint | lemma | proof | open | - | - | IncSeqId, IncSeqPointwiseLe |
 | Front | definition | definition | closed | - | Explicit front | FrontBase, InitialSegment, ProperPrefixSet |
 | FrontBase | definition | definition | closed | - | - | Preamble |
+| FrontPrefix | definition | definition | closed | - | - | Front, IncSeq |
+| FrontPrefixExists | lemma | proof | open | - | Front member existence | FrontPrefix |
+| FrontPrefixUnique | lemma | proof | open | - | Front member uniqueness | FrontPrefix |
 | FrontRayClosure | lemma | proof | open | - | Ray closure | Front, Ray, TailSet |
 | FrontRestrict | definition | definition | closed | - | - | Preamble |
 | FrontRestriction | lemma | proof | open | - | Restriction closure | Front, FrontRestrict |
@@ -31,29 +54,46 @@
 | IncSeqComp | definition | definition | closed | - | - | IncSeq |
 | IncSeqId | definition | definition | closed | - | - | IncSeq |
 | IncSeqPointwiseLe | lemma | proof | open | - | - | IncSeq |
+| InfiniteSetEnumeration | lemma | proof | open | - | Increasing enumeration of an infinite set | IncSeq |
 | InitialSegment | definition | definition | closed | - | - | Preamble |
 | LocallyConstant | definition | definition | closed | - | - | MultiSequence, PrefixAgree |
 | MainProp | theorem | proof | open | - | MainProp | ContMorEq, EmapLemma, RmapLemma |
 | MultiSequence | definition | definition | closed | - | - | IncSeq |
+| MultiSequenceRestrict | definition | definition | closed | - | - | MultiSequence, RightComp |
 | NashWilliams | theorem | proof | open | - | Nash--Williams | BooleanInfinitePigeonhole, Front, FrontRayClosure, FrontRestrict, FrontRestriction, FrontTreeWellFounded |
+| NoBadPerfectSuper | lemma | proof | open | - | A super-sequence is not both perfect and bad | BadSuperSequence, FrontPrefixExists, InfiniteSetEnumeration, PerfectSuperSequence |
 | OrbitBlock | definition | definition | closed | - | - | OrbitPoint |
 | OrbitBlockCoverage | lemma | proof | open | - | - | OrbitBlock, OrbitEmbedding, OrbitUnbounded |
 | OrbitEmbedding | lemma | proof | open | - | - | IncSeq, OrbitPoint |
 | OrbitPoint | definition | definition | closed | - | - | IncSeq |
 | OrbitUnbounded | lemma | proof | open | - | - | OrbitEmbedding, OrbitPoint |
+| PerfectBaseToSuper | lemma | proof | open | - | Perfect base extensions yield perfect sub-super-sequences | BasePerfect, BaseRestrict, FrontRestriction, InfiniteSetEnumeration, PerfectSuperSequence, SuperSequenceExtension, SuperSequenceRestrict |
+| PerfectMultiRestrict | lemma | proof | open | - | Perfectness under restriction | MultiSequenceRestrict, PerfectMultiSequence, RestrictionShift |
+| PerfectMultiSequence | definition | definition | closed | - | - | MultiSequence, ShiftMap |
+| PerfectMultiToSuper | lemma | proof | open | - | Multi-sequence perfectness gives super-sequence perfectness | DecidingFrontSet, DecidingPrefix, PerfectMultiSequence, PerfectSuperSequence |
+| PerfectSuperRestrict | lemma | proof | open | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
+| PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
+| PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, PerfectSuperSequence, SuperSequenceExtension |
+| PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, SuperSequenceRestrict |
 | Preamble | preamble | preamble | closed | - | - | - |
 | PrefixAgree | definition | definition | closed | - | - | IncSeq |
 | PrefixTree | definition | definition | closed | - | - | InitialSegment |
 | ProperInitialSegment | definition | definition | closed | - | - | InitialSegment |
 | ProperPrefixSet | definition | definition | closed | - | - | Preamble |
 | Ray | definition | definition | closed | - | - | Preamble |
+| RestrictionLocallyConstant | lemma | proof | open | - | Restriction preserves local constancy | LocallyConstant, MultiSequenceRestrict |
+| RestrictionShift | lemma | proof | open | - | Restriction and shift | IncSeqComp, MultiSequenceRestrict, ShiftMap |
 | RightComp | definition | definition | closed | - | - | IncSeqComp |
 | RmapLemma | lemma | proof | open | - | - | ContMor, FirstMovedPoint, OrbitEmbedding, RightComp, ShiftMap |
+| ShiftDichotomy | lemma | proof | open | - | Perfect-or-bad shift dichotomy | BadMultiSequence, DecidingFront, DecidingValue, MultiSequenceRestrict, NashWilliams, PerfectMultiSequence |
 | ShiftMap | definition | definition | closed | - | - | RightComp, SuccSeq |
 | SubFrontCharacterization | lemma | proof | open | - | Sub-fronts | Front, FrontRestrict, FrontRestriction |
+| Subarr | corollary | proof | open | lem:subarr | Sub-arrays and super-sequences | BadMultiRestrict, BadMultiToSuper, BadSuperRestrict, BaseBqoRestriction, DecidingFront, DecidingValue, NoBadPerfectSuper, PerfectBaseToSuper, PerfectSuperToMulti, RestrictionLocallyConstant, ShiftDichotomy, SuperSequenceExtension |
 | SuccSeq | definition | definition | closed | - | - | IncSeq |
 | SuperNW | theorem | proof | open | - | - | NashWilliams, SuperSequence |
 | SuperSequence | definition | definition | closed | - | - | Front |
+| SuperSequenceExtension | lemma | proof | open | - | Extension from a front | BaseLocallyConstant, FrontPrefixExists, FrontPrefixUnique, SuperSequence |
+| SuperSequenceRestrict | definition | definition | closed | - | - | SuperSequence |
 | TailSet | definition | definition | closed | - | - | Preamble |
 
-**Total:** 52 nodes | **Closed:** 32 | **Open:** 20
+**Total:** 92 nodes | **Closed:** 49 | **Open:** 43

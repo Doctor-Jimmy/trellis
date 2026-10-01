@@ -1,0 +1,11 @@
+\begin{lemma}[Multi-sequence perfectness gives super-sequence perfectness]
+If $h$ is perfect and $h^{\dcl}$ is its induced value map on the deciding
+front, then $h^{\dcl}$ is perfect as a super-sequence.
+\end{lemma}
+\begin{proof}
+Given $s\mathrel{\mathsf{FiniteShift}}t$, choose an enumeration $x$ which
+witnesses the shift.  The coherence equation identifies the two
+super-sequence values with $h(x)$ and $h(\mathsf{ShiftMap}(x))$.  Apply
+perfectness of $h$ and use \noderef{FiniteShift} and
+\noderef{PerfectSuperSequence}.
+\end{proof}

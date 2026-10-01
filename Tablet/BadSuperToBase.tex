@@ -1,0 +1,14 @@
+\begin{lemma}[Super-sequence badness gives base badness]
+If $f:F\to Q$ is a bad super-sequence on a front on $X$, then its extension
+$f^{\upcl}$ from \noderef{SuperSequenceExtension} is a bad base
+multi-sequence on $X$.
+\end{lemma}
+\begin{proof}
+The extension is locally constant by \noderef{SuperSequenceExtension}.
+For $x\in\mathsf{BaseIncSeq}(X)$, choose the unique front members $s,t$
+which prefix $x$ and its shift.  These members satisfy
+$s\mathrel{\mathsf{FiniteShift}}t$, witnessed by $x$.  Badness of $f$ and
+the extension value equations give
+\(\neg r(f^{\upcl}(x),f^{\upcl}(\mathsf{BaseShift}_X(x)))\).
+Thus the extension is bad in the sense of \noderef{BaseBad}.
+\end{proof}

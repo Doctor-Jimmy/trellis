@@ -1,0 +1,17 @@
+\begin{lemma}[Base invariance of the bqo restriction property]
+Assume that $r$ is a quasi-order and $Q$ is bqo.  For every infinite base
+$X$ and every locally constant base multi-sequence on $X$, there is an
+increasing embedding $z$ such that the restriction along $z$ is perfect.
+\end{lemma}
+\begin{proof}
+Choose the increasing enumeration of $X$ by
+\noderef{InfiniteSetEnumeration}, and pull the base multi-sequence
+back along it to a locally constant multi-sequence on
+$\mathsf{IncSeq}$.  Local constancy is preserved because finite prefixes are
+preserved by composition with an increasing embedding.  Apply the bqo
+definition \noderef{Bqo} and the shift dichotomy \noderef{ShiftDichotomy}:
+the bad alternative is impossible, so a perfect restriction exists.  Push
+the resulting restriction forward along the enumeration of $X$.  The
+composition identities in \noderef{BaseRightComp} and
+\noderef{BaseRestrict} give the asserted base restriction.
+\end{proof}

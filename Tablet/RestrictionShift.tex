@@ -1,0 +1,15 @@
+\begin{lemma}[Restriction and shift]
+For every multi-sequence $h$, every $z\in\mathsf{IncSeq}$, and every
+$x\in\mathsf{IncSeq}$,
+\[
+(h\mathbin{|}z)(\mathsf{ShiftMap}(x))
+=
+(h\mathbin{|}(\mathsf{SuccSeq}\circ z))(x).
+\]
+\end{lemma}
+\begin{proof}
+Expand \noderef{MultiSequenceRestrict} and \noderef{ShiftMap}.  Both sides
+are $h$ evaluated at the composition
+$x\circ\mathsf{SuccSeq}\circ z$.  Associativity of composition proves the
+identity; \noderef{IncSeqComp} records the displayed order of composition.
+\end{proof}

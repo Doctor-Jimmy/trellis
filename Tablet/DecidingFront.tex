@@ -1,0 +1,14 @@
+\begin{lemma}[Minimal deciding prefixes form a front]
+If $h$ is locally constant, then $F^h$ from \noderef{DecidingFrontSet} is a
+front on $\mathbb N$.
+\end{lemma}
+\begin{proof}
+Minimality gives prefix-freeness.  Given any infinite enumeration $x$,
+local constancy \noderef{LocallyConstant} supplies a deciding prefix $s$
+of its range.  Repeatedly remove proper deciding prefixes; finiteness of
+$s$ makes this process terminate at a member of $F^h$ still lying on the
+same branch.  Thus $F^h$ is dense.  If $h$ is constant, the empty prefix is
+the unique minimal member.  Otherwise, for every $n$ the branch beginning
+with $n$ must meet $F^h$ in a nonempty prefix, so the base of $F^h$ is all
+of $\mathbb N$.  These are exactly the three clauses of \noderef{Front}.
+\end{proof}

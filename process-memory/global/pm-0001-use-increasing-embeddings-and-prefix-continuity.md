@@ -1,7 +1,8 @@
 ---
 id: pm-0001-use-increasing-embeddings-and-prefix-continuity
 type: interface-decision
-status: active
+status: superseded
+superseded_by: pm-0005-use-increasing-embeddings-with-distinct-shift-an
 coarse_node: global
 created: {cycle: 1, request_id: 1}
 ---

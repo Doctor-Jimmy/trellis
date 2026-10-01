@@ -1,0 +1,13 @@
+\begin{lemma}[A super-sequence is not both perfect and bad]
+No super-sequence is simultaneously perfect and bad for the same relation.
+\end{lemma}
+\begin{proof}
+Choose an increasing enumeration of the infinite base $X$ using
+\noderef{InfiniteSetEnumeration}.  By
+\noderef{FrontPrefixExists}, the front has a member $s$ preceding its range
+and a member $t$ preceding the shifted range.  Thus
+$s\mathrel{\mathsf{FiniteShift}}t$.  Perfectness gives
+$r(f(s),f(t))$, while badness gives its negation by
+\noderef{PerfectSuperSequence} and \noderef{BadSuperSequence}, a
+contradiction.
+\end{proof}
