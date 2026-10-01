@@ -1,12 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker validated the unchanged repaired OrbitEmbedding package, including its structural and mechanical checks. Its fingerprint remains SelfEditUnknown, so the prior soundness Fail is not binding; no fresh OrbitEmbedding verifier lane ran in this burst. Hand the package to the ordinary paper, correspondence, and substantiveness verification sequence before scheduling soundness.",
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired OrbitEmbedding package, then schedule soundness only once those lanes are current. Preserve the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The prior OrbitEmbedding soundness blocker is intentionally omitted because the worker changed the TeX fingerprint; no reset is legal. Do not reopen BlockSigmaIntertwines or add helpers.",
-    "task_blocker_ids": [],
+    "reason": "The repaired OrbitEmbedding package is mechanically valid but remains blocked from soundness dispatch by the global known non-sound verifier surface. The narrowest binding substantive repair is OrbitUnbounded: its Lean signature already states g, k, and k<g(k), but its TeX statement improperly cites OrbitEmbedding for those hypotheses. Route that blocker so the TeX fingerprint becomes Unknown and the ordinary verifier frontier can resume.",
+    "comments": "Repair only Tablet/OrbitUnbounded.tex. In its theorem statement, replace the phrase 'Under the hypotheses of \\noderef{OrbitEmbedding}' with explicit local hypotheses: g is an increasing embedding of the naturals, k is a natural number, and k<g(k). Keep the existing conclusion about every l and an orbit point above l. The proof may cite \\noderef{OrbitEmbedding} for strict increase of the orbit, but it must not use that theorem-like node to supply the statement's hypotheses. Do not edit OrbitEmbedding, add helpers, or touch the other substantive failures in this transition.",
+    "task_blocker_ids": [
+      "substantiveness:node:OrbitUnbounded:{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
+    ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "OrbitEmbedding",
+    "next_active": "OrbitUnbounded",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -17,14 +19,14 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1781,
+        "start_line": 1778,
         "end_line": 1783,
-        "reason": "The paper chooses the least moved point, defines the orbit by iterates, asserts that it is an increasing embedding, and uses the successor iterate identity."
+        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses its iterate growth in the generalized-shift argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. It selects k_g with k_g<g(k_g), defines G(n)=g^n(k_g) using the identity and successor clauses for iterates, and states that G belongs to the increasing-embedding class. The repaired OrbitEmbedding proof supplies the explicit monotonicity induction, iterate identity induction, and support citations needed for that assertion."
+      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states G is an increasing embedding before using the orbit successor identity. OrbitUnbounded is the elementary unboundedness support for this construction, and its TeX must state its local hypotheses explicitly rather than borrowing them from OrbitEmbedding."
     }
   },
   "response": {
@@ -36,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired OrbitEmbedding package, then schedule soundness only once those lanes are current. Preserve the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The prior OrbitEmbedding soundness blocker is intentionally omitted because the worker changed the TeX fingerprint; no reset is legal. Do not reopen BlockSigmaIntertwines or add helpers.",
+    "comments": "Repair only Tablet/OrbitUnbounded.tex. In its theorem statement, replace the phrase 'Under the hypotheses of \\noderef{OrbitEmbedding}' with explicit local hypotheses: g is an increasing embedding of the naturals, k is a natural number, and k<g(k). Keep the existing conclusion about every l and an orbit point above l. The proof may cite \\noderef{OrbitEmbedding} for strict increase of the orbit, but it must not use that theorem-like node to supply the statement's hypotheses. Do not edit OrbitEmbedding, add helpers, or touch the other substantive failures in this transition.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 41,
+    "cycle": 42,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -47,32 +49,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "OrbitEmbedding",
+    "next_active": "OrbitUnbounded",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1783,
-        "reason": "The paper chooses the least moved point, defines the orbit by iterates, asserts that it is an increasing embedding, and uses the successor iterate identity.",
-        "start_line": 1781
+        "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses its iterate growth in the generalized-shift argument.",
+        "start_line": 1778
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. It selects k_g with k_g<g(k_g), defines G(n)=g^n(k_g) using the identity and successor clauses for iterates, and states that G belongs to the increasing-embedding class. The repaired OrbitEmbedding proof supplies the explicit monotonicity induction, iterate identity induction, and support citations needed for that assertion.",
+      "basis_summary": "I directly read the cited passage. The paper chooses the least moved point k_g, defines G(n)=g^n(k_g), and states G is an increasing embedding before using the orbit successor identity. OrbitUnbounded is the elementary unboundedness support for this construction, and its TeX must state its local hypotheses explicitly rather than borrowing them from OrbitEmbedding.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker validated the unchanged repaired OrbitEmbedding package, including its structural and mechanical checks. Its fingerprint remains SelfEditUnknown, so the prior soundness Fail is not binding; no fresh OrbitEmbedding verifier lane ran in this burst. Hand the package to the ordinary paper, correspondence, and substantiveness verification sequence before scheduling soundness.",
-    "request_id": 197,
+    "reason": "The repaired OrbitEmbedding package is mechanically valid but remains blocked from soundness dispatch by the global known non-sound verifier surface. The narrowest binding substantive repair is OrbitUnbounded: its Lean signature already states g, k, and k<g(k), but its TeX statement improperly cites OrbitEmbedding for those hypotheses. Route that blocker so the TeX fingerprint becomes Unknown and the ordinary verifier frontier can resume.",
+    "request_id": 200,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "{\"own_tex\":\"aa0099602672c8f7f8067855da5f91c0ecec755f3732d2960443ffebbcd300f0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "kind": "Substantiveness",
+        "object": {
+          "node": "OrbitUnbounded",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_197_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_200_decision.context.json"
 }

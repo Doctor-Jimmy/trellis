@@ -1,16 +1,17 @@
 {
   "raw": {
-    "outcome": "valid",
-    "summary": "Validated OrbitEmbedding without editing Tablet content; its paper-aligned proof package remains structurally and mechanically valid.",
-    "comments": "check_node OrbitEmbedding, lake build Tablet.OrbitEmbedding, and the full 176-node check_tablet all pass. Manual paper-faithfulness, substantiveness, and correspondence audits are clean: the statement is the paper's increasing orbit-embedding claim, the proof preserves both iterate inductions, cites the statement-level facts from IncSeq and OrbitPoint, and is not a wrapper. The request dispatches no semantic verifier lane (verify_lanes=[], with empty paper, substantiveness, correspondence, and soundness frontiers), so no formal lane verdict is fabricated. Reviewer should dispatch paper-faithfulness, substantiveness, and correspondence, then schedule soundness only after those lanes are current. No Tablet files, target claims, dependencies, deviations, difficulty classifications, or nodes were changed.",
-    "target_claim_updates": {},
-    "difficulty_updates": {},
-    "deviation_requests": {},
-    "node_deviation_claims": {},
-    "deviation_deletions": [],
+    "audit_request": null,
+    "comments": "No Tablet content was edited. Mechanical validation passes: check_node OrbitEmbedding, the full 176-node check_tablet, and lake build Tablet.OrbitEmbedding with kernel replay. Manual paper-faithfulness audit: OrbitEmbedding is the paper's implicit increasing-orbit lemma used by RmapLemma, while the configured target lines:1748-1753 remains claimed only by BqoIffGeneralShift. Correspondence audit: IncSeq supplies the order-embedding meaning of g, OrbitPoint supplies g^[n](k), and the existential IncSeq statement exactly matches the TeX orbit-embedding claim. Substantiveness audit: the node is a nontrivial construction used by RmapLemma, OrbitUnbounded, and OrbitBlockCoverage, not a wrapper or restatement. The TeX proof preserves the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The request has no dispatched paper-faithfulness, correspondence, or substantiveness verifier lane, so no verifier verdict is fabricated; reviewer should dispatch those lanes and schedule soundness only after they are current.",
     "deleted_nodes": [],
+    "deviation_deletions": [],
+    "deviation_requests": {},
+    "difficulty_updates": {},
     "memory_challenges": [],
-    "needs_restructure_suggested_nodes": []
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Validated the repaired OrbitEmbedding package without editing Tablet content; its paper alignment, correspondence, and substantive downstream role remain clean, and the mechanical tablet checks pass.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -20,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "check_node OrbitEmbedding, lake build Tablet.OrbitEmbedding, and the full 176-node check_tablet all pass. Manual paper-faithfulness, substantiveness, and correspondence audits are clean: the statement is the paper's increasing orbit-embedding claim, the proof preserves both iterate inductions, cites the statement-level facts from IncSeq and OrbitPoint, and is not a wrapper. The request dispatches no semantic verifier lane (verify_lanes=[], with empty paper, substantiveness, correspondence, and soundness frontiers), so no formal lane verdict is fabricated. Reviewer should dispatch paper-faithfulness, substantiveness, and correspondence, then schedule soundness only after those lanes are current. No Tablet files, target claims, dependencies, deviations, difficulty classifications, or nodes were changed.",
-    "cycle": 41,
+    "comments": "No Tablet content was edited. Mechanical validation passes: check_node OrbitEmbedding, the full 176-node check_tablet, and lake build Tablet.OrbitEmbedding with kernel replay. Manual paper-faithfulness audit: OrbitEmbedding is the paper's implicit increasing-orbit lemma used by RmapLemma, while the configured target lines:1748-1753 remains claimed only by BqoIffGeneralShift. Correspondence audit: IncSeq supplies the order-embedding meaning of g, OrbitPoint supplies g^[n](k), and the existential IncSeq statement exactly matches the TeX orbit-embedding claim. Substantiveness audit: the node is a nontrivial construction used by RmapLemma, OrbitUnbounded, and OrbitBlockCoverage, not a wrapper or restatement. The TeX proof preserves the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The request has no dispatched paper-faithfulness, correspondence, or substantiveness verifier lane, so no verifier verdict is fabricated; reviewer should dispatch those lanes and schedule soundness only after they are current.",
+    "cycle": 42,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -37,7 +38,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 195,
+    "request_id": 198,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2533,7 +2534,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Validated OrbitEmbedding without editing Tablet content; its paper-aligned proof package remains structurally and mechanically valid.",
+    "summary": "Validated the repaired OrbitEmbedding package without editing Tablet content; its paper alignment, correspondence, and substantive downstream role remain clean, and the mechanical tablet checks pass.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2899,7 +2900,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_195_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_198_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

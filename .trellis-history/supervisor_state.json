@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 237,
+  "event_count": 241,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -59394,17 +59394,17 @@
     }
   },
   "checkpoint": {
-    "active_node": "OrbitEmbedding",
+    "active_node": "OrbitUnbounded",
     "committed": {
       "$r": "2c18f1afc1dc99c2"
     },
-    "cycle": 41,
+    "cycle": 42,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": "OrbitEmbedding",
+    "active_node": "OrbitUnbounded",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60156,9 +60156,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 41,
+    "cycle": 42,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 41,
+    "cycles_since_clean": 42,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "51aa69bb19343206"
@@ -60888,7 +60888,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 41,
+    "last_sound_response_cycle": 42,
     "last_stuck_math_audit_dispatched_cycle": 30,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60906,9 +60906,9 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "check_node OrbitEmbedding, lake build Tablet.OrbitEmbedding, and the full 176-node check_tablet all pass. Manual paper-faithfulness, substantiveness, and correspondence audits are clean: the statement is the paper's increasing orbit-embedding claim, the proof preserves both iterate inductions, cites the statement-level facts from IncSeq and OrbitPoint, and is not a wrapper. The request dispatches no semantic verifier lane (verify_lanes=[], with empty paper, substantiveness, correspondence, and soundness frontiers), so no formal lane verdict is fabricated. Reviewer should dispatch paper-faithfulness, substantiveness, and correspondence, then schedule soundness only after those lanes are current. No Tablet files, target claims, dependencies, deviations, difficulty classifications, or nodes were changed.",
+    "latest_worker_comments": "No Tablet content was edited. Mechanical validation passes: check_node OrbitEmbedding, the full 176-node check_tablet, and lake build Tablet.OrbitEmbedding with kernel replay. Manual paper-faithfulness audit: OrbitEmbedding is the paper's implicit increasing-orbit lemma used by RmapLemma, while the configured target lines:1748-1753 remains claimed only by BqoIffGeneralShift. Correspondence audit: IncSeq supplies the order-embedding meaning of g, OrbitPoint supplies g^[n](k), and the existential IncSeq statement exactly matches the TeX orbit-embedding claim. Substantiveness audit: the node is a nontrivial construction used by RmapLemma, OrbitUnbounded, and OrbitBlockCoverage, not a wrapper or restatement. The TeX proof preserves the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The request has no dispatched paper-faithfulness, correspondence, or substantiveness verifier lane, so no verifier verdict is fabricated; reviewer should dispatch those lanes and schedule soundness only after they are current.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Validated OrbitEmbedding without editing Tablet content; its paper-aligned proof package remains structurally and mechanically valid.",
+    "latest_worker_summary": "Validated the repaired OrbitEmbedding package without editing Tablet content; its paper alignment, correspondence, and substantive downstream role remain clean, and the mechanical tablet checks pass.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
@@ -61137,17 +61137,29 @@
       "mode": "Targeted",
       "must_close_active": false,
       "next_worker_context_mode": "resume",
-      "node": "OrbitEmbedding",
+      "node": "OrbitUnbounded",
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [
         {
           "end_line": 1783,
-          "reason": "The paper chooses the least moved point, defines the orbit by iterates, asserts that it is an increasing embedding, and uses the successor iterate identity.",
-          "start_line": 1781
+          "reason": "The paper constructs the least-moved-point orbit, states that its orbit map is an increasing embedding, and uses its iterate growth in the generalized-shift argument.",
+          "start_line": 1778
         }
       ],
       "protected_semantic_change_nodes": [],
-      "task_blockers": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "92ef1c63d6034ca4"
+          },
+          "kind": "Substantiveness",
+          "object": {
+            "node": "OrbitUnbounded",
+            "otype": "node"
+          }
+        }
+      ],
       "work_style_hint": "none"
     },
     "pending_worker_audit_request": null,
@@ -61206,16 +61218,18 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PowerIResponseLegal": {
+      "BooleanInfinitePigeonhole": {
         "v1": {
           "comments": "",
-          "node": "PowerIResponseLegal",
+          "node": {
+            "$s": "4c3bac0512a45c96"
+          },
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "Under the stated failure hypothesis, PowerIResponseWitness gives the exact existential witness tested by PowerIResponse: a legal x' from x together with the universal failure property. The conditional therefore takes its positive branch and returns a witness, whose first conjunct is the claimed PowerMove. Both cross-node dependencies are explicitly cited."
+            "explanation": "The proof establishes the stated claim: the two color classes partition the naturals, and if both were finite then their union would be finite, contradicting that the naturals are infinite. No cross-node dependency is used."
           },
-          "summary": "The natural-language proof rigorously establishes the target from the cited witness theorem and response definition."
+          "summary": "The natural-language proof is rigorous and complete at the paper's detail level."
         }
       }
     },
@@ -61223,7 +61237,7 @@
     "process_memory_seq": 10,
     "progress_history": {
       "last_dispatched_index": 28,
-      "next_index": 41,
+      "next_index": 42,
       "snapshots": [
         {
           "present": [
@@ -63956,6 +63970,115 @@
             "TildeFSingleton"
           ],
           "snapshot_index": 40
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitPoint",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
+          "snapshot_index": 41
         }
       ]
     },
@@ -63964,15 +64087,18 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 197,
+    "request_seq": 200,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not edit Tablet content in the next burst. Run the ordinary paper-faithfulness, correspondence, and substantiveness checks for the repaired OrbitEmbedding package, then schedule soundness only once those lanes are current. Preserve the explicit IncSeq citation, both iterate inductions, the OrbitPoint identification, and the final injectivity/order-embedding conclusion. The prior OrbitEmbedding soundness blocker is intentionally omitted because the worker changed the TeX fingerprint; no reset is legal. Do not reopen BlockSigmaIntertwines or add helpers.",
+    "reviewer_comments": "Repair only Tablet/OrbitUnbounded.tex. In its theorem statement, replace the phrase 'Under the hypotheses of \\noderef{OrbitEmbedding}' with explicit local hypotheses: g is an increasing embedding of the naturals, k is a natural number, and k<g(k). Keep the existing conclusion about every l and an orbit point above l. The proof may cite \\noderef{OrbitEmbedding} for strict increase of the orbit, but it must not use that theorem-like node to supply the statement's hypotheses. Do not edit OrbitEmbedding, add helpers, or touch the other substantive failures in this transition.",
     "reviewer_requested_sound_verifier_nodes": [
       "BlockSigmaIntertwines"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
+      "BooleanInfinitePigeonhole": {
+        "$s": "66f5b021e983ad69"
+      },
       "FrontRestriction": {
         "$s": "1e101301f8c29f2a"
       },
@@ -63994,6 +64120,17 @@
     },
     "sound_assessment_schema_version": 1,
     "sound_assessments": {
+      "BooleanInfinitePigeonhole": {
+        "fingerprints": {
+          "$r": "378543a55b518e34"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
       "FrontRestriction": {
         "fingerprints": {
           "$r": "6810e7dfd2aa8528"
@@ -65128,6 +65265,7 @@
       }
     },
     "sound_status": {
+      "BooleanInfinitePigeonhole": "Pass",
       "FrontRestriction": "Pass",
       "FrontTreeWellFounded": "Pass",
       "OrbitEmbedding": "Fail",
