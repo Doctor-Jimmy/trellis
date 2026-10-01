@@ -1,16 +1,16 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The StuckMathAudit confirms that BlockSigmaIntertwines is mathematically correct and that the current obstruction is confined to missing detail in its NL proof. No worker edit has occurred yet, so the existing Sound failure remains binding and should be assigned for the prescribed prose repair.",
-    "comments": "Edit only Tablet/BlockSigmaIntertwines.tex. Preserve the Lean signature, imports, and two-case argument. Cite IncSeq for strict increase. Prove by induction that m <= f(m) for every increasing embedding f, then specialize to m=n+1. Cite OrbitPoint and explicitly unfold the iterate successor rule to derive G(n+1)=g(G(n)) and G(n+2)=g(G(n+1)). Prove by induction on a that g^[a](g(l))=g^[a+1](l). In the block case set a=f(n+1)-(n+1), prove a+1=f(n+1)-n, and explicitly establish the inequalities placing g(l) in block n+1 before comparing the two BlockSigma values. Retain the OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq citations; add no helper and change no statement or support node. After this edit, request Sound verification in the audit's dependency order rather than now.",
-    "task_blocker_ids": [
-      "soundness:node:BlockSigmaIntertwines:sound-v2:d08e9886961ae21a993ae7a690038ac7691e2d2cc24d6923e2d051385a3c91a9"
-    ],
+    "reason": "The repaired NL proof has been accepted mechanically, and the latest Sound result approves FrontRayClosure. The active BlockSigmaIntertwines obligation has no Sound verdict in this cycle and remains an unknown gated record, so it is omitted from all blocker actions. The next audit-authorized dependency is OrbitEmbedding, whose current proof is requestable for fresh Sound verification.",
+    "comments": "Dismiss the completed BlockSigmaIntertwines prose-repair task. Request a fresh Sound verdict for OrbitEmbedding, the first unresolved node in the audit's orbit dependency chain. If it passes, continue with OrbitUnbounded, OrbitBlockCoverage, and then the repaired BlockSigmaIntertwines; keep the separate front-chain and InfiniteSetEnumeration requests in their stated order. Do not assign a worker or reset any blocker in this transition. The current active Sound obligation is not a verifier failure and must remain omitted until it is dispatch-eligible.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BlockSigmaIntertwines",
+    "request_sound_verifier_node_ids": [
+      "OrbitEmbedding"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
-    "next_mode": "targeted",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -22,26 +22,21 @@
       {
         "start_line": 1778,
         "end_line": 1783,
-        "reason": "The paper defines the orbit iterates and their successor composition identity used by the block proof."
-      },
-      {
-        "start_line": 1794,
-        "end_line": 1812,
-        "reason": "The paper gives the two block cases and the boundary inequalities needed to locate the shifted point."
-      },
-      {
-        "start_line": 1815,
-        "end_line": 1833,
-        "reason": "The paper performs the shifted exponent calculation establishing the intertwining identity."
+        "reason": "The paper defines the orbit map by iterates and records the successor composition identity used by the orbit support chain."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines G by iterates of g, defines the block map on the initial segment and half-open orbit blocks, and then proves the shifted block formula by moving g(l) into the next block and comparing exponents. The requested repair expands exactly those paper steps without changing the theorem interface."
+      "basis_summary": "The cited passage defines G(n) as the nth iterate of g at the least moved point and uses the iterate successor law. The current OrbitEmbedding proof expands precisely these facts, so it is the appropriate first unresolved Sound dependency after the repaired prose and the approved FrontRayClosure result."
     },
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "finish-block-sigma-intertwines",
+        "reason": "The worker completed the prescribed edit in Tablet/BlockSigmaIntertwines.tex, preserving the statement and support structure; deterministic node and full-tablet checks passed."
+      }
+    ],
     "stuck_math_audit": {
-      "notes": "The active audit plan remains valid. Its first task is the worker assignment above; its second task, fresh Sound certification of the repaired orbit and front chains, remains live and is not yet actionable because the current BlockSigmaIntertwines text is unchanged. The scratch probe passed, so no signature change, helper, reset, or human input is warranted."
+      "notes": "The audit plan remains active with only the Sound-certification task live. FrontRayClosure has passed, so this transition begins the orbit chain with OrbitEmbedding. No worker repair, reset, human input, or structural change is warranted."
     }
   },
   "response": {
@@ -53,66 +48,53 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/BlockSigmaIntertwines.tex. Preserve the Lean signature, imports, and two-case argument. Cite IncSeq for strict increase. Prove by induction that m <= f(m) for every increasing embedding f, then specialize to m=n+1. Cite OrbitPoint and explicitly unfold the iterate successor rule to derive G(n+1)=g(G(n)) and G(n+2)=g(G(n+1)). Prove by induction on a that g^[a](g(l))=g^[a+1](l). In the block case set a=f(n+1)-(n+1), prove a+1=f(n+1)-n, and explicitly establish the inequalities placing g(l) in block n+1 before comparing the two BlockSigma values. Retain the OrbitBlockCoverage, BlockSigma, RightComp, and SuccSeq citations; add no helper and change no statement or support node. After this edit, request Sound verification in the audit's dependency order rather than now.",
+    "comments": "Dismiss the completed BlockSigmaIntertwines prose-repair task. Request a fresh Sound verdict for OrbitEmbedding, the first unresolved node in the audit's orbit dependency chain. If it passes, continue with OrbitUnbounded, OrbitBlockCoverage, and then the repaired BlockSigmaIntertwines; keep the separate front-chain and InfiniteSetEnumeration requests in their stated order. Do not assign a worker or reset any blocker in this transition. The current active Sound obligation is not a verifier failure and must remain omitted until it is dispatch-eligible.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 57,
+    "cycle": 58,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "finish-block-sigma-intertwines",
+        "reason": "The worker completed the prescribed edit in Tablet/BlockSigmaIntertwines.tex, preserving the statement and support structure; deterministic node and full-tablet checks passed."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BlockSigmaIntertwines",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1783,
-        "reason": "The paper defines the orbit iterates and their successor composition identity used by the block proof.",
+        "reason": "The paper defines the orbit map by iterates and records the successor composition identity used by the orbit support chain.",
         "start_line": 1778
-      },
-      {
-        "end_line": 1812,
-        "reason": "The paper gives the two block cases and the boundary inequalities needed to locate the shifted point.",
-        "start_line": 1794
-      },
-      {
-        "end_line": 1833,
-        "reason": "The paper performs the shifted exponent calculation establishing the intertwining identity.",
-        "start_line": 1815
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines G by iterates of g, defines the block map on the initial segment and half-open orbit blocks, and then proves the shifted block formula by moving g(l) into the next block and comparing exponents. The requested repair expands exactly those paper steps without changing the theorem interface.",
+      "basis_summary": "The cited passage defines G(n) as the nth iterate of g at the least moved point and uses the iterate successor law. The current OrbitEmbedding proof expands precisely these facts, so it is the appropriate first unresolved Sound dependency after the repaired prose and the approved FrontRayClosure result.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The StuckMathAudit confirms that BlockSigmaIntertwines is mathematically correct and that the current obstruction is confined to missing detail in its NL proof. No worker edit has occurred yet, so the existing Sound failure remains binding and should be assigned for the prescribed prose repair.",
-    "request_id": 243,
-    "request_sound_verifier_nodes": [],
+    "reason": "The repaired NL proof has been accepted mechanically, and the latest Sound result approves FrontRayClosure. The active BlockSigmaIntertwines obligation has no Sound verdict in this cycle and remains an unknown gated record, so it is omitted from all blocker actions. The next audit-authorized dependency is OrbitEmbedding, whose current proof is requestable for fresh Sound verification.",
+    "request_id": 246,
+    "request_sound_verifier_nodes": [
+      "OrbitEmbedding"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The active audit plan remains valid. Its first task is the worker assignment above; its second task, fresh Sound certification of the repaired orbit and front chains, remains live and is not yet actionable because the current BlockSigmaIntertwines text is unchanged. The scratch probe passed, so no signature change, helper, reset, or human input is warranted.",
+      "notes": "The audit plan remains active with only the Sound-certification task live. FrontRayClosure has passed, so this transition begins the orbit chain with OrbitEmbedding. No worker repair, reset, human input, or structural change is warranted.",
       "reviewer_lean_product": null
     },
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:d08e9886961ae21a993ae7a690038ac7691e2d2cc24d6923e2d051385a3c91a9",
-        "kind": "Soundness",
-        "object": {
-          "node": "BlockSigmaIntertwines",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_243_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_246_decision.context.json"
 }

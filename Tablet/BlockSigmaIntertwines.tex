@@ -12,29 +12,103 @@ $\mathsf{RightComp}(\mathsf{SuccSeq},f)$, and equivalently
 $\sigma_{f\circ\mathsf{SuccSeq}}=\sigma_f\circ g$.
 \end{lemma}
 \begin{proof}
-Put $G(n)=g^{[n]}(k)$, so $G(0)=k$.  The two cases below exhaust all
-$l$ by \noderef{OrbitBlockCoverage}.  If $l<G(0)$, then $l<k$ and the
-least-moved-point hypothesis gives $g(l)=l$.  By the piece of the block
-definition in \noderef{BlockSigma} below $G(0)$, both sides are therefore
-$l$.
+Put $G(n)=\mathsf{OrbitPoint}(g,k,n)=g^{[n]}(k)$, using
+\noderef{OrbitPoint}; in particular $G(0)=k$.  By
+\noderef{OrbitBlockCoverage}, every $l$ either satisfies $l<G(0)$ or
+belongs to a unique block $[G(n),G(n+1))$.
 
-Otherwise, let $n$ be the unique index such that
-$G(n)\leq l<G(n+1)$.  Since $g$ is strictly increasing,
+First suppose that $l<G(0)$.  Then $l<k$, so the hypothesis that $g$ fixes
+every point below $k$ gives $g(l)=l$.  The initial branch of the definition
+in \noderef{BlockSigma} therefore gives
 \[
-G(n+1)=g(G(n))\leq g(l)<g(G(n+1))=G(n+2).
+\mathsf{BlockSigma}(g,k,\mathsf{RightComp}(\mathsf{SuccSeq},f),l)=l.
 \]
-Thus $g(l)$ is in the $(n+1)$st block.  Using the block formula from
-\noderef{BlockSigma} and the composition convention from
-\noderef{RightComp} and \noderef{SuccSeq}, the left-hand side is
+Also $g(l)=l<G(0)$, so the same initial branch gives
 \[
-g^{[f(n+1)-n]}(l),
+\mathsf{BlockSigma}(g,k,f,g(l))=l.
 \]
-while the right-hand side is
+Thus the two sides are equal in this case.
+
+Now suppose that $l$ is not below $G(0)$.  Choose the unique $n$ supplied
+by \noderef{OrbitBlockCoverage}, so that
 \[
-g^{[f(n+1)-(n+1)]}(g(l)).
+G(n)\leq l<G(n+1).
 \]
-The embedding $f$ satisfies $n+1\leq f(n+1)$, so with
-$a=f(n+1)-(n+1)$ we have $a+1=f(n+1)-n$.  Hence the elementary iterate
-identity $g^{[a]}(g(l))=g^{[a+1]}(l)$ makes these two values equal.  This
-proves the claimed identity in both cases.
+Since $g\in\mathsf{IncSeq}$, \noderef{IncSeq} makes $g$ an order
+embedding and hence strictly increasing.  Applying this first to the left
+inequality and then to the right inequality yields
+\[
+g(G(n))\leq g(l)<g(G(n+1)).
+\]
+We next identify both endpoints.  From the iterate definition in
+\noderef{OrbitPoint}, the successor rule for function iterates gives
+\[
+G(n+1)=g^{[n+1]}(k)=g(g^{[n]}(k))=g(G(n)).
+\]
+Applying the same calculation with $n+1$ in place of $n$ gives
+\[
+G(n+2)=g^{[n+2]}(k)=g(g^{[n+1]}(k))=g(G(n+1)).
+\]
+Consequently
+\[
+G(n+1)\leq g(l)<G(n+2),
+\]
+so $g(l)$ lies in the $(n+1)$st orbit block.  This explicitly locates the
+argument of the right-hand block map before applying its defining formula.
+
+By \noderef{RightComp} and \noderef{SuccSeq},
+\mathsf{RightComp}(\mathsf{SuccSeq},f)(n)=f(n+1)$.  Therefore the block
+branch of \noderef{BlockSigma}, applied to the original block of $l$, gives
+\[
+\mathsf{BlockSigma}(g,k,\mathsf{RightComp}(\mathsf{SuccSeq},f),l)
+=g^{[f(n+1)-n]}(l).
+\]
+The block branch applied to the $(n+1)$st block of $g(l)$ gives
+\[
+\mathsf{BlockSigma}(g,k,f,g(l))
+=g^{[f(n+1)-(n+1)]}(g(l)).
+\]
+
+It remains to compare these iterates.  We first prove the needed index
+bound for every increasing embedding $f$.  For $m=0$, $0\leq f(0)$ because
+$f(0)$ is a natural number.  If $m\leq f(m)$, then strict increase from
+\noderef{IncSeq} gives $f(m)<f(m+1)$, hence
+$m+1\leq f(m)+1\leq f(m+1)$.  Induction proves
+\[
+\forall m\in\mathbb N,\qquad m\leq f(m).
+\]
+In particular, $n+1\leq f(n+1)$.  Set
+\[
+a=f(n+1)-(n+1).
+\]
+The preceding inequality makes this subtraction exact, and elementary
+natural-number arithmetic gives
+\[
+a+1=(f(n+1)-(n+1))+1=f(n+1)-n.
+\]
+
+We also prove the iterate shift used here rather than treating it as
+implicit.  For every $a$ and $x$, function-iterate recursion gives
+\[
+g^{[a]}(g(x))=g^{[a+1]}(x).
+\]
+Indeed, for $a=0$ both sides are $g(x)$.  If the equality holds for $a$,
+then applying $g$ to both sides and using the successor rule for iterates
+gives
+\[
+g^{[a+1]}(g(x))
+=g(g^{[a]}(g(x)))
+=g(g^{[a+1]}(x))
+=g^{[a+2]}(x),
+\]
+which is the claim for $a+1$.  Taking $x=l$ and the above value of $a$ now
+gives
+\[
+g^{[f(n+1)-(n+1)]}(g(l))
+=g^{[a]}(g(l))
+=g^{[a+1]}(l)
+=g^{[f(n+1)-n]}(l).
+\]
+This is exactly the equality of the two block values, and the two cases
+prove the lemma.
 \end{proof}
