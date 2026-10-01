@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 435,
+  "event_count": 438,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -16576,101 +16576,6 @@
       "semantics": "certified_module_use",
       "visibility": "exported"
     },
-    "42117ce1144d0d96": [
-      "BadMultiSequence",
-      "BadPairSequence",
-      "BadSuperSequence",
-      "BaireContinuous",
-      "BaseBad",
-      "BaseIncSeq",
-      "BaseLocallyConstant",
-      "BaseMultiSequence",
-      "BasePerfect",
-      "BaseRestrict",
-      "BaseRightComp",
-      "BaseShift",
-      "BetterRel",
-      "BlockSigma",
-      "Bqo",
-      "BqoHerCtblWellF",
-      "BqoHerCtblWqo",
-      "CardinalityFront",
-      "ContMor",
-      "ContMorEq",
-      "ContinuousHom",
-      "ContinuousRelHom",
-      "DecidingFrontSet",
-      "DecidingPrefix",
-      "FiniteShift",
-      "Front",
-      "FrontBase",
-      "FrontBridge",
-      "FrontBridgeTail",
-      "FrontPrefix",
-      "FrontRestrict",
-      "GBetterRel",
-      "GoodMultiSequence",
-      "HerCtblCode",
-      "HerCtblCodeErase",
-      "HerCtblPower",
-      "HerCtblPowerIsPreorder",
-      "HerCtblRel",
-      {
-        "$s": "19fb7b62eea67a5d"
-      },
-      "HereditarilyCountable",
-      {
-        "$s": "248a162fe13df6db"
-      },
-      {
-        "$s": "0de210e54bc47028"
-      },
-      "IncSeq",
-      "IncSeqComp",
-      "IncSeqId",
-      "IncreasingPair",
-      "InitialSegment",
-      "LocallyConstant",
-      "MultiSequence",
-      "MultiSequenceRestrict",
-      "OrbitBlock",
-      "OrbitPoint",
-      "PerfectMultiSequence",
-      "PerfectSuperSequence",
-      "PowerChild",
-      "PowerCopiedLeft",
-      "PowerCopiedTerminalAt",
-      "PowerGameDescent",
-      "PowerIResponse",
-      "PowerMove",
-      "PowerPresentationEq",
-      "PowerQ",
-      "PowerQIsPreorder",
-      "PowerRel",
-      "PowerRelAtomAtom",
-      "PowerRelAtomNode",
-      "PowerRelNodeAtom",
-      "PowerRelNodeNode",
-      "PowerShiftIter",
-      "PowerSupport",
-      "Preamble",
-      "PrefixAgree",
-      "PrefixTree",
-      "ProperInitialSegment",
-      "ProperPrefixSet",
-      "RadoOrder",
-      "Ray",
-      "RelationEmbedding",
-      "RightComp",
-      "SetDomination",
-      "ShiftMap",
-      "SuccSeq",
-      "SuperSequence",
-      "SuperSequenceRestrict",
-      "TailSet",
-      "TildeF",
-      "TildeFSingleton"
-    ],
     "4235755ed6f6034f": {
       "artifact_bundle": {
         "$r": "216369389bea8a46"
@@ -17650,6 +17555,145 @@
       "reached_declaration": "PowerRel._proof_3",
       "visibility": "exported"
     },
+    "484fbb688ab814c4": [
+      "BadMultiSequence",
+      "BadPairSequence",
+      "BadSuperSequence",
+      "BaireContinuous",
+      "BaseBad",
+      "BaseIncSeq",
+      "BaseLocallyConstant",
+      "BaseMultiSequence",
+      "BasePerfect",
+      "BaseRestrict",
+      "BaseRightComp",
+      "BaseShift",
+      "BetterRel",
+      "BlockSigma",
+      "BlockSigmaContinuous",
+      "BlockSigmaEmbedding",
+      "BlockSigmaIntertwines",
+      {
+        "$s": "4c3bac0512a45c96"
+      },
+      "Bqo",
+      "BqoHerCtblWellF",
+      "BqoHerCtblWqo",
+      "BqoIffGeneralShift",
+      "CardinalityFront",
+      "CardinalityFrontIsFront",
+      "ContMor",
+      "ContMorEq",
+      "ContinuousHom",
+      "ContinuousRelHom",
+      "DecidingFront",
+      "DecidingFrontSet",
+      "DecidingPrefix",
+      "DecidingValue",
+      "EmapLemma",
+      "FinitePrefixExtension",
+      "FiniteShift",
+      "FirstMovedPoint",
+      "Front",
+      "FrontBase",
+      "FrontBridge",
+      "FrontBridgeInit",
+      "FrontBridgeStep",
+      "FrontBridgeTail",
+      "FrontBridgeTerminal",
+      "FrontPrefix",
+      "FrontPrefixExists",
+      "FrontPrefixUnique",
+      "FrontRayClosure",
+      "FrontRestrict",
+      "FrontRestriction",
+      {
+        "$s": "ba060752f87266a9"
+      },
+      {
+        "$s": "ce47bd99c3ed46e0"
+      },
+      "FrontTreeSingleton",
+      "FrontTreeWellFounded",
+      "GBetterRel",
+      "GBetterRelIff",
+      "GoodMultiSequence",
+      "HerCtblCode",
+      "HerCtblCodeErase",
+      "HerCtblPower",
+      "HerCtblPowerIsPreorder",
+      "HerCtblRel",
+      {
+        "$s": "19fb7b62eea67a5d"
+      },
+      "HereditarilyCountable",
+      {
+        "$s": "248a162fe13df6db"
+      },
+      {
+        "$s": "0de210e54bc47028"
+      },
+      "IncSeq",
+      "IncSeqComp",
+      "IncSeqId",
+      "IncSeqPointwiseLe",
+      "IncreasingPair",
+      "InfiniteSetEnumeration",
+      "InitialSegment",
+      "LocallyConstant",
+      "MainProp",
+      "MultiSequence",
+      "MultiSequenceRestrict",
+      "NashWilliams",
+      "OrbitBlock",
+      "OrbitBlockCoverage",
+      "OrbitEmbedding",
+      "OrbitPoint",
+      "OrbitUnbounded",
+      "PerfectMultiSequence",
+      "PerfectSuperSequence",
+      "PowerChild",
+      "PowerChildWellFounded",
+      "PowerCopiedLeft",
+      "PowerCopiedTerminalAt",
+      "PowerGameDescent",
+      "PowerIResponse",
+      "PowerIResponseFailure",
+      "PowerIResponseLegal",
+      "PowerIResponseWitness",
+      "PowerMove",
+      "PowerPresentationEq",
+      "PowerQ",
+      "PowerQIsPreorder",
+      "PowerRel",
+      "PowerRelAtomAtom",
+      "PowerRelAtomNode",
+      "PowerRelNodeAtom",
+      "PowerRelNodeNode",
+      "PowerShiftIter",
+      "PowerSupport",
+      "Preamble",
+      "PrefixAgree",
+      "PrefixTree",
+      "ProperInitialSegment",
+      "ProperPrefixSet",
+      "RadoOrder",
+      "Ray",
+      "RelationEmbedding",
+      "RightComp",
+      "RmapLemma",
+      "SetDomination",
+      "ShiftMap",
+      {
+        "$s": "b93919442f024c21"
+      },
+      "SuccSeq",
+      "SuperSequence",
+      "SuperSequenceRestrict",
+      "TailSet",
+      "TildeF",
+      "TildeFSingleton"
+    ],
     "4851c2a6b0868181": {
       "combined_sound_fp": {
         "$s": "580a95f19ff1bf7e"
@@ -59315,17 +59359,17 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": "TripleHomogeneous",
     "committed": {
       "$r": "64abdc46e4b8a5c8"
     },
-    "cycle": 95,
+    "cycle": 96,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": null,
+    "active_node": "TripleHomogeneous",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -59567,9 +59611,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 95,
+    "cycle": 96,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 95,
+    "cycles_since_clean": 96,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -60359,7 +60403,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 95,
+    "last_sound_response_cycle": 96,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60601,7 +60645,53 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Targeted",
+      "must_close_active": false,
+      "next_worker_context_mode": "resume",
+      "node": "TripleHomogeneous",
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [
+        {
+          "end_line": 994,
+          "reason": "The paper's homogeneous triple-coloring argument and its downstream use of the homogeneous set.",
+          "start_line": 985
+        },
+        {
+          "end_line": 1004,
+          "reason": "The paper's finite-subset notation and increasing-order convention.",
+          "start_line": 1002
+        },
+        {
+          "end_line": 1037,
+          "reason": "The paper's identification of [X]^n, including [X]^3, as a front.",
+          "start_line": 1036
+        },
+        {
+          "end_line": 1092,
+          "reason": "The paper's explicit front base, prefix-free, density, and nontriviality conditions.",
+          "start_line": 1083
+        }
+      ],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "0f037a80fa25e88f"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "TripleHomogeneous",
+            "otype": "node"
+          }
+        }
+      ],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "TheoremStating",
     "plan_review_cadence_enabled": true,
@@ -60676,16 +60766,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "CardinalityFrontIsFront": {
+      "TripleHomogeneous": {
         "v1": {
-          "comments": "The revised proof explicitly discharges all four Front fields: it proves both base inclusions for k>0 and the exact trivial family for k=0, proves strict initial segments have smaller finite cardinality, and supplies explicit ProperPrefixSet witnesses y(0) and y(k) with membership and cardinality checks. Every cross-node dependency is cited with the required noderef syntax.",
-          "node": "CardinalityFrontIsFront",
-          "overall": "APPROVE",
+          "comments": "1. The application of \\noderef{NashWilliams} requires the side condition S subseteq F. Although this follows immediately from the set-builder definition of S, the proof does not state or discharge that hypothesis, so the invocation is not fully line-by-line checkable.\n2. The proof asserts that F' is nontrivial merely because all of its members have cardinality three. That observation alone does not rule out the empty family or {emptyset}; it must use density of the front to obtain a member and then use F' subseteq F and the cardinality-three definition to exclude {emptyset}. This missing step is essential before the base condition yields that the base of F' is the union of its members and hence Y subseteq X.\n3. For an arbitrary three-element s subseteq Y, the proof says to take an infinite branch through Y whose first three elements are exactly s, but it neither constructs that branch nor proves that the tail of Y above max(s) is infinite. That existence claim is the key bridge from an arbitrary triple to front density.\n4. The final density argument does not unpack the ProperPrefixSet witness. It does not show that a supplied front member t with cardinality three is exactly the first three elements of the chosen branch, nor explicitly identify those elements with s. The cardinality claim is true only after using the prefix definition, increasing order, and the cutoff witness.\n5. The proof uses the base and density fields of Front, the base operation FrontBase, and the ProperPrefixSet semantics without citing \\noderef{Front}, \\noderef{FrontBase}, or \\noderef{ProperPrefixSet}; the soundness contract requires every such cross-node dependency to have an explicit noderef.",
+          "node": "TripleHomogeneous",
+          "overall": "REJECT",
           "soundness": {
-            "decision": "SOUND",
-            "explanation": "The proof rigorously establishes the infinite-base, base, prefix-free, and density fields of Front from the stated hypotheses and cited definitions/lemma. The k=0 and k>0 cases are handled separately, and the finite-set and cutoff arguments are explicit enough for line-by-line checking."
+            "decision": "UNSOUND",
+            "explanation": "The proof has the right Nash-Williams reduction, but it leaves essential nontriviality, branch-construction, and fixed-cardinality density steps implicit and omits noderefs for the Front/base/prefix definitions. It is therefore not a detailed, line-by-line proof under the soundness rubric."
           },
-          "summary": "Approve: the revised NL proof closes the previously identified base, density, and prefix-free gaps."
+          "summary": "Reject: the high-level Ramsey argument is correct, but the natural-language proof is not rigorous enough for soundness and has missing cross-node citations."
         }
       }
     },
@@ -60693,24 +60783,107 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 95,
+      "next_index": 96,
       "snapshots": [
         {
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": {
-            "$r": "42117ce1144d0d96"
-          },
-          "snapshot_index": 31
-        },
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": {
-            "$r": "42117ce1144d0d96"
-          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRestrict",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitPoint",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
           "snapshot_index": 32
         },
         {
@@ -64152,146 +64325,19 @@
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
+          "progressed": {
+            "$r": "484fbb688ab814c4"
+          },
           "snapshot_index": 94
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "484fbb688ab814c4"
+          },
+          "snapshot_index": 95
         }
       ]
     },
@@ -64300,12 +64346,10 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 341,
+    "request_seq": 343,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. The current Sound results approve CardinalityFrontIsFront and NashWilliams, and TripleHomogeneous imports CardinalityFrontIsFront directly. Request one real Sound verifier for TripleHomogeneous only. It should check the explicit construction of the front of three-element subsets, the coloring subset and Nash-Williams dichotomy, the argument that every three-element subset of the resulting base lies in the homogeneous sub-front via a branch with that prescribed initial segment, and the conclusion that the base remains contained in X. All cross-node uses must remain supported by the cited noderefs.",
-    "reviewer_requested_sound_verifier_nodes": [
-      "TripleHomogeneous"
-    ],
+    "reviewer_comments": "Repair only Tablet/TripleHomogeneous.tex; preserve the Lean statement, imports, and support structure, and add no helper or theorem. Before invoking NashWilliams, explicitly prove S subseteq F from the set-builder definition. Cite Front for the front clauses and base disjunction, FrontBase for the base-union argument, and ProperPrefixSet when unpacking density; cite InfiniteSetEnumeration if it is used for the explicit tail/branch construction. Show F' is not the trivial front: apply its density to an infinite subset of its base to obtain a member, then use F' subseteq F and the cardinality-three definition to exclude the empty set. Only then derive FrontBase(F')=Y and Y subseteq X. For an arbitrary three-element s subseteq Y, write its elements in increasing order, prove the tail of Y above its maximum is infinite, construct an infinite Z subseteq Y whose first three elements are exactly s, and apply density. Unpack the ProperPrefixSet cutoff and the fact that the supplied member has cardinality three to prove it is exactly s, rather than asserting this. Finish both color cases explicitly, retaining the existing CardinalityFront, CardinalityFrontIsFront, and NashWilliams citations and adding the missing Front, FrontBase, and ProperPrefixSet citations.",
+    "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
@@ -64416,6 +64460,9 @@
       },
       "SubFrontCharacterization": {
         "$s": "98f8b3f7b4b210cd"
+      },
+      "TripleHomogeneous": {
+        "$s": "0f037a80fa25e88f"
       }
     },
     "sound_assessment_schema_version": 1,
@@ -64815,6 +64862,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "TripleHomogeneous": {
+        "fingerprints": {
+          "$r": "eb5741480ecbbaae"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       }
     },
     "sound_backlog_stability": {
@@ -65917,7 +65973,8 @@
       "PowerIResponseLegal": "Pass",
       "PowerIResponseWitness": "Pass",
       "RmapLemma": "Pass",
-      "SubFrontCharacterization": "Pass"
+      "SubFrontCharacterization": "Pass",
+      "TripleHomogeneous": "Fail"
     },
     "stage": "Start",
     "stuck_math_audit": {
@@ -66679,7 +66736,7 @@
     "target_claims": {
       "$r": "8b8358bcaa735e43"
     },
-    "target_edit_mode": "Global",
+    "target_edit_mode": "Targeted",
     "theorem_verifier_only_continuation_enabled": true,
     "transport_attempt": 0,
     "transport_invalid_review_threshold": 5,

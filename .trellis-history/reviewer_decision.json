@@ -1,15 +1,15 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "CardinalityFrontIsFront now has fresh Sound approval, and NashWilliams is already Sound-approved. TripleHomogeneous is the held target and remains FreshUnknown, so its Sound proof should be verified now that its direct support is certified.",
-    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound results approve CardinalityFrontIsFront and NashWilliams, and TripleHomogeneous imports CardinalityFrontIsFront directly. Request one real Sound verifier for TripleHomogeneous only. It should check the explicit construction of the front of three-element subsets, the coloring subset and Nash-Williams dichotomy, the argument that every three-element subset of the resulting base lies in the homogeneous sub-front via a branch with that prescribed initial segment, and the conclusion that the base remains contained in X. All cross-node uses must remain supported by the cited noderefs.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "TripleHomogeneous"
+    "reason": "The Sound verifier found concrete gaps in TripleHomogeneous's NL proof. Assign a targeted repair of that proof, preserving its Lean statement and support DAG.",
+    "comments": "Repair only Tablet/TripleHomogeneous.tex; preserve the Lean statement, imports, and support structure, and add no helper or theorem. Before invoking NashWilliams, explicitly prove S subseteq F from the set-builder definition. Cite Front for the front clauses and base disjunction, FrontBase for the base-union argument, and ProperPrefixSet when unpacking density; cite InfiniteSetEnumeration if it is used for the explicit tail/branch construction. Show F' is not the trivial front: apply its density to an infinite subset of its base to obtain a member, then use F' subseteq F and the cardinality-three definition to exclude the empty set. Only then derive FrontBase(F')=Y and Y subseteq X. For an arbitrary three-element s subseteq Y, write its elements in increasing order, prove the tail of Y above its maximum is infinite, construct an infinite Z subseteq Y whose first three elements are exactly s, and apply density. Unpack the ProperPrefixSet cutoff and the fact that the supplied member has cardinality three to prove it is exactly s, rather than asserting this. Finish both color cases explicitly, retaining the existing CardinalityFront, CardinalityFrontIsFront, and NashWilliams citations and adding the missing Front, FrontBase, and ProperPrefixSet citations.",
+    "task_blocker_ids": [
+      "soundness:node:TripleHomogeneous:sound-v2:330e462e4f26f88dedf042a4f9d9f2a4aa85e8c5b8d1eb9b33cef4adce43a236"
     ],
-    "next_active": "",
-    "next_mode": "global",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "TripleHomogeneous",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -20,17 +20,27 @@
       {
         "start_line": 985,
         "end_line": 994,
-        "reason": "The paper's homogeneous triple-coloring step and its use in the combinatorial route."
+        "reason": "The paper's homogeneous triple-coloring argument and its downstream use of the homogeneous set."
       },
       {
         "start_line": 1002,
         "end_line": 1004,
-        "reason": "The paper's notation for finite k-element subsets and their increasing order."
+        "reason": "The paper's finite-subset notation and increasing-order convention."
+      },
+      {
+        "start_line": 1036,
+        "end_line": 1037,
+        "reason": "The paper's identification of [X]^n, including [X]^3, as a front."
+      },
+      {
+        "start_line": 1083,
+        "end_line": 1092,
+        "reason": "The paper's explicit front base, prefix-free, density, and nontriviality conditions."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage uses a homogeneous infinite set for a two-coloring of triples, while the notation passage defines [X]^k as the k-element subsets of an infinite X in increasing order. The TripleHomogeneous node realizes this step through CardinalityFrontIsFront and NashWilliams, whose Sound evidence is now current."
+      "basis_summary": "The paper uses homogeneous colorings of triples and identifies the constant-cardinality families [X]^n as fronts. Its explicit front definition requires the base disjunction, prefix-freeness, and density, with nontrivial fronts distinct from the trivial empty front. These passages directly support the requested line-by-line repair of TripleHomogeneous's Nash-Williams reduction and density argument."
     },
     "work_style_hint": "none"
   },
@@ -43,10 +53,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. The current Sound results approve CardinalityFrontIsFront and NashWilliams, and TripleHomogeneous imports CardinalityFrontIsFront directly. Request one real Sound verifier for TripleHomogeneous only. It should check the explicit construction of the front of three-element subsets, the coloring subset and Nash-Williams dichotomy, the argument that every three-element subset of the resulting base lies in the homogeneous sub-front via a branch with that prescribed initial segment, and the conclusion that the base remains contained in X. All cross-node uses must remain supported by the cited noderefs.",
+    "comments": "Repair only Tablet/TripleHomogeneous.tex; preserve the Lean statement, imports, and support structure, and add no helper or theorem. Before invoking NashWilliams, explicitly prove S subseteq F from the set-builder definition. Cite Front for the front clauses and base disjunction, FrontBase for the base-union argument, and ProperPrefixSet when unpacking density; cite InfiniteSetEnumeration if it is used for the explicit tail/branch construction. Show F' is not the trivial front: apply its density to an infinite subset of its base to obtain a member, then use F' subseteq F and the cardinality-three definition to exclude the empty set. Only then derive FrontBase(F')=Y and Y subseteq X. For an arbitrary three-element s subseteq Y, write its elements in increasing order, prove the tail of Y above its maximum is infinite, construct an infinite Z subseteq Y whose first three elements are exactly s, and apply density. Unpack the ProperPrefixSet cutoff and the fact that the supplied member has cardinality three to prove it is exactly s, rather than asserting this. Finish both color cases explicitly, retaining the existing CardinalityFront, CardinalityFrontIsFront, and NashWilliams citations and adding the missing Front, FrontBase, and ProperPrefixSet citations.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 95,
+    "cycle": 96,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,39 +64,57 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "TripleHomogeneous",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 994,
-        "reason": "The paper's homogeneous triple-coloring step and its use in the combinatorial route.",
+        "reason": "The paper's homogeneous triple-coloring argument and its downstream use of the homogeneous set.",
         "start_line": 985
       },
       {
         "end_line": 1004,
-        "reason": "The paper's notation for finite k-element subsets and their increasing order.",
+        "reason": "The paper's finite-subset notation and increasing-order convention.",
         "start_line": 1002
+      },
+      {
+        "end_line": 1037,
+        "reason": "The paper's identification of [X]^n, including [X]^3, as a front.",
+        "start_line": 1036
+      },
+      {
+        "end_line": 1092,
+        "reason": "The paper's explicit front base, prefix-free, density, and nontriviality conditions.",
+        "start_line": 1083
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage uses a homogeneous infinite set for a two-coloring of triples, while the notation passage defines [X]^k as the k-element subsets of an infinite X in increasing order. The TripleHomogeneous node realizes this step through CardinalityFrontIsFront and NashWilliams, whose Sound evidence is now current.",
+      "basis_summary": "The paper uses homogeneous colorings of triples and identifies the constant-cardinality families [X]^n as fronts. Its explicit front definition requires the base disjunction, prefix-freeness, and density, with nontrivial fronts distinct from the trivial empty front. These passages directly support the requested line-by-line repair of TripleHomogeneous's Nash-Williams reduction and density argument.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "CardinalityFrontIsFront now has fresh Sound approval, and NashWilliams is already Sound-approved. TripleHomogeneous is the held target and remains FreshUnknown, so its Sound proof should be verified now that its direct support is certified.",
-    "request_id": 341,
-    "request_sound_verifier_nodes": [
-      "TripleHomogeneous"
-    ],
+    "reason": "The Sound verifier found concrete gaps in TripleHomogeneous's NL proof. Assign a targeted repair of that proof, preserving its Lean statement and support DAG.",
+    "request_id": 343,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:330e462e4f26f88dedf042a4f9d9f2a4aa85e8c5b8d1eb9b33cef4adce43a236",
+        "kind": "Soundness",
+        "object": {
+          "node": "TripleHomogeneous",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_341_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_343_decision.context.json"
 }
