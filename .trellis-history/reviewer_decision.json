@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontPrefixUnique now has a current Sound approval. Independent inspection of FrontPrefixExists shows two concrete uncited proof dependencies: the infinitude of the range of an IncSeq and the ProperPrefixSet conclusion used before FrontPrefix is invoked.",
-    "comments": "Repair only `Tablet/FrontPrefixExists.tex`; preserve its Lean statement, imports, and support structure. The current proof says that the range of an order embedding is infinite without citing `IncSeq`, and it obtains a `ProperPrefixSet` witness from `Front` without citing `ProperPrefixSet`; cite both nodes explicitly. Give a line-by-line justification that injectivity of the Nat embedding makes its range infinite, then apply the density clause of `Front` to the range using the existing range-subset hypothesis, and finally identify the resulting ProperPrefixSet statement with `FrontPrefix` via `FrontPrefix`. Add no helper or structural changes.",
+    "reason": "FrontPrefixExists now has a current Sound approval. Independent inspection found a concrete invalid inference in FrontTreeOrderedExtension.tex: prefix-freeness of Front is invoked with s not in F.",
+    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. After PrefixTree supplies t in F with s an initial segment of t, do not apply Front prefix-freeness to s. Instead use s notin F and t in F to prove s != t, then use the InitialSegment witness to establish that s is a proper initial segment of t, citing the relevant support. In the later density argument, apply prefix-freeness only to pairs actually known to lie in F: handle w=s by s notin F, and if w is a proper prefix of s, use w in F and t in F with w an initial segment of t. Keep the explicit n/witness argument showing v=s union {n} is a PrefixTree node. The current proof's reference to paper lines 1569--1570 should be aligned with the tree argument at lines 1145--1148. Add no helper or structural changes.",
     "task_blocker_ids": [
-      "soundness:node:FrontPrefixExists:sound-v2:e1132155b944f4e5fa1a150ee27c73f7d4552bcfcdd4b8ec6ac21217e38036da"
+      "soundness:node:FrontTreeOrderedExtension:sound-v2:966ffde6d3ab89a713934dda561176b609b43dce98aace6bd197e4bff6e7d96b"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontPrefixExists",
+    "next_active": "FrontTreeOrderedExtension",
     "next_active_coarse": "",
     "next_mode": "targeted",
     "reset": "none",
@@ -20,14 +20,19 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1258,
-        "end_line": 1266,
-        "reason": "The paper states the front-prefix existence and uniqueness fact and defines the finite-prefix basic sets."
+        "start_line": 1079,
+        "end_line": 1080,
+        "reason": "The paper defines initial and proper initial segments for finite subsets."
+      },
+      {
+        "start_line": 1135,
+        "end_line": 1148,
+        "reason": "The paper defines the front tree and gives the density/prefix-free extension argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage uses the explicit front definition to obtain a unique finite prefix for every infinite subset and identifies the finite-prefix relation used here. The repair makes the existence argument and its dependency citations explicit before the uniqueness lemma is used downstream."
+      "basis_summary": "The paper defines T(F) by finite initial segments of front members and, in the tree proof, obtains a front witness extending the one-point extension before using the contradiction F contains a proper initial-segment pair. Those lines support the requested repair while requiring prefix-freeness to be applied only to members of F."
     }
   },
   "response": {
@@ -39,10 +44,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontPrefixExists.tex`; preserve its Lean statement, imports, and support structure. The current proof says that the range of an order embedding is infinite without citing `IncSeq`, and it obtains a `ProperPrefixSet` witness from `Front` without citing `ProperPrefixSet`; cite both nodes explicitly. Give a line-by-line justification that injectivity of the Nat embedding makes its range infinite, then apply the density clause of `Front` to the range using the existing range-subset hypothesis, and finally identify the resulting ProperPrefixSet statement with `FrontPrefix` via `FrontPrefix`. Add no helper or structural changes.",
+    "comments": "Repair only `Tablet/FrontTreeOrderedExtension.tex`; preserve its Lean statement, imports, and support structure. After PrefixTree supplies t in F with s an initial segment of t, do not apply Front prefix-freeness to s. Instead use s notin F and t in F to prove s != t, then use the InitialSegment witness to establish that s is a proper initial segment of t, citing the relevant support. In the later density argument, apply prefix-freeness only to pairs actually known to lie in F: handle w=s by s notin F, and if w is a proper prefix of s, use w in F and t in F with w an initial segment of t. Keep the explicit n/witness argument showing v=s union {n} is a PrefixTree node. The current proof's reference to paper lines 1569--1570 should be aligned with the tree argument at lines 1145--1148. Add no helper or structural changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 69,
+    "cycle": 70,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,24 +55,29 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontPrefixExists",
+    "next_active": "FrontTreeOrderedExtension",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1266,
-        "reason": "The paper states the front-prefix existence and uniqueness fact and defines the finite-prefix basic sets.",
-        "start_line": 1258
+        "end_line": 1080,
+        "reason": "The paper defines initial and proper initial segments for finite subsets.",
+        "start_line": 1079
+      },
+      {
+        "end_line": 1148,
+        "reason": "The paper defines the front tree and gives the density/prefix-free extension argument.",
+        "start_line": 1135
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage uses the explicit front definition to obtain a unique finite prefix for every infinite subset and identifies the finite-prefix relation used here. The repair makes the existence argument and its dependency citations explicit before the uniqueness lemma is used downstream.",
+      "basis_summary": "The paper defines T(F) by finite initial segments of front members and, in the tree proof, obtains a front witness extending the one-point extension before using the contradiction F contains a proper initial-segment pair. Those lines support the requested repair while requiring prefix-freeness to be applied only to members of F.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontPrefixUnique now has a current Sound approval. Independent inspection of FrontPrefixExists shows two concrete uncited proof dependencies: the infinitude of the range of an IncSeq and the ProperPrefixSet conclusion used before FrontPrefix is invoked.",
-    "request_id": 270,
+    "reason": "FrontPrefixExists now has a current Sound approval. Independent inspection found a concrete invalid inference in FrontTreeOrderedExtension.tex: prefix-freeness of Front is invoked with s not in F.",
+    "request_id": 273,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -77,15 +87,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:e1132155b944f4e5fa1a150ee27c73f7d4552bcfcdd4b8ec6ac21217e38036da",
+        "fingerprint": "sound-v2:966ffde6d3ab89a713934dda561176b609b43dce98aace6bd197e4bff6e7d96b",
         "kind": "Soundness",
         "object": {
-          "node": "FrontPrefixExists",
+          "node": "FrontTreeOrderedExtension",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_270_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_273_decision.context.json"
 }

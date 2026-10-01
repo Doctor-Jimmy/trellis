@@ -4,9 +4,36 @@ range is contained in $X$.  Then there is an $s\in F$ with
 $s\segs\operatorname{range}(x)$.
 \end{lemma}
 \begin{proof}
-The range of an order embedding of $\mathbb N$ is infinite.  Applying the
-density clause of the front definition \noderef{Front} to this range gives
-a finite $s\in F$ with
-\(\mathsf{ProperPrefixSet}(s,\operatorname{range}(x))\), which is exactly
-\(\mathsf{FrontPrefix}(F,s,x)\) by \noderef{FrontPrefix}.
+By \noderef{IncSeq}, $x$ is an order embedding of $\mathbb N$ into
+$\mathbb N$, and hence $x$ is injective.  Let
+$R=\operatorname{range}(x)$.  For every $N\in\mathbb N$, the $N+1$
+values
+\[
+x(0),x(1),\ldots,x(N)
+\]
+belong to $R$ and are pairwise distinct, because equality of two of them
+would contradict injectivity.  Thus $R$ has at least $N+1$ elements for
+every $N$.  If $R$ were finite, let $N$ be its cardinality.  The displayed
+$N+1$ pairwise distinct elements of $R$ would then give more elements than
+$R$ has, a contradiction.  Therefore $R$ is infinite.
+
+The hypothesis $h_x$ says exactly that $R\subseteq X$.  Hence the density
+clause in the definition of a front, \noderef{Front}, applied to the
+infinite set $R\subseteq X$, yields an $s\in F$ such that
+\[
+\mathsf{ProperPrefixSet}(s,R).
+\]
+By the definition of \noderef{ProperPrefixSet}, this means that some
+$n\in R$ satisfies
+\[
+s=\{k\in R\mid k<n\}.
+\]
+Since $R=\operatorname{range}(x)$, this says precisely that $s$ is the
+finite initial segment of the range of $x$ ending immediately before the
+member $n$ of that range.  Together with $s\in F$, the definition of
+\noderef{FrontPrefix} therefore gives
+\[
+\mathsf{FrontPrefix}(F,s,x),
+\]
+which proves the required existential statement.
 \end{proof}
