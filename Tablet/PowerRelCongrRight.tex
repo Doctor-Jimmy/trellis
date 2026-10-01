@@ -7,16 +7,108 @@ $X\in\mathsf{PowerQ}(Q)$,
 \]
 \end{lemma}
 \begin{proof}
-The proof is the right-hand analogue of left invariance.  Induct on the
-well-founded child descent of the right presentations and unfold
-\noderef{PowerRel}.  Equal atom presentations give equal $Q$-values by
-\noderef{PowerPresentationEq}; mixed tags are impossible.  For two right
-nodes, the two matching conjuncts in \noderef{PowerPresentationEq} transport
-the existential right-child witnesses in the atom--node and node--node
-reductions \noderef{PowerRelAtomNode} and \noderef{PowerRelNodeNode}.  For a
-left node and right atom, the atom equality case is immediate from
-\noderef{PowerRelNodeAtom}.  Apply the induction hypothesis to each matched
-child comparison and use the reverse matching conjunct for the converse
-direction.  The fact that matching witnesses can be reversed and composed
-is the equivalence property in \noderef{PowerPresentationEqEquivalence}.
+Fix $r$ and, for a presentation $Y$, let $P(Y)$ be the assertion that for
+every $Y'$ and every $X$, structural equivalence
+$\mathsf{PowerPresentationEq}(Y,Y')$ implies
+\[
+\mathsf{PowerRel}(r)(X,Y)\quad\Longleftrightarrow\quad
+\mathsf{PowerRel}(r)(X,Y').
+\]
+We prove $P(Y)$ by well-founded induction on the child-to-parent relation
+\noderef{PowerChild}, whose well-foundedness is
+\noderef{PowerChildWellFounded}.  At every use of the induction hypothesis
+below, the first right presentation is a child of the current right
+presentation: if $Y=\mathsf{node}(\kappa,h,g)$, then
+\[
+\mathsf{PowerChild}(g(j),Y)
+\]
+is witnessed, according to the definition in \noderef{PowerChild}, by
+the pair $(j,\mathsf{rfl})$.  The four reductions used in the cases are the
+corresponding branches of the well-founded recursion defining
+\noderef{PowerRel}.
+
+First suppose that $Y=\mathsf{atom}(q)$ and
+$Y'=\mathsf{atom}(q')$.  The atom--atom clause of
+\noderef{PowerPresentationEq} gives $q=q'$.  If
+$X=\mathsf{atom}(p)$, both sides reduce by
+\noderef{PowerRelAtomAtom} to $r(p,q)$ after substituting this equality.
+If $X=\mathsf{node}(\iota,h,f)$, both sides reduce by
+\noderef{PowerRelNodeAtom} to the universal comparison of every $f(i)$
+with the same atom, again because $q=q'$.  Thus the equivalence holds for
+both possible left tags.
+
+The two mixed right-tag cases cannot occur: if one of $Y,Y'$ is an atom
+and the other is a node, the corresponding branch of
+\noderef{PowerPresentationEq} is false.  Hence the assumed structural
+equivalence rules out both cases.
+
+It remains to consider
+\[
+Y=\mathsf{node}(\kappa,h,g),\qquad
+Y'=\mathsf{node}(\lambda,h',g').
+\]
+Write the two conjuncts of the assumed equivalence as
+\[
+\begin{split}
+ (E_\to)&:\ \forall j\in\kappa\;\exists j'\in\lambda,
+   \mathsf{PowerPresentationEq}(g(j),g'(j')),\\
+ (E_\leftarrow)&:\ \forall j'\in\lambda\;\exists j\in\kappa,
+   \mathsf{PowerPresentationEq}(g(j),g'(j')).
+\end{split}
+\]
+These are exactly the forward and backward matching clauses in
+\noderef{PowerPresentationEq}.  Equivalently, by the symmetry part of
+\noderef{PowerPresentationEqEquivalence}, the second clause is the forward
+matching clause for the symmetric equivalence
+$\mathsf{PowerPresentationEq}(Y',Y)$; this permits the same argument to be
+read in either direction.
+
+Suppose first that $X=\mathsf{atom}(p)$.  By
+\noderef{PowerRelAtomNode}, the left side is equivalent to
+\[
+\exists j\in\kappa\quad
+\mathsf{PowerRel}(r)(\mathsf{atom}(p),g(j)).
+\]
+Given such a $j$, choose $j'$ from $(E_\to)$.  The induction hypothesis
+applies to the matched pair $g(j),g'(j')$, because the explicit witness
+$(j,\mathsf{rfl})$ proves $\mathsf{PowerChild}(g(j),Y)$.  It changes the
+displayed comparison into
+\[
+\mathsf{PowerRel}(r)(\mathsf{atom}(p),g'(j')).
+\]
+The existential clause of \noderef{PowerRelAtomNode} then proves the right
+side.  Conversely, start with a witness $j'$ for the right side, choose
+$j$ from $(E_\leftarrow)$, and apply the same induction hypothesis, now
+using the child witness $(j,\mathsf{rfl})$ for $Y$.  This time use the
+reverse implication supplied by the induction equivalence, and then use the
+atom--node reduction to return to the left side.
+
+Now suppose that $X=\mathsf{node}(\iota,k,f)$.  By
+\noderef{PowerRelNodeNode}, the left side is equivalent to
+\[
+\forall i\in\iota\;\exists j\in\kappa\quad
+\mathsf{PowerRel}(r)(f(i),g(j)).
+\]
+Fix an arbitrary $i$ and choose a corresponding $j$.  Use $(E_\to)$ to
+choose $j'$ with
+$\mathsf{PowerPresentationEq}(g(j),g'(j'))$.  The induction hypothesis,
+justified by $\mathsf{PowerChild}(g(j),Y)$ via $(j,\mathsf{rfl})$, gives
+\[
+\mathsf{PowerRel}(r)(f(i),g'(j')).
+\]
+Thus the
+same arbitrary left-child index $i$ has a right-child witness $j'$ in
+$Y'$.  Applying \noderef{PowerRelNodeNode} proves the right side.  For the
+converse, begin with an arbitrary $i$ and a witness $j'$ supplied by the
+right-hand node--node reduction, use $(E_\leftarrow)$ to obtain $j$, and
+apply the reverse implication of the induction hypothesis along the child
+witness $(j,\mathsf{rfl})$.  This supplies the required $j$ for the
+left-hand node--node reduction.  In particular, the universal
+quantification over the left children is preserved; only its existential
+right-child witness is transported.
+
+The two implications have therefore been proved for both possible left
+tags, while the atom and mixed right-tag cases were already settled.  This
+establishes $P(Y)$ for every $Y$, and specializing it to the given
+$X,Y,Y'$ and $hyy'$ yields the claimed right presentation invariance.
 \end{proof}

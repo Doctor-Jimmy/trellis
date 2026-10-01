@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerRelRefl has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrRight in the presentation-invariance cone.",
-    "comments": "Edit only Tablet/PowerRelCongrRight.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelRefl or add a helper. Give the right-presentation induction explicitly, citing PowerChildWellFounded and PowerRel. Split the left and right atom/node tags. For equivalent right atoms, use PowerPresentationEq to identify the Q values and apply PowerRelAtomAtom or PowerRelNodeAtom. Explain why mixed right tags are impossible. For equivalent right nodes, use both matching directions from PowerPresentationEq to transport each existential right-child witness in PowerRelAtomNode and PowerRelNodeNode; in the left-node case also transport the universal left-child comparisons. Apply the induction hypothesis to matched child pairs and justify every descent with PowerChild. Prove both implications, using PowerPresentationEqEquivalence for symmetry or composition where needed, and cite PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
+    "reason": "PowerRelCongrRight has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrLeft, its symmetric left-presentation invariance lemma.",
+    "comments": "Edit only Tablet/PowerRelCongrLeft.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelCongrRight or add a helper. Give the proof as well-founded induction on the compared left presentation, citing PowerChildWellFounded, PowerChild, and PowerRel. Split atom-atom, mixed-tag, node-atom, and node-node cases. For equivalent atoms use PowerPresentationEq to identify the Q values; explain why mixed tags are impossible. In node cases, use the forward matching conjunct to replace each left child by an equivalent child and apply the induction hypothesis to the recursive comparison with the fixed right presentation; preserve the universal left-child quantifier in PowerRelNodeAtom and transport the existential right-child witness in PowerRelNodeNode. Prove the reverse implication with the backward matching conjunct, justify each descent by an explicit PowerChild witness, and use PowerPresentationEqEquivalence for symmetry or composition when needed. Cite PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerRelCongrRight",
+    "next_active": "PowerRelCongrLeft",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,12 +18,12 @@
       {
         "start_line": 1404,
         "end_line": 1420,
-        "reason": "The paper's four recursive atom/node clauses determine which existential and universal witnesses must be transported."
+        "reason": "The paper's four recursive atom/node clauses determine how left-child universal and right-child existential witnesses are transported."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; right presentation invariance must preserve exactly their existential and universal quantifier structure under structural matching."
+      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; left presentation invariance must preserve the universal quantification over left children and the existential witnesses on the right."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerRelCongrRight.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelRefl or add a helper. Give the right-presentation induction explicitly, citing PowerChildWellFounded and PowerRel. Split the left and right atom/node tags. For equivalent right atoms, use PowerPresentationEq to identify the Q values and apply PowerRelAtomAtom or PowerRelNodeAtom. Explain why mixed right tags are impossible. For equivalent right nodes, use both matching directions from PowerPresentationEq to transport each existential right-child witness in PowerRelAtomNode and PowerRelNodeNode; in the left-node case also transport the universal left-child comparisons. Apply the induction hypothesis to matched child pairs and justify every descent with PowerChild. Prove both implications, using PowerPresentationEqEquivalence for symmetry or composition where needed, and cite PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
+    "comments": "Edit only Tablet/PowerRelCongrLeft.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelCongrRight or add a helper. Give the proof as well-founded induction on the compared left presentation, citing PowerChildWellFounded, PowerChild, and PowerRel. Split atom-atom, mixed-tag, node-atom, and node-node cases. For equivalent atoms use PowerPresentationEq to identify the Q values; explain why mixed tags are impossible. In node cases, use the forward matching conjunct to replace each left child by an equivalent child and apply the induction hypothesis to the recursive comparison with the fixed right presentation; preserve the universal left-child quantifier in PowerRelNodeAtom and transport the existential right-child witness in PowerRelNodeNode. Prove the reverse implication with the backward matching conjunct, justify each descent by an explicit PowerChild witness, and use PowerPresentationEqEquivalence for symmetry or composition when needed. Cite PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 126,
+    "cycle": 127,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerRelCongrRight",
+    "next_active": "PowerRelCongrLeft",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1420,
-        "reason": "The paper's four recursive atom/node clauses determine which existential and universal witnesses must be transported.",
+        "reason": "The paper's four recursive atom/node clauses determine how left-child universal and right-child existential witnesses are transported.",
         "start_line": 1404
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; right presentation invariance must preserve exactly their existential and universal quantifier structure under structural matching.",
+      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; left presentation invariance must preserve the universal quantification over left children and the existential witnesses on the right.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerRelRefl has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrRight in the presentation-invariance cone.",
-    "request_id": 415,
+    "reason": "PowerRelCongrRight has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrLeft, its symmetric left-presentation invariance lemma.",
+    "request_id": 418,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,5 +76,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_415_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_418_decision.context.json"
 }
