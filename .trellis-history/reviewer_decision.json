@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "OrbitBlockCoverage was repaired and its fingerprint changed, so its old Soundness failure is no longer an action for this transition. Dismiss that completed audit task and route the audit's next structural task: repair the false fixed-base SubFrontCharacterization interface together with the dependent Nash-Williams diagonal.",
-    "comments": "Continue in Global mode with next_active SubFrontCharacterization. Work only on the audit task repair-subfront-and-nash-diagonal: replace the fixed-base Lean conclusion by the paper-faithful existential-base interface, under Front F X and F' subset F, namely (exists Y, Front F' Y) iff exists Z, Z subset X and Z.Infinite and F' = FrontRestrict F Z. Make the TeX statement explicit about the existential base and prove both directions, including the trivial-front case, citing Front, FrontRestriction, FrontRestrict, and FrontBase as used. Then update NashWilliams.tex while preserving the exact Lean target and adding no helper: at stage k set A_k=TailSet(X_(k-1),n_k), form K_k=FrontRestrict(F_(n_k),A_k), use FrontRestriction to establish that K_k is a front, explain that its prefix tree is a subtree of the ray tree and has rank below F, and apply the induction hypothesis to K_k with the restricted coloring. Use the corrected SubFrontCharacterization to obtain X_k subset A_k; do not apply induction to the full ray and then demand a specially located base. Keep all dependency citations explicit. Do not request Sound verification yet; the audit defers Sound until the statement-lane surface is clear.",
+    "reason": "The worker completed the audited SubFrontCharacterization and NashWilliams repairs, and the current correspondence verifier approves SubFrontCharacterization. The completed audit task is dismissed; the next legal step is the audit's remaining coordinated statement-correspondence repair before any Sound reverification.",
+    "comments": "Continue in Global mode with next_active BadSuperToBase. Execute only audit task repair-statement-correspondence: strengthen BadSuperToBase and PerfectSuperToBase so each existential witness includes the SuperSequenceExtension front-prefix value equation identifying the canonical extension, while preserving the bad/perfect conclusions. Rewrite FrontPrefixUnique.tex so its statement explicitly gives a front F on X, an increasing enumeration x, and two local FrontPrefix hypotheses for s and t; cite FrontPrefix and Front rather than borrowing hypotheses from FrontPrefixExists. Correct the stale PerfectMultiRestrict.tex evaluation from x composed with z to the fixed-left restriction z composed with x, citing RestrictionShift. Keep the changes paper-faithful, preserve explicit dependency citations, add no wrapper or unrelated helper, and do not request Sound verification yet.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "SubFrontCharacterization",
+    "next_active": "BadSuperToBase",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -18,28 +18,38 @@
     "work_style_hint": "restructure",
     "paper_focus_ranges": [
       {
-        "start_line": 1204,
-        "end_line": 1227,
-        "reason": "The paper's sub-front proposition existentially quantifies the base and identifies a sub-front with a restriction of the original front."
+        "start_line": 1085,
+        "end_line": 1091,
+        "reason": "The explicit front axioms provide the local membership, prefix-freeness, and density facts needed for the FrontPrefixUnique statement."
       },
       {
-        "start_line": 1242,
-        "end_line": 1253,
-        "reason": "The Nash-Williams recursion first restricts each ray to the prescribed nested tail before applying the lower-rank induction hypothesis."
+        "start_line": 1258,
+        "end_line": 1275,
+        "reason": "The paper defines the canonical extension by the unique front prefix and records its locally constant multi-sequence meaning."
+      },
+      {
+        "start_line": 1467,
+        "end_line": 1485,
+        "reason": "The paper states badness for super-sequences and proves that the canonical extension preserves badness."
+      },
+      {
+        "start_line": 1646,
+        "end_line": 1662,
+        "reason": "The paper defines perfectness for super-sequences and derives perfect restricted super-sequences from the multi-sequence restriction argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The first cited passage says that a sub-front is a restriction to some infinite subset of the original base, with the base existential rather than fixed in advance. The second passage applies induction to F_(n_k) restricted to X_(k-1)/n_k, exactly the nested-tail construction required to make the diagonal bases compatible."
+      "basis_summary": "The cited front passage supplies the exact explicit axioms underlying uniqueness. The extension passage identifies the unique-prefix value equation that the two base witnesses must retain. The badness and perfectness passages justify preserving the respective conclusions and the restriction orientation while repairing only the interfaces and proof statement package."
     },
     "dismissed_tasks": [
       {
-        "id": "finish-orbit-block-coverage",
-        "reason": "Completed: the worker changed OrbitBlockCoverage.tex and supplied the requested OrbitEmbedding, OrbitPoint, OrbitUnbounded, and OrbitBlock citations together with the successor-witness, least-index case split, and two-order uniqueness argument. Its old Soundness fingerprint is therefore omitted from this transition."
+        "id": "repair-subfront-and-nash-diagonal",
+        "reason": "Completed: the worker replaced SubFrontCharacterization by the existential-base equivalence with an explicit cited proof and reworked NashWilliams.tex to restrict each ray to the prescribed nested tail before applying the lower-rank induction. The current correspondence verifier approves SubFrontCharacterization."
       }
     ],
     "stuck_math_audit": {
-      "notes": "The active audit plan remains in force. Its first task is complete and dismissed; execute repair-subfront-and-nash-diagonal next. Do not dismiss the remaining audit tasks, request Sound verification, or weaken the paper-facing statements. After this coordinated signature/proof repair changes the relevant fingerprints, return the package to the ordinary statement lanes.",
+      "notes": "The active audit plan remains in force. The SubFront/Nash diagonal task is complete and dismissed. Route the next worker through repair-statement-correspondence, then return the changed packages to the statement lanes. Keep the Sound task deferred until the statement-lane surface is clear; do not weaken true paper-facing claims or add wrappers.",
       "reviewer_lean_product": null
     }
   },
@@ -52,56 +62,66 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode with next_active SubFrontCharacterization. Work only on the audit task repair-subfront-and-nash-diagonal: replace the fixed-base Lean conclusion by the paper-faithful existential-base interface, under Front F X and F' subset F, namely (exists Y, Front F' Y) iff exists Z, Z subset X and Z.Infinite and F' = FrontRestrict F Z. Make the TeX statement explicit about the existential base and prove both directions, including the trivial-front case, citing Front, FrontRestriction, FrontRestrict, and FrontBase as used. Then update NashWilliams.tex while preserving the exact Lean target and adding no helper: at stage k set A_k=TailSet(X_(k-1),n_k), form K_k=FrontRestrict(F_(n_k),A_k), use FrontRestriction to establish that K_k is a front, explain that its prefix tree is a subtree of the ray tree and has rank below F, and apply the induction hypothesis to K_k with the restricted coloring. Use the corrected SubFrontCharacterization to obtain X_k subset A_k; do not apply induction to the full ray and then demand a specially located base. Keep all dependency citations explicit. Do not request Sound verification yet; the audit defers Sound until the statement-lane surface is clear.",
+    "comments": "Continue in Global mode with next_active BadSuperToBase. Execute only audit task repair-statement-correspondence: strengthen BadSuperToBase and PerfectSuperToBase so each existential witness includes the SuperSequenceExtension front-prefix value equation identifying the canonical extension, while preserving the bad/perfect conclusions. Rewrite FrontPrefixUnique.tex so its statement explicitly gives a front F on X, an increasing enumeration x, and two local FrontPrefix hypotheses for s and t; cite FrontPrefix and Front rather than borrowing hypotheses from FrontPrefixExists. Correct the stale PerfectMultiRestrict.tex evaluation from x composed with z to the fixed-left restriction z composed with x, citing RestrictionShift. Keep the changes paper-faithful, preserve explicit dependency citations, add no wrapper or unrelated helper, and do not request Sound verification yet.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 53,
+    "cycle": 54,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [
       {
-        "id": "finish-orbit-block-coverage",
-        "reason": "Completed: the worker changed OrbitBlockCoverage.tex and supplied the requested OrbitEmbedding, OrbitPoint, OrbitUnbounded, and OrbitBlock citations together with the successor-witness, least-index case split, and two-order uniqueness argument. Its old Soundness fingerprint is therefore omitted from this transition."
+        "id": "repair-subfront-and-nash-diagonal",
+        "reason": "Completed: the worker replaced SubFrontCharacterization by the existential-base equivalence with an explicit cited proof and reworked NashWilliams.tex to restrict each ray to the prescribed nested tail before applying the lower-rank induction. The current correspondence verifier approves SubFrontCharacterization."
       }
     ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "SubFrontCharacterization",
+    "next_active": "BadSuperToBase",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1227,
-        "reason": "The paper's sub-front proposition existentially quantifies the base and identifies a sub-front with a restriction of the original front.",
-        "start_line": 1204
+        "end_line": 1091,
+        "reason": "The explicit front axioms provide the local membership, prefix-freeness, and density facts needed for the FrontPrefixUnique statement.",
+        "start_line": 1085
       },
       {
-        "end_line": 1253,
-        "reason": "The Nash-Williams recursion first restricts each ray to the prescribed nested tail before applying the lower-rank induction hypothesis.",
-        "start_line": 1242
+        "end_line": 1275,
+        "reason": "The paper defines the canonical extension by the unique front prefix and records its locally constant multi-sequence meaning.",
+        "start_line": 1258
+      },
+      {
+        "end_line": 1485,
+        "reason": "The paper states badness for super-sequences and proves that the canonical extension preserves badness.",
+        "start_line": 1467
+      },
+      {
+        "end_line": 1662,
+        "reason": "The paper defines perfectness for super-sequences and derives perfect restricted super-sequences from the multi-sequence restriction argument.",
+        "start_line": 1646
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The first cited passage says that a sub-front is a restriction to some infinite subset of the original base, with the base existential rather than fixed in advance. The second passage applies induction to F_(n_k) restricted to X_(k-1)/n_k, exactly the nested-tail construction required to make the diagonal bases compatible.",
+      "basis_summary": "The cited front passage supplies the exact explicit axioms underlying uniqueness. The extension passage identifies the unique-prefix value equation that the two base witnesses must retain. The badness and perfectness passages justify preserving the respective conclusions and the restriction orientation while repairing only the interfaces and proof statement package.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "OrbitBlockCoverage was repaired and its fingerprint changed, so its old Soundness failure is no longer an action for this transition. Dismiss that completed audit task and route the audit's next structural task: repair the false fixed-base SubFrontCharacterization interface together with the dependent Nash-Williams diagonal.",
-    "request_id": 229,
+    "reason": "The worker completed the audited SubFrontCharacterization and NashWilliams repairs, and the current correspondence verifier approves SubFrontCharacterization. The completed audit task is dismissed; the next legal step is the audit's remaining coordinated statement-correspondence repair before any Sound reverification.",
+    "request_id": 233,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The active audit plan remains in force. Its first task is complete and dismissed; execute repair-subfront-and-nash-diagonal next. Do not dismiss the remaining audit tasks, request Sound verification, or weaken the paper-facing statements. After this coordinated signature/proof repair changes the relevant fingerprints, return the package to the ordinary statement lanes.",
+      "notes": "The active audit plan remains in force. The SubFront/Nash diagonal task is complete and dismissed. Route the next worker through repair-statement-correspondence, then return the changed packages to the statement lanes. Keep the Sound task deferred until the statement-lane surface is clear; do not weaken true paper-facing claims or add wrappers.",
       "reviewer_lean_product": null
     },
     "task_blockers": [],
     "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_229_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_233_decision.context.json"
 }

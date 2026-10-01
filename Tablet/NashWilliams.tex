@@ -56,26 +56,17 @@ least element of $t$ otherwise), so prefix-freeness from
 contrary to nontriviality.  Thus every member of $F$ is nonempty and has a
 least element.
 
-For each $n\in X$, set
+For each $n\in X$, define the ray coloring by
 \[
  S_n=\{s\in F_n\mid \{n\}\cup s\in S\}.
 \]
 By \noderef{FrontRayClosure}, $F_n$ is a front on
-$\mathsf{TailSet}(X,n)$, and the preceding tree identification places its
-rank below that of $F$.  Apply the induction hypothesis to this front and
-$S_n\subseteq F_n$.  It gives a front $H_n$ on some infinite base, with
-$H_n\subseteq F_n$, which is either contained in $S_n$ or disjoint from
-$S_n$.  The forward direction of the sub-front characterization
-\noderef{SubFrontCharacterization} now gives an infinite set
-$Z_n\subseteq\mathsf{TailSet}(X,n)$ such that
-\[
- H_n=F_n\mathbin{|}Z_n.
-\]
-The restriction lemma \noderef{FrontRestriction}, applied to $F_n$ and
-$Z_n$, confirms directly that this restriction is a front.  This is the
-step that permits the induction hypothesis's
-arbitrary homogeneous sub-front to be replaced by the particular restriction
-needed for the diagonal construction.
+$\mathsf{TailSet}(X,n)$.  The preceding tree identification places its ray
+rank below that of $F$.  At the diagonal stage below we restrict this ray
+before invoking the induction hypothesis.  This is essential: the induction
+hypothesis may return a homogeneous sub-front on an arbitrary infinite
+subset of the ray's base, so it cannot be required afterwards to lie in a
+separately prescribed tail.
 
 We carry out these choices along one increasing sequence, keeping all
 infinite-tail facts explicit.  Put $X_{-1}=X$.  Inductively suppose that
@@ -86,17 +77,44 @@ naturals has a least element, so define
 \]
 Then $n_k\in X_{k-1}\subseteq X$.  The set
 \[
- X_{k-1}/n_k=\mathsf{TailSet}(X_{k-1},n_k)
+ A_k=X_{k-1}/n_k=\mathsf{TailSet}(X_{k-1},n_k)
 \]
 where $\mathsf{TailSet}$ is the tail operation of \noderef{TailSet}.  This
 set is infinite: its complement in $X_{k-1}$ is contained in the finite set
-$\{0,1,\ldots,n_k\}$.  Apply the preceding ray construction at $n_k$,
-using the induction hypothesis on $F_{n_k}$, and use
-\noderef{SubFrontCharacterization} to choose an infinite set
+$\{0,1,\ldots,n_k\}$.  First restrict the ray to this prescribed tail:
 \[
- X_k\subseteq X_{k-1}/n_k
+ K_k=\mathsf{FrontRestrict}(F_{n_k},A_k).
 \]
-for which either
+Since $A_k\subseteq\mathsf{TailSet}(X,n_k)$, the restriction lemma
+\noderef{FrontRestriction}, applied to the front $F_{n_k}$ from
+\noderef{FrontRayClosure}, shows that $K_k$ is a front on $A_k$.
+Every prefix of $K_k$ is a prefix of $F_{n_k}$, so its prefix tree is a
+subtree of the ray prefix tree.  Thus
+\[
+ \mathop{\mathrm{rk}}(K_k)\leq\mathop{\mathrm{rk}}(F_{n_k})
+ <\mathop{\mathrm{rk}}(F),
+\]
+using the ray rank comparison above and the well-founded tree from
+\noderef{FrontTreeWellFounded}.  Define the restricted coloring
+\[
+ T_k=\{s\in K_k\mid\{n_k\}\cup s\in S\}.
+\]
+The induction hypothesis applies to the front $K_k$ and the subset
+$T_k\subseteq K_k$.  It gives a homogeneous front $H_k$ on some infinite
+base, with $H_k\subseteq K_k$.  The existential-base direction of
+\noderef{SubFrontCharacterization}, now applied to $K_k$ and $H_k$, gives an
+infinite set
+\[
+ X_k\subseteq A_k
+\]
+such that $H_k=K_k\mathbin{|}X_k$.  Since $X_k\subseteq A_k$ and $K_k$ is
+the restriction of $F_{n_k}$ to $A_k$, the definition in
+\noderef{FrontRestrict} gives
+\[
+ K_k\mathbin{|}X_k=F_{n_k}\mathbin{|}X_k.
+\]
+By the definitions of $T_k$ and $S_{n_k}$, the homogeneous alternative for
+$H_k=K_k\mathbin{|}X_k$ therefore becomes either
 \[
  F_{n_k}\mathbin{|}X_k\subseteq S_{n_k}
  \quad\text{or}\quad

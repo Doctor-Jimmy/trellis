@@ -1,24 +1,47 @@
 \begin{lemma}[Sub-fronts]
-Let $F$ be a front on $X$ and let $F'\subseteq F$.  Then $F'$ is a front
-if and only if there is an infinite $Y\subseteq X$ such that
+Let $F$ be a front on $X$ and let $F'\subseteq F$.  Then there is a set $Y$
+such that $F'$ is a front on $Y$ if and only if there is an infinite
+$Z\subseteq X$ such that
 \[
-F'=F\mathbin{|}Y.
+F'=F\mathbin{|}Z.
 \]
 \end{lemma}
 \begin{proof}
-If $Y\subseteq X$ is infinite, \noderef{FrontRestriction} shows that the
-family defined by \noderef{FrontRestrict}, namely $F\mathbin{|}Y$, is a
-front, and it is plainly contained in $F$.
+For the reverse implication, suppose that $Z\subseteq X$ is infinite and
+$F'=F\mathbin{|}Z$.  By \noderef{FrontRestriction}, applied to the front
+$F$ on $X$, the family defined by \noderef{FrontRestrict} is a front on
+$Z$.  Thus the left side holds, and the defining condition of
+\noderef{FrontRestrict} also gives $F'\subseteq F$.
 
-Conversely, suppose $F'$ is a front on $Y$ and $F'\subseteq F$.  If $F$ is
-trivial, the only possible front subfamily is the same trivial family, and
-the conclusion follows by taking $Y=X$.  Otherwise $F'$ cannot contain the
-empty set, so its base is $Y$ and the base clause of \noderef{Front} gives
-$Y=\mathsf{FrontBase}(F')\subseteq\mathsf{FrontBase}(F)=X$.
+For the forward implication, suppose that $F'$ is a front on some $Y$ and
+$F'\subseteq F$.  First consider the trivial case $F=\{\emptyset\}$.
+The density clause of \noderef{Front} makes $F'$ nonempty, while the
+inclusion in $F$ forces $F'=\{\emptyset\}$.  Taking $Z=X$, which is
+infinite by \noderef{Front}, gives
+$F'=\mathsf{FrontRestrict}(F,Z)$ by \noderef{FrontRestrict}.
 
-For $s\in F'$, clearly $s\in F\mathbin{|}Y$.  Conversely, if
-$s\in F\mathbin{|}Y$, density of $F'$ on $Y$ supplies $t\in F'$ with
-$t\segs(s\cup(Y/s))$.  Both $s$ and $t$ belong to $F$, and one is an
-initial segment of the other; prefix-freeness of $F$ forces $s=t$.  Hence
-$F\mathbin{|}Y\subseteq F'$, proving equality.
+Now suppose that $F\ne\{\emptyset\}$.  Then $\emptyset\notin F$: if it
+were in $F$, it would be an initial segment of every member of $F$, and the
+prefix-free clause of \noderef{Front} would force every member of $F$ to be
+$\emptyset$.  The same observation and $F'\subseteq F$ show that
+$\emptyset\notin F'$.  Hence the base clauses in \noderef{Front} give
+\[
+\mathsf{FrontBase}(F')=Y\quad\text{and}\quad
+\mathsf{FrontBase}(F)=X.
+\]
+Since $F'\subseteq F$, the definition of \noderef{FrontBase} gives
+$Y\subseteq X$.  Put $Z=Y$; it is infinite by the infinite-base clause of
+\noderef{Front}.  It remains to show $F'=F\mathbin{|}Y$.
+
+If $s\in F'$, every element of $s$ belongs to
+$\mathsf{FrontBase}(F')=Y$, so $s\in F\mathbin{|}Y$.  Conversely, let
+$s\in F\mathbin{|}Y$.  Since $s$ is a nonempty finite initial segment and
+$Y$ is infinite, the tail $Y/s$ is infinite; hence
+$s\cup(Y/s)\subseteq Y$ is infinite.  The density clause of
+\noderef{Front} for $F'$, applied to this set, supplies $t\in F'$ with
+$t\segs(s\cup(Y/s))$.  Both $s$ and $t$ belong to $F$, and both are initial
+segments of this same increasing set, so they are comparable by
+\noderef{InitialSegment}.  Prefix-freeness of $F$ from \noderef{Front}
+then forces $s=t$.  Thus $F\mathbin{|}Y\subseteq F'$, proving the desired
+equality and the forward implication.
 \end{proof}
