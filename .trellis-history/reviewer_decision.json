@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found five concrete omissions in QuadrupleHomogeneous: the Nash-Williams subset premise, the nontriviality and base argument for the sub-front, the required Front and FrontBase citations, the full fixed-cardinality argument for an arbitrary quadruple, and the final color-0 membership deduction. A bounded proof-text repair is warranted.",
-    "comments": "Repair only Tablet/QuadrupleHomogeneous.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper node. Before invoking NashWilliams, explicitly prove that S is a subset of F from its set-builder definition. From F' subseteq F and the fact that every member of CardinalityFront(4,X) has cardinality 4, prove that the empty set is not in F'; then use the two alternatives in the Front definition to conclude FrontBase(F') = Y. Cite Front and FrontBase whenever using the front base, density, or union-of-members facts. For an arbitrary four-element s subseteq Y, do not say this is the triple case: explicitly construct an infinite Z subseteq Y whose first four elements are s, for example s union the tail of Y above max s; prove the subset and infinitude facts, apply front density, unpack ProperPrefixSet, and use the cardinality-four facts for both the resulting t and s to force t=s. Finally spell out both color alternatives: membership in S gives c(s)=1, while s in F' and F' disjoint S gives s not in S, and the definition of S together with s in F gives c(s)=0. Cite CardinalityFront, CardinalityFrontIsFront, NashWilliams, Front, FrontBase, InfiniteSetEnumeration, and any ProperPrefixSet or InitialSegment support actually used. Do not rely on the proof of another node or retain the phrase same as for triples.",
-    "task_blocker_ids": [
-      "soundness:node:QuadrupleHomogeneous:sound-v2:a44233cd267f778e2e37bf88c78a87aeb59f7989e98901f6bfca62c80c95701f"
-    ],
+    "reason": "QuadrupleHomogeneous has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerWqoBadPairSequence is Sound-verifier requestable and has no current failure; request its ordinary Sound check to continue the bottom-up frontier.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerWqoBadPairSequence only. Check both directions line by line against the cited support: from failure of WellQuasiOrdered(SetDomination r), extract a bad sequence of subsets, choose for every m<n a witness q_m^n in P_m that no element of P_n is r-above, define f(m,n)=q_m^n, and use q_n^l in P_n to derive the BadPairSequence condition. Conversely, from bad f define each P_m as its row image, show f(m,n) belongs to P_m, and show no element of P_n can dominate it by writing that element as f(n,l) and applying badness. Require explicit citations to SetDomination and BadPairSequence, and verify that the sequence characterization and IncreasingPair conventions used in the extraction are either stated in the cited dependencies or explicitly justified; preserve the current Lean signature, imports, statement, and support DAG.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "QuadrupleHomogeneous",
+    "request_sound_verifier_node_ids": [
+      "PowerWqoBadPairSequence"
+    ],
+    "next_active": "",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 989,
-        "end_line": 991,
-        "reason": "The paper's successive triple and quadruple homogeneous thinning in the Rado argument."
+        "start_line": 955,
+        "end_line": 981,
+        "reason": "The paper's extraction of a bad sequence of sequences from powerset non-WQO and its converse."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 989-991 first thin triples and then quadruples, ruling out the bad color by WQO; the repair makes the Nash-Williams and fixed-cardinality steps in the quadruple thinning explicit."
+      "basis_summary": "Lines 955-981 choose witnesses q_m^n outside later domination, assemble them into a bad pair-indexed sequence, and conversely form row images P_m from a bad sequence to witness powerset non-WQO."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/QuadrupleHomogeneous.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper node. Before invoking NashWilliams, explicitly prove that S is a subset of F from its set-builder definition. From F' subseteq F and the fact that every member of CardinalityFront(4,X) has cardinality 4, prove that the empty set is not in F'; then use the two alternatives in the Front definition to conclude FrontBase(F') = Y. Cite Front and FrontBase whenever using the front base, density, or union-of-members facts. For an arbitrary four-element s subseteq Y, do not say this is the triple case: explicitly construct an infinite Z subseteq Y whose first four elements are s, for example s union the tail of Y above max s; prove the subset and infinitude facts, apply front density, unpack ProperPrefixSet, and use the cardinality-four facts for both the resulting t and s to force t=s. Finally spell out both color alternatives: membership in S gives c(s)=1, while s in F' and F' disjoint S gives s not in S, and the definition of S together with s in F gives c(s)=0. Cite CardinalityFront, CardinalityFrontIsFront, NashWilliams, Front, FrontBase, InfiniteSetEnumeration, and any ProperPrefixSet or InitialSegment support actually used. Do not rely on the proof of another node or retain the phrase same as for triples.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerWqoBadPairSequence only. Check both directions line by line against the cited support: from failure of WellQuasiOrdered(SetDomination r), extract a bad sequence of subsets, choose for every m<n a witness q_m^n in P_m that no element of P_n is r-above, define f(m,n)=q_m^n, and use q_n^l in P_n to derive the BadPairSequence condition. Conversely, from bad f define each P_m as its row image, show f(m,n) belongs to P_m, and show no element of P_n can dominate it by writing that element as f(n,l) and applying badness. Require explicit citations to SetDomination and BadPairSequence, and verify that the sequence characterization and IncreasingPair conventions used in the extraction are either stated in the cited dependencies or explicitly justified; preserve the current Lean signature, imports, statement, and support DAG.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 117,
+    "cycle": 118,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,42 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "QuadrupleHomogeneous",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 991,
-        "reason": "The paper's successive triple and quadruple homogeneous thinning in the Rado argument.",
-        "start_line": 989
+        "end_line": 981,
+        "reason": "The paper's extraction of a bad sequence of sequences from powerset non-WQO and its converse.",
+        "start_line": 955
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 989-991 first thin triples and then quadruples, ruling out the bad color by WQO; the repair makes the Nash-Williams and fixed-cardinality steps in the quadruple thinning explicit.",
+      "basis_summary": "Lines 955-981 choose witnesses q_m^n outside later domination, assemble them into a bad pair-indexed sequence, and conversely form row images P_m from a bad sequence to witness powerset non-WQO.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found five concrete omissions in QuadrupleHomogeneous: the Nash-Williams subset premise, the nontriviality and base argument for the sub-front, the required Front and FrontBase citations, the full fixed-cardinality argument for an arbitrary quadruple, and the final color-0 membership deduction. A bounded proof-text repair is warranted.",
-    "request_id": 393,
-    "request_sound_verifier_nodes": [],
+    "reason": "QuadrupleHomogeneous has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerWqoBadPairSequence is Sound-verifier requestable and has no current failure; request its ordinary Sound check to continue the bottom-up frontier.",
+    "request_id": 396,
+    "request_sound_verifier_nodes": [
+      "PowerWqoBadPairSequence"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:a44233cd267f778e2e37bf88c78a87aeb59f7989e98901f6bfca62c80c95701f",
-        "kind": "Soundness",
-        "object": {
-          "node": "QuadrupleHomogeneous",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_393_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_396_decision.context.json"
 }

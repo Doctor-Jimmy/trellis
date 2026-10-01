@@ -1,7 +1,7 @@
 {
   "raw": {
     "audit_request": null,
-    "comments": "Edited only Tablet/RadoEmbedding.tex. The proof now follows the paper's a=min M, X=M minus {a}, and increasing enumeration x construction. It proves the direct M-monotonicity fact from the homogeneous triple and quadruple relations, uses that fact in preservation and all three reflection cases, and handles k=0 with a<x(k). The Lean signature, imports, theorem statement, and support DAG are unchanged.",
+    "comments": "Edited only Tablet/QuadrupleHomogeneous.tex. The proof now explicitly proves S subseteq F before Nash-Williams, rules out the empty member of F' using the fixed cardinality, derives FrontBase(F') = Y and Y subseteq X, constructs Z from an arbitrary four-element s and the tail above max s, proves Z is an infinite subset of Y with s as its first four elements, and uses the unpacked ProperPrefixSet witness plus both cardinality-four facts to force t = s. The two color alternatives are resolved explicitly. No Lean statement, imports, support edge, node, target claim, or deviation was changed. The full 176-node tablet check passed.",
     "deleted_nodes": [],
     "deviation_deletions": [],
     "deviation_requests": {},
@@ -10,7 +10,7 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Repaired RadoEmbedding's natural-language proof with the requested M-monotonicity lemma and minimum-element reflection case.",
+    "summary": "Repaired the natural-language proof of QuadrupleHomogeneous with an explicit, cited fixed-cardinality density argument while preserving its Lean statement and support DAG.",
     "target_claim_updates": {}
   },
   "response": {
@@ -21,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Edited only Tablet/RadoEmbedding.tex. The proof now follows the paper's a=min M, X=M minus {a}, and increasing enumeration x construction. It proves the direct M-monotonicity fact from the homogeneous triple and quadruple relations, uses that fact in preservation and all three reflection cases, and handles k=0 with a<x(k). The Lean signature, imports, theorem statement, and support DAG are unchanged.",
-    "cycle": 116,
+    "comments": "Edited only Tablet/QuadrupleHomogeneous.tex. The proof now explicitly proves S subseteq F before Nash-Williams, rules out the empty member of F' using the fixed cardinality, derives FrontBase(F') = Y and Y subseteq X, constructs Z from an arbitrary four-element s and the tail above max s, proves Z is an infinite subset of Y with s as its first four elements, and uses the unpacked ProperPrefixSet witness plus both cardinality-four facts to force t = s. The two color alternatives are resolved explicitly. No Lean statement, imports, support edge, node, target claim, or deviation was changed. The full 176-node tablet check passed.",
+    "cycle": 118,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -38,7 +38,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 389,
+    "request_id": 394,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1867,13 +1867,18 @@
           "own_tex_hash": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1"
         },
         "QuadrupleHomogeneous": {
-          "combined_sound_fp": "sound-v2:a44233cd267f778e2e37bf88c78a87aeb59f7989e98901f6bfca62c80c95701f",
+          "combined_sound_fp": "sound-v2:fba0b28652dce0232a7dec6ea5f2e2d6125df2d1d2569181f30a3061df0b1373",
           "dep_statement_hashes": {
             "CardinalityFront": "253b079ed880570cee48468b14037e48aee75ad6257392c8f663000672f04808",
             "CardinalityFrontIsFront": "a63207b123bb178feb124cdfc57c012dad145723c3185c8ea254d9934146484d",
-            "NashWilliams": "86fecabae20ea2d0e8b51a90bc5f45c34c17099d38a9865f7631812939d8ce3a"
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "FrontBase": "5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b",
+            "IncSeq": "62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e",
+            "InfiniteSetEnumeration": "6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1",
+            "NashWilliams": "86fecabae20ea2d0e8b51a90bc5f45c34c17099d38a9865f7631812939d8ce3a",
+            "ProperPrefixSet": "bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d"
           },
-          "own_tex_hash": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7"
+          "own_tex_hash": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e"
         },
         "RadoEmbedding": {
           "combined_sound_fp": "sound-v2:a2325917b9cbff02b8fd82033b6da6a42248b53c2b9396efc58c1730fb25d74a",
@@ -2258,7 +2263,7 @@
         "PrefixTree": "sound-v2:604f8e119279a0ff7beea76fa276f12c2d6bc4bd1efbf6b30ae0bfb9f52fbb8d",
         "ProperInitialSegment": "sound-v2:b99b127375bf144bd398d68fed3f23e338061226a9fd7d1731b823ef0ba52e04",
         "ProperPrefixSet": "sound-v2:ad9003916e97cbe6e568954e6f27ee5d1b9fbcc5bafe4906574176719aec0c31",
-        "QuadrupleHomogeneous": "sound-v2:a44233cd267f778e2e37bf88c78a87aeb59f7989e98901f6bfca62c80c95701f",
+        "QuadrupleHomogeneous": "sound-v2:fba0b28652dce0232a7dec6ea5f2e2d6125df2d1d2569181f30a3061df0b1373",
         "RadoEmbedding": "sound-v2:a2325917b9cbff02b8fd82033b6da6a42248b53c2b9396efc58c1730fb25d74a",
         "RadoOrder": "sound-v2:db48c2da7c19e4b216dc972165b5219c46ca3c83ef68a8d47ab2f242eb00fc7d",
         "Ray": "sound-v2:2c189c6e7bf3f568e8cf765ddde17b15a410cf935224f57a4baf3992dbcd9e09",
@@ -2648,7 +2653,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired RadoEmbedding's natural-language proof with the requested M-monotonicity lemma and minimum-element reflection case.",
+    "summary": "Repaired the natural-language proof of QuadrupleHomogeneous with an explicit, cited fixed-cardinality density argument while preserving its Lean statement and support DAG.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2958,7 +2963,7 @@
     "ProperPrefixSet.lean": "964388c9448b3a1d9311c144b53def2cbc29f8a00517c24956eef98cfc657952",
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
-    "QuadrupleHomogeneous.tex": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7",
+    "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
     "README.md": "44a1ecf29e26ec6dcb02528ec9f86abd74fc3b860627cd2c2a72196b0f9019fd",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
@@ -3014,7 +3019,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_389_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_394_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
