@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "RmapLemma now has a current Sound approval. IncSeqPointwiseLe is the next upstream orbit-support obligation; its induction is correct but invokes strict monotonicity without citing the IncSeq definition that supplies it.",
-    "comments": "Repair only `Tablet/IncSeqPointwiseLe.tex`; preserve its Lean statement, import, and proof structure. Add `\\noderef{IncSeq}` at the use of the fact that an `IncSeq` is an order embedding. Make the successor step explicit: from n<n+1, the order-embedding property gives f(n)<f(n+1), hence f(n)+1<=f(n+1); combine this with the induction hypothesis n<=f(n) to obtain n+1<=f(n+1). Do not introduce helpers or alter the theorem signature. The paper's increasing-enumeration convention, which justifies this order-embedding use, is at lines 1264--1267 of `paper/paper.tex`.",
+    "reason": "IncSeqPointwiseLe now has a current Sound approval. MainProp is the next central shift target; its two supporting homomorphisms are cited and sufficient, but the proof invokes the ContMorEq definition without an explicit support citation.",
+    "comments": "Repair only `Tablet/MainProp.tex`; preserve the theorem statement, imports, and two-lemma decomposition. Retain `\\noderef{RmapLemma}` and `\\noderef{EmapLemma}`, and add `\\noderef{ContMorEq}` at the sentence identifying the two supplied homomorphisms with the two conjuncts of continuous homomorphic equivalence. Make clear that the first node proves `ContMor (RightComp g) ShiftMap`, the second proves the reverse direction, and `ContMorEq` is exactly their conjunction. Add no helper, signature change, or support rewiring. The paper states this aggregation at lines 1713--1719 of `paper/paper.tex`.",
     "task_blocker_ids": [
-      "soundness:node:IncSeqPointwiseLe:sound-v2:4388761857d6e0745fe1a3954446812e871cbac0dbdc8501926c05bac8e13ae0"
+      "soundness:node:MainProp:sound-v2:e586de76c8ae33307277ca66e8b6ea6e2c27d1919a001a0f5fb29d6bbe11e654"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "IncSeqPointwiseLe",
+    "next_active": "MainProp",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1264,
-        "end_line": 1267,
-        "reason": "The paper's increasing-enumeration representation for IncSeq."
+        "start_line": 1713,
+        "end_line": 1719,
+        "reason": "The paper's MainProp statement and its reduction to RmapLemma and EmapLemma."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations, matching the tablet's IncSeq order-embedding representation. The pointwise inequality follows directly from that order-embedding property by induction on the index."
+      "basis_summary": "Lines 1713--1719 state the equivalence of right composition by g with the ordinary shift and explicitly say that MainProp follows from the two directional lemmas below. The tablet proof correctly aggregates those lemmas; it only needs to cite the ContMorEq definition used to identify their conjunction with the conclusion."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/IncSeqPointwiseLe.tex`; preserve its Lean statement, import, and proof structure. Add `\\noderef{IncSeq}` at the use of the fact that an `IncSeq` is an order embedding. Make the successor step explicit: from n<n+1, the order-embedding property gives f(n)<f(n+1), hence f(n)+1<=f(n+1); combine this with the induction hypothesis n<=f(n) to obtain n+1<=f(n+1). Do not introduce helpers or alter the theorem signature. The paper's increasing-enumeration convention, which justifies this order-embedding use, is at lines 1264--1267 of `paper/paper.tex`.",
+    "comments": "Repair only `Tablet/MainProp.tex`; preserve the theorem statement, imports, and two-lemma decomposition. Retain `\\noderef{RmapLemma}` and `\\noderef{EmapLemma}`, and add `\\noderef{ContMorEq}` at the sentence identifying the two supplied homomorphisms with the two conjuncts of continuous homomorphic equivalence. Make clear that the first node proves `ContMor (RightComp g) ShiftMap`, the second proves the reverse direction, and `ContMorEq` is exactly their conjunction. Add no helper, signature change, or support rewiring. The paper states this aggregation at lines 1713--1719 of `paper/paper.tex`.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 84,
+    "cycle": 85,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,24 +50,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "IncSeqPointwiseLe",
+    "next_active": "MainProp",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1267,
-        "reason": "The paper's increasing-enumeration representation for IncSeq.",
-        "start_line": 1264
+        "end_line": 1719,
+        "reason": "The paper's MainProp statement and its reduction to RmapLemma and EmapLemma.",
+        "start_line": 1713
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations, matching the tablet's IncSeq order-embedding representation. The pointwise inequality follows directly from that order-embedding property by induction on the index.",
+      "basis_summary": "Lines 1713--1719 state the equivalence of right composition by g with the ordinary shift and explicitly say that MainProp follows from the two directional lemmas below. The tablet proof correctly aggregates those lemmas; it only needs to cite the ContMorEq definition used to identify their conjunction with the conclusion.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "RmapLemma now has a current Sound approval. IncSeqPointwiseLe is the next upstream orbit-support obligation; its induction is correct but invokes strict monotonicity without citing the IncSeq definition that supplies it.",
-    "request_id": 312,
+    "reason": "IncSeqPointwiseLe now has a current Sound approval. MainProp is the next central shift target; its two supporting homomorphisms are cited and sufficient, but the proof invokes the ContMorEq definition without an explicit support citation.",
+    "request_id": 315,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -77,15 +77,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:4388761857d6e0745fe1a3954446812e871cbac0dbdc8501926c05bac8e13ae0",
+        "fingerprint": "sound-v2:e586de76c8ae33307277ca66e8b6ea6e2c27d1919a001a0f5fb29d6bbe11e654",
         "kind": "Soundness",
         "object": {
-          "node": "IncSeqPointwiseLe",
+          "node": "MainProp",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_312_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_315_decision.context.json"
 }
