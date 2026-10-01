@@ -1,8 +1,10 @@
 import Tablet.FiniteShift
 import Tablet.SuperSequence
 
+universe u
+
 -- [TABLET NODE: BadSuperSequence]
-def BadSuperSequence {Q : Type} (r : Q → Q → Prop)
+def BadSuperSequence {Q : Type u} (r : Q → Q → Prop)
     {F : Set (Finset Nat)} {X : Set Nat}
     (f : SuperSequence F X Q) : Prop :=
 -- BODY
