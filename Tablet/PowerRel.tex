@@ -1,0 +1,15 @@
+\begin{definition}
+For a relation $r$ on $Q$, define the lifted relation
+$\mathsf{PowerRel}(r)$ on the tagged hierarchy $\mathsf{PowerQ}(Q)$ by
+well-founded recursion on the child relation.  For atoms $q,q'\in Q$,
+\[
+\mathsf{PowerRel}(r)(\mathsf{atom}(q),\mathsf{atom}(q'))
+\quad\Longleftrightarrow\quad r(q,q').
+\]
+For a right node, an atom is related to it exactly when it is related to one
+of its children.  A left node is related to an atom exactly when every one of
+its children is related to that atom.  Finally, a left node is related to a
+right node exactly when every left child is related to some right child.
+The node may have any nonempty small index type; no branching restriction is
+introduced.
+\end{definition}

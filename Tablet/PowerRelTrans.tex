@@ -1,0 +1,31 @@
+\begin{lemma}[Transitivity of the lifted relation]
+If $r$ is a preorder on $Q$, then for all
+$X,Y,Z\in\mathsf{PowerQ}(Q)$,
+\[
+\mathsf{PowerRel}(r)(X,Y)\land\mathsf{PowerRel}(r)(Y,Z)
+\Longrightarrow\mathsf{PowerRel}(r)(X,Z).
+\].
+\end{lemma}
+\begin{proof}
+Use well-founded induction on the lexicographic pair of child relations used
+in \noderef{PowerRel}; the required well-foundedness is obtained from
+\noderef{PowerChildWellFounded}.  Split $X,Y,Z$ by their atom or node tags
+and use the four reductions \noderef{PowerRelAtomAtom},
+\noderef{PowerRelAtomNode}, \noderef{PowerRelNodeAtom}, and
+\noderef{PowerRelNodeNode}.
+
+For three atoms, transitivity is exactly transitivity of $r$.  If the middle
+term is a node, the first comparison supplies a child of that node whenever
+the left term is an atom, while the second comparison supplies a child of
+the right term for that middle child; compose the two recursive comparisons.
+If the left term is a node, perform this argument separately for each left
+child.  The node--atom case instead universally supplies comparisons from
+each left child into the middle atom, which then composes with the second
+comparison.  In the node--node case, for each child of the first node first
+choose the corresponding child of the middle node and then the corresponding
+child of the final node; the induction hypothesis composes the two child
+comparisons.  These are exactly the existential and universal quantifier
+orders in the cited reductions, and all recursive calls descend in the
+lexicographic child relation.  Thus the resulting witnesses establish
+$\mathsf{PowerRel}(r)(X,Z)$ in every tag case.
+\end{proof}

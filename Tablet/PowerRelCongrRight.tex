@@ -1,0 +1,22 @@
+\begin{lemma}[Right presentation invariance]
+If $\mathsf{PowerPresentationEq}(Y,Y')$, then for every
+$X\in\mathsf{PowerQ}(Q)$,
+\[
+\mathsf{PowerRel}(r)(X,Y)\quad\Longleftrightarrow\quad
+\mathsf{PowerRel}(r)(X,Y').
+\]
+\end{lemma}
+\begin{proof}
+The proof is the right-hand analogue of left invariance.  Induct on the
+well-founded child descent of the right presentations and unfold
+\noderef{PowerRel}.  Equal atom presentations give equal $Q$-values by
+\noderef{PowerPresentationEq}; mixed tags are impossible.  For two right
+nodes, the two matching conjuncts in \noderef{PowerPresentationEq} transport
+the existential right-child witnesses in the atom--node and node--node
+reductions \noderef{PowerRelAtomNode} and \noderef{PowerRelNodeNode}.  For a
+left node and right atom, the atom equality case is immediate from
+\noderef{PowerRelNodeAtom}.  Apply the induction hypothesis to each matched
+child comparison and use the reverse matching conjunct for the converse
+direction.  The fact that matching witnesses can be reversed and composed
+is the equivalence property in \noderef{PowerPresentationEqEquivalence}.
+\end{proof}

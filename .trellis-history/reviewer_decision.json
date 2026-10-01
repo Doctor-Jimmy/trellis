@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The hierarchy core and its anti-redundancy cleanup are complete, and the audit finds no existing lifted-order declaration. The next paper-faithful support layer is therefore to define the full-hierarchy relation PowerRel with the manuscript's four cases and establish the invariance and preorder interface needed by the preservation proof.",
-    "comments": "Continue in Global mode with no narrow node anchor and execute iterated-power-order. Attach the new package to PowerQ, PowerChild, PowerPresentationEq, PowerPresentationEqEquivalence, and the existing support facts. Define PowerRel r by exactly these four cases: atom/atom iff r; atom/node iff there exists a right child related to the atom; node/atom iff every left child is related to the atom; node/node iff every left child has a related right child. Provide usable reduction equations, atom reductions, invariance in each argument under PowerPresentationEq, and under IsPreorder r prove reflexivity, transitivity, and a named IsPreorder instance on PowerQ Q. Keep raw equality distinct from structural presentation equivalence. Do not import SetDomination or PowerWqoBadPairSequence, do not replace the arbitrary-small-indexed PowerQ hierarchy by countable or finite branching, and do not claim PowerQPresBqo in this layer. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
+    "reason": "The lifted PowerRel layer is now present with the manuscript's four cases, presentation-equivalence invariance, preorder laws, and a named IsPreorder instance; correspondence and build checks passed. The next paper-faithful support layer is the canonical comparison-game and finite-dependence package needed before the reflection theorem can cover cor PowerQPresBqo.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute iterated-power-game. Define legal one-coordinate moves and a canonical Player I response as a function of the compared raw PowerQ presentations; prove every legal Player II response preserves a failed comparison. Build the copied triangular plays along h X, h (ShiftMap X), and subsequent shifts, prove all selected left values remain in PowerSupport (h X), and prove termination from PowerChildWellFounded via the appropriate lexicographic/product descent. Most importantly, expose the finite-dependence and stabilization/shift identity showing that the terminal zero-th atom depends on only finitely many shift-orbit values of h. Do not choose fresh strategies independently for each input X, do not infer local constancy from termination alone, and do not claim PowerQPresBqo in this game layer. Retain the full arbitrary-small-indexed PowerQ and existing ShiftMap/MultiSequence/LocallyConstant interfaces. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
     "task_blocker_ids": [
       "paperfaithfulness:target:cor PowerQPresBqo:"
     ],
@@ -17,41 +17,48 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1404,
-        "end_line": 1419,
-        "reason": "The manuscript's four atom/node clauses for the lifted quasi-order on the full iterated hierarchy."
+        "start_line": 1383,
+        "end_line": 1402,
+        "reason": "The paper's finite comparison game and the legal Player I and Player II moves on atom and node presentations."
+      },
+      {
+        "start_line": 1533,
+        "end_line": 1550,
+        "reason": "The paper's copied triangular plays, finite-dependence argument, and construction of the reflected locally constant bad map."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage explicitly states the atom/atom, atom/node, node/atom, and node/node clauses. The completed tagged PowerQ and structural-presentation core supplies the raw carrier and invariance framework for this relation."
+      "basis_summary": "The paper defines the one-round game by choosing children from node presentations and then uses copied adjacent games along the shift orbit. Its reflection proof explicitly relies on finite dependence on finitely many h-values to establish local constancy."
     },
     "stuck_math_audit": {
-      "notes": "The audit confirms that PowerQ, child descent, recursive support, presentation equivalence, equivalence laws, and support invariance are complete, while PowerRel is genuinely absent. Execute iterated-power-order next. Preserve pm-0002: the relation must live on the full arbitrary-small-indexed tagged hierarchy, not Set Q or the Rado branch's SetDomination. Keep raw equality distinct from PowerPresentationEq. The target cor PowerQPresBqo remains uncovered until the later canonical game, finite-dependence, and reflection package is added.",
+      "notes": "The audit task iterated-power-order is complete: PowerRel, its four reduction interfaces, presentation-equivalence invariance in both arguments, preorder laws, and the named IsPreorder instance are present, and the worker's correspondence/build checks passed. Dismiss that completed task and execute iterated-power-game next. Preserve pm-0002 and the full arbitrary-small-indexed PowerQ hierarchy. The canonical response must be determined by the compared raw presentations, not by fresh choices indexed by the input X; termination alone is insufficient for local constancy. Keep the PowerQPresBqo target uncovered until the later reflection package is added.",
       "reviewer_lean_product": {
         "target": "cor PowerQPresBqo",
-        "next_task": "iterated-power-order",
-        "required_cases": [
-          "PowerRel (atom x) (atom y) iff r x y",
-          "PowerRel (atom x) (node j hj g) iff exists j, PowerRel x (g j)",
-          "PowerRel (node i hi f) (atom y) iff forall i, PowerRel (f i) y",
-          "PowerRel (node i hi f) (node j hj g) iff forall i, exists j, PowerRel (f i) (g j)"
-        ],
-        "required_lemmas": [
-          "constructor reduction equations and atom reductions",
-          "invariance in the left and right arguments under PowerPresentationEq",
-          "reflexivity and transitivity under IsPreorder r",
-          "a named IsPreorder instance for PowerRel r"
+        "completed_task": "iterated-power-order",
+        "next_task": "iterated-power-game",
+        "required_interface": [
+          "legal one-coordinate moves and canonical Player I response as a function of compared raw PowerQ presentations",
+          "failed-pair preservation under every legal Player II response",
+          "copied triangular plays along h X, h (ShiftMap X), ...",
+          "termination from PowerChildWellFounded via lexicographic/product descent",
+          "support containment of every selected left value",
+          "finite-dependence and stabilization/shift identity for the terminal zero-th atom"
         ],
         "constraints": [
-          "retain the full tagged arbitrary-small-indexed PowerQ carrier",
-          "do not import SetDomination or PowerWqoBadPairSequence",
-          "do not use mutual PowerRel relatedness as presentation equality",
-          "do not claim a configured target in this support layer"
+          "do not choose fresh strategies independently for each input X",
+          "do not assert local constancy from termination alone",
+          "do not claim PowerQPresBqo in this game layer",
+          "retain full PowerQ, PowerRel, and existing ShiftMap interfaces"
         ]
       }
     },
-    "dismissed_tasks": []
+    "dismissed_tasks": [
+      {
+        "id": "iterated-power-order",
+        "reason": "Completed: the worker added PowerRel, all four reductions, presentation-equivalence invariance in both arguments, preorder laws, and the named IsPreorder instance; correspondence passed and the full build/checker passed. The next work is the distinct canonical game and finite-dependence task."
+      }
+    ]
   },
   "response": {
     "allow_new_obligations": true,
@@ -62,14 +69,19 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode with no narrow node anchor and execute iterated-power-order. Attach the new package to PowerQ, PowerChild, PowerPresentationEq, PowerPresentationEqEquivalence, and the existing support facts. Define PowerRel r by exactly these four cases: atom/atom iff r; atom/node iff there exists a right child related to the atom; node/atom iff every left child is related to the atom; node/node iff every left child has a related right child. Provide usable reduction equations, atom reductions, invariance in each argument under PowerPresentationEq, and under IsPreorder r prove reflexivity, transitivity, and a named IsPreorder instance on PowerQ Q. Keep raw equality distinct from structural presentation equivalence. Do not import SetDomination or PowerWqoBadPairSequence, do not replace the arbitrary-small-indexed PowerQ hierarchy by countable or finite branching, and do not claim PowerQPresBqo in this layer. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute iterated-power-game. Define legal one-coordinate moves and a canonical Player I response as a function of the compared raw PowerQ presentations; prove every legal Player II response preserves a failed comparison. Build the copied triangular plays along h X, h (ShiftMap X), and subsequent shifts, prove all selected left values remain in PowerSupport (h X), and prove termination from PowerChildWellFounded via the appropriate lexicographic/product descent. Most importantly, expose the finite-dependence and stabilization/shift identity showing that the terminal zero-th atom depends on only finitely many shift-orbit values of h. Do not choose fresh strategies independently for each input X, do not infer local constancy from termination alone, and do not claim PowerQPresBqo in this game layer. Retain the full arbitrary-small-indexed PowerQ and existing ShiftMap/MultiSequence/LocallyConstant interfaces. New proof-bearing TeX must contain complete cited proofs, not SKETCH.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 14,
+    "cycle": 15,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "iterated-power-order",
+        "reason": "Completed: the worker added PowerRel, all four reductions, presentation-equivalence invariance in both arguments, preorder laws, and the named IsPreorder instance; correspondence passed and the full build/checker passed. The next work is the distinct canonical game and finite-dependence task."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -79,44 +91,46 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1419,
-        "reason": "The manuscript's four atom/node clauses for the lifted quasi-order on the full iterated hierarchy.",
-        "start_line": 1404
+        "end_line": 1402,
+        "reason": "The paper's finite comparison game and the legal Player I and Player II moves on atom and node presentations.",
+        "start_line": 1383
+      },
+      {
+        "end_line": 1550,
+        "reason": "The paper's copied triangular plays, finite-dependence argument, and construction of the reflected locally constant bad map.",
+        "start_line": 1533
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage explicitly states the atom/atom, atom/node, node/atom, and node/node clauses. The completed tagged PowerQ and structural-presentation core supplies the raw carrier and invariance framework for this relation.",
+      "basis_summary": "The paper defines the one-round game by choosing children from node presentations and then uses copied adjacent games along the shift orbit. Its reflection proof explicitly relies on finite dependence on finitely many h-values to establish local constancy.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The hierarchy core and its anti-redundancy cleanup are complete, and the audit finds no existing lifted-order declaration. The next paper-faithful support layer is therefore to define the full-hierarchy relation PowerRel with the manuscript's four cases and establish the invariance and preorder interface needed by the preservation proof.",
-    "request_id": 84,
+    "reason": "The lifted PowerRel layer is now present with the manuscript's four cases, presentation-equivalence invariance, preorder laws, and a named IsPreorder instance; correspondence and build checks passed. The next paper-faithful support layer is the canonical comparison-game and finite-dependence package needed before the reflection theorem can cover cor PowerQPresBqo.",
+    "request_id": 89,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit confirms that PowerQ, child descent, recursive support, presentation equivalence, equivalence laws, and support invariance are complete, while PowerRel is genuinely absent. Execute iterated-power-order next. Preserve pm-0002: the relation must live on the full arbitrary-small-indexed tagged hierarchy, not Set Q or the Rado branch's SetDomination. Keep raw equality distinct from PowerPresentationEq. The target cor PowerQPresBqo remains uncovered until the later canonical game, finite-dependence, and reflection package is added.",
+      "notes": "The audit task iterated-power-order is complete: PowerRel, its four reduction interfaces, presentation-equivalence invariance in both arguments, preorder laws, and the named IsPreorder instance are present, and the worker's correspondence/build checks passed. Dismiss that completed task and execute iterated-power-game next. Preserve pm-0002 and the full arbitrary-small-indexed PowerQ hierarchy. The canonical response must be determined by the compared raw presentations, not by fresh choices indexed by the input X; termination alone is insufficient for local constancy. Keep the PowerQPresBqo target uncovered until the later reflection package is added.",
       "reviewer_lean_product": {
+        "completed_task": "iterated-power-order",
         "constraints": [
-          "retain the full tagged arbitrary-small-indexed PowerQ carrier",
-          "do not import SetDomination or PowerWqoBadPairSequence",
-          "do not use mutual PowerRel relatedness as presentation equality",
-          "do not claim a configured target in this support layer"
+          "do not choose fresh strategies independently for each input X",
+          "do not assert local constancy from termination alone",
+          "do not claim PowerQPresBqo in this game layer",
+          "retain full PowerQ, PowerRel, and existing ShiftMap interfaces"
         ],
-        "next_task": "iterated-power-order",
-        "required_cases": [
-          "PowerRel (atom x) (atom y) iff r x y",
-          "PowerRel (atom x) (node j hj g) iff exists j, PowerRel x (g j)",
-          "PowerRel (node i hi f) (atom y) iff forall i, PowerRel (f i) y",
-          "PowerRel (node i hi f) (node j hj g) iff forall i, exists j, PowerRel (f i) (g j)"
-        ],
-        "required_lemmas": [
-          "constructor reduction equations and atom reductions",
-          "invariance in the left and right arguments under PowerPresentationEq",
-          "reflexivity and transitivity under IsPreorder r",
-          "a named IsPreorder instance for PowerRel r"
+        "next_task": "iterated-power-game",
+        "required_interface": [
+          "legal one-coordinate moves and canonical Player I response as a function of compared raw PowerQ presentations",
+          "failed-pair preservation under every legal Player II response",
+          "copied triangular plays along h X, h (ShiftMap X), ...",
+          "termination from PowerChildWellFounded via lexicographic/product descent",
+          "support containment of every selected left value",
+          "finite-dependence and stabilization/shift identity for the terminal zero-th atom"
         ],
         "target": "cor PowerQPresBqo"
       }
@@ -134,5 +148,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_84_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_89_decision.context.json"
 }

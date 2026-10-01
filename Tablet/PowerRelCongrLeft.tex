@@ -1,0 +1,29 @@
+\begin{lemma}[Left presentation invariance]
+If $\mathsf{PowerPresentationEq}(X,X')$, then for every
+$Y\in\mathsf{PowerQ}(Q)$,
+\[
+\mathsf{PowerRel}(r)(X,Y)\quad\Longleftrightarrow\quad
+\mathsf{PowerRel}(r)(X',Y).
+\]
+\end{lemma}
+\begin{proof}
+Induct on the well-founded child descent of the compared left
+presentations, using the recursive definition in \noderef{PowerRel}.  If
+both left presentations are atoms, \noderef{PowerPresentationEq} gives
+equality of their $Q$-values, so the atom--atom and atom--node reductions
+from \noderef{PowerRelAtomAtom} and \noderef{PowerRelAtomNode} give the same
+proposition.  A mixed atom--node pair cannot satisfy the equivalence
+hypothesis, since that branch of \noderef{PowerPresentationEq} is false.
+
+In the remaining case both presentations are nodes.  For each child of the
+first node, the forward conjunct in \noderef{PowerPresentationEq} supplies a
+child of the second node structurally equivalent to it; the induction
+hypothesis transfers the recursive comparison with any fixed right child.
+This transports the existential right-child witnesses in the node--node
+reduction \noderef{PowerRelNodeNode}.  The node--atom reduction
+\noderef{PowerRelNodeAtom} is handled in the same way, with the universal
+quantifier over left children.  The reverse implication uses the backward
+matching conjunct.  Symmetry and transitivity of structural matching are
+available from \noderef{PowerPresentationEqEquivalence}, so the induction
+remains valid when matching witnesses are composed.
+\end{proof}

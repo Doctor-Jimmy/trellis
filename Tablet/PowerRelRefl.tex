@@ -1,0 +1,18 @@
+\begin{lemma}[Reflexivity of the lifted relation]
+If $r$ is a preorder on $Q$, then
+\[
+\forall X\in\mathsf{PowerQ}(Q),\quad
+\mathsf{PowerRel}(r)(X,X).
+\].
+\end{lemma}
+\begin{proof}
+Proceed by well-founded induction on the child relation from
+\noderef{PowerChildWellFounded}.  For an atom $\mathsf{atom}(q)$, the
+atom--atom reduction \noderef{PowerRelAtomAtom} reduces the goal to
+$r(q,q)$, which is reflexivity of the assumed preorder on $Q$.  For a node
+$X=\mathsf{node}(\iota,h,f)$, use the node--node reduction
+\noderef{PowerRelNodeNode}.  Given $i\in\iota$, choose the same index $i$ on
+the right; the induction hypothesis applied to the child $f(i)$ proves
+$\mathsf{PowerRel}(r)(f(i),f(i))$.  This supplies the required witness for
+every child, and hence proves reflexivity for $X$.
+\end{proof}

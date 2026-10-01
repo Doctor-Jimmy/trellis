@@ -92,6 +92,16 @@
 | PowerPresentationEq | definition | - | closed |
 | PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | open |
 | PowerQ | definition | - | closed |
+| PowerQIsPreorder | proof | The lifted relation is a preorder | closed |
+| PowerRel | definition | - | closed |
+| PowerRelAtomAtom | proof | Atom--atom reduction | closed |
+| PowerRelAtomNode | proof | Atom--node reduction | closed |
+| PowerRelCongrLeft | proof | Left presentation invariance | open |
+| PowerRelCongrRight | proof | Right presentation invariance | open |
+| PowerRelNodeAtom | proof | Node--atom reduction | closed |
+| PowerRelNodeNode | proof | Node--node reduction | closed |
+| PowerRelRefl | proof | Reflexivity of the lifted relation | open |
+| PowerRelTrans | proof | Transitivity of the lifted relation | open |
 | PowerSupport | definition | - | closed |
 | PowerSupportInvariant | proof | Support respects presentation equivalence | open |
 | PowerSupportNonempty | proof | Nonempty support | open |
@@ -121,4 +131,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 59/111 closed
+**Summary:** 65/121 closed

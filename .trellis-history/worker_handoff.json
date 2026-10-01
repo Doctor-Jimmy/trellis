@@ -1,19 +1,26 @@
 {
   "raw": {
-    "comments": "Removed the two definitional wrapper node pairs. PowerPresentationEqEquivalence now imports and cites PowerPresentationEq directly; PowerSupportNonempty and PowerSupportInvariant likewise import and cite the underlying definitions, with no remaining canonical Tablet citation to a deleted node. Tablet shape validation and lake build both pass.",
-    "deleted_nodes": [
-      "PowerPresentationEqShape",
-      "PowerSupportEquations"
-    ],
-    "deviation_deletions": [],
-    "deviation_requests": {},
-    "difficulty_updates": {},
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
-    "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Completed the requested anti-redundancy cleanup: removed PowerPresentationEqShape and PowerSupportEquations, retained PowerPresentationEqEquivalence as a substantive theorem, revised the recursive-definition statement and proof citations, and rewired the support nodes to the definitions. Tablet shape check and lake build pass.",
-    "target_claim_updates": {}
+    "summary": "Added the paper-faithful lifted relation PowerRel on the full arbitrary-small branching PowerQ hierarchy, explicit atom/node reduction interfaces, presentation-equivalence invariance in both arguments, preorder laws, and a named IsPreorder instance. All ten new nodes have paired Lean/TeX artifacts, complete non-SKETCH NL proofs, and no configured target claim.",
+    "comments": "PowerRel is implemented by well-founded recursion on the lexicographic pair of PowerChild relations, so raw presentation equality remains distinct from PowerPresentationEq and arbitrary nonempty small branching is preserved. lake build Tablet.PowerQIsPreorder and the full tablet structural checker pass. The theorem-stating Lean proof bodies remain sorry as authorized; the NL dependency audit is recorded in .trellis/scratch/notes.md.",
+    "target_claim_updates": {
+      "PowerRel": [],
+      "PowerRelAtomAtom": [],
+      "PowerRelAtomNode": [],
+      "PowerRelNodeAtom": [],
+      "PowerRelNodeNode": [],
+      "PowerRelCongrLeft": [],
+      "PowerRelCongrRight": [],
+      "PowerRelRefl": [],
+      "PowerRelTrans": [],
+      "PowerQIsPreorder": []
+    },
+    "deleted_nodes": [],
+    "deviation_requests": {},
+    "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "needs_restructure_suggested_nodes": [],
+    "memory_challenges": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -23,33 +30,62 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Removed the two definitional wrapper node pairs. PowerPresentationEqEquivalence now imports and cites PowerPresentationEq directly; PowerSupportNonempty and PowerSupportInvariant likewise import and cite the underlying definitions, with no remaining canonical Tablet citation to a deleted node. Tablet shape validation and lake build both pass.",
-    "cycle": 13,
-    "deleted_nodes": [
-      "PowerPresentationEqShape",
-      "PowerSupportEquations"
-    ],
+    "comments": "PowerRel is implemented by well-founded recursion on the lexicographic pair of PowerChild relations, so raw presentation equality remains distinct from PowerPresentationEq and arbitrary nonempty small branching is preserved. lake build Tablet.PowerQIsPreorder and the full tablet structural checker pass. The theorem-stating Lean proof bodies remain sorry as authorized; the NL dependency audit is recorded in .trellis/scratch/notes.md.",
+    "cycle": 15,
+    "deleted_nodes": [],
     "dep_updates": {
-      "PowerPresentationEqEquivalence": {
+      "PowerQIsPreorder": {
         "Set": [
-          "PowerPresentationEq"
+          "PowerRelTrans"
         ]
       },
-      "PowerPresentationEqShape": {
-        "Set": []
-      },
-      "PowerSupportEquations": {
-        "Set": []
-      },
-      "PowerSupportInvariant": {
+      "PowerRel": {
         "Set": [
-          "PowerPresentationEq",
-          "PowerSupport"
+          "PowerChildWellFounded"
         ]
       },
-      "PowerSupportNonempty": {
+      "PowerRelAtomAtom": {
         "Set": [
-          "PowerSupport"
+          "PowerRel"
+        ]
+      },
+      "PowerRelAtomNode": {
+        "Set": [
+          "PowerRel"
+        ]
+      },
+      "PowerRelCongrLeft": {
+        "Set": [
+          "PowerPresentationEqEquivalence",
+          "PowerRelAtomAtom",
+          "PowerRelAtomNode",
+          "PowerRelNodeAtom",
+          "PowerRelNodeNode"
+        ]
+      },
+      "PowerRelCongrRight": {
+        "Set": [
+          "PowerRelCongrLeft"
+        ]
+      },
+      "PowerRelNodeAtom": {
+        "Set": [
+          "PowerRel"
+        ]
+      },
+      "PowerRelNodeNode": {
+        "Set": [
+          "PowerRel"
+        ]
+      },
+      "PowerRelRefl": {
+        "Set": [
+          "PowerRelCongrRight"
+        ]
+      },
+      "PowerRelTrans": {
+        "Set": [
+          "PowerRelRefl"
         ]
       }
     },
@@ -62,18 +98,67 @@
     "local_closure_revalidation": null,
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
-    "node_kind_updates": {},
+    "node_kind_updates": {
+      "PowerQIsPreorder": {
+        "Set": "Proof"
+      },
+      "PowerRelAtomAtom": {
+        "Set": "Proof"
+      },
+      "PowerRelAtomNode": {
+        "Set": "Proof"
+      },
+      "PowerRelCongrLeft": {
+        "Set": "Proof"
+      },
+      "PowerRelCongrRight": {
+        "Set": "Proof"
+      },
+      "PowerRelNodeAtom": {
+        "Set": "Proof"
+      },
+      "PowerRelNodeNode": {
+        "Set": "Proof"
+      },
+      "PowerRelRefl": {
+        "Set": "Proof"
+      },
+      "PowerRelTrans": {
+        "Set": "Proof"
+      }
+    },
     "outcome": "Valid",
     "proof_node_updates": {
-      "PowerPresentationEqShape": {
-        "Set": false
+      "PowerQIsPreorder": {
+        "Set": true
       },
-      "PowerSupportEquations": {
-        "Set": false
+      "PowerRelAtomAtom": {
+        "Set": true
+      },
+      "PowerRelAtomNode": {
+        "Set": true
+      },
+      "PowerRelCongrLeft": {
+        "Set": true
+      },
+      "PowerRelCongrRight": {
+        "Set": true
+      },
+      "PowerRelNodeAtom": {
+        "Set": true
+      },
+      "PowerRelNodeNode": {
+        "Set": true
+      },
+      "PowerRelRefl": {
+        "Set": true
+      },
+      "PowerRelTrans": {
+        "Set": true
       }
     },
     "protected_semantic_change_nodes": [],
-    "request_id": 78,
+    "request_id": 85,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -158,6 +243,16 @@
         "PowerPresentationEq": "{\"own_tex\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"lean_semantic_closure\":\"02a6ffe5f9eabadc69c34835c0eb2978fd98feeea7539cd360342f75d8bdcaa9\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerPresentationEqEquivalence": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"lean_semantic_closure\":\"34fc5cff92a4f738701eb968fb0f8a8a64c1d51997b5ad298c3f0e68852bfaf6\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerQ": "{\"own_tex\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"lean_semantic_closure\":\"2078dbf6b7ad1747d70edd478d28bf3f29c67f2fc0e3b79a98e752cccfc161c8\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerQIsPreorder": "{\"own_tex\":\"f9f56cef746b72a529f4e897044a196d176ab217e202fa55f3e08c7e5795e398\",\"lean_semantic_closure\":\"c5acd940be44a523dfcf7ca709e4afaf2009054f9377fc718ac9d5215982afa5\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRel": "{\"own_tex\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"lean_semantic_closure\":\"f23a828e90125e5fac54b86266da8c91b0e2986e95add9d4af5e115c3eb20d6d\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelAtomAtom": "{\"own_tex\":\"d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db\",\"lean_semantic_closure\":\"6d395b9ecb041958a7c54b6f9924fdac493fbc55a9f74c804bfedd7e7347690b\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelAtomNode": "{\"own_tex\":\"6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a\",\"lean_semantic_closure\":\"f889a5759ccd8cc78d554be471bbb0c2e251a500cb17abea9099f8dfd2f28a59\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelCongrLeft": "{\"own_tex\":\"412fe0e4a4194dfafbfb9c7ad0dada7cbf5e4cc1d7e6c2c0dd6e3b81956f6eb4\",\"lean_semantic_closure\":\"630f0fe8b3c5cf37e9818d5abe72e1688f7bb6f2210c934e3b6a826b92c54c5b\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelCongrRight": "{\"own_tex\":\"57a2270da8b3d3501e6e82316f4f3971f296094416f2c381e7b35ed8a7507ba6\",\"lean_semantic_closure\":\"24b1b8c9eea431aac582a78f798adebae97f3e87270b0c6e0159a0d727a3b578\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelNodeAtom": "{\"own_tex\":\"ea956e76419223f44187adc98f126120a8ba40e1b3c3d13f379864426ac4c31b\",\"lean_semantic_closure\":\"210ca47a9851a71582a98a9a6a998626deb3023fffc85d329899af475f06ea33\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelNodeNode": "{\"own_tex\":\"90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954\",\"lean_semantic_closure\":\"dbd71742ec26798a6a570825c524e799b674476f2220c6bb7b1361f5578fca61\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelRefl": "{\"own_tex\":\"6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a\",\"lean_semantic_closure\":\"cd7432b7bf907041237da6c0e7dccf0fbc8c9727c11375918391f8227b4677fd\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelTrans": "{\"own_tex\":\"de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8\",\"lean_semantic_closure\":\"e6ef70d72f706fbbcb4d8c16d3576c8aeac5e702d1aef9e30afe218f29d8ac44\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupport": "{\"own_tex\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"lean_semantic_closure\":\"72181f193f13f0c02869d4b46d6a89b0f439707667f8e80ce48a1debea104ef4\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupportInvariant": "{\"own_tex\":\"84fb85705a6dab0c82ca7e87fa503d9b5d2b8024f5255cd165e5e032e1fd394c\",\"lean_semantic_closure\":\"6c2bb66c0c0fea5eb8d170bb939e0adff1011d3caa897e9c93047ec3cbf97603\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\",\"PowerSupport\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupportNonempty": "{\"own_tex\":\"3193566a92aadb397853ad7ffd55989cfe5ea6ebe607bb6d82c7654d9afbebd6\",\"lean_semantic_closure\":\"05433eb08e7d52faccef48ea4b9093a260b47f8de5a270ad8ed273e9d5075d65\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\"},\"lean_relevant_dependencies\":[\"PowerQ\",\"PowerSupport\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -255,6 +350,10 @@
         "PerfectSuperToMulti",
         "PowerChildWellFounded",
         "PowerPresentationEqEquivalence",
+        "PowerRelCongrLeft",
+        "PowerRelCongrRight",
+        "PowerRelRefl",
+        "PowerRelTrans",
         "PowerSupportInvariant",
         "PowerSupportNonempty",
         "PowerWqoBadPairSequence",
@@ -366,6 +465,16 @@
         "PowerPresentationEq",
         "PowerPresentationEqEquivalence",
         "PowerQ",
+        "PowerQIsPreorder",
+        "PowerRel",
+        "PowerRelAtomAtom",
+        "PowerRelAtomNode",
+        "PowerRelCongrLeft",
+        "PowerRelCongrRight",
+        "PowerRelNodeAtom",
+        "PowerRelNodeNode",
+        "PowerRelRefl",
+        "PowerRelTrans",
         "PowerSupport",
         "PowerSupportInvariant",
         "PowerSupportNonempty",
@@ -1011,6 +1120,93 @@
           "dep_statement_hashes": {},
           "own_tex_hash": "b661ca6068e60712f3712891eca3749a3cb69485c70070b0159f52c024a0250a"
         },
+        "PowerQIsPreorder": {
+          "combined_sound_fp": "sound-v2:c73b8248cf127d99301ac2b612fb93f1c4ba25eb1ccdcb0d42cb8f8e60e1409c",
+          "dep_statement_hashes": {
+            "PowerRelRefl": "6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a",
+            "PowerRelTrans": "de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8"
+          },
+          "own_tex_hash": "8f4ed783536a20ade51692668604f358ad6191cb3bdc39f04a1934cdb2d0efd1"
+        },
+        "PowerRel": {
+          "combined_sound_fp": "sound-v2:55bbcb1133869172175e92f9cf7dd92bd929057b42d04f894f0d7c410ab85506",
+          "dep_statement_hashes": {},
+          "own_tex_hash": "dd0353d652d1806885a6238b6e6dfb273b8fbd1ce0cc537f478f4edce35caa74"
+        },
+        "PowerRelAtomAtom": {
+          "combined_sound_fp": "sound-v2:3482a77d9cd6d0f4b21790ade1d3123e0fed31345f566ffef445e1d1a5e3155c",
+          "dep_statement_hashes": {
+            "PowerRel": "64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b"
+          },
+          "own_tex_hash": "4335c163f07863c9e2c386bc0f0f0ef64e4c173963ab4533dac37704552dc909"
+        },
+        "PowerRelAtomNode": {
+          "combined_sound_fp": "sound-v2:9927cc0ca5e1a3c91ef93e473d3163157279a0dee333a3330a7087ac7806cb71",
+          "dep_statement_hashes": {
+            "PowerRel": "64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b"
+          },
+          "own_tex_hash": "90a705906d6339ba59fcc895519f335def92ce6f3ee39a7e3a269cfce079f9a6"
+        },
+        "PowerRelCongrLeft": {
+          "combined_sound_fp": "sound-v2:32d95ee111e890370f69e83b66e262b4ec602c41f8db63cd51a1ed9c90fb16b4",
+          "dep_statement_hashes": {
+            "PowerPresentationEq": "aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778",
+            "PowerPresentationEqEquivalence": "9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4",
+            "PowerRel": "64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b",
+            "PowerRelAtomAtom": "d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db",
+            "PowerRelAtomNode": "6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a",
+            "PowerRelNodeAtom": "ea956e76419223f44187adc98f126120a8ba40e1b3c3d13f379864426ac4c31b",
+            "PowerRelNodeNode": "90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954"
+          },
+          "own_tex_hash": "972db4245c515c5e55df45c91a989d92492a65320c880aae300b9bbd8ccb1248"
+        },
+        "PowerRelCongrRight": {
+          "combined_sound_fp": "sound-v2:5d01e650b77cc09384619c5cbd2dec5c56795f8a3f0497390e5e078debdbb11f",
+          "dep_statement_hashes": {
+            "PowerPresentationEq": "aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778",
+            "PowerPresentationEqEquivalence": "9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4",
+            "PowerRel": "64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b",
+            "PowerRelAtomNode": "6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a",
+            "PowerRelNodeAtom": "ea956e76419223f44187adc98f126120a8ba40e1b3c3d13f379864426ac4c31b",
+            "PowerRelNodeNode": "90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954"
+          },
+          "own_tex_hash": "6db7265d4914f54bc01a1ac8e45afa89babe8278eaf266fbe489ad1a71ea6cb5"
+        },
+        "PowerRelNodeAtom": {
+          "combined_sound_fp": "sound-v2:7743b062fc5d9accb97d5f8334dc49501becfd11227ed630a21d246d8b870147",
+          "dep_statement_hashes": {
+            "PowerRel": "64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b"
+          },
+          "own_tex_hash": "423473b79ea7c319033d3aa9c70998c2b8e8b653e9cb2f9e3da7c739cfb37520"
+        },
+        "PowerRelNodeNode": {
+          "combined_sound_fp": "sound-v2:12817c1719025fd1fbb02e07642b1a5e4d17980babbc0b5c08d34152d193ca9b",
+          "dep_statement_hashes": {
+            "PowerRel": "64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b"
+          },
+          "own_tex_hash": "c5b73ca02de195721b41d4e6cc70917f217d5e2dcbdc0bd25602ffee5852ddf7"
+        },
+        "PowerRelRefl": {
+          "combined_sound_fp": "sound-v2:4f35dd14a3ae0c6f2aa8a3311f3f566444ce8b995f675c3ddd13dc9a80645bdf",
+          "dep_statement_hashes": {
+            "PowerChildWellFounded": "ac3f4d1ef0a37d6686ff016ace593d0fc492c68e7eddc69db862315a84001343",
+            "PowerRelAtomAtom": "d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db",
+            "PowerRelNodeNode": "90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954"
+          },
+          "own_tex_hash": "b6f2e1c46a323d325a0b0fc27b90f72f4052a416db31e840f3e85e49c9e4c4f1"
+        },
+        "PowerRelTrans": {
+          "combined_sound_fp": "sound-v2:74a94b7b4df83f7abbdc2446a4a9f2b5d91ce5ea17ec143b2ca22cb8b010cd3f",
+          "dep_statement_hashes": {
+            "PowerChildWellFounded": "ac3f4d1ef0a37d6686ff016ace593d0fc492c68e7eddc69db862315a84001343",
+            "PowerRel": "64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b",
+            "PowerRelAtomAtom": "d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db",
+            "PowerRelAtomNode": "6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a",
+            "PowerRelNodeAtom": "ea956e76419223f44187adc98f126120a8ba40e1b3c3d13f379864426ac4c31b",
+            "PowerRelNodeNode": "90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954"
+          },
+          "own_tex_hash": "8f7094f6bbe3f79e6452686e755b5eb4327736b946691c26181a1d8f7e43e303"
+        },
         "PowerSupport": {
           "combined_sound_fp": "sound-v2:2c944716426bc22b0aca9ef38a87c770adb8d8f149430e8f04d6c6ef61a34d29",
           "dep_statement_hashes": {},
@@ -1309,6 +1505,16 @@
         "PowerPresentationEq": "sound-v2:08e36ef18d0f739bc01dd2dbe4b9c141452557b87d107e51429c75d38cd00f27",
         "PowerPresentationEqEquivalence": "sound-v2:be3b39723e58bc419ca10f8ab4dee982570edc4a15f19ca7231e38590148ddb2",
         "PowerQ": "sound-v2:6fa59c6b1f00b16b94208bab490cd36015afae248e7ce3a1a4c427d7c16a19c4",
+        "PowerQIsPreorder": "sound-v2:c73b8248cf127d99301ac2b612fb93f1c4ba25eb1ccdcb0d42cb8f8e60e1409c",
+        "PowerRel": "sound-v2:55bbcb1133869172175e92f9cf7dd92bd929057b42d04f894f0d7c410ab85506",
+        "PowerRelAtomAtom": "sound-v2:3482a77d9cd6d0f4b21790ade1d3123e0fed31345f566ffef445e1d1a5e3155c",
+        "PowerRelAtomNode": "sound-v2:9927cc0ca5e1a3c91ef93e473d3163157279a0dee333a3330a7087ac7806cb71",
+        "PowerRelCongrLeft": "sound-v2:32d95ee111e890370f69e83b66e262b4ec602c41f8db63cd51a1ed9c90fb16b4",
+        "PowerRelCongrRight": "sound-v2:5d01e650b77cc09384619c5cbd2dec5c56795f8a3f0497390e5e078debdbb11f",
+        "PowerRelNodeAtom": "sound-v2:7743b062fc5d9accb97d5f8334dc49501becfd11227ed630a21d246d8b870147",
+        "PowerRelNodeNode": "sound-v2:12817c1719025fd1fbb02e07642b1a5e4d17980babbc0b5c08d34152d193ca9b",
+        "PowerRelRefl": "sound-v2:4f35dd14a3ae0c6f2aa8a3311f3f566444ce8b995f675c3ddd13dc9a80645bdf",
+        "PowerRelTrans": "sound-v2:74a94b7b4df83f7abbdc2446a4a9f2b5d91ce5ea17ec143b2ca22cb8b010cd3f",
         "PowerSupport": "sound-v2:2c944716426bc22b0aca9ef38a87c770adb8d8f149430e8f04d6c6ef61a34d29",
         "PowerSupportInvariant": "sound-v2:15219967b936ccb3134cf90196b42cddbd8ff97b8b9cfa95665a33d1ce08d9ae",
         "PowerSupportNonempty": "sound-v2:29b8bd84217841361730354c52004b4be68fa26bf7ffdedf1e8d00dd399c451b",
@@ -1423,6 +1629,16 @@
         "PowerPresentationEq": "{\"own_tex\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "PowerPresentationEqEquivalence": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerQ": "{\"own_tex\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerQIsPreorder": "{\"own_tex\":\"f9f56cef746b72a529f4e897044a196d176ab217e202fa55f3e08c7e5795e398\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRel": "{\"own_tex\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelAtomAtom": "{\"own_tex\":\"d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelAtomNode": "{\"own_tex\":\"6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelCongrLeft": "{\"own_tex\":\"412fe0e4a4194dfafbfb9c7ad0dada7cbf5e4cc1d7e6c2c0dd6e3b81956f6eb4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelCongrRight": "{\"own_tex\":\"57a2270da8b3d3501e6e82316f4f3971f296094416f2c381e7b35ed8a7507ba6\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelNodeAtom": "{\"own_tex\":\"ea956e76419223f44187adc98f126120a8ba40e1b3c3d13f379864426ac4c31b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelNodeNode": "{\"own_tex\":\"90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelRefl": "{\"own_tex\":\"6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "PowerRelTrans": "{\"own_tex\":\"de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerSupport": "{\"own_tex\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "PowerSupportInvariant": "{\"own_tex\":\"84fb85705a6dab0c82ca7e87fa503d9b5d2b8024f5255cd165e5e032e1fd394c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "PowerSupportNonempty": "{\"own_tex\":\"3193566a92aadb397853ad7ffd55989cfe5ea6ebe607bb6d82c7654d9afbebd6\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
@@ -1537,6 +1753,16 @@
         "PowerPresentationEq": "{\"own_tex\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"lean_semantic_closure\":\"02a6ffe5f9eabadc69c34835c0eb2978fd98feeea7539cd360342f75d8bdcaa9\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerPresentationEqEquivalence": "{\"own_tex\":\"9e83e0361ccad4e9eec475f4ef8f639c4c85ac5f59ae3f21a0ca1bce669f76d4\",\"lean_semantic_closure\":\"34fc5cff92a4f738701eb968fb0f8a8a64c1d51997b5ad298c3f0e68852bfaf6\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerQ": "{\"own_tex\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"lean_semantic_closure\":\"2078dbf6b7ad1747d70edd478d28bf3f29c67f2fc0e3b79a98e752cccfc161c8\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerQIsPreorder": "{\"own_tex\":\"f9f56cef746b72a529f4e897044a196d176ab217e202fa55f3e08c7e5795e398\",\"lean_semantic_closure\":\"c5acd940be44a523dfcf7ca709e4afaf2009054f9377fc718ac9d5215982afa5\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRel": "{\"own_tex\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\",\"lean_semantic_closure\":\"f23a828e90125e5fac54b86266da8c91b0e2986e95add9d4af5e115c3eb20d6d\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelAtomAtom": "{\"own_tex\":\"d15ddd33e012108103ced27b0ae4b3f09ee9ed7b75e37bbc29fd168826abd2db\",\"lean_semantic_closure\":\"6d395b9ecb041958a7c54b6f9924fdac493fbc55a9f74c804bfedd7e7347690b\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelAtomNode": "{\"own_tex\":\"6d4e73292cecdf4f3347355eed0b8a5bec4234e6718fd565ce90fb7c0ad84d4a\",\"lean_semantic_closure\":\"f889a5759ccd8cc78d554be471bbb0c2e251a500cb17abea9099f8dfd2f28a59\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelCongrLeft": "{\"own_tex\":\"412fe0e4a4194dfafbfb9c7ad0dada7cbf5e4cc1d7e6c2c0dd6e3b81956f6eb4\",\"lean_semantic_closure\":\"630f0fe8b3c5cf37e9818d5abe72e1688f7bb6f2210c934e3b6a826b92c54c5b\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelCongrRight": "{\"own_tex\":\"57a2270da8b3d3501e6e82316f4f3971f296094416f2c381e7b35ed8a7507ba6\",\"lean_semantic_closure\":\"24b1b8c9eea431aac582a78f798adebae97f3e87270b0c6e0159a0d727a3b578\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelNodeAtom": "{\"own_tex\":\"ea956e76419223f44187adc98f126120a8ba40e1b3c3d13f379864426ac4c31b\",\"lean_semantic_closure\":\"210ca47a9851a71582a98a9a6a998626deb3023fffc85d329899af475f06ea33\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelNodeNode": "{\"own_tex\":\"90e9c394a1fade728096cd7a256b17b33ab0eb75c80f794b6db6b194236d1954\",\"lean_semantic_closure\":\"dbd71742ec26798a6a570825c524e799b674476f2220c6bb7b1361f5578fca61\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelRefl": "{\"own_tex\":\"6335b8073dcec31438476f73b7ab7025c228bfceb4c720e139cf232be96fa89a\",\"lean_semantic_closure\":\"cd7432b7bf907041237da6c0e7dccf0fbc8c9727c11375918391f8227b4677fd\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "PowerRelTrans": "{\"own_tex\":\"de395bcaadb936c92c1625a4af034d7a5bd40e44208a139d9f8d8ba64e02daf8\",\"lean_semantic_closure\":\"e6ef70d72f706fbbcb4d8c16d3576c8aeac5e702d1aef9e30afe218f29d8ac44\",\"lean_relevant_definition_descendants\":{\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"PowerChild\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupport": "{\"own_tex\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\",\"lean_semantic_closure\":\"72181f193f13f0c02869d4b46d6a89b0f439707667f8e80ce48a1debea104ef4\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupportInvariant": "{\"own_tex\":\"84fb85705a6dab0c82ca7e87fa503d9b5d2b8024f5255cd165e5e032e1fd394c\",\"lean_semantic_closure\":\"6c2bb66c0c0fea5eb8d170bb939e0adff1011d3caa897e9c93047ec3cbf97603\",\"lean_relevant_definition_descendants\":{\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\"},\"lean_relevant_dependencies\":[\"PowerPresentationEq\",\"PowerQ\",\"PowerSupport\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "PowerSupportNonempty": "{\"own_tex\":\"3193566a92aadb397853ad7ffd55989cfe5ea6ebe607bb6d82c7654d9afbebd6\",\"lean_semantic_closure\":\"05433eb08e7d52faccef48ea4b9093a260b47f8de5a270ad8ed273e9d5075d65\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerSupport\":\"f0498aad4b88109a07fdecd9fd246615559b692d5aea7ba0f3f7d9a81bf60762\"},\"lean_relevant_dependencies\":[\"PowerQ\",\"PowerSupport\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1572,8 +1798,39 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Completed the requested anti-redundancy cleanup: removed PowerPresentationEqShape and PowerSupportEquations, retained PowerPresentationEqEquivalence as a substantive theorem, revised the recursive-definition statement and proof citations, and rewired the support nodes to the definitions. Tablet shape check and lake build pass.",
-    "target_claim_updates": {},
+    "summary": "Added the paper-faithful lifted relation PowerRel on the full arbitrary-small branching PowerQ hierarchy, explicit atom/node reduction interfaces, presentation-equivalence invariance in both arguments, preorder laws, and a named IsPreorder instance. All ten new nodes have paired Lean/TeX artifacts, complete non-SKETCH NL proofs, and no configured target claim.",
+    "target_claim_updates": {
+      "PowerQIsPreorder": {
+        "Set": []
+      },
+      "PowerRel": {
+        "Set": []
+      },
+      "PowerRelAtomAtom": {
+        "Set": []
+      },
+      "PowerRelAtomNode": {
+        "Set": []
+      },
+      "PowerRelCongrLeft": {
+        "Set": []
+      },
+      "PowerRelCongrRight": {
+        "Set": []
+      },
+      "PowerRelNodeAtom": {
+        "Set": []
+      },
+      "PowerRelNodeNode": {
+        "Set": []
+      },
+      "PowerRelRefl": {
+        "Set": []
+      },
+      "PowerRelTrans": {
+        "Set": []
+      }
+    },
     "transport_failure": false,
     "under_model_disproof": "",
     "under_model_reasoning": "",
@@ -1682,7 +1939,7 @@
     "GBetterRelIff.tex": "b04881587ad7f81864198af6e8b66dc551462096771feba1eab092935e268a72",
     "GoodMultiSequence.lean": "c4bd9fe7761dceaa3dda46012ddeb547f5a9fd042134d0e7600570747cb76d19",
     "GoodMultiSequence.tex": "e2a214ee38e14cdb74e95a61fe6792faac106f3ffcebec6a6568fed66f404bc6",
-    "INDEX.md": "a0651edfd74815ee4c4b511aab593a173d4d36f4ce8f0feaf90c51c1d75dce0d",
+    "INDEX.md": "58366768a050f115739938e50da8abe7233503e87768d152d570b0a8c84238cb",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -1745,6 +2002,26 @@
     "PowerPresentationEqEquivalence.tex": "db6ea223dd843bd2f725b0b7843b20a9805cccd9b29d1099aef0aab6f584d49f",
     "PowerQ.lean": "09695e8217fe11f82ea1e44a4b642752fa948d3dc43ff58ba3d71b358563e51e",
     "PowerQ.tex": "b661ca6068e60712f3712891eca3749a3cb69485c70070b0159f52c024a0250a",
+    "PowerQIsPreorder.lean": "a6e9b318c7f4289566ee9e74c2b6a73eba25040930d3c6a2852d3f79751cc0e2",
+    "PowerQIsPreorder.tex": "8f4ed783536a20ade51692668604f358ad6191cb3bdc39f04a1934cdb2d0efd1",
+    "PowerRel.lean": "7756274d21ab919f80d3328a011e1b11de551c71bae4c2fafba5714d466b2dc2",
+    "PowerRel.tex": "dd0353d652d1806885a6238b6e6dfb273b8fbd1ce0cc537f478f4edce35caa74",
+    "PowerRelAtomAtom.lean": "797e17f58ea423999e191077b6a7dcd08298680aa23575bd130174860a1298dc",
+    "PowerRelAtomAtom.tex": "4335c163f07863c9e2c386bc0f0f0ef64e4c173963ab4533dac37704552dc909",
+    "PowerRelAtomNode.lean": "ae6495553950a0d5ea05f43c0fdbc4395a456ed1da2f8f68b591abf39ce77414",
+    "PowerRelAtomNode.tex": "90a705906d6339ba59fcc895519f335def92ce6f3ee39a7e3a269cfce079f9a6",
+    "PowerRelCongrLeft.lean": "52342909f8daf89b6e079b7af8c138bfd7de3f50d0ac190544d4b8dab069bc19",
+    "PowerRelCongrLeft.tex": "972db4245c515c5e55df45c91a989d92492a65320c880aae300b9bbd8ccb1248",
+    "PowerRelCongrRight.lean": "608f1c0e9ad573e8e89fc4334552b31ecb50499d177f660347959d59bf8f2731",
+    "PowerRelCongrRight.tex": "6db7265d4914f54bc01a1ac8e45afa89babe8278eaf266fbe489ad1a71ea6cb5",
+    "PowerRelNodeAtom.lean": "033dcde55a6f888c7a963f5e84965b36bc4cd15375e99d471ad76650fefd60dd",
+    "PowerRelNodeAtom.tex": "423473b79ea7c319033d3aa9c70998c2b8e8b653e9cb2f9e3da7c739cfb37520",
+    "PowerRelNodeNode.lean": "ed61ac8265d53647f2cebde7bff598e05dd6365ce5edcf8308146ef82a14f0d3",
+    "PowerRelNodeNode.tex": "c5b73ca02de195721b41d4e6cc70917f217d5e2dcbdc0bd25602ffee5852ddf7",
+    "PowerRelRefl.lean": "d81928258e5e64dfb2769380f368eb066b03526f39f27f3741d3f8dc9dba20c0",
+    "PowerRelRefl.tex": "b6f2e1c46a323d325a0b0fc27b90f72f4052a416db31e840f3e85e49c9e4c4f1",
+    "PowerRelTrans.lean": "4798056600f8775b2db12ea6d89e293327ca1345f547f802894248c4449472f3",
+    "PowerRelTrans.tex": "8f7094f6bbe3f79e6452686e755b5eb4327736b946691c26181a1d8f7e43e303",
     "PowerSupport.lean": "b238a0c4059a72cb573e373c4cf444d4e0512687df2f9047aa511ddbfded3629",
     "PowerSupport.tex": "c0a94a71d4e2bb2a5815c5cb67e58119abe247533f52067c4437bebd0755b0a4",
     "PowerSupportInvariant.lean": "a0e6b3f0b4530658fe587762b36367ef7590ced1c30a17c3f9b47bd7f28c0a06",
@@ -1765,7 +2042,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "f64d6f137ee9ecbdaed3a9e7264993ebaacbb4739e67f2dfed694037348618a7",
-    "README.md": "c0e8ef22927a91297b420b5a338e33a9b3c0dc1016fe7a5d7571d2dfe2fa1afe",
+    "README.md": "61d23fc149b964f841e6949dfbdd4b3c287d8d4db95dcb6f3682f453ea3ed760",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "8083be7d8ada8fc21dcf0ee59af2c71892a3aeafe327bf147b7d48daf1470ecb",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -1808,7 +2085,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_78_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_85_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

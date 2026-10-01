@@ -84,6 +84,16 @@
 | PowerPresentationEq | definition | definition | closed | - | - | PowerQ |
 | PowerPresentationEqEquivalence | lemma | proof | open | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
 | PowerQ | definition | definition | closed | - | - | Preamble |
+| PowerQIsPreorder | lemma | proof | closed | - | The lifted relation is a preorder | PowerRelTrans |
+| PowerRel | definition | definition | closed | - | - | PowerChildWellFounded |
+| PowerRelAtomAtom | lemma | proof | closed | - | Atom--atom reduction | PowerRel |
+| PowerRelAtomNode | lemma | proof | closed | - | Atom--node reduction | PowerRel |
+| PowerRelCongrLeft | lemma | proof | open | - | Left presentation invariance | PowerPresentationEqEquivalence, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
+| PowerRelCongrRight | lemma | proof | open | - | Right presentation invariance | PowerRelCongrLeft |
+| PowerRelNodeAtom | lemma | proof | closed | - | Node--atom reduction | PowerRel |
+| PowerRelNodeNode | lemma | proof | closed | - | Node--node reduction | PowerRel |
+| PowerRelRefl | lemma | proof | open | - | Reflexivity of the lifted relation | PowerRelCongrRight |
+| PowerRelTrans | lemma | proof | open | - | Transitivity of the lifted relation | PowerRelRefl |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
 | PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
 | PowerSupportNonempty | lemma | proof | open | - | Nonempty support | PowerSupport |
@@ -115,4 +125,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 111 nodes | **Closed:** 59 | **Open:** 52
+**Total:** 121 nodes | **Closed:** 65 | **Open:** 56
