@@ -1,0 +1,20 @@
+\begin{lemma}[Support of the copied left values]
+Under the hypotheses of \noderef{PowerCopiedFailureMove}, every selected
+left value in row $n$ has support contained in the support of the row's
+initial presentation:
+\[
+\mathsf{PowerSupport}(L_{n,k})
+\subseteq
+\mathsf{PowerSupport}\bigl(h(\mathsf{PowerShiftIter}(n,x))\bigr).
+\]
+In particular, for the first row all copied values remain supported by
+$h(x)$.
+\end{lemma}
+\begin{proof}
+At depth zero, \noderef{PowerCopiedFailureMove} gives that $L_{n,0}$ is a
+legal move from the initial value in row $n$.  The support inclusion
+\noderef{PowerMoveInSupport} gives the claim.  At a successor depth, the
+same lemma gives inclusion of the support of $L_{n,k+1}$ in that of
+$L_{n,k}$; compose this with the induction hypothesis.  This proves the
+inclusion for all depths and rows.
+\end{proof}

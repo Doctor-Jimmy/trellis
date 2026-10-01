@@ -88,7 +88,26 @@
 | PerfectSuperToBase | proof | Super-sequence perfectness gives base perfectness | open |
 | PerfectSuperToMulti | proof | Perfect sub-super-sequences give perfect sub-multi-sequences | open |
 | PowerChild | definition | - | closed |
+| PowerChildSupport | proof | Support decreases along a child | open |
 | PowerChildWellFounded | proof | Well-founded hierarchy descent | open |
+| PowerCopiedFailureMove | proof | Failure and legal moves in the copied triangle | open |
+| PowerCopiedFiniteDependence | proof | Finite dependence of a copied move | open |
+| PowerCopiedFiniteTerminal | proof | Finite terminal dependence | open |
+| PowerCopiedLeft | definition | - | closed |
+| PowerCopiedShiftIdentity | proof | Stabilization under the shift | open |
+| PowerCopiedSupport | proof | Support of the copied left values | open |
+| PowerCopiedTerminalAt | definition | - | closed |
+| PowerCopiedTerminalShift | proof | The terminal atom stabilizes under shifting | open |
+| PowerCopiedTerminalSupport | proof | The terminal atom lies in the original support | open |
+| PowerCopiedTerminates | proof | Every copied row reaches atoms | open |
+| PowerGameDescent | definition | - | closed |
+| PowerGameDescentWellFounded | proof | Well-foundedness of copied pair descent | open |
+| PowerIResponse | definition | - | closed |
+| PowerIResponseFailure | proof | The canonical response preserves failure | open |
+| PowerIResponseLegal | proof | The canonical response is legal | open |
+| PowerIResponseWitness | proof | A failed comparison has a canonical one-round response | open |
+| PowerMove | definition | - | closed |
+| PowerMoveInSupport | proof | Moves stay in support | open |
 | PowerPresentationEq | definition | - | closed |
 | PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | open |
 | PowerQ | definition | - | closed |
@@ -102,6 +121,8 @@
 | PowerRelNodeNode | proof | Node--node reduction | closed |
 | PowerRelRefl | proof | Reflexivity of the lifted relation | open |
 | PowerRelTrans | proof | Transitivity of the lifted relation | open |
+| PowerShiftIter | definition | - | closed |
+| PowerShiftIterShift | proof | Shift iterates commute with the first shift | open |
 | PowerSupport | definition | - | closed |
 | PowerSupportInvariant | proof | Support respects presentation equivalence | open |
 | PowerSupportNonempty | proof | Nonempty support | open |
@@ -131,4 +152,4 @@
 | TailSet | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 65/121 closed
+**Summary:** 71/142 closed

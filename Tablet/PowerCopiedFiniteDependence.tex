@@ -1,0 +1,20 @@
+\begin{lemma}[Finite dependence of a copied move]
+For fixed $r,x,n,k$, the value
+$\mathsf{PowerCopiedLeft}_r(h,x,n,k)$ depends only on the finitely many
+values
+\[
+h(\mathsf{PowerShiftIter}(j,x))\qquad (j\le n+k+2).
+\]
+More precisely, if $h'$ agrees with $h$ on those values, then the two copied
+left values at row $n$ and depth $k$ are equal.
+\end{lemma}
+\begin{proof}
+Induct on $k$.  At depth zero, the recursive definition
+\noderef{PowerCopiedLeft} uses only the values at shifts $n$ and $n+1$,
+which are among the assumed values.  At depth $k+1$, the definition applies
+the same fixed function from \noderef{PowerIResponse} to the values at
+$(n,k)$ and $(n+1,k)$.  The induction hypotheses apply to these two values:
+the first needs shifts at most $n+k+2$, and the second needs shifts at most
+$n+k+3$, exactly the bound $n+(k+1)+2$.  Equal inputs to the fixed response
+function give equal outputs, completing the induction.
+\end{proof}

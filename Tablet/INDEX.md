@@ -80,7 +80,26 @@
 | PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, PerfectSuperSequence, SuperSequenceExtension |
 | PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, SuperSequenceRestrict |
 | PowerChild | definition | definition | closed | - | - | PowerQ |
+| PowerChildSupport | lemma | proof | open | - | Support decreases along a child | PowerChild, PowerSupport |
 | PowerChildWellFounded | lemma | proof | open | - | Well-founded hierarchy descent | PowerChild |
+| PowerCopiedFailureMove | lemma | proof | open | - | Failure and legal moves in the copied triangle | BadMultiSequence, PowerCopiedLeft, PowerIResponseFailure, PowerIResponseLegal |
+| PowerCopiedFiniteDependence | lemma | proof | open | - | Finite dependence of a copied move | PowerCopiedLeft |
+| PowerCopiedFiniteTerminal | lemma | proof | open | - | Finite terminal dependence | PowerCopiedFiniteDependence, PowerCopiedTerminalAt, PowerCopiedTerminates |
+| PowerCopiedLeft | definition | definition | closed | - | - | MultiSequence, PowerIResponse, PowerShiftIter |
+| PowerCopiedShiftIdentity | lemma | proof | open | - | Stabilization under the shift | PowerCopiedLeft, PowerShiftIterShift |
+| PowerCopiedSupport | lemma | proof | open | - | Support of the copied left values | PowerCopiedFailureMove, PowerMoveInSupport |
+| PowerCopiedTerminalAt | definition | definition | closed | - | - | PowerCopiedLeft |
+| PowerCopiedTerminalShift | lemma | proof | open | - | The terminal atom stabilizes under shifting | PowerCopiedFiniteTerminal, PowerCopiedShiftIdentity |
+| PowerCopiedTerminalSupport | lemma | proof | open | - | The terminal atom lies in the original support | PowerCopiedSupport, PowerCopiedTerminalAt, PowerCopiedTerminates |
+| PowerCopiedTerminates | lemma | proof | open | - | Every copied row reaches atoms | PowerCopiedFailureMove, PowerCopiedTerminalAt, PowerGameDescentWellFounded |
+| PowerGameDescent | definition | definition | closed | - | - | PowerChild |
+| PowerGameDescentWellFounded | lemma | proof | open | - | Well-foundedness of copied pair descent | PowerChildWellFounded, PowerGameDescent |
+| PowerIResponse | definition | definition | closed | - | - | PowerMove |
+| PowerIResponseFailure | lemma | proof | open | - | The canonical response preserves failure | PowerIResponseLegal |
+| PowerIResponseLegal | lemma | proof | open | - | The canonical response is legal | PowerIResponseWitness |
+| PowerIResponseWitness | lemma | proof | open | - | A failed comparison has a canonical one-round response | PowerIResponse, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
+| PowerMove | definition | definition | closed | - | - | PowerChild, PowerRel |
+| PowerMoveInSupport | lemma | proof | open | - | Moves stay in support | PowerChildSupport, PowerMove |
 | PowerPresentationEq | definition | definition | closed | - | - | PowerQ |
 | PowerPresentationEqEquivalence | lemma | proof | open | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
 | PowerQ | definition | definition | closed | - | - | Preamble |
@@ -94,6 +113,8 @@
 | PowerRelNodeNode | lemma | proof | closed | - | Node--node reduction | PowerRel |
 | PowerRelRefl | lemma | proof | open | - | Reflexivity of the lifted relation | PowerRelCongrRight |
 | PowerRelTrans | lemma | proof | open | - | Transitivity of the lifted relation | PowerRelRefl |
+| PowerShiftIter | definition | definition | closed | - | - | ShiftMap |
+| PowerShiftIterShift | lemma | proof | open | - | Shift iterates commute with the first shift | PowerShiftIter |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
 | PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
 | PowerSupportNonempty | lemma | proof | open | - | Nonempty support | PowerSupport |
@@ -125,4 +146,4 @@
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 121 nodes | **Closed:** 65 | **Open:** 56
+**Total:** 142 nodes | **Closed:** 71 | **Open:** 71

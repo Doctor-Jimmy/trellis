@@ -1,0 +1,18 @@
+\begin{lemma}[Stabilization under the shift]
+For every $n,k$,
+\[
+\mathsf{PowerCopiedLeft}_r(h,\mathsf{ShiftMap}(x),n,k)
+=\mathsf{PowerCopiedLeft}_r(h,x,n+1,k).
+\]
+Thus the copied triangle constructed from the shifted input is exactly the
+next row of the triangle constructed from the original input.
+\end{lemma}
+\begin{proof}
+Induct on $k$.  At depth zero, use
+\noderef{PowerShiftIterShift} to identify every shift iterate of
+$\mathsf{ShiftMap}(x)$ with the next iterate of $x$; the two applications of
+$\mathsf{PowerIResponse}$ from \noderef{PowerIResponse} therefore have identical arguments.  At a
+successor depth, unfold \noderef{PowerCopiedLeft} and apply the induction
+hypothesis to both recursive arguments, with row indices $n$ and $n+1$.
+The deterministic response function then gives the required equality.
+\end{proof}

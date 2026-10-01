@@ -1,0 +1,29 @@
+\begin{lemma}[Failure and legal moves in the copied triangle]
+Let $h$ be bad for $\mathsf{PowerRel}(r)$.  For every increasing
+enumeration $x$, row $n$, and depth $k$, the copied pair is failed and the
+next left value is a legal move:
+\[
+\begin{split}
+&\neg\mathsf{PowerRel}(r)(L_{n,k},L_{n+1,k}),\\
+&\mathsf{PowerMove}(L_{n,k},L_{n,k+1}),
+\end{split}
+\]
+where $L_{n,k}=\mathsf{PowerCopiedLeft}_r(h,x,n,k)$.
+\end{lemma}
+\begin{proof}
+First consider depth zero.  The pair of initial values is
+\bigl(h(\mathsf{PowerShiftIter}(n,x)),
+h(\mathsf{PowerShiftIter}(n+1,x))\bigr).  Repeatedly applying the shift
+identity from \noderef{PowerShiftIter} identifies the second value
+with the shift of the first, so its failure follows from
+\noderef{BadMultiSequence}.  The canonical response is legal by
+\noderef{PowerIResponseLegal}.
+
+Assume the two assertions at depth $k$ for every row.  The second assertion
+at row $n+1$ says that $L_{n+1,k+1}$ is a legal response to
+$L_{n+1,k}$.  Apply \noderef{PowerIResponseFailure} to the failed pair
+$(L_{n,k},L_{n+1,k})$; it gives failure of
+$(L_{n,k+1},L_{n+1,k+1})$.  Applying
+\noderef{PowerIResponseLegal} to that failed pair gives the next legal left
+move.  Induction on $k$ proves both claims simultaneously for all rows.
+\end{proof}

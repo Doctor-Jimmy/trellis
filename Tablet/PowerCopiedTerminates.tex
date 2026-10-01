@@ -1,0 +1,18 @@
+\begin{lemma}[Every copied row reaches atoms]
+If $h$ is bad for $\mathsf{PowerRel}(r)$, then for every $x$ and $n$ there
+is a finite depth $k$ such that
+$\mathsf{PowerCopiedTerminalAt}_r(h,x,n,k)$ holds.
+\end{lemma}
+\begin{proof}
+By \noderef{PowerCopiedFailureMove}, each selected value is a legal move
+from the preceding value and every copied pair remains failed.  If a legal
+move starts at a node, \noderef{PowerMove} makes the new value a strict
+child; if it starts at an atom, the value is unchanged.  Consequently, as
+long as the first coordinate is not an atom, the pair of adjacent selected
+values strictly descends for \noderef{PowerGameDescent}; once the first
+coordinate is an atom, any continued non-atomic second coordinate strictly
+descends in the second component.  The pair relation is well-founded by
+\noderef{PowerGameDescentWellFounded}, so this process reaches a pair of
+atoms after finitely many steps.  This is exactly
+\noderef{PowerCopiedTerminalAt}.
+\end{proof}

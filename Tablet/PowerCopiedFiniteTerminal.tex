@@ -1,0 +1,18 @@
+\begin{lemma}[Finite terminal dependence]
+If $h$ is bad for $\mathsf{PowerRel}(r)$, then for every $x$ there are
+$k\in\mathbb N$ and atoms $q,q'\in Q$ such that
+\[
+L_{0,k}=\mathsf{atom}(q),\qquad L_{1,k}=\mathsf{atom}(q'),
+\]
+and the atom $q$ is unchanged by replacing $h$ with any multi-sequence that
+agrees with $h$ on the finite shift prefix
+$h(\mathsf{PowerShiftIter}(j,x))$ for $j\le k+2$.
+\end{lemma}
+\begin{proof}
+Apply \noderef{PowerCopiedTerminates} to row zero and choose a witnessing
+depth and the two atom labels.  The finite-dependence statement
+\noderef{PowerCopiedFiniteDependence}, with $n=0$, says that the first
+terminal value is unchanged under every replacement agreeing through shift
+$k+2$.  Since the original value is $\mathsf{atom}(q)$, the replacement has
+the same form and label.  This proves all three displayed assertions.
+\end{proof}

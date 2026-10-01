@@ -1,0 +1,13 @@
+\begin{definition}
+Let $h$ be a multi-sequence with values in $\mathsf{PowerQ}(Q)$.  Define
+$\mathsf{PowerCopiedLeft}_r(h,x,n,k)$ recursively on $k$.  At depth zero it
+is the canonical Player I response to
+\[
+\bigl(h(\mathsf{PowerShiftIter}(n,x)),
+h(\mathsf{PowerShiftIter}(n+1,x))\bigr).
+\]
+At depth $k+1$ it is the canonical response to the two values at depth $k$
+in rows $n$ and $n+1$.  Thus row $n+1$ supplies exactly the copied right
+move for row $n$, and the whole triangular play is a fixed function of the
+raw values of $h$ on its shift orbit.
+\end{definition}

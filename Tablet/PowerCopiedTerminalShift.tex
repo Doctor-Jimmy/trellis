@@ -1,0 +1,16 @@
+\begin{lemma}[The terminal atom stabilizes under shifting]
+If $h$ is bad for $\mathsf{PowerRel}(r)$, then for every $x$ there are
+$k,q,q'$ such that
+\[
+L_{0,k}=\mathsf{atom}(q),\qquad
+L_{1,k}=\mathsf{atom}(q'),\qquad
+\mathsf{PowerCopiedLeft}_r(h,\mathsf{ShiftMap}(x),0,k)
+=\mathsf{atom}(q').
+\]
+\end{lemma}
+\begin{proof}
+Use \noderef{PowerCopiedFiniteTerminal} to choose $k,q,q'$ for $x$.  Apply
+the shift identity \noderef{PowerCopiedShiftIdentity} with $n=0$ and this
+$k$.  It identifies the last displayed value with $L_{1,k}$, which is
+$\mathsf{atom}(q')$ by the chosen terminal witness.
+\end{proof}
