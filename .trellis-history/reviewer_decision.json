@@ -1,15 +1,15 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontBridgeTerminal has a current Sound approval. The remaining FreshUnknown FinitePrefixExtension proof has an independently identifiable soundness defect: it uses an increasing-enumeration construction without citing IncSeq and omits the case analysis and witness verification needed for its proper-prefix conclusion.",
-    "comments": "Repair only `Tablet/FinitePrefixExtension.tex`; preserve its Lean statement, imports, and support structure. Cite `\\noderef{IncSeq}` where the constructed map is shown to be an increasing enumeration and retain `\\noderef{ProperPrefixSet}` when converting the explicit cutoff into the conclusion. Split into the empty and nonempty cases. For nonempty s, list its elements increasingly, define the enumeration by those finitely many elements followed by max(s)+1, max(s)+2, and so on, and prove strict increase, the exact range, and that max(s)+1 is a proper-prefix witness. For empty s, explicitly use the identity enumeration, prove it is in IncSeq, identify its range, and give 0 as the proper-prefix witness. Do not leave `enumerate ... then continue` as an assertion, add helpers, or change the theorem/support structure. The paper defines the initial/proper-prefix relation at lines 1078--1080 and identifies infinite subsets with increasing enumerations and finite-prefix basic sets at lines 1264--1267.",
-    "task_blocker_ids": [
-      "soundness:node:FinitePrefixExtension:sound-v2:78baed9cc4fa7c1dd8888824083b42f567f261d19f7460c65cf1d21a9e667612"
-    ],
+    "reason": "FinitePrefixExtension now has a current Sound approval. FirstMovedPoint is the next FreshUnknown orbit-support obligation; its NL proof explicitly cites IncSeqPointwiseLe and gives the least-moved-point argument, so a Sound verifier run is warranted without a worker repair.",
+    "comments": "Run a verifier-only Sound burst for `FirstMovedPoint`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{IncSeqPointwiseLe}` supplies pointwise monotonicity, that non-identity gives a nonempty moved-point set, that well-ordering supplies its least element, and that minimality plus pointwise monotonicity yields `g(j)=j` below that point. The paper's increasing-enumeration representation of infinite subsets is at lines 1264--1267.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "FinitePrefixExtension",
-    "next_mode": "targeted",
+    "request_sound_verifier_node_ids": [
+      "FirstMovedPoint"
+    ],
+    "next_active": "",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -18,19 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1078,
-        "end_line": 1080,
-        "reason": "The paper's definition of finite initial and proper prefixes."
-      },
-      {
         "start_line": 1264,
         "end_line": 1267,
-        "reason": "The paper's increasing-enumeration representation and finite-prefix basis."
+        "reason": "The paper's increasing-enumeration representation of infinite subsets."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1078--1080 define a proper prefix by a cutoff in the larger set. Lines 1264--1267 represent infinite subsets by injective increasing enumerations and identify finite proper-prefix cylinders, which is the construction this support lemma supplies."
+      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations and finite proper-prefix cylinders; this is the surrounding representation used by the orbit and shift-support development."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -44,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FinitePrefixExtension.tex`; preserve its Lean statement, imports, and support structure. Cite `\\noderef{IncSeq}` where the constructed map is shown to be an increasing enumeration and retain `\\noderef{ProperPrefixSet}` when converting the explicit cutoff into the conclusion. Split into the empty and nonempty cases. For nonempty s, list its elements increasingly, define the enumeration by those finitely many elements followed by max(s)+1, max(s)+2, and so on, and prove strict increase, the exact range, and that max(s)+1 is a proper-prefix witness. For empty s, explicitly use the identity enumeration, prove it is in IncSeq, identify its range, and give 0 as the proper-prefix witness. Do not leave `enumerate ... then continue` as an assertion, add helpers, or change the theorem/support structure. The paper defines the initial/proper-prefix relation at lines 1078--1080 and identifies infinite subsets with increasing enumerations and finite-prefix basic sets at lines 1264--1267.",
+    "comments": "Run a verifier-only Sound burst for `FirstMovedPoint`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{IncSeqPointwiseLe}` supplies pointwise monotonicity, that non-identity gives a nonempty moved-point set, that well-ordering supplies its least element, and that minimality plus pointwise monotonicity yields `g(j)=j` below that point. The paper's increasing-enumeration representation of infinite subsets is at lines 1264--1267.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 78,
+    "cycle": 79,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -55,47 +50,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FinitePrefixExtension",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1080,
-        "reason": "The paper's definition of finite initial and proper prefixes.",
-        "start_line": 1078
-      },
-      {
         "end_line": 1267,
-        "reason": "The paper's increasing-enumeration representation and finite-prefix basis.",
+        "reason": "The paper's increasing-enumeration representation of infinite subsets.",
         "start_line": 1264
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1078--1080 define a proper prefix by a cutoff in the larger set. Lines 1264--1267 represent infinite subsets by injective increasing enumerations and identify finite proper-prefix cylinders, which is the construction this support lemma supplies.",
+      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations and finite proper-prefix cylinders; this is the surrounding representation used by the orbit and shift-support development.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontBridgeTerminal has a current Sound approval. The remaining FreshUnknown FinitePrefixExtension proof has an independently identifiable soundness defect: it uses an increasing-enumeration construction without citing IncSeq and omits the case analysis and witness verification needed for its proper-prefix conclusion.",
-    "request_id": 296,
-    "request_sound_verifier_nodes": [],
+    "reason": "FinitePrefixExtension now has a current Sound approval. FirstMovedPoint is the next FreshUnknown orbit-support obligation; its NL proof explicitly cites IncSeqPointwiseLe and gives the least-moved-point argument, so a Sound verifier run is warranted without a worker repair.",
+    "request_id": 299,
+    "request_sound_verifier_nodes": [
+      "FirstMovedPoint"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:78baed9cc4fa7c1dd8888824083b42f567f261d19f7460c65cf1d21a9e667612",
-        "kind": "Soundness",
-        "object": {
-          "node": "FinitePrefixExtension",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_296_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_299_decision.context.json"
 }

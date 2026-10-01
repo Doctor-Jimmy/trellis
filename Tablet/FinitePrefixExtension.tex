@@ -3,9 +3,48 @@ Every finite set $s\subseteq\mathbb N$ is a proper initial segment of the
 range of some increasing enumeration of an infinite subset of $\mathbb N$.
 \end{lemma}
 \begin{proof}
-Enumerate the elements of $s$ increasingly, then continue with all natural
-numbers larger than its maximum.  If $s$ is empty, start with the increasing
-enumeration of $\mathbb N$.  The next element after the finite block is a
-member of the resulting range, and the elements before it are exactly the
-members of $s$, which is \noderef{ProperPrefixSet}.
+We argue separately according to whether $s$ is empty.
+
+Suppose first that $s$ is nonempty.  Write its elements in increasing order
+as
+\[
+a_0<a_1<\cdots<a_{r-1},
+\]
+where $r=|s|$, and let $m=a_{r-1}=\max s$.  Define $x:\mathbb N\to\mathbb
+N$ by
+\[
+x(i)=a_i\quad (i<r),
+\qquad
+x(i)=m+1+(i-r)\quad (i\ge r).
+\]
+The first part is strictly increasing by the displayed ordering of the
+elements of $s$.  The last element of the first part is $m$, while the first
+element of the second part is $m+1$, so the inequality also holds across the
+boundary.  For $r\le i<j$, the formula for the second part gives
+$x(i)<x(j)$.  Thus $x$ is an order embedding, hence an element of
+$\mathsf{IncSeq}$ by \noderef{IncSeq}.
+
+The first $r$ values of $x$ are exactly the elements of $s$, and the
+remaining values are exactly $m+1,m+2,\ldots$.  Consequently
+\[
+\operatorname{range}(x)=s\cup\{m+1,m+2,\ldots\}.
+\]
+In particular, $m+1\in\operatorname{range}(x)$, and no value from the tail is
+less than $m+1$; every element of $s$ is at most $m$ and therefore is less
+than $m+1$.  Hence
+\[
+s=\{k\in\operatorname{range}(x)\mid k<m+1\}.
+\]
+This exhibits $m+1$ as the required proper-prefix witness in the definition
+of $\noderef{ProperPrefixSet}$.
+
+Now suppose that $s=\varnothing$.  Use the identity map $x(i)=i$.  If
+$i<j$, then $x(i)=i<j=x(j)$, so $x$ is an order embedding and hence belongs
+to $\mathsf{IncSeq}$ by \noderef{IncSeq}.  Its range is all of $\mathbb N$.
+The number $0$ belongs to this range, and
+\[
+\varnothing=\{k\in\mathbb N\mid k<0\}
+       =\{k\in\operatorname{range}(x)\mid k<0\}.
+\]
+Thus $0$ is a proper-prefix witness, by \noderef{ProperPrefixSet}.
 \end{proof}
