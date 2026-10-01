@@ -53,7 +53,6 @@
 | FrontBase | definition | - | closed |
 | FrontBridge | definition | Finite bridge state | closed |
 | FrontBridgeInit | proof | Initial bridge | open |
-| FrontBridgeLeftMove | proof | The prescribed left move is legal | open |
 | FrontBridgeStep | proof | Bridge response transition | open |
 | FrontBridgeTail | definition | Finite bridge tail | closed |
 | FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | open |
@@ -181,4 +180,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 83/171 closed
+**Summary:** 83/170 closed

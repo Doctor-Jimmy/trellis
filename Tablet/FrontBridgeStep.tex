@@ -7,27 +7,38 @@ $\mathsf{FrontBridge}(F,s,t,u)$.  Choose the next left node by
 \]
 Suppose the right response is one of the following:
 \begin{enumerate}
-\item $t\notin F$, $t'$ is an ordered proper one-point extension of $t$
-      in $T(F)$, and for its new point $n$ we set
-      $u'=u\cup\{n\}$; or
+\item $t\notin F$, $t'$ is an ordered proper one-point extension of the
+      nonempty node $t$ in $T(F)$, and for its new point $n$ we have
+      $j<n$ for every $j\in u$ and set $u'=u\cup\{n\}$; or
 \item $t\in F$, $t'=t$, and we choose a fresh $k$ larger than every member
       of $u$, setting $u'=u\cup\{k\}$.
 \end{enumerate}
 Then $\mathsf{FrontBridge}(F,s',t',u')$ holds.  The selected left node is
-legal, and it is equal to $s$ when $s$ is terminal and a proper one-point
-extension of $s$ otherwise.
+legal, and it is equal to $s$ when $s$ is terminal and is an exact ordered
+one-point extension of $s$ otherwise.
 \end{lemma}
 \begin{proof}
-The left legality is \noderef{FrontBridgeLeftMove}.  We check the two
-right cases.  In the first case write $t'=t\cup\{n\}$.  Since $t$ is the
-tail of $u$ whenever it is nonterminal, and the extension is ordered, the
-tail of $u'=u\cup\{n\}$ is exactly $t'$.  If $t'$ is nonterminal this is
-the exact-tail clause; if it is terminal it implies the required
+Unpack \noderef{FrontBridge}.  If $s\in F$, the left choice is $s'=s$,
+so its tree membership and the left initial-segment relation are already
+part of the bridge.  If $s\notin F$, the bridge supplies a point $a$ with
+$u=\{a\}\cup s$ as an ordered one-point extension and $u\in T(F)$; the
+choice $s'=u$ is therefore an exact ordered one-point extension of $s$.
+Moreover, in this case the new point supplied in either right response is
+above every member of $u$, so \noderef{FrontTreeOrderedExtension} applied
+to $s'=u$ puts $u'$ in $T(F)$.  Thus the selected left move is legal in
+either case.
+
+We use the finite-tail definition from \noderef{FrontBridgeTail} and check
+the two right cases.  In the first case write
+$t'=t\cup\{n\}$.  Since $t$ is nonempty and is the tail of $u$ whenever
+it is nonterminal, while $n$ is above every member of $u$, the tail of
+$u'=u\cup\{n\}$ is exactly $t'$.  If $t'$ is nonterminal this is the
+exact-tail clause; if it is terminal it implies the required
 initial-segment clause.  The old left relation to $u$ persists after the
-new largest point is added.  If the selected left node is nonterminal, it
-is $u$, and the ordered-extension conclusion
-\noderef{FrontTreeOrderedExtension} puts $u'$ in $T(F)$; if it is
-terminal, its old initial-segment relation to $u$ persists to $u'$.
+new largest point is added.  If the selected left node is nonterminal,
+the preceding paragraph and \noderef{FrontTreeOrderedExtension} give the
+required tree membership; if it is terminal, its old initial-segment
+relation to $u$ persists to $u'$.
 
 In the second case $t'=t$ is terminal.  The new point $k$ is larger than
 every member of $u$, so the tail of $u'$ is the old tail of $u$ followed by
@@ -36,8 +47,8 @@ The same left-side argument applies: a nonterminal selected left node is
 the old $u$ and has the ordered tree extension $u'$, while a terminal one
 is an initial segment of $u'$.
 
-The tree-membership clauses for $s'$ and $t'$ are supplied respectively by
-\noderef{FrontBridgeLeftMove} and the response hypothesis.  Combining these
-facts with the nonempty bridge $u'$ and the four defining clauses of
-\noderef{FrontBridge} proves the transition.
+The response hypothesis supplies the tree membership of $t'$ and the bridge
+is nonempty, so combining these facts with the nonempty right node and the
+four defining clauses of \noderef{FrontBridge} proves the transition.  The
+exact insert witness also gives the final left-move conclusion.
 \end{proof}

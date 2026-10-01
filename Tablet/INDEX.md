@@ -45,8 +45,7 @@
 | FrontBase | definition | definition | closed | - | - | Preamble |
 | FrontBridge | definition | definition | closed | - | Finite bridge state | Front, FrontBridgeTail, PrefixTree, ProperInitialSegment |
 | FrontBridgeInit | lemma | proof | open | - | Initial bridge | FrontBridge, FrontTreeOrderedExtension, FrontTreeSingleton |
-| FrontBridgeLeftMove | lemma | proof | open | - | The prescribed left move is legal | FrontBridge |
-| FrontBridgeStep | lemma | proof | open | - | Bridge response transition | FrontBridgeLeftMove, FrontTreeOrderedExtension |
+| FrontBridgeStep | lemma | proof | open | - | Bridge response transition | FrontBridge, FrontTreeOrderedExtension |
 | FrontBridgeTail | definition | definition | closed | - | Finite bridge tail | InitialSegment |
 | FrontBridgeTerminal | lemma | proof | open | - | A terminal bridge gives a finite shift | FiniteShift, FrontBridge, InfiniteSetEnumeration |
 | FrontPrefix | definition | definition | closed | - | - | Front, IncSeq |
@@ -175,4 +174,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 171 nodes | **Closed:** 83 | **Open:** 88
+**Total:** 170 nodes | **Closed:** 83 | **Open:** 87

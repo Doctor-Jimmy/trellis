@@ -7,13 +7,19 @@ $m<n$, then
 \end{lemma}
 \begin{proof}
 By \noderef{FrontTreeSingleton}, both singletons belong to $T(F)$.
-The set $\{m,n\}$ is nonempty, and its least element is $m$, so its
-finite bridge tail is $\{n\}$.  If $\{m\}\notin F$, then
-$\{m\}$ is the proper initial segment of $\{m,n\}$ and the latter belongs
-to $T(F)$: it is the ordered one-point extension supplied by
-\noderef{FrontTreeOrderedExtension}.  If $\{m\}\in F$, the required left
-initial-segment clause holds by equality.  The same two alternatives for
-$\{n\}$ give either equality with the bridge tail or the terminal
-initial-segment clause.  These are precisely all clauses of
+The set $\{m,n\}$ is nonempty, and its least element is $m$, so by the
+finite-tail definition \noderef{FrontBridgeTail} its bridge tail is the
+nonempty singleton $\{n\}$.  If $\{m\}\notin F$,
+then the displayed bridge point is exactly $n$:
+\[
+ \{m,n\}=\operatorname{insert}(n,\{m\}),
+\]
+and $m<n$ makes $\{m\}$ an ordered proper initial segment of this
+one-point extension.  The latter belongs to $T(F)$ by the ordered
+one-point extension theorem \noderef{FrontTreeOrderedExtension}.  If
+$\{m\}\in F$, the required left initial-segment clause holds by equality.
+The same two alternatives for $\{n\}$ give either equality with the
+bridge tail or the terminal initial-segment clause.  Thus the right node
+is nonempty as required.  These are precisely all clauses of
 \noderef{FrontBridge}, so the displayed bridge state holds.
 \end{proof}
