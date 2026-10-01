@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedFailureMove now has current Sound approval, so its repair is complete. PowerCopiedOrbitDependence remains a FreshUnknown direct dependency of the held reflection target and is requestable for Sound verification; its current proof has no independently evidenced gap requiring a worker edit.",
-    "comments": "Leave PowerCopiedFailureMove.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedOrbitDependence, with no worker assignment and no blocker reset. Verify this direct local-constancy support before re-verifying PowerQReflection; the finite induction must be judged against its stated bound and the copied-left definition. Continue through the remaining reflection dependencies after that result.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "PowerCopiedOrbitDependence"
+    "reason": "The Sound verifier identified a concrete gap in PowerCopiedOrbitDependence: the proof fixes the row n while its successor case invokes the induction hypothesis at row n+1. This is a local proof-detail defect, not a statement or DAG problem, and the node is sound-repair-ready.",
+    "comments": "Edit only Tablet/PowerCopiedOrbitDependence.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over all row indices: for each depth m, prove for every row i that agreement through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, instantiate the PowerCopiedLeft depth-zero clause at arbitrary i and explicitly use the bound through i+2. In the successor case, start with agreement through i+m+3, restrict it to j <= i+m+2 for the row-i induction hypothesis and use the full bound as j <= (i+1)+m+2 for the row-(i+1) hypothesis. Then cite PowerCopiedLeft for both successor recursive equations and cite PowerIResponse for the same deterministic response on equal inputs. Finally instantiate the strengthened depth-k result at i=n and identify its premise with the stated hag. Spell out the natural-number bound arithmetic and cite every cross-node dependency at its exact use. Change no Lean text, imports, statement, or support edge.",
+    "task_blocker_ids": [
+      "soundness:node:PowerCopiedOrbitDependence:sound-v2:b7d25bae0858812a934665bc5ad499524dc3c831d647d7e20e5a066ea0a2426a"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "PowerCopiedOrbitDependence",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1538,
-        "end_line": 1549,
-        "reason": "The manuscript's finite copied plays and their dependence on finitely many values along the shift orbit."
+        "start_line": 1548,
+        "end_line": 1551,
+        "reason": "The manuscript's finite-dependence observation for copied plays and its use in local constancy."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The paper states that each copied play depends only on finitely many values of the multi-sequence along the shift orbit, and uses this finite dependence to obtain local constancy. That is the exact paper role of PowerCopiedOrbitDependence, so its Sound proof should be certified before the reflection parent."
+      "basis_summary": "The manuscript explicitly observes that each copied play depends only on finitely many values of h along the shift orbit and uses this finite dependence to obtain local constancy. The assigned repair makes the tablet's corresponding finite-dependence induction rigorous by generalizing its row index."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave PowerCopiedFailureMove.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedOrbitDependence, with no worker assignment and no blocker reset. Verify this direct local-constancy support before re-verifying PowerQReflection; the finite induction must be judged against its stated bound and the copied-left definition. Continue through the remaining reflection dependencies after that result.",
+    "comments": "Edit only Tablet/PowerCopiedOrbitDependence.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over all row indices: for each depth m, prove for every row i that agreement through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, instantiate the PowerCopiedLeft depth-zero clause at arbitrary i and explicitly use the bound through i+2. In the successor case, start with agreement through i+m+3, restrict it to j <= i+m+2 for the row-i induction hypothesis and use the full bound as j <= (i+1)+m+2 for the row-(i+1) hypothesis. Then cite PowerCopiedLeft for both successor recursive equations and cite PowerIResponse for the same deterministic response on equal inputs. Finally instantiate the strengthened depth-k result at i=n and identify its premise with the stated hag. Spell out the natural-number bound arithmetic and cite every cross-node dependency at its exact use. Change no Lean text, imports, statement, or support edge.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 141,
+    "cycle": 142,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -48,34 +48,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "PowerCopiedOrbitDependence",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1549,
-        "reason": "The manuscript's finite copied plays and their dependence on finitely many values along the shift orbit.",
-        "start_line": 1538
+        "end_line": 1551,
+        "reason": "The manuscript's finite-dependence observation for copied plays and its use in local constancy.",
+        "start_line": 1548
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The paper states that each copied play depends only on finitely many values of the multi-sequence along the shift orbit, and uses this finite dependence to obtain local constancy. That is the exact paper role of PowerCopiedOrbitDependence, so its Sound proof should be certified before the reflection parent.",
+      "basis_summary": "The manuscript explicitly observes that each copied play depends only on finitely many values of h along the shift orbit and uses this finite dependence to obtain local constancy. The assigned repair makes the tablet's corresponding finite-dependence induction rigorous by generalizing its row index.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedFailureMove now has current Sound approval, so its repair is complete. PowerCopiedOrbitDependence remains a FreshUnknown direct dependency of the held reflection target and is requestable for Sound verification; its current proof has no independently evidenced gap requiring a worker edit.",
-    "request_id": 464,
-    "request_sound_verifier_nodes": [
-      "PowerCopiedOrbitDependence"
-    ],
+    "reason": "The Sound verifier identified a concrete gap in PowerCopiedOrbitDependence: the proof fixes the row n while its successor case invokes the induction hypothesis at row n+1. This is a local proof-detail defect, not a statement or DAG problem, and the node is sound-repair-ready.",
+    "request_id": 466,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:b7d25bae0858812a934665bc5ad499524dc3c831d647d7e20e5a066ea0a2426a",
+        "kind": "Soundness",
+        "object": {
+          "node": "PowerCopiedOrbitDependence",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_464_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_466_decision.context.json"
 }

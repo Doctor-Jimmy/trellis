@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 604,
+  "event_count": 607,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -41971,6 +41971,189 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
+    "b28991b984a593db": [
+      "BadMultiSequence",
+      "BadPairSequence",
+      "BadSuperSequence",
+      "BaireContinuous",
+      "BaseBad",
+      "BaseIncSeq",
+      "BaseLocallyConstant",
+      "BaseMultiSequence",
+      "BasePerfect",
+      "BaseRestrict",
+      "BaseRightComp",
+      "BaseShift",
+      "BetterRel",
+      "BlockSigma",
+      "BlockSigmaContinuous",
+      "BlockSigmaEmbedding",
+      "BlockSigmaIntertwines",
+      {
+        "$s": "4c3bac0512a45c96"
+      },
+      "Bqo",
+      "BqoHerCtblWellF",
+      "BqoHerCtblWqo",
+      "BqoIffGeneralShift",
+      "CardinalityFront",
+      "CardinalityFrontIsFront",
+      "ContMor",
+      "ContMorEq",
+      "ContinuousHom",
+      "ContinuousRelHom",
+      "DecidingFront",
+      "DecidingFrontSet",
+      "DecidingPrefix",
+      "DecidingValue",
+      "EmapLemma",
+      "FinitePrefixExtension",
+      "FiniteShift",
+      "FirstMovedPoint",
+      "Front",
+      "FrontBase",
+      "FrontBridge",
+      "FrontBridgeInit",
+      "FrontBridgeStep",
+      "FrontBridgeTail",
+      "FrontBridgeTerminal",
+      "FrontPrefix",
+      "FrontPrefixExists",
+      "FrontPrefixUnique",
+      "FrontRayClosure",
+      "FrontRestrict",
+      "FrontRestriction",
+      {
+        "$s": "ba060752f87266a9"
+      },
+      {
+        "$s": "ce47bd99c3ed46e0"
+      },
+      "FrontTreeSingleton",
+      "FrontTreeWellFounded",
+      "GBetterRel",
+      "GBetterRelIff",
+      "GoodMultiSequence",
+      "HerCtblCode",
+      "HerCtblCodeErase",
+      "HerCtblNodeClosure",
+      "HerCtblPower",
+      "HerCtblPowerIsPreorder",
+      "HerCtblRel",
+      {
+        "$s": "19fb7b62eea67a5d"
+      },
+      "HereditarilyCountable",
+      {
+        "$s": "248a162fe13df6db"
+      },
+      {
+        "$s": "0de210e54bc47028"
+      },
+      "IncSeq",
+      "IncSeqComp",
+      "IncSeqId",
+      "IncSeqPointwiseLe",
+      "IncreasingPair",
+      "InfiniteSetEnumeration",
+      "InitialSegment",
+      "LocallyConstant",
+      "MainProp",
+      "MultiSequence",
+      "MultiSequenceRestrict",
+      "NashWilliams",
+      "OrbitBlock",
+      "OrbitBlockCoverage",
+      "OrbitEmbedding",
+      "OrbitPoint",
+      "OrbitUnbounded",
+      "PerfectMultiSequence",
+      "PerfectSuperSequence",
+      "PowerChild",
+      "PowerChildWellFounded",
+      "PowerCopiedFailureMove",
+      "PowerCopiedLeft",
+      "PowerCopiedSupport",
+      "PowerCopiedTerminalAt",
+      {
+        "$s": "2e7a9f9ae663f9f8"
+      },
+      "PowerCopiedTerminates",
+      {
+        "$s": "77d96f473077081d"
+      },
+      "PowerGameDescent",
+      {
+        "$s": "50a07aa664204053"
+      },
+      "PowerIResponse",
+      "PowerIResponseFailure",
+      "PowerIResponseLegal",
+      "PowerIResponseWitness",
+      "PowerMove",
+      "PowerMoveInSupport",
+      "PowerPresentationEq",
+      {
+        "$s": "93d700ae7b9523b8"
+      },
+      "PowerQ",
+      "PowerQIsPreorder",
+      "PowerQPresBqo",
+      "PowerRel",
+      "PowerRelAtomAtom",
+      "PowerRelAtomNode",
+      "PowerRelCongrLeft",
+      "PowerRelCongrRight",
+      "PowerRelNodeAtom",
+      "PowerRelNodeNode",
+      "PowerRelRefl",
+      "PowerRelTrans",
+      "PowerShiftIter",
+      {
+        "$s": "6947ec3a7b56b112"
+      },
+      "PowerShiftIterShift",
+      "PowerSupport",
+      "PowerSupportInvariant",
+      "PowerSupportNonempty",
+      "PowerWqoBadPairSequence",
+      "Preamble",
+      "PrefixAgree",
+      "PrefixTree",
+      "ProperInitialSegment",
+      "ProperPrefixSet",
+      "QuadrupleHomogeneous",
+      "RadoEmbedding",
+      "RadoOrder",
+      "Ray",
+      "RelationEmbedding",
+      {
+        "$s": "b415d99a5587255c"
+      },
+      "RestrictionShift",
+      "RightComp",
+      "RmapLemma",
+      "SetDomination",
+      "ShiftDichotomy",
+      "ShiftMap",
+      {
+        "$s": "b93919442f024c21"
+      },
+      "Subarr",
+      "SuccSeq",
+      "SuperNW",
+      "SuperSequence",
+      "SuperSequenceExtension",
+      "SuperSequenceRestrict",
+      "TailSet",
+      "TildeF",
+      "TildeFAtomIffFront",
+      "TildeFFrontEquation",
+      "TildeFHerCtbl",
+      "TildeFNonfrontEquation",
+      "TildeFSingleton",
+      "TripleHomogeneous"
+    ],
     "b29887af5cf22789": {
       "kind": "theorem",
       "name": "TildeFHerCtbl"
@@ -60011,17 +60194,21 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": {
+      "$s": "9a013b8cdeb9d5ff"
+    },
     "committed": {
       "$r": "5b143cf2d527106c"
     },
-    "cycle": 141,
+    "cycle": 142,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": null,
+    "active_node": {
+      "$s": "9a013b8cdeb9d5ff"
+    },
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60263,9 +60450,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 141,
+    "cycle": 142,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 141,
+    "cycles_since_clean": 142,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -61055,7 +61242,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 141,
+    "last_sound_response_cycle": 142,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61297,7 +61484,42 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Global",
+      "must_close_active": false,
+      "next_worker_context_mode": "resume",
+      "node": {
+        "$s": "9a013b8cdeb9d5ff"
+      },
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [
+        {
+          "end_line": 1551,
+          "reason": "The manuscript's finite-dependence observation for copied plays and its use in local constancy.",
+          "start_line": 1548
+        }
+      ],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "cdbd441d274eb2f2"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "9a013b8cdeb9d5ff"
+            },
+            "otype": "node"
+          }
+        }
+      ],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "TheoremStating",
     "plan_review_cadence_enabled": true,
@@ -61318,16 +61540,18 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PowerCopiedFailureMove": {
+      "PowerCopiedOrbitDependence": {
         "v1": {
-          "comments": "The revised proof explicitly cites every cross-node dependency and states the depth-zero and successor defining equations needed to transfer the response lemmas to the named L-values. Its simultaneous induction establishes both failure and legality for all rows and depths.",
-          "node": "PowerCopiedFailureMove",
-          "overall": "APPROVE",
-          "soundness": {
-            "decision": "SOUND",
-            "explanation": "The proof is line-by-line checkable from the cited statements: badness and the shift-iterate successor equation give the raw failures, the copied-left equations identify each response, and the legal/failure response lemmas establish the base case and simultaneous induction step."
+          "comments": "1. The proof says only \"Induct on k\" while n is fixed in the stated claim. Thus the induction hypothesis is available only for row n, but the successor case needs the corresponding equality at row n+1. The proof must strengthen the induction assertion to hold for every row n (and then explicitly restrict the hypothesis hag to the two required bounds) before applying it to both recursive inputs.",
+          "node": {
+            "$s": "9a013b8cdeb9d5ff"
           },
-          "summary": "Approve: the unsupported defining rewrites and missing dependency citation from the prior finding are now supplied, and the NL proof is rigorous."
+          "overall": "REJECT",
+          "soundness": {
+            "decision": "UNSOUND",
+            "explanation": "The cited recursive definitions and the arithmetic bound are correct, but the induction hypothesis is not stated with the row index generalized. Consequently its use at row n+1 is not justified by the proof as written, so the NL argument is not line-by-line rigorous under the soundness rubric."
+          },
+          "summary": "Reject: the recursive argument is mathematically plausible, but the successor step uses an unavailable induction hypothesis at row n+1 because the induction invariant was not strengthened over n."
         }
       }
     },
@@ -61335,140 +61559,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 141,
+      "next_index": 142,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "FiniteShift",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "SetDomination",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 77
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -67096,190 +67188,19 @@
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblNodeClosure",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedFailureMove",
-            "PowerCopiedLeft",
-            "PowerCopiedSupport",
-            "PowerCopiedTerminalAt",
-            {
-              "$s": "2e7a9f9ae663f9f8"
-            },
-            "PowerCopiedTerminates",
-            {
-              "$s": "77d96f473077081d"
-            },
-            "PowerGameDescent",
-            {
-              "$s": "50a07aa664204053"
-            },
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerMoveInSupport",
-            "PowerPresentationEq",
-            {
-              "$s": "93d700ae7b9523b8"
-            },
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerQPresBqo",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelCongrLeft",
-            "PowerRelCongrRight",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerRelRefl",
-            "PowerRelTrans",
-            "PowerShiftIter",
-            {
-              "$s": "6947ec3a7b56b112"
-            },
-            "PowerShiftIterShift",
-            "PowerSupport",
-            "PowerSupportInvariant",
-            "PowerSupportNonempty",
-            "PowerWqoBadPairSequence",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "QuadrupleHomogeneous",
-            "RadoEmbedding",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            {
-              "$s": "b415d99a5587255c"
-            },
-            "RestrictionShift",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftDichotomy",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "Subarr",
-            "SuccSeq",
-            "SuperNW",
-            "SuperSequence",
-            "SuperSequenceExtension",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFAtomIffFront",
-            "TildeFFrontEquation",
-            "TildeFHerCtbl",
-            "TildeFNonfrontEquation",
-            "TildeFSingleton",
-            "TripleHomogeneous"
-          ],
+          "progressed": {
+            "$r": "b28991b984a593db"
+          },
           "snapshot_index": 140
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "b28991b984a593db"
+          },
+          "snapshot_index": 141
         }
       ]
     },
@@ -67288,14 +67209,10 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 464,
+    "request_seq": 466,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Leave PowerCopiedFailureMove.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedOrbitDependence, with no worker assignment and no blocker reset. Verify this direct local-constancy support before re-verifying PowerQReflection; the finite induction must be judged against its stated bound and the copied-left definition. Continue through the remaining reflection dependencies after that result.",
-    "reviewer_requested_sound_verifier_nodes": [
-      {
-        "$s": "9a013b8cdeb9d5ff"
-      }
-    ],
+    "reviewer_comments": "Edit only Tablet/PowerCopiedOrbitDependence.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. Strengthen the induction invariant over all row indices: for each depth m, prove for every row i that agreement through every j <= i+m+2 implies equality of PowerCopiedLeft at row i and depth m. In the base case, instantiate the PowerCopiedLeft depth-zero clause at arbitrary i and explicitly use the bound through i+2. In the successor case, start with agreement through i+m+3, restrict it to j <= i+m+2 for the row-i induction hypothesis and use the full bound as j <= (i+1)+m+2 for the row-(i+1) hypothesis. Then cite PowerCopiedLeft for both successor recursive equations and cite PowerIResponse for the same deterministic response on equal inputs. Finally instantiate the strengthened depth-k result at i=n and identify its premise with the stated hag. Spell out the natural-number bound arithmetic and cite every cross-node dependency at its exact use. Change no Lean text, imports, statement, or support edge.",
+    "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
@@ -67397,6 +67314,9 @@
       },
       "PowerCopiedFailureMove": {
         "$s": "1406b75a978f3ae3"
+      },
+      "PowerCopiedOrbitDependence": {
+        "$s": "cdbd441d274eb2f2"
       },
       "PowerCopiedSupport": {
         "$s": "dffab1f42e508d1d"
@@ -67874,6 +67794,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "PowerCopiedOrbitDependence": {
+        "fingerprints": {
+          "$r": "e5d3987b02f624d7"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       },
       "PowerCopiedSupport": {
         "fingerprints": {
@@ -69454,6 +69383,7 @@
       "OrbitUnbounded": "Pass",
       "PowerChildWellFounded": "Pass",
       "PowerCopiedFailureMove": "Pass",
+      "PowerCopiedOrbitDependence": "Fail",
       "PowerCopiedSupport": "Pass",
       "PowerCopiedTerminalShift": "Pass",
       "PowerCopiedTerminalSupport": "Pass",
