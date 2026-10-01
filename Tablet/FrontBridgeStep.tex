@@ -18,37 +18,123 @@ legal, and it is equal to $s$ when $s$ is terminal and is an exact ordered
 one-point extension of $s$ otherwise.
 \end{lemma}
 \begin{proof}
-Unpack \noderef{FrontBridge}.  If $s\in F$, the left choice is $s'=s$,
-so its tree membership and the left initial-segment relation are already
-part of the bridge.  If $s\notin F$, the bridge supplies a point $a$ with
-$u=\{a\}\cup s$ as an ordered one-point extension and $u\in T(F)$; the
-choice $s'=u$ is therefore an exact ordered one-point extension of $s$.
-Moreover, in this case the new point supplied in either right response is
-above every member of $u$, so \noderef{FrontTreeOrderedExtension} applied
-to $s'=u$ puts $u'$ in $T(F)$.  Thus the selected left move is legal in
-either case.
+Unpack the eight clauses of \noderef{FrontBridge}.  We first record the
+finite-set calculation used below.  If $q$ is larger than every member of
+the nonempty set $u$ and $u_q=\operatorname{insert}(q,u)$, then the
+definition of \noderef{FrontBridgeTail} gives
+\[
+ \mathsf{FrontBridgeTail}(u_q)
+ =\operatorname{insert}\bigl(q,\mathsf{FrontBridgeTail}(u)\bigr).
+ \tag{1}
+\]
+Indeed, $q$ belongs to the left-hand side because $u$ is nonempty, so some
+member of $u$ is below $q$.  If $j\in u$, then $j$ belongs to the new tail
+exactly when some member of $u$ is below $j$: the additional possible
+witness $q<j$ is impossible because $j<q$.  This is precisely (1), using
+the definition in \noderef{FrontBridgeTail}.
 
-We use the finite-tail definition from \noderef{FrontBridgeTail} and check
-the two right cases.  In the first case write
-$t'=t\cup\{n\}$.  Since $t$ is nonempty and is the tail of $u$ whenever
-it is nonterminal, while $n$ is above every member of $u$, the tail of
-$u'=u\cup\{n\}$ is exactly $t'$.  If $t'$ is nonterminal this is the
-exact-tail clause; if it is terminal it implies the required
-initial-segment clause.  The old left relation to $u$ persists after the
-new largest point is added.  If the selected left node is nonterminal,
-the preceding paragraph and \noderef{FrontTreeOrderedExtension} give the
-required tree membership; if it is terminal, its old initial-segment
-relation to $u$ persists to $u'$.
+We also spell out how an old initial segment transfers when $q$ is appended
+above $u$.  If $\mathsf{InitialSegment}(v,u)$, then by
+\noderef{InitialSegment} either $v=u$, or there is a cutoff $c\in u$ with
+\[
+ v=\{j\in u\mid j<c\}.
+ \tag{2}
+\]
+In the equality case, every member of $u$ is below $q$, so
+\[
+ v=u=\{j\in u_q\mid j<q\},
+\]
+and $q$ is a cutoff in $u_q$.  In the second case, $c\in u_q$ and
+$c<q$, and therefore
+\[
+ \{j\in u_q\mid j<c\}=\{j\in u\mid j<c\}=v.
+ \tag{3}
+\]
+Thus $\mathsf{InitialSegment}(v,u_q)$ follows in both cases, with an
+explicit cutoff (respectively $q$ or $c$).
 
-In the second case $t'=t$ is terminal.  The new point $k$ is larger than
-every member of $u$, so the tail of $u'$ is the old tail of $u$ followed by
-$k$.  Thus the old terminal initial-segment relation for $t$ persists.
-The same left-side argument applies: a nonterminal selected left node is
-the old $u$ and has the ordered tree extension $u'$, while a terminal one
-is an initial segment of $u'$.
+Consider first the left move.  If $s\in F$, then $s'=s$ by the hypothesis
+on the move, $s'\in\mathsf{PrefixTree}(F)$ by the bridge, and the bridge
+gives $\mathsf{InitialSegment}(s,u)$.  Applying (2)--(3) with the new
+point $q$ from the relevant right response gives
+$\mathsf{InitialSegment}(s',u')$.
 
-The response hypothesis supplies the tree membership of $t'$ and the bridge
-is nonempty, so combining these facts with the nonempty right node and the
-four defining clauses of \noderef{FrontBridge} proves the transition.  The
-exact insert witness also gives the final left-move conclusion.
+If $s\notin F$, the bridge supplies $a$ such that
+\[
+ u=\operatorname{insert}(a,s),\qquad
+ \mathsf{ProperInitialSegment}(s,\operatorname{insert}(a,s)),\qquad
+ u\in\mathsf{PrefixTree}(F).
+ \tag{4}
+\]
+Here $s'=u$ by the left-move hypothesis.  In either right response the new
+point $q$ satisfies $j<q$ for every $j\in u$, so the cutoff $q$ directly
+shows
+\[
+ \mathsf{InitialSegment}(u,\operatorname{insert}(q,u)),
+ \qquad
+ \mathsf{ProperInitialSegment}(u,\operatorname{insert}(q,u)).
+ \tag{5}
+\]
+If $u\in F$, its membership in the prefix tree is immediate (and also
+already supplied by (4)); if $u\notin F$, apply
+\noderef{FrontTreeOrderedExtension} to the tree membership in (4) and the
+proper extension in (5).  In either subcase $u'=\operatorname{insert}(q,u)$
+belongs to the prefix tree.  Consequently the new left node satisfies the
+left clause of \noderef{FrontBridge}, whether it is terminal (use the first
+part of (5)) or nonterminal (use the second part of (5) and the displayed
+insert equality).
+
+Now take the first right response.  It supplies
+\[
+ t'=\operatorname{insert}(n,t),\qquad
+ u'=\operatorname{insert}(n,u),\qquad
+ j<n\quad(j\in u).
+ \tag{6}
+\]
+Since $t\notin F$, the bridge gives
+$t=\mathsf{FrontBridgeTail}(u)$.  Applying (1) with $q=n$ yields
+\[
+ \mathsf{FrontBridgeTail}(u')
+ =\operatorname{insert}(n,\mathsf{FrontBridgeTail}(u))
+ =\operatorname{insert}(n,t)=t'.
+ \tag{7}
+\]
+If $t'\notin F$, (7) is exactly the required tail clause.  If $t'\in F$,
+(7) implies $\mathsf{InitialSegment}(t',\mathsf{FrontBridgeTail}(u'))$
+by the equality alternative in \noderef{InitialSegment}.  The response
+already supplies $t'\in\mathsf{PrefixTree}(F)$, and $t'$ is nonempty
+because it extends the nonempty $t$; $u'$ is nonempty because $u$ is.
+Together with the left analysis above, these are all clauses of
+\noderef{FrontBridge}, so the new bridge holds in this case.
+
+Finally take the fresh-$k$ response.  Here $t\in F$, $t'=t$, and
+$u'=\operatorname{insert}(k,u)$ with every member of $u$ below $k$.
+The bridge gives
+\mathsf{InitialSegment}(t,\mathsf{FrontBridgeTail}(u)).  Apply the
+explicit cutoff analysis (2)--(3) not to $u$ but to the tail
+$\mathsf{FrontBridgeTail}(u)$, whose appended point is $k$.  More
+explicitly, if $t=\mathsf{FrontBridgeTail}(u)$, then (1) gives
+\[
+ \mathsf{FrontBridgeTail}(u')
+ =\operatorname{insert}(k,t),
+ \]
+and $t=\{j\in\mathsf{FrontBridgeTail}(u')\mid j<k\}$, so the required
+initial segment uses the new cutoff $k$.  Otherwise the definition of
+\noderef{InitialSegment} supplies $c\in\mathsf{FrontBridgeTail}(u)$ with
+$t=\{j\in\mathsf{FrontBridgeTail}(u)\mid j<c\}$; since $c<k$, the same
+cutoff $c$ gives
+\[
+ t=\{j\in\mathsf{FrontBridgeTail}(u')\mid j<c\}.
+\]
+Thus $\mathsf{InitialSegment}(t',\mathsf{FrontBridgeTail}(u'))$ holds,
+while $t'=t\in\mathsf{PrefixTree}(F)$ and $t'$ remains nonempty.  The
+left analysis with $q=k$ and the nonemptiness of $u'$ finish all clauses
+of \noderef{FrontBridge} in the second case as well.
+
+It remains only to record the final assertion about the left move.  If
+$s\in F$, the choice gives $s'=s$.  If $s\notin F$, use (4) and
+$s'=u$ to take the same witness $a$: then
+$s'=\operatorname{insert}(a,s)$ and
+$\mathsf{ProperInitialSegment}(s,\operatorname{insert}(a,s))$.
+This proves the stated legality and exact-extension conclusion.
 \end{proof}

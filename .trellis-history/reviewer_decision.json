@@ -1,10 +1,10 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontBridgeInit now has a current Sound approval. Independent inspection of FrontBridgeStep.tex found unsupported persistence claims in both response cases: the proof does not explicitly derive the new tail or the required initial-segment relations after adjoining the new largest point. Assign a bounded line-by-line repair of those claims.",
-    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve its Lean statement, imports, and bridge decomposition. Cite `InitialSegment` and `FrontBridgeTail` and replace the assertions that the old left relation and old terminal right relation 'persist' with explicit cutoff arguments. In the first response case, start from `t = FrontBridgeTail(u)` when `t` is nonterminal and the fact that the new n is larger than every element of u; prove `FrontBridgeTail(u') = insert n t`, then prove the exact-tail or terminal initial-segment clause for t'. For the left side, show directly that an old initial segment of u remains one of u' (using the old cutoff, or cutoff n in the equality case), and that the selected s'=u satisfies `InitialSegment(u,u')` with cutoff n when s is nonterminal. In the fresh-k response case, explicitly show how `InitialSegment(t, FrontBridgeTail(u))` transfers to the enlarged tail, including the equality case. Retain the existing citations to `FrontBridge`, `FrontTreeOrderedExtension`, and the bridge-tail definition; add no helper or structural changes. The corresponding paper transition is at line 1570.",
+    "reason": "The repaired FrontBridgeStep argument is mathematically complete, but the Sound verifier found a structural citation defect: the proof constructs and later reuses ProperInitialSegment facts without any noderef citation to the separately defined ProperInitialSegment support node. Assign the minimal citation repair.",
+    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve the Lean statement, imports, and all proof content. Add an explicit `\\noderef{ProperInitialSegment}` at the first construction of the proper-initial-segment witness in (4) or (5), and ensure the final reuse of that dependency is covered by the citation. The verifier found no mathematical gap in the tail and cutoff arguments; do not restructure or rewrite them. The corresponding paper transition is at line 1570.",
     "task_blocker_ids": [
-      "soundness:node:FrontBridgeStep:sound-v2:41c4a3d40e22577c01e0345d9b236521114d1f98a0186b4bf5ec8a4b43e8fd52"
+      "soundness:node:FrontBridgeStep:sound-v2:3e92c55a1906fb7f69657d788621c1001b57669f791bf901b67e8e60815d8d78"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -16,12 +16,12 @@
       {
         "start_line": 1570,
         "end_line": 1570,
-        "reason": "The paper's bridge response transition and preservation argument."
+        "reason": "The paper's bridge response transition modeled by the node."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Paper line 1570 describes the two response cases: a non-front right node receives an ordered extension and a front node receives a fresh larger point, while the bridge state is preserved through the play. The tablet proof models this transition, but its preservation claims currently omit the cutoff and tail calculations needed for a line-by-line proof."
+      "basis_summary": "Paper line 1570 gives the initial bridge response cases and the iterative continuation. The current tablet proof follows that transition; the only reported defect is the missing explicit citation for the ProperInitialSegment dependency used in its ordered-extension witnesses."
     },
     "reset": "none",
     "reset_node": "",
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve its Lean statement, imports, and bridge decomposition. Cite `InitialSegment` and `FrontBridgeTail` and replace the assertions that the old left relation and old terminal right relation 'persist' with explicit cutoff arguments. In the first response case, start from `t = FrontBridgeTail(u)` when `t` is nonterminal and the fact that the new n is larger than every element of u; prove `FrontBridgeTail(u') = insert n t`, then prove the exact-tail or terminal initial-segment clause for t'. For the left side, show directly that an old initial segment of u remains one of u' (using the old cutoff, or cutoff n in the equality case), and that the selected s'=u satisfies `InitialSegment(u,u')` with cutoff n when s is nonterminal. In the fresh-k response case, explicitly show how `InitialSegment(t, FrontBridgeTail(u))` transfers to the enlarged tail, including the equality case. Retain the existing citations to `FrontBridge`, `FrontTreeOrderedExtension`, and the bridge-tail definition; add no helper or structural changes. The corresponding paper transition is at line 1570.",
+    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve the Lean statement, imports, and all proof content. Add an explicit `\\noderef{ProperInitialSegment}` at the first construction of the proper-initial-segment witness in (4) or (5), and ensure the final reuse of that dependency is covered by the citation. The verifier found no mathematical gap in the tail and cutoff arguments; do not restructure or rewrite them. The corresponding paper transition is at line 1570.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 75,
+    "cycle": 76,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -58,17 +58,17 @@
     "paper_focus_ranges": [
       {
         "end_line": 1570,
-        "reason": "The paper's bridge response transition and preservation argument.",
+        "reason": "The paper's bridge response transition modeled by the node.",
         "start_line": 1570
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Paper line 1570 describes the two response cases: a non-front right node receives an ordered extension and a front node receives a fresh larger point, while the bridge state is preserved through the play. The tablet proof models this transition, but its preservation claims currently omit the cutoff and tail calculations needed for a line-by-line proof.",
+      "basis_summary": "Paper line 1570 gives the initial bridge response cases and the iterative continuation. The current tablet proof follows that transition; the only reported defect is the missing explicit citation for the ProperInitialSegment dependency used in its ordered-extension witnesses.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontBridgeInit now has a current Sound approval. Independent inspection of FrontBridgeStep.tex found unsupported persistence claims in both response cases: the proof does not explicitly derive the new tail or the required initial-segment relations after adjoining the new largest point. Assign a bounded line-by-line repair of those claims.",
-    "request_id": 287,
+    "reason": "The repaired FrontBridgeStep argument is mathematically complete, but the Sound verifier found a structural citation defect: the proof constructs and later reuses ProperInitialSegment facts without any noderef citation to the separately defined ProperInitialSegment support node. Assign the minimal citation repair.",
+    "request_id": 290,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -78,7 +78,7 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:41c4a3d40e22577c01e0345d9b236521114d1f98a0186b4bf5ec8a4b43e8fd52",
+        "fingerprint": "sound-v2:3e92c55a1906fb7f69657d788621c1001b57669f791bf901b67e8e60815d8d78",
         "kind": "Soundness",
         "object": {
           "node": "FrontBridgeStep",
@@ -88,5 +88,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_287_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_290_decision.context.json"
 }
