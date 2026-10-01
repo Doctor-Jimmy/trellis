@@ -1,35 +1,34 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The repaired FrontBridgeStep argument is mathematically complete, but the Sound verifier found a structural citation defect: the proof constructs and later reuses ProperInitialSegment facts without any noderef citation to the separately defined ProperInitialSegment support node. Assign the minimal citation repair.",
-    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve the Lean statement, imports, and all proof content. Add an explicit `\\noderef{ProperInitialSegment}` at the first construction of the proper-initial-segment witness in (4) or (5), and ensure the final reuse of that dependency is covered by the citation. The verifier found no mathematical gap in the tail and cutoff arguments; do not restructure or rewrite them. The corresponding paper transition is at line 1570.",
+    "reason": "The scheduled Sound pass approves FrontBridgeStep. FrontBridgeTerminal is the next sound-repair-ready obligation, and its current proof has a concrete citation gap plus two asserted proper-prefix facts that are not line-by-line justified.",
+    "comments": "Repair only `Tablet/FrontBridgeTerminal.tex`; preserve the Lean statement, imports, and decomposition. The proof currently says the bridge clauses give the two initial-segment facts and uses the finite tail, but it cites neither `\\noderef{FrontBridge}` nor `\\noderef{InitialSegment}` nor `\\noderef{FrontBridgeTail}`. Add those citations at the corresponding uses. Then make both proper-prefix claims explicit: using the nonemptiness of u from `\\noderef{FrontBridge}`, the increasing enumeration of X from `\\noderef{InfiniteSetEnumeration}`, and the definition of `\\noderef{ProperPrefixSet}`, show that an initial segment of u is an initial segment of range(x), and handle s=u by exhibiting a value above max(u). For t, unfold the finite tail from `\\noderef{FrontBridgeTail}`, identify range(ShiftMap x) using `\\noderef{ShiftMap}`, transfer the initial-segment or exact-tail clause, and exhibit a value after the finite prefix to establish properness. Retain the existing `\\noderef{FiniteShift}` and `\\noderef{ProperPrefixSet}` citations; do not add helpers or change support structure. The relevant paper bridge/terminal construction is line 1570 of `paper/paper.tex`.",
     "task_blocker_ids": [
-      "soundness:node:FrontBridgeStep:sound-v2:3e92c55a1906fb7f69657d788621c1001b57669f791bf901b67e8e60815d8d78"
+      "soundness:node:FrontBridgeTerminal:sound-v2:659088d0b01c2646f6af6cedc8635e25b5ae5c54bbb87c9ffea952d5f280b524"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontBridgeStep",
+    "next_active": "FrontBridgeTerminal",
     "next_mode": "targeted",
-    "next_active_coarse": "",
-    "next_worker_context_mode": "resume",
-    "paper_focus_ranges": [
-      {
-        "start_line": 1570,
-        "end_line": 1570,
-        "reason": "The paper's bridge response transition modeled by the node."
-      }
-    ],
-    "paper_grounding": {
-      "consulted_cited_ranges": true,
-      "basis_summary": "Paper line 1570 gives the initial bridge response cases and the iterative continuation. The current tablet proof follows that transition; the only reported defect is the missing explicit citation for the ProperInitialSegment dependency used in its ordered-extension witnesses."
-    },
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "authorized_node_ids": [],
-    "work_style_hint": "none"
+    "next_worker_context_mode": "resume",
+    "paper_focus_ranges": [
+      {
+        "start_line": 1570,
+        "end_line": 1570,
+        "reason": "The paper's bridge transition and terminal front-node construction."
+      }
+    ],
+    "paper_grounding": {
+      "consulted_cited_ranges": true,
+      "basis_summary": "Line 1570 describes the bridge play, including the finite bridge state and the eventual terminal front nodes whose relation is finite shift."
+    },
+    "work_style_hint": "none",
+    "authorized_node_ids": []
   },
   "response": {
     "allow_new_obligations": true,
@@ -40,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve the Lean statement, imports, and all proof content. Add an explicit `\\noderef{ProperInitialSegment}` at the first construction of the proper-initial-segment witness in (4) or (5), and ensure the final reuse of that dependency is covered by the citation. The verifier found no mathematical gap in the tail and cutoff arguments; do not restructure or rewrite them. The corresponding paper transition is at line 1570.",
+    "comments": "Repair only `Tablet/FrontBridgeTerminal.tex`; preserve the Lean statement, imports, and decomposition. The proof currently says the bridge clauses give the two initial-segment facts and uses the finite tail, but it cites neither `\\noderef{FrontBridge}` nor `\\noderef{InitialSegment}` nor `\\noderef{FrontBridgeTail}`. Add those citations at the corresponding uses. Then make both proper-prefix claims explicit: using the nonemptiness of u from `\\noderef{FrontBridge}`, the increasing enumeration of X from `\\noderef{InfiniteSetEnumeration}`, and the definition of `\\noderef{ProperPrefixSet}`, show that an initial segment of u is an initial segment of range(x), and handle s=u by exhibiting a value above max(u). For t, unfold the finite tail from `\\noderef{FrontBridgeTail}`, identify range(ShiftMap x) using `\\noderef{ShiftMap}`, transfer the initial-segment or exact-tail clause, and exhibit a value after the finite prefix to establish properness. Retain the existing `\\noderef{FiniteShift}` and `\\noderef{ProperPrefixSet}` citations; do not add helpers or change support structure. The relevant paper bridge/terminal construction is line 1570 of `paper/paper.tex`.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 76,
+    "cycle": 77,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,24 +50,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontBridgeStep",
+    "next_active": "FrontBridgeTerminal",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1570,
-        "reason": "The paper's bridge response transition modeled by the node.",
+        "reason": "The paper's bridge transition and terminal front-node construction.",
         "start_line": 1570
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Paper line 1570 gives the initial bridge response cases and the iterative continuation. The current tablet proof follows that transition; the only reported defect is the missing explicit citation for the ProperInitialSegment dependency used in its ordered-extension witnesses.",
+      "basis_summary": "Line 1570 describes the bridge play, including the finite bridge state and the eventual terminal front nodes whose relation is finite shift.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The repaired FrontBridgeStep argument is mathematically complete, but the Sound verifier found a structural citation defect: the proof constructs and later reuses ProperInitialSegment facts without any noderef citation to the separately defined ProperInitialSegment support node. Assign the minimal citation repair.",
-    "request_id": 290,
+    "reason": "The scheduled Sound pass approves FrontBridgeStep. FrontBridgeTerminal is the next sound-repair-ready obligation, and its current proof has a concrete citation gap plus two asserted proper-prefix facts that are not line-by-line justified.",
+    "request_id": 293,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -78,15 +77,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:3e92c55a1906fb7f69657d788621c1001b57669f791bf901b67e8e60815d8d78",
+        "fingerprint": "sound-v2:659088d0b01c2646f6af6cedc8635e25b5ae5c54bbb87c9ffea952d5f280b524",
         "kind": "Soundness",
         "object": {
-          "node": "FrontBridgeStep",
+          "node": "FrontBridgeTerminal",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_290_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_293_decision.context.json"
 }

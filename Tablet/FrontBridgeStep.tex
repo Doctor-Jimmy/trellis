@@ -59,7 +59,8 @@ gives $\mathsf{InitialSegment}(s,u)$.  Applying (2)--(3) with the new
 point $q$ from the relevant right response gives
 $\mathsf{InitialSegment}(s',u')$.
 
-If $s\notin F$, the bridge supplies $a$ such that
+If $s\notin F$, the bridge supplies $a$ such that, with the predicate
+$\mathsf{ProperInitialSegment}$ understood as in \noderef{ProperInitialSegment},
 \[
  u=\operatorname{insert}(a,s),\qquad
  \mathsf{ProperInitialSegment}(s,\operatorname{insert}(a,s)),\qquad
@@ -135,6 +136,7 @@ It remains only to record the final assertion about the left move.  If
 $s\in F$, the choice gives $s'=s$.  If $s\notin F$, use (4) and
 $s'=u$ to take the same witness $a$: then
 $s'=\operatorname{insert}(a,s)$ and
-$\mathsf{ProperInitialSegment}(s,\operatorname{insert}(a,s))$.
+$\mathsf{ProperInitialSegment}(s,\operatorname{insert}(a,s))$ by
+\noderef{ProperInitialSegment}.
 This proves the stated legality and exact-extension conclusion.
 \end{proof}
