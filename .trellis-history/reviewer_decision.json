@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedFiniteTerminal has a current Sound approval. PowerCopiedTerminalSupport is a stale Sound pass whose support dependency PowerCopiedSupport was subsequently repaired and re-approved; its current proof is already detailed, so the needed next action is a fresh Sound verification before re-verifying the stale parent PowerQReflection.",
-    "comments": "Leave Tablet/PowerCopiedTerminalSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedTerminalSupport now that PowerCopiedSupport, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, and PowerCopiedFiniteTerminal have current Sound approvals. The verifier should check the explicit PowerCopiedTerminalAt witness extraction, the zeroth PowerShiftIter rewrite, the PowerCopiedSupport inclusion, and the PowerSupport atom-membership step against the current support statements. Do not assign a worker or reset any blocker.",
+    "reason": "PowerCopiedTerminalSupport now has a current Sound approval, and all direct PowerQReflection supports are current. The remaining action is a fresh Sound verification of stale PowerQReflection; no concrete proof failure or statement/DAG issue is present.",
+    "comments": "Leave Tablet/PowerQReflection.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerQReflection now that PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, PowerCopiedFiniteTerminal, PowerCopiedSupport, PowerCopiedTerminalSupport, PowerCopiedTerminalShift, PowerCopiedTerminates, and PowerFiniteOrbitConstancy have current Sound approvals. The verifier should check the copied-row definitions, terminal-label uniqueness, support transfer, badness conclusion, and finite-prefix local-constancy argument against the current cited support statements. Do not assign a worker or reset any blocker.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "PowerCopiedTerminalSupport"
+      "PowerQReflection"
     ],
     "next_active": "",
     "next_mode": "global",
@@ -20,12 +20,12 @@
       {
         "start_line": 1549,
         "end_line": 1549,
-        "reason": "The manuscript's finite copied play, adjacent-row matching, and terminal-value construction underlying the support step."
+        "reason": "The manuscript's finite copied play and adjacent-row matching underlying the reflection construction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying and a terminal value extracted from the play. The current tablet proof transfers that terminal atom into the original support, so it should now be reverified against the repaired support dependency before the reflection parent is checked."
+      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying, then extracts the first-row terminal value and uses the shifted adjacent row in the reflection construction. With all direct supports now current, the stale PowerQReflection proof is ready for a fresh Sound check against those statements."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PowerCopiedTerminalSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedTerminalSupport now that PowerCopiedSupport, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, and PowerCopiedFiniteTerminal have current Sound approvals. The verifier should check the explicit PowerCopiedTerminalAt witness extraction, the zeroth PowerShiftIter rewrite, the PowerCopiedSupport inclusion, and the PowerSupport atom-membership step against the current support statements. Do not assign a worker or reset any blocker.",
+    "comments": "Leave Tablet/PowerQReflection.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerQReflection now that PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, PowerCopiedFiniteTerminal, PowerCopiedSupport, PowerCopiedTerminalSupport, PowerCopiedTerminalShift, PowerCopiedTerminates, and PowerFiniteOrbitConstancy have current Sound approvals. The verifier should check the copied-row definitions, terminal-label uniqueness, support transfer, badness conclusion, and finite-prefix local-constancy argument against the current cited support statements. Do not assign a worker or reset any blocker.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 146,
+    "cycle": 147,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -55,19 +55,19 @@
     "paper_focus_ranges": [
       {
         "end_line": 1549,
-        "reason": "The manuscript's finite copied play, adjacent-row matching, and terminal-value construction underlying the support step.",
+        "reason": "The manuscript's finite copied play and adjacent-row matching underlying the reflection construction.",
         "start_line": 1549
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying and a terminal value extracted from the play. The current tablet proof transfers that terminal atom into the original support, so it should now be reverified against the repaired support dependency before the reflection parent is checked.",
+      "basis_summary": "The manuscript describes finite copied plays with adjacent rows matched by copying, then extracts the first-row terminal value and uses the shifted adjacent row in the reflection construction. With all direct supports now current, the stale PowerQReflection proof is ready for a fresh Sound check against those statements.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedFiniteTerminal has a current Sound approval. PowerCopiedTerminalSupport is a stale Sound pass whose support dependency PowerCopiedSupport was subsequently repaired and re-approved; its current proof is already detailed, so the needed next action is a fresh Sound verification before re-verifying the stale parent PowerQReflection.",
-    "request_id": 478,
+    "reason": "PowerCopiedTerminalSupport now has a current Sound approval, and all direct PowerQReflection supports are current. The remaining action is a fresh Sound verification of stale PowerQReflection; no concrete proof failure or statement/DAG issue is present.",
+    "request_id": 480,
     "request_sound_verifier_nodes": [
-      "PowerCopiedTerminalSupport"
+      "PowerQReflection"
     ],
     "reset": "None",
     "reset_blockers": [],
@@ -77,5 +77,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_478_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_480_decision.context.json"
 }

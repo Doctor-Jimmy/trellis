@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 623,
+  "event_count": 626,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -712,7 +712,6 @@
     "7464f7c50da2eb72": "{\"own_tex\":\"cde879f687a943925edd9aa7b44fcd6e8b35122e03075d07d17c7d07fe59a676\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "748da1bdced43686": "sound-v2:852c089b40b0cf9bf54953737f5d701007b10a0860874a32437bbded2fe8773d",
     "754856b759ea7015": "05775db8a2b0f18739fe8c2c9dcc12b7a81f7d1db93c7655b44095a044480a65",
-    "754b08b4e7cdecce": "sound-v2:dc09bed44dca32da2a2717402f6c1da621f6cf2777937a5ce04b176be52965d3",
     "75a04cebf05ae5d5": "sound-v2:cbd8088e853b09100edd11cea9bde319cedc80a0ce7541809fa8ae923662dfc3",
     "75a4c16c5731e1b3": "{\"own_tex\":\"e67d8ab38bd700d9d33e4fb21a4a8a980004ba9a69b1b3a1c11e643f34a19017\",\"lean_semantic_closure\":\"1a2c2f2025eab1b845cdecbfef5e47188387e77e43b4f169e135dc7175a75388\",\"lean_relevant_definition_descendants\":{\"FiniteShift\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"FiniteShift\",\"Front\",\"FrontBase\",\"IncSeq\",\"IncSeqComp\",\"InitialSegment\",\"ProperPrefixSet\",\"RightComp\",\"ShiftMap\",\"SuccSeq\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "75d2c866907809f3": "6f42387e676bb7cbe31152716aee4d11e533480da145f03d13f10a3e14b5ed0b",
@@ -60201,7 +60200,7 @@
     "committed": {
       "$r": "c4e50a6e62c9cb02"
     },
-    "cycle": 146,
+    "cycle": 147,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60449,9 +60448,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 146,
+    "cycle": 147,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 146,
+    "cycles_since_clean": 147,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -61241,7 +61240,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 146,
+    "last_sound_response_cycle": 147,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61504,18 +61503,18 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PowerCopiedFiniteTerminal": {
+      "PowerCopiedTerminalSupport": {
         "v1": {
-          "comments": "",
+          "comments": "The dependency-only recheck does not expose a soundness gap. The changed support node still states exactly the inclusion used here.",
           "node": {
-            "$s": "86b2632417374ebd"
+            "$s": "c92d93fd7a69a2a5"
           },
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The proof fixes x, uses \\noderef{PowerCopiedTerminates} at row 0 to obtain a depth and terminal predicate, explicitly unpacks that predicate via \\noderef{PowerCopiedTerminalAt} to obtain both atom equations, and applies \\noderef{PowerCopiedFiniteDependence} at n=0 to every replacement agreeing through k+2. The bound and equality orientation match exactly, and the final rewrite proves the universal clause."
+            "explanation": "From PowerCopiedTerminates at row 0, the proof obtains a terminal depth; PowerCopiedTerminalAt then supplies the two atom witnesses. PowerCopiedSupport at row 0 and depth k, together with the cited zeroth-iterate equation from PowerShiftIter and the atom clause of PowerSupport, rigorously transfers q into PowerSupport(h(x)). All cross-node dependencies used in the proof are explicitly cited."
           },
-          "summary": "SOUND: the natural-language proof is line-by-line checkable from its explicitly cited support nodes."
+          "summary": "The NL proof is a complete, line-by-line witness extraction and support-containment argument from the cited child statements."
         }
       }
     },
@@ -61523,145 +61522,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 146,
+      "next_index": 147,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "SetDomination",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 82
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -67413,6 +67275,210 @@
             "TripleHomogeneous"
           ],
           "snapshot_index": 145
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "BlockSigmaContinuous",
+            "BlockSigmaEmbedding",
+            "BlockSigmaIntertwines",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "BqoIffGeneralShift",
+            "CardinalityFront",
+            "CardinalityFrontIsFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFront",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "DecidingValue",
+            "EmapLemma",
+            "FinitePrefixExtension",
+            "FiniteShift",
+            "FirstMovedPoint",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeInit",
+            "FrontBridgeStep",
+            "FrontBridgeTail",
+            "FrontBridgeTerminal",
+            "FrontPrefix",
+            "FrontPrefixExists",
+            "FrontPrefixUnique",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            {
+              "$s": "ba060752f87266a9"
+            },
+            {
+              "$s": "ce47bd99c3ed46e0"
+            },
+            "FrontTreeSingleton",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GBetterRelIff",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblNodeClosure",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncSeqPointwiseLe",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MainProp",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "NashWilliams",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedFailureMove",
+            {
+              "$s": "5fd62f6199ae512b"
+            },
+            {
+              "$s": "86b2632417374ebd"
+            },
+            "PowerCopiedLeft",
+            {
+              "$s": "9a013b8cdeb9d5ff"
+            },
+            {
+              "$s": "55d1a8fd6d560eea"
+            },
+            "PowerCopiedSupport",
+            "PowerCopiedTerminalAt",
+            {
+              "$s": "2e7a9f9ae663f9f8"
+            },
+            {
+              "$s": "c92d93fd7a69a2a5"
+            },
+            "PowerCopiedTerminates",
+            {
+              "$s": "77d96f473077081d"
+            },
+            "PowerGameDescent",
+            {
+              "$s": "50a07aa664204053"
+            },
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerMoveInSupport",
+            "PowerPresentationEq",
+            {
+              "$s": "93d700ae7b9523b8"
+            },
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerQPresBqo",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelCongrLeft",
+            "PowerRelCongrRight",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerRelRefl",
+            "PowerRelTrans",
+            "PowerShiftIter",
+            {
+              "$s": "6947ec3a7b56b112"
+            },
+            "PowerShiftIterShift",
+            "PowerSupport",
+            "PowerSupportInvariant",
+            "PowerSupportNonempty",
+            "PowerWqoBadPairSequence",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "QuadrupleHomogeneous",
+            "RadoEmbedding",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            {
+              "$s": "b415d99a5587255c"
+            },
+            "RestrictionShift",
+            "RightComp",
+            "RmapLemma",
+            "SetDomination",
+            "ShiftDichotomy",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "Subarr",
+            "SuccSeq",
+            "SuperNW",
+            "SuperSequence",
+            "SuperSequenceExtension",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFAtomIffFront",
+            "TildeFFrontEquation",
+            "TildeFHerCtbl",
+            "TildeFNonfrontEquation",
+            "TildeFSingleton",
+            "TripleHomogeneous"
+          ],
+          "snapshot_index": 146
         }
       ]
     },
@@ -67421,13 +67487,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 478,
+    "request_seq": 480,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Leave Tablet/PowerCopiedTerminalSupport.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerCopiedTerminalSupport now that PowerCopiedSupport, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, and PowerCopiedFiniteTerminal have current Sound approvals. The verifier should check the explicit PowerCopiedTerminalAt witness extraction, the zeroth PowerShiftIter rewrite, the PowerCopiedSupport inclusion, and the PowerSupport atom-membership step against the current support statements. Do not assign a worker or reset any blocker.",
+    "reviewer_comments": "Leave Tablet/PowerQReflection.tex and the rest of the tablet unchanged. Request a real Sound verification of PowerQReflection now that PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedFiniteDependence, PowerCopiedShiftIdentity, PowerCopiedFiniteTerminal, PowerCopiedSupport, PowerCopiedTerminalSupport, PowerCopiedTerminalShift, PowerCopiedTerminates, and PowerFiniteOrbitConstancy have current Sound approvals. The verifier should check the copied-row definitions, terminal-label uniqueness, support transfer, badness conclusion, and finite-prefix local-constancy argument against the current cited support statements. Do not assign a worker or reset any blocker.",
     "reviewer_requested_sound_verifier_nodes": [
-      {
-        "$s": "c92d93fd7a69a2a5"
-      }
+      "PowerQReflection"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -67550,7 +67614,7 @@
         "$s": "d58acaa62e1784e6"
       },
       "PowerCopiedTerminalSupport": {
-        "$s": "754b08b4e7cdecce"
+        "$s": "40049fbdabc5d7d9"
       },
       "PowerCopiedTerminates": {
         "$s": "3969005437fbe7a6"
@@ -68088,27 +68152,7 @@
       },
       "PowerCopiedTerminalSupport": {
         "fingerprints": {
-          "combined_sound_fp": {
-            "$s": "754b08b4e7cdecce"
-          },
-          "dep_statement_hashes": {
-            "PowerCopiedSupport": "18659ec8a9e4be7732ad82440eb4ee56f0aa8523dff4472ab439954d979bc76b",
-            "PowerCopiedTerminalAt": {
-              "$s": "6a784a5b34fd6e70"
-            },
-            "PowerCopiedTerminates": {
-              "$s": "40aac433a14cd604"
-            },
-            "PowerShiftIter": {
-              "$s": "7c6c758b1b597ac2"
-            },
-            "PowerSupport": {
-              "$s": "6ccdfceab0025a62"
-            }
-          },
-          "own_tex_hash": {
-            "$s": "d8356a749ef5cd33"
-          }
+          "$r": "3bdc9bd91318bf88"
         },
         "lane_votes": {
           "v1": "Pass"
