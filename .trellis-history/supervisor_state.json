@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 461,
+  "event_count": 464,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -20938,6 +20938,151 @@
       {
         "$r": "a971cae93a187a0a"
       }
+    ],
+    "5288da80577db442": [
+      "BadMultiSequence",
+      "BadPairSequence",
+      "BadSuperSequence",
+      "BaireContinuous",
+      "BaseBad",
+      "BaseIncSeq",
+      "BaseLocallyConstant",
+      "BaseMultiSequence",
+      "BasePerfect",
+      "BaseRestrict",
+      "BaseRightComp",
+      "BaseShift",
+      "BetterRel",
+      "BlockSigma",
+      "BlockSigmaContinuous",
+      "BlockSigmaEmbedding",
+      "BlockSigmaIntertwines",
+      {
+        "$s": "4c3bac0512a45c96"
+      },
+      "Bqo",
+      "BqoHerCtblWellF",
+      "BqoHerCtblWqo",
+      "BqoIffGeneralShift",
+      "CardinalityFront",
+      "CardinalityFrontIsFront",
+      "ContMor",
+      "ContMorEq",
+      "ContinuousHom",
+      "ContinuousRelHom",
+      "DecidingFront",
+      "DecidingFrontSet",
+      "DecidingPrefix",
+      "DecidingValue",
+      "EmapLemma",
+      "FinitePrefixExtension",
+      "FiniteShift",
+      "FirstMovedPoint",
+      "Front",
+      "FrontBase",
+      "FrontBridge",
+      "FrontBridgeInit",
+      "FrontBridgeStep",
+      "FrontBridgeTail",
+      "FrontBridgeTerminal",
+      "FrontPrefix",
+      "FrontPrefixExists",
+      "FrontPrefixUnique",
+      "FrontRayClosure",
+      "FrontRestrict",
+      "FrontRestriction",
+      {
+        "$s": "ba060752f87266a9"
+      },
+      {
+        "$s": "ce47bd99c3ed46e0"
+      },
+      "FrontTreeSingleton",
+      "FrontTreeWellFounded",
+      "GBetterRel",
+      "GBetterRelIff",
+      "GoodMultiSequence",
+      "HerCtblCode",
+      "HerCtblCodeErase",
+      "HerCtblNodeClosure",
+      "HerCtblPower",
+      "HerCtblPowerIsPreorder",
+      "HerCtblRel",
+      {
+        "$s": "19fb7b62eea67a5d"
+      },
+      "HereditarilyCountable",
+      {
+        "$s": "248a162fe13df6db"
+      },
+      {
+        "$s": "0de210e54bc47028"
+      },
+      "IncSeq",
+      "IncSeqComp",
+      "IncSeqId",
+      "IncSeqPointwiseLe",
+      "IncreasingPair",
+      "InfiniteSetEnumeration",
+      "InitialSegment",
+      "LocallyConstant",
+      "MainProp",
+      "MultiSequence",
+      "MultiSequenceRestrict",
+      "NashWilliams",
+      "OrbitBlock",
+      "OrbitBlockCoverage",
+      "OrbitEmbedding",
+      "OrbitPoint",
+      "OrbitUnbounded",
+      "PerfectMultiSequence",
+      "PerfectSuperSequence",
+      "PowerChild",
+      "PowerChildWellFounded",
+      "PowerCopiedLeft",
+      "PowerCopiedTerminalAt",
+      "PowerGameDescent",
+      "PowerIResponse",
+      "PowerIResponseFailure",
+      "PowerIResponseLegal",
+      "PowerIResponseWitness",
+      "PowerMove",
+      "PowerPresentationEq",
+      "PowerQ",
+      "PowerQIsPreorder",
+      "PowerRel",
+      "PowerRelAtomAtom",
+      "PowerRelAtomNode",
+      "PowerRelNodeAtom",
+      "PowerRelNodeNode",
+      "PowerShiftIter",
+      "PowerSupport",
+      "Preamble",
+      "PrefixAgree",
+      "PrefixTree",
+      "ProperInitialSegment",
+      "ProperPrefixSet",
+      "RadoOrder",
+      "Ray",
+      "RelationEmbedding",
+      "RightComp",
+      "RmapLemma",
+      "SetDomination",
+      "ShiftMap",
+      {
+        "$s": "b93919442f024c21"
+      },
+      "SuccSeq",
+      "SuperSequence",
+      "SuperSequenceRestrict",
+      "TailSet",
+      "TildeF",
+      "TildeFAtomIffFront",
+      "TildeFFrontEquation",
+      "TildeFHerCtbl",
+      "TildeFNonfrontEquation",
+      "TildeFSingleton",
+      "TripleHomogeneous"
     ],
     "529405aeb9ddc538": {
       "PowerPresentationEq": "196e8cf2fb293aec",
@@ -59425,17 +59570,17 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": "SuperSequenceExtension",
     "committed": {
       "$r": "3e9f7663243d0fae"
     },
-    "cycle": 103,
+    "cycle": 104,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": null,
+    "active_node": "SuperSequenceExtension",
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -59677,9 +59822,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 103,
+    "cycle": 104,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 103,
+    "cycles_since_clean": 104,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -60469,7 +60614,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 103,
+    "last_sound_response_cycle": 104,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60711,7 +60856,38 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Global",
+      "must_close_active": false,
+      "next_worker_context_mode": "resume",
+      "node": "SuperSequenceExtension",
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [
+        {
+          "end_line": 1275,
+          "reason": "The paper's unique-front-prefix construction and local-constancy argument for extending a super-sequence.",
+          "start_line": 1258
+        }
+      ],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "8536e2854a9232ac"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": "SuperSequenceExtension",
+            "otype": "node"
+          }
+        }
+      ],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "TheoremStating",
     "plan_review_cadence_enabled": true,
@@ -60786,16 +60962,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "TildeFAtomIffFront": {
+      "SuperSequenceExtension": {
         "v1": {
-          "comments": "",
-          "node": "TildeFAtomIffFront",
-          "overall": "APPROVE",
+          "comments": "1. The proof uses the value map and front data of f without the required \\noderef{SuperSequence} citation, and invokes local constancy without citing \\noderef{BaseLocallyConstant}. 2. The central local-constancy step is only asserted: it does not extract a cutoff from the chosen FrontPrefix, choose an explicit prefix length, or prove that every y with PrefixAgree to x has the same front member and hence the same value. 3. The proof does not explicitly show that the hypotheses of \\noderef{FrontPrefixExists} and \\noderef{FrontPrefixUnique} are supplied by the BaseIncSeq subtype and the front carried by f (or hF). 4. The final equation uses f.value on subtype elements; the proof does not identify the selected witness with the displayed hs witness or invoke proof irrelevance to justify equality of the two values.",
+          "node": "SuperSequenceExtension",
+          "overall": "REJECT",
           "soundness": {
-            "decision": "SOUND",
-            "explanation": "The proof establishes both implications. For a front node, TildeFFrontEquation gives an atom value and hence the required atom witness. For a non-front node, TildeFNonfrontEquation gives a node constructor value, and PowerQ states that atom and node are disjoint, so the value cannot equal any atom; this is the contrapositive of the reverse implication. Every cross-node dependency used is explicitly cited."
+            "decision": "STRUCTURAL",
+            "explanation": "The construction is mathematically plausible, but the NL proof is not line-by-line derivable under the citation contract: required dependency citations are missing, and the finite-prefix argument establishing BaseLocallyConstant is asserted rather than proved. The displayed final subtype-valued equation also lacks its proof-irrelevance justification."
           },
-          "summary": "The NL proof is line-by-line sufficient for the atom-versus-front equivalence, with all nonlocal dependencies cited."
+          "summary": "Reject: the extension idea is correct in outline, but missing dependency citations and the unproved finite-prefix and subtype-value steps prevent a soundness approval."
         }
       }
     },
@@ -60803,113 +60979,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 103,
+      "next_index": 104,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "FiniteShift",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeTail",
-            "FrontPrefix",
-            "FrontRestrict",
-            "FrontRestriction",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "OrbitBlock",
-            "OrbitPoint",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "SetDomination",
-            "ShiftMap",
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 39
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -64632,152 +64703,19 @@
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblNodeClosure",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFAtomIffFront",
-            "TildeFFrontEquation",
-            "TildeFHerCtbl",
-            "TildeFNonfrontEquation",
-            "TildeFSingleton",
-            "TripleHomogeneous"
-          ],
+          "progressed": {
+            "$r": "5288da80577db442"
+          },
           "snapshot_index": 102
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "5288da80577db442"
+          },
+          "snapshot_index": 103
         }
       ]
     },
@@ -64786,12 +64724,10 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 359,
+    "request_seq": 361,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperSequenceExtension only. Check existence and uniqueness of the front prefix for each base increasing sequence, that the proposed value is well-defined through SuperSequence, and that the finite-prefix information determining the front member really yields BaseLocallyConstant. Check the final value equation and the explicit citations to FrontPrefixExists, FrontPrefixUnique, BaseLocallyConstant, and SuperSequence.",
-    "reviewer_requested_sound_verifier_nodes": [
-      "SuperSequenceExtension"
-    ],
+    "reviewer_comments": "Repair only Tablet/SuperSequenceExtension.tex. Preserve the Lean signature, imports, and support DAG; add no helper, theorem, or statement change. Address every cycle-104 Sound finding: cite SuperSequence where f.value is used and BaseLocallyConstant where local constancy is established. For arbitrary x : BaseIncSeq X, explicitly apply FrontPrefixExists with hF and the range-containment fact from x, then use FrontPrefixUnique to establish uniqueness. For local constancy, unpack the selected FrontPrefix and its ProperPrefixSet witness q in range x.1, choose an index j with x.1 j=q and an explicit cutoff N=j+1, and prove that any y : BaseIncSeq X with PrefixAgree N x.1 y.1 has the same front prefix: agreement through j gives the same entries below q, while strict increase puts later entries above q; then apply FrontPrefixUnique and conclude h y=h x. In the final existential equation, identify the selected finite set with the displayed witness using uniqueness and identify the two membership proofs s in F by proof irrelevance before comparing the dependent SuperSequence.value terms. Cite FrontPrefixExists, FrontPrefixUnique, SuperSequence, BaseLocallyConstant, and any used FrontPrefix, ProperPrefixSet, or PrefixAgree definitions explicitly. Retain the paper's construction and do not change Lean files.",
+    "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
@@ -64905,6 +64841,9 @@
       },
       "SubFrontCharacterization": {
         "$s": "98f8b3f7b4b210cd"
+      },
+      "SuperSequenceExtension": {
+        "$s": "8536e2854a9232ac"
       },
       "TildeFAtomIffFront": {
         "$s": "e60f567a9067d59d"
@@ -65330,6 +65269,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "SuperSequenceExtension": {
+        "fingerprints": {
+          "$r": "33e62e84fc163891"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       },
       "TildeFAtomIffFront": {
         "fingerprints": {
@@ -66489,6 +66437,7 @@
       "PowerIResponseWitness": "Pass",
       "RmapLemma": "Pass",
       "SubFrontCharacterization": "Pass",
+      "SuperSequenceExtension": "Fail",
       "TildeFAtomIffFront": "Pass",
       "TildeFFrontEquation": "Pass",
       "TildeFHerCtbl": "Pass",

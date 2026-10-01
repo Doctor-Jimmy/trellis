@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TildeFAtomIffFront is now Sound-approved. SuperSequenceExtension is the next held target, and its proof implements the paper's unique-front-prefix construction of a locally constant extension, so request its Sound verification.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperSequenceExtension only. Check existence and uniqueness of the front prefix for each base increasing sequence, that the proposed value is well-defined through SuperSequence, and that the finite-prefix information determining the front member really yields BaseLocallyConstant. Check the final value equation and the explicit citations to FrontPrefixExists, FrontPrefixUnique, BaseLocallyConstant, and SuperSequence.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "SuperSequenceExtension"
+    "reason": "Sound verification rejected SuperSequenceExtension with concrete proof gaps: missing dependency citations, an asserted finite-prefix local-constancy step, and an unproved dependent-value equality. Assign a bounded repair of that node only.",
+    "comments": "Repair only Tablet/SuperSequenceExtension.tex. Preserve the Lean signature, imports, and support DAG; add no helper, theorem, or statement change. Address every cycle-104 Sound finding: cite SuperSequence where f.value is used and BaseLocallyConstant where local constancy is established. For arbitrary x : BaseIncSeq X, explicitly apply FrontPrefixExists with hF and the range-containment fact from x, then use FrontPrefixUnique to establish uniqueness. For local constancy, unpack the selected FrontPrefix and its ProperPrefixSet witness q in range x.1, choose an index j with x.1 j=q and an explicit cutoff N=j+1, and prove that any y : BaseIncSeq X with PrefixAgree N x.1 y.1 has the same front prefix: agreement through j gives the same entries below q, while strict increase puts later entries above q; then apply FrontPrefixUnique and conclude h y=h x. In the final existential equation, identify the selected finite set with the displayed witness using uniqueness and identify the two membership proofs s in F by proof irrelevance before comparing the dependent SuperSequence.value terms. Cite FrontPrefixExists, FrontPrefixUnique, SuperSequence, BaseLocallyConstant, and any used FrontPrefix, ProperPrefixSet, or PrefixAgree definitions explicitly. Retain the paper's construction and do not change Lean files.",
+    "task_blocker_ids": [
+      "soundness:node:SuperSequenceExtension:sound-v2:aaf1c0b013cef6df42197e0b844015444255ef044278dbdd08760d8b0987d8ad"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "SuperSequenceExtension",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -20,12 +20,12 @@
       {
         "start_line": 1258,
         "end_line": 1275,
-        "reason": "The paper's construction of the locally constant extension from a super-sequence and its unique front prefixes."
+        "reason": "The paper's unique-front-prefix construction and local-constancy argument for extending a super-sequence."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited paper passage defines the extension by selecting the unique front member preceding each infinite base subset and then states that this extension is locally constant. SuperSequenceExtension formalizes that construction for increasing-sequence bases and records the defining value equation."
+      "basis_summary": "The cited paper passage constructs the extension by the unique front member preceding each infinite subset, defines local constancy by finite initial prefixes, and states that every super-sequence extension is locally constant. The repair must supply those finite-prefix and uniqueness details in the tablet proof."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for SuperSequenceExtension only. Check existence and uniqueness of the front prefix for each base increasing sequence, that the proposed value is well-defined through SuperSequence, and that the finite-prefix information determining the front member really yields BaseLocallyConstant. Check the final value equation and the explicit citations to FrontPrefixExists, FrontPrefixUnique, BaseLocallyConstant, and SuperSequence.",
+    "comments": "Repair only Tablet/SuperSequenceExtension.tex. Preserve the Lean signature, imports, and support DAG; add no helper, theorem, or statement change. Address every cycle-104 Sound finding: cite SuperSequence where f.value is used and BaseLocallyConstant where local constancy is established. For arbitrary x : BaseIncSeq X, explicitly apply FrontPrefixExists with hF and the range-containment fact from x, then use FrontPrefixUnique to establish uniqueness. For local constancy, unpack the selected FrontPrefix and its ProperPrefixSet witness q in range x.1, choose an index j with x.1 j=q and an explicit cutoff N=j+1, and prove that any y : BaseIncSeq X with PrefixAgree N x.1 y.1 has the same front prefix: agreement through j gives the same entries below q, while strict increase puts later entries above q; then apply FrontPrefixUnique and conclude h y=h x. In the final existential equation, identify the selected finite set with the displayed witness using uniqueness and identify the two membership proofs s in F by proof irrelevance before comparing the dependent SuperSequence.value terms. Cite FrontPrefixExists, FrontPrefixUnique, SuperSequence, BaseLocallyConstant, and any used FrontPrefix, ProperPrefixSet, or PrefixAgree definitions explicitly. Retain the paper's construction and do not change Lean files.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 103,
+    "cycle": 104,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,34 +49,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "SuperSequenceExtension",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1275,
-        "reason": "The paper's construction of the locally constant extension from a super-sequence and its unique front prefixes.",
+        "reason": "The paper's unique-front-prefix construction and local-constancy argument for extending a super-sequence.",
         "start_line": 1258
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited paper passage defines the extension by selecting the unique front member preceding each infinite base subset and then states that this extension is locally constant. SuperSequenceExtension formalizes that construction for increasing-sequence bases and records the defining value equation.",
+      "basis_summary": "The cited paper passage constructs the extension by the unique front member preceding each infinite subset, defines local constancy by finite initial prefixes, and states that every super-sequence extension is locally constant. The repair must supply those finite-prefix and uniqueness details in the tablet proof.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TildeFAtomIffFront is now Sound-approved. SuperSequenceExtension is the next held target, and its proof implements the paper's unique-front-prefix construction of a locally constant extension, so request its Sound verification.",
-    "request_id": 359,
-    "request_sound_verifier_nodes": [
-      "SuperSequenceExtension"
-    ],
+    "reason": "Sound verification rejected SuperSequenceExtension with concrete proof gaps: missing dependency citations, an asserted finite-prefix local-constancy step, and an unproved dependent-value equality. Assign a bounded repair of that node only.",
+    "request_id": 361,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:aaf1c0b013cef6df42197e0b844015444255ef044278dbdd08760d8b0987d8ad",
+        "kind": "Soundness",
+        "object": {
+          "node": "SuperSequenceExtension",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_359_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_361_decision.context.json"
 }
