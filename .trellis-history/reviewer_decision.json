@@ -1,27 +1,27 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier identified a specific invalid step in FrontBridgeInit.tex: when {m} is in F and m<n, the proof claims that InitialSegment({m},{m,n}) holds by equality, but the two sets are unequal. Assign a bounded repair of that branch while preserving the bridge statement and support structure.",
-    "comments": "Repair only `Tablet/FrontBridgeInit.tex`; preserve its Lean statement, imports, and existing bridge decomposition. In the `{m} in F` branch, do not justify `InitialSegment({m},{m,n})` by equality. Cite `InitialSegment` and explicitly use the second alternative with cutoff `n`: because `m<n`, filtering `{m,n}` by elements below `n` gives exactly `{m}`. Retain the existing citations to `FrontTreeSingleton`, `FrontTreeOrderedExtension`, `FrontBridgeTail`, and `FrontBridge`; recheck the remaining four bridge clauses line by line and add no helper or structural change. The corresponding paper construction starts at lines 1569--1570.",
+    "reason": "FrontBridgeInit now has a current Sound approval. Independent inspection of FrontBridgeStep.tex found unsupported persistence claims in both response cases: the proof does not explicitly derive the new tail or the required initial-segment relations after adjoining the new largest point. Assign a bounded line-by-line repair of those claims.",
+    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve its Lean statement, imports, and bridge decomposition. Cite `InitialSegment` and `FrontBridgeTail` and replace the assertions that the old left relation and old terminal right relation 'persist' with explicit cutoff arguments. In the first response case, start from `t = FrontBridgeTail(u)` when `t` is nonterminal and the fact that the new n is larger than every element of u; prove `FrontBridgeTail(u') = insert n t`, then prove the exact-tail or terminal initial-segment clause for t'. For the left side, show directly that an old initial segment of u remains one of u' (using the old cutoff, or cutoff n in the equality case), and that the selected s'=u satisfies `InitialSegment(u,u')` with cutoff n when s is nonterminal. In the fresh-k response case, explicitly show how `InitialSegment(t, FrontBridgeTail(u))` transfers to the enlarged tail, including the equality case. Retain the existing citations to `FrontBridge`, `FrontTreeOrderedExtension`, and the bridge-tail definition; add no helper or structural changes. The corresponding paper transition is at line 1570.",
     "task_blocker_ids": [
-      "soundness:node:FrontBridgeInit:sound-v2:2f91d0246d2a7ac010f0c4a0a599146f414594d14ab071bb4780be85d0ad2aaa"
+      "soundness:node:FrontBridgeStep:sound-v2:41c4a3d40e22577c01e0345d9b236521114d1f98a0186b4bf5ec8a4b43e8fd52"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontBridgeInit",
+    "next_active": "FrontBridgeStep",
     "next_mode": "targeted",
     "next_active_coarse": "",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1569,
+        "start_line": 1570,
         "end_line": 1570,
-        "reason": "The paper's initial bridge state and response cases."
+        "reason": "The paper's bridge response transition and preservation argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front. The tablet node formalizes this construction; its only reported defect is the invalid equality justification for the nonterminal initial-segment clause when m<n."
+      "basis_summary": "Paper line 1570 describes the two response cases: a non-front right node receives an ordered extension and a front node receives a fresh larger point, while the bridge state is preserved through the play. The tablet proof models this transition, but its preservation claims currently omit the cutoff and tail calculations needed for a line-by-line proof."
     },
     "reset": "none",
     "reset_node": "",
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/FrontBridgeInit.tex`; preserve its Lean statement, imports, and existing bridge decomposition. In the `{m} in F` branch, do not justify `InitialSegment({m},{m,n})` by equality. Cite `InitialSegment` and explicitly use the second alternative with cutoff `n`: because `m<n`, filtering `{m,n}` by elements below `n` gives exactly `{m}`. Retain the existing citations to `FrontTreeSingleton`, `FrontTreeOrderedExtension`, `FrontBridgeTail`, and `FrontBridge`; recheck the remaining four bridge clauses line by line and add no helper or structural change. The corresponding paper construction starts at lines 1569--1570.",
+    "comments": "Repair only `Tablet/FrontBridgeStep.tex`; preserve its Lean statement, imports, and bridge decomposition. Cite `InitialSegment` and `FrontBridgeTail` and replace the assertions that the old left relation and old terminal right relation 'persist' with explicit cutoff arguments. In the first response case, start from `t = FrontBridgeTail(u)` when `t` is nonterminal and the fact that the new n is larger than every element of u; prove `FrontBridgeTail(u') = insert n t`, then prove the exact-tail or terminal initial-segment clause for t'. For the left side, show directly that an old initial segment of u remains one of u' (using the old cutoff, or cutoff n in the equality case), and that the selected s'=u satisfies `InitialSegment(u,u')` with cutoff n when s is nonterminal. In the fresh-k response case, explicitly show how `InitialSegment(t, FrontBridgeTail(u))` transfers to the enlarged tail, including the equality case. Retain the existing citations to `FrontBridge`, `FrontTreeOrderedExtension`, and the bridge-tail definition; add no helper or structural changes. The corresponding paper transition is at line 1570.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 74,
+    "cycle": 75,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,24 +51,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "FrontBridgeInit",
+    "next_active": "FrontBridgeStep",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1570,
-        "reason": "The paper's initial bridge state and response cases.",
-        "start_line": 1569
+        "reason": "The paper's bridge response transition and preservation argument.",
+        "start_line": 1570
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Paper lines 1569-1570 construct the initial singleton nodes and u0=(m0,n0), then distinguish whether the left singleton is in the front. The tablet node formalizes this construction; its only reported defect is the invalid equality justification for the nonterminal initial-segment clause when m<n.",
+      "basis_summary": "Paper line 1570 describes the two response cases: a non-front right node receives an ordered extension and a front node receives a fresh larger point, while the bridge state is preserved through the play. The tablet proof models this transition, but its preservation claims currently omit the cutoff and tail calculations needed for a line-by-line proof.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier identified a specific invalid step in FrontBridgeInit.tex: when {m} is in F and m<n, the proof claims that InitialSegment({m},{m,n}) holds by equality, but the two sets are unequal. Assign a bounded repair of that branch while preserving the bridge statement and support structure.",
-    "request_id": 284,
+    "reason": "FrontBridgeInit now has a current Sound approval. Independent inspection of FrontBridgeStep.tex found unsupported persistence claims in both response cases: the proof does not explicitly derive the new tail or the required initial-segment relations after adjoining the new largest point. Assign a bounded line-by-line repair of those claims.",
+    "request_id": 287,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -78,15 +78,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:2f91d0246d2a7ac010f0c4a0a599146f414594d14ab071bb4780be85d0ad2aaa",
+        "fingerprint": "sound-v2:41c4a3d40e22577c01e0345d9b236521114d1f98a0186b4bf5ec8a4b43e8fd52",
         "kind": "Soundness",
         "object": {
-          "node": "FrontBridgeInit",
+          "node": "FrontBridgeStep",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_284_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_287_decision.context.json"
 }

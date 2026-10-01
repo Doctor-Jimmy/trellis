@@ -6,20 +6,44 @@ $m<n$, then
 \]
 \end{lemma}
 \begin{proof}
-By \noderef{FrontTreeSingleton}, both singletons belong to $T(F)$.
-The set $\{m,n\}$ is nonempty, and its least element is $m$, so by the
-finite-tail definition \noderef{FrontBridgeTail} its bridge tail is the
-nonempty singleton $\{n\}$.  If $\{m\}\notin F$,
-then the displayed bridge point is exactly $n$:
+By \noderef{FrontTreeSingleton}, both singletons belong to $T(F)$, so the
+first two membership clauses in \noderef{FrontBridge} hold.  The set
+$u=\{m,n\}$ is nonempty.  Since $m<n$, an element of $u$ has a smaller
+element of $u$ exactly when it is $n$.  Therefore the finite-tail
+definition \noderef{FrontBridgeTail} gives
 \[
- \{m,n\}=\operatorname{insert}(n,\{m\}),
+ \mathsf{FrontBridgeTail}(\{m,n\})=\{n\},
 \]
-and $m<n$ makes $\{m\}$ an ordered proper initial segment of this
-one-point extension.  The latter belongs to $T(F)$ by the ordered
-one-point extension theorem \noderef{FrontTreeOrderedExtension}.  If
-$\{m\}\in F$, the required left initial-segment clause holds by equality.
-The same two alternatives for $\{n\}$ give either equality with the
-bridge tail or the terminal initial-segment clause.  Thus the right node
-is nonempty as required.  These are precisely all clauses of
-\noderef{FrontBridge}, so the displayed bridge state holds.
+which is nonempty as well.
+
+Suppose first that $\{m\}\notin F$.  Since $m<n$,
+$\operatorname{insert}(n,\{m\})=\{m,n\}$.  By the second alternative in
+the definition of \noderef{InitialSegment}, with cutoff $n$,
+\[
+ \{k\in\{m,n\}\mid k<n\}=\{m\};
+\]
+the equality uses $m<n$ and $n\not<n$.  Thus
+$\mathsf{InitialSegment}(\{m\},\{m,n\})$, and the two finite sets are
+unequal because $n$ belongs to the latter but not the former.  Hence,
+by the definition \noderef{ProperInitialSegment},
+$\mathsf{ProperInitialSegment}(\{m\},\operatorname{insert}(n,\{m\}))$.
+Applying \noderef{FrontTreeOrderedExtension} to the singleton tree
+membership, the assumption $\{m\}\notin F$, and this ordered proper
+extension shows that $\{m,n\}\in T(F)$.  This proves the second (left
+extension) clause of \noderef{FrontBridge}, with witness $n$.
+
+If instead $\{m\}\in F$, the left clause required by
+\noderef{FrontBridge} is \(\mathsf{InitialSegment}(\{m\},\{m,n\})\),
+which was just proved using the cutoff $n$; it is not an equality case.
+
+For the right clauses, if $\{n\}\notin F$, the calculation of the tail
+above gives exactly
+$\{n\}=\mathsf{FrontBridgeTail}(\{m,n\})$.  If $\{n\}\in F$, the
+required initial-segment relation holds by the equality alternative in
+\noderef{InitialSegment}, since the right node and the bridge tail are
+both $\{n\}$.  Thus all clauses in the definition
+\noderef{FrontBridge} hold, and consequently
+\[
+\mathsf{FrontBridge}(F,\{m\},\{n\},\{m,n\}).
+\]
 \end{proof}
