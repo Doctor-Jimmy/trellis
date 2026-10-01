@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerShiftIterShift has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterPrefixAgree is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterPrefixAgree only. Check the induction against PrefixAgree, PowerShiftIter, and ShiftMap: the zero case must identify the conclusion with the hypothesis; in the successor case, use PrefixAgree(n+(j+1),x,y) to supply the longer prefix required by the induction hypothesis at the preceding shift, then unfold the recursive PowerShiftIter and right-composed ShiftMap definitions to show agreement through the first n entries after the additional shift. Require the index arithmetic and the entry correspondence to be explicit, and preserve the current Lean signature, imports, statement, and support DAG.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "PowerShiftIterPrefixAgree"
+    "reason": "The Sound verifier found three concrete gaps in the induction proof: the zero case is not identified with hxy, the successor induction hypothesis is not instantiated with n+1 or connected by the required index equality, and the final shift step is not checked pointwise. A bounded NL repair is warranted.",
+    "comments": "Repair only Tablet/PowerShiftIterPrefixAgree.tex. Preserve the Lean signature, imports, statement, and support DAG; add no helper. In the j=0 case, unfold PowerShiftIter 0 on both sides and state that the resulting PrefixAgree n x y conclusion is exactly hxy. In the successor case, apply the induction hypothesis with prefix parameter n+1 to the premise PrefixAgree ((n+1)+j) x y, and explicitly derive n+(j+1)=(n+1)+j from the given hypothesis. Let a=PowerShiftIter j x and b=PowerShiftIter j y, and state the resulting PrefixAgree (n+1) a b pointwise. For arbitrary i<n, unfold ShiftMap a i=a (i+1) and ShiftMap b i=b (i+1), prove i+1<n+1, and apply that preceding conclusion at i+1. Cite PowerShiftIter, PrefixAgree, and ShiftMap at the uses, retaining existing citations; do not change the theorem statement or support.",
+    "task_blocker_ids": [
+      "soundness:node:PowerShiftIterPrefixAgree:sound-v2:7d251377d85ad02f98764a9dc6df97fd7d564dc43de90ed732594198ea7d2f95"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "PowerShiftIterPrefixAgree",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -20,12 +20,12 @@
       {
         "start_line": 1690,
         "end_line": 1709,
-        "reason": "The paper's increasing-enumeration and right-composition shift convention used by the finite-prefix induction."
+        "reason": "The paper defines increasing enumerations and the right-composition successor shift used by the prefix transport proof."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing enumerations and define shift as right composition by successor; the finite-prefix proof must use that convention when unfolding each iterate."
+      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing enumerations and define shift as right composition by the successor; the repair must preserve this convention while checking finite-prefix coordinates."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterPrefixAgree only. Check the induction against PrefixAgree, PowerShiftIter, and ShiftMap: the zero case must identify the conclusion with the hypothesis; in the successor case, use PrefixAgree(n+(j+1),x,y) to supply the longer prefix required by the induction hypothesis at the preceding shift, then unfold the recursive PowerShiftIter and right-composed ShiftMap definitions to show agreement through the first n entries after the additional shift. Require the index arithmetic and the entry correspondence to be explicit, and preserve the current Lean signature, imports, statement, and support DAG.",
+    "comments": "Repair only Tablet/PowerShiftIterPrefixAgree.tex. Preserve the Lean signature, imports, statement, and support DAG; add no helper. In the j=0 case, unfold PowerShiftIter 0 on both sides and state that the resulting PrefixAgree n x y conclusion is exactly hxy. In the successor case, apply the induction hypothesis with prefix parameter n+1 to the premise PrefixAgree ((n+1)+j) x y, and explicitly derive n+(j+1)=(n+1)+j from the given hypothesis. Let a=PowerShiftIter j x and b=PowerShiftIter j y, and state the resulting PrefixAgree (n+1) a b pointwise. For arbitrary i<n, unfold ShiftMap a i=a (i+1) and ShiftMap b i=b (i+1), prove i+1<n+1, and apply that preceding conclusion at i+1. Cite PowerShiftIter, PrefixAgree, and ShiftMap at the uses, retaining existing citations; do not change the theorem statement or support.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 122,
+    "cycle": 123,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,34 +51,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "PowerShiftIterPrefixAgree",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1709,
-        "reason": "The paper's increasing-enumeration and right-composition shift convention used by the finite-prefix induction.",
+        "reason": "The paper defines increasing enumerations and the right-composition successor shift used by the prefix transport proof.",
         "start_line": 1690
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing enumerations and define shift as right composition by successor; the finite-prefix proof must use that convention when unfolding each iterate.",
+      "basis_summary": "Lines 1690-1709 identify infinite subsets with increasing enumerations and define shift as right composition by the successor; the repair must preserve this convention while checking finite-prefix coordinates.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerShiftIterShift has a current Sound approval, so its unverified obligation is left live without action. The next held target PowerShiftIterPrefixAgree is Sound-verifier requestable; request its ordinary Sound check to continue the bottom-up frontier.",
-    "request_id": 404,
-    "request_sound_verifier_nodes": [
-      "PowerShiftIterPrefixAgree"
-    ],
+    "reason": "The Sound verifier found three concrete gaps in the induction proof: the zero case is not identified with hxy, the successor induction hypothesis is not instantiated with n+1 or connected by the required index equality, and the final shift step is not checked pointwise. A bounded NL repair is warranted.",
+    "request_id": 406,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:7d251377d85ad02f98764a9dc6df97fd7d564dc43de90ed732594198ea7d2f95",
+        "kind": "Soundness",
+        "object": {
+          "node": "PowerShiftIterPrefixAgree",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_404_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_406_decision.context.json"
 }

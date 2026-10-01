@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 525,
+  "event_count": 528,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -17545,6 +17545,165 @@
       "semantics": "semantic_definition_use",
       "visibility": "exported"
     },
+    "44ad63be30e010a1": [
+      "BadMultiSequence",
+      "BadPairSequence",
+      "BadSuperSequence",
+      "BaireContinuous",
+      "BaseBad",
+      "BaseIncSeq",
+      "BaseLocallyConstant",
+      "BaseMultiSequence",
+      "BasePerfect",
+      "BaseRestrict",
+      "BaseRightComp",
+      "BaseShift",
+      "BetterRel",
+      "BlockSigma",
+      "BlockSigmaContinuous",
+      "BlockSigmaEmbedding",
+      "BlockSigmaIntertwines",
+      {
+        "$s": "4c3bac0512a45c96"
+      },
+      "Bqo",
+      "BqoHerCtblWellF",
+      "BqoHerCtblWqo",
+      "BqoIffGeneralShift",
+      "CardinalityFront",
+      "CardinalityFrontIsFront",
+      "ContMor",
+      "ContMorEq",
+      "ContinuousHom",
+      "ContinuousRelHom",
+      "DecidingFront",
+      "DecidingFrontSet",
+      "DecidingPrefix",
+      "DecidingValue",
+      "EmapLemma",
+      "FinitePrefixExtension",
+      "FiniteShift",
+      "FirstMovedPoint",
+      "Front",
+      "FrontBase",
+      "FrontBridge",
+      "FrontBridgeInit",
+      "FrontBridgeStep",
+      "FrontBridgeTail",
+      "FrontBridgeTerminal",
+      "FrontPrefix",
+      "FrontPrefixExists",
+      "FrontPrefixUnique",
+      "FrontRayClosure",
+      "FrontRestrict",
+      "FrontRestriction",
+      {
+        "$s": "ba060752f87266a9"
+      },
+      {
+        "$s": "ce47bd99c3ed46e0"
+      },
+      "FrontTreeSingleton",
+      "FrontTreeWellFounded",
+      "GBetterRel",
+      "GBetterRelIff",
+      "GoodMultiSequence",
+      "HerCtblCode",
+      "HerCtblCodeErase",
+      "HerCtblNodeClosure",
+      "HerCtblPower",
+      "HerCtblPowerIsPreorder",
+      "HerCtblRel",
+      {
+        "$s": "19fb7b62eea67a5d"
+      },
+      "HereditarilyCountable",
+      {
+        "$s": "248a162fe13df6db"
+      },
+      {
+        "$s": "0de210e54bc47028"
+      },
+      "IncSeq",
+      "IncSeqComp",
+      "IncSeqId",
+      "IncSeqPointwiseLe",
+      "IncreasingPair",
+      "InfiniteSetEnumeration",
+      "InitialSegment",
+      "LocallyConstant",
+      "MainProp",
+      "MultiSequence",
+      "MultiSequenceRestrict",
+      "NashWilliams",
+      "OrbitBlock",
+      "OrbitBlockCoverage",
+      "OrbitEmbedding",
+      "OrbitPoint",
+      "OrbitUnbounded",
+      "PerfectMultiSequence",
+      "PerfectSuperSequence",
+      "PowerChild",
+      "PowerChildWellFounded",
+      "PowerCopiedLeft",
+      "PowerCopiedTerminalAt",
+      "PowerGameDescent",
+      "PowerIResponse",
+      "PowerIResponseFailure",
+      "PowerIResponseLegal",
+      "PowerIResponseWitness",
+      "PowerMove",
+      "PowerPresentationEq",
+      "PowerQ",
+      "PowerQIsPreorder",
+      "PowerRel",
+      "PowerRelAtomAtom",
+      "PowerRelAtomNode",
+      "PowerRelNodeAtom",
+      "PowerRelNodeNode",
+      "PowerShiftIter",
+      "PowerShiftIterShift",
+      "PowerSupport",
+      "PowerSupportInvariant",
+      "PowerSupportNonempty",
+      "PowerWqoBadPairSequence",
+      "Preamble",
+      "PrefixAgree",
+      "PrefixTree",
+      "ProperInitialSegment",
+      "ProperPrefixSet",
+      "QuadrupleHomogeneous",
+      "RadoEmbedding",
+      "RadoOrder",
+      "Ray",
+      "RelationEmbedding",
+      {
+        "$s": "b415d99a5587255c"
+      },
+      "RestrictionShift",
+      "RightComp",
+      "RmapLemma",
+      "SetDomination",
+      "ShiftDichotomy",
+      "ShiftMap",
+      {
+        "$s": "b93919442f024c21"
+      },
+      "Subarr",
+      "SuccSeq",
+      "SuperNW",
+      "SuperSequence",
+      "SuperSequenceExtension",
+      "SuperSequenceRestrict",
+      "TailSet",
+      "TildeF",
+      "TildeFAtomIffFront",
+      "TildeFFrontEquation",
+      "TildeFHerCtbl",
+      "TildeFNonfrontEquation",
+      "TildeFSingleton",
+      "TripleHomogeneous"
+    ],
     "44c8f580368d884c": {
       "consumer": {
         "$s": "9a013b8cdeb9d5ff"
@@ -60039,17 +60198,21 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": {
+      "$s": "6947ec3a7b56b112"
+    },
     "committed": {
       "$r": "112de2ebaa0bc996"
     },
-    "cycle": 122,
+    "cycle": 123,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": null,
+    "active_node": {
+      "$s": "6947ec3a7b56b112"
+    },
     "approved_targets": {
       "configured_targets": [],
       "coverage": {},
@@ -60291,9 +60454,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 122,
+    "cycle": 123,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 122,
+    "cycles_since_clean": 123,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "0ef8f13fcdd43728"
@@ -61085,7 +61248,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 122,
+    "last_sound_response_cycle": 123,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61327,7 +61490,42 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Global",
+      "must_close_active": false,
+      "next_worker_context_mode": "resume",
+      "node": {
+        "$s": "6947ec3a7b56b112"
+      },
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [
+        {
+          "end_line": 1709,
+          "reason": "The paper defines increasing enumerations and the right-composition successor shift used by the prefix transport proof.",
+          "start_line": 1690
+        }
+      ],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [
+        {
+          "deferred": false,
+          "fingerprint": {
+            "$s": "fe53e2ce2b2d9c09"
+          },
+          "kind": "Soundness",
+          "object": {
+            "node": {
+              "$s": "6947ec3a7b56b112"
+            },
+            "otype": "node"
+          }
+        }
+      ],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "TheoremStating",
     "plan_review_cadence_enabled": true,
@@ -61402,16 +61600,18 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PowerShiftIterShift": {
+      "PowerShiftIterPrefixAgree": {
         "v1": {
-          "comments": "The proof gives a complete induction: the zero case uses the defining zeroth-iterate equation, and the successor case unfolds the recursive equation, applies the induction hypothesis through ShiftMap, and matches the successor equation on the right.",
-          "node": "PowerShiftIterShift",
-          "overall": "APPROVE",
-          "soundness": {
-            "decision": "SOUND",
-            "explanation": "The cited definition PowerShiftIter supplies the recursion used in both cases. The induction proves the stated equality for every n and arbitrary increasing enumeration x, with no unstated cross-node dependency."
+          "comments": "1. The base case is only called reflexive; it must unfold PowerShiftIter 0 and explicitly identify the resulting PrefixAgree n x y conclusion with hxy.\n2. In the successor case, the proof does not state that the induction hypothesis is applied with prefix parameter n+1, nor establish n + (j+1) = (n+1) + j to match its premise.\n3. The final shift step is asserted as \"unfolding\" rather than checked pointwise: for arbitrary i<n it must show ShiftMap a i = a (i+1), use i+1<n+1, and apply the preceding PrefixAgree conclusion to both entries.",
+          "node": {
+            "$s": "6947ec3a7b56b112"
           },
-          "summary": "The natural-language proof rigorously establishes the iterate-shift identity by induction from PowerShiftIter's defining recursion."
+          "overall": "REJECT",
+          "soundness": {
+            "decision": "UNSOUND",
+            "explanation": "The claim is true and the relevant support definitions are cited, but the NL proof is not line-by-line rigorous: it does not identify the zero-case conclusion with the hypothesis, instantiate the successor induction hypothesis with n+1 and prove the required index equality, or derive the shifted conclusion pointwise from the entry formula and inequality."
+          },
+          "summary": "Reject: the proof has the right induction idea but omits essential zero-case, index-arithmetic, and pointwise shift calculations required by the soundness rubric."
         }
       }
     },
@@ -61419,120 +61619,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 122,
+      "next_index": 123,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "CardinalityFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "FiniteShift",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeTail",
-            "FrontPrefix",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "OrbitBlock",
-            "OrbitPoint",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RightComp",
-            "SetDomination",
-            "ShiftMap",
-            "SuccSeq",
-            "SuperSequence",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFSingleton"
-          ],
-          "snapshot_index": 58
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -66000,166 +66088,19 @@
           "present": {
             "$r": "9450395de46854fa"
           },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblNodeClosure",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerShiftIterShift",
-            "PowerSupport",
-            "PowerSupportInvariant",
-            "PowerSupportNonempty",
-            "PowerWqoBadPairSequence",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "QuadrupleHomogeneous",
-            "RadoEmbedding",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            {
-              "$s": "b415d99a5587255c"
-            },
-            "RestrictionShift",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftDichotomy",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "Subarr",
-            "SuccSeq",
-            "SuperNW",
-            "SuperSequence",
-            "SuperSequenceExtension",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFAtomIffFront",
-            "TildeFFrontEquation",
-            "TildeFHerCtbl",
-            "TildeFNonfrontEquation",
-            "TildeFSingleton",
-            "TripleHomogeneous"
-          ],
+          "progressed": {
+            "$r": "44ad63be30e010a1"
+          },
           "snapshot_index": 121
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "44ad63be30e010a1"
+          },
+          "snapshot_index": 122
         }
       ]
     },
@@ -66168,14 +66109,10 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 404,
+    "request_seq": 406,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for PowerShiftIterPrefixAgree only. Check the induction against PrefixAgree, PowerShiftIter, and ShiftMap: the zero case must identify the conclusion with the hypothesis; in the successor case, use PrefixAgree(n+(j+1),x,y) to supply the longer prefix required by the induction hypothesis at the preceding shift, then unfold the recursive PowerShiftIter and right-composed ShiftMap definitions to show agreement through the first n entries after the additional shift. Require the index arithmetic and the entry correspondence to be explicit, and preserve the current Lean signature, imports, statement, and support DAG.",
-    "reviewer_requested_sound_verifier_nodes": [
-      {
-        "$s": "6947ec3a7b56b112"
-      }
-    ],
+    "reviewer_comments": "Repair only Tablet/PowerShiftIterPrefixAgree.tex. Preserve the Lean signature, imports, statement, and support DAG; add no helper. In the j=0 case, unfold PowerShiftIter 0 on both sides and state that the resulting PrefixAgree n x y conclusion is exactly hxy. In the successor case, apply the induction hypothesis with prefix parameter n+1 to the premise PrefixAgree ((n+1)+j) x y, and explicitly derive n+(j+1)=(n+1)+j from the given hypothesis. Let a=PowerShiftIter j x and b=PowerShiftIter j y, and state the resulting PrefixAgree (n+1) a b pointwise. For arbitrary i<n, unfold ShiftMap a i=a (i+1) and ShiftMap b i=b (i+1), prove i+1<n+1, and apply that preceding conclusion at i+1. Cite PowerShiftIter, PrefixAgree, and ShiftMap at the uses, retaining existing citations; do not change the theorem statement or support.",
+    "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
@@ -66283,6 +66220,9 @@
       },
       "PowerIResponseWitness": {
         "$s": "4894d612f70a8eb2"
+      },
+      "PowerShiftIterPrefixAgree": {
+        "$s": "fe53e2ce2b2d9c09"
       },
       "PowerShiftIterShift": {
         "$s": "30346153e8d9fe55"
@@ -66728,6 +66668,15 @@
         "origin": "VerifierPanel",
         "reviewer_action_id": null,
         "status": "VerifierPass"
+      },
+      "PowerShiftIterPrefixAgree": {
+        "fingerprints": {
+          "$r": "6b61d53d3a4ae6c7"
+        },
+        "lane_votes": {},
+        "origin": "ReviewerAction",
+        "reviewer_action_id": null,
+        "status": "ReviewerPinnedFail"
       },
       "PowerShiftIterShift": {
         "fingerprints": {
@@ -68039,6 +67988,7 @@
       "PowerIResponseFailure": "Pass",
       "PowerIResponseLegal": "Pass",
       "PowerIResponseWitness": "Pass",
+      "PowerShiftIterPrefixAgree": "Fail",
       "PowerShiftIterShift": "Pass",
       "PowerSupportInvariant": "Pass",
       "PowerSupportNonempty": "Pass",
