@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "RadoEmbedding has a current Sound approval. The held target QuadrupleHomogeneous is Sound-verifier-requestable and should receive the next focused verification; there is no concrete worker repair evidence for it in this review.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for QuadrupleHomogeneous only. Check the construction of CardinalityFront(4,X), its front property, the coloring fiber S, and the NashWilliams output of an infinite Y with a sub-front contained in S or disjoint from S. Verify explicitly why the selected sub-front is nontrivial, why its base is a subset of X, and why every four-element subset of Y is itself a member of that sub-front: the branch/density argument must be stated with the needed Front and cardinality facts and the relevant cross-node citations. Confirm that both color alternatives yield the exact Lean conclusion and that all dependencies used, including CardinalityFront, CardinalityFrontIsFront, NashWilliams, and any Front or InfiniteSetEnumeration facts, are explicitly cited.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "QuadrupleHomogeneous"
+    "reason": "The Sound verifier found five concrete omissions in QuadrupleHomogeneous: the Nash-Williams subset premise, the nontriviality and base argument for the sub-front, the required Front and FrontBase citations, the full fixed-cardinality argument for an arbitrary quadruple, and the final color-0 membership deduction. A bounded proof-text repair is warranted.",
+    "comments": "Repair only Tablet/QuadrupleHomogeneous.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper node. Before invoking NashWilliams, explicitly prove that S is a subset of F from its set-builder definition. From F' subseteq F and the fact that every member of CardinalityFront(4,X) has cardinality 4, prove that the empty set is not in F'; then use the two alternatives in the Front definition to conclude FrontBase(F') = Y. Cite Front and FrontBase whenever using the front base, density, or union-of-members facts. For an arbitrary four-element s subseteq Y, do not say this is the triple case: explicitly construct an infinite Z subseteq Y whose first four elements are s, for example s union the tail of Y above max s; prove the subset and infinitude facts, apply front density, unpack ProperPrefixSet, and use the cardinality-four facts for both the resulting t and s to force t=s. Finally spell out both color alternatives: membership in S gives c(s)=1, while s in F' and F' disjoint S gives s not in S, and the definition of S together with s in F gives c(s)=0. Cite CardinalityFront, CardinalityFrontIsFront, NashWilliams, Front, FrontBase, InfiniteSetEnumeration, and any ProperPrefixSet or InitialSegment support actually used. Do not rely on the proof of another node or retain the phrase same as for triples.",
+    "task_blocker_ids": [
+      "soundness:node:QuadrupleHomogeneous:sound-v2:a44233cd267f778e2e37bf88c78a87aeb59f7989e98901f6bfca62c80c95701f"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "QuadrupleHomogeneous",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -20,12 +20,12 @@
       {
         "start_line": 989,
         "end_line": 991,
-        "reason": "Paper triple and quadruple homogeneous thinning used in the Rado argument."
+        "reason": "The paper's successive triple and quadruple homogeneous thinning in the Rado argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 989-991 first use homogeneous triples and then homogeneous quadruples; QuadrupleHomogeneous formalizes the second thinning needed to obtain a constant color on four-element subsets."
+      "basis_summary": "Lines 989-991 first thin triples and then quadruples, ruling out the bad color by WQO; the repair makes the Nash-Williams and fixed-cardinality steps in the quadruple thinning explicit."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for QuadrupleHomogeneous only. Check the construction of CardinalityFront(4,X), its front property, the coloring fiber S, and the NashWilliams output of an infinite Y with a sub-front contained in S or disjoint from S. Verify explicitly why the selected sub-front is nontrivial, why its base is a subset of X, and why every four-element subset of Y is itself a member of that sub-front: the branch/density argument must be stated with the needed Front and cardinality facts and the relevant cross-node citations. Confirm that both color alternatives yield the exact Lean conclusion and that all dependencies used, including CardinalityFront, CardinalityFrontIsFront, NashWilliams, and any Front or InfiniteSetEnumeration facts, are explicitly cited.",
+    "comments": "Repair only Tablet/QuadrupleHomogeneous.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper node. Before invoking NashWilliams, explicitly prove that S is a subset of F from its set-builder definition. From F' subseteq F and the fact that every member of CardinalityFront(4,X) has cardinality 4, prove that the empty set is not in F'; then use the two alternatives in the Front definition to conclude FrontBase(F') = Y. Cite Front and FrontBase whenever using the front base, density, or union-of-members facts. For an arbitrary four-element s subseteq Y, do not say this is the triple case: explicitly construct an infinite Z subseteq Y whose first four elements are s, for example s union the tail of Y above max s; prove the subset and infinitude facts, apply front density, unpack ProperPrefixSet, and use the cardinality-four facts for both the resulting t and s to force t=s. Finally spell out both color alternatives: membership in S gives c(s)=1, while s in F' and F' disjoint S gives s not in S, and the definition of S together with s in F gives c(s)=0. Cite CardinalityFront, CardinalityFrontIsFront, NashWilliams, Front, FrontBase, InfiniteSetEnumeration, and any ProperPrefixSet or InitialSegment support actually used. Do not rely on the proof of another node or retain the phrase same as for triples.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 116,
+    "cycle": 117,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,34 +51,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "QuadrupleHomogeneous",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 991,
-        "reason": "Paper triple and quadruple homogeneous thinning used in the Rado argument.",
+        "reason": "The paper's successive triple and quadruple homogeneous thinning in the Rado argument.",
         "start_line": 989
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 989-991 first use homogeneous triples and then homogeneous quadruples; QuadrupleHomogeneous formalizes the second thinning needed to obtain a constant color on four-element subsets.",
+      "basis_summary": "Lines 989-991 first thin triples and then quadruples, ruling out the bad color by WQO; the repair makes the Nash-Williams and fixed-cardinality steps in the quadruple thinning explicit.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "RadoEmbedding has a current Sound approval. The held target QuadrupleHomogeneous is Sound-verifier-requestable and should receive the next focused verification; there is no concrete worker repair evidence for it in this review.",
-    "request_id": 391,
-    "request_sound_verifier_nodes": [
-      "QuadrupleHomogeneous"
-    ],
+    "reason": "The Sound verifier found five concrete omissions in QuadrupleHomogeneous: the Nash-Williams subset premise, the nontriviality and base argument for the sub-front, the required Front and FrontBase citations, the full fixed-cardinality argument for an arbitrary quadruple, and the final color-0 membership deduction. A bounded proof-text repair is warranted.",
+    "request_id": 393,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:a44233cd267f778e2e37bf88c78a87aeb59f7989e98901f6bfca62c80c95701f",
+        "kind": "Soundness",
+        "object": {
+          "node": "QuadrupleHomogeneous",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_391_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_393_decision.context.json"
 }
