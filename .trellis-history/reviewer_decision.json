@@ -1,15 +1,15 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BlockSigmaContinuous has a current Sound approval. EmapLemma is the next shift-support obligation, and its existing proof explicitly cites and uses the now-approved FirstMovedPoint, BlockSigmaEmbedding, BlockSigmaContinuous, and BlockSigmaIntertwines statements without an independent gap; a fresh Sound verdict is warranted.",
-    "comments": "Run a verifier-only Sound burst for `EmapLemma`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{FirstMovedPoint}` supplies both the least moved point and the fixed-below hypothesis, that `\\noderef{BlockSigmaEmbedding}` supplies an `IncSeq`-valued block map, and that `\\noderef{BlockSigmaContinuous}` supplies the exact prefix-continuity condition for the same map. Then check the coordinate equation using `\\noderef{BlockSigmaIntertwines}` with those hypotheses, and verify that `\\noderef{ContMor}`, `\\noderef{ShiftMap}`, `\\noderef{RightComp}`, and `\\noderef{SuccSeq}` identify the resulting equation with the stated continuous homomorphism. Do not rely on any dependency proof beyond its cited statement. The paper's Rmap/Emap constructions and block-map calculation are at lines 1787--1838 of `paper/paper.tex`.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "EmapLemma"
+    "reason": "EmapLemma has a current Sound approval. RmapLemma is the remaining paper-level shift-support map and its proof has concrete unsupported continuity and orbit-identity steps that require a bounded NL repair.",
+    "comments": "Repair only `Tablet/RmapLemma.tex`; preserve its Lean statement, imports, and paper construction. Retain `\\noderef{FirstMovedPoint}` and `\\noderef{OrbitEmbedding}`, and add citations to `\\noderef{OrbitPoint}`, `\\noderef{IncSeq}`, `\\noderef{BaireContinuous}` or the applicable continuity definition, `\\noderef{ContMor}`, `\\noderef{RightComp}`, `\\noderef{ShiftMap}`, and `\\noderef{SuccSeq}` at their uses. For `rho(f)=f\\circ G`, explicitly prove the output is an increasing embedding from composition of the two cited `IncSeq` maps. Give the finite-prefix witness: handle output length zero, and for positive length m choose an input prefix long enough to contain every `G(n)` with n<m; unpack prefix agreement to show the composed outputs agree coordinatewise. Do not merely assert that composition with G is continuous. In the homomorphism equation, use `G(n)=OrbitPoint(g,k_g,n)=g^[n](k_g)` and unfold the successor rule to prove `g(G(n))=G(n+1)`, then identify the actions with `RightComp`, `ShiftMap`, and `SuccSeq`. Do not rely on the proof of `OrbitEmbedding` for this identity. Add no helper or statement/import change. The corresponding paper construction is at lines 1787--1792 of `paper/paper.tex`.",
+    "task_blocker_ids": [
+      "soundness:node:RmapLemma:sound-v2:befb3feeac838183c7f684414658b072062d458c50a90a147544173c000d9f93"
     ],
-    "next_active": "",
-    "next_mode": "global",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "RmapLemma",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -19,13 +19,13 @@
     "paper_focus_ranges": [
       {
         "start_line": 1787,
-        "end_line": 1838,
-        "reason": "The paper's Rmap and Emap constructions and the block-map intertwining calculation."
+        "end_line": 1792,
+        "reason": "The paper's right-composition-to-shift construction and coordinate equation."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1787--1792 construct the right-composition-to-shift map, and lines 1794--1838 construct the blockwise shift-to-right-composition map, prove its increasing and continuous behavior, and establish the coordinate intertwining identity. The current Emap proof mirrors these steps through the cited tablet statements."
+      "basis_summary": "Lines 1787--1792 define the orbit enumeration G from the least moved point, set rho(f)=f composed with G, assert its continuity and increasing-image property, and compute rho(f composed with g) coordinatewise as rho(f) composed with the successor. The tablet proof must expand the paper's terse continuity assertion into the finite-prefix witness required by Lean."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Run a verifier-only Sound burst for `EmapLemma`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{FirstMovedPoint}` supplies both the least moved point and the fixed-below hypothesis, that `\\noderef{BlockSigmaEmbedding}` supplies an `IncSeq`-valued block map, and that `\\noderef{BlockSigmaContinuous}` supplies the exact prefix-continuity condition for the same map. Then check the coordinate equation using `\\noderef{BlockSigmaIntertwines}` with those hypotheses, and verify that `\\noderef{ContMor}`, `\\noderef{ShiftMap}`, `\\noderef{RightComp}`, and `\\noderef{SuccSeq}` identify the resulting equation with the stated continuous homomorphism. Do not rely on any dependency proof beyond its cited statement. The paper's Rmap/Emap constructions and block-map calculation are at lines 1787--1838 of `paper/paper.tex`.",
+    "comments": "Repair only `Tablet/RmapLemma.tex`; preserve its Lean statement, imports, and paper construction. Retain `\\noderef{FirstMovedPoint}` and `\\noderef{OrbitEmbedding}`, and add citations to `\\noderef{OrbitPoint}`, `\\noderef{IncSeq}`, `\\noderef{BaireContinuous}` or the applicable continuity definition, `\\noderef{ContMor}`, `\\noderef{RightComp}`, `\\noderef{ShiftMap}`, and `\\noderef{SuccSeq}` at their uses. For `rho(f)=f\\circ G`, explicitly prove the output is an increasing embedding from composition of the two cited `IncSeq` maps. Give the finite-prefix witness: handle output length zero, and for positive length m choose an input prefix long enough to contain every `G(n)` with n<m; unpack prefix agreement to show the composed outputs agree coordinatewise. Do not merely assert that composition with G is continuous. In the homomorphism equation, use `G(n)=OrbitPoint(g,k_g,n)=g^[n](k_g)` and unfold the successor rule to prove `g(G(n))=G(n+1)`, then identify the actions with `RightComp`, `ShiftMap`, and `SuccSeq`. Do not rely on the proof of `OrbitEmbedding` for this identity. Add no helper or statement/import change. The corresponding paper construction is at lines 1787--1792 of `paper/paper.tex`.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 82,
+    "cycle": 83,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,34 +50,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "RmapLemma",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1838,
-        "reason": "The paper's Rmap and Emap constructions and the block-map intertwining calculation.",
+        "end_line": 1792,
+        "reason": "The paper's right-composition-to-shift construction and coordinate equation.",
         "start_line": 1787
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1787--1792 construct the right-composition-to-shift map, and lines 1794--1838 construct the blockwise shift-to-right-composition map, prove its increasing and continuous behavior, and establish the coordinate intertwining identity. The current Emap proof mirrors these steps through the cited tablet statements.",
+      "basis_summary": "Lines 1787--1792 define the orbit enumeration G from the least moved point, set rho(f)=f composed with G, assert its continuity and increasing-image property, and compute rho(f composed with g) coordinatewise as rho(f) composed with the successor. The tablet proof must expand the paper's terse continuity assertion into the finite-prefix witness required by Lean.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BlockSigmaContinuous has a current Sound approval. EmapLemma is the next shift-support obligation, and its existing proof explicitly cites and uses the now-approved FirstMovedPoint, BlockSigmaEmbedding, BlockSigmaContinuous, and BlockSigmaIntertwines statements without an independent gap; a fresh Sound verdict is warranted.",
-    "request_id": 307,
-    "request_sound_verifier_nodes": [
-      "EmapLemma"
-    ],
+    "reason": "EmapLemma has a current Sound approval. RmapLemma is the remaining paper-level shift-support map and its proof has concrete unsupported continuity and orbit-identity steps that require a bounded NL repair.",
+    "request_id": 309,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:befb3feeac838183c7f684414658b072062d458c50a90a147544173c000d9f93",
+        "kind": "Soundness",
+        "object": {
+          "node": "RmapLemma",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_307_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_309_decision.context.json"
 }
