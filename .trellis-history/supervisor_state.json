@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 315,
+  "event_count": 318,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -59962,7 +59962,7 @@
     "committed": {
       "$r": "afef9337c0d6b817"
     },
-    "cycle": 62,
+    "cycle": 63,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60243,9 +60243,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 62,
+    "cycle": 63,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 62,
+    "cycles_since_clean": 63,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -60987,7 +60987,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 62,
+    "last_sound_response_cycle": 63,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61304,16 +61304,18 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "OrbitBlockCoverage": {
+      "SubFrontCharacterization": {
         "v1": {
-          "comments": "The proof establishes coverage by choosing the least n with l < G(n+1), and establishes uniqueness using strict monotonicity of the selected orbit embedding.",
-          "node": "OrbitBlockCoverage",
+          "comments": "The proof handles both implications and explicitly separates the trivial front from the nontrivial case. In the latter, it derives the base inclusion, chooses Z = Y, and proves both restriction inclusions using density and prefix-freeness.",
+          "node": {
+            "$s": "b93919442f024c21"
+          },
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The NL proof rigorously proves both disjuncts. It explicitly cites OrbitEmbedding, OrbitUnbounded, OrbitPoint, and OrbitBlock, uses the stated hypothesis k < g(k), handles the r = 0 case, obtains a least index in a nonempty subset of Nat, and rules out two distinct block indices by the order-embedding monotonicity of G."
+            "explanation": "The reverse implication applies FrontRestriction with the stated subset and infinitude hypotheses. The forward implication correctly handles F = {emptyset}; otherwise it derives FrontBase(F') = Y and FrontBase(F) = X, then proves F' = FrontRestrict F Y. For the hard inclusion, the constructed infinite set s union (Y/s) makes s and the density witness t comparable initial segments, so prefix-freeness of F forces s = t. The cross-node dependencies used in the argument are cited with noderef references."
           },
-          "summary": "SOUND: the natural-language proof is line-by-line sufficient for the stated orbit-block coverage and uniqueness theorem."
+          "summary": "SOUND: the natural-language proof rigorously establishes the stated sub-front characterization from the cited support nodes."
         }
       }
     },
@@ -61321,7 +61323,7 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 62,
+      "next_index": 63,
       "snapshots": [
         {
           "present": [
@@ -64763,6 +64765,124 @@
             "TildeFSingleton"
           ],
           "snapshot_index": 61
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitBlockCoverage",
+            "OrbitEmbedding",
+            "OrbitPoint",
+            "OrbitUnbounded",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            {
+              "$s": "b93919442f024c21"
+            },
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
+          "snapshot_index": 62
         }
       ]
     },
@@ -64771,13 +64891,11 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 254,
+    "request_seq": 256,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Request a Sound verifier for SubFrontCharacterization only. Its current proof cites FrontRestriction, FrontRestrict, Front, FrontBase, and InitialSegment and handles both the trivial-front and nontrivial-front cases, including both restriction inclusions. If it passes, request NashWilliams next; leave the repaired gated obligation for its eligible Sound slot.",
+    "reviewer_comments": "Request a verifier-only Sound burst for NashWilliams. Verify the current repaired proof, including the rank induction, restriction of each ray to the prescribed nested tail before applying the induction hypothesis, the SubFrontCharacterization citation, and the final infinite diagonal thinning. Do not edit Tablet content or assign a worker; leave the separately gated obligation omitted.",
     "reviewer_requested_sound_verifier_nodes": [
-      {
-        "$s": "b93919442f024c21"
-      }
+      "NashWilliams"
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -64823,6 +64941,9 @@
       },
       "PowerIResponseWitness": {
         "$s": "4894d612f70a8eb2"
+      },
+      "SubFrontCharacterization": {
+        "$s": "98f8b3f7b4b210cd"
       }
     },
     "sound_assessment_schema_version": 1,
@@ -65003,6 +65124,17 @@
       "PowerIResponseWitness": {
         "fingerprints": {
           "$r": "9dda7d615a49447a"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
+      "SubFrontCharacterization": {
+        "fingerprints": {
+          "$r": "ba1f869bd8a77ac3"
         },
         "lane_votes": {
           "v1": "Pass"
@@ -66090,7 +66222,8 @@
       "PowerChildWellFounded": "Pass",
       "PowerIResponseFailure": "Pass",
       "PowerIResponseLegal": "Pass",
-      "PowerIResponseWitness": "Pass"
+      "PowerIResponseWitness": "Pass",
+      "SubFrontCharacterization": "Pass"
     },
     "stage": "Start",
     "stuck_math_audit": {
