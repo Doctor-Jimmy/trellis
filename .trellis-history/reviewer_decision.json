@@ -1,13 +1,13 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker changed SuperNW.tex, so its prior substantive fingerprint is no longer binding; the paper lane approves the repaired target package. Continue with one unchanged substantive obligation, BadMultiRestrict, while leaving SuperNW for ordinary substantive re-verification and without requesting soundness work yet.",
-    "comments": "Repair only Tablet/BadMultiRestrict.tex and preserve its exact Lean statement, imports, and target. Make the node's role substantive as the restriction-stability lemma for bad multi-sequences, distinct from RestrictionShift: quantify over an arbitrary enumeration x, apply badness of h to x composed with z and its shifted enumeration, then identify the restricted map at ShiftMap x using RestrictionShift, with the relation orientation and negation explicit. Ground the repair in the paper's definitions of multi-sequence badness and shift, and give a complete non-SKETCH proof in the required single theorem/proof block. Do not edit SuperNW.tex; its changed package must be re-adjudicated normally. Leave the other substantive blockers live for later transitions.",
+    "reason": "The worker changed BadMultiRestrict.tex and its correspondence verifier approves the repaired statement, so its prior substantive fingerprint is no longer binding. Continue with one unchanged substantive obligation, BlockSigmaIntertwines, while leaving BadMultiRestrict for ordinary substantive re-verification and deferring soundness work until the remaining substantive blockers are resolved.",
+    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex, preserving its exact Lean statement, imports, and target. Make the lemma's role substantive as the coordinate-level intertwining identity used by EmapLemma, rather than a wrapper around EmapLemma or a repetition of OrbitBlockCoverage. State the two cases from the paper explicitly: the initial segment before the first orbit block, and l in [G(n), G(n+1)); in the latter case track the shifted block index and the exponent identity g^[f(n+1)-n](l) = g^[f(n+1)-(n+1)](g(l)). Cite only genuine support nodes, give a complete non-SKETCH proof in the required single theorem/proof block, and do not modify BadMultiRestrict.tex.",
     "task_blocker_ids": [
-      "substantiveness:node:BadMultiRestrict:{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
+      "substantiveness:node:BlockSigmaIntertwines:{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}"
     ],
     "reset_blocker_ids": [],
-    "next_active": "BadMultiRestrict",
+    "next_active": "BlockSigmaIntertwines",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -17,19 +17,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1222,
-        "end_line": 1250,
-        "reason": "The paper states Nash-Williams and its finite-valued constant sub-super-sequence corollary; the repaired SuperNW package must remain untouched and be rechecked against this passage."
-      },
-      {
-        "start_line": 1450,
-        "end_line": 1492,
-        "reason": "The paper defines bad multi-sequences and shift, then uses the corresponding badness argument; this grounds BadMultiRestrict's restriction-stability role."
+        "start_line": 1788,
+        "end_line": 1838,
+        "reason": "The paper states EmapLemma and proves the block-map intertwining identity by the initial-block and orbit-block cases, providing the exact support for this node."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly reread lines 1222-1250 and 1450-1492. The first passage states SuperNW as the finite-color corollary of Nash-Williams. The second defines badness by failure of the shift comparison and develops the shift-based badness argument, which supports a distinct restriction-stability lemma without changing its Lean statement."
+      "basis_summary": "I directly reread lines 1788-1838. The paper defines the block map sigma and proves sigma(f composed with SuccSeq)(l) = sigma(f)(g(l)) by separating l before G(0) from l in the unique block [G(n),G(n+1)), then using the shifted block index and the exponent identity. This is the precise paper role of BlockSigmaIntertwines as a support lemma for EmapLemma."
     },
     "request_sound_verifier_node_ids": []
   },
@@ -42,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/BadMultiRestrict.tex and preserve its exact Lean statement, imports, and target. Make the node's role substantive as the restriction-stability lemma for bad multi-sequences, distinct from RestrictionShift: quantify over an arbitrary enumeration x, apply badness of h to x composed with z and its shifted enumeration, then identify the restricted map at ShiftMap x using RestrictionShift, with the relation orientation and negation explicit. Ground the repair in the paper's definitions of multi-sequence badness and shift, and give a complete non-SKETCH proof in the required single theorem/proof block. Do not edit SuperNW.tex; its changed package must be re-adjudicated normally. Leave the other substantive blockers live for later transitions.",
+    "comments": "Repair only Tablet/BlockSigmaIntertwines.tex, preserving its exact Lean statement, imports, and target. Make the lemma's role substantive as the coordinate-level intertwining identity used by EmapLemma, rather than a wrapper around EmapLemma or a repetition of OrbitBlockCoverage. State the two cases from the paper explicitly: the initial segment before the first orbit block, and l in [G(n), G(n+1)); in the latter case track the shifted block index and the exponent identity g^[f(n+1)-n](l) = g^[f(n+1)-(n+1)](g(l)). Cite only genuine support nodes, give a complete non-SKETCH proof in the required single theorem/proof block, and do not modify BadMultiRestrict.tex.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 32,
+    "cycle": 33,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -53,29 +48,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BadMultiRestrict",
+    "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1250,
-        "reason": "The paper states Nash-Williams and its finite-valued constant sub-super-sequence corollary; the repaired SuperNW package must remain untouched and be rechecked against this passage.",
-        "start_line": 1222
-      },
-      {
-        "end_line": 1492,
-        "reason": "The paper defines bad multi-sequences and shift, then uses the corresponding badness argument; this grounds BadMultiRestrict's restriction-stability role.",
-        "start_line": 1450
+        "end_line": 1838,
+        "reason": "The paper states EmapLemma and proves the block-map intertwining identity by the initial-block and orbit-block cases, providing the exact support for this node.",
+        "start_line": 1788
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly reread lines 1222-1250 and 1450-1492. The first passage states SuperNW as the finite-color corollary of Nash-Williams. The second defines badness by failure of the shift comparison and develops the shift-based badness argument, which supports a distinct restriction-stability lemma without changing its Lean statement.",
+      "basis_summary": "I directly reread lines 1788-1838. The paper defines the block map sigma and proves sigma(f composed with SuccSeq)(l) = sigma(f)(g(l)) by separating l before G(0) from l in the unique block [G(n),G(n+1)), then using the shifted block index and the exponent identity. This is the precise paper role of BlockSigmaIntertwines as a support lemma for EmapLemma.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker changed SuperNW.tex, so its prior substantive fingerprint is no longer binding; the paper lane approves the repaired target package. Continue with one unchanged substantive obligation, BadMultiRestrict, while leaving SuperNW for ordinary substantive re-verification and without requesting soundness work yet.",
-    "request_id": 165,
+    "reason": "The worker changed BadMultiRestrict.tex and its correspondence verifier approves the repaired statement, so its prior substantive fingerprint is no longer binding. Continue with one unchanged substantive obligation, BlockSigmaIntertwines, while leaving BadMultiRestrict for ordinary substantive re-verification and deferring soundness work until the remaining substantive blockers are resolved.",
+    "request_id": 169,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -85,15 +75,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "{\"own_tex\":\"6dd0533f18d4295b47b65d29e0fdfd03825f689855ddb8eeb1e41cdfefb444e4\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "fingerprint": "{\"own_tex\":\"4b977874e4325a41634cec6113874481700ad55b57231352eeab170b5fddc21f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "kind": "Substantiveness",
         "object": {
-          "node": "BadMultiRestrict",
+          "node": "BlockSigmaIntertwines",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_165_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_169_decision.context.json"
 }

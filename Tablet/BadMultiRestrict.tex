@@ -1,10 +1,59 @@
 \begin{lemma}[Badness under restriction]
-If a multi-sequence $h$ is bad, then every restriction
-$h\mathbin{|}z$ is bad.
+Let $Q$ be a type, let $r$ be a binary relation on $Q$, let
+$h:\mathsf{IncSeq}\to Q$ be a multi-sequence, and let
+$z\in\mathsf{IncSeq}$.  If $h$ is bad for $r$, then the restricted
+multi-sequence $h\mathbin{|}z$ defined by
+
+\[
+(h\mathbin{|}z)(x)=h(z\circ x)
+\]
+
+is also bad for $r$.  Thus, for every $x\in\mathsf{IncSeq}$,
+
+\[
+\neg r\bigl((h\mathbin{|}z)(x),
+(h\mathbin{|}z)(\mathsf{ShiftMap}(x))\bigr).
+\]
 \end{lemma}
 \begin{proof}
-At $x$, badness of $h$ is applied to the enumeration $x\circ z$.  Its
-shift is $(x\circ z)\circ\mathsf{SuccSeq}$, which is the same enumeration
-appearing in $(h\mathbin{|}z)(\mathsf{ShiftMap}(x))$ by
-\noderef{RestrictionShift}.  Thus the required relation fails.
+Assume that $h$ is bad for $r$, and fix an arbitrary
+$x\in\mathsf{IncSeq}$.  By the definition of badness in
+\noderef{BadMultiSequence}, it is enough to apply the badness assertion for
+$h$ to the increasing enumeration $z\circ x$.  This gives
+
+\[
+\neg r\bigl(h(z\circ x),h(\mathsf{ShiftMap}(z\circ x))\bigr).
+\tag{1}
+\]
+
+By the restriction--shift identity \noderef{RestrictionShift},
+
+\[
+z\circ\mathsf{ShiftMap}(x)=\mathsf{ShiftMap}(z\circ x).
+\tag{2}
+\]
+
+Applying $h$ to (2) and using the definition of the restricted
+multi-sequence from \noderef{MultiSequenceRestrict} yields
+
+\[
+\begin{aligned}
+(h\mathbin{|}z)(x)&=h(z\circ x),\\
+(h\mathbin{|}z)(\mathsf{ShiftMap}(x))
+  &=h(z\circ\mathsf{ShiftMap}(x))
+   =h(\mathsf{ShiftMap}(z\circ x)).
+\end{aligned}
+\tag{3}
+\]
+
+Substituting the two equalities in (3) into (1) gives
+
+\[
+\neg r\bigl((h\mathbin{|}z)(x),
+(h\mathbin{|}z)(\mathsf{ShiftMap}(x))\bigr).
+\]
+
+Since $x$ was arbitrary, the defining condition in
+\noderef{BadMultiSequence} holds for $h\mathbin{|}z$, so the restriction
+is bad for $r$.
 \end{proof}
