@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 303,
+  "event_count": 306,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -145,7 +145,6 @@
     "17321c7dfb68255c": "378483aa967497a220cc7a901a5e07d54a419fdadaa21a60365cac325aee63e0",
     "173e05d877b003a1": "7dff867592f7bfd810a00b68e262685e064cc6a02249450cef7209e6c540b463",
     "174f9703834ad253": "afcdc24fd3b0a3c59fa2001a0e8355bbf226c7ee54f54b7b8f361dc635bde6d8",
-    "176eb65a6b77a487": "sound-v2:f88dd744299843d3ca353243ba371a5baa2e0d157f55f6d03ea34621056e61b8",
     "17a8679ab8fc391c": "3840bd71c98e46aa9d4d905c99a3d11f970d798581290084b4246f6400c2ab0c",
     "17b3962c483f46e5": "{\"own_tex\":\"ffe61735c0409307efd34016790dd62fdf1cf190aba281c663dbae9e6bfbeae5\",\"lean_semantic_closure\":\"80b58e7b33b5d37513c03c04054f8e3c64f228e35c2f55efec140a9b3e1abb25\",\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"3b139cf180ff5222b3158b114a347dd882546b1a4369944bdccb3e4007e61d07\",\"ContMor\":\"462bd721c766f7529975cca834c30556c9059ad5a2a85eb7aab353c162988ad7\",\"ContinuousHom\":\"4f9a9c1dde4fac1904c47ab0f1732e8df14a6b73e6134432aa27f198a2170a32\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"BaireContinuous\",\"ContMor\",\"ContinuousHom\",\"IncSeq\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "182b2d45f543f833": "{\"own_tex\":\"ad63077eabc34f89c7fb5115e17ddf956d4f78b855b953bf335e367374c18cc2\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
@@ -59965,7 +59964,7 @@
     "committed": {
       "$r": "afef9337c0d6b817"
     },
-    "cycle": 58,
+    "cycle": 59,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60246,9 +60245,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 58,
+    "cycle": 59,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 58,
+    "cycles_since_clean": 59,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "e9c138265db2375a"
@@ -60990,7 +60989,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 58,
+    "last_sound_response_cycle": 59,
     "last_stuck_math_audit_dispatched_cycle": 57,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -61307,16 +61306,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "FrontRayClosure": {
+      "InfiniteSetEnumeration": {
         "v1": {
-          "comments": "No independent blocking gaps found. The proof explicitly handles the trivial and nontrivial ray cases and cites each cross-node definition used.",
-          "node": "FrontRayClosure",
+          "comments": "",
+          "node": "InfiniteSetEnumeration",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The proof rigorously derives that a nontrivial front has no empty member and hence has base X, applies the cited Front density clause to establish ray density, proves the tail is infinite, establishes the ray base by both inclusions in the nontrivial case, and proves prefix-freeness by inserting the common least element. It then proves both inclusions of the displayed decomposition. The uses of Front, Ray, TailSet, FrontBase, InitialSegment, and ProperPrefixSet are explicitly cited, and the remaining finiteness and set manipulations are elementary shared background."
+            "explanation": "The proof explicitly constructs the least-element recursion, proves strict increase and hence membership in IncSeq using the cited IncSeq definition, and proves both range inclusions. The cardinality induction for F_n rigorously shows that every n in X is reached."
           },
-          "summary": "The natural-language proof line-by-line establishes Ray closure and the decomposition from the cited support statements."
+          "summary": "The natural-language proof is rigorous and line-by-line checkable from the stated background and the cited IncSeq dependency."
         }
       }
     },
@@ -61324,7 +61323,7 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 58,
+      "next_index": 59,
       "snapshots": [
         {
           "present": [
@@ -64312,6 +64311,118 @@
             "TildeFSingleton"
           ],
           "snapshot_index": 57
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            {
+              "$s": "4c3bac0512a45c96"
+            },
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRayClosure",
+            "FrontRestrict",
+            "FrontRestriction",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InfiniteSetEnumeration",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitPoint",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerIResponseFailure",
+            "PowerIResponseLegal",
+            "PowerIResponseWitness",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
+          "snapshot_index": 58
         }
       ]
     },
@@ -64320,12 +64431,14 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 246,
+    "request_seq": 248,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Dismiss the completed BlockSigmaIntertwines prose-repair task. Request a fresh Sound verdict for OrbitEmbedding, the first unresolved node in the audit's orbit dependency chain. If it passes, continue with OrbitUnbounded, OrbitBlockCoverage, and then the repaired BlockSigmaIntertwines; keep the separate front-chain and InfiniteSetEnumeration requests in their stated order. Do not assign a worker or reset any blocker in this transition. The current active Sound obligation is not a verifier failure and must remain omitted until it is dispatch-eligible.",
+    "reviewer_comments": "Run a verifier-only Sound burst for SubFrontCharacterization with no Tablet edits. The paper's sub-front proposition at lines 1204--1227 gives exactly the existential-base restriction interface now stated by the node, and the current proof cites Front, FrontBase, FrontRestriction, FrontRestrict, and InitialSegment for both directions and the trivial case. After this result, continue with NashWilliams; separately resume the orbit chain and then the repaired BlockSigmaIntertwines node in the audit's dependency order. Do not assign a worker or reset any current blocker in this transition.",
     "reviewer_requested_sound_verifier_nodes": [
-      "InfiniteSetEnumeration",
-      "OrbitEmbedding"
+      "OrbitEmbedding",
+      {
+        "$s": "b93919442f024c21"
+      }
     ],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
@@ -64346,7 +64459,7 @@
         "$s": "02af0d884f943dea"
       },
       "InfiniteSetEnumeration": {
-        "$s": "176eb65a6b77a487"
+        "$s": "c537b0af3e76d429"
       },
       "NashWilliams": {
         "$s": "e89f7611038e4db0"
@@ -64444,16 +64557,14 @@
       },
       "InfiniteSetEnumeration": {
         "fingerprints": {
-          "combined_sound_fp": {
-            "$s": "176eb65a6b77a487"
-          },
-          "dep_statement_hashes": {},
-          "own_tex_hash": "205600adf9d227a4076ce306fb6cd8fe95b04c8309d4f4574e25de6272c6e6a3"
+          "$r": "6521b473efd7ade1"
         },
-        "lane_votes": {},
-        "origin": "ReviewerAction",
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
         "reviewer_action_id": null,
-        "status": "ReviewerPinnedFail"
+        "status": "VerifierPass"
       },
       "NashWilliams": {
         "fingerprints": {
@@ -65629,7 +65740,7 @@
       "FrontRayClosure": "Pass",
       "FrontRestriction": "Pass",
       "FrontTreeWellFounded": "Pass",
-      "InfiniteSetEnumeration": "Fail",
+      "InfiniteSetEnumeration": "Pass",
       "NashWilliams": "Fail",
       "OrbitBlockCoverage": "Fail",
       "OrbitEmbedding": "Fail",

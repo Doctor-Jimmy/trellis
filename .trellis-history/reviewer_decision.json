@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The repaired NL proof has been accepted mechanically, and the latest Sound result approves FrontRayClosure. The active BlockSigmaIntertwines obligation has no Sound verdict in this cycle and remains an unknown gated record, so it is omitted from all blocker actions. The next audit-authorized dependency is OrbitEmbedding, whose current proof is requestable for fresh Sound verification.",
-    "comments": "Dismiss the completed BlockSigmaIntertwines prose-repair task. Request a fresh Sound verdict for OrbitEmbedding, the first unresolved node in the audit's orbit dependency chain. If it passes, continue with OrbitUnbounded, OrbitBlockCoverage, and then the repaired BlockSigmaIntertwines; keep the separate front-chain and InfiniteSetEnumeration requests in their stated order. Do not assign a worker or reset any blocker in this transition. The current active Sound obligation is not a verifier failure and must remain omitted until it is dispatch-eligible.",
+    "reason": "The latest Sound result approves InfiniteSetEnumeration, and the audit's front-chain prerequisite FrontRayClosure has already passed. The still-gated active obligation has no failure verdict and is omitted from all blocker actions. SubFrontCharacterization is the next fresh, requestable dependency in the independent front chain.",
+    "comments": "Run a verifier-only Sound burst for SubFrontCharacterization with no Tablet edits. The paper's sub-front proposition at lines 1204--1227 gives exactly the existential-base restriction interface now stated by the node, and the current proof cites Front, FrontBase, FrontRestriction, FrontRestrict, and InitialSegment for both directions and the trivial case. After this result, continue with NashWilliams; separately resume the orbit chain and then the repaired BlockSigmaIntertwines node in the audit's dependency order. Do not assign a worker or reset any current blocker in this transition.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "OrbitEmbedding"
+      "SubFrontCharacterization"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,23 +20,18 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1778,
-        "end_line": 1783,
-        "reason": "The paper defines the orbit map by iterates and records the successor composition identity used by the orbit support chain."
+        "start_line": 1204,
+        "end_line": 1227,
+        "reason": "The paper states and proves the sub-front characterization by restriction to an existential infinite base, including the trivial and nontrivial cases."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines G(n) as the nth iterate of g at the least moved point and uses the iterate successor law. The current OrbitEmbedding proof expands precisely these facts, so it is the appropriate first unresolved Sound dependency after the repaired prose and the approved FrontRayClosure result."
+      "basis_summary": "The cited proposition says that a subfamily of a front is itself a front exactly when it is the restriction of the original front to some infinite subset of its base. The current SubFrontCharacterization proof follows that interface and explicitly handles the trivial case, so fresh Sound verification is the appropriate next audit step."
     },
-    "dismissed_tasks": [
-      {
-        "id": "finish-block-sigma-intertwines",
-        "reason": "The worker completed the prescribed edit in Tablet/BlockSigmaIntertwines.tex, preserving the statement and support structure; deterministic node and full-tablet checks passed."
-      }
-    ],
+    "dismissed_tasks": [],
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with only the Sound-certification task live. FrontRayClosure has passed, so this transition begins the orbit chain with OrbitEmbedding. No worker repair, reset, human input, or structural change is warranted."
+      "notes": "The audit plan remains active with its Sound-certification task. InfiniteSetEnumeration and FrontRayClosure have passed; this transition advances the front chain to SubFrontCharacterization. No worker repair, reset, structural change, or human input is warranted."
     }
   },
   "response": {
@@ -48,19 +43,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Dismiss the completed BlockSigmaIntertwines prose-repair task. Request a fresh Sound verdict for OrbitEmbedding, the first unresolved node in the audit's orbit dependency chain. If it passes, continue with OrbitUnbounded, OrbitBlockCoverage, and then the repaired BlockSigmaIntertwines; keep the separate front-chain and InfiniteSetEnumeration requests in their stated order. Do not assign a worker or reset any blocker in this transition. The current active Sound obligation is not a verifier failure and must remain omitted until it is dispatch-eligible.",
+    "comments": "Run a verifier-only Sound burst for SubFrontCharacterization with no Tablet edits. The paper's sub-front proposition at lines 1204--1227 gives exactly the existential-base restriction interface now stated by the node, and the current proof cites Front, FrontBase, FrontRestriction, FrontRestrict, and InitialSegment for both directions and the trivial case. After this result, continue with NashWilliams; separately resume the orbit chain and then the repaired BlockSigmaIntertwines node in the audit's dependency order. Do not assign a worker or reset any current blocker in this transition.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 58,
+    "cycle": 59,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "finish-block-sigma-intertwines",
-        "reason": "The worker completed the prescribed edit in Tablet/BlockSigmaIntertwines.tex, preserving the statement and support structure; deterministic node and full-tablet checks passed."
-      }
-    ],
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -70,31 +60,31 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1783,
-        "reason": "The paper defines the orbit map by iterates and records the successor composition identity used by the orbit support chain.",
-        "start_line": 1778
+        "end_line": 1227,
+        "reason": "The paper states and proves the sub-front characterization by restriction to an existential infinite base, including the trivial and nontrivial cases.",
+        "start_line": 1204
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines G(n) as the nth iterate of g at the least moved point and uses the iterate successor law. The current OrbitEmbedding proof expands precisely these facts, so it is the appropriate first unresolved Sound dependency after the repaired prose and the approved FrontRayClosure result.",
+      "basis_summary": "The cited proposition says that a subfamily of a front is itself a front exactly when it is the restriction of the original front to some infinite subset of its base. The current SubFrontCharacterization proof follows that interface and explicitly handles the trivial case, so fresh Sound verification is the appropriate next audit step.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The repaired NL proof has been accepted mechanically, and the latest Sound result approves FrontRayClosure. The active BlockSigmaIntertwines obligation has no Sound verdict in this cycle and remains an unknown gated record, so it is omitted from all blocker actions. The next audit-authorized dependency is OrbitEmbedding, whose current proof is requestable for fresh Sound verification.",
-    "request_id": 246,
+    "reason": "The latest Sound result approves InfiniteSetEnumeration, and the audit's front-chain prerequisite FrontRayClosure has already passed. The still-gated active obligation has no failure verdict and is omitted from all blocker actions. SubFrontCharacterization is the next fresh, requestable dependency in the independent front chain.",
+    "request_id": 248,
     "request_sound_verifier_nodes": [
-      "OrbitEmbedding"
+      "SubFrontCharacterization"
     ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with only the Sound-certification task live. FrontRayClosure has passed, so this transition begins the orbit chain with OrbitEmbedding. No worker repair, reset, human input, or structural change is warranted.",
+      "notes": "The audit plan remains active with its Sound-certification task. InfiniteSetEnumeration and FrontRayClosure have passed; this transition advances the front chain to SubFrontCharacterization. No worker repair, reset, structural change, or human input is warranted.",
       "reviewer_lean_product": null
     },
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_246_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_248_decision.context.json"
 }
