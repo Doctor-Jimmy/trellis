@@ -3,16 +3,113 @@ For every $g,k,f$ as in \noderef{BlockSigma}, the block map $\sigma_f$ is
 an increasing injection of $\mathbb N$ into itself.
 \end{lemma}
 \begin{proof}
-On the initial interval $[0,G(0))$, $\sigma_f$ is the identity.  On the
-$n$th block it is an iterate of the increasing injection $g$, so it is
-strictly increasing there.  At the first boundary,
-$l<G(0)\leq G(f(0))=\sigma_f(G(0))$, so values before $G(0)$ precede the
-first block.  At a later boundary, if $G(n)\leq l<G(n+1)$ then
+Fix $g,k,f$ with $k<g(k)$, and write
 \[
-\sigma_f(l)<g^{[f(n)]}(k)=G(f(n))<G(f(n+1))
-=\sigma_f(G(n+1)),
+G(n)=\noderef{OrbitPoint}(g,k,n)=g^{[n]}(k).
 \]
-using strict increase of $f$ and the orbit-block identity.  Thus the pieces
-fit strictly increasingly.  The resulting strictly increasing map is the
-required order embedding.
+By \noderef{IncSeq}, both $g$ and $f$ are order embeddings of $\mathbb N$
+into itself.  In particular, they are strictly increasing.  We first record
+the iterate facts needed below.  For every $a$, the map $g^{[a]}$ is strictly
+increasing: this is clear for $a=0$, and if it holds for $a$, then
+$x<y$ gives
+\[
+g^{[a+1]}(x)=g\bigl(g^{[a]}(x)\bigr)
+ <g\bigl(g^{[a]}(y)\bigr)=g^{[a+1]}(y),
+\]
+where the middle inequality uses the strict increase of $g$.  Also, induction
+on $a$, using the successor rule for iterates, gives
+\[
+g^{[a]}(g(x))=g^{[a+1]}(x),
+\qquad
+g^{[a]}\bigl(g^{[b]}(x)\bigr)=g^{[a+b]}(x).
+\tag{1}
+\]
+
+Applying the first iterate fact to $k<g(k)$ and then using (1) shows
+$G(n)<G(n+1)$ for every $n$.  Thus $n<m$ implies $G(n)<G(m)$.  Similarly,
+strict increase of $f$ gives
+\[
+f(n)+1\leq f(n+1).
+\tag{2}
+\]
+An induction using (2) also gives $n\leq f(n)$ for every $n$: the base case
+is $0\leq f(0)$, and the successor step follows from
+$n+1\leq f(n)+1\leq f(n+1)$.
+
+For each $l$, \noderef{OrbitBlockCoverage} gives either $l<G(0)$ or a
+unique $n$ such that
+\[
+G(n)\leq l<G(n+1).
+\]
+Here the displayed inequalities are the block condition, with $G$ written
+using \noderef{OrbitPoint}.  Define $\sigma(l)$ by the corresponding two
+cases:
+\[
+\sigma(l)=
+\begin{cases}
+l,&l<G(0),\\
+g^{[f(n)-n]}(l),&G(n)\leq l<G(n+1)\text{ for the unique }n.
+\end{cases}
+\tag{3}
+\]
+The coverage and uniqueness just proved make (3) a total, well-defined map.
+Moreover, (3) is exactly the definition of \noderef{BlockSigma}.  Indeed, in
+the second case the chosen $n$ is the least index with $l<G(n+1)$: if $m<n$,
+then $m+1\leq n$, so monotonicity of $G$ gives
+$G(m+1)\leq G(n)\leq l$.  Thus no earlier index satisfies the defining
+inequality.  The coverage lemma ensures that the fallback case in
+\noderef{BlockSigma} never occurs.  Consequently
+\[
+\sigma(l)=\mathsf{BlockSigma}(g,k,f,l)
+\qquad\text{for every }l.
+\tag{4}
+\]
+
+It remains to prove that $\sigma$ is strictly increasing.  On the initial
+interval it is the identity, and on each block it is a fixed iterate of $g$;
+the iterate fact above proves strict increase within every piece.  For the
+first boundary, $G(0)<G(1)$ makes $G(0)$ the first point of the zeroth block,
+so (3) and (1) give
+\[
+\sigma(G(0))=g^{[f(0)]}(G(0))=g^{[f(0)]}(k)=G(f(0)).
+\]
+Since $0\leq f(0)$ and $G$ is increasing,
+\[
+l<G(0)\leq G(f(0))=\sigma(G(0))
+\tag{5}
+\]
+for every $l<G(0)$.
+
+Now suppose $G(n)\leq l<G(n+1)$ and set $a=f(n)-n$.  The inequality
+$n\leq f(n)$ makes this a natural number.  Strict increase of the iterate,
+(1), (2), and the definition of $G$ give
+\[
+\begin{aligned}
+\sigma(l)
+ &=g^{[a]}(l)
+  <g^{[a]}(G(n+1))\\
+ &=g^{[f(n)-n]}\bigl(g^{[n+1]}(k)\bigr)
+  =g^{[f(n)+1]}(k)
+  =G(f(n)+1)\\
+ &\leq G(f(n+1)).
+\end{aligned}
+\tag{6}
+\]
+The endpoint $G(n+1)$ belongs to the next block, so (3), (1), and the
+inequality $n+1\leq f(n+1)$ give
+\[
+\begin{aligned}
+\sigma(G(n+1))
+ &=g^{[f(n+1)-(n+1)]}\bigl(g^{[n+1]}(k)\bigr)\\
+ &=g^{[f(n+1)]}(k)=G(f(n+1)).
+\end{aligned}
+\tag{7}
+\]
+Combining (6) and (7) proves that every value in one block is strictly less
+than the value at the first point of the next block.  Together with (5), the
+within-piece inequalities therefore show that $x<y$ implies
+$\sigma(x)<\sigma(y)$, including when $x$ and $y$ lie in nonadjacent pieces.
+A strictly increasing map on the linearly ordered naturals is an order
+embedding, so $\sigma\in\mathsf{IncSeq}$.  Taking this $\sigma$ in (4)
+proves the stated existence.
 \end{proof}

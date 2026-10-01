@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FirstMovedPoint has a current Sound approval. BlockSigmaEmbedding is the next unresolved shift-support obligation, and its present proof uses BlockSigma, orbit-block coverage, strict increase, and boundary identities without explicit citations or line-by-line justification.",
-    "comments": "Repair only `Tablet/BlockSigmaEmbedding.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{IncSeq}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{OrbitPoint}` at their uses. Define the witness map by the two BlockSigma cases, use `\\noderef{OrbitBlockCoverage}` to cover every l and eliminate the fallback, and prove by induction from the order-embedding property in `\\noderef{IncSeq}` that every iterate of g is strictly increasing. Verify the initial boundary with `G(0) <= G(f(0))`, and for a later block prove the displayed cross-boundary inequality: if `G(n) <= l < G(n+1)`, compare `g^[f(n)-n](l)` with `G(f(n+1))` using `f(n)+1 <= f(n+1)`, then identify the value at `G(n+1)` by the iterate arithmetic. State explicitly why the pieces are strictly increasing and hence form an order embedding. Do not treat the proof of another node as supplying unstated hypotheses. The corresponding paper calculation is lines 1794--1814 of `paper/paper.tex`.",
+    "reason": "BlockSigmaEmbedding now has a current Sound approval. BlockSigmaContinuous is the next FreshUnknown shift-support obligation, and its proof has concrete unsupported steps in the finite-prefix argument.",
+    "comments": "Repair only `Tablet/BlockSigmaContinuous.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{PrefixAgree}` at their uses. For fixed f and n, explicitly construct a finite bound on the block indices relevant to all l<n, including the initial-interval case, rather than referring to an unspecified largest block. Use coverage and uniqueness to identify each relevant index, choose m larger than all such indices, and unpack PrefixAgree m f h to obtain f(i)=h(i) at every needed index. Explain that the least block index in BlockSigma depends only on g,k,l, so it is the same for f and h; then show the corresponding exponents and iterates, including the initial branch, give equal values for every l<n. Close by matching the displayed Lean conclusion, without an uncited appeal to BaireContinuous. Add no helper and change no signature or imports. The corresponding paper definition and continuity sentence are at lines 1794--1814 of `paper/paper.tex`.",
     "task_blocker_ids": [
-      "soundness:node:BlockSigmaEmbedding:sound-v2:c9326ac470cf102f07241517abcc901f0723994b626a62e501b981e08ced935d"
+      "soundness:node:BlockSigmaContinuous:sound-v2:972feea800ebca481e6366d423cfaa90cb238839cb98b85b25c37474ff11f115"
     ],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BlockSigmaEmbedding",
+    "next_active": "BlockSigmaContinuous",
     "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
@@ -20,12 +20,12 @@
       {
         "start_line": 1794,
         "end_line": 1814,
-        "reason": "The paper's block-map definition and increasing-embedding boundary calculation."
+        "reason": "The paper's block-map definition, boundary calculation, and continuity claim."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1794--1799 define the two pieces of the block map. Lines 1802--1813 prove within-block monotonicity and the initial and later boundary inequalities that make the pieces an increasing injection."
+      "basis_summary": "Lines 1794--1799 define BlockSigma by the initial interval and orbit blocks, while lines 1802--1814 establish the block-map calculation and state its continuity. The tablet node expands that continuity claim into the explicit finite-prefix equality required by its Lean statement."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/BlockSigmaEmbedding.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{IncSeq}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{OrbitPoint}` at their uses. Define the witness map by the two BlockSigma cases, use `\\noderef{OrbitBlockCoverage}` to cover every l and eliminate the fallback, and prove by induction from the order-embedding property in `\\noderef{IncSeq}` that every iterate of g is strictly increasing. Verify the initial boundary with `G(0) <= G(f(0))`, and for a later block prove the displayed cross-boundary inequality: if `G(n) <= l < G(n+1)`, compare `g^[f(n)-n](l)` with `G(f(n+1))` using `f(n)+1 <= f(n+1)`, then identify the value at `G(n+1)` by the iterate arithmetic. State explicitly why the pieces are strictly increasing and hence form an order embedding. Do not treat the proof of another node as supplying unstated hypotheses. The corresponding paper calculation is lines 1794--1814 of `paper/paper.tex`.",
+    "comments": "Repair only `Tablet/BlockSigmaContinuous.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{PrefixAgree}` at their uses. For fixed f and n, explicitly construct a finite bound on the block indices relevant to all l<n, including the initial-interval case, rather than referring to an unspecified largest block. Use coverage and uniqueness to identify each relevant index, choose m larger than all such indices, and unpack PrefixAgree m f h to obtain f(i)=h(i) at every needed index. Explain that the least block index in BlockSigma depends only on g,k,l, so it is the same for f and h; then show the corresponding exponents and iterates, including the initial branch, give equal values for every l<n. Close by matching the displayed Lean conclusion, without an uncited appeal to BaireContinuous. Add no helper and change no signature or imports. The corresponding paper definition and continuity sentence are at lines 1794--1814 of `paper/paper.tex`.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 80,
+    "cycle": 81,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,24 +50,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BlockSigmaEmbedding",
+    "next_active": "BlockSigmaContinuous",
     "next_active_coarse": null,
     "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1814,
-        "reason": "The paper's block-map definition and increasing-embedding boundary calculation.",
+        "reason": "The paper's block-map definition, boundary calculation, and continuity claim.",
         "start_line": 1794
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1794--1799 define the two pieces of the block map. Lines 1802--1813 prove within-block monotonicity and the initial and later boundary inequalities that make the pieces an increasing injection.",
+      "basis_summary": "Lines 1794--1799 define BlockSigma by the initial interval and orbit blocks, while lines 1802--1814 establish the block-map calculation and state its continuity. The tablet node expands that continuity claim into the explicit finite-prefix equality required by its Lean statement.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FirstMovedPoint has a current Sound approval. BlockSigmaEmbedding is the next unresolved shift-support obligation, and its present proof uses BlockSigma, orbit-block coverage, strict increase, and boundary identities without explicit citations or line-by-line justification.",
-    "request_id": 301,
+    "reason": "BlockSigmaEmbedding now has a current Sound approval. BlockSigmaContinuous is the next FreshUnknown shift-support obligation, and its proof has concrete unsupported steps in the finite-prefix argument.",
+    "request_id": 304,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -77,15 +77,15 @@
     "task_blockers": [
       {
         "deferred": false,
-        "fingerprint": "sound-v2:c9326ac470cf102f07241517abcc901f0723994b626a62e501b981e08ced935d",
+        "fingerprint": "sound-v2:972feea800ebca481e6366d423cfaa90cb238839cb98b85b25c37474ff11f115",
         "kind": "Soundness",
         "object": {
-          "node": "BlockSigmaEmbedding",
+          "node": "BlockSigmaContinuous",
           "otype": "node"
         }
       }
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_301_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_304_decision.context.json"
 }
