@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedSupport now has current Paper, Correspondence, and Sound approval, and its repaired proof establishes the raw depth-zero failure and the induction step. No further worker edit is warranted. The direct copied-game dependency PowerCopiedFailureMove remains FreshUnknown and is Sound-verifier requestable, so it should be certified before re-verifying the parent reflection target.",
-    "comments": "Leave Tablet/PowerCopiedSupport.tex unchanged. Request a real Sound verification of PowerCopiedFailureMove; do not assign a worker or reset any blocker. The current support proof is accepted. The requested dependency is the copied adjacent-play construction whose depth-zero failure, recursive legal response, and finite copied play are the ingredients used by the reflection chain. After this verification, continue bottom-up through the remaining PowerQReflection dependencies.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "PowerCopiedFailureMove"
+    "reason": "The Sound verifier found a concrete proof-detail defect in PowerCopiedFailureMove: the proof uses the cross-node definition PowerCopiedLeft without citing it and omits the defining equalities needed to identify the response terms in PowerIResponseFailure and PowerIResponseLegal with the named L-values. The induction strategy and hypotheses are otherwise appropriate, so a bounded TeX repair is warranted.",
+    "comments": "Edit only Tablet/PowerCopiedFailureMove.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. At the start of the proof, define or restate L_{i,j}=PowerCopiedLeft_r(h,x,i,j) and cite PowerCopiedLeft whenever its clauses are used. In the depth-zero case, derive the raw failures for the adjacent pairs at rows n and n+1 from BadMultiSequence and the PowerShiftIter successor equation. Use the PowerCopiedLeft depth-zero equations to identify L_{n,0} and L_{n+1,0} with the corresponding PowerIResponse terms. Apply PowerIResponseLegal to the first raw failure for the legal move from the raw left value to L_{n,0}; apply PowerIResponseLegal to the second raw failure for the legal move from the raw right value to L_{n+1,0}; then apply PowerIResponseFailure to the first raw failure and that second legal move to obtain failure of (L_{n,0},L_{n+1,0}). In the successor step, explicitly cite PowerCopiedLeft for both successor equations L_{n,k+1}=PowerIResponse(L_{n,k},L_{n+1,k}) and L_{n+1,k+1}=PowerIResponse(L_{n+1,k},L_{n+2,k}); use the row-(n+1) legal-move induction fact as the right move in PowerIResponseFailure, and use the resulting failed pair plus the defining equation for L_{n,k+2} with PowerIResponseLegal to obtain the next left move. Keep the simultaneous induction over all rows and cite every cross-node dependency at its exact use.",
+    "task_blocker_ids": [
+      "soundness:node:PowerCopiedFailureMove:sound-v2:0fa3265f1c4009884f26ef037ec4b188c227dca700a62c3c0bcdb16c41c42ccb"
     ],
-    "next_active": "",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "PowerCopiedFailureMove",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -20,12 +20,12 @@
       {
         "start_line": 1538,
         "end_line": 1549,
-        "reason": "The copied adjacent-play construction, finite play, terminal failure, and shifted-row alignment underlying PowerCopiedFailureMove."
+        "reason": "The manuscript's copied adjacent plays, finite terminal failure, and row-to-row response alignment underlying the failure and legal-move lemma."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The manuscript constructs copied plays between adjacent shifted values, states that each finite play ends in a failed atom pair, and identifies the right terminal value with the next row's corresponding value. This is the paper-level support for certifying PowerCopiedFailureMove before the reflection parent."
+      "basis_summary": "The paper constructs a copied play between adjacent shifted game positions, with each row ending in a failed pair and the next row supplying the copied right moves. The assigned repair preserves that construction while making every response identification and legal/failure transfer explicit in the tablet proof."
     }
   },
   "response": {
@@ -37,10 +37,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Leave Tablet/PowerCopiedSupport.tex unchanged. Request a real Sound verification of PowerCopiedFailureMove; do not assign a worker or reset any blocker. The current support proof is accepted. The requested dependency is the copied adjacent-play construction whose depth-zero failure, recursive legal response, and finite copied play are the ingredients used by the reflection chain. After this verification, continue bottom-up through the remaining PowerQReflection dependencies.",
+    "comments": "Edit only Tablet/PowerCopiedFailureMove.tex. Preserve the Lean statement, imports, and support DAG; do not add a helper. At the start of the proof, define or restate L_{i,j}=PowerCopiedLeft_r(h,x,i,j) and cite PowerCopiedLeft whenever its clauses are used. In the depth-zero case, derive the raw failures for the adjacent pairs at rows n and n+1 from BadMultiSequence and the PowerShiftIter successor equation. Use the PowerCopiedLeft depth-zero equations to identify L_{n,0} and L_{n+1,0} with the corresponding PowerIResponse terms. Apply PowerIResponseLegal to the first raw failure for the legal move from the raw left value to L_{n,0}; apply PowerIResponseLegal to the second raw failure for the legal move from the raw right value to L_{n+1,0}; then apply PowerIResponseFailure to the first raw failure and that second legal move to obtain failure of (L_{n,0},L_{n+1,0}). In the successor step, explicitly cite PowerCopiedLeft for both successor equations L_{n,k+1}=PowerIResponse(L_{n,k},L_{n+1,k}) and L_{n+1,k+1}=PowerIResponse(L_{n+1,k},L_{n+2,k}); use the row-(n+1) legal-move induction fact as the right move in PowerIResponseFailure, and use the resulting failed pair plus the defining equation for L_{n,k+2} with PowerIResponseLegal to obtain the next left move. Keep the simultaneous induction over all rows and cite every cross-node dependency at its exact use.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 139,
+    "cycle": 140,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -48,34 +48,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "PowerCopiedFailureMove",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1549,
-        "reason": "The copied adjacent-play construction, finite play, terminal failure, and shifted-row alignment underlying PowerCopiedFailureMove.",
+        "reason": "The manuscript's copied adjacent plays, finite terminal failure, and row-to-row response alignment underlying the failure and legal-move lemma.",
         "start_line": 1538
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The manuscript constructs copied plays between adjacent shifted values, states that each finite play ends in a failed atom pair, and identifies the right terminal value with the next row's corresponding value. This is the paper-level support for certifying PowerCopiedFailureMove before the reflection parent.",
+      "basis_summary": "The paper constructs a copied play between adjacent shifted game positions, with each row ending in a failed pair and the next row supplying the copied right moves. The assigned repair preserves that construction while making every response identification and legal/failure transfer explicit in the tablet proof.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedSupport now has current Paper, Correspondence, and Sound approval, and its repaired proof establishes the raw depth-zero failure and the induction step. No further worker edit is warranted. The direct copied-game dependency PowerCopiedFailureMove remains FreshUnknown and is Sound-verifier requestable, so it should be certified before re-verifying the parent reflection target.",
-    "request_id": 459,
-    "request_sound_verifier_nodes": [
-      "PowerCopiedFailureMove"
-    ],
+    "reason": "The Sound verifier found a concrete proof-detail defect in PowerCopiedFailureMove: the proof uses the cross-node definition PowerCopiedLeft without citing it and omits the defining equalities needed to identify the response terms in PowerIResponseFailure and PowerIResponseLegal with the named L-values. The induction strategy and hypotheses are otherwise appropriate, so a bounded TeX repair is warranted.",
+    "request_id": 461,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:0fa3265f1c4009884f26ef037ec4b188c227dca700a62c3c0bcdb16c41c42ccb",
+        "kind": "Soundness",
+        "object": {
+          "node": "PowerCopiedFailureMove",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_459_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_461_decision.context.json"
 }
