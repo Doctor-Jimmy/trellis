@@ -1,36 +1,45 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The worker made no Tablet edits, so OrbitBlockCoverage remains the unchanged soundness failure. The active audit confirms this statement is mathematically correct and makes its local prose repair the first required task; route that repair and keep the audit plan active.",
-    "comments": "Work only on Tablet/OrbitBlockCoverage.tex in this burst. Keep the Lean signature and imports unchanged, add no helper, and do not edit the orbit support nodes. Follow audit task finish-orbit-block-coverage: cite \\noderef{OrbitPoint} when identifying G(n)=g^{[n]}(k) with OrbitPoint(g,k,n), and cite \\noderef{OrbitBlock} when unpacking the block inequalities. In the branch l >= G(0), apply \\noderef{OrbitUnbounded} to get r with l < OrbitPoint(g,k,r), rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, and write r=m+1 to obtain l < G(m+1). Choose the least n with l < G(n+1), and prove G(n) <= l by cases: n=0 uses G(0) <= l; n=t+1 uses minimality to obtain not (l < G(t+1)) and hence G(n) <= l. For uniqueness, unpack both OrbitBlock predicates and use \\noderef{OrbitEmbedding}; if n<m then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l, with the reverse order handled symmetrically. Give a complete non-SKETCH proof. Do not request fresh Sound verification yet: the audit defers it until the global statement-lane surface is clear.",
-    "task_blocker_ids": [
-      "soundness:node:OrbitBlockCoverage:sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef"
-    ],
+    "reason": "OrbitBlockCoverage was repaired and its fingerprint changed, so its old Soundness failure is no longer an action for this transition. Dismiss that completed audit task and route the audit's next structural task: repair the false fixed-base SubFrontCharacterization interface together with the dependent Nash-Williams diagonal.",
+    "comments": "Continue in Global mode with next_active SubFrontCharacterization. Work only on the audit task repair-subfront-and-nash-diagonal: replace the fixed-base Lean conclusion by the paper-faithful existential-base interface, under Front F X and F' subset F, namely (exists Y, Front F' Y) iff exists Z, Z subset X and Z.Infinite and F' = FrontRestrict F Z. Make the TeX statement explicit about the existential base and prove both directions, including the trivial-front case, citing Front, FrontRestriction, FrontRestrict, and FrontBase as used. Then update NashWilliams.tex while preserving the exact Lean target and adding no helper: at stage k set A_k=TailSet(X_(k-1),n_k), form K_k=FrontRestrict(F_(n_k),A_k), use FrontRestriction to establish that K_k is a front, explain that its prefix tree is a subtree of the ray tree and has rank below F, and apply the induction hypothesis to K_k with the restricted coloring. Use the corrected SubFrontCharacterization to obtain X_k subset A_k; do not apply induction to the full ray and then demand a specially located base. Keep all dependency citations explicit. Do not request Sound verification yet; the audit defers Sound until the statement-lane surface is clear.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "OrbitBlockCoverage",
+    "next_active": "SubFrontCharacterization",
     "next_active_coarse": "",
-    "next_mode": "targeted",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [
       {
-        "start_line": 1794,
-        "end_line": 1815,
-        "reason": "The paper defines the initial segment and the half-open orbit blocks [G(n),G(n+1)) used in the generalized-shift construction."
+        "start_line": 1204,
+        "end_line": 1227,
+        "reason": "The paper's sub-front proposition existentially quantifies the base and identifies a sub-front with a restriction of the original front."
+      },
+      {
+        "start_line": 1242,
+        "end_line": 1253,
+        "reason": "The Nash-Williams recursion first restricts each ray to the prescribed nested tail before applying the lower-rank induction hypothesis."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), separates l<G(0) from the intervals G(n)<=l<G(n+1), and uses the lower and upper block inequalities in the increasingness proof. The audit's probe confirms that the tablet coverage lemma has this correct mathematical content; only its line-by-line prose and dependency citations are incomplete."
+      "basis_summary": "The first cited passage says that a sub-front is a restriction to some infinite subset of the original base, with the base existential rather than fixed in advance. The second passage applies induction to F_(n_k) restricted to X_(k-1)/n_k, exactly the nested-tail construction required to make the diagonal bases compatible."
     },
+    "dismissed_tasks": [
+      {
+        "id": "finish-orbit-block-coverage",
+        "reason": "Completed: the worker changed OrbitBlockCoverage.tex and supplied the requested OrbitEmbedding, OrbitPoint, OrbitUnbounded, and OrbitBlock citations together with the successor-witness, least-index case split, and two-order uniqueness argument. Its old Soundness fingerprint is therefore omitted from this transition."
+      }
+    ],
     "stuck_math_audit": {
-      "notes": "Keep the active audit plan and its five tasks. This burst executes the first task, finish-orbit-block-coverage, because the worker made no edits and the audit explicitly confirms the orbit claim is true and locally repairable. Do not dismiss any audit task, request Sound verification, or broaden to the SubFront/Nash statement repair until the worker has completed this orbit prose edit; after a changed fingerprint, omit the repaired Soundness blocker and return the package to the ordinary lanes.",
+      "notes": "The active audit plan remains in force. Its first task is complete and dismissed; execute repair-subfront-and-nash-diagonal next. Do not dismiss the remaining audit tasks, request Sound verification, or weaken the paper-facing statements. After this coordinated signature/proof repair changes the relevant fingerprints, return the package to the ordinary statement lanes.",
       "reviewer_lean_product": null
     }
   },
@@ -43,56 +52,56 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work only on Tablet/OrbitBlockCoverage.tex in this burst. Keep the Lean signature and imports unchanged, add no helper, and do not edit the orbit support nodes. Follow audit task finish-orbit-block-coverage: cite \\noderef{OrbitPoint} when identifying G(n)=g^{[n]}(k) with OrbitPoint(g,k,n), and cite \\noderef{OrbitBlock} when unpacking the block inequalities. In the branch l >= G(0), apply \\noderef{OrbitUnbounded} to get r with l < OrbitPoint(g,k,r), rule out r=0 using OrbitPoint(g,k,0)=G(0) <= l, and write r=m+1 to obtain l < G(m+1). Choose the least n with l < G(n+1), and prove G(n) <= l by cases: n=0 uses G(0) <= l; n=t+1 uses minimality to obtain not (l < G(t+1)) and hence G(n) <= l. For uniqueness, unpack both OrbitBlock predicates and use \\noderef{OrbitEmbedding}; if n<m then G(n+1) <= G(m), so l < G(n+1) contradicts G(m) <= l, with the reverse order handled symmetrically. Give a complete non-SKETCH proof. Do not request fresh Sound verification yet: the audit defers it until the global statement-lane surface is clear.",
+    "comments": "Continue in Global mode with next_active SubFrontCharacterization. Work only on the audit task repair-subfront-and-nash-diagonal: replace the fixed-base Lean conclusion by the paper-faithful existential-base interface, under Front F X and F' subset F, namely (exists Y, Front F' Y) iff exists Z, Z subset X and Z.Infinite and F' = FrontRestrict F Z. Make the TeX statement explicit about the existential base and prove both directions, including the trivial-front case, citing Front, FrontRestriction, FrontRestrict, and FrontBase as used. Then update NashWilliams.tex while preserving the exact Lean target and adding no helper: at stage k set A_k=TailSet(X_(k-1),n_k), form K_k=FrontRestrict(F_(n_k),A_k), use FrontRestriction to establish that K_k is a front, explain that its prefix tree is a subtree of the ray tree and has rank below F, and apply the induction hypothesis to K_k with the restricted coloring. Use the corrected SubFrontCharacterization to obtain X_k subset A_k; do not apply induction to the full ray and then demand a specially located base. Keep all dependency citations explicit. Do not request Sound verification yet; the audit defers Sound until the statement-lane surface is clear.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 52,
+    "cycle": 53,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [],
+    "dismissed_tasks": [
+      {
+        "id": "finish-orbit-block-coverage",
+        "reason": "Completed: the worker changed OrbitBlockCoverage.tex and supplied the requested OrbitEmbedding, OrbitPoint, OrbitUnbounded, and OrbitBlock citations together with the successor-witness, least-index case split, and two-order uniqueness argument. Its old Soundness fingerprint is therefore omitted from this transition."
+      }
+    ],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "OrbitBlockCoverage",
+    "next_active": "SubFrontCharacterization",
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1815,
-        "reason": "The paper defines the initial segment and the half-open orbit blocks [G(n),G(n+1)) used in the generalized-shift construction.",
-        "start_line": 1794
+        "end_line": 1227,
+        "reason": "The paper's sub-front proposition existentially quantifies the base and identifies a sub-front with a restriction of the original front.",
+        "start_line": 1204
+      },
+      {
+        "end_line": 1253,
+        "reason": "The Nash-Williams recursion first restricts each ray to the prescribed nested tail before applying the lower-rank induction hypothesis.",
+        "start_line": 1242
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines G(n)=g^[n](k_g), separates l<G(0) from the intervals G(n)<=l<G(n+1), and uses the lower and upper block inequalities in the increasingness proof. The audit's probe confirms that the tablet coverage lemma has this correct mathematical content; only its line-by-line prose and dependency citations are incomplete.",
+      "basis_summary": "The first cited passage says that a sub-front is a restriction to some infinite subset of the original base, with the base existential rather than fixed in advance. The second passage applies induction to F_(n_k) restricted to X_(k-1)/n_k, exactly the nested-tail construction required to make the diagonal bases compatible.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The worker made no Tablet edits, so OrbitBlockCoverage remains the unchanged soundness failure. The active audit confirms this statement is mathematically correct and makes its local prose repair the first required task; route that repair and keep the audit plan active.",
-    "request_id": 227,
+    "reason": "OrbitBlockCoverage was repaired and its fingerprint changed, so its old Soundness failure is no longer an action for this transition. Dismiss that completed audit task and route the audit's next structural task: repair the false fixed-base SubFrontCharacterization interface together with the dependent Nash-Williams diagonal.",
+    "request_id": 229,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "Keep the active audit plan and its five tasks. This burst executes the first task, finish-orbit-block-coverage, because the worker made no edits and the audit explicitly confirms the orbit claim is true and locally repairable. Do not dismiss any audit task, request Sound verification, or broaden to the SubFront/Nash statement repair until the worker has completed this orbit prose edit; after a changed fingerprint, omit the repaired Soundness blocker and return the package to the ordinary lanes.",
+      "notes": "The active audit plan remains in force. Its first task is complete and dismissed; execute repair-subfront-and-nash-diagonal next. Do not dismiss the remaining audit tasks, request Sound verification, or weaken the paper-facing statements. After this coordinated signature/proof repair changes the relevant fingerprints, return the package to the ordinary statement lanes.",
       "reviewer_lean_product": null
     },
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef",
-        "kind": "Soundness",
-        "object": {
-          "node": "OrbitBlockCoverage",
-          "otype": "node"
-        }
-      }
-    ],
-    "work_style_hint": "none"
+    "task_blockers": [],
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_227_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_229_decision.context.json"
 }

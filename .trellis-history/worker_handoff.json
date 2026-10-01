@@ -1,7 +1,8 @@
 {
   "raw": {
     "audit_request": null,
-    "comments": "No Tablet content was edited in this burst, as requested. The repaired NashWilliams package was inspected with its explicit rank/ray induction, SubFrontCharacterization citation, infinite-tail construction, Boolean thinning, and final restriction argument preserved. Deterministic checks pass for NashWilliams and its direct support nodes, the full 176-node tablet shape check, the 790-job Lean tablet build, and diff hygiene. The current request dispatched no paper-faithfulness, correspondence, or substantiveness lane (all corresponding request frontiers are empty), so no semantic verifier verdict is being claimed here.",
+    "challenge_claim_updates": {},
+    "comments": "Expanded OrbitBlockCoverage.tex with explicit citations and line-by-line arguments: OrbitEmbedding identifies the orbit map, OrbitPoint supplies the iterate meaning, OrbitUnbounded supplies a successor witness after ruling out index zero, leastness gives the lower bound by cases, and both strict index orders are excluded for uniqueness. No Sound request was made, as instructed.",
     "deleted_nodes": [],
     "deviation_deletions": [],
     "deviation_requests": {},
@@ -10,7 +11,7 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Audited the repaired NashWilliams package without editing Tablet; all deterministic node, tablet-shape, and Lean-build checks pass.",
+    "summary": "Repaired the OrbitBlockCoverage natural-language proof with a detailed, cited proof of coverage and uniqueness.",
     "target_claim_updates": {}
   },
   "response": {
@@ -21,8 +22,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "No Tablet content was edited in this burst, as requested. The repaired NashWilliams package was inspected with its explicit rank/ray induction, SubFrontCharacterization citation, infinite-tail construction, Boolean thinning, and final restriction argument preserved. Deterministic checks pass for NashWilliams and its direct support nodes, the full 176-node tablet shape check, the 790-job Lean tablet build, and diff hygiene. The current request dispatched no paper-faithfulness, correspondence, or substantiveness lane (all corresponding request frontiers are empty), so no semantic verifier verdict is being claimed here.",
-    "cycle": 51,
+    "comments": "Expanded OrbitBlockCoverage.tex with explicit citations and line-by-line arguments: OrbitEmbedding identifies the orbit map, OrbitPoint supplies the iterate meaning, OrbitUnbounded supplies a successor witness after ruling out index zero, leastness gives the lower bound by cases, and both strict index orders are excluded for uniqueness. No Sound request was made, as instructed.",
+    "cycle": 53,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -38,7 +39,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 223,
+    "request_id": 228,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1334,12 +1335,14 @@
           "own_tex_hash": "b9ad896c2daae80fd33b584a1ddbcf1391ec271d149eeb3c23a252d90ae5c3b2"
         },
         "OrbitBlockCoverage": {
-          "combined_sound_fp": "sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef",
+          "combined_sound_fp": "sound-v2:9f633d4b8a0eb6435d28145d67947110ea3e2d9fe974b49152c6d19daddc97cd",
           "dep_statement_hashes": {
+            "OrbitBlock": "f5f953f95f3489a256999b37f093470af10e6bf1d7b689496ed05f16e4e42706",
             "OrbitEmbedding": "5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018",
+            "OrbitPoint": "aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94",
             "OrbitUnbounded": "1499c0f20357ec3889ffae0356ba64a5f151aec65250765b39571390a23b1a43"
           },
-          "own_tex_hash": "9a10debc884e91c8043df796e3debd3bba49a15f743a6d70b8cf884a4bfe9952"
+          "own_tex_hash": "c1d35222f43de9ddf54aee74606a41ba4dedcb0f76dac99930eb05fb1dee7fce"
         },
         "OrbitEmbedding": {
           "combined_sound_fp": "sound-v2:f846eeb8a35da0be6b2f11d60086a480f12b3d90254f05f8ecad075c4a21432d",
@@ -2097,7 +2100,7 @@
         "NashWilliams": "sound-v2:0928d7f082c67b406d54caf698970ea247602ed5142830d32c82cd4046ad74a1",
         "NoBadPerfectSuper": "sound-v2:cf074a97b1792ef8a42a2419d7feace0dcb01b98ce6bb4dd8a1771e87a3f3cd3",
         "OrbitBlock": "sound-v2:2a1398bb6313aaaa95692080dfa1c0322d995f3d2fe85d46766cae74e9fed86d",
-        "OrbitBlockCoverage": "sound-v2:cdbf4f43a7d7f992282c61b531ac77c130ba47c7fcdc147934dd0879533ff3ef",
+        "OrbitBlockCoverage": "sound-v2:9f633d4b8a0eb6435d28145d67947110ea3e2d9fe974b49152c6d19daddc97cd",
         "OrbitEmbedding": "sound-v2:f846eeb8a35da0be6b2f11d60086a480f12b3d90254f05f8ecad075c4a21432d",
         "OrbitPoint": "sound-v2:81ea51d8ffd747c5a13e77ba023ec99d3f1c7ebf20879ea01ffa4249c6aa1b86",
         "OrbitUnbounded": "sound-v2:c7badd220dd06f513fe1623498ed3164e975a492f8f77f770c82f6ed41ccaf2b",
@@ -2549,7 +2552,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Audited the repaired NashWilliams package without editing Tablet; all deterministic node, tablet-shape, and Lean-build checks pass.",
+    "summary": "Repaired the OrbitBlockCoverage natural-language proof with a detailed, cited proof of coverage and uniqueness.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2735,7 +2738,7 @@
     "OrbitBlock.lean": "0c2728053547190cd2254df9160b3bc7e913b78a08e3fa3c0ffd153c4b54fbba",
     "OrbitBlock.tex": "b9ad896c2daae80fd33b584a1ddbcf1391ec271d149eeb3c23a252d90ae5c3b2",
     "OrbitBlockCoverage.lean": "6f42387e676bb7cbe31152716aee4d11e533480da145f03d13f10a3e14b5ed0b",
-    "OrbitBlockCoverage.tex": "9a10debc884e91c8043df796e3debd3bba49a15f743a6d70b8cf884a4bfe9952",
+    "OrbitBlockCoverage.tex": "c1d35222f43de9ddf54aee74606a41ba4dedcb0f76dac99930eb05fb1dee7fce",
     "OrbitEmbedding.lean": "ee6de85a671d18093193bff1eab03e3a9da8e186ecb190f3cb8836a83484b40d",
     "OrbitEmbedding.tex": "82e5de0af7a5f5b0eadee195abb96b513fb3d3e3a9edf118c7effcca98690971",
     "OrbitPoint.lean": "7c117bc64a0d99983a98b485eec1d3b6beff1d8277adefa16d6b97baf5a397e1",
@@ -2915,7 +2918,7 @@
     "TripleHomogeneous.tex": "da6fe7bf852b671e136d0e2cdeed14efffd15c8b48f16990b8c4d1fc73478337",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_223_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_228_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
