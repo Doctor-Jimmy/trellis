@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontRayClosure is already a current Sound pass, and SubFrontCharacterization has just received a Sound approval. The audit's remaining front-chain prerequisite is NashWilliams, whose repaired proof is requestable and explicitly depends on the existential-base restriction interface. No worker repair or blocker reset is warranted.",
-    "comments": "Request a verifier-only Sound burst for NashWilliams. Verify the current repaired proof, including the rank induction, restriction of each ray to the prescribed nested tail before applying the induction hypothesis, the SubFrontCharacterization citation, and the final infinite diagonal thinning. Do not edit Tablet content or assign a worker; leave the separately gated obligation omitted.",
+    "reason": "The audit's front-chain prerequisites and the first three orbit prerequisites now all have current Sound approvals. The repaired block-intertwining proof is the remaining named orbit-chain verification, is requestable now, and matches the paper's calculation. No worker repair or blocker reset is warranted.",
+    "comments": "Request a verifier-only Sound burst for BlockSigmaIntertwines. Verify the current two-case proof against the paper: the initial fixed-point interval, the orbit-block successor placement, the increasing-embedding bound m <= f(m), the iterate-shift induction, and the final equality of the two block formulas. Do not edit Tablet content or assign a worker; the verification request is the warranted route for this repaired node.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [
-      "NashWilliams"
+      "BlockSigmaIntertwines"
     ],
     "next_active": "",
     "next_active_coarse": "",
@@ -20,17 +20,17 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1233,
-        "end_line": 1241,
-        "reason": "The paper's Nash-Williams proof gives the nested-tail ray induction, homogeneous diagonal selection, and final restriction argument."
+        "start_line": 1794,
+        "end_line": 1833,
+        "reason": "The paper's block-map proof contains the two cases, orbit-block endpoint calculation, and intertwining identity for the next Sound check."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage constructs successive infinite tails, applies the lower-rank induction to each ray restriction, thins the binary alternatives to one infinite set of indices, and concludes that the resulting front restriction is homogeneous. The current NashWilliams proof preserves this argument while making the prescribed-tail restriction and SubFrontCharacterization dependency explicit."
+      "basis_summary": "The cited passage defines the orbit blocks, proves the initial interval and adjacent-block inequalities, and identifies the two expressions whose equality gives the intertwining law. The current proof preserves those cases and adds explicit citations and inductions for the strict-growth, index, orbit-successor, and iterate-shift steps."
     },
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. FrontRayClosure and SubFrontCharacterization now pass; this transition advances the front chain to NashWilliams. No worker repair, reset, structural change, or human input is warranted."
+      "notes": "The audit plan remains active with its Sound-certification task. FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage now pass; this transition requests the repaired BlockSigmaIntertwines Sound verdict, the remaining named chain item. No worker repair, reset, structural change, or human input is warranted."
     },
     "dismissed_tasks": []
   },
@@ -43,10 +43,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Request a verifier-only Sound burst for NashWilliams. Verify the current repaired proof, including the rank induction, restriction of each ray to the prescribed nested tail before applying the induction hypothesis, the SubFrontCharacterization citation, and the final infinite diagonal thinning. Do not edit Tablet content or assign a worker; leave the separately gated obligation omitted.",
+    "comments": "Request a verifier-only Sound burst for BlockSigmaIntertwines. Verify the current two-case proof against the paper: the initial fixed-point interval, the orbit-block successor placement, the increasing-embedding bound m <= f(m), the iterate-shift induction, and the final equality of the two block formulas. Do not edit Tablet content or assign a worker; the verification request is the warranted route for this repaired node.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 63,
+    "cycle": 64,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -60,31 +60,31 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1241,
-        "reason": "The paper's Nash-Williams proof gives the nested-tail ray induction, homogeneous diagonal selection, and final restriction argument.",
-        "start_line": 1233
+        "end_line": 1833,
+        "reason": "The paper's block-map proof contains the two cases, orbit-block endpoint calculation, and intertwining identity for the next Sound check.",
+        "start_line": 1794
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage constructs successive infinite tails, applies the lower-rank induction to each ray restriction, thins the binary alternatives to one infinite set of indices, and concludes that the resulting front restriction is homogeneous. The current NashWilliams proof preserves this argument while making the prescribed-tail restriction and SubFrontCharacterization dependency explicit.",
+      "basis_summary": "The cited passage defines the orbit blocks, proves the initial interval and adjacent-block inequalities, and identifies the two expressions whose equality gives the intertwining law. The current proof preserves those cases and adds explicit citations and inductions for the strict-growth, index, orbit-successor, and iterate-shift steps.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontRayClosure is already a current Sound pass, and SubFrontCharacterization has just received a Sound approval. The audit's remaining front-chain prerequisite is NashWilliams, whose repaired proof is requestable and explicitly depends on the existential-base restriction interface. No worker repair or blocker reset is warranted.",
-    "request_id": 256,
+    "reason": "The audit's front-chain prerequisites and the first three orbit prerequisites now all have current Sound approvals. The repaired block-intertwining proof is the remaining named orbit-chain verification, is requestable now, and matches the paper's calculation. No worker repair or blocker reset is warranted.",
+    "request_id": 258,
     "request_sound_verifier_nodes": [
-      "NashWilliams"
+      "BlockSigmaIntertwines"
     ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit plan remains active with its Sound-certification task. FrontRayClosure and SubFrontCharacterization now pass; this transition advances the front chain to NashWilliams. No worker repair, reset, structural change, or human input is warranted.",
+      "notes": "The audit plan remains active with its Sound-certification task. FrontRayClosure, SubFrontCharacterization, NashWilliams, OrbitEmbedding, OrbitUnbounded, and OrbitBlockCoverage now pass; this transition requests the repaired BlockSigmaIntertwines Sound verdict, the remaining named chain item. No worker repair, reset, structural change, or human input is warranted.",
       "reviewer_lean_product": null
     },
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_256_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_258_decision.context.json"
 }
