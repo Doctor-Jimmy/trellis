@@ -1,31 +1,31 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The revised RadoEmbedding proof still applies index-level preservation to (0,k), but (0,k) is not an IncreasingPair when k=0. Route a second bounded proof repair that separates the direct homogeneous-set monotonicity fact from preservation of the constructed e.",
-    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency. Return to the paper's construction with a=min M, X=M minus {a}, an increasing enumeration x of X, and e(i,j)=f(x(i),x(j)). Before defining e, state and prove inside the natural-language proof the direct M-monotonicity fact: for any two literal increasing pairs (u,v) and (s,t) with all entries in M, RadoOrder((u,v),(s,t)) implies r(f(u,v),f(s,t)); prove its same-first-coordinate case from the triple homogeneity and its separated-pair case from the quadruple homogeneity, with the RadoOrder citation. Use this fact, not e-preservation, in all reflection cases. In particular, when k<i use the literal increasing pair (a,x(k)) <= (x(i),x(j)); since a is the minimum of M and x(k) lies in X, this pair is valid even for k=0. Compose the resulting relation with the assumed r(e(p),e(q)) and invoke BadPairSequence at a<x(k)<x(l). Keep the preservation proof for e restricted to X, and retain explicit citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding.",
-    "task_blocker_ids": [
-      "soundness:node:RadoEmbedding:sound-v2:92d6c5ec68b4081041fe47e1f22a21054ff54bada14f7f60cccee7d314e55f2e"
-    ],
+    "reason": "RadoEmbedding has a current Sound approval. The held target QuadrupleHomogeneous is Sound-verifier-requestable and should receive the next focused verification; there is no concrete worker repair evidence for it in this review.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for QuadrupleHomogeneous only. Check the construction of CardinalityFront(4,X), its front property, the coloring fiber S, and the NashWilliams output of an infinite Y with a sub-front contained in S or disjoint from S. Verify explicitly why the selected sub-front is nontrivial, why its base is a subset of X, and why every four-element subset of Y is itself a member of that sub-front: the branch/density argument must be stated with the needed Front and cardinality facts and the relevant cross-node citations. Confirm that both color alternatives yield the exact Lean conclusion and that all dependencies used, including CardinalityFront, CardinalityFrontIsFront, NashWilliams, and any Front or InfiniteSetEnumeration facts, are explicitly cited.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "RadoEmbedding",
+    "request_sound_verifier_node_ids": [
+      "QuadrupleHomogeneous"
+    ],
+    "next_active": "",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 986,
-        "end_line": 994,
-        "reason": "Paper Rado embedding proof, especially the M-monotonicity sentence and the final minimum-element reflection case."
+        "start_line": 989,
+        "end_line": 991,
+        "reason": "Paper triple and quadruple homogeneous thinning used in the Rado argument."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 986-994 remove the minimum from M for the Rado copy and then use the homogeneous properties of M on literal pairs, including the pair formed from min M in the final reflection case; the repair makes that value-level fact explicit instead of applying e-preservation outside its domain."
+      "basis_summary": "Lines 989-991 first use homogeneous triples and then homogeneous quadruples; QuadrupleHomogeneous formalizes the second thinning needed to obtain a constant color on four-element subsets."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -40,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only Tablet/RadoEmbedding.tex. Preserve the Lean signature, imports, theorem statement, and support DAG; add no helper, theorem, or dependency. Return to the paper's construction with a=min M, X=M minus {a}, an increasing enumeration x of X, and e(i,j)=f(x(i),x(j)). Before defining e, state and prove inside the natural-language proof the direct M-monotonicity fact: for any two literal increasing pairs (u,v) and (s,t) with all entries in M, RadoOrder((u,v),(s,t)) implies r(f(u,v),f(s,t)); prove its same-first-coordinate case from the triple homogeneity and its separated-pair case from the quadruple homogeneity, with the RadoOrder citation. Use this fact, not e-preservation, in all reflection cases. In particular, when k<i use the literal increasing pair (a,x(k)) <= (x(i),x(j)); since a is the minimum of M and x(k) lies in X, this pair is valid even for k=0. Compose the resulting relation with the assumed r(e(p),e(q)) and invoke BadPairSequence at a<x(k)<x(l). Keep the preservation proof for e restricted to X, and retain explicit citations to PowerWqoBadPairSequence, BadPairSequence, TripleHomogeneous, QuadrupleHomogeneous, InfiniteSetEnumeration, RadoOrder, and RelationEmbedding.",
+    "comments": "Do not assign a worker or reset any soundness evidence. Request one real Sound verifier for QuadrupleHomogeneous only. Check the construction of CardinalityFront(4,X), its front property, the coloring fiber S, and the NashWilliams output of an infinite Y with a sub-front contained in S or disjoint from S. Verify explicitly why the selected sub-front is nontrivial, why its base is a subset of X, and why every four-element subset of Y is itself a member of that sub-front: the branch/density argument must be stated with the needed Front and cardinality facts and the relevant cross-node citations. Confirm that both color alternatives yield the exact Lean conclusion and that all dependencies used, including CardinalityFront, CardinalityFrontIsFront, NashWilliams, and any Front or InfiniteSetEnumeration facts, are explicitly cited.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 115,
+    "cycle": 116,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,42 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "RadoEmbedding",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
-    "next_worker_context_mode": "fresh",
+    "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 994,
-        "reason": "Paper Rado embedding proof, especially the M-monotonicity sentence and the final minimum-element reflection case.",
-        "start_line": 986
+        "end_line": 991,
+        "reason": "Paper triple and quadruple homogeneous thinning used in the Rado argument.",
+        "start_line": 989
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 986-994 remove the minimum from M for the Rado copy and then use the homogeneous properties of M on literal pairs, including the pair formed from min M in the final reflection case; the repair makes that value-level fact explicit instead of applying e-preservation outside its domain.",
+      "basis_summary": "Lines 989-991 first use homogeneous triples and then homogeneous quadruples; QuadrupleHomogeneous formalizes the second thinning needed to obtain a constant color on four-element subsets.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The revised RadoEmbedding proof still applies index-level preservation to (0,k), but (0,k) is not an IncreasingPair when k=0. Route a second bounded proof repair that separates the direct homogeneous-set monotonicity fact from preservation of the constructed e.",
-    "request_id": 388,
-    "request_sound_verifier_nodes": [],
+    "reason": "RadoEmbedding has a current Sound approval. The held target QuadrupleHomogeneous is Sound-verifier-requestable and should receive the next focused verification; there is no concrete worker repair evidence for it in this review.",
+    "request_id": 391,
+    "request_sound_verifier_nodes": [
+      "QuadrupleHomogeneous"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:92d6c5ec68b4081041fe47e1f22a21054ff54bada14f7f60cccee7d314e55f2e",
-        "kind": "Soundness",
-        "object": {
-          "node": "RadoEmbedding",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_388_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_391_decision.context.json"
 }

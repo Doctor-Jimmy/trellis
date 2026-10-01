@@ -59,11 +59,13 @@ r\bigl(f(i,j),f(k,l)\bigr)
 holds, and by $0$ otherwise.  Applying
 \noderef{QuadrupleHomogeneous} gives an infinite $M\subseteq N$ on
 which this color is constant.  The constant cannot be $0$.  Indeed,
-choose successively pairs
+use \noderef{InfiniteSetEnumeration} to enumerate $M$ increasingly as
+$z$.  Taking $i_u=z(2u)$ and $j_u=z(2u+1)$ gives
 \[
 i_0<j_0<i_1<j_1<i_2<j_2<\cdots
 \]
-from $M$.  If the color were $0$, then for every $u<v$ the quadruple
+because $z(2u)<z(2u+1)<z(2u+2)$.  If the color were $0$, then for
+every $u<v$ the quadruple
 $i_u<j_u<i_v<j_v$ would give
 \[
 \neg r\bigl(f(i_u,j_u),f(i_v,j_v)\bigr),
@@ -75,87 +77,127 @@ r\bigl(f(i,j),f(k,l)\bigr).
 \tag{2}
 \]
 
-Use \noderef{InfiniteSetEnumeration} to choose an increasing enumeration
-$y:\mathbb N\to M$.  Since $y$ is increasing and its range is all of
-$M$, $y(0)$ is the least element of $M$.  For an increasing pair
-$p=(i,j)$, define
-\[
-e(p)=f\bigl(y(i),y(j)\bigr).
-\]
-The strict increase of $y$ gives $y(i)<y(j)$, so the displayed argument
-of $f$ is an increasing pair and \noderef{BadPairSequence} applies to it.
+Let $a=\min M$ and let $X=M\setminus\{a\}$.  The set $X$ is
+infinite: otherwise $M=X\cup\{a\}$ would be finite, contrary to the
+construction of the infinite set $M$.  Use
+\noderef{InfiniteSetEnumeration} to choose a strictly increasing
+enumeration $x:\mathbb N\to\mathbb N$ whose range is exactly $X$.
+Thus $x(i)\in X$ for every $i$, and $x(i)<x(j)$ whenever $i<j$.
 
-We first prove preservation of the Rado order, using the definition
-\noderef{RadoOrder}.  If $p=(i,j)$ and $q=(k,l)$ have $i=k$ and
-$j\leq l$, then either $j=l$, in which case reflexivity of the
-quasi-order gives $r(e(p),e(q))$, or $j<l$, in which case (1) gives
-$r(f(y(i),y(j)),f(y(i),y(l)))$.  If instead $j<k$, then
-$y(i)<y(j)<y(k)<y(l)$, so (2) gives
-$r(e(p),e(q))$.  These are exactly the two alternatives in
-\noderef{RadoOrder}, and therefore
+Before defining the embedding, we record the direct monotonicity fact
+that will be used throughout.  If $u<v$ and $s<t$ are natural numbers
+in $M$ and
 \[
-\mathsf{RadoOrder}(p,q)\Longrightarrow r(e(p),e(q)).
+\mathsf{RadoOrder}((u,v),(s,t)),
+\]
+then
+\[
+r(f(u,v),f(s,t)).
 \tag{3}
 \]
-
-For reflection, assume $r(e(p),e(q))$, where $p=(i,j)$ and $q=(k,l)$.
-Suppose that $\mathsf{RadoOrder}(p,q)$ fails.  By the two clauses in
-\noderef{RadoOrder}, this means
+Indeed, by the two alternatives in \noderef{RadoOrder}, either
+$u=s$ and $v\leq t$, or $v<s$.  In the first alternative, if $v=t$,
+reflexivity of the quasi-order gives the conclusion.  If $v<t$, then
+$u<v<t$ are in $M$, so the triple homogeneity relation (1) gives
 \[
-k\leq j\quad\text{and}\quad (i\neq k\ \text{or}\ l<j).
+r(f(u,v),f(u,t)),
+\]
+which is the required conclusion because $s=u$.
+In the second alternative, $u<v<s<t$ are in $M$, so the quadruple
+homogeneity relation (2) gives the conclusion directly.  This proves
+(3), including both clauses of the Rado order, before any restriction
+to $X$ is made.
+
+For an increasing pair $p=(i,j)$, define
+\[
+e(p)=f\bigl(x(i),x(j)\bigr).
+\]
+The strict increase of $x$ makes $x(i)<x(j)$, so this is a valid
+argument of $f$, and \noderef{BadPairSequence} applies to all such
+values.
+
+We first prove preservation of the Rado order on these pairs.  Let
+$p=(i,j)$ and $q=(k,l)$.  If the first clause of
+\noderef{RadoOrder} holds, then $i=k$ and $j\leq l$, hence
+$x(i)=x(k)$ and $x(j)\leq x(l)$; the direct fact (3) gives
+$r(e(p),e(q))$.  If the second clause holds, then $j<k$, and strict
+increase gives
+$x(i)<x(j)<x(k)<x(l)$; again (3) gives $r(e(p),e(q))$.  Therefore
+\[
+\mathsf{RadoOrder}(p,q)\Longrightarrow r(e(p),e(q)).
 \tag{4}
 \]
-There are three cases.  If $l<j$, choose any $n>j$.  The Rado order has
-$(k,l)\leq(j,n)$ by its second clause.  Preservation (3) is being
-applied to these index pairs, so it gives
-\[
-r\bigl(f(y(k),y(l)),f(y(j),y(n))\bigr).
-\]
-Composing this with the assumed relation and using transitivity gives
-\[
-r\bigl(f(y(i),y(j)),f(y(j),y(n))\bigr),
-\]
-contradicting the badness of $f$ at the increasing triple
-$y(i)<y(j)<y(n)$.
 
-Assume next that $l\geq j$ and $i<k$.  Then
-$(i,k)\leq(i,j)$ by the first Rado clause.  Preservation followed by
-the assumed relation gives
+For reflection, assume $r(e(p),e(q))$, where $p=(i,j)$ and
+$q=(k,l)$.  Suppose that $\mathsf{RadoOrder}(p,q)$ fails.  By the two
+clauses in \noderef{RadoOrder}, this means
 \[
-r\bigl(f(y(i),y(k)),f(y(i),y(j))\bigr)
-\quad\text{and hence}\quad
-r\bigl(f(y(i),y(k)),f(y(k),y(l))\bigr).
+k\leq j\quad\text{and}\quad (i\neq k\ \text{or}\ l<j).
+\tag{5}
 \]
-The second relation is obtained by transitivity with the assumed
-$r(f(y(i),y(j)),f(y(k),y(l)))$, and contradicts badness at
-$y(i)<y(k)<y(l)$.
-
-The remaining possibility in (4) is $l\geq j$ and $k<i$.  Since the
-minimum of $M$ is $y(0)$, use the index pair $(0,k)$.  The second Rado
-clause gives $(0,k)\leq(i,j)$ from $k<i$.  Preservation is again
-applied to index pairs, so it gives
+There are three cases.  If $l<j$, take $n=j+1$, so $j<n$ and
+$x(j)<x(n)$.  The second clause of \noderef{RadoOrder} gives
 \[
-r\bigl(f(y(0),y(k)),f(y(i),y(j))\bigr).
+\mathsf{RadoOrder}((x(k),x(l)),(x(j),x(n))).
+\]
+Applying the direct M-monotonicity fact (3) to these literal pairs gives
+\[
+r\bigl(f(x(k),x(l)),f(x(j),x(n))\bigr).
+\]
+Composing this with the assumed relation
+$r(f(x(i),x(j)),f(x(k),x(l)))$ and using transitivity gives
+\[
+r\bigl(f(x(i),x(j)),f(x(j),x(n))\bigr),
+\]
+contradicting \noderef{BadPairSequence} at the increasing triple
+$x(i)<x(j)<x(n)$.
+
+Assume next that $l\geq j$ and $i<k$.  From (5), $k\leq j$, so the
+first clause of \noderef{RadoOrder}, together with strict increase of
+$x$, gives
+\[
+\mathsf{RadoOrder}((x(i),x(k)),(x(i),x(j))).
+\]
+Applying (3) to these literal pairs gives
+\[
+r\bigl(f(x(i),x(k)),f(x(i),x(j))\bigr).
 \]
 Composing with the assumed relation gives
 \[
-r\bigl(f(y(0),y(k)),f(y(k),y(l))\bigr),
+r\bigl(f(x(i),x(k)),f(x(k),x(l))\bigr),
 \]
-contradicting badness at $y(0)<y(k)<y(l)$.  All cases are impossible, so
+which contradicts \noderef{BadPairSequence} at
+$x(i)<x(k)<x(l)$.
+
+The remaining possibility in (5) is $l\geq j$ and $k<i$.  The minimum
+$a$ of $M$ is strictly below every element of $X$, so in particular
+$a<x(k)$ even when $k=0$.  Since $k<i$, strict increase gives
+$x(k)<x(i)$, and therefore the literal increasing pairs
+$(a,x(k))$ and $(x(i),x(j))$ satisfy the second clause of
+\noderef{RadoOrder}.  The direct fact (3) gives
+\[
+r\bigl(f(a,x(k)),f(x(i),x(j))\bigr).
+\]
+Composing with the assumed relation gives
+\[
+r\bigl(f(a,x(k)),f(x(k),x(l))\bigr),
+\]
+contradicting \noderef{BadPairSequence} at the increasing triple
+$a<x(k)<x(l)$.  All cases are impossible, so
 \[
 r(e(p),e(q))\Longrightarrow\mathsf{RadoOrder}(p,q).
-\tag{5}
+\tag{6}
 \]
 
 It remains to check injectivity.  If $e(p)=e(q)$, reflexivity of $r$
-gives both $r(e(p),e(q))$ and $r(e(q),e(p))$.  By (5), both Rado
+gives both $r(e(p),e(q))$ and $r(e(q),e(p))$.  By (6), both Rado
 relations hold.  The two-clause definition in \noderef{RadoOrder} is
 antisymmetric: a cross-clause relation $p\leq q$ cannot be reversed,
 and if the first clause holds in both directions then the first
 coordinates agree and antisymmetry of $\leq$ on $\mathbb N$ gives equality
 of the second coordinates.  Hence $p=q$.  Thus $e$ is injective.
 
-Combining injectivity with (3) and (5), and unfolding
+Combining injectivity with (4) and (6), and unfolding
 \noderef{RelationEmbedding}, proves
 \[
 \mathsf{RelationEmbedding}(\mathsf{RadoOrder},r,e).
