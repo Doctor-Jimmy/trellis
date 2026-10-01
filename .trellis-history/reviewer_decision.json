@@ -1,17 +1,13 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The coordinated restructure repaired the substantive statement package: BlockSigmaIntertwines now includes the least-moved-point hypothesis, and EmapLemma consumes the FirstMovedPoint witness. The substantive blocker has reverted to Unknown and is omitted. The remaining soundness blocker is fresh but not yet requestable during this restructure-to-verification transition, so the package should proceed through the normal targeted verifier sequence without further worker edits.",
-    "comments": "Do not make another repository change in this burst. Recheck both repaired TeX packages against their Lean statements and the cited paper argument, then run the ordinary correspondence and soundness lanes when eligible. In particular, verify that the initial-segment case uses the least-moved-point hypothesis, that the orbit-block exponent calculation has the correct index shift, and that EmapLemma explicitly obtains and passes the FirstMovedPoint witness. The previous substantiveness blocker is intentionally omitted because the worker changed the node fingerprint; no reset is legal or needed.",
+    "reason": "The repaired BlockSigmaIntertwines and EmapLemma packages remain unchanged and pass the worker's full tablet checks. The substantive issue is no longer live, but correspondence has not yet been dispatched and the soundness item is therefore not requestable. A global handoff with the active node pinned is the only legal route that can move this repaired package out of the restructure-only state without assigning an unavailable repair.",
+    "comments": "Use this as a verifier handoff only. Do not edit Tablet content, add helpers, alter signatures, or re-open the repaired BlockSigmaIntertwines/EmapLemma interface. Recompute correspondence for the changed BlockSigmaIntertwines statement and its TeX package first; once correspondence and substantiveness are current, run soundness on BlockSigmaIntertwines. The proof must retain the least-moved-point premise, the initial-segment case, the n-to-n+1 orbit-block calculation, and the FirstMovedPoint witness flow through EmapLemma. No blocker is assigned and no reset is requested.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
     "next_active": "BlockSigmaIntertwines",
-    "next_mode": "restructure",
-    "authorized_node_ids": [
-      "BlockSigmaIntertwines",
-      "EmapLemma"
-    ],
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -23,30 +19,27 @@
       {
         "start_line": 1788,
         "end_line": 1834,
-        "reason": "The repaired nodes formalize the paper's least-moved-point block construction and its initial-segment and orbit-block intertwining cases."
+        "reason": "The repaired package follows the paper's least-moved-point block construction and its two-case intertwining proof."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "I directly read the cited passage. The paper defines k_g as the minimum k with k < g(k), sets G(n)=g^n(k_g), and proves the identity by separating l<G(0) from G(n)<=l<G(n+1). The first case uses g(l)=l below the least moved point, while the second uses G(n+1)<=g(l)<G(n+2) and the exponent identity. This is exactly the interface now exposed by BlockSigmaIntertwines and supplied by EmapLemma."
+      "basis_summary": "I directly read the cited passage. The paper chooses k_g as the minimum moved point, defines G(n)=g^n(k_g), proves the block map is increasing and continuous, and establishes the commuting identity by the initial segment case and the orbit-block case. The latter sends block n to block n+1 and uses f(n+1)-n=(f(n+1)-(n+1))+1. The current repaired statements and proof packages preserve these exact ingredients."
     }
   },
   "response": {
     "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
-    "authorized_nodes": [
-      "BlockSigmaIntertwines",
-      "EmapLemma"
-    ],
+    "authorized_nodes": [],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not make another repository change in this burst. Recheck both repaired TeX packages against their Lean statements and the cited paper argument, then run the ordinary correspondence and soundness lanes when eligible. In particular, verify that the initial-segment case uses the least-moved-point hypothesis, that the orbit-block exponent calculation has the correct index shift, and that EmapLemma explicitly obtains and passes the FirstMovedPoint witness. The previous substantiveness blocker is intentionally omitted because the worker changed the node fingerprint; no reset is legal or needed.",
+    "comments": "Use this as a verifier handoff only. Do not edit Tablet content, add helpers, alter signatures, or re-open the repaired BlockSigmaIntertwines/EmapLemma interface. Recompute correspondence for the changed BlockSigmaIntertwines statement and its TeX package first; once correspondence and substantiveness are current, run soundness on BlockSigmaIntertwines. The proof must retain the least-moved-point premise, the initial-segment case, the n-to-n+1 orbit-block calculation, and the FirstMovedPoint witness flow through EmapLemma. No blocker is assigned and no reset is requested.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 34,
+    "cycle": 35,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -56,22 +49,22 @@
     "must_close_active": false,
     "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": null,
-    "next_mode": "Restructure",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1834,
-        "reason": "The repaired nodes formalize the paper's least-moved-point block construction and its initial-segment and orbit-block intertwining cases.",
+        "reason": "The repaired package follows the paper's least-moved-point block construction and its two-case intertwining proof.",
         "start_line": 1788
       }
     ],
     "paper_grounding": {
-      "basis_summary": "I directly read the cited passage. The paper defines k_g as the minimum k with k < g(k), sets G(n)=g^n(k_g), and proves the identity by separating l<G(0) from G(n)<=l<G(n+1). The first case uses g(l)=l below the least moved point, while the second uses G(n+1)<=g(l)<G(n+2) and the exponent identity. This is exactly the interface now exposed by BlockSigmaIntertwines and supplied by EmapLemma.",
+      "basis_summary": "I directly read the cited passage. The paper chooses k_g as the minimum moved point, defines G(n)=g^n(k_g), proves the block map is increasing and continuous, and establishes the commuting identity by the initial segment case and the orbit-block case. The latter sends block n to block n+1 and uses f(n+1)-n=(f(n+1)-(n+1))+1. The current repaired statements and proof packages preserve these exact ingredients.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The coordinated restructure repaired the substantive statement package: BlockSigmaIntertwines now includes the least-moved-point hypothesis, and EmapLemma consumes the FirstMovedPoint witness. The substantive blocker has reverted to Unknown and is omitted. The remaining soundness blocker is fresh but not yet requestable during this restructure-to-verification transition, so the package should proceed through the normal targeted verifier sequence without further worker edits.",
-    "request_id": 175,
+    "reason": "The repaired BlockSigmaIntertwines and EmapLemma packages remain unchanged and pass the worker's full tablet checks. The substantive issue is no longer live, but correspondence has not yet been dispatched and the soundness item is therefore not requestable. A global handoff with the active node pinned is the only legal route that can move this repaired package out of the restructure-only state without assigning an unavailable repair.",
+    "request_id": 178,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -81,5 +74,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_175_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_178_decision.context.json"
 }

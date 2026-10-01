@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 208,
+  "event_count": 212,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -59286,7 +59286,7 @@
     "committed": {
       "$r": "dd249554c5701c20"
     },
-    "cycle": 34,
+    "cycle": 35,
     "gate_kind": "None",
     "phase": "TheoremStating"
   },
@@ -60036,9 +60036,9 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 34,
+    "cycle": 35,
     "cycles_in_coarse_repair_mode": 0,
-    "cycles_since_clean": 34,
+    "cycles_since_clean": 35,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
     "deps": {
       "$r": "51aa69bb19343206"
@@ -60768,7 +60768,7 @@
     "last_clean_target_claims": {},
     "last_clean_verifier_mirror_ready": false,
     "last_reviewer_global_repair_request_cycle": null,
-    "last_sound_response_cycle": 34,
+    "last_sound_response_cycle": 35,
     "last_stuck_math_audit_dispatched_cycle": 30,
     "latest_assumptions_lane_evidence": [],
     "latest_audit_rejection_reason": "",
@@ -60786,9 +60786,9 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "BlockSigmaIntertwines now states the paper's exact identity under both the moved-point and least-moved-point hypotheses. Its TeX proof covers the initial segment and the shifted orbit-block cases, with the required support citations. EmapLemma now explicitly extracts the least moved point from FirstMovedPoint, selects the block embeddings, derives prefix continuity, and applies the amended intertwining lemma to establish the ContMor conclusion.",
+    "latest_worker_comments": "BlockSigmaIntertwines matches the Lean signature, including k < g k and the least-moved-point condition. Its initial-segment case uses that condition to obtain g(l)=l, and its orbit-block case sends block n to block n+1 and uses exponents f(n+1)-n = (f(n+1)-(n+1))+1. EmapLemma explicitly obtains the witness from FirstMovedPoint, passes it to BlockSigmaEmbedding, BlockSigmaContinuous, and BlockSigmaIntertwines, and cites the relevant morphism definitions. The requested correspondence and soundness lanes were not dispatched in this request (verify_lanes is empty).",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Coordinated the authorized BlockSigmaIntertwines and EmapLemma repair: added the least-moved-point hypothesis to the Lean and TeX intertwining statement, and updated EmapLemma's proof package to extract and use that witness. Both edited Lean nodes pass deterministic node checks.",
+    "latest_worker_summary": "Revalidated the repaired BlockSigmaIntertwines and EmapLemma packages without further repository edits. Both node checks, Lean replay compilation, and the full 176-node tablet check pass.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
@@ -61012,12 +61012,9 @@
     "pending_protected_semantic_scope_confirmation": null,
     "pending_task": {
       "allow_new_obligations": true,
-      "authorized_nodes": [
-        "BlockSigmaIntertwines",
-        "EmapLemma"
-      ],
+      "authorized_nodes": [],
       "consumed_global_repair_grant": false,
-      "mode": "Restructure",
+      "mode": "Global",
       "must_close_active": false,
       "next_worker_context_mode": "resume",
       "node": "BlockSigmaIntertwines",
@@ -61025,7 +61022,7 @@
       "paper_focus_ranges": [
         {
           "end_line": 1834,
-          "reason": "The repaired nodes formalize the paper's least-moved-point block construction and its initial-segment and orbit-block intertwining cases.",
+          "reason": "The repaired package follows the paper's least-moved-point block construction and its two-case intertwining proof.",
           "start_line": 1788
         }
       ],
@@ -61053,16 +61050,16 @@
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "PowerChildWellFounded": {
+      "FrontTreeWellFounded": {
         "v1": {
-          "comments": "",
-          "node": "PowerChildWellFounded",
+          "comments": "No independent blocking gaps found. The proof cites the Front and PrefixTree dependencies and covers both the trivial and nontrivial front cases.",
+          "node": "FrontTreeWellFounded",
           "overall": "APPROVE",
           "soundness": {
             "decision": "SOUND",
-            "explanation": "The proof correctly uses structural induction on the PowerQ presentation. Atoms have no PowerChild predecessors; for a node, every predecessor is an indexed child by the cited PowerChild definition, and the induction hypothesis plus equality transport supplies its accessibility. The accessibility constructor then yields well-foundedness."
+            "explanation": "The proof rigorously turns an infinite extension branch into an infinite set X' in the front base, handles the trivial front, and otherwise applies the cited Front base and density clauses. A front member s properly prefixes X'; a later branch node u properly extends s, and the cited PrefixTree definition supplies t in F extending u. Thus s is an initial segment of t, so Front prefix-freeness gives s=t, contradicting the proper extension. The argument establishes absence of infinite branches and the stated well-founded relation orientation."
           },
-          "summary": "The natural-language proof rigorously establishes well-foundedness of the child-to-parent relation from the cited dependency."
+          "summary": "The natural-language proof is line-by-line sufficient for the stated well-foundedness result from its cited support nodes."
         }
       }
     },
@@ -61070,7 +61067,7 @@
     "process_memory_seq": 10,
     "progress_history": {
       "last_dispatched_index": 28,
-      "next_index": 34,
+      "next_index": 35,
       "snapshots": [
         {
           "present": [
@@ -63453,6 +63450,109 @@
             "TildeFSingleton"
           ],
           "snapshot_index": 33
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": [
+            "BadMultiSequence",
+            "BadPairSequence",
+            "BadSuperSequence",
+            "BaireContinuous",
+            "BaseBad",
+            "BaseIncSeq",
+            "BaseLocallyConstant",
+            "BaseMultiSequence",
+            "BasePerfect",
+            "BaseRestrict",
+            "BaseRightComp",
+            "BaseShift",
+            "BetterRel",
+            "BlockSigma",
+            "Bqo",
+            "BqoHerCtblWellF",
+            "BqoHerCtblWqo",
+            "CardinalityFront",
+            "ContMor",
+            "ContMorEq",
+            "ContinuousHom",
+            "ContinuousRelHom",
+            "DecidingFrontSet",
+            "DecidingPrefix",
+            "FiniteShift",
+            "Front",
+            "FrontBase",
+            "FrontBridge",
+            "FrontBridgeTail",
+            "FrontPrefix",
+            "FrontRestrict",
+            "FrontTreeWellFounded",
+            "GBetterRel",
+            "GoodMultiSequence",
+            "HerCtblCode",
+            "HerCtblCodeErase",
+            "HerCtblPower",
+            "HerCtblPowerIsPreorder",
+            "HerCtblRel",
+            {
+              "$s": "19fb7b62eea67a5d"
+            },
+            "HereditarilyCountable",
+            {
+              "$s": "248a162fe13df6db"
+            },
+            {
+              "$s": "0de210e54bc47028"
+            },
+            "IncSeq",
+            "IncSeqComp",
+            "IncSeqId",
+            "IncreasingPair",
+            "InitialSegment",
+            "LocallyConstant",
+            "MultiSequence",
+            "MultiSequenceRestrict",
+            "OrbitBlock",
+            "OrbitPoint",
+            "PerfectMultiSequence",
+            "PerfectSuperSequence",
+            "PowerChild",
+            "PowerChildWellFounded",
+            "PowerCopiedLeft",
+            "PowerCopiedTerminalAt",
+            "PowerGameDescent",
+            "PowerIResponse",
+            "PowerMove",
+            "PowerPresentationEq",
+            "PowerQ",
+            "PowerQIsPreorder",
+            "PowerRel",
+            "PowerRelAtomAtom",
+            "PowerRelAtomNode",
+            "PowerRelNodeAtom",
+            "PowerRelNodeNode",
+            "PowerShiftIter",
+            "PowerSupport",
+            "Preamble",
+            "PrefixAgree",
+            "PrefixTree",
+            "ProperInitialSegment",
+            "ProperPrefixSet",
+            "RadoOrder",
+            "Ray",
+            "RelationEmbedding",
+            "RightComp",
+            "SetDomination",
+            "ShiftMap",
+            "SuccSeq",
+            "SuperSequence",
+            "SuperSequenceRestrict",
+            "TailSet",
+            "TildeF",
+            "TildeFSingleton"
+          ],
+          "snapshot_index": 34
         }
       ]
     },
@@ -63461,19 +63561,33 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 175,
+    "request_seq": 178,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Do not make another repository change in this burst. Recheck both repaired TeX packages against their Lean statements and the cited paper argument, then run the ordinary correspondence and soundness lanes when eligible. In particular, verify that the initial-segment case uses the least-moved-point hypothesis, that the orbit-block exponent calculation has the correct index shift, and that EmapLemma explicitly obtains and passes the FirstMovedPoint witness. The previous substantiveness blocker is intentionally omitted because the worker changed the node fingerprint; no reset is legal or needed.",
+    "reviewer_comments": "Use this as a verifier handoff only. Do not edit Tablet content, add helpers, alter signatures, or re-open the repaired BlockSigmaIntertwines/EmapLemma interface. Recompute correspondence for the changed BlockSigmaIntertwines statement and its TeX package first; once correspondence and substantiveness are current, run soundness on BlockSigmaIntertwines. The proof must retain the least-moved-point premise, the initial-segment case, the n-to-n+1 orbit-block calculation, and the FirstMovedPoint witness flow through EmapLemma. No blocker is assigned and no reset is requested.",
     "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 0,
     "sound_approved_fingerprints": {
+      "FrontTreeWellFounded": {
+        "$s": "02af0d884f943dea"
+      },
       "PowerChildWellFounded": {
         "$s": "e886eeb58a1ae9e3"
       }
     },
     "sound_assessment_schema_version": 1,
     "sound_assessments": {
+      "FrontTreeWellFounded": {
+        "fingerprints": {
+          "$r": "b1eeb3f9e41f89c2"
+        },
+        "lane_votes": {
+          "v1": "Pass"
+        },
+        "origin": "VerifierPanel",
+        "reviewer_action_id": null,
+        "status": "VerifierPass"
+      },
       "PowerChildWellFounded": {
         "fingerprints": {
           "$r": "77c89f3b4488068d"
@@ -64551,6 +64665,7 @@
       }
     },
     "sound_status": {
+      "FrontTreeWellFounded": "Pass",
       "PowerChildWellFounded": "Pass"
     },
     "stage": "Start",
@@ -65305,7 +65420,7 @@
     "target_claims": {
       "$r": "8b8358bcaa735e43"
     },
-    "target_edit_mode": "Restructure",
+    "target_edit_mode": "Global",
     "theorem_verifier_only_continuation_enabled": true,
     "transport_attempt": 0,
     "transport_invalid_review_threshold": 5,
