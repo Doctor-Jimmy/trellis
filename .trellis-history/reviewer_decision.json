@@ -1,15 +1,15 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BlockSigmaEmbedding now has a current Sound approval. BlockSigmaContinuous is the next FreshUnknown shift-support obligation, and its proof has concrete unsupported steps in the finite-prefix argument.",
-    "comments": "Repair only `Tablet/BlockSigmaContinuous.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{PrefixAgree}` at their uses. For fixed f and n, explicitly construct a finite bound on the block indices relevant to all l<n, including the initial-interval case, rather than referring to an unspecified largest block. Use coverage and uniqueness to identify each relevant index, choose m larger than all such indices, and unpack PrefixAgree m f h to obtain f(i)=h(i) at every needed index. Explain that the least block index in BlockSigma depends only on g,k,l, so it is the same for f and h; then show the corresponding exponents and iterates, including the initial branch, give equal values for every l<n. Close by matching the displayed Lean conclusion, without an uncited appeal to BaireContinuous. Add no helper and change no signature or imports. The corresponding paper definition and continuity sentence are at lines 1794--1814 of `paper/paper.tex`.",
-    "task_blocker_ids": [
-      "soundness:node:BlockSigmaContinuous:sound-v2:972feea800ebca481e6366d423cfaa90cb238839cb98b85b25c37474ff11f115"
-    ],
+    "reason": "BlockSigmaContinuous has a current Sound approval. EmapLemma is the next shift-support obligation, and its existing proof explicitly cites and uses the now-approved FirstMovedPoint, BlockSigmaEmbedding, BlockSigmaContinuous, and BlockSigmaIntertwines statements without an independent gap; a fresh Sound verdict is warranted.",
+    "comments": "Run a verifier-only Sound burst for `EmapLemma`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{FirstMovedPoint}` supplies both the least moved point and the fixed-below hypothesis, that `\\noderef{BlockSigmaEmbedding}` supplies an `IncSeq`-valued block map, and that `\\noderef{BlockSigmaContinuous}` supplies the exact prefix-continuity condition for the same map. Then check the coordinate equation using `\\noderef{BlockSigmaIntertwines}` with those hypotheses, and verify that `\\noderef{ContMor}`, `\\noderef{ShiftMap}`, `\\noderef{RightComp}`, and `\\noderef{SuccSeq}` identify the resulting equation with the stated continuous homomorphism. Do not rely on any dependency proof beyond its cited statement. The paper's Rmap/Emap constructions and block-map calculation are at lines 1787--1838 of `paper/paper.tex`.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BlockSigmaContinuous",
-    "next_mode": "targeted",
+    "request_sound_verifier_node_ids": [
+      "EmapLemma"
+    ],
+    "next_active": "",
+    "next_mode": "global",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1794,
-        "end_line": 1814,
-        "reason": "The paper's block-map definition, boundary calculation, and continuity claim."
+        "start_line": 1787,
+        "end_line": 1838,
+        "reason": "The paper's Rmap and Emap constructions and the block-map intertwining calculation."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1794--1799 define BlockSigma by the initial interval and orbit blocks, while lines 1802--1814 establish the block-map calculation and state its continuity. The tablet node expands that continuity claim into the explicit finite-prefix equality required by its Lean statement."
+      "basis_summary": "Lines 1787--1792 construct the right-composition-to-shift map, and lines 1794--1838 construct the blockwise shift-to-right-composition map, prove its increasing and continuous behavior, and establish the coordinate intertwining identity. The current Emap proof mirrors these steps through the cited tablet statements."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Repair only `Tablet/BlockSigmaContinuous.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{PrefixAgree}` at their uses. For fixed f and n, explicitly construct a finite bound on the block indices relevant to all l<n, including the initial-interval case, rather than referring to an unspecified largest block. Use coverage and uniqueness to identify each relevant index, choose m larger than all such indices, and unpack PrefixAgree m f h to obtain f(i)=h(i) at every needed index. Explain that the least block index in BlockSigma depends only on g,k,l, so it is the same for f and h; then show the corresponding exponents and iterates, including the initial branch, give equal values for every l<n. Close by matching the displayed Lean conclusion, without an uncited appeal to BaireContinuous. Add no helper and change no signature or imports. The corresponding paper definition and continuity sentence are at lines 1794--1814 of `paper/paper.tex`.",
+    "comments": "Run a verifier-only Sound burst for `EmapLemma`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{FirstMovedPoint}` supplies both the least moved point and the fixed-below hypothesis, that `\\noderef{BlockSigmaEmbedding}` supplies an `IncSeq`-valued block map, and that `\\noderef{BlockSigmaContinuous}` supplies the exact prefix-continuity condition for the same map. Then check the coordinate equation using `\\noderef{BlockSigmaIntertwines}` with those hypotheses, and verify that `\\noderef{ContMor}`, `\\noderef{ShiftMap}`, `\\noderef{RightComp}`, and `\\noderef{SuccSeq}` identify the resulting equation with the stated continuous homomorphism. Do not rely on any dependency proof beyond its cited statement. The paper's Rmap/Emap constructions and block-map calculation are at lines 1787--1838 of `paper/paper.tex`.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 81,
+    "cycle": 82,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,42 +50,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BlockSigmaContinuous",
+    "next_active": null,
     "next_active_coarse": null,
-    "next_mode": "Targeted",
+    "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1814,
-        "reason": "The paper's block-map definition, boundary calculation, and continuity claim.",
-        "start_line": 1794
+        "end_line": 1838,
+        "reason": "The paper's Rmap and Emap constructions and the block-map intertwining calculation.",
+        "start_line": 1787
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1794--1799 define BlockSigma by the initial interval and orbit blocks, while lines 1802--1814 establish the block-map calculation and state its continuity. The tablet node expands that continuity claim into the explicit finite-prefix equality required by its Lean statement.",
+      "basis_summary": "Lines 1787--1792 construct the right-composition-to-shift map, and lines 1794--1838 construct the blockwise shift-to-right-composition map, prove its increasing and continuous behavior, and establish the coordinate intertwining identity. The current Emap proof mirrors these steps through the cited tablet statements.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BlockSigmaEmbedding now has a current Sound approval. BlockSigmaContinuous is the next FreshUnknown shift-support obligation, and its proof has concrete unsupported steps in the finite-prefix argument.",
-    "request_id": 304,
-    "request_sound_verifier_nodes": [],
+    "reason": "BlockSigmaContinuous has a current Sound approval. EmapLemma is the next shift-support obligation, and its existing proof explicitly cites and uses the now-approved FirstMovedPoint, BlockSigmaEmbedding, BlockSigmaContinuous, and BlockSigmaIntertwines statements without an independent gap; a fresh Sound verdict is warranted.",
+    "request_id": 307,
+    "request_sound_verifier_nodes": [
+      "EmapLemma"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:972feea800ebca481e6366d423cfaa90cb238839cb98b85b25c37474ff11f115",
-        "kind": "Soundness",
-        "object": {
-          "node": "BlockSigmaContinuous",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_304_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_307_decision.context.json"
 }

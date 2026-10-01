@@ -5,12 +5,61 @@ some finite prefix of $f$ determines all values
 $\sigma_f(l)$ for $l<n$.
 \end{lemma}
 \begin{proof}
-Fix $f$ and $n$.  By \noderef{OrbitBlockCoverage}, each $l<n$ is either
-below $G(0)$ or lies in a unique block with index at most the largest block
-met before $n$.  In the latter case the value of $\sigma_f(l)$ depends only
-on the finitely many values $f(i)$ for those block indices.  Choose an input
-prefix long enough to include all of them.  If $h$ agrees with $f$ on this
-prefix, the same block cases and the same iterates are selected for every
-$l<n$, so $\sigma_h(l)=\sigma_f(l)$.  This is exactly
-$\mathsf{BaireContinuous}$ for the coordinatewise map.
+Fix $f$ and $n$, and write
+\[
+G(i)=\mathsf{OrbitPoint}(g,k,i).
+\]
+By \noderef{OrbitBlockCoverage}, for each $l<n$ either $l<G(0)$, or there
+is a unique index $q_l$ such that
+\[
+G(q_l)\leq l<G(q_l+1).
+\]
+In the second case, the endpoint inequality makes
+\[
+E_l=\{i\in\mathbb N\mid l<G(i+1)\}
+\]
+nonempty.  Let $i_l$ be its least element.  The least-index operation in
+the definition of \noderef{BlockSigma} selects exactly $i_l$.  Since the
+predicate defining $E_l$ involves only $g,k,l$, this selected index depends
+only on $g,k,l$, not on $f$; moreover, $i_l\leq q_l$ because $q_l\in E_l$.
+The uniqueness in \noderef{OrbitBlockCoverage} makes the block witness
+$q_l$ unambiguous for each $l$, so these are precisely the finitely many
+block indices that must be bounded.
+
+We now give an explicit finite bound for all indices that can be relevant
+below the output bound $n$.  Define $B_0=0$ and process the integers
+$r=0,\ldots,n-1$ recursively.  If $r<G(0)$, put $B_{r+1}=B_r$; otherwise
+put
+\[
+B_{r+1}=\max\{B_r,q_r+1\}.
+\]
+The first clause records the initial interval and introduces no block index.
+The second clause gives $q_r<B_{r+1}$.  Hence every block index $q_l$ for
+$l<n$ satisfies $q_l<B_n$.  Set $m=B_n$ (with $m=0$ when $n=0$).
+
+Let $h$ satisfy \(\mathsf{PrefixAgree}(m,f,h)\).  By the definition in
+\noderef{PrefixAgree}, this says $f(i)=h(i)$ for every $i<m$.  Fix $l<n$.
+If $l<G(0)$, both applications of \noderef{BlockSigma} take its initial
+branch, so
+\[
+\mathsf{BlockSigma}(g,k,h,l)=l=\mathsf{BlockSigma}(g,k,f,l).
+\]
+Otherwise, the index selected in both applications of \noderef{BlockSigma}
+is the same $i_l$, because its defining least-index predicate involves only
+$g,k,l$.  Since $i_l\leq q_l<m$, \noderef{PrefixAgree} gives
+$f(i_l)=h(i_l)$, and therefore
+\[
+h(i_l)-i_l=f(i_l)-i_l.
+\]
+The block branch of \noderef{BlockSigma} now gives
+\[
+\begin{aligned}
+\mathsf{BlockSigma}(g,k,h,l)
+  &=g^{[h(i_l)-i_l]}(l)\\
+  &=g^{[f(i_l)-i_l]}(l)\\
+  &=\mathsf{BlockSigma}(g,k,f,l).
+\end{aligned}
+\]
+Thus the equality holds for every $l<n$, and the displayed $m$ proves the
+claimed prefix-continuity statement.
 \end{proof}
