@@ -1,17 +1,16 @@
 {
   "raw": {
-    "audit_request": null,
-    "comments": "Edited only Tablet/NoBadPerfectSuper.tex and added the direct Tablet.BaseShift import needed by the proof support. The NL proof now extracts the infinite base from SuperSequence, enumerates it with InfiniteSetEnumeration, obtains explicit FrontPrefix witnesses for the original and shifted enumerations, proves the shifted range is contained in X via BaseShift, constructs the same FiniteShift witness, and applies PerfectSuperSequence and BadSuperSequence to identical dependent values. The NoBadPerfectSuper node check and full 176-node tablet check both pass.",
-    "deleted_nodes": [],
-    "deviation_deletions": [],
-    "deviation_requests": {},
-    "difficulty_updates": {},
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
-    "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Repaired the detailed natural-language proof of NoBadPerfectSuper while preserving its theorem statement and support direction.",
-    "target_claim_updates": {}
+    "summary": "Repaired BaseBqoRestriction soundness support by importing RestrictionLocallyConstant and replacing the sketch with a detailed pullback, dichotomy, bad-branch contradiction, and pointwise perfectness proof.",
+    "comments": "Edited only Tablet/BaseBqoRestriction.tex and the BaseBqoRestriction Lean import preamble. The proof explicitly transports PrefixAgree through IncSeqComp, applies RestrictionLocallyConstant before Bqo in the bad branch, and invokes the defining universal condition of PerfectMultiSequence. Deterministic node, Lean compilation, and full-tablet checks pass.",
+    "target_claim_updates": {},
+    "difficulty_updates": {},
+    "deviation_requests": {},
+    "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "deleted_nodes": [],
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,17 +20,19 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Edited only Tablet/NoBadPerfectSuper.tex and added the direct Tablet.BaseShift import needed by the proof support. The NL proof now extracts the infinite base from SuperSequence, enumerates it with InfiniteSetEnumeration, obtains explicit FrontPrefix witnesses for the original and shifted enumerations, proves the shifted range is contained in X via BaseShift, constructs the same FiniteShift witness, and applies PerfectSuperSequence and BadSuperSequence to identical dependent values. The NoBadPerfectSuper node check and full 176-node tablet check both pass.",
-    "cycle": 162,
+    "comments": "Edited only Tablet/BaseBqoRestriction.tex and the BaseBqoRestriction Lean import preamble. The proof explicitly transports PrefixAgree through IncSeqComp, applies RestrictionLocallyConstant before Bqo in the bad branch, and invokes the defining universal condition of PerfectMultiSequence. Deterministic node, Lean compilation, and full-tablet checks pass.",
+    "cycle": 166,
     "deleted_nodes": [],
     "dep_updates": {
-      "NoBadPerfectSuper": {
+      "BaseBqoRestriction": {
         "Set": [
-          "BadSuperSequence",
-          "BaseShift",
-          "FrontPrefixExists",
+          "BaseLocallyConstant",
+          "BaseRestrict",
+          "Bqo",
           "InfiniteSetEnumeration",
-          "PerfectSuperSequence"
+          "PerfectMultiSequence",
+          "RestrictionLocallyConstant",
+          "ShiftDichotomy"
         ]
       }
     },
@@ -40,17 +41,17 @@
     "deviation_requests": {},
     "difficulty_updates": {},
     "elaboration_costs": {
-      "NoBadPerfectSuper": {
+      "BaseBqoRestriction": {
         "cost_version": "2",
         "heartbeats": null,
         "heartbeats_key": null,
         "measured_at_snapshot_id": "",
-        "node": "NoBadPerfectSuper",
-        "olean_size_bytes": 10872,
-        "peak_rss_kib": 1675776,
+        "node": "BaseBqoRestriction",
+        "olean_size_bytes": 12968,
+        "peak_rss_kib": 1677228,
         "peak_rss_process": "lean",
-        "source_closure_hash": "0724a3486824f4354f37f8f4b9ffcf41378268ccffdc7c98c439db14186cb233",
-        "walltime_ms": 2213
+        "source_closure_hash": "72fdec78e569b2221d2a6c666a485e40cfb268556d89c0f9da0ecccebe00204d",
+        "walltime_ms": 2356
       },
       "Subarr": {
         "cost_version": "2",
@@ -59,10 +60,10 @@
         "measured_at_snapshot_id": "",
         "node": "Subarr",
         "olean_size_bytes": 18736,
-        "peak_rss_kib": 1685000,
+        "peak_rss_kib": 1679524,
         "peak_rss_process": "lean",
-        "source_closure_hash": "aee705694036833c9d9c4a0dadae0ee8695e8d2ff3b97e7cb5becf1a21941190",
-        "walltime_ms": 2277
+        "source_closure_hash": "b18fc2718b0809ebf1df3a21bb057eca0cd6d76f5565821ee1de062986eb2be0",
+        "walltime_ms": 2257
       }
     },
     "kind": "worker",
@@ -74,7 +75,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 514,
+    "request_id": 523,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -794,15 +795,25 @@
           "own_tex_hash": "5f687d710d9858141c50780a319ee5606ce9dc3d87c4274aa08d67376dfb4920"
         },
         "BaseBqoRestriction": {
-          "combined_sound_fp": "sound-v2:d8540e34b1b639af0ae7f6cfce880201d71bc5e81822ccd6006ccd6d22c9cd40",
+          "combined_sound_fp": "sound-v2:277e486ab871cca439d42dbde87639aefd28cc9ae6491fd69a94d8cfc9a28464",
           "dep_statement_hashes": {
+            "BadMultiSequence": "317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5",
+            "BaseIncSeq": "6c60e0dad52a54330a1324e014c97c8bff0c34618649f32c7de87b7b8efa6222",
+            "BaseLocallyConstant": "4ea3922f96b6fe8c3758270c31ece74a667fbd1548d54e163ec9e54a17b3c4c0",
+            "BaseMultiSequence": "e04b8d7d601f4074051e35072e33f8b0a13edbcb06c28bab0bc629e38c3a0f2a",
             "BaseRestrict": "c61ca27bf38d1f7390e9c2d8bfa258be6d76261b2e2bce4215849898052dcd26",
             "Bqo": "d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b",
+            "IncSeqComp": "fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c",
             "InfiniteSetEnumeration": "6a4f565cd5395ea7a251206e4bf05000d20c332d2d945de2ae2d30489f365ca1",
+            "LocallyConstant": "8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841",
+            "MultiSequence": "7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a",
             "MultiSequenceRestrict": "0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d",
+            "PerfectMultiSequence": "eda8449879f6345d53aeff6c08eee97ceda122b2aa4a567da72c9c72c7370edf",
+            "PrefixAgree": "97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8",
+            "RestrictionLocallyConstant": "8be0ea8522f379262c937df662a931b0c01e00f5a20ceacd474bf4bb2632a8a9",
             "ShiftDichotomy": "a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c"
           },
-          "own_tex_hash": "a0b550776809b02094af54c27d6be00d4d1228e5f548afcb4298a5a85a849c38"
+          "own_tex_hash": "8601d86dac670e71086ac37e782d90b4c2c15195c81e13cf0298cb35032900fa"
         },
         "BaseIncSeq": {
           "combined_sound_fp": "sound-v2:e2073d298f545e98280d962476eeaccfd4a9aabed4043f303ee7c84c917077eb",
@@ -2226,7 +2237,7 @@
         "BadSuperToBase": "sound-v2:3766ba796f2e9dc743218b8be9a8c5db0cc4cbd24e82ae9f0d0ea449ca9477d1",
         "BaireContinuous": "sound-v2:87b78bcf1d9fb03badbdfe84f8d625f30f13664818948e21bb137afd9e6e620e",
         "BaseBad": "sound-v2:9d04454610eab5c0daee2b23cbd1aaab02964c8598305e9c6d854febfb7cb00a",
-        "BaseBqoRestriction": "sound-v2:d8540e34b1b639af0ae7f6cfce880201d71bc5e81822ccd6006ccd6d22c9cd40",
+        "BaseBqoRestriction": "sound-v2:277e486ab871cca439d42dbde87639aefd28cc9ae6491fd69a94d8cfc9a28464",
         "BaseIncSeq": "sound-v2:e2073d298f545e98280d962476eeaccfd4a9aabed4043f303ee7c84c917077eb",
         "BaseLocallyConstant": "sound-v2:9adf7d7c9c7002a455fa25c30728a35b5827a033159605dcacd9624a8cd3b695",
         "BaseMultiSequence": "sound-v2:165e994cf37909352413ca5e2adba383c8637aae5a97e4da219d2a9830075160",
@@ -2756,7 +2767,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Repaired the detailed natural-language proof of NoBadPerfectSuper while preserving its theorem statement and support direction.",
+    "summary": "Repaired BaseBqoRestriction soundness support by importing RestrictionLocallyConstant and replacing the sketch with a detailed pullback, dichotomy, bad-branch contradiction, and pointwise perfectness proof.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2784,8 +2795,8 @@
     "BaireContinuous.tex": "3e9f26855f57bb58cd85b7ee209b5e58a95ee9b7e437aa96997b5f6e4d902c96",
     "BaseBad.lean": "fd185b3f30360609aab6258eb535e30ee9cdc44a3e029d711f0f7d1fb7da30af",
     "BaseBad.tex": "5f687d710d9858141c50780a319ee5606ce9dc3d87c4274aa08d67376dfb4920",
-    "BaseBqoRestriction.lean": "3a383e465b9f5f3af9331d74da434f08cb91f46f30c65f6c6d29ef332130107b",
-    "BaseBqoRestriction.tex": "a0b550776809b02094af54c27d6be00d4d1228e5f548afcb4298a5a85a849c38",
+    "BaseBqoRestriction.lean": "390f0b0089ab2bd71d8856959b41ec25f24ed83f733ecf2908d427922d6a56c1",
+    "BaseBqoRestriction.tex": "8601d86dac670e71086ac37e782d90b4c2c15195c81e13cf0298cb35032900fa",
     "BaseIncSeq.lean": "6f95a36d9e2266e6ee120a666d2edb292b67e962daa9d460db533697971f719d",
     "BaseIncSeq.tex": "dd350c607733de7ff35d8582dbe1ac6cbc3035f4c25e20485660ed76b4b5f445",
     "BaseLocallyConstant.lean": "29652145522c6a52b4c80c4e8c205f8467f23c0bef2c0cfcf1aaa7b3501b0dbf",
@@ -2912,7 +2923,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "479c66601079acd0d9bfe9d25f5c9d3fe992bd721dc7107f55c65b11b4f63898",
+    "INDEX.md": "a00177355c6f565bd51ecb78944df54d17a7e7b184941be3e5dc5bfda12ed553",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3122,7 +3133,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_514_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_523_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

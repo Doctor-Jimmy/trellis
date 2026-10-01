@@ -5,27 +5,147 @@ an enumeration $z\in\mathsf{BaseIncSeq}(X)$ such that the global-coordinate
 restriction $x\mapsto h(z\circ x)$ is perfect.
 \end{lemma}
 \begin{proof}
-Choose an increasing enumeration $e\in\mathsf{IncSeq}$ of $X$ by
-\noderef{InfiniteSetEnumeration}.  Define the pullback
+Applying \noderef{InfiniteSetEnumeration} to $X$ and the given infinitude
+$hX$, choose $e\in\mathsf{IncSeq}$ with
+\[
+\operatorname{range}(e)=X.
+\]
+For each $x\in\mathsf{IncSeq}$, \noderef{IncSeqComp} gives an increasing
+embedding $\mathsf{IncSeqComp}(e,x)$ satisfying
+\[
+\mathsf{IncSeqComp}(e,x)(i)=e(x(i))
+\quad\text{for every }i.
+\]
+Its range is contained in $X$: if
+$n=\mathsf{IncSeqComp}(e,x)(i)=e(x(i))$, then
+$n\in\operatorname{range}(e)=X$.  Hence, by the range condition in
+\noderef{BaseIncSeq},
+\[
+\widehat x=\bigl\langle\mathsf{IncSeqComp}(e,x),
+  \operatorname{range}(\mathsf{IncSeqComp}(e,x))\subseteq X\bigr\rangle
+\in\mathsf{BaseIncSeq}(X).
+\]
+The domain assertion in \noderef{BaseMultiSequence} says that $h$ accepts
+exactly such base increasing enumerations.  Define the pullback
 $\widetilde h:\mathsf{IncSeq}\to Q$ by
 \[
-\widetilde h(x)=h(e\circ x).
+\widetilde h(x)=h(\widehat x).
 \]
-The range of $e\circ x$ is contained in $X$, so this is defined.  If a
-finite prefix decides $h$ at $e\circ x$, then a sufficiently long finite
-prefix of $x$ decides the same value, since $e$ is increasing; hence
-$\widetilde h$ is locally constant.  Apply \noderef{ShiftDichotomy} to
-$\widetilde h$.  Its bad alternative contradicts \noderef{Bqo}, because
-$Q$ is bqo and $\widetilde h$ is locally constant.  Thus there is a
-$u\in\mathsf{IncSeq}$ for which $\widetilde h\mathbin{|}u$ is perfect.
+Thus $\widetilde h$ is a multi-sequence in the sense of
+\noderef{MultiSequence}.
 
-Set $z=e\circ u$.  Its range is contained in $X$, so
-$z\in\mathsf{BaseIncSeq}(X)$.  For every $x$,
+We next verify local constancy of $\widetilde h$ in full detail.  Fix
+$x\in\mathsf{IncSeq}$ and apply \noderef{BaseLocallyConstant} to the base
+enumeration $\widehat x$.  There is an $n\in\mathbb N$ such that for every
+$b\in\mathsf{BaseIncSeq}(X)$,
 \[
-(\mathsf{BaseRestrict}(h,z))(x)=h(z\circ x)
-=h(e\circ(u\circ x))
-=(\widetilde h\mathbin{|}u)(x),
+\mathsf{PrefixAgree}(n,\widehat x.1,b.1)
+\quad\Longrightarrow\quad h(b)=h(\widehat x).
+\tag{1}
 \]
-using \noderef{BaseRestrict} and \noderef{MultiSequenceRestrict}.  The
-right-hand side is perfect, so the displayed base restriction is perfect.
+Here \noderef{PrefixAgree} means equality in every coordinate $i<n$.
+Let $y\in\mathsf{IncSeq}$ satisfy
+$\mathsf{PrefixAgree}(n,x,y)$, and form the base enumeration
+\[
+\widehat y=\bigl\langle\mathsf{IncSeqComp}(e,y),
+  \operatorname{range}(\mathsf{IncSeqComp}(e,y))\subseteq X\bigr\rangle,
+\]
+which is in $\mathsf{BaseIncSeq}(X)$ by the same
+\noderef{BaseIncSeq} and range argument as above.  If $i<n$, then
+$x(i)=y(i)$ by \noderef{PrefixAgree}; applying $e$ to this equality and
+using \noderef{IncSeqComp} gives
+\[
+\mathsf{IncSeqComp}(e,x)(i)=e(x(i))=e(y(i))
+  =\mathsf{IncSeqComp}(e,y)(i).
+\]
+Therefore
+$\mathsf{PrefixAgree}(n,\widehat x.1,\widehat y.1)$, and (1) gives
+\[
+\widetilde h(y)=h(\widehat y)=h(\widehat x)=\widetilde h(x).
+\]
+Since $x$ was arbitrary, this is precisely the definition of
+\noderef{LocallyConstant}; hence $\widetilde h$ is locally constant.
+
+Apply \noderef{ShiftDichotomy} to $\widetilde h$.  We obtain a
+$u\in\mathsf{IncSeq}$ such that either
+\[
+\mathsf{PerfectMultiSequence}\,r
+  (\mathsf{MultiSequenceRestrict}\,\widetilde h\,u)
+\tag{2}
+\]
+or
+\[
+\mathsf{BadMultiSequence}\,r
+  (\mathsf{MultiSequenceRestrict}\,\widetilde h\,u).
+\tag{3}
+\]
+The predicate displayed in (3) is the badness predicate of
+\noderef{BadMultiSequence}.  Suppose (3) holds.  By
+\noderef{RestrictionLocallyConstant}, the local
+constancy of $\widetilde h$ implies
+\[
+\mathsf{LocallyConstant}\bigl(\mathsf{MultiSequenceRestrict}\,\widetilde h\,u\bigr).
+\]
+But \noderef{Bqo} says that the hypothesis $hb$ rules out every bad locally
+constant multi-sequence in $Q$: applying it to the restricted multi-sequence
+gives the negation of (3), a contradiction.  Consequently (2) holds.
+
+Set
+\[
+z=\mathsf{IncSeqComp}(e,u).
+\]
+By \noderef{IncSeqComp}, $z\in\mathsf{IncSeq}$.  If
+$n=z(i)=e(u(i))$, then $n\in\operatorname{range}(e)=X$; hence
+$\operatorname{range}(z)\subseteq X$, and the definition of
+\noderef{BaseIncSeq} gives
+\[
+z_X=\langle z,\operatorname{range}(z)\subseteq X\rangle
+\in\mathsf{BaseIncSeq}(X).
+\]
+
+It remains to identify the two restrictions pointwise.  Fix
+$x\in\mathsf{IncSeq}$.  By \noderef{BaseRestrict}, the value
+$(\mathsf{BaseRestrict}(h,z_X))(x)$ is $h$ applied to the base enumeration
+whose underlying increasing embedding is $\mathsf{IncSeqComp}(z,x)$; its
+range-in-$X$ proof is exactly the proof supplied in the definition of
+\noderef{BaseRestrict}.  For every coordinate $i$,
+\noderef{IncSeqComp} gives
+\[
+\mathsf{IncSeqComp}(z,x)(i)=z(x(i))=e(u(x(i)))
+ =\mathsf{IncSeqComp}(e,\mathsf{IncSeqComp}(u,x))(i).
+\tag{4}
+\]
+Thus these two increasing embeddings are equal pointwise, and the
+corresponding base-enumeration subtype values are equal.  Using
+\noderef{MultiSequenceRestrict} and the definition of $\widetilde h$, we
+therefore obtain
+\[
+\begin{aligned}
+(\mathsf{BaseRestrict}(h,z_X))(x)
+ &=h\bigl(\bigl\langle\mathsf{IncSeqComp}(e,\mathsf{IncSeqComp}(u,x)),
+     \operatorname{range}(\mathsf{IncSeqComp}(e,\mathsf{IncSeqComp}(u,x)))
+       \subseteq X\bigr\rangle\bigr)\\
+ &=\widetilde h(\mathsf{IncSeqComp}(u,x))\\
+ &=(\mathsf{MultiSequenceRestrict}\,\widetilde h\,u)(x).
+\end{aligned}
+\tag{5}
+\]
+
+Finally, \noderef{PerfectMultiSequence} states that (2) means, for every
+$x\in\mathsf{IncSeq}$,
+\[
+r\bigl((\mathsf{MultiSequenceRestrict}\,\widetilde h\,u)(x),
+  (\mathsf{MultiSequenceRestrict}\,\widetilde h\,u)(\mathsf{ShiftMap}(x))\bigr).
+\]
+Apply (5) once to $x$ and once to $\mathsf{ShiftMap}(x)$.  The resulting
+statement is
+\[
+r\bigl((\mathsf{BaseRestrict}(h,z_X))(x),
+  (\mathsf{BaseRestrict}(h,z_X))(\mathsf{ShiftMap}(x))\bigr)
+\]
+for every $x$, which is exactly the defining universal condition in
+\noderef{PerfectMultiSequence}.  Hence
+$\mathsf{PerfectMultiSequence}\,r(\mathsf{BaseRestrict}(h,z_X))$, and
+$z_X$ is the required element of $\mathsf{BaseIncSeq}(X)$; renaming this
+element as $z$ gives the enumeration in the lemma statement.
 \end{proof}

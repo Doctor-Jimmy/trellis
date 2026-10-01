@@ -12,7 +12,7 @@
 | BadSuperToBase | lemma | proof | open | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseLocallyConstant, SuperSequenceExtension |
 | BaireContinuous | definition | definition | closed | - | - | PrefixAgree |
 | BaseBad | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
-| BaseBqoRestriction | lemma | proof | open | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BaseRestrict, Bqo, InfiniteSetEnumeration, PerfectMultiSequence, ShiftDichotomy |
+| BaseBqoRestriction | lemma | proof | open | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BaseRestrict, Bqo, InfiniteSetEnumeration, PerfectMultiSequence, RestrictionLocallyConstant, ShiftDichotomy |
 | BaseIncSeq | definition | definition | closed | - | - | IncSeq |
 | BaseLocallyConstant | definition | definition | closed | - | - | BaseMultiSequence, PrefixAgree |
 | BaseMultiSequence | definition | definition | closed | - | - | BaseIncSeq |

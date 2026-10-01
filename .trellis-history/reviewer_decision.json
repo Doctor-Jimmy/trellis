@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found a supported structural gap in BaseBqoRestriction: the bad alternative concerns the restricted pullback, but RestrictionLocallyConstant is absent from the node's import and citation closure. Assign the repair-ready blocker to a Global worker while preserving the theorem statement.",
-    "comments": "Edit only Tablet/BaseBqoRestriction.tex and the import preamble of Tablet/BaseBqoRestriction.lean; do not change the theorem signature, weaken its hypotheses or conclusion, modify RestrictionLocallyConstant, or add a redundant helper. Add the existing Tablet.RestrictionLocallyConstant support to the import closure and cite it in the proof. For the pullback tilde h, apply BaseLocallyConstant at e composed with an arbitrary x, where InfiniteSetEnumeration supplies e with range X. For an arbitrary y, explicitly form e composed with y, transfer PrefixAgree from x and y to the two compositions coordinate by coordinate using IncSeqComp and the monotonicity/range facts, and conclude tilde h(y)=tilde h(x). Apply ShiftDichotomy to this locally constant pullback. In the bad branch, first use RestrictionLocallyConstant to obtain local constancy of MultiSequenceRestrict tilde h u, then apply the stated Bqo hypothesis to that restricted sequence before deriving the contradiction. In the perfect branch set z=e composed with u, prove z is in BaseIncSeq X, and use BaseRestrict and MultiSequenceRestrict with the explicit composition identity to identify BaseRestrict h z pointwise with the perfect restricted pullback. Invoke the defining universal condition from PerfectMultiSequence explicitly. Keep all cross-node citations explicit, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, RestrictionLocallyConstant, and PerfectMultiSequence.",
-    "task_blocker_ids": [
-      "soundness:node:BaseBqoRestriction:sound-v2:d8540e34b1b639af0ae7f6cfce880201d71bc5e81822ccd6006ccd6d22c9cd40"
-    ],
+    "reason": "BaseBqoRestriction has a current Sound approval. BadSuperToBase is the held next node, has no current Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "comments": "Leave Tablet/BadSuperToBase.tex and the rest of the tablet unchanged. Request a real Sound verification of BadSuperToBase. Check that SuperSequenceExtension supplies the base multi-sequence, its BaseLocallyConstant witness, and the extension-value equation for every base enumeration. For arbitrary x, apply that equation to x and BaseShift X x, explicitly name the resulting front members s and t, and use the two proper-prefix relations together with the definition of BaseShift and FiniteShift to establish FiniteShift s t. Then apply BadSuperSequence to obtain the negated relation between f(s) and f(t), rewrite both values using the extension equations, and quantify over arbitrary x to conclude the exact BaseBad statement. Every cross-node dependency used in these steps should be cited, including SuperSequence, SuperSequenceExtension, BaseMultiSequence, BaseLocallyConstant, BaseShift, FiniteShift, BadSuperSequence, and BaseBad.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BaseBqoRestriction",
+    "request_sound_verifier_node_ids": [
+      "BadSuperToBase"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -20,19 +20,14 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1264,
-        "end_line": 1271,
-        "reason": "The manuscript models infinite subsets by increasing enumerations and defines local constancy by finite initial segments."
-      },
-      {
-        "start_line": 1651,
+        "start_line": 1638,
         "end_line": 1661,
-        "reason": "The manuscript applies the perfect-or-bad dichotomy and excludes the bad restriction in a bqo."
+        "reason": "The manuscript defines perfect multi- and super-sequences and derives the sub-super-sequence clause from the dichotomy construction."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript passages justify the tablet's pullback along an increasing enumeration, the finite-prefix local-constancy transfer, and the final use of the perfect-or-bad dichotomy with bqo excluding the bad alternative."
+      "basis_summary": "The cited manuscript passage sets the super-sequence framework and its perfectness relation, then explains how the dichotomy construction yields restrictions. The requested verification checks the corresponding badness transfer from a super-sequence to its base multi-sequence."
     },
     "authorized_node_ids": []
   },
@@ -45,10 +40,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/BaseBqoRestriction.tex and the import preamble of Tablet/BaseBqoRestriction.lean; do not change the theorem signature, weaken its hypotheses or conclusion, modify RestrictionLocallyConstant, or add a redundant helper. Add the existing Tablet.RestrictionLocallyConstant support to the import closure and cite it in the proof. For the pullback tilde h, apply BaseLocallyConstant at e composed with an arbitrary x, where InfiniteSetEnumeration supplies e with range X. For an arbitrary y, explicitly form e composed with y, transfer PrefixAgree from x and y to the two compositions coordinate by coordinate using IncSeqComp and the monotonicity/range facts, and conclude tilde h(y)=tilde h(x). Apply ShiftDichotomy to this locally constant pullback. In the bad branch, first use RestrictionLocallyConstant to obtain local constancy of MultiSequenceRestrict tilde h u, then apply the stated Bqo hypothesis to that restricted sequence before deriving the contradiction. In the perfect branch set z=e composed with u, prove z is in BaseIncSeq X, and use BaseRestrict and MultiSequenceRestrict with the explicit composition identity to identify BaseRestrict h z pointwise with the perfect restricted pullback. Invoke the defining universal condition from PerfectMultiSequence explicitly. Keep all cross-node citations explicit, including BaseIncSeq, BaseMultiSequence, BaseLocallyConstant, IncSeqComp, InfiniteSetEnumeration, ShiftDichotomy, Bqo, BaseRestrict, MultiSequenceRestrict, RestrictionLocallyConstant, and PerfectMultiSequence.",
+    "comments": "Leave Tablet/BadSuperToBase.tex and the rest of the tablet unchanged. Request a real Sound verification of BadSuperToBase. Check that SuperSequenceExtension supplies the base multi-sequence, its BaseLocallyConstant witness, and the extension-value equation for every base enumeration. For arbitrary x, apply that equation to x and BaseShift X x, explicitly name the resulting front members s and t, and use the two proper-prefix relations together with the definition of BaseShift and FiniteShift to establish FiniteShift s t. Then apply BadSuperSequence to obtain the negated relation between f(s) and f(t), rewrite both values using the extension equations, and quantify over arbitrary x to conclude the exact BaseBad statement. Every cross-node dependency used in these steps should be cited, including SuperSequence, SuperSequenceExtension, BaseMultiSequence, BaseLocallyConstant, BaseShift, FiniteShift, BadSuperSequence, and BaseBad.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 165,
+    "cycle": 166,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -56,47 +51,34 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BaseBqoRestriction",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1271,
-        "reason": "The manuscript models infinite subsets by increasing enumerations and defines local constancy by finite initial segments.",
-        "start_line": 1264
-      },
-      {
         "end_line": 1661,
-        "reason": "The manuscript applies the perfect-or-bad dichotomy and excludes the bad restriction in a bqo.",
-        "start_line": 1651
+        "reason": "The manuscript defines perfect multi- and super-sequences and derives the sub-super-sequence clause from the dichotomy construction.",
+        "start_line": 1638
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript passages justify the tablet's pullback along an increasing enumeration, the finite-prefix local-constancy transfer, and the final use of the perfect-or-bad dichotomy with bqo excluding the bad alternative.",
+      "basis_summary": "The cited manuscript passage sets the super-sequence framework and its perfectness relation, then explains how the dichotomy construction yields restrictions. The requested verification checks the corresponding badness transfer from a super-sequence to its base multi-sequence.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found a supported structural gap in BaseBqoRestriction: the bad alternative concerns the restricted pullback, but RestrictionLocallyConstant is absent from the node's import and citation closure. Assign the repair-ready blocker to a Global worker while preserving the theorem statement.",
-    "request_id": 522,
-    "request_sound_verifier_nodes": [],
+    "reason": "BaseBqoRestriction has a current Sound approval. BadSuperToBase is the held next node, has no current Sound verdict, and is requestable, so request verification without assigning a worker or resetting any obligation.",
+    "request_id": 525,
+    "request_sound_verifier_nodes": [
+      "BadSuperToBase"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:d8540e34b1b639af0ae7f6cfce880201d71bc5e81822ccd6006ccd6d22c9cd40",
-        "kind": "Soundness",
-        "object": {
-          "node": "BaseBqoRestriction",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_522_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_525_decision.context.json"
 }

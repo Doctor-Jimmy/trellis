@@ -1,5 +1,6 @@
 import Tablet.Bqo
 import Tablet.BaseLocallyConstant
+import Tablet.RestrictionLocallyConstant
 import Tablet.BaseRestrict
 import Tablet.PerfectMultiSequence
 import Tablet.ShiftDichotomy
