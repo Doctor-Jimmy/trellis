@@ -1,15 +1,15 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FinitePrefixExtension now has a current Sound approval. FirstMovedPoint is the next FreshUnknown orbit-support obligation; its NL proof explicitly cites IncSeqPointwiseLe and gives the least-moved-point argument, so a Sound verifier run is warranted without a worker repair.",
-    "comments": "Run a verifier-only Sound burst for `FirstMovedPoint`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{IncSeqPointwiseLe}` supplies pointwise monotonicity, that non-identity gives a nonempty moved-point set, that well-ordering supplies its least element, and that minimality plus pointwise monotonicity yields `g(j)=j` below that point. The paper's increasing-enumeration representation of infinite subsets is at lines 1264--1267.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "FirstMovedPoint"
+    "reason": "FirstMovedPoint has a current Sound approval. BlockSigmaEmbedding is the next unresolved shift-support obligation, and its present proof uses BlockSigma, orbit-block coverage, strict increase, and boundary identities without explicit citations or line-by-line justification.",
+    "comments": "Repair only `Tablet/BlockSigmaEmbedding.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{IncSeq}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{OrbitPoint}` at their uses. Define the witness map by the two BlockSigma cases, use `\\noderef{OrbitBlockCoverage}` to cover every l and eliminate the fallback, and prove by induction from the order-embedding property in `\\noderef{IncSeq}` that every iterate of g is strictly increasing. Verify the initial boundary with `G(0) <= G(f(0))`, and for a later block prove the displayed cross-boundary inequality: if `G(n) <= l < G(n+1)`, compare `g^[f(n)-n](l)` with `G(f(n+1))` using `f(n)+1 <= f(n+1)`, then identify the value at `G(n+1)` by the iterate arithmetic. State explicitly why the pieces are strictly increasing and hence form an order embedding. Do not treat the proof of another node as supplying unstated hypotheses. The corresponding paper calculation is lines 1794--1814 of `paper/paper.tex`.",
+    "task_blocker_ids": [
+      "soundness:node:BlockSigmaEmbedding:sound-v2:c9326ac470cf102f07241517abcc901f0723994b626a62e501b981e08ced935d"
     ],
-    "next_active": "",
-    "next_mode": "global",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "BlockSigmaEmbedding",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
@@ -18,14 +18,14 @@
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "start_line": 1264,
-        "end_line": 1267,
-        "reason": "The paper's increasing-enumeration representation of infinite subsets."
+        "start_line": 1794,
+        "end_line": 1814,
+        "reason": "The paper's block-map definition and increasing-embedding boundary calculation."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations and finite proper-prefix cylinders; this is the surrounding representation used by the orbit and shift-support development."
+      "basis_summary": "Lines 1794--1799 define the two pieces of the block map. Lines 1802--1813 prove within-block monotonicity and the initial and later boundary inequalities that make the pieces an increasing injection."
     },
     "work_style_hint": "none",
     "authorized_node_ids": []
@@ -39,10 +39,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Run a verifier-only Sound burst for `FirstMovedPoint`; do not edit Tablet content, assign a worker, or reset a blocker. Check that `\\noderef{IncSeqPointwiseLe}` supplies pointwise monotonicity, that non-identity gives a nonempty moved-point set, that well-ordering supplies its least element, and that minimality plus pointwise monotonicity yields `g(j)=j` below that point. The paper's increasing-enumeration representation of infinite subsets is at lines 1264--1267.",
+    "comments": "Repair only `Tablet/BlockSigmaEmbedding.tex`; preserve the Lean statement, imports, and support structure. Cite `\\noderef{BlockSigma}`, `\\noderef{IncSeq}`, `\\noderef{OrbitBlockCoverage}`, and `\\noderef{OrbitPoint}` at their uses. Define the witness map by the two BlockSigma cases, use `\\noderef{OrbitBlockCoverage}` to cover every l and eliminate the fallback, and prove by induction from the order-embedding property in `\\noderef{IncSeq}` that every iterate of g is strictly increasing. Verify the initial boundary with `G(0) <= G(f(0))`, and for a later block prove the displayed cross-boundary inequality: if `G(n) <= l < G(n+1)`, compare `g^[f(n)-n](l)` with `G(f(n+1))` using `f(n)+1 <= f(n+1)`, then identify the value at `G(n+1)` by the iterate arithmetic. State explicitly why the pieces are strictly increasing and hence form an order embedding. Do not treat the proof of another node as supplying unstated hypotheses. The corresponding paper calculation is lines 1794--1814 of `paper/paper.tex`.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 79,
+    "cycle": 80,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -50,34 +50,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "BlockSigmaEmbedding",
     "next_active_coarse": null,
-    "next_mode": "Global",
+    "next_mode": "Targeted",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1267,
-        "reason": "The paper's increasing-enumeration representation of infinite subsets.",
-        "start_line": 1264
+        "end_line": 1814,
+        "reason": "The paper's block-map definition and increasing-embedding boundary calculation.",
+        "start_line": 1794
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1264--1267 identify infinite subsets with injective increasing enumerations and finite proper-prefix cylinders; this is the surrounding representation used by the orbit and shift-support development.",
+      "basis_summary": "Lines 1794--1799 define the two pieces of the block map. Lines 1802--1813 prove within-block monotonicity and the initial and later boundary inequalities that make the pieces an increasing injection.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FinitePrefixExtension now has a current Sound approval. FirstMovedPoint is the next FreshUnknown orbit-support obligation; its NL proof explicitly cites IncSeqPointwiseLe and gives the least-moved-point argument, so a Sound verifier run is warranted without a worker repair.",
-    "request_id": 299,
-    "request_sound_verifier_nodes": [
-      "FirstMovedPoint"
-    ],
+    "reason": "FirstMovedPoint has a current Sound approval. BlockSigmaEmbedding is the next unresolved shift-support obligation, and its present proof uses BlockSigma, orbit-block coverage, strict increase, and boundary identities without explicit citations or line-by-line justification.",
+    "request_id": 301,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:c9326ac470cf102f07241517abcc901f0723994b626a62e501b981e08ced935d",
+        "kind": "Soundness",
+        "object": {
+          "node": "BlockSigmaEmbedding",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_299_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_301_decision.context.json"
 }
