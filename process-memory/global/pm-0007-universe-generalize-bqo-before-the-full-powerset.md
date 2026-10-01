@@ -1,7 +1,8 @@
 ---
 id: pm-0007-universe-generalize-bqo-before-the-full-powerset
 type: interface-decision
-status: active
+status: superseded
+superseded_by: pm-0009-universe-generalize-bqo-and-lift-countable-branc
 coarse_node: global
 created: {cycle: 10, request_id: 63}
 ---

@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Paper-faithfulness has passed for PowerQPresBqo. The remaining blocked targets are the hereditary wqo and well-foundedness equivalences, and the next planned prerequisite is the shared hereditary countable carrier inside the full PowerQ hierarchy. The worker's reflection package and target node passed the build and structural checks, so no reset is needed.",
-    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core. Define a tagged countably branching presentation code and an erasure into the existing full PowerQ; define HereditarilyCountable by PowerPresentationEq-equivalence to an erased code, then define the HerCtblPower subtype and HerCtblRel as the restricted PowerRel. Prove atoms are hereditary, prove invariance under presentation equivalence, and expose the induced preorder. Prove closure under every nonempty countable small-indexed family by choosing witness codes and reindexing through Nat, including repetition for finite families, so the constructed node remains in the full hierarchy. Keep countable branching only in the hereditary witness representation; do not replace PowerQ globally. This is a prerequisite layer: do not claim either hereditary target yet, and keep all new proof-bearing TeX complete and explicitly cited.",
+    "reason": "The latest audit confirms that the remaining hereditary target route is sound but requires a universe-lifted countable witness index. The supplied scratch probe elaborates the tagged code and erasure using ULift.{u} Nat and confirms exists_surjective_nat for arbitrary nonempty countable indices. The next worker should implement this corrected hereditary carrier core before any target theorem or front recursion work.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core as revised by the audit. Attach to PowerQ, PowerPresentationEq and its equivalence theorem, PowerRel and its congruence theorems, and PowerQIsPreorder. Define a tagged code with atoms and Nat-indexed nonempty nodes; erase nodes into full PowerQ using ULift.{u} Nat as the index type. Define HereditarilyCountable x by PowerPresentationEq-equivalence to an erased code, define HerCtblPower and the restricted HerCtblRel, prove atom heredity, presentation-equivalence invariance, and the induced preorder. Expose the reusable closure theorem for any I : Type u with Countable I and Nonempty I: a family of hereditary children yields a hereditary full-hierarchy node, using exists_surjective_nat I and an extensional comparison between the ULift Nat witness and the I-indexed node. Do not make the global PowerQ countably branching, do not claim either hereditary target in this layer, and keep new proof-bearing TeX complete and explicitly cited.",
     "task_blocker_ids": [
       "paperfaithfulness:target:thm BqoHerCtblWqo:",
       "paperfaithfulness:target:thm BqoHerCtblWellF:"
@@ -20,48 +20,43 @@
       {
         "start_line": 1362,
         "end_line": 1374,
-        "reason": "The paper's transfinite nonempty powerset hierarchy and support definition, which the hereditary representation must preserve."
+        "reason": "The paper's full transfinite nonempty powerset hierarchy, atom convention, and recursive support definition."
       },
       {
         "start_line": 1580,
         "end_line": 1584,
-        "reason": "The paper's definition of the hereditarily countable nonempty part of the full hierarchy and its induced quasi-order."
+        "reason": "The paper's hereditary countable nonempty carrier and its induced quasi-order."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The paper defines PowerQ as the full transfinite hierarchy of nonempty sets with atoms and recursive support, then identifies the hereditary countable carrier as the recursively generated countable nonempty part equipped with the induced order. The next tablet layer must represent that carrier without weakening the full PowerQ target hierarchy."
+      "basis_summary": "The paper treats PowerQ as the full transfinite hierarchy with atoms and recursive support, then identifies the hereditary carrier as the recursively generated countable nonempty part with the induced order. The audit's elaboration probe confirms that the faithful arbitrary-universe implementation needs ULift.{u} Nat for countable witness nodes."
     },
     "stuck_math_audit": {
-      "notes": "The audit task iterated-power-preservation is complete: PowerQReflection and the supporting finite-shift/orbit nodes are present, and the sole PowerQPresBqo target node passed paper-faithfulness, correspondence, build, and shape checks. Dismiss that task and execute hereditarily-countable-core next. Build the hereditary carrier as a representation inside full PowerQ: use tagged countably branching codes with an erasure, define hereditary membership through PowerPresentationEq rather than raw equality, restrict PowerRel, and prove closure under nonempty countable families by Nat reindexing. Countable branching must not replace the full arbitrary-small PowerQ, and neither hereditary target should be claimed until its later theorem package is present.",
+      "notes": "The fresh audit plan keeps the hereditary core as the next live task and refines it with a necessary universe detail. The scratch probe at .trellis/stuck-math-audit/cycle-18-request-103/hereditary_code_probe.lean passes: plain Nat is not the correct PowerQ.node index for arbitrary Q : Type u, while ULift.{u} Nat works, and exists_surjective_nat supplies the reindexing map for every nonempty countable I. Implement hereditary membership through PowerPresentationEq, preserve the full arbitrary-small PowerQ, and prove the generic countable-family closure before moving to the separately planned FrontTreeWellFounded repair. Neither hereditary target should be claimed in this prerequisite layer.",
       "reviewer_lean_product": {
         "targets": [
           "thm BqoHerCtblWqo",
           "thm BqoHerCtblWellF"
         ],
-        "completed_task": "iterated-power-preservation",
         "next_task": "hereditarily-countable-core",
+        "probe_result": "ULift.{u} Nat erasure and exists_surjective_nat I elaborate successfully for arbitrary universe u.",
         "required_interface": [
-          "tagged countably branching presentation code and erasure into full PowerQ",
-          "HereditarilyCountable defined by PowerPresentationEq-equivalence to an erased code",
-          "HerCtblPower subtype and HerCtblRel restriction of PowerRel",
-          "atom heredity, presentation-equivalence invariance, and induced preorder",
-          "closure under every nonempty countable small-indexed family, with finite-family repetition"
+          "tagged hereditary code with atom and Nat-indexed node constructors",
+          "erasure into full PowerQ using ULift.{u} Nat",
+          "HereditarilyCountable defined by PowerPresentationEq to an erasure",
+          "HerCtblPower subtype, HerCtblRel restriction, atom heredity, invariance, and preorder",
+          "generic closure for nonempty countable I-indexed hereditary families via exists_surjective_nat"
         ],
         "constraints": [
           "retain the full arbitrary-small-indexed PowerQ carrier",
-          "use extensional presentation equivalence rather than raw equality for hereditary membership",
+          "do not use plain Nat as the PowerQ.node index at arbitrary universe u",
           "do not replace PowerQ globally by countable branching",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this prerequisite layer"
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF before their later tasks"
         ]
       }
     },
-    "dismissed_tasks": [
-      {
-        "id": "iterated-power-preservation",
-        "reason": "Completed: the worker added the reflected bad locally constant map, finite shift-prefix and orbit-constancy support, and the sole PowerQPresBqo target node with complete non-SKETCH TeX; paper-faithfulness passed and build/shape checks passed. The next work is the distinct hereditary countable carrier layer."
-      }
-    ]
+    "dismissed_tasks": []
   },
   "response": {
     "allow_new_obligations": true,
@@ -72,19 +67,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core. Define a tagged countably branching presentation code and an erasure into the existing full PowerQ; define HereditarilyCountable by PowerPresentationEq-equivalence to an erased code, then define the HerCtblPower subtype and HerCtblRel as the restricted PowerRel. Prove atoms are hereditary, prove invariance under presentation equivalence, and expose the induced preorder. Prove closure under every nonempty countable small-indexed family by choosing witness codes and reindexing through Nat, including repetition for finite families, so the constructed node remains in the full hierarchy. Keep countable branching only in the hereditary witness representation; do not replace PowerQ globally. This is a prerequisite layer: do not claim either hereditary target yet, and keep all new proof-bearing TeX complete and explicitly cited.",
+    "comments": "Continue in Global mode with no narrow node anchor and execute hereditarily-countable-core as revised by the audit. Attach to PowerQ, PowerPresentationEq and its equivalence theorem, PowerRel and its congruence theorems, and PowerQIsPreorder. Define a tagged code with atoms and Nat-indexed nonempty nodes; erase nodes into full PowerQ using ULift.{u} Nat as the index type. Define HereditarilyCountable x by PowerPresentationEq-equivalence to an erased code, define HerCtblPower and the restricted HerCtblRel, prove atom heredity, presentation-equivalence invariance, and the induced preorder. Expose the reusable closure theorem for any I : Type u with Countable I and Nonempty I: a family of hereditary children yields a hereditary full-hierarchy node, using exists_surjective_nat I and an extensional comparison between the ULift Nat witness and the I-indexed node. Do not make the global PowerQ countably branching, do not claim either hereditary target in this layer, and keep new proof-bearing TeX complete and explicitly cited.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 17,
+    "cycle": 18,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
-    "dismissed_tasks": [
-      {
-        "id": "iterated-power-preservation",
-        "reason": "Completed: the worker added the reflected bad locally constant map, finite shift-prefix and orbit-constancy support, and the sole PowerQPresBqo target node with complete non-SKETCH TeX; paper-faithfulness passed and build/shape checks passed. The next work is the distinct hereditary countable carrier layer."
-      }
-    ],
+    "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
@@ -95,44 +85,44 @@
     "paper_focus_ranges": [
       {
         "end_line": 1374,
-        "reason": "The paper's transfinite nonempty powerset hierarchy and support definition, which the hereditary representation must preserve.",
+        "reason": "The paper's full transfinite nonempty powerset hierarchy, atom convention, and recursive support definition.",
         "start_line": 1362
       },
       {
         "end_line": 1584,
-        "reason": "The paper's definition of the hereditarily countable nonempty part of the full hierarchy and its induced quasi-order.",
+        "reason": "The paper's hereditary countable nonempty carrier and its induced quasi-order.",
         "start_line": 1580
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The paper defines PowerQ as the full transfinite hierarchy of nonempty sets with atoms and recursive support, then identifies the hereditary countable carrier as the recursively generated countable nonempty part equipped with the induced order. The next tablet layer must represent that carrier without weakening the full PowerQ target hierarchy.",
+      "basis_summary": "The paper treats PowerQ as the full transfinite hierarchy with atoms and recursive support, then identifies the hereditary carrier as the recursively generated countable nonempty part with the induced order. The audit's elaboration probe confirms that the faithful arbitrary-universe implementation needs ULift.{u} Nat for countable witness nodes.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Paper-faithfulness has passed for PowerQPresBqo. The remaining blocked targets are the hereditary wqo and well-foundedness equivalences, and the next planned prerequisite is the shared hereditary countable carrier inside the full PowerQ hierarchy. The worker's reflection package and target node passed the build and structural checks, so no reset is needed.",
-    "request_id": 102,
+    "reason": "The latest audit confirms that the remaining hereditary target route is sound but requires a universe-lifted countable witness index. The supplied scratch probe elaborates the tagged code and erasure using ULift.{u} Nat and confirms exists_surjective_nat for arbitrary nonempty countable indices. The next worker should implement this corrected hereditary carrier core before any target theorem or front recursion work.",
+    "request_id": 104,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": {
-      "notes": "The audit task iterated-power-preservation is complete: PowerQReflection and the supporting finite-shift/orbit nodes are present, and the sole PowerQPresBqo target node passed paper-faithfulness, correspondence, build, and shape checks. Dismiss that task and execute hereditarily-countable-core next. Build the hereditary carrier as a representation inside full PowerQ: use tagged countably branching codes with an erasure, define hereditary membership through PowerPresentationEq rather than raw equality, restrict PowerRel, and prove closure under nonempty countable families by Nat reindexing. Countable branching must not replace the full arbitrary-small PowerQ, and neither hereditary target should be claimed until its later theorem package is present.",
+      "notes": "The fresh audit plan keeps the hereditary core as the next live task and refines it with a necessary universe detail. The scratch probe at .trellis/stuck-math-audit/cycle-18-request-103/hereditary_code_probe.lean passes: plain Nat is not the correct PowerQ.node index for arbitrary Q : Type u, while ULift.{u} Nat works, and exists_surjective_nat supplies the reindexing map for every nonempty countable I. Implement hereditary membership through PowerPresentationEq, preserve the full arbitrary-small PowerQ, and prove the generic countable-family closure before moving to the separately planned FrontTreeWellFounded repair. Neither hereditary target should be claimed in this prerequisite layer.",
       "reviewer_lean_product": {
-        "completed_task": "iterated-power-preservation",
         "constraints": [
           "retain the full arbitrary-small-indexed PowerQ carrier",
-          "use extensional presentation equivalence rather than raw equality for hereditary membership",
+          "do not use plain Nat as the PowerQ.node index at arbitrary universe u",
           "do not replace PowerQ globally by countable branching",
-          "do not claim BqoHerCtblWqo or BqoHerCtblWellF in this prerequisite layer"
+          "do not claim BqoHerCtblWqo or BqoHerCtblWellF before their later tasks"
         ],
         "next_task": "hereditarily-countable-core",
+        "probe_result": "ULift.{u} Nat erasure and exists_surjective_nat I elaborate successfully for arbitrary universe u.",
         "required_interface": [
-          "tagged countably branching presentation code and erasure into full PowerQ",
-          "HereditarilyCountable defined by PowerPresentationEq-equivalence to an erased code",
-          "HerCtblPower subtype and HerCtblRel restriction of PowerRel",
-          "atom heredity, presentation-equivalence invariance, and induced preorder",
-          "closure under every nonempty countable small-indexed family, with finite-family repetition"
+          "tagged hereditary code with atom and Nat-indexed node constructors",
+          "erasure into full PowerQ using ULift.{u} Nat",
+          "HereditarilyCountable defined by PowerPresentationEq to an erasure",
+          "HerCtblPower subtype, HerCtblRel restriction, atom heredity, invariance, and preorder",
+          "generic closure for nonempty countable I-indexed hereditary families via exists_surjective_nat"
         ],
         "targets": [
           "thm BqoHerCtblWqo",
@@ -162,5 +152,5 @@
     ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_102_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_104_decision.context.json"
 }
