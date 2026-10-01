@@ -1,31 +1,31 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TildeFNonfrontEquation is now Sound-approved. TildeFFrontEquation is an unverified direct support for the held TildeFHerCtbl target, so certify this front branch before the hereditary-countability parent.",
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one Sound verifier for TildeFFrontEquation only. Check that the hypothesis s in T(F) and s in F selects the front branch of the cited TildeF recursion, that the returned value is exactly the atom carrying f.value at the subtype s, and that the displayed equality is independent of the chosen membership proof by proof irrelevance. Require the existing explicit citations to TildeF and SuperSequence, and leave TildeFHerCtbl unrequested until both its front and hereditary-node support are certified.",
-    "task_blocker_ids": [],
-    "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [
-      "TildeFFrontEquation"
+    "reason": "TildeFFrontEquation has a concrete structural Sound failure: it omits the required SuperSequence citation and incorrectly identifies the dependent subtype proofs used in the front-branch equality. Assign a targeted NL-proof repair.",
+    "comments": "Repair only Tablet/TildeFFrontEquation.tex; preserve the Lean statement, imports, and support DAG, and add no helper or theorem. Add an explicit \\noderef{SuperSequence} where the dependent value representation f.value is used. Correct the proof-irrelevance explanation: s.2 has type s.1 in PrefixTree F, whereas the recursion branch has an internal witness hs' : s.1 in F and the theorem supplies hs : s.1 in F. Compare hs' with hs by proof irrelevance to identify f.value <s.1, hs'> with f.value <s.1, hs>; do not claim that s.2 and hs prove the same proposition. Retain the citation to TildeF and explicitly explain how the hypothesis hs selects the front branch and yields the displayed atom equality.",
+    "task_blocker_ids": [
+      "soundness:node:TildeFFrontEquation:sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d"
     ],
-    "next_active": "",
-    "next_mode": "global",
+    "reset_blocker_ids": [],
+    "request_sound_verifier_node_ids": [],
+    "next_active": "TildeFFrontEquation",
+    "next_mode": "targeted",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {},
     "allow_new_obligations": true,
     "must_close_active": false,
-    "next_worker_context_mode": "resume",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "start_line": 1559,
         "end_line": 1563,
-        "reason": "The paper's two-branch well-founded recursion, including the front-member branch."
+        "reason": "The paper's front and non-front clauses defining the well-founded recursion."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited passage defines tilde f on the front tree by returning f(s) at front members and collecting recursive child values otherwise. TildeFFrontEquation formalizes the first of these two defining clauses, so it should be certified before the hereditary-countability induction that uses it."
+      "basis_summary": "The cited passage defines tilde f by returning f(s) on front members and recursive child values otherwise. The requested repair makes the tablet proof's front-branch unfolding and its dependent-domain identification precise without changing the mathematical recursion."
     },
     "work_style_hint": "none"
   },
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not assign a worker or reset any soundness evidence. Request one Sound verifier for TildeFFrontEquation only. Check that the hypothesis s in T(F) and s in F selects the front branch of the cited TildeF recursion, that the returned value is exactly the atom carrying f.value at the subtype s, and that the displayed equality is independent of the chosen membership proof by proof irrelevance. Require the existing explicit citations to TildeF and SuperSequence, and leave TildeFHerCtbl unrequested until both its front and hereditary-node support are certified.",
+    "comments": "Repair only Tablet/TildeFFrontEquation.tex; preserve the Lean statement, imports, and support DAG, and add no helper or theorem. Add an explicit \\noderef{SuperSequence} where the dependent value representation f.value is used. Correct the proof-irrelevance explanation: s.2 has type s.1 in PrefixTree F, whereas the recursion branch has an internal witness hs' : s.1 in F and the theorem supplies hs : s.1 in F. Compare hs' with hs by proof irrelevance to identify f.value <s.1, hs'> with f.value <s.1, hs>; do not claim that s.2 and hs prove the same proposition. Retain the citation to TildeF and explicitly explain how the hypothesis hs selects the front branch and yields the displayed atom equality.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 98,
+    "cycle": 99,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,34 +49,42 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": null,
+    "next_active": "TildeFFrontEquation",
     "next_active_coarse": null,
-    "next_mode": "Global",
-    "next_worker_context_mode": "resume",
+    "next_mode": "Targeted",
+    "next_worker_context_mode": "fresh",
     "paper_focus_ranges": [
       {
         "end_line": 1563,
-        "reason": "The paper's two-branch well-founded recursion, including the front-member branch.",
+        "reason": "The paper's front and non-front clauses defining the well-founded recursion.",
         "start_line": 1559
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited passage defines tilde f on the front tree by returning f(s) at front members and collecting recursive child values otherwise. TildeFFrontEquation formalizes the first of these two defining clauses, so it should be certified before the hereditary-countability induction that uses it.",
+      "basis_summary": "The cited passage defines tilde f by returning f(s) on front members and recursive child values otherwise. The requested repair makes the tablet proof's front-branch unfolding and its dependent-domain identification precise without changing the mathematical recursion.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TildeFNonfrontEquation is now Sound-approved. TildeFFrontEquation is an unverified direct support for the held TildeFHerCtbl target, so certify this front branch before the hereditary-countability parent.",
-    "request_id": 348,
-    "request_sound_verifier_nodes": [
-      "TildeFFrontEquation"
-    ],
+    "reason": "TildeFFrontEquation has a concrete structural Sound failure: it omits the required SuperSequence citation and incorrectly identifies the dependent subtype proofs used in the front-branch equality. Assign a targeted NL-proof repair.",
+    "request_id": 350,
+    "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [],
+    "task_blockers": [
+      {
+        "deferred": false,
+        "fingerprint": "sound-v2:a5de9df6093c8bce1cdf1e7d9c099e4a86306164e763920810848d246d23c98d",
+        "kind": "Soundness",
+        "object": {
+          "node": "TildeFFrontEquation",
+          "otype": "node"
+        }
+      }
+    ],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_348_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_350_decision.context.json"
 }
