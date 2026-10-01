@@ -11,10 +11,57 @@ In particular, for the first row all copied values remain supported by
 $h(x)$.
 \end{lemma}
 \begin{proof}
-At depth zero, \noderef{PowerCopiedFailureMove} gives that $L_{n,0}$ is a
-legal move from the initial value in row $n$.  The support inclusion
-\noderef{PowerMoveInSupport} gives the claim.  At a successor depth, the
-same lemma gives inclusion of the support of $L_{n,k+1}$ in that of
-$L_{n,k}$; compose this with the induction hypothesis.  This proves the
-inclusion for all depths and rows.
+Fix a row $n$ and write
+\[
+L_{n,k}=\mathsf{PowerCopiedLeft}_r(h,x,n,k).
+\]
+We prove the displayed inclusion by induction on $k$.  At depth zero,
+unfolding \noderef{PowerCopiedLeft} gives
+\[
+L_{n,0}=\mathsf{PowerIResponse}_r\bigl(
+  h(\mathsf{PowerShiftIter}(n,x)),
+  h(\mathsf{PowerShiftIter}(n+1,x))\bigr).
+\]
+The first assertion of \noderef{PowerCopiedFailureMove}, instantiated at
+depth zero, says that the two values in this initial pair fail
+$\mathsf{PowerRel}(r)$.  Therefore \noderef{PowerIResponseLegal}, applied
+to this failed pair and the displayed defining equation for $L_{n,0}$,
+gives
+\[
+\mathsf{PowerMove}\bigl(h(\mathsf{PowerShiftIter}(n,x)),L_{n,0}\bigr).
+\]
+Applying \noderef{PowerMoveInSupport} yields
+\[
+\mathsf{PowerSupport}(L_{n,0})
+\subseteq
+\mathsf{PowerSupport}\bigl(h(\mathsf{PowerShiftIter}(n,x))\bigr),
+\]
+which is the induction base.
+
+For the successor step, assume
+\[
+\mathsf{PowerSupport}(L_{n,k})
+\subseteq
+\mathsf{PowerSupport}\bigl(h(\mathsf{PowerShiftIter}(n,x))\bigr).
+\]
+The recursive clause in \noderef{PowerCopiedLeft} identifies
+$L_{n,k+1}$ as the canonical response to the pair
+$(L_{n,k},L_{n+1,k})$.  The second assertion of
+\noderef{PowerCopiedFailureMove}, applied at depth $k$ in row $n$, gives
+\[
+\mathsf{PowerMove}(L_{n,k},L_{n,k+1}).
+\]
+Hence \noderef{PowerMoveInSupport} gives
+\[
+\mathsf{PowerSupport}(L_{n,k+1})
+\subseteq \mathsf{PowerSupport}(L_{n,k}).
+\]
+Composing this inclusion with the induction hypothesis proves the desired
+inclusion at depth $k+1$.  Since $n$ was arbitrary, the result holds for
+every row and depth.
+
+Finally, when $n=0$, the zeroth-iterate clause of
+\noderef{PowerShiftIter} gives $\mathsf{PowerShiftIter}(0,x)=x$.
+The displayed inclusion therefore specializes to support containment in
+$\mathsf{PowerSupport}(h(x))$, as claimed.
 \end{proof}
