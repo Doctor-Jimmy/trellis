@@ -6,13 +6,42 @@ If $r$ is a preorder on $Q$, then
 \].
 \end{lemma}
 \begin{proof}
-Proceed by well-founded induction on the child relation from
-\noderef{PowerChildWellFounded}.  For an atom $\mathsf{atom}(q)$, the
-atom--atom reduction \noderef{PowerRelAtomAtom} reduces the goal to
-$r(q,q)$, which is reflexivity of the assumed preorder on $Q$.  For a node
-$X=\mathsf{node}(\iota,h,f)$, use the node--node reduction
-\noderef{PowerRelNodeNode}.  Given $i\in\iota$, choose the same index $i$ on
-the right; the induction hypothesis applied to the child $f(i)$ proves
-$\mathsf{PowerRel}(r)(f(i),f(i))$.  This supplies the required witness for
-every child, and hence proves reflexivity for $X$.
+For each $x\in\mathsf{PowerQ}(Q)$, let $P(x)$ be the proposition
+\(\mathsf{PowerRel}(r)(x,x)\).  We prove $P(x)$ by well-founded induction
+on the child-to-parent relation.  This induction is legitimate by the
+well-foundedness statement \noderef{PowerChildWellFounded}; thus, in the
+induction case for $x$, we may use $P(y)$ whenever
+$\mathsf{PowerChild}(y,x)$.
+
+First suppose that $x=\mathsf{atom}(q)$.  The atom--atom reduction
+\noderef{PowerRelAtomAtom}, obtained by unfolding the recursive definition
+of $\mathsf{PowerRel}$ at the two atoms, identifies the goal
+\(\mathsf{PowerRel}(r)(\mathsf{atom}(q),\mathsf{atom}(q))\) with the goal
+$r(q,q)$.  The stated instance $[\mathsf{IsPreorder}\ Q\ r]$ supplies
+reflexivity, so $r(q,q)$ holds and hence $P(\mathsf{atom}(q))$ holds.
+
+Now suppose that $x=\mathsf{node}(\iota,h,f)$.  By the node--node reduction
+\noderef{PowerRelNodeNode}, after unfolding the recursive definition, it is
+enough to prove
+\[
+\forall i\in\iota\;\exists j\in\iota,
+\quad \mathsf{PowerRel}(r)(f(i),f(j)).
+\]
+Fix an arbitrary $i\in\iota$.  Choose the right-hand index to be the same
+index, namely $j=i$.  By the child definition \noderef{PowerChild}, the
+term
+\[
+\langle i,\mathord{rfl}\rangle
+\]
+is a witness of
+$\mathsf{PowerChild}(f(i),\mathsf{node}(\iota,h,f))$: it supplies the
+index $i$ and the required equality $f(i)=f(i)$.  The induction hypothesis
+therefore gives
+\[
+\mathsf{PowerRel}(r)(f(i),f(i)).
+\]
+Combining this proof with the chosen witness $j=i$ gives the existential
+claim for the fixed $i$.  Since $i$ was arbitrary, universal introduction
+gives the displayed $\forall i\,\exists j$ statement, and the reduction
+then gives $P(\mathsf{node}(\iota,h,f))$.
 \end{proof}

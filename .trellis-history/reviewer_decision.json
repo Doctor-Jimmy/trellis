@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerRelTrans has a current Sound approval, so the next legal step is to advance to the held target PowerRelRefl in the same Power relation cone.",
-    "comments": "Edit only Tablet/PowerRelRefl.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelTrans or add a helper. Give the proof as well-founded induction on the child relation from PowerChildWellFounded. In the atom case, unfold the PowerRelAtomAtom reduction and identify the goal with r(q,q), then use reflexivity from the stated IsPreorder hypothesis. In the node case, unfold PowerRelNodeNode, take an arbitrary index i, choose the same index on the right, and apply the induction hypothesis to the child f(i), explicitly citing the child relation witness that justifies the recursive call. Cite PowerChildWellFounded, PowerRelAtomAtom, and PowerRelNodeNode at their uses, and make the witness and quantifier steps line by line explicit.",
+    "reason": "PowerRelRefl has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrRight in the presentation-invariance cone.",
+    "comments": "Edit only Tablet/PowerRelCongrRight.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelRefl or add a helper. Give the right-presentation induction explicitly, citing PowerChildWellFounded and PowerRel. Split the left and right atom/node tags. For equivalent right atoms, use PowerPresentationEq to identify the Q values and apply PowerRelAtomAtom or PowerRelNodeAtom. Explain why mixed right tags are impossible. For equivalent right nodes, use both matching directions from PowerPresentationEq to transport each existential right-child witness in PowerRelAtomNode and PowerRelNodeNode; in the left-node case also transport the universal left-child comparisons. Apply the induction hypothesis to matched child pairs and justify every descent with PowerChild. Prove both implications, using PowerPresentationEqEquivalence for symmetry or composition where needed, and cite PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerRelRefl",
+    "next_active": "PowerRelCongrRight",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,12 +18,12 @@
       {
         "start_line": 1404,
         "end_line": 1420,
-        "reason": "The paper states the four recursive atom/node clauses for the lifted relation, including the node-node existential witness used for reflexivity."
+        "reason": "The paper's four recursive atom/node clauses determine which existential and universal witnesses must be transported."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1404-1420 express the lifted relation by four atom/node cases; reflexivity follows from base reflexivity and, for a node, the same-index witness together with recursive reflexivity of each child."
+      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; right presentation invariance must preserve exactly their existential and universal quantifier structure under structural matching."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -38,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerRelRefl.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelTrans or add a helper. Give the proof as well-founded induction on the child relation from PowerChildWellFounded. In the atom case, unfold the PowerRelAtomAtom reduction and identify the goal with r(q,q), then use reflexivity from the stated IsPreorder hypothesis. In the node case, unfold PowerRelNodeNode, take an arbitrary index i, choose the same index on the right, and apply the induction hypothesis to the child f(i), explicitly citing the child relation witness that justifies the recursive call. Cite PowerChildWellFounded, PowerRelAtomAtom, and PowerRelNodeNode at their uses, and make the witness and quantifier steps line by line explicit.",
+    "comments": "Edit only Tablet/PowerRelCongrRight.tex. Preserve its Lean statement, imports, and support structure; do not edit PowerRelRefl or add a helper. Give the right-presentation induction explicitly, citing PowerChildWellFounded and PowerRel. Split the left and right atom/node tags. For equivalent right atoms, use PowerPresentationEq to identify the Q values and apply PowerRelAtomAtom or PowerRelNodeAtom. Explain why mixed right tags are impossible. For equivalent right nodes, use both matching directions from PowerPresentationEq to transport each existential right-child witness in PowerRelAtomNode and PowerRelNodeNode; in the left-node case also transport the universal left-child comparisons. Apply the induction hypothesis to matched child pairs and justify every descent with PowerChild. Prove both implications, using PowerPresentationEqEquivalence for symmetry or composition where needed, and cite PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, PowerPresentationEq, and PowerPresentationEqEquivalence at their uses.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 125,
+    "cycle": 126,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -49,24 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerRelRefl",
+    "next_active": "PowerRelCongrRight",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1420,
-        "reason": "The paper states the four recursive atom/node clauses for the lifted relation, including the node-node existential witness used for reflexivity.",
+        "reason": "The paper's four recursive atom/node clauses determine which existential and universal witnesses must be transported.",
         "start_line": 1404
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1404-1420 express the lifted relation by four atom/node cases; reflexivity follows from base reflexivity and, for a node, the same-index witness together with recursive reflexivity of each child.",
+      "basis_summary": "Lines 1404-1420 express the lifted relation through atom and node clauses; right presentation invariance must preserve exactly their existential and universal quantifier structure under structural matching.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerRelTrans has a current Sound approval, so the next legal step is to advance to the held target PowerRelRefl in the same Power relation cone.",
-    "request_id": 412,
+    "reason": "PowerRelRefl has a current Sound approval, so the next legal step is to advance to the held target PowerRelCongrRight in the presentation-invariance cone.",
+    "request_id": 415,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,5 +76,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_412_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_415_decision.context.json"
 }
