@@ -1,12 +1,12 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerQPresBqo has current Paper and Sound approvals. Continue to PowerPresentationEqEquivalence, whose proof needs one concrete support citation and an explicit case-by-case equivalence argument.",
-    "comments": "Edit only Tablet/PowerPresentationEqEquivalence.tex. Preserve its Lean statement, import, and the PowerPresentationEq support structure. Independent gap: the current proof says it inducts on a presentation, splits atoms from nodes, and reasons about children, but cites only \\noderef{PowerPresentationEq}; those steps use the inductive carrier and constructors supplied by \\noderef{PowerQ}, so add that citation. Give explicit proofs of reflexivity, symmetry, and transitivity. Include the mixed-tag False cases, and in the node cases spell out the matching witnesses and the induction hypotheses; for transitivity compose a forward witness through the middle presentation and repeat the construction in the reverse direction. Do not change the theorem statement, add a helper, or rewire imports.",
+    "reason": "PowerPresentationEqEquivalence has a current Sound approval. Continue to PowerMoveInSupport to repair the atom-branch dependency citation while preserving its statement and support structure.",
+    "comments": "Edit only Tablet/PowerMoveInSupport.tex. Preserve the Lean statement, imports, and existing child-support argument. Independent gap: the atom branch says the support inclusion is equality, which uses the atom clause of the recursive support definition, but the current proof cites only \\noderef{PowerMove} and \\noderef{PowerChildSupport}; add \\noderef{PowerSupport} at that use. Then keep the two cases explicit: an atom move is unchanged, while a node move gives a child relation and \\noderef{PowerChildSupport} yields the required inclusion. Do not add a helper or change the theorem statement or support edges.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerPresentationEqEquivalence",
+    "next_active": "PowerMoveInSupport",
     "next_mode": "global",
     "reset": "none",
     "reset_node": "",
@@ -18,17 +18,12 @@
       {
         "start_line": 1362,
         "end_line": 1374,
-        "reason": "The paper defines the full nonempty iterated hierarchy and distinguishes atoms from recursively built set nodes."
-      },
-      {
-        "start_line": 1404,
-        "end_line": 1420,
-        "reason": "The paper records the recursive atom/node cases of the lifted relation, motivating the explicit tagged case split."
+        "reason": "The paper defines the tagged iterated hierarchy and the recursive atom-singleton/union support used by the move-support lemma."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "Lines 1362-1374 define the nonempty iterated hierarchy and distinguish Q-atoms from recursively constructed nodes. Lines 1404-1420 make the atom/node case structure explicit for the lifted relation, so the equivalence proof should expose the same tagged cases and compose node witnesses in both directions."
+      "basis_summary": "Lines 1362-1374 define the nonempty iterated powerset hierarchy, distinguish atoms from nodes, and define support by giving atoms singleton support and nodes the union of child supports. The atom branch of PowerMoveInSupport must cite that support clause explicitly."
     },
     "work_style_hint": "none",
     "authorized_node_ids": [],
@@ -43,10 +38,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/PowerPresentationEqEquivalence.tex. Preserve its Lean statement, import, and the PowerPresentationEq support structure. Independent gap: the current proof says it inducts on a presentation, splits atoms from nodes, and reasons about children, but cites only \\noderef{PowerPresentationEq}; those steps use the inductive carrier and constructors supplied by \\noderef{PowerQ}, so add that citation. Give explicit proofs of reflexivity, symmetry, and transitivity. Include the mixed-tag False cases, and in the node cases spell out the matching witnesses and the induction hypotheses; for transitivity compose a forward witness through the middle presentation and repeat the construction in the reverse direction. Do not change the theorem statement, add a helper, or rewire imports.",
+    "comments": "Edit only Tablet/PowerMoveInSupport.tex. Preserve the Lean statement, imports, and existing child-support argument. Independent gap: the atom branch says the support inclusion is equality, which uses the atom clause of the recursive support definition, but the current proof cites only \\noderef{PowerMove} and \\noderef{PowerChildSupport}; add \\noderef{PowerSupport} at that use. Then keep the two cases explicit: an atom move is unchanged, while a node move gives a child relation and \\noderef{PowerChildSupport} yields the required inclusion. Do not add a helper or change the theorem statement or support edges.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 130,
+    "cycle": 131,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -54,29 +49,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "PowerPresentationEqEquivalence",
+    "next_active": "PowerMoveInSupport",
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
         "end_line": 1374,
-        "reason": "The paper defines the full nonempty iterated hierarchy and distinguishes atoms from recursively built set nodes.",
+        "reason": "The paper defines the tagged iterated hierarchy and the recursive atom-singleton/union support used by the move-support lemma.",
         "start_line": 1362
-      },
-      {
-        "end_line": 1420,
-        "reason": "The paper records the recursive atom/node cases of the lifted relation, motivating the explicit tagged case split.",
-        "start_line": 1404
       }
     ],
     "paper_grounding": {
-      "basis_summary": "Lines 1362-1374 define the nonempty iterated hierarchy and distinguish Q-atoms from recursively constructed nodes. Lines 1404-1420 make the atom/node case structure explicit for the lifted relation, so the equivalence proof should expose the same tagged cases and compose node witnesses in both directions.",
+      "basis_summary": "Lines 1362-1374 define the nonempty iterated powerset hierarchy, distinguish atoms from nodes, and define support by giving atoms singleton support and nodes the union of child supports. The atom branch of PowerMoveInSupport must cite that support clause explicitly.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerQPresBqo has current Paper and Sound approvals. Continue to PowerPresentationEqEquivalence, whose proof needs one concrete support citation and an explicit case-by-case equivalence argument.",
-    "request_id": 430,
+    "reason": "PowerPresentationEqEquivalence has a current Sound approval. Continue to PowerMoveInSupport to repair the atom-branch dependency citation while preserving its statement and support structure.",
+    "request_id": 433,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -86,5 +76,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_430_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_433_decision.context.json"
 }
