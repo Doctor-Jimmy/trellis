@@ -4,11 +4,101 @@ deciding front, and let $h^{\dcl}:F^h\to Q$ satisfy the value equation of
 \noderef{DecidingValue}.  Then $h^{\dcl}$ is a bad super-sequence.
 \end{lemma}
 \begin{proof}
-Suppose $s,t\in F^h$ and $s\mathrel{\mathsf{FiniteShift}}t$.  Choose an
-enumeration $x$ witnessing the finite shift.  The value equation in
-\noderef{DecidingValue} identifies the values at $s$ and $t$ with
-$h(x)$ and $h(\mathsf{ShiftMap}(x))$, respectively.  Badness of $h$,
-\noderef{BadMultiSequence}, says that the latter relation fails.  Since
-this holds for every finite shift, \noderef{BadSuperSequence} gives the
-claim.
+We prove the defining universal condition in
+\noderef{BadSuperSequence}.  Fix finite sets $s,t\subseteq\mathbb N$,
+membership proofs
+
+\[
+ h_s:s\in\mathsf{DecidingFrontSet}(h)
+ \qquad\text{and}\qquad
+ h_t:t\in\mathsf{DecidingFrontSet}(h),
+\]
+
+and assume $s\mathrel{\mathsf{FiniteShift}}t$.  By the definition of the
+deciding front in \noderef{DecidingFrontSet}, these are precisely the
+front-membership data needed to form the two subtype elements
+$\langle s,h_s\rangle$ and $\langle t,h_t\rangle$ at which the value
+field of $f$ is evaluated.
+
+Unpack the finite-shift assumption using \noderef{FiniteShift}.  It gives
+an increasing enumeration $x\in\mathsf{IncSeq}$ and two facts
+
+\[
+ p_s:\mathsf{ProperPrefixSet}(s,\operatorname{range}(x)),
+ \qquad
+ p_t:\mathsf{ProperPrefixSet}\bigl(t,
+       \operatorname{range}(\mathsf{ShiftMap}(x))\bigr).
+ \tag{1}
+\]
+
+Thus the witness is the same $x$ for both prefixes, and the second prefix
+is taken in the shifted enumeration.  More explicitly, by the definition
+of \noderef{ProperPrefixSet}, $p_s$ supplies some $n_s\in
+\operatorname{range}(x)$ such that, for every $k$,
+
+\[
+ k\in s\quad\Longleftrightarrow\quad
+ k\in\operatorname{range}(x)\ \text{ and }\ k<n_s,
+\]
+
+and $p_t$ supplies some $n_t\in
+\operatorname{range}(\mathsf{ShiftMap}(x))$ such that, for every $k$,
+
+\[
+ k\in t\quad\Longleftrightarrow\quad
+ k\in\operatorname{range}(\mathsf{ShiftMap}(x))\ \text{ and }\ k<n_t.
+\]
+
+The definition of \noderef{ShiftMap} makes $\mathsf{ShiftMap}(x)$ an
+increasing enumeration, so both $x$ and $\mathsf{ShiftMap}(x)$ are valid
+arguments for the supplied value-equation hypothesis $hf$.  Applying $hf$
+to the first front element and the first prefix fact in (1) gives
+
+\[
+ e_s:\qquad
+ f.value\langle s,h_s\rangle=h(x).
+ \tag{2}
+\]
+
+Applying the same hypothesis separately to the second front element and
+the second prefix fact in (1) gives
+
+\[
+ e_t:\qquad
+ f.value\langle t,h_t\rangle=h(\mathsf{ShiftMap}(x)).
+ \tag{3}
+\]
+
+These are applications of the theorem's particular hypothesis $hf$ to the
+particular map $f.value$; the existential map supplied abstractly by
+\noderef{DecidingValue} is not being substituted for $f$.
+
+By \noderef{BadMultiSequence}, the badness hypothesis $hh$, instantiated
+at this same enumeration $x$, gives
+
+\[
+ \neg r\bigl(h(x),h(\mathsf{ShiftMap}(x))\bigr).
+ \tag{4}
+\]
+
+Suppose, toward a contradiction, that
+
+\[
+ r\bigl(f.value\langle s,h_s\rangle,
+        f.value\langle t,h_t\rangle\bigr).
+ \tag{5}
+\]
+
+Rewrite the first argument of (5) using (2) and the second using (3).
+This yields $r(h(x),h(\mathsf{ShiftMap}(x)))$, contradicting (4).  Hence
+
+\[
+ \neg r\bigl(f.value\langle s,h_s\rangle,
+             f.value\langle t,h_t\rangle\bigr).
+\]
+
+The finite sets, their front-membership proofs, and the finite-shift
+assumption were arbitrary.  Therefore the displayed negation is exactly
+the universal condition in \noderef{BadSuperSequence}, and $f$ is a bad
+super-sequence.
 \end{proof}

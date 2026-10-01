@@ -1,14 +1,14 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Sound verifier found a structural proof gap in BadMultiToSuper: the proof omits the required FiniteShift citation, does not expose the two proper-prefix witness facts, and does not explicitly apply the supplied value-equation hypothesis to the particular map f. Assign this repair-ready blocker to a bounded worker edit while preserving the theorem statement.",
-    "comments": "Edit only Tablet/BadMultiToSuper.tex and, if needed, the import preamble of Tablet/BadMultiToSuper.lean. Preserve the Lean statement, conclusion, support direction, and no-helper structure. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, explicitly cite \\noderef{FiniteShift} and unpack its witness x, including ProperPrefixSet s (range x) and ProperPrefixSet t (range (ShiftMap x)); cite \\noderef{ProperPrefixSet}, \\noderef{ShiftMap}, and the deciding-front definition as used. Apply the theorem's supplied hf hypothesis, not merely the existential map in \\noderef{DecidingValue}, separately to (s,x) and (t,ShiftMap x), and state why the two front-membership and prefix premises hold. Then cite \\noderef{BadMultiSequence} for the negated relation between h x and h (ShiftMap x), rewrite both dependent f.value terms using hf, and cite \\noderef{BadSuperSequence} when concluding the universal badness condition. Do not change any statement or add a helper; run the deterministic checks after the edit.",
-    "task_blocker_ids": [
-      "soundness:node:BadMultiToSuper:sound-v2:f672a4f22f6fcbd549779cab94db7946cfad2187c0f4684a85eff6ccecc8b1ee"
-    ],
+    "reason": "BadMultiToSuper now has a current Sound approval. BadMultiToNontrivialSuper is the held next node, remains a fresh requestable Sound obligation, and has no reported failure, so request its verifier without assigning a worker or resetting any blocker.",
+    "comments": "Leave Tablet/BadMultiToNontrivialSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToNontrivialSuper. Check the construction of f first: cite DecidingFront for the front, cite DecidingValue for the value map and its exact proper-prefix equation, package the particular map v with the front as a SuperSequence, and apply BadMultiToSuper using the supplied hbad hypothesis. For nontriviality, assume empty is in DecidingFrontSet h, unfold that through DecidingFrontSet to DecidingPrefix, and explicitly show that the empty set is a proper prefix of every increasing enumeration using its first value and monotonicity. Apply the deciding-prefix equality to IncSeqId and ShiftMap(IncSeqId), citing IncSeqId, ShiftMap, and ProperPrefixSet; use Std.Refl to obtain the relation and BadMultiSequence to obtain its negation. Ensure every cross-node dependency used in these steps is cited, including DecidingFront, DecidingValue, BadMultiToSuper, BadMultiSequence, SuperSequence, DecidingFrontSet, DecidingPrefix, IncSeqId, ShiftMap, and ProperPrefixSet.",
+    "task_blocker_ids": [],
     "reset_blocker_ids": [],
-    "request_sound_verifier_node_ids": [],
-    "next_active": "BadMultiToSuper",
+    "request_sound_verifier_node_ids": [
+      "BadMultiToNontrivialSuper"
+    ],
+    "next_active": "",
     "next_active_coarse": "",
     "next_mode": "global",
     "reset": "none",
@@ -20,14 +20,19 @@
     "work_style_hint": "none",
     "paper_focus_ranges": [
       {
-        "start_line": 1478,
-        "end_line": 1496,
-        "reason": "The manuscript's first case explicitly uses the finite-shift enumeration, both prefix relations, the two value equations, and badness of the multi-sequence."
+        "start_line": 1277,
+        "end_line": 1290,
+        "reason": "The manuscript constructs the minimal deciding front and its value map from a locally constant multi-sequence."
+      },
+      {
+        "start_line": 1481,
+        "end_line": 1489,
+        "reason": "The manuscript transfers badness to the deciding-front super-sequence and identifies the two values across a finite shift."
       }
     ],
     "paper_grounding": {
       "consulted_cited_ranges": true,
-      "basis_summary": "The cited manuscript proof of badSimpsonNW(1) takes s and t related by a finite shift, chooses an infinite enumeration witnessing the two prefix relations, identifies the two deciding-front values with h(Y) and h(shift Y), and applies badness of h. The worker repair should make each of these steps explicit for the supplied map f and Lean witness data."
+      "basis_summary": "The cited manuscript passages separate the construction of the deciding-front value map from the badness argument, and the latter uses the two prefix values across a shift. The nontriviality addendum in the tablet must additionally make the empty-prefix contradiction explicit using reflexivity and the bad multi-sequence condition."
     },
     "authorized_node_ids": []
   },
@@ -40,10 +45,10 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Edit only Tablet/BadMultiToSuper.tex and, if needed, the import preamble of Tablet/BadMultiToSuper.lean. Preserve the Lean statement, conclusion, support direction, and no-helper structure. For arbitrary s,t in DecidingFrontSet h with FiniteShift s t, explicitly cite \\noderef{FiniteShift} and unpack its witness x, including ProperPrefixSet s (range x) and ProperPrefixSet t (range (ShiftMap x)); cite \\noderef{ProperPrefixSet}, \\noderef{ShiftMap}, and the deciding-front definition as used. Apply the theorem's supplied hf hypothesis, not merely the existential map in \\noderef{DecidingValue}, separately to (s,x) and (t,ShiftMap x), and state why the two front-membership and prefix premises hold. Then cite \\noderef{BadMultiSequence} for the negated relation between h x and h (ShiftMap x), rewrite both dependent f.value terms using hf, and cite \\noderef{BadSuperSequence} when concluding the universal badness condition. Do not change any statement or add a helper; run the deterministic checks after the edit.",
+    "comments": "Leave Tablet/BadMultiToNontrivialSuper.tex and the rest of the tablet unchanged. Request a real Sound verification of BadMultiToNontrivialSuper. Check the construction of f first: cite DecidingFront for the front, cite DecidingValue for the value map and its exact proper-prefix equation, package the particular map v with the front as a SuperSequence, and apply BadMultiToSuper using the supplied hbad hypothesis. For nontriviality, assume empty is in DecidingFrontSet h, unfold that through DecidingFrontSet to DecidingPrefix, and explicitly show that the empty set is a proper prefix of every increasing enumeration using its first value and monotonicity. Apply the deciding-prefix equality to IncSeqId and ShiftMap(IncSeqId), citing IncSeqId, ShiftMap, and ProperPrefixSet; use Std.Refl to obtain the relation and BadMultiSequence to obtain its negation. Ensure every cross-node dependency used in these steps is cited, including DecidingFront, DecidingValue, BadMultiToSuper, BadMultiSequence, SuperSequence, DecidingFrontSet, DecidingPrefix, IncSeqId, ShiftMap, and ProperPrefixSet.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 171,
+    "cycle": 172,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -51,42 +56,39 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": false,
-    "next_active": "BadMultiToSuper",
+    "next_active": null,
     "next_active_coarse": null,
     "next_mode": "Global",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [
       {
-        "end_line": 1496,
-        "reason": "The manuscript's first case explicitly uses the finite-shift enumeration, both prefix relations, the two value equations, and badness of the multi-sequence.",
-        "start_line": 1478
+        "end_line": 1290,
+        "reason": "The manuscript constructs the minimal deciding front and its value map from a locally constant multi-sequence.",
+        "start_line": 1277
+      },
+      {
+        "end_line": 1489,
+        "reason": "The manuscript transfers badness to the deciding-front super-sequence and identifies the two values across a finite shift.",
+        "start_line": 1481
       }
     ],
     "paper_grounding": {
-      "basis_summary": "The cited manuscript proof of badSimpsonNW(1) takes s and t related by a finite shift, chooses an infinite enumeration witnessing the two prefix relations, identifies the two deciding-front values with h(Y) and h(shift Y), and applies badness of h. The worker repair should make each of these steps explicit for the supplied map f and Lean witness data.",
+      "basis_summary": "The cited manuscript passages separate the construction of the deciding-front value map from the badness argument, and the latter uses the two prefix values across a shift. The nontriviality addendum in the tablet must additionally make the empty-prefix contradiction explicit using reflexivity and the bad multi-sequence condition.",
       "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Sound verifier found a structural proof gap in BadMultiToSuper: the proof omits the required FiniteShift citation, does not expose the two proper-prefix witness facts, and does not explicitly apply the supplied value-equation hypothesis to the particular map f. Assign this repair-ready blocker to a bounded worker edit while preserving the theorem statement.",
-    "request_id": 537,
-    "request_sound_verifier_nodes": [],
+    "reason": "BadMultiToSuper now has a current Sound approval. BadMultiToNontrivialSuper is the held next node, remains a fresh requestable Sound obligation, and has no reported failure, so request its verifier without assigning a worker or resetting any blocker.",
+    "request_id": 540,
+    "request_sound_verifier_nodes": [
+      "BadMultiToNontrivialSuper"
+    ],
     "reset": "None",
     "reset_blockers": [],
     "reset_node": null,
     "status": "Ok",
     "stuck_math_audit": null,
-    "task_blockers": [
-      {
-        "deferred": false,
-        "fingerprint": "sound-v2:f672a4f22f6fcbd549779cab94db7946cfad2187c0f4684a85eff6ccecc8b1ee",
-        "kind": "Soundness",
-        "object": {
-          "node": "BadMultiToSuper",
-          "otype": "node"
-        }
-      }
-    ],
+    "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_537_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_540_decision.context.json"
 }
