@@ -1,11 +1,12 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 721,
+  "event_count": 722,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
     "native_history_kinds": [
       "corr",
+      "human_gate",
       "paper",
       "review:theorem_stating",
       "sound",
@@ -30,2074 +31,6 @@
   "commands": [
     {
       "command": "commit_checkpoint"
-    },
-    {
-      "command": "issue_request",
-      "request": {
-        "id": 548,
-        "kind": "HumanGate",
-        "cycle": 175,
-        "acceptance_logic_identity": "trellis-worker-acceptance-v1:sha256:7ce75d038314c2acb52a4f062311e53257ea429789b1ef1203b975dccf9e66d9",
-        "phase": "TheoremStating",
-        "active_node": null,
-        "held_target": null,
-        "mode": "Global",
-        "blockers": [],
-        "blocked_targets": [],
-        "configured_targets": [
-          "MainProp",
-          "cor PowerQPresBqo",
-          "cor:NashWill",
-          "corollary:SuperNW",
-          "g-BQO",
-          "lem:subarr",
-          "lines:1748-1753",
-          "lines:985-987",
-          "thm BqoHerCtblWellF",
-          "thm BqoHerCtblWqo"
-        ],
-        "verify_nodes": [],
-        "verify_targets": [],
-        "verify_lanes": [],
-        "paper_verify_lane_bindings": [],
-        "corr_verify_lane_bindings": [],
-        "sound_verify_lane_bindings": [],
-        "worker_binding": {
-          "provider": "",
-          "model": null,
-          "effort": null,
-          "extra_args": [],
-          "fallback_models": [],
-          "label": ""
-        },
-        "reviewer_binding": {
-          "provider": "",
-          "model": null,
-          "effort": null,
-          "extra_args": [],
-          "fallback_models": [],
-          "label": ""
-        },
-        "stuck_math_audit_binding": {
-          "provider": "",
-          "model": null,
-          "effort": null,
-          "extra_args": [],
-          "fallback_models": [],
-          "label": ""
-        },
-        "paper_verify_targets": [],
-        "substantiveness_verify_nodes": [],
-        "deviation_verify_id": null,
-        "deviation_verify_path": "",
-        "authorized_deviations": {},
-        "rejected_deviations": {},
-        "current_deviation_files": {},
-        "node_deviation_claims": {},
-        "corr_verify_nodes": [],
-        "corr_verify_targets": [],
-        "sound_verify_nodes": [],
-        "sound_verify_node": null,
-        "runtime_support_required": false,
-        "approved_target_nodes": [],
-        "approved_corr_fingerprints": {},
-        "coarse_dag_nodes": [],
-        "active_coarse_node": null,
-        "kernel_hinted_next_active_coarse_nodes": [],
-        "coarse_repair_mode": false,
-        "cycles_in_coarse_repair_mode": 0,
-        "coarse_anchor_starvation_unlocked": false,
-        "protected_semantic_change_confirmation": null,
-        "protected_reapproval_nodes": [],
-        "allowed_decisions": [],
-        "allowed_next_modes": [],
-        "kernel_hinted_next_active_nodes": [],
-        "proof_active_node_base_legal_candidates": [],
-        "coarse_repair_blocker_carriers": [],
-        "ever_shallow_coarse_closed": [],
-        "ever_shallow_coarse_closed_regressed": [],
-        "pending_global_repair_request": null,
-        "pending_global_repair_grant": null,
-        "latest_global_repair_audit_decline_reason": "",
-        "global_repair_mode_enabled": true,
-        "pending_worker_audit_request": null,
-        "audit_request_admissible": false,
-        "consumed_global_repair_grant": false,
-        "targeted_next_active_nodes": [],
-        "theorem_restructure_next_active_nodes": [],
-        "allow_targeted_without_next_active": false,
-        "allowed_resets": [],
-        "resettable_theorem_stating_nodes": [],
-        "allowed_reset_blockers": [],
-        "sound_repair_ready_nodes": [],
-        "sound_verifier_requestable_nodes": [],
-        "sound_assessment_statuses": {},
-        "sound_reverification_context": null,
-        "cycles_since_clean": 0,
-        "no_sound_progress_window_cycles": 0,
-        "shallow_coarse_closed_count": 0,
-        "cycles_since_shallow_coarse_closed_count_increase": 0,
-        "last_clean_rewind_count": 0,
-        "stuck_math_audit": {
-          "active": false,
-          "trigger": "",
-          "active_since_cycle": 0,
-          "trigger_blockers": [],
-          "last_reviewer_lean_product": null,
-          "need_input_audit": null,
-          "gap_research": null,
-          "gap_plan_critique": null,
-          "revision_planning": null,
-          "initial_planning": null,
-          "assumptions_lane": null
-        },
-        "audit_plan": null,
-        "previous_audit_plan_snapshot": null,
-        "latest_stuck_math_audit_rejection_reason": "",
-        "allowed_difficulty_update_nodes": [],
-        "current_present_nodes": [
-          "BadMultiRestrict",
-          "BadMultiSequence",
-          "BadMultiToNontrivialSuper",
-          "BadMultiToSuper",
-          "BadPairSequence",
-          "BadSuperRestrict",
-          "BadSuperSequence",
-          "BadSuperToBase",
-          "BaireContinuous",
-          "BaseBad",
-          "BaseBqoRestriction",
-          "BaseIncSeq",
-          "BaseLocallyConstant",
-          "BaseMultiSequence",
-          "BasePerfect",
-          "BaseRestrict",
-          "BaseRightComp",
-          "BaseShift",
-          "BetterRel",
-          "BlockSigma",
-          "BlockSigmaContinuous",
-          "BlockSigmaEmbedding",
-          "BlockSigmaIntertwines",
-          "BooleanInfinitePigeonhole",
-          "Bqo",
-          "BqoHerCtblWellF",
-          "BqoHerCtblWqo",
-          "BqoIffGeneralShift",
-          "BqoImpliesWqo",
-          "CardinalityFront",
-          "CardinalityFrontIsFront",
-          "ContMor",
-          "ContMorEq",
-          "ContinuousHom",
-          "ContinuousRelHom",
-          "ConverseGame",
-          "DecidingFront",
-          "DecidingFrontSet",
-          "DecidingPrefix",
-          "DecidingValue",
-          "EmapLemma",
-          "FinitePrefixExtension",
-          "FiniteShift",
-          "FirstMovedPoint",
-          "Front",
-          "FrontBase",
-          "FrontBridge",
-          "FrontBridgeInit",
-          "FrontBridgeStep",
-          "FrontBridgeTail",
-          "FrontBridgeTerminal",
-          "FrontPrefix",
-          "FrontPrefixExists",
-          "FrontPrefixUnique",
-          "FrontRayClosure",
-          "FrontRestrict",
-          "FrontRestriction",
-          "FrontTreeImmediateExtensions",
-          "FrontTreeOrderedExtension",
-          "FrontTreeSingleton",
-          "FrontTreeWellFounded",
-          "GBetterRel",
-          "GBetterRelIff",
-          "GoodMultiSequence",
-          "HerCtblCode",
-          "HerCtblCodeErase",
-          "HerCtblNodeClosure",
-          "HerCtblPower",
-          "HerCtblPowerIsPreorder",
-          "HerCtblRel",
-          "HerCtblWqoIffWellFounded",
-          "HereditarilyCountable",
-          "HereditarilyCountableAtom",
-          "HereditarilyCountablePresentationInvariant",
-          "IncSeq",
-          "IncSeqComp",
-          "IncSeqId",
-          "IncSeqPointwiseLe",
-          "IncreasingPair",
-          "InfiniteSetEnumeration",
-          "InitialSegment",
-          "LocallyConstant",
-          "MainProp",
-          "MultiSequence",
-          "MultiSequenceRestrict",
-          "NashWilliams",
-          "NoBadPerfectSuper",
-          "OrbitBlock",
-          "OrbitBlockCoverage",
-          "OrbitEmbedding",
-          "OrbitPoint",
-          "OrbitUnbounded",
-          "PerfectBaseToSuper",
-          "PerfectMultiRestrict",
-          "PerfectMultiSequence",
-          "PerfectMultiToSuper",
-          "PerfectSuperRestrict",
-          "PerfectSuperSequence",
-          "PerfectSuperToBase",
-          "PerfectSuperToMulti",
-          "PowerChild",
-          "PowerChildSupport",
-          "PowerChildWellFounded",
-          "PowerCopiedFailureMove",
-          "PowerCopiedFiniteDependence",
-          "PowerCopiedFiniteTerminal",
-          "PowerCopiedLeft",
-          "PowerCopiedOrbitDependence",
-          "PowerCopiedShiftIdentity",
-          "PowerCopiedSupport",
-          "PowerCopiedTerminalAt",
-          "PowerCopiedTerminalShift",
-          "PowerCopiedTerminalSupport",
-          "PowerCopiedTerminates",
-          "PowerFiniteOrbitConstancy",
-          "PowerGameDescent",
-          "PowerGameDescentWellFounded",
-          "PowerIResponse",
-          "PowerIResponseFailure",
-          "PowerIResponseLegal",
-          "PowerIResponseWitness",
-          "PowerMove",
-          "PowerMoveInSupport",
-          "PowerPresentationEq",
-          "PowerPresentationEqEquivalence",
-          "PowerQ",
-          "PowerQIsPreorder",
-          "PowerQPresBqo",
-          "PowerQReflection",
-          "PowerRel",
-          "PowerRelAtomAtom",
-          "PowerRelAtomNode",
-          "PowerRelCongrLeft",
-          "PowerRelCongrRight",
-          "PowerRelNodeAtom",
-          "PowerRelNodeNode",
-          "PowerRelRefl",
-          "PowerRelTrans",
-          "PowerShiftIter",
-          "PowerShiftIterPrefixAgree",
-          "PowerShiftIterShift",
-          "PowerSupport",
-          "PowerSupportInvariant",
-          "PowerSupportNonempty",
-          "PowerWqoBadPairSequence",
-          "Preamble",
-          "PrefixAgree",
-          "PrefixTree",
-          "ProperInitialSegment",
-          "ProperPrefixSet",
-          "QuadrupleHomogeneous",
-          "RadoEmbedding",
-          "RadoOrder",
-          "Ray",
-          "RelationEmbedding",
-          "RestrictionLocallyConstant",
-          "RestrictionShift",
-          "RightComp",
-          "RmapLemma",
-          "SetDomination",
-          "ShiftDichotomy",
-          "ShiftMap",
-          "SubFrontCharacterization",
-          "Subarr",
-          "SuccSeq",
-          "SuperNW",
-          "SuperSequence",
-          "SuperSequenceExtension",
-          "SuperSequenceRestrict",
-          "TailSet",
-          "TildeF",
-          "TildeFAtomIffFront",
-          "TildeFFrontEquation",
-          "TildeFHerCtbl",
-          "TildeFNonfrontEquation",
-          "TildeFSingleton",
-          "TripleHomogeneous"
-        ],
-        "current_proof_nodes": [
-          "BadMultiRestrict",
-          "BadMultiToNontrivialSuper",
-          "BadMultiToSuper",
-          "BadSuperRestrict",
-          "BadSuperToBase",
-          "BaseBqoRestriction",
-          "BlockSigmaContinuous",
-          "BlockSigmaEmbedding",
-          "BlockSigmaIntertwines",
-          "BooleanInfinitePigeonhole",
-          "BqoHerCtblWellF",
-          "BqoHerCtblWqo",
-          "BqoIffGeneralShift",
-          "BqoImpliesWqo",
-          "CardinalityFrontIsFront",
-          "ConverseGame",
-          "DecidingFront",
-          "DecidingValue",
-          "EmapLemma",
-          "FinitePrefixExtension",
-          "FirstMovedPoint",
-          "FrontBridgeInit",
-          "FrontBridgeStep",
-          "FrontBridgeTerminal",
-          "FrontPrefixExists",
-          "FrontPrefixUnique",
-          "FrontRayClosure",
-          "FrontRestriction",
-          "FrontTreeImmediateExtensions",
-          "FrontTreeOrderedExtension",
-          "FrontTreeSingleton",
-          "FrontTreeWellFounded",
-          "GBetterRelIff",
-          "HerCtblNodeClosure",
-          "HerCtblPowerIsPreorder",
-          "HerCtblWqoIffWellFounded",
-          "HereditarilyCountableAtom",
-          "HereditarilyCountablePresentationInvariant",
-          "IncSeqPointwiseLe",
-          "InfiniteSetEnumeration",
-          "MainProp",
-          "NashWilliams",
-          "NoBadPerfectSuper",
-          "OrbitBlockCoverage",
-          "OrbitEmbedding",
-          "OrbitUnbounded",
-          "PerfectBaseToSuper",
-          "PerfectMultiRestrict",
-          "PerfectMultiToSuper",
-          "PerfectSuperRestrict",
-          "PerfectSuperToBase",
-          "PerfectSuperToMulti",
-          "PowerChildSupport",
-          "PowerChildWellFounded",
-          "PowerCopiedFailureMove",
-          "PowerCopiedFiniteDependence",
-          "PowerCopiedFiniteTerminal",
-          "PowerCopiedOrbitDependence",
-          "PowerCopiedShiftIdentity",
-          "PowerCopiedSupport",
-          "PowerCopiedTerminalShift",
-          "PowerCopiedTerminalSupport",
-          "PowerCopiedTerminates",
-          "PowerFiniteOrbitConstancy",
-          "PowerGameDescentWellFounded",
-          "PowerIResponseFailure",
-          "PowerIResponseLegal",
-          "PowerIResponseWitness",
-          "PowerMoveInSupport",
-          "PowerPresentationEqEquivalence",
-          "PowerQIsPreorder",
-          "PowerQPresBqo",
-          "PowerQReflection",
-          "PowerRelAtomAtom",
-          "PowerRelAtomNode",
-          "PowerRelCongrLeft",
-          "PowerRelCongrRight",
-          "PowerRelNodeAtom",
-          "PowerRelNodeNode",
-          "PowerRelRefl",
-          "PowerRelTrans",
-          "PowerShiftIterPrefixAgree",
-          "PowerShiftIterShift",
-          "PowerSupportInvariant",
-          "PowerSupportNonempty",
-          "PowerWqoBadPairSequence",
-          "QuadrupleHomogeneous",
-          "RadoEmbedding",
-          "RestrictionLocallyConstant",
-          "RestrictionShift",
-          "RmapLemma",
-          "ShiftDichotomy",
-          "SubFrontCharacterization",
-          "Subarr",
-          "SuperNW",
-          "SuperSequenceExtension",
-          "TildeFAtomIffFront",
-          "TildeFFrontEquation",
-          "TildeFHerCtbl",
-          "TildeFNonfrontEquation",
-          "TripleHomogeneous"
-        ],
-        "current_node_kinds": {
-          "BadMultiRestrict": "Proof",
-          "BadMultiSequence": "Definition",
-          "BadMultiToNontrivialSuper": "Proof",
-          "BadMultiToSuper": "Proof",
-          "BadPairSequence": "Definition",
-          "BadSuperRestrict": "Proof",
-          "BadSuperSequence": "Definition",
-          "BadSuperToBase": "Proof",
-          "BaireContinuous": "Definition",
-          "BaseBad": "Definition",
-          "BaseBqoRestriction": "Proof",
-          "BaseIncSeq": "Definition",
-          "BaseLocallyConstant": "Definition",
-          "BaseMultiSequence": "Definition",
-          "BasePerfect": "Definition",
-          "BaseRestrict": "Definition",
-          "BaseRightComp": "Definition",
-          "BaseShift": "Definition",
-          "BetterRel": "Definition",
-          "BlockSigma": "Definition",
-          "BlockSigmaContinuous": "Proof",
-          "BlockSigmaEmbedding": "Proof",
-          "BlockSigmaIntertwines": "Proof",
-          "BooleanInfinitePigeonhole": "Proof",
-          "Bqo": "Definition",
-          "BqoHerCtblWellF": "Proof",
-          "BqoHerCtblWqo": "Proof",
-          "BqoIffGeneralShift": "Proof",
-          "BqoImpliesWqo": "Proof",
-          "CardinalityFront": "Definition",
-          "CardinalityFrontIsFront": "Proof",
-          "ContMor": "Definition",
-          "ContMorEq": "Definition",
-          "ContinuousHom": "Definition",
-          "ContinuousRelHom": "Definition",
-          "ConverseGame": "Proof",
-          "DecidingFront": "Proof",
-          "DecidingFrontSet": "Definition",
-          "DecidingPrefix": "Definition",
-          "DecidingValue": "Proof",
-          "EmapLemma": "Proof",
-          "FinitePrefixExtension": "Proof",
-          "FiniteShift": "Definition",
-          "FirstMovedPoint": "Proof",
-          "Front": "Definition",
-          "FrontBase": "Definition",
-          "FrontBridge": "Definition",
-          "FrontBridgeInit": "Proof",
-          "FrontBridgeStep": "Proof",
-          "FrontBridgeTail": "Definition",
-          "FrontBridgeTerminal": "Proof",
-          "FrontPrefix": "Definition",
-          "FrontPrefixExists": "Proof",
-          "FrontPrefixUnique": "Proof",
-          "FrontRayClosure": "Proof",
-          "FrontRestrict": "Definition",
-          "FrontRestriction": "Proof",
-          "FrontTreeImmediateExtensions": "Proof",
-          "FrontTreeOrderedExtension": "Proof",
-          "FrontTreeSingleton": "Proof",
-          "FrontTreeWellFounded": "Proof",
-          "GBetterRel": "Definition",
-          "GBetterRelIff": "Proof",
-          "GoodMultiSequence": "Definition",
-          "HerCtblCode": "Definition",
-          "HerCtblCodeErase": "Definition",
-          "HerCtblNodeClosure": "Proof",
-          "HerCtblPower": "Definition",
-          "HerCtblPowerIsPreorder": "Proof",
-          "HerCtblRel": "Definition",
-          "HerCtblWqoIffWellFounded": "Proof",
-          "HereditarilyCountable": "Definition",
-          "HereditarilyCountableAtom": "Proof",
-          "HereditarilyCountablePresentationInvariant": "Proof",
-          "IncSeq": "Definition",
-          "IncSeqComp": "Definition",
-          "IncSeqId": "Definition",
-          "IncSeqPointwiseLe": "Proof",
-          "IncreasingPair": "Definition",
-          "InfiniteSetEnumeration": "Proof",
-          "InitialSegment": "Definition",
-          "LocallyConstant": "Definition",
-          "MainProp": "Proof",
-          "MultiSequence": "Definition",
-          "MultiSequenceRestrict": "Definition",
-          "NashWilliams": "Proof",
-          "NoBadPerfectSuper": "Proof",
-          "OrbitBlock": "Definition",
-          "OrbitBlockCoverage": "Proof",
-          "OrbitEmbedding": "Proof",
-          "OrbitPoint": "Definition",
-          "OrbitUnbounded": "Proof",
-          "PerfectBaseToSuper": "Proof",
-          "PerfectMultiRestrict": "Proof",
-          "PerfectMultiSequence": "Definition",
-          "PerfectMultiToSuper": "Proof",
-          "PerfectSuperRestrict": "Proof",
-          "PerfectSuperSequence": "Definition",
-          "PerfectSuperToBase": "Proof",
-          "PerfectSuperToMulti": "Proof",
-          "PowerChild": "Definition",
-          "PowerChildSupport": "Proof",
-          "PowerChildWellFounded": "Proof",
-          "PowerCopiedFailureMove": "Proof",
-          "PowerCopiedFiniteDependence": "Proof",
-          "PowerCopiedFiniteTerminal": "Proof",
-          "PowerCopiedLeft": "Definition",
-          "PowerCopiedOrbitDependence": "Proof",
-          "PowerCopiedShiftIdentity": "Proof",
-          "PowerCopiedSupport": "Proof",
-          "PowerCopiedTerminalAt": "Definition",
-          "PowerCopiedTerminalShift": "Proof",
-          "PowerCopiedTerminalSupport": "Proof",
-          "PowerCopiedTerminates": "Proof",
-          "PowerFiniteOrbitConstancy": "Proof",
-          "PowerGameDescent": "Definition",
-          "PowerGameDescentWellFounded": "Proof",
-          "PowerIResponse": "Definition",
-          "PowerIResponseFailure": "Proof",
-          "PowerIResponseLegal": "Proof",
-          "PowerIResponseWitness": "Proof",
-          "PowerMove": "Definition",
-          "PowerMoveInSupport": "Proof",
-          "PowerPresentationEq": "Definition",
-          "PowerPresentationEqEquivalence": "Proof",
-          "PowerQ": "Definition",
-          "PowerQIsPreorder": "Proof",
-          "PowerQPresBqo": "Proof",
-          "PowerQReflection": "Proof",
-          "PowerRel": "Definition",
-          "PowerRelAtomAtom": "Proof",
-          "PowerRelAtomNode": "Proof",
-          "PowerRelCongrLeft": "Proof",
-          "PowerRelCongrRight": "Proof",
-          "PowerRelNodeAtom": "Proof",
-          "PowerRelNodeNode": "Proof",
-          "PowerRelRefl": "Proof",
-          "PowerRelTrans": "Proof",
-          "PowerShiftIter": "Definition",
-          "PowerShiftIterPrefixAgree": "Proof",
-          "PowerShiftIterShift": "Proof",
-          "PowerSupport": "Definition",
-          "PowerSupportInvariant": "Proof",
-          "PowerSupportNonempty": "Proof",
-          "PowerWqoBadPairSequence": "Proof",
-          "Preamble": "Preamble",
-          "PrefixAgree": "Definition",
-          "PrefixTree": "Definition",
-          "ProperInitialSegment": "Definition",
-          "ProperPrefixSet": "Definition",
-          "QuadrupleHomogeneous": "Proof",
-          "RadoEmbedding": "Proof",
-          "RadoOrder": "Definition",
-          "Ray": "Definition",
-          "RelationEmbedding": "Definition",
-          "RestrictionLocallyConstant": "Proof",
-          "RestrictionShift": "Proof",
-          "RightComp": "Definition",
-          "RmapLemma": "Proof",
-          "SetDomination": "Definition",
-          "ShiftDichotomy": "Proof",
-          "ShiftMap": "Definition",
-          "SubFrontCharacterization": "Proof",
-          "Subarr": "Proof",
-          "SuccSeq": "Definition",
-          "SuperNW": "Proof",
-          "SuperSequence": "Definition",
-          "SuperSequenceExtension": "Proof",
-          "SuperSequenceRestrict": "Definition",
-          "TailSet": "Definition",
-          "TildeF": "Definition",
-          "TildeFAtomIffFront": "Proof",
-          "TildeFFrontEquation": "Proof",
-          "TildeFHerCtbl": "Proof",
-          "TildeFNonfrontEquation": "Proof",
-          "TildeFSingleton": "Definition",
-          "TripleHomogeneous": "Proof"
-        },
-        "placeholder_definition_nodes": [],
-        "current_deps": {
-          "BadMultiRestrict": [
-            "BadMultiSequence",
-            "MultiSequenceRestrict",
-            "RestrictionShift"
-          ],
-          "BadMultiSequence": [
-            "LocallyConstant",
-            "ShiftMap"
-          ],
-          "BadMultiToNontrivialSuper": [
-            "BadMultiSequence",
-            "BadMultiToSuper",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingValue",
-            "IncSeqId",
-            "ShiftMap"
-          ],
-          "BadMultiToSuper": [
-            "BadMultiSequence",
-            "BadSuperSequence",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue"
-          ],
-          "BadPairSequence": [
-            "IncreasingPair"
-          ],
-          "BadSuperRestrict": [
-            "BadSuperSequence",
-            "SuperSequenceRestrict"
-          ],
-          "BadSuperSequence": [
-            "FiniteShift",
-            "SuperSequence"
-          ],
-          "BadSuperToBase": [
-            "BadSuperSequence",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseShift",
-            "FiniteShift",
-            "FrontPrefix",
-            "ProperPrefixSet",
-            "SuperSequence",
-            "SuperSequenceExtension"
-          ],
-          "BaireContinuous": [
-            "PrefixAgree"
-          ],
-          "BaseBad": [
-            "BaseMultiSequence",
-            "BaseShift"
-          ],
-          "BaseBqoRestriction": [
-            "BaseLocallyConstant",
-            "BaseRestrict",
-            "Bqo",
-            "InfiniteSetEnumeration",
-            "PerfectMultiSequence",
-            "RestrictionLocallyConstant",
-            "ShiftDichotomy"
-          ],
-          "BaseIncSeq": [
-            "IncSeq"
-          ],
-          "BaseLocallyConstant": [
-            "BaseMultiSequence",
-            "PrefixAgree"
-          ],
-          "BaseMultiSequence": [
-            "BaseIncSeq"
-          ],
-          "BasePerfect": [
-            "BaseMultiSequence",
-            "BaseShift"
-          ],
-          "BaseRestrict": [
-            "BaseMultiSequence",
-            "IncSeqComp",
-            "MultiSequence"
-          ],
-          "BaseRightComp": [
-            "BaseIncSeq",
-            "RightComp"
-          ],
-          "BaseShift": [
-            "BaseIncSeq",
-            "ShiftMap"
-          ],
-          "BetterRel": [
-            "ContinuousRelHom",
-            "ShiftMap"
-          ],
-          "BlockSigma": [
-            "OrbitPoint"
-          ],
-          "BlockSigmaContinuous": [
-            "BlockSigma",
-            "OrbitBlockCoverage",
-            "PrefixAgree"
-          ],
-          "BlockSigmaEmbedding": [
-            "BlockSigma",
-            "IncSeq",
-            "OrbitBlockCoverage"
-          ],
-          "BlockSigmaIntertwines": [
-            "BlockSigma",
-            "OrbitBlockCoverage",
-            "RightComp",
-            "SuccSeq"
-          ],
-          "BooleanInfinitePigeonhole": [
-            "Preamble"
-          ],
-          "Bqo": [
-            "BadMultiSequence",
-            "LocallyConstant"
-          ],
-          "BqoHerCtblWellF": [
-            "BqoHerCtblWqo",
-            "HerCtblWqoIffWellFounded"
-          ],
-          "BqoHerCtblWqo": [
-            "BadMultiToNontrivialSuper",
-            "BqoImpliesWqo",
-            "ConverseGame",
-            "PowerQPresBqo",
-            "TildeFHerCtbl",
-            "TildeFSingleton"
-          ],
-          "BqoIffGeneralShift": [
-            "BadMultiSequence",
-            "Bqo",
-            "GBetterRel",
-            "GBetterRelIff",
-            "IncSeqId",
-            "RightComp",
-            "ShiftMap",
-            "SuccSeq"
-          ],
-          "BqoImpliesWqo": [
-            "Bqo"
-          ],
-          "CardinalityFront": [
-            "Preamble"
-          ],
-          "CardinalityFrontIsFront": [
-            "CardinalityFront",
-            "Front",
-            "InfiniteSetEnumeration"
-          ],
-          "ContMor": [
-            "ContinuousHom"
-          ],
-          "ContMorEq": [
-            "ContMor"
-          ],
-          "ContinuousHom": [
-            "BaireContinuous"
-          ],
-          "ContinuousRelHom": [
-            "LocallyConstant"
-          ],
-          "ConverseGame": [
-            "BadSuperSequence",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTerminal",
-            "HerCtblRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "TildeFSingleton"
-          ],
-          "DecidingFront": [
-            "DecidingFrontSet",
-            "Front",
-            "InfiniteSetEnumeration"
-          ],
-          "DecidingFrontSet": [
-            "DecidingPrefix",
-            "ProperInitialSegment"
-          ],
-          "DecidingPrefix": [
-            "LocallyConstant",
-            "ProperInitialSegment",
-            "ProperPrefixSet"
-          ],
-          "DecidingValue": [
-            "DecidingFront",
-            "FinitePrefixExtension"
-          ],
-          "EmapLemma": [
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            "ContMor",
-            "FirstMovedPoint",
-            "RightComp",
-            "ShiftMap"
-          ],
-          "FinitePrefixExtension": [
-            "IncSeq",
-            "ProperPrefixSet"
-          ],
-          "FiniteShift": [
-            "ProperPrefixSet",
-            "ShiftMap"
-          ],
-          "FirstMovedPoint": [
-            "IncSeqId",
-            "IncSeqPointwiseLe"
-          ],
-          "Front": [
-            "FrontBase",
-            "InitialSegment",
-            "ProperPrefixSet"
-          ],
-          "FrontBase": [
-            "Preamble"
-          ],
-          "FrontBridge": [
-            "Front",
-            "FrontBridgeTail",
-            "PrefixTree",
-            "ProperInitialSegment"
-          ],
-          "FrontBridgeInit": [
-            "FrontBridge",
-            "FrontTreeOrderedExtension",
-            "FrontTreeSingleton"
-          ],
-          "FrontBridgeStep": [
-            "FrontBridge",
-            "FrontTreeOrderedExtension"
-          ],
-          "FrontBridgeTail": [
-            "InitialSegment"
-          ],
-          "FrontBridgeTerminal": [
-            "FiniteShift",
-            "FrontBridge",
-            "InfiniteSetEnumeration"
-          ],
-          "FrontPrefix": [
-            "Front",
-            "IncSeq"
-          ],
-          "FrontPrefixExists": [
-            "FrontPrefix"
-          ],
-          "FrontPrefixUnique": [
-            "FrontPrefix"
-          ],
-          "FrontRayClosure": [
-            "Front",
-            "Ray",
-            "TailSet"
-          ],
-          "FrontRestrict": [
-            "Preamble"
-          ],
-          "FrontRestriction": [
-            "Front",
-            "FrontRestrict"
-          ],
-          "FrontTreeImmediateExtensions": [
-            "Front",
-            "PrefixTree",
-            "ProperInitialSegment"
-          ],
-          "FrontTreeOrderedExtension": [
-            "FrontTreeWellFounded"
-          ],
-          "FrontTreeSingleton": [
-            "Front",
-            "PrefixTree"
-          ],
-          "FrontTreeWellFounded": [
-            "Front",
-            "PrefixTree",
-            "ProperInitialSegment"
-          ],
-          "GBetterRel": [
-            "ContinuousRelHom",
-            "RightComp"
-          ],
-          "GBetterRelIff": [
-            "BetterRel",
-            "Bqo",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingValue",
-            "Front",
-            "GBetterRel",
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "InfiniteSetEnumeration",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "PrefixAgree",
-            "ProperPrefixSet",
-            "RestrictionLocallyConstant",
-            "RightComp"
-          ],
-          "GoodMultiSequence": [
-            "LocallyConstant",
-            "ShiftMap"
-          ],
-          "HerCtblCode": [
-            "Preamble"
-          ],
-          "HerCtblCodeErase": [
-            "HerCtblCode",
-            "PowerQ"
-          ],
-          "HerCtblNodeClosure": [
-            "HerCtblCodeErase",
-            "HerCtblPower",
-            "PowerPresentationEqEquivalence"
-          ],
-          "HerCtblPower": [
-            "HereditarilyCountable"
-          ],
-          "HerCtblPowerIsPreorder": [
-            "HerCtblRel",
-            "PowerQIsPreorder"
-          ],
-          "HerCtblRel": [
-            "HerCtblPower",
-            "PowerRel"
-          ],
-          "HerCtblWqoIffWellFounded": [
-            "HerCtblNodeClosure",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            "PowerRelNodeNode",
-            "PowerRelRefl"
-          ],
-          "HereditarilyCountable": [
-            "HerCtblCodeErase",
-            "PowerPresentationEq"
-          ],
-          "HereditarilyCountableAtom": [
-            "HereditarilyCountable",
-            "PowerPresentationEqEquivalence"
-          ],
-          "HereditarilyCountablePresentationInvariant": [
-            "HereditarilyCountable",
-            "PowerPresentationEqEquivalence"
-          ],
-          "IncSeq": [
-            "Preamble"
-          ],
-          "IncSeqComp": [
-            "IncSeq"
-          ],
-          "IncSeqId": [
-            "IncSeq"
-          ],
-          "IncSeqPointwiseLe": [
-            "IncSeq"
-          ],
-          "IncreasingPair": [
-            "Preamble"
-          ],
-          "InfiniteSetEnumeration": [
-            "IncSeq"
-          ],
-          "InitialSegment": [
-            "Preamble"
-          ],
-          "LocallyConstant": [
-            "MultiSequence",
-            "PrefixAgree"
-          ],
-          "MainProp": [
-            "ContMorEq",
-            "EmapLemma",
-            "RmapLemma"
-          ],
-          "MultiSequence": [
-            "IncSeq"
-          ],
-          "MultiSequenceRestrict": [
-            "IncSeqComp",
-            "MultiSequence"
-          ],
-          "NashWilliams": [
-            "BooleanInfinitePigeonhole",
-            "Front",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            "FrontTreeWellFounded",
-            "SubFrontCharacterization"
-          ],
-          "NoBadPerfectSuper": [
-            "BadSuperSequence",
-            "BaseShift",
-            "FrontPrefixExists",
-            "InfiniteSetEnumeration",
-            "PerfectSuperSequence"
-          ],
-          "OrbitBlock": [
-            "OrbitPoint"
-          ],
-          "OrbitBlockCoverage": [
-            "OrbitBlock",
-            "OrbitEmbedding",
-            "OrbitUnbounded"
-          ],
-          "OrbitEmbedding": [
-            "IncSeq",
-            "OrbitPoint"
-          ],
-          "OrbitPoint": [
-            "IncSeq"
-          ],
-          "OrbitUnbounded": [
-            "OrbitEmbedding",
-            "OrbitPoint"
-          ],
-          "PerfectBaseToSuper": [
-            "BaseIncSeq",
-            "BaseRestrict",
-            "FiniteShift",
-            "Front",
-            "FrontPrefix",
-            "FrontRestrict",
-            "FrontRestriction",
-            "IncSeq",
-            "IncSeqComp",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "ProperPrefixSet",
-            "RestrictionShift",
-            "ShiftMap",
-            "SuperSequence",
-            "SuperSequenceExtension",
-            "SuperSequenceRestrict"
-          ],
-          "PerfectMultiRestrict": [
-            "MultiSequenceRestrict",
-            "PerfectMultiSequence",
-            "RestrictionShift"
-          ],
-          "PerfectMultiSequence": [
-            "MultiSequence",
-            "ShiftMap"
-          ],
-          "PerfectMultiToSuper": [
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence"
-          ],
-          "PerfectSuperRestrict": [
-            "PerfectSuperSequence",
-            "SuperSequenceRestrict"
-          ],
-          "PerfectSuperSequence": [
-            "FiniteShift",
-            "SuperSequence"
-          ],
-          "PerfectSuperToBase": [
-            "BaseLocallyConstant",
-            "BasePerfect",
-            "BaseShift",
-            "FiniteShift",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "PerfectSuperSequence",
-            "ProperPrefixSet",
-            "ShiftMap",
-            "SuperSequenceExtension"
-          ],
-          "PerfectSuperToMulti": [
-            "DecidingFrontSet",
-            "DecidingValue",
-            "FiniteShift",
-            "Front",
-            "InfiniteSetEnumeration",
-            "LocallyConstant",
-            "MultiSequenceRestrict",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "RestrictionShift",
-            "SuperSequenceRestrict"
-          ],
-          "PowerChild": [
-            "PowerQ"
-          ],
-          "PowerChildSupport": [
-            "PowerChild",
-            "PowerSupport"
-          ],
-          "PowerChildWellFounded": [
-            "PowerChild"
-          ],
-          "PowerCopiedFailureMove": [
-            "BadMultiSequence",
-            "PowerCopiedLeft",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal"
-          ],
-          "PowerCopiedFiniteDependence": [
-            "PowerCopiedLeft"
-          ],
-          "PowerCopiedFiniteTerminal": [
-            "PowerCopiedFiniteDependence",
-            "PowerCopiedTerminalAt",
-            "PowerCopiedTerminates"
-          ],
-          "PowerCopiedLeft": [
-            "MultiSequence",
-            "PowerIResponse",
-            "PowerShiftIter"
-          ],
-          "PowerCopiedOrbitDependence": [
-            "PowerCopiedLeft"
-          ],
-          "PowerCopiedShiftIdentity": [
-            "PowerCopiedLeft",
-            "PowerShiftIterShift"
-          ],
-          "PowerCopiedSupport": [
-            "PowerCopiedFailureMove",
-            "PowerMoveInSupport"
-          ],
-          "PowerCopiedTerminalAt": [
-            "PowerCopiedLeft"
-          ],
-          "PowerCopiedTerminalShift": [
-            "PowerCopiedFiniteTerminal",
-            "PowerCopiedShiftIdentity"
-          ],
-          "PowerCopiedTerminalSupport": [
-            "PowerCopiedSupport",
-            "PowerCopiedTerminalAt",
-            "PowerCopiedTerminates"
-          ],
-          "PowerCopiedTerminates": [
-            "PowerCopiedFailureMove",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescentWellFounded"
-          ],
-          "PowerFiniteOrbitConstancy": [
-            "LocallyConstant",
-            "PowerShiftIterPrefixAgree"
-          ],
-          "PowerGameDescent": [
-            "PowerChild"
-          ],
-          "PowerGameDescentWellFounded": [
-            "PowerChildWellFounded",
-            "PowerGameDescent"
-          ],
-          "PowerIResponse": [
-            "PowerMove"
-          ],
-          "PowerIResponseFailure": [
-            "PowerIResponseLegal"
-          ],
-          "PowerIResponseLegal": [
-            "PowerIResponseWitness"
-          ],
-          "PowerIResponseWitness": [
-            "PowerIResponse",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode"
-          ],
-          "PowerMove": [
-            "PowerChild",
-            "PowerRel"
-          ],
-          "PowerMoveInSupport": [
-            "PowerChildSupport",
-            "PowerMove"
-          ],
-          "PowerPresentationEq": [
-            "PowerQ"
-          ],
-          "PowerPresentationEqEquivalence": [
-            "PowerPresentationEq"
-          ],
-          "PowerQ": [
-            "Preamble"
-          ],
-          "PowerQIsPreorder": [
-            "PowerRelTrans"
-          ],
-          "PowerQPresBqo": [
-            "Bqo",
-            "PowerQReflection"
-          ],
-          "PowerQReflection": [
-            "PowerCopiedFailureMove",
-            "PowerCopiedOrbitDependence",
-            "PowerCopiedTerminalShift",
-            "PowerCopiedTerminalSupport",
-            "PowerFiniteOrbitConstancy"
-          ],
-          "PowerRel": [
-            "PowerChildWellFounded"
-          ],
-          "PowerRelAtomAtom": [
-            "PowerRel"
-          ],
-          "PowerRelAtomNode": [
-            "PowerRel"
-          ],
-          "PowerRelCongrLeft": [
-            "PowerPresentationEqEquivalence",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode"
-          ],
-          "PowerRelCongrRight": [
-            "PowerRelCongrLeft"
-          ],
-          "PowerRelNodeAtom": [
-            "PowerRel"
-          ],
-          "PowerRelNodeNode": [
-            "PowerRel"
-          ],
-          "PowerRelRefl": [
-            "PowerRelCongrRight"
-          ],
-          "PowerRelTrans": [
-            "PowerRelRefl"
-          ],
-          "PowerShiftIter": [
-            "ShiftMap"
-          ],
-          "PowerShiftIterPrefixAgree": [
-            "PowerShiftIter",
-            "PrefixAgree"
-          ],
-          "PowerShiftIterShift": [
-            "PowerShiftIter"
-          ],
-          "PowerSupport": [
-            "PowerQ"
-          ],
-          "PowerSupportInvariant": [
-            "PowerPresentationEq",
-            "PowerSupport"
-          ],
-          "PowerSupportNonempty": [
-            "PowerSupport"
-          ],
-          "PowerWqoBadPairSequence": [
-            "BadPairSequence",
-            "SetDomination"
-          ],
-          "Preamble": [],
-          "PrefixAgree": [
-            "IncSeq"
-          ],
-          "PrefixTree": [
-            "InitialSegment"
-          ],
-          "ProperInitialSegment": [
-            "InitialSegment"
-          ],
-          "ProperPrefixSet": [
-            "Preamble"
-          ],
-          "QuadrupleHomogeneous": [
-            "CardinalityFrontIsFront",
-            "NashWilliams"
-          ],
-          "RadoEmbedding": [
-            "InfiniteSetEnumeration",
-            "PowerWqoBadPairSequence",
-            "QuadrupleHomogeneous",
-            "RadoOrder",
-            "RelationEmbedding",
-            "TripleHomogeneous"
-          ],
-          "RadoOrder": [
-            "IncreasingPair"
-          ],
-          "Ray": [
-            "Preamble"
-          ],
-          "RelationEmbedding": [
-            "Preamble"
-          ],
-          "RestrictionLocallyConstant": [
-            "LocallyConstant",
-            "MultiSequenceRestrict"
-          ],
-          "RestrictionShift": [
-            "MultiSequenceRestrict",
-            "ShiftMap"
-          ],
-          "RightComp": [
-            "IncSeqComp"
-          ],
-          "RmapLemma": [
-            "ContMor",
-            "FirstMovedPoint",
-            "OrbitEmbedding",
-            "RightComp",
-            "ShiftMap"
-          ],
-          "SetDomination": [
-            "Preamble"
-          ],
-          "ShiftDichotomy": [
-            "BadMultiSequence",
-            "DecidingFront",
-            "DecidingValue",
-            "InfiniteSetEnumeration",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "PerfectMultiSequence",
-            "RestrictionShift"
-          ],
-          "ShiftMap": [
-            "RightComp",
-            "SuccSeq"
-          ],
-          "SubFrontCharacterization": [
-            "Front",
-            "FrontRestrict",
-            "FrontRestriction"
-          ],
-          "Subarr": [
-            "BadMultiRestrict",
-            "BadMultiToSuper",
-            "BadSuperRestrict",
-            "BaseBqoRestriction",
-            "DecidingFront",
-            "DecidingValue",
-            "NoBadPerfectSuper",
-            "PerfectBaseToSuper",
-            "PerfectSuperToMulti",
-            "RestrictionLocallyConstant",
-            "ShiftDichotomy",
-            "SuperSequenceExtension"
-          ],
-          "SuccSeq": [
-            "IncSeq"
-          ],
-          "SuperNW": [
-            "NashWilliams",
-            "SuperSequence"
-          ],
-          "SuperSequence": [
-            "Front"
-          ],
-          "SuperSequenceExtension": [
-            "BaseLocallyConstant",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "SuperSequence"
-          ],
-          "SuperSequenceRestrict": [
-            "SuperSequence"
-          ],
-          "TailSet": [
-            "Preamble"
-          ],
-          "TildeF": [
-            "FrontTreeImmediateExtensions",
-            "FrontTreeWellFounded",
-            "PowerQ",
-            "SuperSequence"
-          ],
-          "TildeFAtomIffFront": [
-            "TildeF",
-            "TildeFFrontEquation",
-            "TildeFNonfrontEquation"
-          ],
-          "TildeFFrontEquation": [
-            "SuperSequence",
-            "TildeF"
-          ],
-          "TildeFHerCtbl": [
-            "FrontTreeImmediateExtensions",
-            "HerCtblNodeClosure",
-            "HereditarilyCountableAtom",
-            "TildeF",
-            "TildeFFrontEquation",
-            "TildeFNonfrontEquation"
-          ],
-          "TildeFNonfrontEquation": [
-            "FrontTreeImmediateExtensions",
-            "TildeF"
-          ],
-          "TildeFSingleton": [
-            "FrontTreeSingleton",
-            "TildeF",
-            "TildeFHerCtbl"
-          ],
-          "TripleHomogeneous": [
-            "CardinalityFrontIsFront",
-            "NashWilliams"
-          ]
-        },
-        "current_target_claims": {
-          "BadMultiRestrict": [],
-          "BadMultiSequence": [],
-          "BadMultiToNontrivialSuper": [],
-          "BadMultiToSuper": [],
-          "BadPairSequence": [],
-          "BadSuperRestrict": [],
-          "BadSuperSequence": [],
-          "BadSuperToBase": [],
-          "BaireContinuous": [],
-          "BaseBad": [],
-          "BaseBqoRestriction": [],
-          "BaseIncSeq": [],
-          "BaseLocallyConstant": [],
-          "BaseMultiSequence": [],
-          "BasePerfect": [],
-          "BaseRestrict": [],
-          "BaseRightComp": [],
-          "BaseShift": [],
-          "BetterRel": [],
-          "BlockSigma": [],
-          "BlockSigmaContinuous": [],
-          "BlockSigmaEmbedding": [],
-          "BlockSigmaIntertwines": [],
-          "BooleanInfinitePigeonhole": [],
-          "Bqo": [],
-          "BqoHerCtblWellF": [
-            "thm BqoHerCtblWellF"
-          ],
-          "BqoHerCtblWqo": [
-            "thm BqoHerCtblWqo"
-          ],
-          "BqoIffGeneralShift": [
-            "lines:1748-1753"
-          ],
-          "BqoImpliesWqo": [],
-          "CardinalityFront": [],
-          "CardinalityFrontIsFront": [],
-          "ContMor": [],
-          "ContMorEq": [],
-          "ContinuousHom": [],
-          "ContinuousRelHom": [],
-          "ConverseGame": [],
-          "DecidingFront": [],
-          "DecidingFrontSet": [],
-          "DecidingPrefix": [],
-          "DecidingValue": [],
-          "EmapLemma": [],
-          "FinitePrefixExtension": [],
-          "FiniteShift": [],
-          "FirstMovedPoint": [],
-          "Front": [],
-          "FrontBase": [],
-          "FrontBridge": [],
-          "FrontBridgeInit": [],
-          "FrontBridgeStep": [],
-          "FrontBridgeTail": [],
-          "FrontBridgeTerminal": [],
-          "FrontPrefix": [],
-          "FrontPrefixExists": [],
-          "FrontPrefixUnique": [],
-          "FrontRayClosure": [],
-          "FrontRestrict": [],
-          "FrontRestriction": [],
-          "FrontTreeImmediateExtensions": [],
-          "FrontTreeOrderedExtension": [],
-          "FrontTreeSingleton": [],
-          "FrontTreeWellFounded": [],
-          "GBetterRel": [],
-          "GBetterRelIff": [
-            "g-BQO"
-          ],
-          "GoodMultiSequence": [],
-          "HerCtblCode": [],
-          "HerCtblCodeErase": [],
-          "HerCtblNodeClosure": [],
-          "HerCtblPower": [],
-          "HerCtblPowerIsPreorder": [],
-          "HerCtblRel": [],
-          "HerCtblWqoIffWellFounded": [],
-          "HereditarilyCountable": [],
-          "HereditarilyCountableAtom": [],
-          "HereditarilyCountablePresentationInvariant": [],
-          "IncSeq": [],
-          "IncSeqComp": [],
-          "IncSeqId": [],
-          "IncSeqPointwiseLe": [],
-          "IncreasingPair": [],
-          "InfiniteSetEnumeration": [],
-          "InitialSegment": [],
-          "LocallyConstant": [],
-          "MainProp": [
-            "MainProp"
-          ],
-          "MultiSequence": [],
-          "MultiSequenceRestrict": [],
-          "NashWilliams": [
-            "cor:NashWill"
-          ],
-          "NoBadPerfectSuper": [],
-          "OrbitBlock": [],
-          "OrbitBlockCoverage": [],
-          "OrbitEmbedding": [],
-          "OrbitPoint": [],
-          "OrbitUnbounded": [],
-          "PerfectBaseToSuper": [],
-          "PerfectMultiRestrict": [],
-          "PerfectMultiSequence": [],
-          "PerfectMultiToSuper": [],
-          "PerfectSuperRestrict": [],
-          "PerfectSuperSequence": [],
-          "PerfectSuperToBase": [],
-          "PerfectSuperToMulti": [],
-          "PowerChild": [],
-          "PowerChildSupport": [],
-          "PowerChildWellFounded": [],
-          "PowerCopiedFailureMove": [],
-          "PowerCopiedFiniteDependence": [],
-          "PowerCopiedFiniteTerminal": [],
-          "PowerCopiedLeft": [],
-          "PowerCopiedOrbitDependence": [],
-          "PowerCopiedShiftIdentity": [],
-          "PowerCopiedSupport": [],
-          "PowerCopiedTerminalAt": [],
-          "PowerCopiedTerminalShift": [],
-          "PowerCopiedTerminalSupport": [],
-          "PowerCopiedTerminates": [],
-          "PowerFiniteOrbitConstancy": [],
-          "PowerGameDescent": [],
-          "PowerGameDescentWellFounded": [],
-          "PowerIResponse": [],
-          "PowerIResponseFailure": [],
-          "PowerIResponseLegal": [],
-          "PowerIResponseWitness": [],
-          "PowerMove": [],
-          "PowerMoveInSupport": [],
-          "PowerPresentationEq": [],
-          "PowerPresentationEqEquivalence": [],
-          "PowerQ": [],
-          "PowerQIsPreorder": [],
-          "PowerQPresBqo": [
-            "cor PowerQPresBqo"
-          ],
-          "PowerQReflection": [],
-          "PowerRel": [],
-          "PowerRelAtomAtom": [],
-          "PowerRelAtomNode": [],
-          "PowerRelCongrLeft": [],
-          "PowerRelCongrRight": [],
-          "PowerRelNodeAtom": [],
-          "PowerRelNodeNode": [],
-          "PowerRelRefl": [],
-          "PowerRelTrans": [],
-          "PowerShiftIter": [],
-          "PowerShiftIterPrefixAgree": [],
-          "PowerShiftIterShift": [],
-          "PowerSupport": [],
-          "PowerSupportInvariant": [],
-          "PowerSupportNonempty": [],
-          "PowerWqoBadPairSequence": [],
-          "Preamble": [],
-          "PrefixAgree": [],
-          "PrefixTree": [],
-          "ProperInitialSegment": [],
-          "ProperPrefixSet": [],
-          "QuadrupleHomogeneous": [],
-          "RadoEmbedding": [
-            "lines:985-987"
-          ],
-          "RadoOrder": [],
-          "Ray": [],
-          "RelationEmbedding": [],
-          "RestrictionLocallyConstant": [],
-          "RestrictionShift": [],
-          "RightComp": [],
-          "RmapLemma": [],
-          "SetDomination": [],
-          "ShiftDichotomy": [],
-          "ShiftMap": [],
-          "SubFrontCharacterization": [],
-          "Subarr": [
-            "lem:subarr"
-          ],
-          "SuccSeq": [],
-          "SuperNW": [
-            "corollary:SuperNW"
-          ],
-          "SuperSequence": [],
-          "SuperSequenceExtension": [],
-          "SuperSequenceRestrict": [],
-          "TailSet": [],
-          "TildeF": [],
-          "TildeFAtomIffFront": [],
-          "TildeFFrontEquation": [],
-          "TildeFHerCtbl": [],
-          "TildeFNonfrontEquation": [],
-          "TildeFSingleton": [],
-          "TripleHomogeneous": []
-        },
-        "current_paper_approved_fingerprints": {
-          "MainProp": "{\"target\":\"MainProp\",\"covering_nodes\":{\"MainProp\":\"fb2fb371243a039fa491772ebdcede5e14bc5484555d5cdeab325a7a791360e5\"},\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"d021288c4bd741e074f0be580769057f7738eae46960657ffc8f995735b92f1c\",\"ContMor\":\"dfa456a882144c75ec69ddddc405b0572cc399694f5e1a09ffc2450dc5b74c62\",\"ContMorEq\":\"93c7acca9d1b2c04e8eba37751ebbc575485fa22cdfb456a4d87f6b73570be32\",\"ContinuousHom\":\"af41b3e1d4ca8047ec1cca7891559aaba7538ad15a414b60211f1cabeb49806f\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "cor PowerQPresBqo": "{\"target\":\"cor PowerQPresBqo\",\"covering_nodes\":{\"PowerQPresBqo\":\"49426ac5dace0d0d2e59991e60295afd7b700b02894fe3c6f6780f0db628cea4\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PowerChild\":\"2e278e8f953e91271a4ae53269464000814a8cccf1ec5f8aecf60da22abd55c4\",\"PowerQ\":\"8bdf96f8b21c4683fd8dbb28579053e7c553907eb4163626ed3cb2985f5d847c\",\"PowerRel\":\"8ad4bdac40cf0cabe5725284e32639caaa0bb4b86fe0007ec6b35ac85ad40b22\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "cor:NashWill": "{\"target\":\"cor:NashWill\",\"covering_nodes\":{\"NashWilliams\":\"6b8260cddde225e6ab005429f0ff2902ec05000666065a65ee75218ec2d138c0\"},\"lean_relevant_definition_descendants\":{\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "corollary:SuperNW": "{\"target\":\"corollary:SuperNW\",\"covering_nodes\":{\"SuperNW\":\"958eae55fa2314bc0f604498a60be7a820e78318e3249f2114cc42d6cba09b87\"},\"lean_relevant_definition_descendants\":{\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\",\"SuperSequence\":\"e1b07dc8312697d448c83fa2070eab5b4caa1f70ed2e30e66f475fbf76419d94\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "g-BQO": "{\"target\":\"g-BQO\",\"covering_nodes\":{\"GBetterRelIff\":\"9cce16dbf3cbe8548d1334b9f5e69a3a9b332c3eaab65c8c15624d87c89187cf\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"BetterRel\":\"43225e63c973f28ca1ec64c58845a341f0481e53714fee29d8a4f03924e9ae5d\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"ContinuousRelHom\":\"159a7c1a692c4a4cf37f42e7fe794f307112024798c478436e23c72b46877ec2\",\"GBetterRel\":\"4a086f9397fa96daa1c31fdb3a3b75a5dac4c4eeec2a1a8acca00a95bf7a7e0a\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "lem:subarr": "{\"target\":\"lem:subarr\",\"covering_nodes\":{\"Subarr\":\"8fd1469be09272523ca854590af9cce0454dbe3d7bf97e34f1aeb000d0314a65\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"BaseIncSeq\":\"b4ee445f24d19052ee032ff7ac367ba43fabffc485a0596bbec882e09a0895c2\",\"BaseLocallyConstant\":\"6d3114fceadc0f2dcacc706f2881ee2dff13afbe5a014f52c7bfa43c46ed0ec3\",\"BaseMultiSequence\":\"d84c6ac1b9b091554df66235472d7593c610b8b7346a634f8715cf8db569e086\",\"BaseRestrict\":\"b5c4a2ef4b24067b82747d1821656823ff674de2e35eb3e97c702a71f0acbe8d\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"FiniteShift\":\"7bb8c953dcde109b1541a76bf8fef4197e23f1ef40f3c5a3b4ceff1595791131\",\"Front\":\"59cafa6b1f45fdbf2552c71b82c377ed4dbb5989bbf80b6eb26a71e4cdd4ad94\",\"FrontBase\":\"367b168c169bd244c804c38b1a1fe4c5f57cd3acfda28f9194f179baa83c33ac\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"InitialSegment\":\"3e026208ed05a433db5974183776da6aff8df0bfd4c7a5feeb2861994e312f08\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PerfectMultiSequence\":\"c006694c209839739aa686c04eef0e8c8e22c71da186fe5d56a229419903274e\",\"PerfectSuperSequence\":\"d09ee457efae3251bca6479c0d1fa166d582799c4801447ae18d07b1f79c42dc\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"ProperPrefixSet\":\"9296462a045bfcfc5af67bd4be60a92dcc933990a704141571528a4c24783935\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\",\"SuperSequence\":\"e1b07dc8312697d448c83fa2070eab5b4caa1f70ed2e30e66f475fbf76419d94\",\"SuperSequenceRestrict\":\"f7a9c91d5be485c07693804fcb37b9c4644b4832ddf2859915ec1f1d9871742c\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "lines:1748-1753": "{\"target\":\"lines:1748-1753\",\"covering_nodes\":{\"BqoIffGeneralShift\":\"a03a0d03dbfe74021c99376cf490d951aae910eb709ccb4dc60aaf0ced974082\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "lines:985-987": "{\"target\":\"lines:985-987\",\"covering_nodes\":{\"RadoEmbedding\":\"95d78926ac4ea6c5a69dfd3bdae86f2bcfe54ba4fec03f9ae33e3161a89e0f99\"},\"lean_relevant_definition_descendants\":{\"IncreasingPair\":\"7b7d101a1ade22da91553543930a3d16cd965da4ddb29f4f7574fe2f5bbb38aa\",\"RadoOrder\":\"e8a126353ed5cc1ce5f93ee822ea75d8b963c312844521d58225df87cdcc2e7c\",\"RelationEmbedding\":\"6a36e49339b105c105f8edaac28a8bc9b2ab47a6076e05e6f7f49b992ecd3159\",\"SetDomination\":\"42fc114a209398007e1e53642360f1d73bf6cce6208055df8454f8593d353a6e\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "thm BqoHerCtblWellF": "{\"target\":\"thm BqoHerCtblWellF\",\"covering_nodes\":{\"BqoHerCtblWellF\":\"1ec7553f78c1109eb17f1e9b1ff93dabab923a7ffa0ef295ff493d4bbc343dae\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"HerCtblCode\":\"49cbd5c8b1af7cda2775b8eeea067f9f156d6bbd54cd22b261b98ea9513ea7dc\",\"HerCtblCodeErase\":\"3412235edd2e7f0b0aa7a362af8366b8d1a23c40bbd878f96632ae28edf29219\",\"HerCtblPower\":\"6d98d2012e5d2dd14f811c9467b735361366f489e8ab1a378d02a54c82358fca\",\"HerCtblRel\":\"bf8ac5dffae8b86bc414b3f181e381cd584607fa3fda697b021eda91799f59aa\",\"HereditarilyCountable\":\"fdc9e08c058bea082bd7c8d3a60ae870587828005e7962f248f5ab395744b76e\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PowerChild\":\"2e278e8f953e91271a4ae53269464000814a8cccf1ec5f8aecf60da22abd55c4\",\"PowerPresentationEq\":\"883b047ffd503099cdd60224de3be2aa159403432228f9e953de163fcfa7c189\",\"PowerQ\":\"8bdf96f8b21c4683fd8dbb28579053e7c553907eb4163626ed3cb2985f5d847c\",\"PowerRel\":\"8ad4bdac40cf0cabe5725284e32639caaa0bb4b86fe0007ec6b35ac85ad40b22\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
-          "thm BqoHerCtblWqo": "{\"target\":\"thm BqoHerCtblWqo\",\"covering_nodes\":{\"BqoHerCtblWqo\":\"d2915662ba054f2648409b1be1b70a007d36c8874d2ea99213e94fafb810c0b3\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"HerCtblCode\":\"49cbd5c8b1af7cda2775b8eeea067f9f156d6bbd54cd22b261b98ea9513ea7dc\",\"HerCtblCodeErase\":\"3412235edd2e7f0b0aa7a362af8366b8d1a23c40bbd878f96632ae28edf29219\",\"HerCtblPower\":\"6d98d2012e5d2dd14f811c9467b735361366f489e8ab1a378d02a54c82358fca\",\"HerCtblRel\":\"bf8ac5dffae8b86bc414b3f181e381cd584607fa3fda697b021eda91799f59aa\",\"HereditarilyCountable\":\"fdc9e08c058bea082bd7c8d3a60ae870587828005e7962f248f5ab395744b76e\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PowerChild\":\"2e278e8f953e91271a4ae53269464000814a8cccf1ec5f8aecf60da22abd55c4\",\"PowerPresentationEq\":\"883b047ffd503099cdd60224de3be2aa159403432228f9e953de163fcfa7c189\",\"PowerQ\":\"8bdf96f8b21c4683fd8dbb28579053e7c553907eb4163626ed3cb2985f5d847c\",\"PowerRel\":\"8ad4bdac40cf0cabe5725284e32639caaa0bb4b86fe0007ec6b35ac85ad40b22\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}"
-        },
-        "reviewer_comments": "",
-        "latest_worker_summary": "Repaired the empty-front contradiction in BadMultiToNontrivialSuper.tex with explicit ProperPrefixSet citations for the general and concrete prefix facts, and an explicit DecidingPrefix citation for the equality across IncSeqId and its shift.",
-        "latest_worker_comments": "Edited only Tablet/BadMultiToNontrivialSuper.tex. Preserved the Lean statement, imports, support direction, all existing mathematics, and the required citations to DecidingFrontSet, IncSeqId, ShiftMap, BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingValue, and SuperSequence. The TeX file retains exactly one lemma block followed by one proof block.",
-        "latest_worker_needs_restructure_suggested_nodes": [],
-        "latest_worker_under_model_disproof": "",
-        "latest_worker_under_model_route_opinion": "",
-        "latest_worker_under_model_reasoning": "",
-        "pending_authoring_candidate": "",
-        "deterministic_worker_rejection_reasons": [],
-        "latest_review_rejection_reasons": [],
-        "review_verifier_evidence": {
-          "paper": {},
-          "deviation": {},
-          "substantiveness": {},
-          "corr": {},
-          "sound": {},
-          "assumptions": []
-        },
-        "previous_paper_lane_findings": {},
-        "previous_substantiveness_lane_findings": {},
-        "previous_corr_lane_findings": {
-          "PowerCopiedSupport": {
-            "v1": {
-              "node": "PowerCopiedSupport",
-              "correspondence": {
-                "decision": "PASS",
-                "issues": []
-              },
-              "overall": "APPROVE",
-              "summary": "The Lean theorem and TeX lemma quantify over the same Q, relation, bad PowerQ-valued multi-sequence, increasing enumeration, and natural-number row/depth indices. The expanded definitions give the same copied-left value and support inclusion, with no definition-hygiene issue.",
-              "comments": ""
-            }
-          }
-        },
-        "previous_sound_lane_findings": {
-          "BadMultiRestrict": {
-            "v1": {
-              "node": "BadMultiRestrict",
-              "soundness": {
-                "decision": "SOUND",
-                "explanation": "The proof correctly instantiates BadMultiSequence at z composed with x, applies the cited RestrictionShift identity, and rewrites both restricted values using MultiSequenceRestrict. It then concludes the universal badness condition for an arbitrary x, with every cross-node dependency explicitly cited."
-              },
-              "overall": "APPROVE",
-              "summary": "The natural-language proof rigorously establishes badness preservation under restriction from the cited child statements.",
-              "comments": ""
-            }
-          }
-        },
-        "retry_outcome_kind": "None",
-        "retry_attempt": 0,
-        "post_advance_routing": false,
-        "corr_blocker_adjudicable": false,
-        "substantiveness_blocker_adjudicable": false,
-        "deviation_blocker_adjudicable": false,
-        "sound_blocker_adjudicable": false,
-        "paper_blocker_adjudicable": false,
-        "fresh_context": false,
-        "prompt_contract_version": 64,
-        "project_invariants": {
-          "filespec_reference": "FILESPEC.md",
-          "node_file_contract": "tablet_node_files_must_follow_filespec",
-          "node_pair_contract": "every_present_node_has_lean_and_nl_statement",
-          "progress_modes": [
-            "close_proof",
-            "paper_faithful_dag_improvement"
-          ],
-          "proof_bearing_contract": "proof_nodes_need_closed_lean_or_rigorous_nl",
-          "role_authority": {
-            "reviewer": "chooses_next_step_and_guidance",
-            "verifier": "checks_invariants_without_choosing_work",
-            "worker": "writes_repository_content_only"
-          }
-        },
-        "paper_contract": {
-          "artifact_contract": {
-            "overall_rule": "approve_iff_pass",
-            "phase_blocks": {
-              "paper_faithfulness": {
-                "decision_values": [],
-                "issue_subject_kind": "none"
-              }
-            },
-            "prompt_schema_example": {
-              "comments": "",
-              "overall": "APPROVE or REJECT",
-              "paper_faithfulness": {
-                "decision": "PASS or FAIL",
-                "issues": []
-              },
-              "summary": ""
-            },
-            "result_type": "paper_faithfulness_result_v1"
-          },
-          "artifact_prompt_view": {
-            "acceptance_check_command_template": [],
-            "checker_authority": "exact_command_is_authoritative",
-            "done_marker_contract": "write_done_after_json_check_passes",
-            "escape_json_backslashes": true,
-            "failure_recovery": "json_check_required_acceptance_check_best_effort",
-            "json_check_command_template": [],
-            "raw_output_format": "json_only",
-            "stdout_policy": "do_not_print_json_to_stdout"
-          },
-          "fixed_item_reporting_policy": "none",
-          "issue_reporting_policy": "none",
-          "previous_own_findings_by_lane": {},
-          "prompt_fragments": [],
-          "request_summary": {
-            "blocked_targets": [],
-            "phase": "",
-            "targets": []
-          },
-          "rubric": {
-            "covering_set_authority": "none",
-            "definition_dependency_authority": "none",
-            "faithfulness_standard": "none",
-            "paper_statement_authority": "none"
-          },
-          "target_covering_nodes": {},
-          "target_issue_scope": []
-        },
-        "corr_contract": {
-          "artifact_contract": {
-            "overall_rule": "approve_iff_pass",
-            "phase_blocks": {
-              "correspondence": {
-                "comment_required_on_fail": true,
-                "decision_values": [],
-                "verdict_values": []
-              }
-            },
-            "prompt_schema_example": {
-              "comments": "",
-              "correspondence": {
-                "decision": "PASS or FAIL",
-                "verdicts": []
-              },
-              "overall": "APPROVE or REJECT",
-              "summary": ""
-            },
-            "result_type": "correspondence_result_v1"
-          },
-          "artifact_prompt_view": {
-            "acceptance_check_command_template": [],
-            "checker_authority": "exact_command_is_authoritative",
-            "done_marker_contract": "write_done_after_json_check_passes",
-            "escape_json_backslashes": true,
-            "failure_recovery": "json_check_required_acceptance_check_best_effort",
-            "json_check_command_template": [],
-            "raw_output_format": "json_only",
-            "stdout_policy": "do_not_print_json_to_stdout"
-          },
-          "fixed_item_reporting_policy": "none",
-          "issue_reporting_policy": "none",
-          "node_issue_scope": [],
-          "preamble_contract": {
-            "empty_items_vacuously_supported": true,
-            "item_ids": [],
-            "mode": "none"
-          },
-          "previous_own_findings_by_lane": {},
-          "prompt_fragments": [],
-          "request_summary": {
-            "blocked_targets": [],
-            "nodes": [],
-            "phase": ""
-          },
-          "rubric": {
-            "definition_hygiene": [],
-            "duplicate_mathlib_definition_policy": "none",
-            "preamble_item_issue_policy": "none",
-            "project_definition_policy": "none",
-            "statement_alignment_checks": []
-          }
-        },
-        "sound_contract": {
-          "artifact_contract": {
-            "decision_values": [],
-            "overall_rule": "approve_iff_sound",
-            "prompt_schema_example": {
-              "comments": "",
-              "node": "",
-              "overall": "APPROVE or REJECT",
-              "soundness": {
-                "decision": "",
-                "explanation": ""
-              },
-              "summary": ""
-            },
-            "result_type": "soundness_result_v1"
-          },
-          "artifact_prompt_view": {
-            "acceptance_check_command_template": [],
-            "checker_authority": "exact_command_is_authoritative",
-            "done_marker_contract": "write_done_after_json_check_passes",
-            "escape_json_backslashes": true,
-            "failure_recovery": "json_check_required_acceptance_check_best_effort",
-            "json_check_command_template": [],
-            "raw_output_format": "json_only",
-            "stdout_policy": "do_not_print_json_to_stdout"
-          },
-          "detail_floor": "none",
-          "evaluation_basis": "none",
-          "previous_own_findings": {},
-          "prompt_fragments": [],
-          "request_summary": {
-            "active_node": "",
-            "held_target": "",
-            "node": "",
-            "phase": ""
-          },
-          "rubric": {
-            "detail_floor": "none",
-            "lean_code_relevance": "none",
-            "proof_standard": "none",
-            "reject_sketches": false
-          },
-          "target_nodes": []
-        },
-        "worker_contract": {
-          "allowed_outcomes": [],
-          "artifact_prompt_view": {
-            "acceptance_check_command_template": [],
-            "checker_authority": "exact_command_is_authoritative",
-            "done_marker_contract": "write_done_after_json_check_passes",
-            "escape_json_backslashes": true,
-            "failure_recovery": "json_check_required_acceptance_check_best_effort",
-            "json_check_command_template": [],
-            "raw_output_format": "json_only",
-            "stdout_policy": "do_not_print_json_to_stdout"
-          },
-          "kernel_derives_structural_snapshot": true,
-          "prompt_fragments": [],
-          "prompt_schema_example": {
-            "comments": "",
-            "difficulty_updates": {
-              "node_id": ""
-            },
-            "outcome": "",
-            "summary": "",
-            "target_claim_updates": {
-              "node_id": []
-            }
-          },
-          "reported_delta_fields": [],
-          "request_summary": {
-            "active_node": "",
-            "blockers": [],
-            "current_definition_nodes": [],
-            "current_deps_scope_nodes": [],
-            "current_deps_scoped": {},
-            "current_preamble_nodes": [],
-            "current_present_nodes": [],
-            "current_target_claims_nonempty": {},
-            "held_target": "",
-            "mode": "",
-            "phase": "",
-            "worker_context": {
-              "active_difficulty": "hard",
-              "active_easy_attempts": 0,
-              "allow_new_obligations": true,
-              "authorized_nodes": [],
-              "enabled": false,
-              "must_close_active": false,
-              "validation_kind": "none",
-              "worker_profile": "none"
-            }
-          },
-          "result_type": "worker_result_v1",
-          "reviewer_comments": "",
-          "scope_contract": {
-            "allow_new_obligations": true,
-            "authorized_existing_nodes": [],
-            "configured_targets": [],
-            "existing_node_scope_mode": "none",
-            "must_close_active": false,
-            "new_nodes_allowed": false,
-            "pending_targets": [],
-            "pending_targets_meaning": "none"
-          },
-          "stuck_contract": {
-            "allowed": false,
-            "forbid_tablet_changes_when_stuck": false,
-            "meaning": "none"
-          }
-        },
-        "review_contract": {
-          "artifact_contract": {
-            "optional_fields": [],
-            "prompt_schema_example": {
-              "allow_new_obligations": true,
-              "clear_human_input": "",
-              "comments": "",
-              "decision": [],
-              "difficulty_updates": {
-                "node_id": ""
-              },
-              "must_close_active": false,
-              "next_active": "",
-              "next_mode": [],
-              "reason": "",
-              "request_sound_verifier_node_ids": [],
-              "reset": [],
-              "reset_blocker_ids": [],
-              "task_blocker_ids": []
-            },
-            "required_fields": [],
-            "result_type": "review_result_v1"
-          },
-          "artifact_prompt_view": {
-            "acceptance_check_command_template": [],
-            "checker_authority": "exact_command_is_authoritative",
-            "done_marker_contract": "write_done_after_json_check_passes",
-            "escape_json_backslashes": true,
-            "failure_recovery": "json_check_required_acceptance_check_best_effort",
-            "json_check_command_template": [],
-            "raw_output_format": "json_only",
-            "stdout_policy": "do_not_print_json_to_stdout"
-          },
-          "blocker_actions": {
-            "action_fields": [],
-            "allowed_reset_ids": [],
-            "choices": [],
-            "required": false,
-            "reset_semantics": "none",
-            "sound_verifier_requestable_nodes": []
-          },
-          "blocker_partition": {
-            "action_fields": [],
-            "allowed_reset_ids": [],
-            "choices": [],
-            "required": false,
-            "reset_semantics": "none",
-            "sound_verifier_requestable_nodes": []
-          },
-          "clear_human_input_contract": {
-            "allowed_when_outstanding": false,
-            "omit_when_not_allowed": true
-          },
-          "comments_contract": {
-            "empty_string_means_no_comments": true,
-            "field": "comments",
-            "semantics": "non_authoritative_guidance_forwarded_to_future_workers"
-          },
-          "difficulty_update_contract": {
-            "allowed_nodes": []
-          },
-          "need_input_contract": {
-            "allow_new_obligations": true,
-            "blocker_partition_required": false,
-            "meaning": "none",
-            "must_close_active": false,
-            "next_active": "",
-            "next_mode": "",
-            "next_worker_context_mode": "resume",
-            "paper_focus_ranges": [],
-            "reset_blocker_ids": [],
-            "task_blocker_ids": [],
-            "work_style_hint": "none"
-          },
-          "next_active_contract": {
-            "allow_targeted_without_next_active": false,
-            "kernel_hinted_nodes": [],
-            "targeted_allowed_nodes": []
-          },
-          "prompt_fragments": [],
-          "request_summary": {
-            "active_node": "",
-            "blocked_targets": [],
-            "held_target": "",
-            "human_input_outstanding": false,
-            "invalid_attempt": false,
-            "latest_worker_rationale": {
-              "comments": "",
-              "summary": ""
-            },
-            "mode": "",
-            "phase": "",
-            "protected_nodes": []
-          },
-          "verifier_evidence": {
-            "corr": {},
-            "paper": {},
-            "sound": {}
-          }
-        },
-        "audit_contract": {
-          "artifact_contract": {},
-          "prompt_fragments": [],
-          "request_summary": {
-            "audit_burst_index": 0,
-            "audit_round": 0,
-            "max_bursts_per_round": 0,
-            "phase": "",
-            "scenario": "audit_dormant"
-          }
-        },
-        "stuck_math_audit_contract": {
-          "artifact_contract": {},
-          "prompt_fragments": [],
-          "request_summary": {
-            "phase": "",
-            "scenario": "stuck_math_audit_dormant"
-          }
-        },
-        "cleanup_audit_tasks_view": [],
-        "cleanup_audit_scratchpad_view": "",
-        "cleanup_audit_round_view": 0,
-        "cleanup_audit_burst_count_view": 0,
-        "cleanup_protected_statement_node_set_view": [],
-        "latest_audit_rejection_reason_view": "",
-        "cleanup_force_done_view": false,
-        "worker_context": {
-          "enabled": false,
-          "active_difficulty": "Hard",
-          "active_easy_attempts": 0,
-          "worker_profile": "None",
-          "validation_kind": "None",
-          "authorized_nodes": [],
-          "allow_new_obligations": true,
-          "must_close_active": false,
-          "protected_semantic_change_nodes": [],
-          "next_context_mode": "resume",
-          "paper_focus_ranges": [],
-          "work_style_hint": "none",
-          "cleanup_active_task_kind_view": null,
-          "cleanup_active_target_node_view": null,
-          "cleanup_active_rationale_view": ""
-        },
-        "worker_acceptance": {
-          "enabled": false,
-          "validation_kind": "None",
-          "authorized_nodes": [],
-          "protected_semantic_change_nodes": [],
-          "validation_execution_plan": [],
-          "require_explicit_target_claims_for_new_nodes": true,
-          "forbid_tablet_changes_when_stuck": false,
-          "observation_plan": {
-            "capture_before_snapshot": false,
-            "capture_before_tablet_contents": false,
-            "capture_scoped_tablet_baseline_errors": false,
-            "scoped_tablet_baseline_scope": "None",
-            "capture_imports_before": false,
-            "capture_expected_active_hash": false,
-            "capture_baseline_declaration_hashes": false,
-            "capture_baseline_correspondence_hashes": false
-          }
-        },
-        "invalid_attempt": false,
-        "human_input_outstanding": false,
-        "gate_kind": "Advance",
-        "local_closure_unverified": {}
-      }
     }
   ],
   "$strings": {
@@ -2314,7 +247,6 @@
     "13871b173a47ab14": "83ec1877f39ca69a65439ab84d8d4d0e54d84cd6ef88299b2a5a086fcf6cca9b",
     "1391d03e41b93372": "f808cb4873c13f9884a3fcf3ec67ccdf59577b6fecc723dbc12da295dd4fbc17",
     "13b8a7042d6fbabf": "a9225ec41f7eece15817b235a52a41f17d03017d76fe5575a97b73b29aabb60f",
-    "13fb2130d072db73": "Edited only Tablet/BadMultiToNontrivialSuper.tex. Preserved the Lean statement, imports, support direction, all existing mathematics, and the required citations to DecidingFrontSet, IncSeqId, ShiftMap, BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingValue, and SuperSequence. The TeX file retains exactly one lemma block followed by one proof block.",
     "1406b75a978f3ae3": "sound-v2:3fb4ecf03d562a28709586aaa17263fe5a665b4901b932363ae5fc9362649498",
     "144f6ad1b1c1e8d7": "8380224cea47b7919fad804dcb993b10b7efc885993b1a7b30ebeeee3e749224",
     "145fb1c38237c4d1": "5fa558cac90755c8f3441191f663ef69c2dae38641323b4d146f6b841c4487b9",
@@ -2753,7 +685,6 @@
     "378c04a6d6ada1f4": "dd0353d652d1806885a6238b6e6dfb273b8fbd1ce0cc537f478f4edce35caa74",
     "37ba2ebbccf498aa": "{\"own_tex\":\"1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "37d3ecffed9919dc": "{\"own_tex\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"lean_semantic_closure\":\"b22d60efc9c22f114a5b50d94f491f36444f4c17127146168b149faf0246db99\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-    "37e0600a3ad42cab": "The proof correctly instantiates BadMultiSequence at z composed with x, applies the cited RestrictionShift identity, and rewrites both restricted values using MultiSequenceRestrict. It then concludes the universal badness condition for an arbitrary x, with every cross-node dependency explicitly cited.",
     "37e35f5b0e0e0e80": "ac4a91d3c2819f68e21f98a47f381689197ab8422b69874396b48414f8280605",
     "37f406df99699361": "53f8d0b6aedee52d811e649944e0b54a431fa2a0ff9e161fdefc497d53a64277",
     "3802afbd5857b94f": "c17fe9958a38a5379ebda7076ad492dd6be66c20abd400d9d9902f0994c63059",
@@ -2772,7 +703,6 @@
     "39851c6a87f44d34": "6bd78398ccad7c4c0f9e376d3398bd307cefca1a243936aa0262300f48781612",
     "39929548d37365ca": "d2bee5e29fb100272869c14abca74dd80e58fb38ae18d5f33b1b512f810b3b56",
     "399cac3fccfef95d": "1e629f24f00db5660feff14da1144e91f88884228d302757c8b8a587cdb060a4",
-    "39a0fde5107b0344": "json_check_required_acceptance_check_best_effort",
     "39bd86092c69f18f": "930222559b5a4cdd311f98e861523ab94f15930be34c50106302b3682d836929",
     "39e27818bd5a66da": "sound-v2:3a5bc40ba324c4f28bb51662bb3d3f5761768f5dbea995b19ceb157fbed663f1",
     "39e543c656cdca50": "{\"own_tex\":\"5317315f20f0b0e3de721c7e371d1dc6662cb0315688aaaf9b05f6bb8e4f4735\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -3780,7 +1710,6 @@
     "8dc948696ec0ec47": "21c7c9c7fd7cc6f0d7b148cbe7f15822054f909e8f69909321d605a49d0f9552",
     "8dcd3f459183fa20": "{\"own_tex\":\"83ce5324ed4003defce8e207195d1a6fadd710d00885e6aecd4e28f9743adb36\",\"lean_semantic_closure\":\"86331f0f851222ab526004187b2da7ab839762ef637654bf999462d188b67591\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "8ddd48fd1d50bb56": "6d93707bb1f2e4d8edd901dee71db5e4693c3581bc14e6f03ae970783fbc864c",
-    "8df2529763e349ba": "The Lean theorem and TeX lemma quantify over the same Q, relation, bad PowerQ-valued multi-sequence, increasing enumeration, and natural-number row/depth indices. The expanded definitions give the same copied-left value and support inclusion, with no definition-hygiene issue.",
     "8df27564e22bb606": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "8df87451078a9614": "{\"own_tex\":\"a3f5de0463be4195c4de172cd8a14fa435a901fc41ea0d4df9a97471e3d43cbe\",\"lean_semantic_closure\":\"c0930d1a7ad3667d7c950bdd0fd33f6befe1e056eca77d09e5130ee5feda6e08\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontPrefix\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontPrefix\",\"IncSeq\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "8e05a93c7f8ee7ff": "76d5398b184a98bbb6af2aff69279c50a8bb2128b95a2926b863962e38ae219a",
@@ -4382,7 +2311,6 @@
     "c13bc1d7e9c779bb": "ContinuousHom.mk.sizeOf_spec",
     "c13cdd3ba6055882": "7e2aea897f7d0b67c3d328bd214a64f1e4bf5fa600552c90a4cd7e73bf4f2f26",
     "c14388a4ec0ca94b": "ad63077eabc34f89c7fb5115e17ddf956d4f78b855b953bf335e367374c18cc2",
-    "c143c6946949f887": "The natural-language proof rigorously establishes badness preservation under restriction from the cited child statements.",
     "c15a78f37d99a84e": "47c88d549026a55343e120be6a0cc47e59a1460a6863e1274b6574a1c638af1a",
     "c17311f911c11dc4": "ab3ed94675a96012c2939684c746f18289e4859eb97dc11336254919d60b42f1",
     "c18ebede43eef3b0": "40d0d18c97562a69c3af97a3f2a6880a94fb169819eaf1ecdf836fc060b979d5",
@@ -4454,7 +2382,6 @@
     "c702c17b6fea34f9": "{\"own_tex\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"lean_semantic_closure\":\"39d055c5c38bd5cf361792d3811740d8c8cdc7efaa285f8355f8f507882b093b\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\"},\"lean_relevant_dependencies\":[\"IncSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "c7078c37fff5367e": "{\"own_tex\":\"2a1d76d5d9adeae6775e6080befbb9da5aaa600f1091c76af16438f9b8f7e575\",\"lean_semantic_closure\":\"47d2fc6f838c6e5f358f9878fd92b65d45689347e07138e27a8d84c4b65878c8\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HerCtblPower\":\"1c0bb374797c1fcffd3a6ef6decd7eb8391bc26821b65f623dafbfabaddd5735\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerChild\":\"815664baa57e57bc695c0d2a6a4260af57bc8c130befba7f86eb2f7eb5959f1e\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\",\"PowerRel\":\"64867985afb3c848ce10e66cbc0013ca74fde48b4a1da7fd5b36b9eaf6f8a66b\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HerCtblPower\",\"HereditarilyCountable\",\"PowerChild\",\"PowerPresentationEq\",\"PowerQ\",\"PowerRel\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "c71152d9e23e4a0e": "{\"own_tex\":\"724d4ae1966a74405bc8342871a6026a6fb18f0cd442b906b3b596b9c55f07bd\",\"lean_semantic_closure\":\"430c15ea6f78d486058f618b48184172f8f7c870ea55b434f46725f1d4d03695\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-    "c722c8273dc7a2fd": "Repaired the empty-front contradiction in BadMultiToNontrivialSuper.tex with explicit ProperPrefixSet citations for the general and concrete prefix facts, and an explicit DecidingPrefix citation for the equality across IncSeqId and its shift.",
     "c731aefb9e2c052f": "{\"target\":\"lines:1748-1753\",\"covering_nodes\":{\"BqoIffGeneralShift\":\"a03a0d03dbfe74021c99376cf490d951aae910eb709ccb4dc60aaf0ced974082\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
     "c7b9a231b3bc26fa": "89a17c6cd943428060991029e9894ea97bf4cd97f32da83a9aa7b7d5f66e18e9",
     "c7c06d7d1e7a20f1": "933c04e7324efc81a958201883dd18de0d5c3429840c7fecf4a48fb8182af435",
@@ -10588,14 +8515,6 @@
         "$r": "3c2d0319735bcfdb"
       }
     ],
-    "12b969b939e18396": {
-      "action_fields": [],
-      "allowed_reset_ids": [],
-      "choices": [],
-      "required": false,
-      "reset_semantics": "none",
-      "sound_verifier_requestable_nodes": []
-    },
     "12bb33f793dcefd9": [
       {
         "$r": "7a3385c7f4837330"
@@ -10805,10 +8724,6 @@
         "$s": "69217bfc2458d596"
       }
     },
-    "133ae84ec64ab6c3": [
-      "PowerCopiedFailureMove",
-      "PowerMoveInSupport"
-    ],
     "1349c4e0f642aa03": {
       "kind": "theorem",
       "name": "OrbitUnbounded"
@@ -17851,11 +15766,6 @@
         "$r": "0fd52fac01bd9e06"
       }
     },
-    "2eae9723dfed8dfb": [
-      "BlockSigma",
-      "IncSeq",
-      "OrbitBlockCoverage"
-    ],
     "2eaf819ef7c3e41e": {
       "exported": {
         "$s": "5c354ed1b05f4ba9"
@@ -20359,12 +18269,6 @@
       },
       "size_bytes": 10240
     },
-    "39460d0c9bbf4106": {
-      "decision": "SOUND",
-      "explanation": {
-        "$s": "37e0600a3ad42cab"
-      }
-    },
     "395e9fac38f0b264": {
       "consumer": "PowerQPresBqo",
       "declaration_kind": "definition",
@@ -21176,18 +19080,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "3e1eab9e53202121": {
-      "acceptance_check_command_template": [],
-      "checker_authority": "exact_command_is_authoritative",
-      "done_marker_contract": "write_done_after_json_check_passes",
-      "escape_json_backslashes": true,
-      "failure_recovery": {
-        "$s": "39a0fde5107b0344"
-      },
-      "json_check_command_template": [],
-      "raw_output_format": "json_only",
-      "stdout_policy": "do_not_print_json_to_stdout"
-    },
     "3e26cfb27de9b88a": {
       "BlockSigma": {
         "$s": "bc0c5bbd88b7b51f"
@@ -21408,17 +19300,6 @@
         "$r": "5a53164722bd38ce"
       }
     ],
-    "3ed3cae004a41dd7": {
-      "comments": "",
-      "node": "BadMultiRestrict",
-      "overall": "APPROVE",
-      "soundness": {
-        "$r": "39460d0c9bbf4106"
-      },
-      "summary": {
-        "$s": "c143c6946949f887"
-      }
-    },
     "3ede46fd3ab63547": {
       "IncSeq": "1722254285ddeb5c",
       "MultiSequence": "cde631bc1bef82ee",
@@ -21884,10 +19765,6 @@
         "$r": "2ff3ea3f1edbf105"
       }
     ],
-    "41620865ae3a3600": [
-      "BadSuperSequence",
-      "SuperSequenceRestrict"
-    ],
     "4185518aa59d33cd": {
       "level": "exported",
       "sha256": {
@@ -22032,18 +19909,6 @@
         "$r": "a36ede7ff83a9c1d"
       }
     ],
-    "426c05629728f3d8": {
-      "comments": "",
-      "correspondence": {
-        "decision": "PASS",
-        "issues": []
-      },
-      "node": "PowerCopiedSupport",
-      "overall": "APPROVE",
-      "summary": {
-        "$s": "8df2529763e349ba"
-      }
-    },
     "4275e610db430916": {
       "exported": {
         "$s": "ad7e55d00843dd67"
@@ -22799,11 +20664,6 @@
       "strict_theorem_deps": {},
       "toolchain_hash": {
         "$s": "da4fc0388adf0949"
-      }
-    },
-    "463200b8d71e8ba3": {
-      "v1": {
-        "$r": "3ed3cae004a41dd7"
       }
     },
     "465a57e604ffef53": {
@@ -24406,12 +22266,6 @@
         "$s": "1f35da21b8f4a8d8"
       }
     },
-    "4e097fcc8673acdb": [
-      "BqoHerCtblWqo",
-      {
-        "$s": "19fb7b62eea67a5d"
-      }
-    ],
     "4e1252609005c3f3": {
       "kind": "theorem",
       "name": "NashWilliams"
@@ -25369,11 +23223,6 @@
       },
       "visibility_manifests": {
         "$r": "acb08d59d58f8e26"
-      }
-    },
-    "52e1cbd9aba64471": {
-      "v1": {
-        "$r": "426c05629728f3d8"
       }
     },
     "52f3a83fad986f2d": {
@@ -27403,9 +25252,10 @@
       "BadPairSequence": [
         "IncreasingPair"
       ],
-      "BadSuperRestrict": {
-        "$r": "41620865ae3a3600"
-      },
+      "BadSuperRestrict": [
+        "BadSuperSequence",
+        "SuperSequenceRestrict"
+      ],
       "BadSuperSequence": [
         "FiniteShift",
         "SuperSequence"
@@ -27416,9 +25266,10 @@
       "BaireContinuous": [
         "PrefixAgree"
       ],
-      "BaseBad": {
-        "$r": "b0e0feb6fe738f35"
-      },
+      "BaseBad": [
+        "BaseMultiSequence",
+        "BaseShift"
+      ],
       "BaseBqoRestriction": {
         "$r": "a409d400a2129002"
       },
@@ -27432,9 +25283,10 @@
       "BaseMultiSequence": [
         "BaseIncSeq"
       ],
-      "BasePerfect": {
-        "$r": "b0e0feb6fe738f35"
-      },
+      "BasePerfect": [
+        "BaseMultiSequence",
+        "BaseShift"
+      ],
       "BaseRestrict": {
         "$r": "405682447583b158"
       },
@@ -27456,9 +25308,11 @@
       "BlockSigmaContinuous": {
         "$r": "c9cf364ef17254fa"
       },
-      "BlockSigmaEmbedding": {
-        "$r": "2eae9723dfed8dfb"
-      },
+      "BlockSigmaEmbedding": [
+        "BlockSigma",
+        "IncSeq",
+        "OrbitBlockCoverage"
+      ],
       "BlockSigmaIntertwines": {
         "$r": "f1cd533c5f0f6a08"
       },
@@ -27469,9 +25323,12 @@
         "BadMultiSequence",
         "LocallyConstant"
       ],
-      "BqoHerCtblWellF": {
-        "$r": "4e097fcc8673acdb"
-      },
+      "BqoHerCtblWellF": [
+        "BqoHerCtblWqo",
+        {
+          "$s": "19fb7b62eea67a5d"
+        }
+      ],
       "BqoHerCtblWqo": {
         "$r": "8ed3fa880bc392a5"
       },
@@ -27505,15 +25362,17 @@
       "DecidingFront": {
         "$r": "978d84f9f444e2f1"
       },
-      "DecidingFrontSet": {
-        "$r": "73e898b6440a4cbe"
-      },
+      "DecidingFrontSet": [
+        "DecidingPrefix",
+        "ProperInitialSegment"
+      ],
       "DecidingPrefix": {
         "$r": "66b04c9fb93d5193"
       },
-      "DecidingValue": {
-        "$r": "b5e8655631818579"
-      },
+      "DecidingValue": [
+        "DecidingFront",
+        "FinitePrefixExtension"
+      ],
       "EmapLemma": {
         "$r": "4a2811270b6285a8"
       },
@@ -27541,9 +25400,12 @@
       "FrontBridgeInit": {
         "$r": "4da9b3c89df3f297"
       },
-      "FrontBridgeStep": {
-        "$r": "7b7507e5ad4309a7"
-      },
+      "FrontBridgeStep": [
+        "FrontBridge",
+        {
+          "$s": "ce47bd99c3ed46e0"
+        }
+      ],
       "FrontBridgeTail": [
         "InitialSegment"
       ],
@@ -27620,9 +25482,10 @@
       "HerCtblWqoIffWellFounded": {
         "$r": "edb5705f086c2906"
       },
-      "HereditarilyCountable": {
-        "$r": "8c9b319c63248472"
-      },
+      "HereditarilyCountable": [
+        "HerCtblCodeErase",
+        "PowerPresentationEq"
+      ],
       "HereditarilyCountableAtom": {
         "$r": "b646cf5c529d9c19"
       },
@@ -27740,12 +25603,14 @@
       "PowerCopiedOrbitDependence": [
         "PowerCopiedLeft"
       ],
-      "PowerCopiedShiftIdentity": {
-        "$r": "fb2d340c03a5c8ae"
-      },
-      "PowerCopiedSupport": {
-        "$r": "133ae84ec64ab6c3"
-      },
+      "PowerCopiedShiftIdentity": [
+        "PowerCopiedLeft",
+        "PowerShiftIterShift"
+      ],
+      "PowerCopiedSupport": [
+        "PowerCopiedFailureMove",
+        "PowerMoveInSupport"
+      ],
       "PowerCopiedTerminalAt": [
         "PowerCopiedLeft"
       ],
@@ -27758,15 +25623,19 @@
       "PowerCopiedTerminates": {
         "$r": "e7c6c9964bb0d38f"
       },
-      "PowerFiniteOrbitConstancy": {
-        "$r": "5a7de0bf85290217"
-      },
+      "PowerFiniteOrbitConstancy": [
+        "LocallyConstant",
+        {
+          "$s": "6947ec3a7b56b112"
+        }
+      ],
       "PowerGameDescent": [
         "PowerChild"
       ],
-      "PowerGameDescentWellFounded": {
-        "$r": "cbd866130ad53deb"
-      },
+      "PowerGameDescentWellFounded": [
+        "PowerChildWellFounded",
+        "PowerGameDescent"
+      ],
       "PowerIResponse": [
         "PowerMove"
       ],
@@ -27885,9 +25754,10 @@
       "RelationEmbedding": [
         "Preamble"
       ],
-      "RestrictionLocallyConstant": {
-        "$r": "bc8a5d45dbd72881"
-      },
+      "RestrictionLocallyConstant": [
+        "LocallyConstant",
+        "MultiSequenceRestrict"
+      ],
       "RestrictionShift": [
         "MultiSequenceRestrict",
         "ShiftMap"
@@ -27908,9 +25778,11 @@
         "RightComp",
         "SuccSeq"
       ],
-      "SubFrontCharacterization": {
-        "$r": "c13d5e56b66e5cb1"
-      },
+      "SubFrontCharacterization": [
+        "Front",
+        "FrontRestrict",
+        "FrontRestriction"
+      ],
       "Subarr": {
         "$r": "f71875d82893ff15"
       },
@@ -27946,12 +25818,17 @@
       "TildeFHerCtbl": {
         "$r": "a47882ed06b4ea3e"
       },
-      "TildeFNonfrontEquation": {
-        "$r": "b3cbb3bc5b4cb6e3"
-      },
-      "TildeFSingleton": {
-        "$r": "861fa5c481ffde84"
-      },
+      "TildeFNonfrontEquation": [
+        {
+          "$s": "ba060752f87266a9"
+        },
+        "TildeF"
+      ],
+      "TildeFSingleton": [
+        "FrontTreeSingleton",
+        "TildeF",
+        "TildeFHerCtbl"
+      ],
       "TripleHomogeneous": {
         "$r": "72ed813afed88c42"
       }
@@ -28104,12 +25981,6 @@
         "$s": "da4fc0388adf0949"
       }
     },
-    "5a7de0bf85290217": [
-      "LocallyConstant",
-      {
-        "$s": "6947ec3a7b56b112"
-      }
-    ],
     "5a854332a199b974": {
       "combined_sound_fp": {
         "$s": "227a13bf8a052f26"
@@ -34197,19 +32068,6 @@
       "Tablet.RightComp",
       "Tablet.SuccSeq"
     ],
-    "7083642bf2384575": {
-      "active": false,
-      "active_since_cycle": 0,
-      "assumptions_lane": null,
-      "gap_plan_critique": null,
-      "gap_research": null,
-      "initial_planning": null,
-      "last_reviewer_lean_product": null,
-      "need_input_audit": null,
-      "revision_planning": null,
-      "trigger": "",
-      "trigger_blockers": []
-    },
     "70b862bd5a196061": {
       "accepted_at_snapshot_id": "revalidate-cycle-4",
       "active_decl_hash": {
@@ -35335,10 +33193,6 @@
       },
       "level": "exported"
     },
-    "73e898b6440a4cbe": [
-      "DecidingPrefix",
-      "ProperInitialSegment"
-    ],
     "73f8408bd6b4abd7": [
       {
         "$r": "b03c2e29ecc5f356"
@@ -37047,12 +34901,6 @@
         "$s": "a8b69d6d378da80a"
       }
     },
-    "7b7507e5ad4309a7": [
-      "FrontBridge",
-      {
-        "$s": "ce47bd99c3ed46e0"
-      }
-    ],
     "7b765be749f1af57": {
       "declarations": {
         "$r": "16c9087d39076e53"
@@ -38500,14 +36348,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "83b57b9c25f67cf6": {
-      "effort": null,
-      "extra_args": [],
-      "fallback_models": [],
-      "label": "",
-      "model": null,
-      "provider": ""
-    },
     "83be7096033bc4a9": [
       {
         "$r": "f1c568a9021f570e"
@@ -38944,11 +36784,6 @@
         "$s": "b18b2f905e75dc22"
       }
     },
-    "861fa5c481ffde84": [
-      "FrontTreeSingleton",
-      "TildeF",
-      "TildeFHerCtbl"
-    ],
     "862db0e8ebee21d0": {
       "declaration_kind": "definition",
       "owner": "TildeFSingleton",
@@ -40590,10 +38425,6 @@
       {
         "$r": "9c074438af2bffc2"
       }
-    ],
-    "8c9b319c63248472": [
-      "HerCtblCodeErase",
-      "PowerPresentationEq"
     ],
     "8ca5801dc7bd111e": {
       "artifact_bundle": {
@@ -42812,11 +40643,6 @@
       "TildeFSingleton",
       "TripleHomogeneous"
     ],
-    "9450e340f8256cac": {
-      "BadMultiRestrict": {
-        "$r": "463200b8d71e8ba3"
-      }
-    },
     "9454eb8cfe8fdbc9": {
       "artifact_bundle": {
         "$r": "4c8ce9fd90eaf31e"
@@ -49875,10 +47701,6 @@
         "$r": "175e5cf992e032dc"
       }
     },
-    "b0e0feb6fe738f35": [
-      "BaseMultiSequence",
-      "BaseShift"
-    ],
     "b1011d1631c77d09": {
       "accepted_at_snapshot_id": "revalidate-cycle-4",
       "active_decl_hash": {
@@ -51138,12 +48960,6 @@
         "$r": "e17d16042c4dbf75"
       }
     ],
-    "b3cbb3bc5b4cb6e3": [
-      {
-        "$s": "ba060752f87266a9"
-      },
-      "TildeF"
-    ],
     "b3d6f9d0d89262eb": {
       "consumer": "BadMultiToSuper",
       "declaration_kind": "definition",
@@ -51460,10 +49276,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "b5e8655631818579": [
-      "DecidingFront",
-      "FinitePrefixExtension"
-    ],
     "b5f2344a647071d8": {
       "IncSeqPointwiseLe": {
         "$s": "17a8679ab8fc391c"
@@ -52971,10 +50783,6 @@
       },
       "size_bytes": 11576
     },
-    "bc8a5d45dbd72881": [
-      "LocallyConstant",
-      "MultiSequenceRestrict"
-    ],
     "bc9d72410dd4e510": {
       "kind": "theorem",
       "name": {
@@ -54249,11 +52057,6 @@
         "$r": "6ea37a4f4b63d217"
       }
     },
-    "c13d5e56b66e5cb1": [
-      "Front",
-      "FrontRestrict",
-      "FrontRestriction"
-    ],
     "c15ee883060dfaa8": [
       {
         "$r": "2867b98b2c356e4e"
@@ -57628,10 +55431,6 @@
       "PrefixTree",
       "ProperInitialSegment"
     ],
-    "cbd866130ad53deb": [
-      "PowerChildWellFounded",
-      "PowerGameDescent"
-    ],
     "cbde8173bf0f5b87": {
       "consumer": "FiniteShift",
       "declaration_kind": "definition",
@@ -59491,11 +57290,6 @@
       },
       "own_tex_hash": {
         "$s": "2f4af5ef246140d4"
-      }
-    },
-    "d348107326f7830a": {
-      "PowerCopiedSupport": {
-        "$r": "52e1cbd9aba64471"
       }
     },
     "d35e555407a936df": {
@@ -69281,10 +67075,6 @@
         "$r": "950cd489f196c7ff"
       }
     ],
-    "fb2d340c03a5c8ae": [
-      "PowerCopiedLeft",
-      "PowerShiftIterShift"
-    ],
     "fb3e75cee1f4e0f9": [
       {
         "$r": "3c0a74f1fb9a74ec"
@@ -69876,16 +67666,65 @@
       "$r": "18766c1c8c523cb1"
     },
     "cycle": 175,
-    "gate_kind": "Advance",
-    "phase": "TheoremStating"
+    "gate_kind": "None",
+    "phase": "ProofFormalization"
   },
   "state": {
     "active_coarse_node": null,
     "active_node": null,
     "approved_targets": {
-      "configured_targets": [],
-      "coverage": {},
-      "protected_closure_nodes": []
+      "configured_targets": {
+        "$r": "ae7b3cb4657bcad4"
+      },
+      "coverage": {
+        "$r": "48f5e857a8dd953e"
+      },
+      "protected_closure_nodes": [
+        "BadMultiSequence",
+        "BaireContinuous",
+        "BaseIncSeq",
+        "BaseLocallyConstant",
+        "BaseMultiSequence",
+        "BaseRestrict",
+        "BetterRel",
+        "Bqo",
+        "ContMor",
+        "ContMorEq",
+        "ContinuousHom",
+        "ContinuousRelHom",
+        "FiniteShift",
+        "Front",
+        "FrontBase",
+        "GBetterRel",
+        "HerCtblCode",
+        "HerCtblCodeErase",
+        "HerCtblPower",
+        "HerCtblRel",
+        "HereditarilyCountable",
+        "IncSeq",
+        "IncSeqComp",
+        "IncSeqId",
+        "IncreasingPair",
+        "InitialSegment",
+        "LocallyConstant",
+        "MultiSequence",
+        "PerfectMultiSequence",
+        "PerfectSuperSequence",
+        "PowerChild",
+        "PowerPresentationEq",
+        "PowerQ",
+        "PowerRel",
+        "PrefixAgree",
+        "ProperPrefixSet",
+        "RadoOrder",
+        "RelationEmbedding",
+        "RightComp",
+        "SetDomination",
+        "ShiftMap",
+        "SuccSeq",
+        "SuperSequence",
+        "SuperSequenceRestrict"
+      ]
     },
     "assumption_authoring": null,
     "attempt": 1,
@@ -69898,7 +67737,9 @@
     "cleanup_audit_tasks": [],
     "cleanup_consecutive_invalid_workers": 0,
     "cleanup_force_done": false,
-    "coarse_dag_nodes": [],
+    "coarse_dag_nodes": {
+      "$r": "9450395de46854fa"
+    },
     "committed": {
       "$r": "18766c1c8c523cb1"
     },
@@ -70707,511 +68548,15 @@
     "gap_plan_budget_gap_key": null,
     "gap_plan_reject_count": 0,
     "gate_from_invalid_attempt": false,
-    "gate_kind": "Advance",
+    "gate_kind": "None",
     "global_repair_mode_enabled": true,
     "has_ever_been_clean": true,
     "held_target": null,
     "human_input_outstanding": false,
-    "in_flight_request": {
-      "acceptance_logic_identity": "trellis-worker-acceptance-v1:sha256:7ce75d038314c2acb52a4f062311e53257ea429789b1ef1203b975dccf9e66d9",
-      "active_coarse_node": null,
-      "active_node": null,
-      "allow_targeted_without_next_active": false,
-      "allowed_decisions": [],
-      "allowed_difficulty_update_nodes": [],
-      "allowed_next_modes": [],
-      "allowed_reset_blockers": [],
-      "allowed_resets": [],
-      "approved_corr_fingerprints": {},
-      "approved_target_nodes": [],
-      "audit_contract": {
-        "artifact_contract": {},
-        "prompt_fragments": [],
-        "request_summary": {
-          "audit_burst_index": 0,
-          "audit_round": 0,
-          "max_bursts_per_round": 0,
-          "phase": "",
-          "scenario": "audit_dormant"
-        }
-      },
-      "audit_plan": null,
-      "audit_request_admissible": false,
-      "authorized_deviations": {},
-      "blocked_targets": [],
-      "blockers": [],
-      "cleanup_audit_burst_count_view": 0,
-      "cleanup_audit_round_view": 0,
-      "cleanup_audit_scratchpad_view": "",
-      "cleanup_audit_tasks_view": [],
-      "cleanup_force_done_view": false,
-      "cleanup_protected_statement_node_set_view": [],
-      "coarse_anchor_starvation_unlocked": false,
-      "coarse_dag_nodes": [],
-      "coarse_repair_blocker_carriers": [],
-      "coarse_repair_mode": false,
-      "configured_targets": {
-        "$r": "ae7b3cb4657bcad4"
-      },
-      "consumed_global_repair_grant": false,
-      "corr_blocker_adjudicable": false,
-      "corr_contract": {
-        "artifact_contract": {
-          "overall_rule": "approve_iff_pass",
-          "phase_blocks": {
-            "correspondence": {
-              "comment_required_on_fail": true,
-              "decision_values": [],
-              "verdict_values": []
-            }
-          },
-          "prompt_schema_example": {
-            "comments": "",
-            "correspondence": {
-              "decision": "PASS or FAIL",
-              "verdicts": []
-            },
-            "overall": "APPROVE or REJECT",
-            "summary": ""
-          },
-          "result_type": "correspondence_result_v1"
-        },
-        "artifact_prompt_view": {
-          "$r": "3e1eab9e53202121"
-        },
-        "fixed_item_reporting_policy": "none",
-        "issue_reporting_policy": "none",
-        "node_issue_scope": [],
-        "preamble_contract": {
-          "empty_items_vacuously_supported": true,
-          "item_ids": [],
-          "mode": "none"
-        },
-        "previous_own_findings_by_lane": {},
-        "prompt_fragments": [],
-        "request_summary": {
-          "blocked_targets": [],
-          "nodes": [],
-          "phase": ""
-        },
-        "rubric": {
-          "definition_hygiene": [],
-          "duplicate_mathlib_definition_policy": "none",
-          "preamble_item_issue_policy": "none",
-          "project_definition_policy": "none",
-          "statement_alignment_checks": []
-        }
-      },
-      "corr_verify_lane_bindings": [],
-      "corr_verify_nodes": [],
-      "corr_verify_targets": [],
-      "current_deps": {
-        "$r": "59e6ef9163a91c2e"
-      },
-      "current_deviation_files": {},
-      "current_node_kinds": {
-        "$r": "a100035dc0733d1e"
-      },
-      "current_paper_approved_fingerprints": {
-        "$r": "fb64625e19c055d8"
-      },
-      "current_present_nodes": {
-        "$r": "9450395de46854fa"
-      },
-      "current_proof_nodes": {
-        "$r": "056e141d6837a530"
-      },
-      "current_target_claims": {
-        "$r": "8b8358bcaa735e43"
-      },
-      "cycle": 175,
-      "cycles_in_coarse_repair_mode": 0,
-      "cycles_since_clean": 0,
-      "cycles_since_shallow_coarse_closed_count_increase": 0,
-      "deterministic_worker_rejection_reasons": [],
-      "deviation_blocker_adjudicable": false,
-      "deviation_verify_id": null,
-      "deviation_verify_path": "",
-      "ever_shallow_coarse_closed": [],
-      "ever_shallow_coarse_closed_regressed": [],
-      "fresh_context": false,
-      "gate_kind": "Advance",
-      "global_repair_mode_enabled": true,
-      "held_target": null,
-      "human_input_outstanding": false,
-      "id": 548,
-      "invalid_attempt": false,
-      "kernel_hinted_next_active_coarse_nodes": [],
-      "kernel_hinted_next_active_nodes": [],
-      "kind": "HumanGate",
-      "last_clean_rewind_count": 0,
-      "latest_audit_rejection_reason_view": "",
-      "latest_global_repair_audit_decline_reason": "",
-      "latest_review_rejection_reasons": [],
-      "latest_stuck_math_audit_rejection_reason": "",
-      "latest_worker_comments": {
-        "$s": "13fb2130d072db73"
-      },
-      "latest_worker_needs_restructure_suggested_nodes": [],
-      "latest_worker_summary": {
-        "$s": "c722c8273dc7a2fd"
-      },
-      "latest_worker_under_model_disproof": "",
-      "latest_worker_under_model_reasoning": "",
-      "latest_worker_under_model_route_opinion": "",
-      "local_closure_unverified": {},
-      "mode": "Global",
-      "no_sound_progress_window_cycles": 0,
-      "node_deviation_claims": {},
-      "paper_blocker_adjudicable": false,
-      "paper_contract": {
-        "artifact_contract": {
-          "overall_rule": "approve_iff_pass",
-          "phase_blocks": {
-            "paper_faithfulness": {
-              "decision_values": [],
-              "issue_subject_kind": "none"
-            }
-          },
-          "prompt_schema_example": {
-            "comments": "",
-            "overall": "APPROVE or REJECT",
-            "paper_faithfulness": {
-              "decision": "PASS or FAIL",
-              "issues": []
-            },
-            "summary": ""
-          },
-          "result_type": "paper_faithfulness_result_v1"
-        },
-        "artifact_prompt_view": {
-          "$r": "3e1eab9e53202121"
-        },
-        "fixed_item_reporting_policy": "none",
-        "issue_reporting_policy": "none",
-        "previous_own_findings_by_lane": {},
-        "prompt_fragments": [],
-        "request_summary": {
-          "blocked_targets": [],
-          "phase": "",
-          "targets": []
-        },
-        "rubric": {
-          "covering_set_authority": "none",
-          "definition_dependency_authority": "none",
-          "faithfulness_standard": "none",
-          "paper_statement_authority": "none"
-        },
-        "target_covering_nodes": {},
-        "target_issue_scope": []
-      },
-      "paper_verify_lane_bindings": [],
-      "paper_verify_targets": [],
-      "pending_authoring_candidate": "",
-      "pending_global_repair_grant": null,
-      "pending_global_repair_request": null,
-      "pending_worker_audit_request": null,
-      "phase": "TheoremStating",
-      "placeholder_definition_nodes": [],
-      "post_advance_routing": false,
-      "previous_audit_plan_snapshot": null,
-      "previous_corr_lane_findings": {
-        "$r": "d348107326f7830a"
-      },
-      "previous_paper_lane_findings": {},
-      "previous_sound_lane_findings": {
-        "$r": "9450e340f8256cac"
-      },
-      "previous_substantiveness_lane_findings": {},
-      "project_invariants": {
-        "filespec_reference": "FILESPEC.md",
-        "node_file_contract": "tablet_node_files_must_follow_filespec",
-        "node_pair_contract": "every_present_node_has_lean_and_nl_statement",
-        "progress_modes": [
-          "close_proof",
-          "paper_faithful_dag_improvement"
-        ],
-        "proof_bearing_contract": "proof_nodes_need_closed_lean_or_rigorous_nl",
-        "role_authority": {
-          "reviewer": "chooses_next_step_and_guidance",
-          "verifier": "checks_invariants_without_choosing_work",
-          "worker": "writes_repository_content_only"
-        }
-      },
-      "prompt_contract_version": 64,
-      "proof_active_node_base_legal_candidates": [],
-      "protected_reapproval_nodes": [],
-      "protected_semantic_change_confirmation": null,
-      "rejected_deviations": {},
-      "resettable_theorem_stating_nodes": [],
-      "retry_attempt": 0,
-      "retry_outcome_kind": "None",
-      "review_contract": {
-        "artifact_contract": {
-          "optional_fields": [],
-          "prompt_schema_example": {
-            "allow_new_obligations": true,
-            "clear_human_input": "",
-            "comments": "",
-            "decision": [],
-            "difficulty_updates": {
-              "node_id": ""
-            },
-            "must_close_active": false,
-            "next_active": "",
-            "next_mode": [],
-            "reason": "",
-            "request_sound_verifier_node_ids": [],
-            "reset": [],
-            "reset_blocker_ids": [],
-            "task_blocker_ids": []
-          },
-          "required_fields": [],
-          "result_type": "review_result_v1"
-        },
-        "artifact_prompt_view": {
-          "$r": "3e1eab9e53202121"
-        },
-        "blocker_actions": {
-          "$r": "12b969b939e18396"
-        },
-        "blocker_partition": {
-          "$r": "12b969b939e18396"
-        },
-        "clear_human_input_contract": {
-          "allowed_when_outstanding": false,
-          "omit_when_not_allowed": true
-        },
-        "comments_contract": {
-          "empty_string_means_no_comments": true,
-          "field": "comments",
-          "semantics": "non_authoritative_guidance_forwarded_to_future_workers"
-        },
-        "difficulty_update_contract": {
-          "allowed_nodes": []
-        },
-        "need_input_contract": {
-          "allow_new_obligations": true,
-          "blocker_partition_required": false,
-          "meaning": "none",
-          "must_close_active": false,
-          "next_active": "",
-          "next_mode": "",
-          "next_worker_context_mode": "resume",
-          "paper_focus_ranges": [],
-          "reset_blocker_ids": [],
-          "task_blocker_ids": [],
-          "work_style_hint": "none"
-        },
-        "next_active_contract": {
-          "allow_targeted_without_next_active": false,
-          "kernel_hinted_nodes": [],
-          "targeted_allowed_nodes": []
-        },
-        "prompt_fragments": [],
-        "request_summary": {
-          "active_node": "",
-          "blocked_targets": [],
-          "held_target": "",
-          "human_input_outstanding": false,
-          "invalid_attempt": false,
-          "latest_worker_rationale": {
-            "comments": "",
-            "summary": ""
-          },
-          "mode": "",
-          "phase": "",
-          "protected_nodes": []
-        },
-        "verifier_evidence": {
-          "corr": {},
-          "paper": {},
-          "sound": {}
-        }
-      },
-      "review_verifier_evidence": {
-        "assumptions": [],
-        "corr": {},
-        "deviation": {},
-        "paper": {},
-        "sound": {},
-        "substantiveness": {}
-      },
-      "reviewer_binding": {
-        "$r": "83b57b9c25f67cf6"
-      },
-      "reviewer_comments": "",
-      "runtime_support_required": false,
-      "shallow_coarse_closed_count": 0,
-      "sound_assessment_statuses": {},
-      "sound_blocker_adjudicable": false,
-      "sound_contract": {
-        "artifact_contract": {
-          "decision_values": [],
-          "overall_rule": "approve_iff_sound",
-          "prompt_schema_example": {
-            "comments": "",
-            "node": "",
-            "overall": "APPROVE or REJECT",
-            "soundness": {
-              "decision": "",
-              "explanation": ""
-            },
-            "summary": ""
-          },
-          "result_type": "soundness_result_v1"
-        },
-        "artifact_prompt_view": {
-          "$r": "3e1eab9e53202121"
-        },
-        "detail_floor": "none",
-        "evaluation_basis": "none",
-        "previous_own_findings": {},
-        "prompt_fragments": [],
-        "request_summary": {
-          "active_node": "",
-          "held_target": "",
-          "node": "",
-          "phase": ""
-        },
-        "rubric": {
-          "detail_floor": "none",
-          "lean_code_relevance": "none",
-          "proof_standard": "none",
-          "reject_sketches": false
-        },
-        "target_nodes": []
-      },
-      "sound_repair_ready_nodes": [],
-      "sound_reverification_context": null,
-      "sound_verifier_requestable_nodes": [],
-      "sound_verify_lane_bindings": [],
-      "sound_verify_node": null,
-      "sound_verify_nodes": [],
-      "stuck_math_audit": {
-        "$r": "7083642bf2384575"
-      },
-      "stuck_math_audit_binding": {
-        "$r": "83b57b9c25f67cf6"
-      },
-      "stuck_math_audit_contract": {
-        "artifact_contract": {},
-        "prompt_fragments": [],
-        "request_summary": {
-          "phase": "",
-          "scenario": "stuck_math_audit_dormant"
-        }
-      },
-      "substantiveness_blocker_adjudicable": false,
-      "substantiveness_verify_nodes": [],
-      "targeted_next_active_nodes": [],
-      "theorem_restructure_next_active_nodes": [],
-      "verify_lanes": [],
-      "verify_nodes": [],
-      "verify_targets": [],
-      "worker_acceptance": {
-        "authorized_nodes": [],
-        "enabled": false,
-        "forbid_tablet_changes_when_stuck": false,
-        "observation_plan": {
-          "capture_baseline_correspondence_hashes": false,
-          "capture_baseline_declaration_hashes": false,
-          "capture_before_snapshot": false,
-          "capture_before_tablet_contents": false,
-          "capture_expected_active_hash": false,
-          "capture_imports_before": false,
-          "capture_scoped_tablet_baseline_errors": false,
-          "scoped_tablet_baseline_scope": "None"
-        },
-        "protected_semantic_change_nodes": [],
-        "require_explicit_target_claims_for_new_nodes": true,
-        "validation_execution_plan": [],
-        "validation_kind": "None"
-      },
-      "worker_binding": {
-        "$r": "83b57b9c25f67cf6"
-      },
-      "worker_context": {
-        "active_difficulty": "Hard",
-        "active_easy_attempts": 0,
-        "allow_new_obligations": true,
-        "authorized_nodes": [],
-        "cleanup_active_rationale_view": "",
-        "cleanup_active_target_node_view": null,
-        "cleanup_active_task_kind_view": null,
-        "enabled": false,
-        "must_close_active": false,
-        "next_context_mode": "resume",
-        "paper_focus_ranges": [],
-        "protected_semantic_change_nodes": [],
-        "validation_kind": "None",
-        "work_style_hint": "none",
-        "worker_profile": "None"
-      },
-      "worker_contract": {
-        "allowed_outcomes": [],
-        "artifact_prompt_view": {
-          "$r": "3e1eab9e53202121"
-        },
-        "kernel_derives_structural_snapshot": true,
-        "prompt_fragments": [],
-        "prompt_schema_example": {
-          "comments": "",
-          "difficulty_updates": {
-            "node_id": ""
-          },
-          "outcome": "",
-          "summary": "",
-          "target_claim_updates": {
-            "node_id": []
-          }
-        },
-        "reported_delta_fields": [],
-        "request_summary": {
-          "active_node": "",
-          "blockers": [],
-          "current_definition_nodes": [],
-          "current_deps_scope_nodes": [],
-          "current_deps_scoped": {},
-          "current_preamble_nodes": [],
-          "current_present_nodes": [],
-          "current_target_claims_nonempty": {},
-          "held_target": "",
-          "mode": "",
-          "phase": "",
-          "worker_context": {
-            "active_difficulty": "hard",
-            "active_easy_attempts": 0,
-            "allow_new_obligations": true,
-            "authorized_nodes": [],
-            "enabled": false,
-            "must_close_active": false,
-            "validation_kind": "none",
-            "worker_profile": "none"
-          }
-        },
-        "result_type": "worker_result_v1",
-        "reviewer_comments": "",
-        "scope_contract": {
-          "allow_new_obligations": true,
-          "authorized_existing_nodes": [],
-          "configured_targets": [],
-          "existing_node_scope_mode": "none",
-          "must_close_active": false,
-          "new_nodes_allowed": false,
-          "pending_targets": [],
-          "pending_targets_meaning": "none"
-        },
-        "stuck_contract": {
-          "allowed": false,
-          "forbid_tablet_changes_when_stuck": false,
-          "meaning": "none"
-        }
-      }
-    },
+    "in_flight_request": null,
     "invalid_attempt": false,
     "last_audit_request_cycle": 6,
-    "last_clean_commit": null,
+    "last_clean_commit": "0a55c948c5579eda012af16f9a07d81af97172a4",
     "last_clean_corr_approved_fingerprints": {
       "$r": "538c85158e8c38da"
     },
@@ -71282,13 +68627,9 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": {
-      "$s": "13fb2130d072db73"
-    },
+    "latest_worker_comments": "Edited only Tablet/BadMultiToNontrivialSuper.tex. Preserved the Lean statement, imports, support direction, all existing mathematics, and the required citations to DecidingFrontSet, IncSeqId, ShiftMap, BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingValue, and SuperSequence. The TeX file retains exactly one lemma block followed by one proof block.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": {
-      "$s": "c722c8273dc7a2fd"
-    },
+    "latest_worker_summary": "Repaired the empty-front contradiction in BadMultiToNontrivialSuper.tex with explicit ProperPrefixSet citations for the general and concrete prefix facts, and an explicit DecidingPrefix citation for the equality across IncSeqId and its shift.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
@@ -71503,15 +68844,37 @@
     "pending_protected_semantic_scope_confirmation": null,
     "pending_task": null,
     "pending_worker_audit_request": null,
-    "phase": "TheoremStating",
+    "phase": "ProofFormalization",
     "plan_review_cadence_enabled": true,
-    "post_advance_routing_pending": false,
+    "post_advance_routing_pending": true,
     "previous_corr_lane_findings": {
-      "$r": "d348107326f7830a"
+      "PowerCopiedSupport": {
+        "v1": {
+          "comments": "",
+          "correspondence": {
+            "decision": "PASS",
+            "issues": []
+          },
+          "node": "PowerCopiedSupport",
+          "overall": "APPROVE",
+          "summary": "The Lean theorem and TeX lemma quantify over the same Q, relation, bad PowerQ-valued multi-sequence, increasing enumeration, and natural-number row/depth indices. The expanded definitions give the same copied-left value and support inclusion, with no definition-hygiene issue."
+        }
+      }
     },
     "previous_paper_lane_findings": {},
     "previous_sound_lane_findings": {
-      "$r": "9450e340f8256cac"
+      "BadMultiRestrict": {
+        "v1": {
+          "comments": "",
+          "node": "BadMultiRestrict",
+          "overall": "APPROVE",
+          "soundness": {
+            "decision": "SOUND",
+            "explanation": "The proof correctly instantiates BadMultiSequence at z composed with x, applies the cited RestrictionShift identity, and rewrites both restricted values using MultiSequenceRestrict. It then concludes the universal badness condition for an arbitrary x, with every cross-node dependency explicitly cited."
+          },
+          "summary": "The natural-language proof rigorously establishes badness preservation under restriction from the cited child statements."
+        }
+      }
     },
     "previous_substantiveness_lane_findings": {},
     "process_memory_seq": 12,
@@ -79268,9 +76631,19 @@
     "sound_status": {
       "$r": "f8aa0d4e54b4b9ac"
     },
-    "stage": "HumanGate",
+    "stage": "Start",
     "stuck_math_audit": {
-      "$r": "7083642bf2384575"
+      "active": false,
+      "active_since_cycle": 0,
+      "assumptions_lane": null,
+      "gap_plan_critique": null,
+      "gap_research": null,
+      "initial_planning": null,
+      "last_reviewer_lean_product": null,
+      "need_input_audit": null,
+      "revision_planning": null,
+      "trigger": "",
+      "trigger_blockers": []
     },
     "stuck_math_audit_burst_retry_count": 0,
     "substantiveness_approved_fingerprints": {
