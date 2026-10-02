@@ -124,7 +124,7 @@
 | PowerCopiedTerminalAt | definition | definition | closed | - | - | PowerCopiedLeft |
 | PowerCopiedTerminalShift | lemma | proof | open | - | The terminal atom stabilizes under shifting | PowerCopiedFiniteTerminal, PowerCopiedShiftIdentity |
 | PowerCopiedTerminalSupport | lemma | proof | open | - | The terminal atom lies in the original support | PowerCopiedSupport, PowerCopiedTerminalAt, PowerCopiedTerminates |
-| PowerCopiedTerminates | lemma | proof | open | - | Every copied row reaches atoms | PowerCopiedFailureMove, PowerCopiedTerminalAt, PowerGameDescentWellFounded |
+| PowerCopiedTerminates | lemma | proof | closed | - | Every copied row reaches atoms | PowerCopiedFailureMove, PowerCopiedTerminalAt, PowerGameDescentWellFounded |
 | PowerFiniteOrbitConstancy | lemma | proof | open | - | A finite shift orbit is decided by one finite prefix | LocallyConstant, PowerShiftIterPrefixAgree |
 | PowerGameDescent | definition | definition | closed | - | - | PowerChild |
 | PowerGameDescentWellFounded | lemma | proof | closed | - | Well-foundedness of copied pair descent | PowerChildWellFounded, PowerGameDescent |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 137 | **Open:** 48
+**Total:** 185 nodes | **Closed:** 138 | **Open:** 47

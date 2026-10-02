@@ -132,7 +132,7 @@
 | PowerCopiedTerminalAt | definition | - | closed |
 | PowerCopiedTerminalShift | proof | The terminal atom stabilizes under shifting | open |
 | PowerCopiedTerminalSupport | proof | The terminal atom lies in the original support | open |
-| PowerCopiedTerminates | proof | Every copied row reaches atoms | open |
+| PowerCopiedTerminates | proof | Every copied row reaches atoms | closed |
 | PowerFiniteOrbitConstancy | proof | A finite shift orbit is decided by one finite prefix | open |
 | PowerGameDescent | definition | - | closed |
 | PowerGameDescentWellFounded | proof | Well-foundedness of copied pair descent | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 137/185 closed
+**Summary:** 138/185 closed
