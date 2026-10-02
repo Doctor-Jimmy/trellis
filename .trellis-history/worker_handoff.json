@@ -1,16 +1,14 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed BooleanInfinitePigeonhole by splitting on the two color classes and deriving a contradiction from finite union covering Nat.",
-    "comments": "The active statement, imports, BODY marker, and TeX were preserved. No helpers or other nodes were added.",
+    "summary": "Closed SubFrontCharacterization with the requested existential-base proof, including the trivial front case and the nontrivial density and prefix-comparability argument.",
+    "comments": "Only Tablet/SubFrontCharacterization.lean was edited. The existing signature, imports, BODY marker, and accepted TeX proof were preserved; no helper nodes or open obligations were introduced.",
     "target_claim_updates": {},
-    "difficulty_updates": {
-      "BooleanInfinitePigeonhole": "easy"
-    },
-    "deleted_nodes": [],
+    "difficulty_updates": {},
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
+    "deleted_nodes": [],
     "memory_challenges": [],
     "needs_restructure_suggested_nodes": []
   },
@@ -22,33 +20,40 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "The active statement, imports, BODY marker, and TeX were preserved. No helpers or other nodes were added.",
-    "cycle": 196,
+    "comments": "Only Tablet/SubFrontCharacterization.lean was edited. The existing signature, imports, BODY marker, and accepted TeX proof were preserved; no helper nodes or open obligations were introduced.",
+    "cycle": 197,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {
-      "BooleanInfinitePigeonhole": {
-        "Set": "Easy"
-      }
-    },
+    "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "BooleanInfinitePigeonhole": {
+      "SubFrontCharacterization": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "d1411ef4c7ed179a43055248a502a5f7a2c58c324f13bed4e72e8203c001381a",
-            "size_bytes": 26824
+            "sha256": "9dc13da03ba2db841eba62642640aab618f0be27654866f25545c90f531d69ae",
+            "size_bytes": 140920
           }
         ],
         "axiomization_check": {
           "agreed": true,
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
-          "boundary_theorems": [],
+          "boundary_theorems": [
+            "Tablet.Front::Front.base_condition@exported:theorem",
+            "Tablet.Front::Front.dense@exported:theorem",
+            "Tablet.Front::Front.infinite_base@exported:theorem",
+            "Tablet.Front::Front.prefix_free@exported:theorem",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.FrontBase::FrontBase@exported:definition",
+            "Tablet.FrontRestrict::FrontRestrict@exported:definition",
+            "Tablet.FrontRestriction::FrontRestriction@exported:theorem",
+            "Tablet.InitialSegment::InitialSegment@exported:definition",
+            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition"
+          ],
           "error": null,
           "kernel_axioms": [
             "Classical.choice",
@@ -72,41 +77,174 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BooleanInfinitePigeonhole"
+            "name": "FrontRestrict.eq_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._proof_1_5"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._simp_1_2"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._simp_1_3"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._simp_1_4"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.Preamble"
+          "Tablet.Front",
+          "Tablet.FrontRestrict",
+          "Tablet.FrontRestriction"
         ],
         "errors": [],
+        "exact_declaration_uses": [
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.base_condition",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.dense",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.infinite_base",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.prefix_free",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "inductive",
+            "owner": "Front",
+            "reached_declaration": "Front",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "FrontBase",
+            "reached_declaration": "FrontBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "FrontRestrict",
+            "reached_declaration": "FrontRestrict",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontRestriction",
+            "reached_declaration": "FrontRestriction",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "InitialSegment",
+            "reached_declaration": "InitialSegment",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ProperPrefixSet",
+            "reached_declaration": "ProperPrefixSet",
+            "visibility": "exported"
+          }
+        ],
         "kernel_axioms": [
           "Classical.choice",
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "BooleanInfinitePigeonhole",
+        "principal_declaration": "SubFrontCharacterization",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"BooleanInfinitePigeonhole\"],\"boundary_theorems\":[],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"BooleanInfinitePigeonhole\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"BooleanInfinitePigeonhole\"}],\"errors\":[],\"exact_declaration_uses\":[],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"BooleanInfinitePigeonhole\",\"principal_declaration\":\"BooleanInfinitePigeonhole\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[],\"strict_theorem_deps\":[]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontRestrict.eq_1\",\"SubFrontCharacterization\",\"SubFrontCharacterization._proof_1_5\",\"SubFrontCharacterization._simp_1_2\",\"SubFrontCharacterization._simp_1_3\",\"SubFrontCharacterization._simp_1_4\"],\"boundary_theorems\":[\"Tablet.Front::Front.base_condition@exported:theorem\",\"Tablet.Front::Front.dense@exported:theorem\",\"Tablet.Front::Front.infinite_base@exported:theorem\",\"Tablet.Front::Front.prefix_free@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBase::FrontBase@exported:definition\",\"Tablet.FrontRestrict::FrontRestrict@exported:definition\",\"Tablet.FrontRestriction::FrontRestriction@exported:theorem\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontRestrict.eq_1\",\"SubFrontCharacterization\",\"SubFrontCharacterization._proof_1_5\",\"SubFrontCharacterization._simp_1_2\",\"SubFrontCharacterization._simp_1_3\",\"SubFrontCharacterization._simp_1_4\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontRestrict.eq_1\"},{\"kind\":\"theorem\",\"name\":\"SubFrontCharacterization\"},{\"kind\":\"theorem\",\"name\":\"SubFrontCharacterization._proof_1_5\"},{\"kind\":\"theorem\",\"name\":\"SubFrontCharacterization._simp_1_2\"},{\"kind\":\"theorem\",\"name\":\"SubFrontCharacterization._simp_1_3\"},{\"kind\":\"theorem\",\"name\":\"SubFrontCharacterization._simp_1_4\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.base_condition\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.dense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.infinite_base\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.prefix_free\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBase\",\"reached_declaration\":\"FrontBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontRestrict\",\"reached_declaration\":\"FrontRestrict\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontRestriction\",\"reached_declaration\":\"FrontRestriction\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"SubFrontCharacterization\",\"principal_declaration\":\"SubFrontCharacterization\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontBase\",\"semantic_hash\":\"3b1543cbd1e93873\"},{\"name\":\"FrontRestrict\",\"semantic_hash\":\"4d60b1a0ec493ccb\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"eaeea17e726345c0\"},{\"name\":\"Front\",\"value_hash\":\"cf6cd0fffa0c1f96\"},{\"name\":\"Front\",\"value_hash\":\"10c55c754b74fd56\"},{\"name\":\"Front\",\"value_hash\":\"b6659350d53796ce\"},{\"name\":\"FrontRestriction\",\"value_hash\":\"454c92e491759031\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BooleanInfinitePigeonhole"
+            "name": "FrontRestrict.eq_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._proof_1_5"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._simp_1_2"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._simp_1_3"
+          },
+          {
+            "kind": "theorem",
+            "name": "SubFrontCharacterization._simp_1_4"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "5898a42df0a1b2764d60fe96d82f4825cfa4ec95926ef92beb9459ff9348c37c",
+        "source_sha256": "52f8dfd4e9c3dd21f03214df89f3880213893399ec01ce2f0b0d6ba31d9a2da9",
         "status": "ok",
-        "strict_definition_deps": {},
-        "strict_theorem_deps": {},
+        "strict_definition_deps": {
+          "Front": "54804e268105ccdb",
+          "FrontBase": "3b1543cbd1e93873",
+          "FrontRestrict": "4d60b1a0ec493ccb",
+          "InitialSegment": "653306d9681a21e4",
+          "ProperPrefixSet": "8d7d85f7e2dcc1fd"
+        },
+        "strict_theorem_deps": {
+          "Front": "b6659350d53796ce",
+          "FrontRestriction": "454c92e491759031"
+        },
         "timed_out": false,
         "visibility_manifests": [
           {
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "BooleanInfinitePigeonhole"
+                "name": "FrontRestrict.eq_1"
+              },
+              {
+                "kind": "theorem",
+                "name": "SubFrontCharacterization"
+              },
+              {
+                "kind": "theorem",
+                "name": "SubFrontCharacterization._proof_1_5"
+              },
+              {
+                "kind": "theorem",
+                "name": "SubFrontCharacterization._simp_1_2"
+              },
+              {
+                "kind": "theorem",
+                "name": "SubFrontCharacterization._simp_1_3"
+              },
+              {
+                "kind": "theorem",
+                "name": "SubFrontCharacterization._simp_1_4"
               }
             ],
             "level": "exported"
@@ -121,7 +259,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 594,
+    "request_id": 596,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -406,7 +544,6 @@
         "RadoEmbedding",
         "RmapLemma",
         "ShiftDichotomy",
-        "SubFrontCharacterization",
         "Subarr",
         "SuperNW",
         "SuperSequenceExtension",
@@ -2927,7 +3064,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed BooleanInfinitePigeonhole by splitting on the two color classes and deriving a contradiction from finite union covering Nat.",
+    "summary": "Closed SubFrontCharacterization with the requested existential-base proof, including the trivial front case and the nontrivial density and prefix-comparability argument.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3099,7 +3236,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "f12797c747dbd1ca50b0c89f05924717e74d141ff738199f96983c9efdcdfe06",
+    "INDEX.md": "f635ca5bd18dafd97a630f19a4aedcc65eb997525cd71ac12a0660824fbcf328",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3256,7 +3393,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "a439ead836c76b96a2c4c564de3d1a2494abd509f0a62345056543add20299ec",
+    "README.md": "69904c5a482b22a2e6fa2af18008c73cd55b35e5c5598e7b66bd90c0c976d3ff",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3279,7 +3416,7 @@
     "ShiftDichotomy.tex": "00b68b9b147b4ad98476b95892171d965ee12c997847b43de8db5698d90400e3",
     "ShiftMap.lean": "b91fa810f87c9b2b979a4c09f5fe8645641d1a6856eb6f8d4671222b49459763",
     "ShiftMap.tex": "ced9ab97fbfaecc1f61b5f6d98a7fef71d8ef1417e3fa504d9c3deff2a58e135",
-    "SubFrontCharacterization.lean": "c17fe9958a38a5379ebda7076ad492dd6be66c20abd400d9d9902f0994c63059",
+    "SubFrontCharacterization.lean": "52f8dfd4e9c3dd21f03214df89f3880213893399ec01ce2f0b0d6ba31d9a2da9",
     "SubFrontCharacterization.tex": "93779a74ada42e856cfafbd9c62e3feace6a69c2f32c4993d7ab80072278cdfb",
     "Subarr.lean": "2527f2ca6881d556160d11ac54f5633cde81886ce93202147d257259a842f2e8",
     "Subarr.tex": "83dc4fe8fc9c643e34a8c9e9b73b4ec059e585fa92fca4e96a7b1d9d1a4d62d5",
@@ -3311,7 +3448,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_594_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_596_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

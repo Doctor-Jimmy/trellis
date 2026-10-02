@@ -180,7 +180,7 @@
 | SetDomination | definition | Domination on subsets | closed |
 | ShiftDichotomy | proof | Perfect-or-bad shift dichotomy | open |
 | ShiftMap | definition | - | closed |
-| SubFrontCharacterization | proof | Sub-fronts | open |
+| SubFrontCharacterization | proof | Sub-fronts | closed |
 | SuccSeq | definition | - | closed |
 | SuperNW | proof | - | open |
 | SuperSequence | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 115/185 closed
+**Summary:** 116/185 closed

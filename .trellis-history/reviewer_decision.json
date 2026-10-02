@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Boolean support is closed; now close the remaining substantive SubFrontCharacterization dependency of NashWilliams.",
-    "comments": "Keep the NashWilliams coarse anchor and route to SubFrontCharacterization in Local mode. Preserve its theorem signature, imports, BODY marker, and accepted TeX proof, especially the existential-base conclusion. Close it directly with no new helpers: use FrontRestriction and FrontRestrict for the reverse implication, then handle the trivial F={emptyset} case and the nontrivial case by proving empty is absent, identifying the two front bases, obtaining Y subset X, and proving both inclusions F' = FrontRestrict F Y via density, InitialSegment comparability, and prefix-freeness. Do not weaken this to a fixed-base statement or add wrapper nodes; honor the settled pm-0011 constraint.",
+    "reason": "Advance the clean coarse anchor to CardinalityFrontIsFront, the shared support for the homogeneous finite-front results.",
+    "comments": "Switch the coarse anchor to CardinalityFrontIsFront and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. The 126-line proof may need genuine substantive helpers, so complete the full decomposition in this burst if useful, with complete paired NL proofs and no wrappers or SKETCH proofs. Follow the existing structure: separate k=0 from k>0, establish the base alternative, prove prefix-freeness from strict initial-segment cardinality decrease, and prove density via InfiniteSetEnumeration and ProperPrefixSet. Do not edit the downstream TripleHomogeneous or QuadrupleHomogeneous nodes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "SubFrontCharacterization",
-    "next_active_coarse": "",
+    "next_active": "CardinalityFrontIsFront",
+    "next_active_coarse": "CardinalityFrontIsFront",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "SubFrontCharacterization": "hard"
+      "CardinalityFrontIsFront": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep the NashWilliams coarse anchor and route to SubFrontCharacterization in Local mode. Preserve its theorem signature, imports, BODY marker, and accepted TeX proof, especially the existential-base conclusion. Close it directly with no new helpers: use FrontRestriction and FrontRestrict for the reverse implication, then handle the trivial F={emptyset} case and the nontrivial case by proving empty is absent, identifying the two front bases, obtaining Y subset X, and proving both inclusions F' = FrontRestrict F Y via density, InitialSegment comparability, and prefix-freeness. Do not weaken this to a fixed-base statement or add wrapper nodes; honor the settled pm-0011 constraint.",
+    "comments": "Switch the coarse anchor to CardinalityFrontIsFront and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. The 126-line proof may need genuine substantive helpers, so complete the full decomposition in this burst if useful, with complete paired NL proofs and no wrappers or SKETCH proofs. Follow the existing structure: separate k=0 from k>0, establish the base alternative, prove prefix-freeness from strict initial-segment cardinality decrease, and prove density via InfiniteSetEnumeration and ProperPrefixSet. Do not edit the downstream TripleHomogeneous or QuadrupleHomogeneous nodes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 196,
+    "cycle": 197,
     "decision": "Continue",
     "difficulty_updates": {
-      "SubFrontCharacterization": {
+      "CardinalityFrontIsFront": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "SubFrontCharacterization",
-    "next_active_coarse": null,
+    "next_active": "CardinalityFrontIsFront",
+    "next_active_coarse": "CardinalityFrontIsFront",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Boolean support is closed; now close the remaining substantive SubFrontCharacterization dependency of NashWilliams.",
-    "request_id": 595,
+    "reason": "Advance the clean coarse anchor to CardinalityFrontIsFront, the shared support for the homogeneous finite-front results.",
+    "request_id": 597,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_595_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_597_decision.context.json"
 }

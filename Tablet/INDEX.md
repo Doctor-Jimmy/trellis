@@ -173,7 +173,7 @@
 | SetDomination | definition | definition | closed | - | Domination on subsets | Preamble |
 | ShiftDichotomy | lemma | proof | open | - | Perfect-or-bad shift dichotomy | BadMultiSequence, DecidingFront, DecidingValue, InfiniteSetEnumeration, MultiSequenceRestrict, NashWilliams, PerfectMultiSequence, RestrictionShift |
 | ShiftMap | definition | definition | closed | - | - | RightComp, SuccSeq |
-| SubFrontCharacterization | lemma | proof | open | - | Sub-fronts | Front, FrontRestrict, FrontRestriction |
+| SubFrontCharacterization | lemma | proof | closed | - | Sub-fronts | Front, FrontRestrict, FrontRestriction |
 | Subarr | corollary | proof | open | lem:subarr | Sub-arrays and super-sequences | BadMultiRestrict, BadMultiToSuper, BadSuperRestrict, BaseBqoRestriction, DecidingFront, DecidingValue, NoBadPerfectSuper, PerfectBaseToSuper, PerfectSuperToMulti, RestrictionLocallyConstant, ShiftDichotomy, SuperSequenceExtension |
 | SuccSeq | definition | definition | closed | - | - | IncSeq |
 | SuperNW | theorem | proof | open | - | - | NashWilliams, SuperSequence |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 115 | **Open:** 70
+**Total:** 185 nodes | **Closed:** 116 | **Open:** 69
