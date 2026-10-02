@@ -152,7 +152,7 @@
 | PowerRelAtomAtom | proof | Atom--atom reduction | closed |
 | PowerRelAtomNode | proof | Atom--node reduction | closed |
 | PowerRelCongrLeft | proof | Left presentation invariance | closed |
-| PowerRelCongrRight | proof | Right presentation invariance | open |
+| PowerRelCongrRight | proof | Right presentation invariance | closed |
 | PowerRelNodeAtom | proof | Node--atom reduction | closed |
 | PowerRelNodeNode | proof | Node--node reduction | closed |
 | PowerRelRefl | proof | Reflexivity of the lifted relation | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 124/185 closed
+**Summary:** 125/185 closed

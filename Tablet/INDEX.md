@@ -144,7 +144,7 @@
 | PowerRelAtomAtom | lemma | proof | closed | - | Atom--atom reduction | PowerRel |
 | PowerRelAtomNode | lemma | proof | closed | - | Atom--node reduction | PowerRel |
 | PowerRelCongrLeft | lemma | proof | closed | - | Left presentation invariance | PowerPresentationEqEquivalence, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
-| PowerRelCongrRight | lemma | proof | open | - | Right presentation invariance | PowerRelCongrLeft |
+| PowerRelCongrRight | lemma | proof | closed | - | Right presentation invariance | PowerRelCongrLeft |
 | PowerRelNodeAtom | lemma | proof | closed | - | Node--atom reduction | PowerRel |
 | PowerRelNodeNode | lemma | proof | closed | - | Node--node reduction | PowerRel |
 | PowerRelRefl | lemma | proof | open | - | Reflexivity of the lifted relation | PowerRelCongrRight |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 124 | **Open:** 61
+**Total:** 185 nodes | **Closed:** 125 | **Open:** 60

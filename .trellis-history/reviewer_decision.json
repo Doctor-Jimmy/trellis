@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerChildWellFounded is closed and the PowerRelCongrLeft cone is clean; advance to right presentation invariance.",
-    "comments": "Switch the coarse anchor to PowerRelCongrRight and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Prove the dual well-founded induction on the right presentation, handling atom/atom, mixed-tag, atom/node, and node/node cases explicitly. Use the matching clauses of PowerPresentationEq and the child witness for each right child to transport the recursive PowerRel comparisons while preserving the universal quantification over left children. This is the next link in the congruence chain; do not change sibling statements or introduce a wrapper. Meaningful local helpers are allowed, but close the active theorem.",
+    "reason": "PowerRelCongrRight is closed; advance to reflexivity of the lifted relation.",
+    "comments": "Switch the coarse anchor to PowerRelRefl and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Close the structural induction directly: the atom case reduces to reflexivity from IsPreorder, and the node case uses the same child index on both sides together with the PowerChild witness and the node-node reduction. Do not add wrappers or leave helper obligations open; this is the short prerequisite for PowerRelTrans.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerRelCongrRight",
-    "next_active_coarse": "PowerRelCongrRight",
+    "next_active": "PowerRelRefl",
+    "next_active_coarse": "PowerRelRefl",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerRelCongrRight": "hard"
+      "PowerRelRefl": "easy"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerRelCongrRight and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Prove the dual well-founded induction on the right presentation, handling atom/atom, mixed-tag, atom/node, and node/node cases explicitly. Use the matching clauses of PowerPresentationEq and the child witness for each right child to transport the recursive PowerRel comparisons while preserving the universal quantification over left children. This is the next link in the congruence chain; do not change sibling statements or introduce a wrapper. Meaningful local helpers are allowed, but close the active theorem.",
+    "comments": "Switch the coarse anchor to PowerRelRefl and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Close the structural induction directly: the atom case reduces to reflexivity from IsPreorder, and the node case uses the same child index on both sides together with the PowerChild witness and the node-node reduction. Do not add wrappers or leave helper obligations open; this is the short prerequisite for PowerRelTrans.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 205,
+    "cycle": 206,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerRelCongrRight": {
-        "Set": "Hard"
+      "PowerRelRefl": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerRelCongrRight",
-    "next_active_coarse": "PowerRelCongrRight",
+    "next_active": "PowerRelRefl",
+    "next_active_coarse": "PowerRelRefl",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerChildWellFounded is closed and the PowerRelCongrLeft cone is clean; advance to right presentation invariance.",
-    "request_id": 613,
+    "reason": "PowerRelCongrRight is closed; advance to reflexivity of the lifted relation.",
+    "request_id": 615,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_613_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_615_decision.context.json"
 }
