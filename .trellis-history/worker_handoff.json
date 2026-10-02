@@ -1,23 +1,17 @@
 {
   "raw": {
-    "result_type": "worker_result_v1",
     "outcome": "valid",
-    "summary": "Closed FrontBridgeStep in Lean using two substantive closed helpers: the finite-tail insertion identity and initial-segment transport through an appended larger point.",
-    "comments": "Preserved the active statement, accepted NL proof, and BODY marker. Added complete helper node pairs FrontBridgeTailInsert and InitialSegmentInsert, then used them in all four left/right response cases; FrontTreeOrderedExtension supplies the new left tree node when the left state is nonterminal.",
-    "target_claim_updates": {
-      "FrontBridgeTailInsert": [],
-      "InitialSegmentInsert": []
-    },
-    "difficulty_updates": {
-      "FrontBridgeTailInsert": "easy",
-      "InitialSegmentInsert": "easy"
-    },
-    "deleted_nodes": [],
-    "deviation_deletions": [],
+    "summary": "Closed FrontBridgeTerminal with a complete Lean proof of the terminal finite-shift construction.",
+    "comments": "Preserved the active theorem statement, imports, BODY marker, and accepted NL proof. The proof unpacks FrontBridge, enumerates the infinite set consisting of u and all values above max(u), proves both proper-prefix witnesses, establishes the exact shifted-range identity via ShiftMap, and assembles FiniteShift. No helper nodes, statements, TeX files, support imports, target claims, deviations, or deletions were added.",
+    "target_claim_updates": {},
+    "difficulty_updates": {},
     "deviation_requests": {},
     "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "deleted_nodes": [],
     "needs_restructure_suggested_nodes": [],
-    "memory_challenges": []
+    "memory_challenges": [],
+    "audit_request": null
   },
   "response": {
     "acceptance_check_passed": true,
@@ -27,48 +21,22 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the active statement, accepted NL proof, and BODY marker. Added complete helper node pairs FrontBridgeTailInsert and InitialSegmentInsert, then used them in all four left/right response cases; FrontTreeOrderedExtension supplies the new left tree node when the left state is nonterminal.",
-    "cycle": 192,
+    "comments": "Preserved the active theorem statement, imports, BODY marker, and accepted NL proof. The proof unpacks FrontBridge, enumerates the infinite set consisting of u and all values above max(u), proves both proper-prefix witnesses, establishes the exact shifted-range identity via ShiftMap, and assembles FiniteShift. No helper nodes, statements, TeX files, support imports, target claims, deviations, or deletions were added.",
+    "cycle": 193,
     "deleted_nodes": [],
-    "dep_updates": {
-      "FrontBridgeStep": {
-        "Set": [
-          "FrontBridge",
-          "FrontBridgeTailInsert",
-          "FrontTreeOrderedExtension",
-          "InitialSegmentInsert"
-        ]
-      },
-      "FrontBridgeTailInsert": {
-        "Set": [
-          "FrontBridgeTail"
-        ]
-      },
-      "InitialSegmentInsert": {
-        "Set": [
-          "InitialSegment"
-        ]
-      }
-    },
+    "dep_updates": {},
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {
-      "FrontBridgeTailInsert": {
-        "Set": "Easy"
-      },
-      "InitialSegmentInsert": {
-        "Set": "Easy"
-      }
-    },
+    "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "FrontBridgeStep": {
+      "FrontBridgeTerminal": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "a1240cad5245390a143ffe4dc702eefed3571a6496bb2091935eb7ec6ba16369",
-            "size_bytes": 176472
+            "sha256": "d583558c636f5943d3662341a5c2ecc40c6a742f1f65c87548458a11605f6e3f",
+            "size_bytes": 144000
           }
         ],
         "axiomization_check": {
@@ -76,15 +44,16 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
-            "Tablet.Front::Front@exported:inductive",
+            "Tablet.FiniteShift::FiniteShift@exported:definition",
             "Tablet.FrontBridge::FrontBridge@exported:definition",
             "Tablet.FrontBridgeTail::FrontBridgeTail@exported:definition",
-            "Tablet.FrontBridgeTailInsert::FrontBridgeTailInsert@exported:theorem",
-            "Tablet.FrontTreeOrderedExtension::FrontTreeOrderedExtension@exported:theorem",
+            "Tablet.IncSeq::IncSeq@exported:definition",
+            "Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem",
             "Tablet.InitialSegment::InitialSegment@exported:definition",
-            "Tablet.InitialSegmentInsert::InitialSegmentInsert@exported:theorem",
             "Tablet.PrefixTree::PrefixTree@exported:definition",
-            "Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition"
+            "Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition",
+            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
+            "Tablet.ShiftMap::ShiftMap@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [
@@ -113,22 +82,25 @@
           },
           {
             "kind": "theorem",
-            "name": "FrontBridgeStep"
+            "name": "FrontBridgeTerminal"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontBridgeTerminal._proof_1_2"
           }
         ],
         "direct_imports": [
           "Init",
+          "Tablet.FiniteShift",
           "Tablet.FrontBridge",
-          "Tablet.FrontBridgeTailInsert",
-          "Tablet.FrontTreeOrderedExtension",
-          "Tablet.InitialSegmentInsert"
+          "Tablet.InfiniteSetEnumeration"
         ],
         "errors": [],
         "exact_declaration_uses": [
           {
-            "declaration_kind": "inductive",
-            "owner": "Front",
-            "reached_declaration": "Front",
+            "declaration_kind": "definition",
+            "owner": "FiniteShift",
+            "reached_declaration": "FiniteShift",
             "visibility": "exported"
           },
           {
@@ -144,27 +116,21 @@
             "visibility": "exported"
           },
           {
-            "declaration_kind": "theorem",
-            "owner": "FrontBridgeTailInsert",
-            "reached_declaration": "FrontBridgeTailInsert",
+            "declaration_kind": "definition",
+            "owner": "IncSeq",
+            "reached_declaration": "IncSeq",
             "visibility": "exported"
           },
           {
             "declaration_kind": "theorem",
-            "owner": "FrontTreeOrderedExtension",
-            "reached_declaration": "FrontTreeOrderedExtension",
+            "owner": "InfiniteSetEnumeration",
+            "reached_declaration": "InfiniteSetEnumeration",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
             "owner": "InitialSegment",
             "reached_declaration": "InitialSegment",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "InitialSegmentInsert",
-            "reached_declaration": "InitialSegmentInsert",
             "visibility": "exported"
           },
           {
@@ -178,6 +144,18 @@
             "owner": "ProperInitialSegment",
             "reached_declaration": "ProperInitialSegment",
             "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ProperPrefixSet",
+            "reached_declaration": "ProperPrefixSet",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ShiftMap",
+            "reached_declaration": "ShiftMap",
+            "visibility": "exported"
           }
         ],
         "kernel_axioms": [
@@ -185,9 +163,9 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "FrontBridgeStep",
+        "principal_declaration": "FrontBridgeTerminal",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontBridge.eq_1\",\"FrontBridgeStep\"],\"boundary_theorems\":[\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBridge::FrontBridge@exported:definition\",\"Tablet.FrontBridgeTail::FrontBridgeTail@exported:definition\",\"Tablet.FrontBridgeTailInsert::FrontBridgeTailInsert@exported:theorem\",\"Tablet.FrontTreeOrderedExtension::FrontTreeOrderedExtension@exported:theorem\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.InitialSegmentInsert::InitialSegmentInsert@exported:theorem\",\"Tablet.PrefixTree::PrefixTree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontBridge.eq_1\",\"FrontBridgeStep\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontBridge.eq_1\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeStep\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBridge\",\"reached_declaration\":\"FrontBridge\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBridgeTail\",\"reached_declaration\":\"FrontBridgeTail\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontBridgeTailInsert\",\"reached_declaration\":\"FrontBridgeTailInsert\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontTreeOrderedExtension\",\"reached_declaration\":\"FrontTreeOrderedExtension\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"InitialSegmentInsert\",\"reached_declaration\":\"InitialSegmentInsert\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixTree\",\"reached_declaration\":\"PrefixTree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontBridgeStep\",\"principal_declaration\":\"FrontBridgeStep\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontBridge\",\"semantic_hash\":\"1de686beeefd9c76\"},{\"name\":\"FrontBridgeTail\",\"semantic_hash\":\"559791fb6299f5d1\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"PrefixTree\",\"semantic_hash\":\"94b89b18d87975df\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"}],\"strict_theorem_deps\":[{\"name\":\"FrontBridgeTailInsert\",\"value_hash\":\"9007a69bc687eba0\"},{\"name\":\"FrontTreeOrderedExtension\",\"value_hash\":\"ac578be4a28f59ed\"},{\"name\":\"InitialSegmentInsert\",\"value_hash\":\"426e434b494c0126\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontBridge.eq_1\",\"FrontBridgeTerminal\",\"FrontBridgeTerminal._proof_1_2\"],\"boundary_theorems\":[\"Tablet.FiniteShift::FiniteShift@exported:definition\",\"Tablet.FrontBridge::FrontBridge@exported:definition\",\"Tablet.FrontBridgeTail::FrontBridgeTail@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.PrefixTree::PrefixTree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontBridge.eq_1\",\"FrontBridgeTerminal\",\"FrontBridgeTerminal._proof_1_2\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontBridge.eq_1\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeTerminal\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeTerminal._proof_1_2\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"FiniteShift\",\"reached_declaration\":\"FiniteShift\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBridge\",\"reached_declaration\":\"FrontBridge\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBridgeTail\",\"reached_declaration\":\"FrontBridgeTail\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"InfiniteSetEnumeration\",\"reached_declaration\":\"InfiniteSetEnumeration\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixTree\",\"reached_declaration\":\"PrefixTree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontBridgeTerminal\",\"principal_declaration\":\"FrontBridgeTerminal\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"FiniteShift\",\"semantic_hash\":\"e2dfc558f39abbda\"},{\"name\":\"FrontBridge\",\"semantic_hash\":\"1de686beeefd9c76\"},{\"name\":\"FrontBridgeTail\",\"semantic_hash\":\"559791fb6299f5d1\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"PrefixTree\",\"semantic_hash\":\"94b89b18d87975df\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"}],\"strict_theorem_deps\":[{\"name\":\"InfiniteSetEnumeration\",\"value_hash\":\"4c699c796ec567a4\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
@@ -195,25 +173,30 @@
           },
           {
             "kind": "theorem",
-            "name": "FrontBridgeStep"
+            "name": "FrontBridgeTerminal"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontBridgeTerminal._proof_1_2"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "5b9319fe96d7987c3f93afd09b65233bf0345f9490a349335b29acc08ffa9fc3",
+        "source_sha256": "fec454c0494460896ba5d528b3b8acf2eebc3999c2cea25c2112d93634af190f",
         "status": "ok",
         "strict_definition_deps": {
-          "Front": "54804e268105ccdb",
+          "FiniteShift": "e2dfc558f39abbda",
           "FrontBridge": "1de686beeefd9c76",
           "FrontBridgeTail": "559791fb6299f5d1",
+          "IncSeq": "1722254285ddeb5c",
           "InitialSegment": "653306d9681a21e4",
           "PrefixTree": "94b89b18d87975df",
-          "ProperInitialSegment": "b0b2a1c37bea1919"
+          "ProperInitialSegment": "b0b2a1c37bea1919",
+          "ProperPrefixSet": "8d7d85f7e2dcc1fd",
+          "ShiftMap": "2072518c2402a1ed"
         },
         "strict_theorem_deps": {
-          "FrontBridgeTailInsert": "9007a69bc687eba0",
-          "FrontTreeOrderedExtension": "ac578be4a28f59ed",
-          "InitialSegmentInsert": "426e434b494c0126"
+          "InfiniteSetEnumeration": "4c699c796ec567a4"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -225,221 +208,11 @@
               },
               {
                 "kind": "theorem",
-                "name": "FrontBridgeStep"
-              }
-            ],
-            "level": "exported"
-          }
-        ]
-      },
-      "FrontBridgeTailInsert": {
-        "artifact_bundle": [
-          {
-            "level": "exported",
-            "sha256": "cee07ac5d159fa4a9fda1ea5fff1759524c3a38734d1c7a75bee74628594da73",
-            "size_bytes": 44640
-          }
-        ],
-        "axiomization_check": {
-          "agreed": true,
-          "axcheck_only_axioms": [],
-          "axcheck_only_boundaries": [],
-          "boundary_theorems": [
-            "Tablet.FrontBridgeTail::FrontBridgeTail@exported:definition"
-          ],
-          "error": null,
-          "kernel_axioms": [
-            "Classical.choice",
-            "Quot.sound",
-            "propext"
-          ],
-          "primary_only_axioms": [],
-          "primary_only_boundaries": [],
-          "skipped": false
-        },
-        "boundary_theorems": {},
-        "checker_identity": {
-          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
-          "closure_version": "patch_c_v1",
-          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
-          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
-          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
-          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
-          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
-        },
-        "declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTail.eq_1"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTailInsert"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTailInsert._simp_1_2"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTailInsert._simp_1_3"
-          }
-        ],
-        "direct_imports": [
-          "Init",
-          "Tablet.FrontBridgeTail"
-        ],
-        "errors": [],
-        "exact_declaration_uses": [
-          {
-            "declaration_kind": "definition",
-            "owner": "FrontBridgeTail",
-            "reached_declaration": "FrontBridgeTail",
-            "visibility": "exported"
-          }
-        ],
-        "kernel_axioms": [
-          "Classical.choice",
-          "Quot.sound",
-          "propext"
-        ],
-        "principal_declaration": "FrontBridgeTailInsert",
-        "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontBridgeTail.eq_1\",\"FrontBridgeTailInsert\",\"FrontBridgeTailInsert._simp_1_2\",\"FrontBridgeTailInsert._simp_1_3\"],\"boundary_theorems\":[\"Tablet.FrontBridgeTail::FrontBridgeTail@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontBridgeTail.eq_1\",\"FrontBridgeTailInsert\",\"FrontBridgeTailInsert._simp_1_2\",\"FrontBridgeTailInsert._simp_1_3\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontBridgeTail.eq_1\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeTailInsert\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeTailInsert._simp_1_2\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeTailInsert._simp_1_3\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"FrontBridgeTail\",\"reached_declaration\":\"FrontBridgeTail\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontBridgeTailInsert\",\"principal_declaration\":\"FrontBridgeTailInsert\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"FrontBridgeTail\",\"semantic_hash\":\"559791fb6299f5d1\"}],\"strict_theorem_deps\":[]}\n",
-        "replay_declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTail.eq_1"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTailInsert"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTailInsert._simp_1_2"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTailInsert._simp_1_3"
-          }
-        ],
-        "returncode": 0,
-        "seed_support_definition_deps": {},
-        "source_sha256": "e3b8d8cd31baef0ee81b0cc9b60757f0ce8d7e3dce84e7fd0e8548a6a3885cc6",
-        "status": "ok",
-        "strict_definition_deps": {
-          "FrontBridgeTail": "559791fb6299f5d1"
-        },
-        "strict_theorem_deps": {},
-        "timed_out": false,
-        "visibility_manifests": [
-          {
-            "declarations": [
-              {
-                "kind": "theorem",
-                "name": "FrontBridgeTail.eq_1"
+                "name": "FrontBridgeTerminal"
               },
               {
                 "kind": "theorem",
-                "name": "FrontBridgeTailInsert"
-              },
-              {
-                "kind": "theorem",
-                "name": "FrontBridgeTailInsert._simp_1_2"
-              },
-              {
-                "kind": "theorem",
-                "name": "FrontBridgeTailInsert._simp_1_3"
-              }
-            ],
-            "level": "exported"
-          }
-        ]
-      },
-      "InitialSegmentInsert": {
-        "artifact_bundle": [
-          {
-            "level": "exported",
-            "sha256": "3b678f6d446857251f21c6f5749155d3ef61721c6ebc2f5ae2d31f019dc0d945",
-            "size_bytes": 32096
-          }
-        ],
-        "axiomization_check": {
-          "agreed": true,
-          "axcheck_only_axioms": [],
-          "axcheck_only_boundaries": [],
-          "boundary_theorems": [
-            "Tablet.InitialSegment::InitialSegment@exported:definition"
-          ],
-          "error": null,
-          "kernel_axioms": [
-            "Classical.choice",
-            "Quot.sound",
-            "propext"
-          ],
-          "primary_only_axioms": [],
-          "primary_only_boundaries": [],
-          "skipped": false
-        },
-        "boundary_theorems": {},
-        "checker_identity": {
-          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
-          "closure_version": "patch_c_v1",
-          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
-          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
-          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
-          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
-          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
-        },
-        "declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "InitialSegmentInsert"
-          }
-        ],
-        "direct_imports": [
-          "Init",
-          "Tablet.InitialSegment"
-        ],
-        "errors": [],
-        "exact_declaration_uses": [
-          {
-            "declaration_kind": "definition",
-            "owner": "InitialSegment",
-            "reached_declaration": "InitialSegment",
-            "visibility": "exported"
-          }
-        ],
-        "kernel_axioms": [
-          "Classical.choice",
-          "Quot.sound",
-          "propext"
-        ],
-        "principal_declaration": "InitialSegmentInsert",
-        "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"InitialSegmentInsert\"],\"boundary_theorems\":[\"Tablet.InitialSegment::InitialSegment@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"InitialSegmentInsert\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"InitialSegmentInsert\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"InitialSegmentInsert\",\"principal_declaration\":\"InitialSegmentInsert\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"}],\"strict_theorem_deps\":[]}\n",
-        "replay_declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "InitialSegmentInsert"
-          }
-        ],
-        "returncode": 0,
-        "seed_support_definition_deps": {},
-        "source_sha256": "2306ee70a154d77cc58961f1e3923961c824dc3f35a8a8b40594d42b9a608617",
-        "status": "ok",
-        "strict_definition_deps": {
-          "InitialSegment": "653306d9681a21e4"
-        },
-        "strict_theorem_deps": {},
-        "timed_out": false,
-        "visibility_manifests": [
-          {
-            "declarations": [
-              {
-                "kind": "theorem",
-                "name": "InitialSegmentInsert"
+                "name": "FrontBridgeTerminal._proof_1_2"
               }
             ],
             "level": "exported"
@@ -450,25 +223,11 @@
     "local_closure_revalidation": null,
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
-    "node_kind_updates": {
-      "FrontBridgeTailInsert": {
-        "Set": "Proof"
-      },
-      "InitialSegmentInsert": {
-        "Set": "Proof"
-      }
-    },
+    "node_kind_updates": {},
     "outcome": "Valid",
-    "proof_node_updates": {
-      "FrontBridgeTailInsert": {
-        "Set": true
-      },
-      "InitialSegmentInsert": {
-        "Set": true
-      }
-    },
+    "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 582,
+    "request_id": 586,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -704,7 +463,6 @@
         "ConverseGame",
         "EmapLemma",
         "FinitePrefixExtension",
-        "FrontBridgeTerminal",
         "FrontRayClosure",
         "GBetterRelIff",
         "HerCtblNodeClosure",
@@ -3217,15 +2975,8 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed FrontBridgeStep in Lean using two substantive closed helpers: the finite-tail insertion identity and initial-segment transport through an appended larger point.",
-    "target_claim_updates": {
-      "FrontBridgeTailInsert": {
-        "Set": []
-      },
-      "InitialSegmentInsert": {
-        "Set": []
-      }
-    },
+    "summary": "Closed FrontBridgeTerminal with a complete Lean proof of the terminal finite-shift construction.",
+    "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
     "under_model_reasoning": "",
@@ -3340,7 +3091,7 @@
     "FrontBridgeTail.tex": "3f8b121e26c6fb053ddac91d3f45582acb8c49124266c0be3014b934efe6933e",
     "FrontBridgeTailInsert.lean": "e3b8d8cd31baef0ee81b0cc9b60757f0ce8d7e3dce84e7fd0e8548a6a3885cc6",
     "FrontBridgeTailInsert.tex": "521fb99a84e1f123801ca4d1361e76ba5d39a24ef57e77d3fb07ba2f560e669d",
-    "FrontBridgeTerminal.lean": "6c15a0725f0810180184be98e7674a3e7034bf4d4fbde592ff2521071a95bca1",
+    "FrontBridgeTerminal.lean": "fec454c0494460896ba5d528b3b8acf2eebc3999c2cea25c2112d93634af190f",
     "FrontBridgeTerminal.tex": "cdac6863c0af20427f78cc575012006038742880e778e47af4a35fba2d6df702",
     "FrontPrefix.lean": "9d1fe4111eed5c2d72d4491e0eda57d0919fe311e69f7919d418959865ad29c7",
     "FrontPrefix.tex": "f34e53437f6a87db27ed2a7acb2c82f407ca4e53cdaa35972a513804cfc612e2",
@@ -3388,7 +3139,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "3f96a60943a8791725601676ebe865e40ef6e0a33136edd65ea2472044864777",
+    "INDEX.md": "018ea258df0ccd054ca2a03f448369f7d5fc0a1972685b463274c76b647258fe",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3545,7 +3296,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "706aa444a749e62f078b6719decc45d80a3ecb86c6218595113e52b94d585748",
+    "README.md": "582f97c5160700a2e174cdf0bdfe52b32e08066d749a756962db3b4740452eae",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3600,7 +3351,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_582_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_586_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

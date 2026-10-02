@@ -64,7 +64,7 @@
 | FrontBridgeStep | proof | Bridge response transition | closed |
 | FrontBridgeTail | definition | Finite bridge tail | closed |
 | FrontBridgeTailInsert | proof | Appending a larger point to the finite bridge tail | closed |
-| FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | open |
+| FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | closed |
 | FrontPrefix | definition | - | closed |
 | FrontPrefixExists | proof | Front member existence | closed |
 | FrontPrefixUnique | proof | Front member uniqueness | closed |
@@ -191,4 +191,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 107/181 closed
+**Summary:** 108/181 closed
