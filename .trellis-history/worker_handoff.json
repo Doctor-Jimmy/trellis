@@ -1,18 +1,16 @@
 {
   "raw": {
-    "outcome": "valid",
-    "summary": "Closed FrontPrefixExists by proving the range of the increasing embedding is infinite, applying Front.dense to that range, and packaging the resulting witness as FrontPrefix.",
-    "comments": "Only the active proof body was edited. The focused check and full Lake build both pass; the active statement and accepted NL proof are unchanged.",
-    "target_claim_updates": {},
-    "difficulty_updates": {
-      "FrontPrefixExists": "easy"
-    },
-    "deviation_requests": {},
-    "node_deviation_claims": {},
-    "deviation_deletions": [],
+    "comments": "Closed FrontPrefixUnique in Lean using the two ProperPrefixSet witnesses, a cutoff comparison, explicit Finset filter equalities, and Front.prefix_free. The theorem statement, imports, and NL proof were preserved; no helpers or other nodes were added.",
     "deleted_nodes": [],
+    "deviation_deletions": [],
+    "deviation_requests": {},
+    "difficulty_updates": {},
     "memory_challenges": [],
-    "needs_restructure_suggested_nodes": []
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Closed the active FrontPrefixUnique proof. Incremental check and lake build both pass.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -22,26 +20,22 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Only the active proof body was edited. The focused check and full Lake build both pass; the active statement and accepted NL proof are unchanged.",
-    "cycle": 180,
+    "comments": "Closed FrontPrefixUnique in Lean using the two ProperPrefixSet witnesses, a cutoff comparison, explicit Finset filter equalities, and Front.prefix_free. The theorem statement, imports, and NL proof were preserved; no helpers or other nodes were added.",
+    "cycle": 181,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {
-      "FrontPrefixExists": {
-        "Set": "Easy"
-      }
-    },
+    "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "FrontPrefixExists": {
+      "FrontPrefixUnique": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "53a740eb75c207c251c72cf19b9007df2d93fca7e49999a4ec4c0228cb0077f4",
-            "size_bytes": 15648
+            "sha256": "3d737efe2b2d07f35774b6dcb1191e878249dcbb7e59a07367a4fb426e9da4d2",
+            "size_bytes": 42856
           }
         ],
         "axiomization_check": {
@@ -49,10 +43,11 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
-            "Tablet.Front::Front.dense@exported:theorem",
+            "Tablet.Front::Front.prefix_free@exported:theorem",
             "Tablet.Front::Front@exported:inductive",
             "Tablet.FrontPrefix::FrontPrefix@exported:definition",
             "Tablet.IncSeq::IncSeq@exported:definition",
+            "Tablet.InitialSegment::InitialSegment@exported:definition",
             "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition"
           ],
           "error": null,
@@ -78,7 +73,7 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "FrontPrefixExists"
+            "name": "FrontPrefixUnique"
           }
         ],
         "direct_imports": [
@@ -90,7 +85,7 @@
           {
             "declaration_kind": "theorem",
             "owner": "Front",
-            "reached_declaration": "Front.dense",
+            "reached_declaration": "Front.prefix_free",
             "visibility": "exported"
           },
           {
@@ -113,6 +108,12 @@
           },
           {
             "declaration_kind": "definition",
+            "owner": "InitialSegment",
+            "reached_declaration": "InitialSegment",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
             "owner": "ProperPrefixSet",
             "reached_declaration": "ProperPrefixSet",
             "visibility": "exported"
@@ -123,27 +124,28 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "FrontPrefixExists",
+        "principal_declaration": "FrontPrefixUnique",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontPrefixExists\"],\"boundary_theorems\":[\"Tablet.Front::Front.dense@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontPrefix::FrontPrefix@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontPrefixExists\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontPrefixExists\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.dense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontPrefix\",\"reached_declaration\":\"FrontPrefix\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontPrefixExists\",\"principal_declaration\":\"FrontPrefixExists\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontPrefix\",\"semantic_hash\":\"50794fb880e69a82\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"cf6cd0fffa0c1f96\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontPrefixUnique\"],\"boundary_theorems\":[\"Tablet.Front::Front.prefix_free@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontPrefix::FrontPrefix@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontPrefixUnique\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontPrefixUnique\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.prefix_free\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontPrefix\",\"reached_declaration\":\"FrontPrefix\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontPrefixUnique\",\"principal_declaration\":\"FrontPrefixUnique\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontPrefix\",\"semantic_hash\":\"50794fb880e69a82\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"eaeea17e726345c0\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "FrontPrefixExists"
+            "name": "FrontPrefixUnique"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "194da0b4c093c24bf758ccf798c231a8f9b4d1de37cadeb51c3106aecfa462a5",
+        "source_sha256": "2004f270805d71ea0edae4d299eb43c7f2c27d4969fee9d9e993a94cabed0228",
         "status": "ok",
         "strict_definition_deps": {
           "Front": "54804e268105ccdb",
           "FrontPrefix": "50794fb880e69a82",
           "IncSeq": "1722254285ddeb5c",
+          "InitialSegment": "653306d9681a21e4",
           "ProperPrefixSet": "8d7d85f7e2dcc1fd"
         },
         "strict_theorem_deps": {
-          "Front": "cf6cd0fffa0c1f96"
+          "Front": "eaeea17e726345c0"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -151,7 +153,7 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "FrontPrefixExists"
+                "name": "FrontPrefixUnique"
               }
             ],
             "level": "exported"
@@ -166,7 +168,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 556,
+    "request_id": 558,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -402,7 +404,6 @@
         "FrontBridgeInit",
         "FrontBridgeStep",
         "FrontBridgeTerminal",
-        "FrontPrefixUnique",
         "FrontRayClosure",
         "FrontRestriction",
         "FrontTreeImmediateExtensions",
@@ -2866,7 +2867,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed FrontPrefixExists by proving the range of the increasing embedding is infinite, applying Front.dense to that range, and packaging the resulting witness as FrontPrefix.",
+    "summary": "Closed the active FrontPrefixUnique proof. Incremental check and lake build both pass.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2980,7 +2981,7 @@
     "FrontPrefix.tex": "f34e53437f6a87db27ed2a7acb2c82f407ca4e53cdaa35972a513804cfc612e2",
     "FrontPrefixExists.lean": "194da0b4c093c24bf758ccf798c231a8f9b4d1de37cadeb51c3106aecfa462a5",
     "FrontPrefixExists.tex": "7efdbdd4595352395b90bf91aef1c17123f50762ebf9946d135a465479fa0887",
-    "FrontPrefixUnique.lean": "64a884cadf57e394e9a7a59810436f8e73b3b3dee5920aa26dbaeb023136442d",
+    "FrontPrefixUnique.lean": "2004f270805d71ea0edae4d299eb43c7f2c27d4969fee9d9e993a94cabed0228",
     "FrontPrefixUnique.tex": "b3c5b27755688ced53274b11c79a1bd9c1ce560680689b2da848f95c33bcf75c",
     "FrontRayClosure.lean": "d13861a1525d08624675bca2c8420ac3b41c8cde584441382a1df91d22c24cf2",
     "FrontRayClosure.tex": "69b39ae9c879a58ec77aa455fc7434a2ba45f171b7fae284a30a168d2030f635",
@@ -3022,7 +3023,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "7bcc169fb5705f2318c781471e424bf7ecf6837686b12127f53628cb8d2aea90",
+    "INDEX.md": "fda15bf596510067dc9714be055d733bbfd37f14f9a2586692f0450c16f6d710",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3177,7 +3178,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "74e89a98b1bd6e1dd50edc26d568fac2743874be9e963c183db0f2294efb3aba",
+    "README.md": "3316d80b1edd6135380919263eb8cb301ed986732f1d9d04602922ea21a188d7",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3232,7 +3233,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_556_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_558_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

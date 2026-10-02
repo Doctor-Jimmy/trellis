@@ -55,7 +55,7 @@
 | FrontBridgeTerminal | lemma | proof | open | - | A terminal bridge gives a finite shift | FiniteShift, FrontBridge, InfiniteSetEnumeration |
 | FrontPrefix | definition | definition | closed | - | - | Front, IncSeq |
 | FrontPrefixExists | lemma | proof | closed | - | Front member existence | FrontPrefix |
-| FrontPrefixUnique | lemma | proof | open | - | Front member uniqueness | FrontPrefix |
+| FrontPrefixUnique | lemma | proof | closed | - | Front member uniqueness | FrontPrefix |
 | FrontRayClosure | lemma | proof | open | - | Ray closure | Front, Ray, TailSet |
 | FrontRestrict | definition | definition | closed | - | - | Preamble |
 | FrontRestriction | lemma | proof | open | - | Restriction closure | Front, FrontRestrict |
@@ -180,4 +180,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 176 nodes | **Closed:** 90 | **Open:** 86
+**Total:** 176 nodes | **Closed:** 91 | **Open:** 85

@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontPrefixExists closed directly with no structural changes. Advance the clean coarse anchor to FrontPrefixUnique, the sibling interface lemma whose only dependency is the closed FrontPrefix definition and whose proof is a bounded cutoff comparison followed by Front prefix-freeness.",
-    "comments": "Switch the coarse anchor to FrontPrefixUnique and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Unpack both FrontPrefix hypotheses and their ProperPrefixSet witnesses, compare the cutoff elements in the range, derive one InitialSegment relation in the unequal cases (and the equality relation in the equal case), then apply the prefix_free field of Front to conclude s = t.",
+    "reason": "FrontPrefixUnique closed directly with no helpers. The clean frontier should now advance to FrontRestriction, a short foundational lemma with three downstream users, including NashWilliams, and only closed Front and FrontRestrict definitions as support.",
+    "comments": "Switch the coarse anchor to FrontRestriction and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Construct the Front structure for FrontRestrict F Y: inherit infinitude and prefix-freeness, establish the base alternative with the restricted-base definition and the trivial-front case, and prove density by applying hF.dense to an arbitrary infinite Z subset of Y, explicitly showing the witness lies in the restriction.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontPrefixUnique",
-    "next_active_coarse": "FrontPrefixUnique",
+    "next_active": "FrontRestriction",
+    "next_active_coarse": "FrontRestriction",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontPrefixUnique": "easy"
+      "FrontRestriction": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontPrefixUnique and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Unpack both FrontPrefix hypotheses and their ProperPrefixSet witnesses, compare the cutoff elements in the range, derive one InitialSegment relation in the unequal cases (and the equality relation in the equal case), then apply the prefix_free field of Front to conclude s = t.",
+    "comments": "Switch the coarse anchor to FrontRestriction and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Construct the Front structure for FrontRestrict F Y: inherit infinitude and prefix-freeness, establish the base alternative with the restricted-base definition and the trivial-front case, and prove density by applying hF.dense to an arbitrary infinite Z subset of Y, explicitly showing the witness lies in the restriction.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 180,
+    "cycle": 181,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontPrefixUnique": {
+      "FrontRestriction": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontPrefixUnique",
-    "next_active_coarse": "FrontPrefixUnique",
+    "next_active": "FrontRestriction",
+    "next_active_coarse": "FrontRestriction",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontPrefixExists closed directly with no structural changes. Advance the clean coarse anchor to FrontPrefixUnique, the sibling interface lemma whose only dependency is the closed FrontPrefix definition and whose proof is a bounded cutoff comparison followed by Front prefix-freeness.",
-    "request_id": 557,
+    "reason": "FrontPrefixUnique closed directly with no helpers. The clean frontier should now advance to FrontRestriction, a short foundational lemma with three downstream users, including NashWilliams, and only closed Front and FrontRestrict definitions as support.",
+    "request_id": 559,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_557_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_559_decision.context.json"
 }
