@@ -120,7 +120,7 @@
 | PowerCopiedLeft | definition | definition | closed | - | - | MultiSequence, PowerIResponse, PowerShiftIter |
 | PowerCopiedOrbitDependence | lemma | proof | open | - | Finite dependence on the enumeration orbit | PowerCopiedLeft |
 | PowerCopiedShiftIdentity | lemma | proof | open | - | Stabilization under the shift | PowerCopiedLeft, PowerShiftIterShift |
-| PowerCopiedSupport | lemma | proof | open | - | Support of the copied left values | PowerCopiedFailureMove, PowerMoveInSupport |
+| PowerCopiedSupport | lemma | proof | closed | - | Support of the copied left values | PowerCopiedFailureMove, PowerMoveInSupport |
 | PowerCopiedTerminalAt | definition | definition | closed | - | - | PowerCopiedLeft |
 | PowerCopiedTerminalShift | lemma | proof | open | - | The terminal atom stabilizes under shifting | PowerCopiedFiniteTerminal, PowerCopiedShiftIdentity |
 | PowerCopiedTerminalSupport | lemma | proof | open | - | The terminal atom lies in the original support | PowerCopiedSupport, PowerCopiedTerminalAt, PowerCopiedTerminates |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 135 | **Open:** 50
+**Total:** 185 nodes | **Closed:** 136 | **Open:** 49

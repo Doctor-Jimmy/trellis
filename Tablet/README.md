@@ -128,7 +128,7 @@
 | PowerCopiedLeft | definition | - | closed |
 | PowerCopiedOrbitDependence | proof | Finite dependence on the enumeration orbit | open |
 | PowerCopiedShiftIdentity | proof | Stabilization under the shift | open |
-| PowerCopiedSupport | proof | Support of the copied left values | open |
+| PowerCopiedSupport | proof | Support of the copied left values | closed |
 | PowerCopiedTerminalAt | definition | - | closed |
 | PowerCopiedTerminalShift | proof | The terminal atom stabilizes under shifting | open |
 | PowerCopiedTerminalSupport | proof | The terminal atom lies in the original support | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 135/185 closed
+**Summary:** 136/185 closed
