@@ -121,7 +121,7 @@
 | PerfectSuperToMulti | proof | Perfect sub-super-sequences give perfect sub-multi-sequences | open |
 | PowerChild | definition | - | closed |
 | PowerChildSupport | proof | Support decreases along a child | open |
-| PowerChildWellFounded | proof | Well-founded hierarchy descent | open |
+| PowerChildWellFounded | proof | Well-founded hierarchy descent | closed |
 | PowerCopiedFailureMove | proof | Failure and legal moves in the copied triangle | open |
 | PowerCopiedFiniteDependence | proof | Finite dependence of a copied move | open |
 | PowerCopiedFiniteTerminal | proof | Finite terminal dependence | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 123/185 closed
+**Summary:** 124/185 closed

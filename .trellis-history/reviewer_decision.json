@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerRelCongrLeft is closed; close the remaining well-foundedness prerequisite in its cone before advancing the anchor.",
-    "comments": "Keep PowerRelCongrLeft as the coarse anchor and route locally to PowerChildWellFounded. Preserve the theorem statement, import, BODY marker, and accepted TeX proof. Prove WellFounded PowerChild by structural accessibility induction on the parent presentation: atoms have no children, while a node's child relation supplies an index and the induction hypothesis gives accessibility of that child. This is a small prerequisite with no need for helpers or unrelated edits; close it mechanically so the PowerRel congruence cone can advance.",
+    "reason": "PowerChildWellFounded is closed and the PowerRelCongrLeft cone is clean; advance to right presentation invariance.",
+    "comments": "Switch the coarse anchor to PowerRelCongrRight and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Prove the dual well-founded induction on the right presentation, handling atom/atom, mixed-tag, atom/node, and node/node cases explicitly. Use the matching clauses of PowerPresentationEq and the child witness for each right child to transport the recursive PowerRel comparisons while preserving the universal quantification over left children. This is the next link in the congruence chain; do not change sibling statements or introduce a wrapper. Meaningful local helpers are allowed, but close the active theorem.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerChildWellFounded",
-    "next_active_coarse": "",
+    "next_active": "PowerRelCongrRight",
+    "next_active_coarse": "PowerRelCongrRight",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerChildWellFounded": "easy"
+      "PowerRelCongrRight": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep PowerRelCongrLeft as the coarse anchor and route locally to PowerChildWellFounded. Preserve the theorem statement, import, BODY marker, and accepted TeX proof. Prove WellFounded PowerChild by structural accessibility induction on the parent presentation: atoms have no children, while a node's child relation supplies an index and the induction hypothesis gives accessibility of that child. This is a small prerequisite with no need for helpers or unrelated edits; close it mechanically so the PowerRel congruence cone can advance.",
+    "comments": "Switch the coarse anchor to PowerRelCongrRight and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Prove the dual well-founded induction on the right presentation, handling atom/atom, mixed-tag, atom/node, and node/node cases explicitly. Use the matching clauses of PowerPresentationEq and the child witness for each right child to transport the recursive PowerRel comparisons while preserving the universal quantification over left children. This is the next link in the congruence chain; do not change sibling statements or introduce a wrapper. Meaningful local helpers are allowed, but close the active theorem.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 204,
+    "cycle": 205,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerChildWellFounded": {
-        "Set": "Easy"
+      "PowerRelCongrRight": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerChildWellFounded",
-    "next_active_coarse": null,
+    "next_active": "PowerRelCongrRight",
+    "next_active_coarse": "PowerRelCongrRight",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerRelCongrLeft is closed; close the remaining well-foundedness prerequisite in its cone before advancing the anchor.",
-    "request_id": 611,
+    "reason": "PowerChildWellFounded is closed and the PowerRelCongrLeft cone is clean; advance to right presentation invariance.",
+    "request_id": 613,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_611_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_613_decision.context.json"
 }
