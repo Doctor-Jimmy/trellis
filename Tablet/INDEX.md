@@ -81,7 +81,7 @@
 | IncSeqId | definition | definition | closed | - | - | IncSeq |
 | IncSeqPointwiseLe | lemma | proof | closed | - | - | IncSeq |
 | IncreasingPair | definition | definition | closed | - | - | Preamble |
-| InfiniteSetEnumeration | lemma | proof | open | - | Increasing enumeration of an infinite set | IncSeq |
+| InfiniteSetEnumeration | lemma | proof | closed | - | Increasing enumeration of an infinite set | IncSeq |
 | InitialSegment | definition | definition | closed | - | - | Preamble |
 | LocallyConstant | definition | definition | closed | - | - | MultiSequence, PrefixAgree |
 | MainProp | theorem | proof | open | - | MainProp | ContMorEq, EmapLemma, RmapLemma |
@@ -180,4 +180,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 176 nodes | **Closed:** 88 | **Open:** 88
+**Total:** 176 nodes | **Closed:** 89 | **Open:** 87
