@@ -143,7 +143,7 @@
 | PowerMove | definition | - | closed |
 | PowerMoveInSupport | proof | Moves stay in support | open |
 | PowerPresentationEq | definition | - | closed |
-| PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | open |
+| PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | closed |
 | PowerQ | definition | - | closed |
 | PowerQIsPreorder | proof | The lifted relation is a preorder | closed |
 | PowerQPresBqo | proof | - | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 121/185 closed
+**Summary:** 122/185 closed

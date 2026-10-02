@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BqoImpliesWqo is closed; advance to the foundational equivalence theorem for tagged powerset presentations.",
-    "comments": "Switch the coarse anchor to PowerPresentationEqEquivalence and use Local mode. Preserve its protected statement, import, BODY marker, and accepted TeX proof. Close the reflexive, symmetric, and transitive parts by structural induction on PowerQ, explicitly handling atom/node false cases and composing both matching directions through a middle node. The theorem has several downstream powerset users, so a genuine smaller helper is acceptable if needed, but do not repackage the whole equivalence argument or edit unrelated nodes; complete any new helper proof rather than leaving an avoidable wrapper obligation.",
+    "reason": "PowerPresentationEqEquivalence is closed; advance to left invariance of PowerRel under presentation equivalence.",
+    "comments": "Switch the coarse anchor to PowerRelCongrLeft and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Formalize the well-founded induction on PowerChild and treat the atom/atom, node/atom, and node/node cases explicitly, using both matching directions from PowerPresentationEq and the equivalence theorem to transfer recursive child comparisons. This is the first link in the PowerRel congruence chain; keep the recursion genuinely structural and do not add unrelated nodes. Substantive smaller helpers are allowed if needed, while the active theorem must close.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerPresentationEqEquivalence",
-    "next_active_coarse": "PowerPresentationEqEquivalence",
+    "next_active": "PowerRelCongrLeft",
+    "next_active_coarse": "PowerRelCongrLeft",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerPresentationEqEquivalence": "hard"
+      "PowerRelCongrLeft": "hard"
     },
     "allow_new_obligations": true,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerPresentationEqEquivalence and use Local mode. Preserve its protected statement, import, BODY marker, and accepted TeX proof. Close the reflexive, symmetric, and transitive parts by structural induction on PowerQ, explicitly handling atom/node false cases and composing both matching directions through a middle node. The theorem has several downstream powerset users, so a genuine smaller helper is acceptable if needed, but do not repackage the whole equivalence argument or edit unrelated nodes; complete any new helper proof rather than leaving an avoidable wrapper obligation.",
+    "comments": "Switch the coarse anchor to PowerRelCongrLeft and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Formalize the well-founded induction on PowerChild and treat the atom/atom, node/atom, and node/node cases explicitly, using both matching directions from PowerPresentationEq and the equivalence theorem to transfer recursive child comparisons. This is the first link in the PowerRel congruence chain; keep the recursion genuinely structural and do not add unrelated nodes. Substantive smaller helpers are allowed if needed, while the active theorem must close.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 202,
+    "cycle": 203,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerPresentationEqEquivalence": {
+      "PowerRelCongrLeft": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerPresentationEqEquivalence",
-    "next_active_coarse": "PowerPresentationEqEquivalence",
+    "next_active": "PowerRelCongrLeft",
+    "next_active_coarse": "PowerRelCongrLeft",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BqoImpliesWqo is closed; advance to the foundational equivalence theorem for tagged powerset presentations.",
-    "request_id": 607,
+    "reason": "PowerPresentationEqEquivalence is closed; advance to left invariance of PowerRel under presentation equivalence.",
+    "request_id": 609,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_607_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_609_decision.context.json"
 }

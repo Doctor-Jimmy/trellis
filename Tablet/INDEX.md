@@ -135,7 +135,7 @@
 | PowerMove | definition | definition | closed | - | - | PowerChild, PowerRel |
 | PowerMoveInSupport | lemma | proof | open | - | Moves stay in support | PowerChildSupport, PowerMove |
 | PowerPresentationEq | definition | definition | closed | - | - | PowerQ |
-| PowerPresentationEqEquivalence | lemma | proof | open | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
+| PowerPresentationEqEquivalence | lemma | proof | closed | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
 | PowerQ | definition | definition | closed | - | - | Preamble |
 | PowerQIsPreorder | lemma | proof | closed | - | The lifted relation is a preorder | PowerRelTrans |
 | PowerQPresBqo | corollary | proof | open | - | - | Bqo, PowerQReflection |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 121 | **Open:** 64
+**Total:** 185 nodes | **Closed:** 122 | **Open:** 63
