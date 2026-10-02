@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "RestrictionLocallyConstant closed cleanly. Advance to DecidingValue, a short choice-and-uniqueness lemma with six direct downstream users.",
-    "comments": "Switch the coarse anchor to DecidingValue and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. For each deciding prefix s, choose an IncSeq extension from FinitePrefixExtension s.1 and define v s as its h-value; use s.2.1 to compare that chosen extension with any given extension. Add no helpers or support-DAG changes.",
+    "reason": "DecidingValue closed cleanly. Advance to the central DecidingFront theorem: all direct support is closed, and its five downstream users justify handling the substantial proof now with explicit decomposition if needed.",
+    "comments": "Switch the coarse anchor to DecidingFront and use Local mode. Preserve its statement, imports, marker, and accepted NL proof. Close the theorem in this burst, decomposing only into genuine substantive helpers for the finite-prefix agreement, deciding-prefix existence, minimal deciding-front extraction, density, prefix-freeness, or base cases; each new proof-bearing helper must have a complete NL proof, never SKETCH, and no wrapper may merely restate DecidingFront.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "DecidingValue",
-    "next_active_coarse": "DecidingValue",
+    "next_active": "DecidingFront",
+    "next_active_coarse": "DecidingFront",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "DecidingValue": "easy"
+      "DecidingFront": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to DecidingValue and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. For each deciding prefix s, choose an IncSeq extension from FinitePrefixExtension s.1 and define v s as its h-value; use s.2.1 to compare that chosen extension with any given extension. Add no helpers or support-DAG changes.",
+    "comments": "Switch the coarse anchor to DecidingFront and use Local mode. Preserve its statement, imports, marker, and accepted NL proof. Close the theorem in this burst, decomposing only into genuine substantive helpers for the finite-prefix agreement, deciding-prefix existence, minimal deciding-front extraction, density, prefix-freeness, or base cases; each new proof-bearing helper must have a complete NL proof, never SKETCH, and no wrapper may merely restate DecidingFront.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 184,
+    "cycle": 185,
     "decision": "Continue",
     "difficulty_updates": {
-      "DecidingValue": {
-        "Set": "Easy"
+      "DecidingFront": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "DecidingValue",
-    "next_active_coarse": "DecidingValue",
+    "next_active": "DecidingFront",
+    "next_active_coarse": "DecidingFront",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "RestrictionLocallyConstant closed cleanly. Advance to DecidingValue, a short choice-and-uniqueness lemma with six direct downstream users.",
-    "request_id": 565,
+    "reason": "DecidingValue closed cleanly. Advance to the central DecidingFront theorem: all direct support is closed, and its five downstream users justify handling the substantial proof now with explicit decomposition if needed.",
+    "request_id": 567,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_565_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_567_decision.context.json"
 }

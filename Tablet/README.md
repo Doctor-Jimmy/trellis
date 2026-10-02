@@ -49,7 +49,7 @@
 | DecidingFront | proof | Minimal deciding prefixes form a front | open |
 | DecidingFrontSet | definition | - | closed |
 | DecidingPrefix | definition | - | closed |
-| DecidingValue | proof | Value map on the deciding front | open |
+| DecidingValue | proof | Value map on the deciding front | closed |
 | EmapLemma | proof | - | open |
 | FinitePrefixExtension | proof | Infinite extension of a finite prefix | open |
 | FiniteShift | definition | - | closed |
@@ -186,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 94/176 closed
+**Summary:** 95/176 closed
