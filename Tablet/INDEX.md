@@ -157,7 +157,7 @@
 | RadoOrder | definition | definition | closed | - | Rado order | IncreasingPair |
 | Ray | definition | definition | closed | - | - | Preamble |
 | RelationEmbedding | definition | definition | closed | - | Relation embedding | Preamble |
-| RestrictionLocallyConstant | lemma | proof | open | - | Restriction preserves local constancy | LocallyConstant, MultiSequenceRestrict |
+| RestrictionLocallyConstant | lemma | proof | closed | - | Restriction preserves local constancy | LocallyConstant, MultiSequenceRestrict |
 | RestrictionShift | lemma | proof | closed | - | Restriction and shift | MultiSequenceRestrict, ShiftMap |
 | RightComp | definition | definition | closed | - | - | IncSeqComp |
 | RmapLemma | lemma | proof | open | - | - | ContMor, FirstMovedPoint, OrbitEmbedding, RightComp, ShiftMap |
@@ -180,4 +180,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 176 nodes | **Closed:** 93 | **Open:** 83
+**Total:** 176 nodes | **Closed:** 94 | **Open:** 82

@@ -1,6 +1,6 @@
 {
   "raw": {
-    "comments": "Closed RestrictionShift by introducing the universally quantified sequence and applying definitional reduction of ShiftMap and IncSeqComp. The theorem statement, imports, BODY marker, and NL artifact were preserved; no helpers or other nodes were added.",
+    "comments": "Closed only the proof body of RestrictionLocallyConstant. The theorem statement, imports, BODY marker, and accepted NL proof were preserved. The proof obtains the local-constancy bound at IncSeqComp z x, uses the same bound for x, transports prefix agreement coordinatewise through z, and applies the defining restriction equation.",
     "deleted_nodes": [],
     "deviation_deletions": [],
     "deviation_requests": {},
@@ -9,7 +9,7 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Closed the active RestrictionShift proof. Incremental check and lake build both pass.",
+    "summary": "Closed RestrictionLocallyConstant in Lean; incremental check and lake build pass.",
     "target_claim_updates": {}
   },
   "response": {
@@ -20,8 +20,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Closed RestrictionShift by introducing the universally quantified sequence and applying definitional reduction of ShiftMap and IncSeqComp. The theorem statement, imports, BODY marker, and NL artifact were preserved; no helpers or other nodes were added.",
-    "cycle": 183,
+    "comments": "Closed only the proof body of RestrictionLocallyConstant. The theorem statement, imports, BODY marker, and accepted NL proof were preserved. The proof obtains the local-constancy bound at IncSeqComp z x, uses the same bound for x, transports prefix agreement coordinatewise through z, and applies the defining restriction equation.",
+    "cycle": 184,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -30,12 +30,12 @@
     "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "RestrictionShift": {
+      "RestrictionLocallyConstant": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "8a1b347b8311b70cb1d19304e17a05a8660381834f229c6fe0e03edfe18c5caa",
-            "size_bytes": 5128
+            "sha256": "625f749b64aea7d28281da4c2f0c6e0a4a4c4c2155e535c8108b9819a00164e4",
+            "size_bytes": 12792
           }
         ],
         "axiomization_check": {
@@ -45,7 +45,10 @@
           "boundary_theorems": [
             "Tablet.IncSeq::IncSeq@exported:definition",
             "Tablet.IncSeqComp::IncSeqComp@exported:definition",
-            "Tablet.ShiftMap::ShiftMap@exported:definition"
+            "Tablet.LocallyConstant::LocallyConstant@exported:definition",
+            "Tablet.MultiSequence::MultiSequence@exported:definition",
+            "Tablet.MultiSequenceRestrict::MultiSequenceRestrict@exported:definition",
+            "Tablet.PrefixAgree::PrefixAgree@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [],
@@ -66,13 +69,13 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "RestrictionShift"
+            "name": "RestrictionLocallyConstant"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.MultiSequenceRestrict",
-          "Tablet.ShiftMap"
+          "Tablet.LocallyConstant",
+          "Tablet.MultiSequenceRestrict"
         ],
         "errors": [],
         "exact_declaration_uses": [
@@ -90,29 +93,50 @@
           },
           {
             "declaration_kind": "definition",
-            "owner": "ShiftMap",
-            "reached_declaration": "ShiftMap",
+            "owner": "LocallyConstant",
+            "reached_declaration": "LocallyConstant",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "MultiSequence",
+            "reached_declaration": "MultiSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "MultiSequenceRestrict",
+            "reached_declaration": "MultiSequenceRestrict",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PrefixAgree",
+            "reached_declaration": "PrefixAgree",
             "visibility": "exported"
           }
         ],
         "kernel_axioms": [],
-        "principal_declaration": "RestrictionShift",
+        "principal_declaration": "RestrictionLocallyConstant",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"RestrictionShift\"],\"boundary_theorems\":[\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqComp::IncSeqComp@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\"],\"kernel_axioms\":[],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"RestrictionShift\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"RestrictionShift\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqComp\",\"reached_declaration\":\"IncSeqComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"}],\"kernel_axioms\":[],\"node\":\"RestrictionShift\",\"principal_declaration\":\"RestrictionShift\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqComp\",\"semantic_hash\":\"b92c60fdc6b8c664\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"}],\"strict_theorem_deps\":[]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"RestrictionLocallyConstant\"],\"boundary_theorems\":[\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqComp::IncSeqComp@exported:definition\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.MultiSequenceRestrict::MultiSequenceRestrict@exported:definition\",\"Tablet.PrefixAgree::PrefixAgree@exported:definition\"],\"kernel_axioms\":[],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"RestrictionLocallyConstant\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"RestrictionLocallyConstant\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqComp\",\"reached_declaration\":\"IncSeqComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequenceRestrict\",\"reached_declaration\":\"MultiSequenceRestrict\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixAgree\",\"reached_declaration\":\"PrefixAgree\",\"visibility\":\"exported\"}],\"kernel_axioms\":[],\"node\":\"RestrictionLocallyConstant\",\"principal_declaration\":\"RestrictionLocallyConstant\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqComp\",\"semantic_hash\":\"b92c60fdc6b8c664\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"MultiSequenceRestrict\",\"semantic_hash\":\"c3ff3d9f025a84de\"},{\"name\":\"PrefixAgree\",\"semantic_hash\":\"0e59d4fb59a4ae04\"}],\"strict_theorem_deps\":[]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "RestrictionShift"
+            "name": "RestrictionLocallyConstant"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "9282750a63c00b3a60c95718d43e9abe831bbbebaee88e4cf5ced8b00abcc355",
+        "source_sha256": "cc5e834978747347cff860a3e94734e3c28049afa33b92f6e155a3e515925a39",
         "status": "ok",
         "strict_definition_deps": {
           "IncSeq": "1722254285ddeb5c",
           "IncSeqComp": "b92c60fdc6b8c664",
-          "ShiftMap": "2072518c2402a1ed"
+          "LocallyConstant": "3be73314501d2a70",
+          "MultiSequence": "cde631bc1bef82ee",
+          "MultiSequenceRestrict": "c3ff3d9f025a84de",
+          "PrefixAgree": "0e59d4fb59a4ae04"
         },
         "strict_theorem_deps": {},
         "timed_out": false,
@@ -121,7 +145,7 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "RestrictionShift"
+                "name": "RestrictionLocallyConstant"
               }
             ],
             "level": "exported"
@@ -136,7 +160,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 562,
+    "request_id": 564,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -422,7 +446,6 @@
         "PowerWqoBadPairSequence",
         "QuadrupleHomogeneous",
         "RadoEmbedding",
-        "RestrictionLocallyConstant",
         "RmapLemma",
         "ShiftDichotomy",
         "SubFrontCharacterization",
@@ -2833,7 +2856,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed the active RestrictionShift proof. Incremental check and lake build both pass.",
+    "summary": "Closed RestrictionLocallyConstant in Lean; incremental check and lake build pass.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2989,7 +3012,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "7f4cd74e272d712699bf4c5cea5f69660daba815753086dcb2ed8a74455e1719",
+    "INDEX.md": "96243fd84bf576d2a39337d44c206b0ceb3fa189711e725516125d6f8e274a34",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3144,7 +3167,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "731bca9a3ba86f6a32c17dc442c0662b6653049e75331bbb6398ade27a76b5cd",
+    "README.md": "3f8c6b7d1c82a4c11532038608f7d03a7da1b5c6a91c9428673f651d48113c86",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3153,7 +3176,7 @@
     "Ray.tex": "9859188308d0606e635e36270453ae5db6f67482781933fb6525542d7542d553",
     "RelationEmbedding.lean": "69740807b79b4a75d92d71f32fabfc101cdc31ed10cb199f1d3f7fdd32041e7d",
     "RelationEmbedding.tex": "262c3c21b33df2e82f49097ddeb1fe4e79a2344210c657ead6b216761c5cf914",
-    "RestrictionLocallyConstant.lean": "6e32264beadfb1d5585c59529938060d8a717d671be10497599ec88acaa99c1a",
+    "RestrictionLocallyConstant.lean": "cc5e834978747347cff860a3e94734e3c28049afa33b92f6e155a3e515925a39",
     "RestrictionLocallyConstant.tex": "247b05ba1790a5ee06cd97c9ee3926814753c2bd1ff3a66d5bed4f03218f6bad",
     "RestrictionShift.lean": "9282750a63c00b3a60c95718d43e9abe831bbbebaee88e4cf5ced8b00abcc355",
     "RestrictionShift.tex": "14afd4636282b8a722d9e43f14eac8b8ced2521e1ab8cd4bcf2178be22ec5dea",
@@ -3199,7 +3222,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_562_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_564_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

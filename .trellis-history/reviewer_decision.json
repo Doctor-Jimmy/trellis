@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "RestrictionShift closed cleanly. Advance to RestrictionLocallyConstant, whose two support definitions are closed and whose direct prefix-agreement proof has several downstream users.",
-    "comments": "Switch the coarse anchor to RestrictionLocallyConstant and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Fix x, obtain a local-constancy length for IncSeqComp z x, take the same length for x, and show coordinatewise that agreement is preserved by z before applying MultiSequenceRestrict. Add no helpers or support-DAG changes.",
+    "reason": "RestrictionLocallyConstant closed cleanly. Advance to DecidingValue, a short choice-and-uniqueness lemma with six direct downstream users.",
+    "comments": "Switch the coarse anchor to DecidingValue and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. For each deciding prefix s, choose an IncSeq extension from FinitePrefixExtension s.1 and define v s as its h-value; use s.2.1 to compare that chosen extension with any given extension. Add no helpers or support-DAG changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "RestrictionLocallyConstant",
-    "next_active_coarse": "RestrictionLocallyConstant",
+    "next_active": "DecidingValue",
+    "next_active_coarse": "DecidingValue",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "RestrictionLocallyConstant": "easy"
+      "DecidingValue": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to RestrictionLocallyConstant and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Fix x, obtain a local-constancy length for IncSeqComp z x, take the same length for x, and show coordinatewise that agreement is preserved by z before applying MultiSequenceRestrict. Add no helpers or support-DAG changes.",
+    "comments": "Switch the coarse anchor to DecidingValue and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. For each deciding prefix s, choose an IncSeq extension from FinitePrefixExtension s.1 and define v s as its h-value; use s.2.1 to compare that chosen extension with any given extension. Add no helpers or support-DAG changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 183,
+    "cycle": 184,
     "decision": "Continue",
     "difficulty_updates": {
-      "RestrictionLocallyConstant": {
+      "DecidingValue": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "RestrictionLocallyConstant",
-    "next_active_coarse": "RestrictionLocallyConstant",
+    "next_active": "DecidingValue",
+    "next_active_coarse": "DecidingValue",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "RestrictionShift closed cleanly. Advance to RestrictionLocallyConstant, whose two support definitions are closed and whose direct prefix-agreement proof has several downstream users.",
-    "request_id": 563,
+    "reason": "RestrictionLocallyConstant closed cleanly. Advance to DecidingValue, a short choice-and-uniqueness lemma with six direct downstream users.",
+    "request_id": 565,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_563_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_565_decision.context.json"
 }

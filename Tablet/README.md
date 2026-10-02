@@ -164,7 +164,7 @@
 | RadoOrder | definition | Rado order | closed |
 | Ray | definition | - | closed |
 | RelationEmbedding | definition | Relation embedding | closed |
-| RestrictionLocallyConstant | proof | Restriction preserves local constancy | open |
+| RestrictionLocallyConstant | proof | Restriction preserves local constancy | closed |
 | RestrictionShift | proof | Restriction and shift | closed |
 | RightComp | definition | - | closed |
 | RmapLemma | proof | - | open |
@@ -186,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 93/176 closed
+**Summary:** 94/176 closed
