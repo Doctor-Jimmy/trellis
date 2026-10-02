@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerRelTrans is closed; advance to the foundational child-support inclusion.",
-    "comments": "Switch the coarse anchor to PowerChildSupport and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Close the direct structural argument from PowerChild and PowerSupport: for a node child of a parent, every atom in the child's recursive support occurs in the parent's indexed union support. Keep the atom and node cases explicit as required by the definitions, do not add a wrapper, and leave no helper obligations open.",
+    "reason": "PowerChildSupport is closed; advance to nonemptiness of every presentation's support.",
+    "comments": "Switch the coarse anchor to PowerSupportNonempty and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Follow the recursive PowerQ cases exactly: the atom branch exhibits its atom in the singleton support, while the node branch chooses an index from the Nonempty witness, applies induction to that child, and inserts the resulting atom into the indexed union. Do not add wrappers or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerChildSupport",
-    "next_active_coarse": "PowerChildSupport",
+    "next_active": "PowerSupportNonempty",
+    "next_active_coarse": "PowerSupportNonempty",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerChildSupport": "easy"
+      "PowerSupportNonempty": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerChildSupport and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Close the direct structural argument from PowerChild and PowerSupport: for a node child of a parent, every atom in the child's recursive support occurs in the parent's indexed union support. Keep the atom and node cases explicit as required by the definitions, do not add a wrapper, and leave no helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerSupportNonempty and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Follow the recursive PowerQ cases exactly: the atom branch exhibits its atom in the singleton support, while the node branch chooses an index from the Nonempty witness, applies induction to that child, and inserts the resulting atom into the indexed union. Do not add wrappers or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 208,
+    "cycle": 209,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerChildSupport": {
+      "PowerSupportNonempty": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerChildSupport",
-    "next_active_coarse": "PowerChildSupport",
+    "next_active": "PowerSupportNonempty",
+    "next_active_coarse": "PowerSupportNonempty",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerRelTrans is closed; advance to the foundational child-support inclusion.",
-    "request_id": 619,
+    "reason": "PowerChildSupport is closed; advance to nonemptiness of every presentation's support.",
+    "request_id": 621,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_619_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_621_decision.context.json"
 }

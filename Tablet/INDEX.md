@@ -112,7 +112,7 @@
 | PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, BaseShift, FiniteShift, FrontPrefix, FrontPrefixExists, PerfectSuperSequence, ProperPrefixSet, ShiftMap, SuperSequenceExtension |
 | PerfectSuperToMulti | lemma | proof | open | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, DecidingValue, FiniteShift, Front, InfiniteSetEnumeration, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, RestrictionShift, SuperSequenceRestrict |
 | PowerChild | definition | definition | closed | - | - | PowerQ |
-| PowerChildSupport | lemma | proof | open | - | Support decreases along a child | PowerChild, PowerSupport |
+| PowerChildSupport | lemma | proof | closed | - | Support decreases along a child | PowerChild, PowerSupport |
 | PowerChildWellFounded | lemma | proof | closed | - | Well-founded hierarchy descent | PowerChild |
 | PowerCopiedFailureMove | lemma | proof | open | - | Failure and legal moves in the copied triangle | BadMultiSequence, PowerCopiedLeft, PowerIResponseFailure, PowerIResponseLegal |
 | PowerCopiedFiniteDependence | lemma | proof | open | - | Finite dependence of a copied move | PowerCopiedLeft |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 127 | **Open:** 58
+**Total:** 185 nodes | **Closed:** 128 | **Open:** 57

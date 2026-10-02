@@ -7,4 +7,11 @@ universe u
 theorem PowerChildSupport {Q : Type u} {x y : PowerQ Q} :
     PowerChild x y → PowerSupport x ⊆ PowerSupport y := by
 -- BODY
-  sorry
+  intro hxy
+  cases y with
+  | atom q =>
+      simp [PowerChild] at hxy
+  | node ι hι f =>
+      rcases hxy with ⟨i, rfl⟩
+      intro q hq
+      exact Set.mem_iUnion.2 ⟨i, hq⟩
