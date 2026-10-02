@@ -38,7 +38,10 @@
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
 | ContinuousRelHom | definition | definition | closed | - | - | LocallyConstant |
 | ConverseGame | lemma | proof | open | - | Converse game | BadSuperSequence, FrontBridgeInit, FrontBridgeStep, FrontBridgeTerminal, HerCtblRel, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode, TildeFSingleton |
-| DecidingFront | lemma | proof | open | - | Minimal deciding prefixes form a front | DecidingFrontSet, Front, InfiniteSetEnumeration |
+| DecidingFront | lemma | proof | closed | - | Minimal deciding prefixes form a front | DecidingFrontAgreement, DecidingFrontMinimal, DecidingFrontSet, Front, InfiniteSetEnumeration |
+| DecidingFrontAgreement | helper | proof | closed | - | Finite-prefix agreement | PrefixAgree, ProperPrefixSet |
+| DecidingFrontInitialTrans | helper | proof | closed | - | Transitivity of finite initial segments | InitialSegment |
+| DecidingFrontMinimal | helper | proof | closed | - | Minimal deciding prefix extraction | DecidingFrontInitialTrans, DecidingFrontSet |
 | DecidingFrontSet | definition | definition | closed | - | - | DecidingPrefix, ProperInitialSegment |
 | DecidingPrefix | definition | definition | closed | - | - | LocallyConstant, ProperInitialSegment, ProperPrefixSet |
 | DecidingValue | lemma | proof | closed | - | Value map on the deciding front | DecidingFront, FinitePrefixExtension |
@@ -180,4 +183,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 176 nodes | **Closed:** 95 | **Open:** 81
+**Total:** 179 nodes | **Closed:** 99 | **Open:** 80

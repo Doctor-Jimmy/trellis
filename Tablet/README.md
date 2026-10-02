@@ -46,7 +46,10 @@
 | ContinuousHom | definition | - | closed |
 | ContinuousRelHom | definition | - | closed |
 | ConverseGame | proof | Converse game | open |
-| DecidingFront | proof | Minimal deciding prefixes form a front | open |
+| DecidingFront | proof | Minimal deciding prefixes form a front | closed |
+| DecidingFrontAgreement | proof | Finite-prefix agreement | closed |
+| DecidingFrontInitialTrans | proof | Transitivity of finite initial segments | closed |
+| DecidingFrontMinimal | proof | Minimal deciding prefix extraction | closed |
 | DecidingFrontSet | definition | - | closed |
 | DecidingPrefix | definition | - | closed |
 | DecidingValue | proof | Value map on the deciding front | closed |
@@ -186,4 +189,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 95/176 closed
+**Summary:** 99/179 closed

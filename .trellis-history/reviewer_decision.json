@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "DecidingValue closed cleanly. Advance to the central DecidingFront theorem: all direct support is closed, and its five downstream users justify handling the substantial proof now with explicit decomposition if needed.",
-    "comments": "Switch the coarse anchor to DecidingFront and use Local mode. Preserve its statement, imports, marker, and accepted NL proof. Close the theorem in this burst, decomposing only into genuine substantive helpers for the finite-prefix agreement, deciding-prefix existence, minimal deciding-front extraction, density, prefix-freeness, or base cases; each new proof-bearing helper must have a complete NL proof, never SKETCH, and no wrapper may merely restate DecidingFront.",
+    "reason": "DecidingFront closed with three accepted closed helpers and no blockers. Advance to the short but structurally important FrontTreeWellFounded theorem, which supports three downstream arguments.",
+    "comments": "Switch the coarse anchor to FrontTreeWellFounded and use Local mode. Preserve the theorem statement, imports, marker, and accepted NL proof. Keep the relation orientation exactly r u v := ProperInitialSegment v.1 u.1, so a relation predecessor is a strict extension; use the front base, density, and prefix-free clauses to rule out an infinite branch. Genuine helpers for branch extraction or finite-prefix bookkeeping are allowed and must have complete NL proofs, never SKETCH; do not add wrappers or reverse the recursion relation.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "DecidingFront",
-    "next_active_coarse": "DecidingFront",
+    "next_active": "FrontTreeWellFounded",
+    "next_active_coarse": "FrontTreeWellFounded",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "DecidingFront": "hard"
+      "FrontTreeWellFounded": "hard"
     },
     "allow_new_obligations": true,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to DecidingFront and use Local mode. Preserve its statement, imports, marker, and accepted NL proof. Close the theorem in this burst, decomposing only into genuine substantive helpers for the finite-prefix agreement, deciding-prefix existence, minimal deciding-front extraction, density, prefix-freeness, or base cases; each new proof-bearing helper must have a complete NL proof, never SKETCH, and no wrapper may merely restate DecidingFront.",
+    "comments": "Switch the coarse anchor to FrontTreeWellFounded and use Local mode. Preserve the theorem statement, imports, marker, and accepted NL proof. Keep the relation orientation exactly r u v := ProperInitialSegment v.1 u.1, so a relation predecessor is a strict extension; use the front base, density, and prefix-free clauses to rule out an infinite branch. Genuine helpers for branch extraction or finite-prefix bookkeeping are allowed and must have complete NL proofs, never SKETCH; do not add wrappers or reverse the recursion relation.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 185,
+    "cycle": 186,
     "decision": "Continue",
     "difficulty_updates": {
-      "DecidingFront": {
+      "FrontTreeWellFounded": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "DecidingFront",
-    "next_active_coarse": "DecidingFront",
+    "next_active": "FrontTreeWellFounded",
+    "next_active_coarse": "FrontTreeWellFounded",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "DecidingValue closed cleanly. Advance to the central DecidingFront theorem: all direct support is closed, and its five downstream users justify handling the substantial proof now with explicit decomposition if needed.",
-    "request_id": 567,
+    "reason": "DecidingFront closed with three accepted closed helpers and no blockers. Advance to the short but structurally important FrontTreeWellFounded theorem, which supports three downstream arguments.",
+    "request_id": 571,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_567_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_571_decision.context.json"
 }
