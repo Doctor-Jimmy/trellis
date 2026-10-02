@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "NashWilliams is closed, but its anchor remains open on two direct support nodes; close the small Boolean pigeonhole lemma first.",
-    "comments": "Keep the NashWilliams coarse anchor and route to BooleanInfinitePigeonhole in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted NL proof. Close this elementary two-color infinite-pigeonhole argument directly by the finite-union contradiction; add no helpers and do not touch NashWilliams or SubFrontCharacterization. After this support node is closed, the next burst should address the substantive SubFrontCharacterization proof.",
+    "reason": "The Boolean support is closed; now close the remaining substantive SubFrontCharacterization dependency of NashWilliams.",
+    "comments": "Keep the NashWilliams coarse anchor and route to SubFrontCharacterization in Local mode. Preserve its theorem signature, imports, BODY marker, and accepted TeX proof, especially the existential-base conclusion. Close it directly with no new helpers: use FrontRestriction and FrontRestrict for the reverse implication, then handle the trivial F={emptyset} case and the nontrivial case by proving empty is absent, identifying the two front bases, obtaining Y subset X, and proving both inclusions F' = FrontRestrict F Y via density, InitialSegment comparability, and prefix-freeness. Do not weaken this to a fixed-base statement or add wrapper nodes; honor the settled pm-0011 constraint.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BooleanInfinitePigeonhole",
+    "next_active": "SubFrontCharacterization",
     "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BooleanInfinitePigeonhole": "easy"
+      "SubFrontCharacterization": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep the NashWilliams coarse anchor and route to BooleanInfinitePigeonhole in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted NL proof. Close this elementary two-color infinite-pigeonhole argument directly by the finite-union contradiction; add no helpers and do not touch NashWilliams or SubFrontCharacterization. After this support node is closed, the next burst should address the substantive SubFrontCharacterization proof.",
+    "comments": "Keep the NashWilliams coarse anchor and route to SubFrontCharacterization in Local mode. Preserve its theorem signature, imports, BODY marker, and accepted TeX proof, especially the existential-base conclusion. Close it directly with no new helpers: use FrontRestriction and FrontRestrict for the reverse implication, then handle the trivial F={emptyset} case and the nontrivial case by proving empty is absent, identifying the two front bases, obtaining Y subset X, and proving both inclusions F' = FrontRestrict F Y via density, InitialSegment comparability, and prefix-freeness. Do not weaken this to a fixed-base statement or add wrapper nodes; honor the settled pm-0011 constraint.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 195,
+    "cycle": 196,
     "decision": "Continue",
     "difficulty_updates": {
-      "BooleanInfinitePigeonhole": {
-        "Set": "Easy"
+      "SubFrontCharacterization": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,7 +47,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BooleanInfinitePigeonhole",
+    "next_active": "SubFrontCharacterization",
     "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "NashWilliams is closed, but its anchor remains open on two direct support nodes; close the small Boolean pigeonhole lemma first.",
-    "request_id": 593,
+    "reason": "The Boolean support is closed; now close the remaining substantive SubFrontCharacterization dependency of NashWilliams.",
+    "request_id": 595,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_593_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_595_decision.context.json"
 }
