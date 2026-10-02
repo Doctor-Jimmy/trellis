@@ -127,7 +127,7 @@
 | PowerCopiedTerminates | lemma | proof | open | - | Every copied row reaches atoms | PowerCopiedFailureMove, PowerCopiedTerminalAt, PowerGameDescentWellFounded |
 | PowerFiniteOrbitConstancy | lemma | proof | open | - | A finite shift orbit is decided by one finite prefix | LocallyConstant, PowerShiftIterPrefixAgree |
 | PowerGameDescent | definition | definition | closed | - | - | PowerChild |
-| PowerGameDescentWellFounded | lemma | proof | open | - | Well-foundedness of copied pair descent | PowerChildWellFounded, PowerGameDescent |
+| PowerGameDescentWellFounded | lemma | proof | closed | - | Well-foundedness of copied pair descent | PowerChildWellFounded, PowerGameDescent |
 | PowerIResponse | definition | definition | closed | - | - | PowerMove |
 | PowerIResponseFailure | lemma | proof | open | - | The canonical response preserves failure | PowerIResponseLegal |
 | PowerIResponseLegal | lemma | proof | open | - | The canonical response is legal | PowerIResponseWitness |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 130 | **Open:** 55
+**Total:** 185 nodes | **Closed:** 131 | **Open:** 54

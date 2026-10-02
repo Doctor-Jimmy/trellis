@@ -135,7 +135,7 @@
 | PowerCopiedTerminates | proof | Every copied row reaches atoms | open |
 | PowerFiniteOrbitConstancy | proof | A finite shift orbit is decided by one finite prefix | open |
 | PowerGameDescent | definition | - | closed |
-| PowerGameDescentWellFounded | proof | Well-foundedness of copied pair descent | open |
+| PowerGameDescentWellFounded | proof | Well-foundedness of copied pair descent | closed |
 | PowerIResponse | definition | - | closed |
 | PowerIResponseFailure | proof | The canonical response preserves failure | open |
 | PowerIResponseLegal | proof | The canonical response is legal | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 130/185 closed
+**Summary:** 131/185 closed

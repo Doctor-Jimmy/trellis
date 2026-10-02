@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerSupportInvariant is closed; advance to well-foundedness of the copied pair descent.",
-    "comments": "Switch the coarse anchor to PowerGameDescentWellFounded and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Implement the stated nested induction: outer well-founded induction on the first PowerQ coordinate, with a motive quantified over every second coordinate, and inner induction on the second coordinate. Unpack PowerGameDescent into exactly its first-coordinate child predecessor or equal-first-coordinate second-child predecessor cases, using PowerChildWellFounded with the child-to-parent orientation. Do not add wrappers or leave helper obligations open.",
+    "reason": "PowerGameDescentWellFounded is closed; advance to the copied failure and legal-move induction.",
+    "comments": "Switch the coarse anchor to PowerCopiedFailureMove and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Formalize the simultaneous induction on depth for all rows: at depth zero use BadMultiSequence on the shifted enumerations, the PowerShiftIter successor identity, and the legal/failure PowerIResponse clauses; in the successor step use the right-row legal move, the two PowerCopiedLeft successor equations, and PowerIResponseFailure followed by PowerIResponseLegal. Keep the failure and move assertions paired and preserve all existential/universal quantifier order. Do not introduce a wrapper or edit unrelated nodes; meaningful local decomposition is allowed, but the active theorem must close.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerGameDescentWellFounded",
-    "next_active_coarse": "PowerGameDescentWellFounded",
+    "next_active": "PowerCopiedFailureMove",
+    "next_active_coarse": "PowerCopiedFailureMove",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerGameDescentWellFounded": "hard"
+      "PowerCopiedFailureMove": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerGameDescentWellFounded and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Implement the stated nested induction: outer well-founded induction on the first PowerQ coordinate, with a motive quantified over every second coordinate, and inner induction on the second coordinate. Unpack PowerGameDescent into exactly its first-coordinate child predecessor or equal-first-coordinate second-child predecessor cases, using PowerChildWellFounded with the child-to-parent orientation. Do not add wrappers or leave helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerCopiedFailureMove and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Formalize the simultaneous induction on depth for all rows: at depth zero use BadMultiSequence on the shifted enumerations, the PowerShiftIter successor identity, and the legal/failure PowerIResponse clauses; in the successor step use the right-row legal move, the two PowerCopiedLeft successor equations, and PowerIResponseFailure followed by PowerIResponseLegal. Keep the failure and move assertions paired and preserve all existential/universal quantifier order. Do not introduce a wrapper or edit unrelated nodes; meaningful local decomposition is allowed, but the active theorem must close.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 211,
+    "cycle": 212,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerGameDescentWellFounded": {
+      "PowerCopiedFailureMove": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerGameDescentWellFounded",
-    "next_active_coarse": "PowerGameDescentWellFounded",
+    "next_active": "PowerCopiedFailureMove",
+    "next_active_coarse": "PowerCopiedFailureMove",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerSupportInvariant is closed; advance to well-foundedness of the copied pair descent.",
-    "request_id": 625,
+    "reason": "PowerGameDescentWellFounded is closed; advance to the copied failure and legal-move induction.",
+    "request_id": 627,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_625_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_627_decision.context.json"
 }
