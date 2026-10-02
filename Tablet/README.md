@@ -193,6 +193,6 @@
 | TildeFHerCtbl | proof | Hereditary countability of the front recursion | open |
 | TildeFNonfrontEquation | proof | Non-front recursion equation | open |
 | TildeFSingleton | definition | - | closed |
-| TripleHomogeneous | proof | Homogeneous triples | open |
+| TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 117/185 closed
+**Summary:** 118/185 closed

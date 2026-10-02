@@ -187,6 +187,6 @@
 | TildeFHerCtbl | lemma | proof | open | - | Hereditary countability of the front recursion | FrontTreeImmediateExtensions, HerCtblNodeClosure, HereditarilyCountableAtom, TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
 | TildeFNonfrontEquation | lemma | proof | open | - | Non-front recursion equation | FrontTreeImmediateExtensions, TildeF |
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
-| TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
+| TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 117 | **Open:** 68
+**Total:** 185 nodes | **Closed:** 118 | **Open:** 67
