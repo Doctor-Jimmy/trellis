@@ -40,7 +40,7 @@
 | BqoIffGeneralShift | proof | - | open |
 | BqoImpliesWqo | proof | Better quasi-order implies well quasi-order | open |
 | CardinalityFront | definition | Constant-cardinality front | closed |
-| CardinalityFrontIsFront | proof | - | open |
+| CardinalityFrontIsFront | proof | - | closed |
 | ContMor | definition | - | closed |
 | ContMorEq | definition | - | closed |
 | ContinuousHom | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 116/185 closed
+**Summary:** 117/185 closed

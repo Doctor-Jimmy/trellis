@@ -32,7 +32,7 @@
 | BqoIffGeneralShift | corollary | proof | open | - | - | BadMultiSequence, Bqo, GBetterRel, GBetterRelIff, IncSeqId, RightComp, ShiftMap, SuccSeq |
 | BqoImpliesWqo | lemma | proof | open | - | Better quasi-order implies well quasi-order | Bqo |
 | CardinalityFront | definition | definition | closed | - | Constant-cardinality front | Preamble |
-| CardinalityFrontIsFront | lemma | proof | open | - | - | CardinalityFront, Front, InfiniteSetEnumeration |
+| CardinalityFrontIsFront | lemma | proof | closed | - | - | CardinalityFront, Front, InfiniteSetEnumeration |
 | ContMor | definition | definition | closed | - | - | ContinuousHom |
 | ContMorEq | definition | definition | closed | - | - | ContMor |
 | ContinuousHom | definition | definition | closed | - | - | BaireContinuous |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 116 | **Open:** 69
+**Total:** 185 nodes | **Closed:** 117 | **Open:** 68

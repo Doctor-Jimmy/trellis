@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Advance the clean coarse anchor to CardinalityFrontIsFront, the shared support for the homogeneous finite-front results.",
-    "comments": "Switch the coarse anchor to CardinalityFrontIsFront and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. The 126-line proof may need genuine substantive helpers, so complete the full decomposition in this burst if useful, with complete paired NL proofs and no wrappers or SKETCH proofs. Follow the existing structure: separate k=0 from k>0, establish the base alternative, prove prefix-freeness from strict initial-segment cardinality decrease, and prove density via InfiniteSetEnumeration and ProperPrefixSet. Do not edit the downstream TripleHomogeneous or QuadrupleHomogeneous nodes.",
+    "reason": "Advance to TripleHomogeneous, the next paper-ordered finite-front consequence of the now-closed NashWilliams support.",
+    "comments": "Switch the coarse anchor to TripleHomogeneous and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. This 105-line proof may use genuine substantive helpers with complete paired NL proofs, but no wrappers or SKETCH proofs. Follow the vetted route from CardinalityFrontIsFront and NashWilliams: define the color fiber and prove it is a subset of the front, exclude the trivial sub-front, derive its base containment, and use an explicit tail branch to show every three-element subset of the resulting base lies in the homogeneous sub-front. This is the finite consequence of NashWilliams recorded in pm-0003; do not build a separate Ramsey development or edit QuadrupleHomogeneous.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "CardinalityFrontIsFront",
-    "next_active_coarse": "CardinalityFrontIsFront",
+    "next_active": "TripleHomogeneous",
+    "next_active_coarse": "TripleHomogeneous",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "CardinalityFrontIsFront": "hard"
+      "TripleHomogeneous": "hard"
     },
     "allow_new_obligations": true,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to CardinalityFrontIsFront and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. The 126-line proof may need genuine substantive helpers, so complete the full decomposition in this burst if useful, with complete paired NL proofs and no wrappers or SKETCH proofs. Follow the existing structure: separate k=0 from k>0, establish the base alternative, prove prefix-freeness from strict initial-segment cardinality decrease, and prove density via InfiniteSetEnumeration and ProperPrefixSet. Do not edit the downstream TripleHomogeneous or QuadrupleHomogeneous nodes.",
+    "comments": "Switch the coarse anchor to TripleHomogeneous and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. This 105-line proof may use genuine substantive helpers with complete paired NL proofs, but no wrappers or SKETCH proofs. Follow the vetted route from CardinalityFrontIsFront and NashWilliams: define the color fiber and prove it is a subset of the front, exclude the trivial sub-front, derive its base containment, and use an explicit tail branch to show every three-element subset of the resulting base lies in the homogeneous sub-front. This is the finite consequence of NashWilliams recorded in pm-0003; do not build a separate Ramsey development or edit QuadrupleHomogeneous.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 197,
+    "cycle": 198,
     "decision": "Continue",
     "difficulty_updates": {
-      "CardinalityFrontIsFront": {
+      "TripleHomogeneous": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "CardinalityFrontIsFront",
-    "next_active_coarse": "CardinalityFrontIsFront",
+    "next_active": "TripleHomogeneous",
+    "next_active_coarse": "TripleHomogeneous",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Advance the clean coarse anchor to CardinalityFrontIsFront, the shared support for the homogeneous finite-front results.",
-    "request_id": 597,
+    "reason": "Advance to TripleHomogeneous, the next paper-ordered finite-front consequence of the now-closed NashWilliams support.",
+    "request_id": 599,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_597_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_599_decision.context.json"
 }
