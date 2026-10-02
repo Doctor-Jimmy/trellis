@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The clean FrontRayClosure cone is complete, so advance the coarse anchor to the central NashWilliams proof.",
-    "comments": "Switch the coarse anchor to NashWilliams and use Local mode. Preserve the protected theorem statement, imports, BODY marker, and accepted TeX proof. This is a substantial 176-line argument: close the active theorem in this burst while allowing only genuine, substantive helpers with complete paired NL proofs, never wrappers or SKETCH proofs. Follow the vetted structure: well-founded prefix-tree induction, the ray subtree identification, restriction of each ray to the prescribed nested tail before applying induction (the settled pm-0012 constraint), SubFrontCharacterization to recover the arbitrary homogeneous base, and the final Boolean thinning and FrontRestrict conclusion. Do not build a separate Ramsey development; later finite homogeneous results derive from NashWilliams as recorded in pm-0003.",
+    "reason": "NashWilliams is closed, but its anchor remains open on two direct support nodes; close the small Boolean pigeonhole lemma first.",
+    "comments": "Keep the NashWilliams coarse anchor and route to BooleanInfinitePigeonhole in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted NL proof. Close this elementary two-color infinite-pigeonhole argument directly by the finite-union contradiction; add no helpers and do not touch NashWilliams or SubFrontCharacterization. After this support node is closed, the next burst should address the substantive SubFrontCharacterization proof.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "NashWilliams",
-    "next_active_coarse": "NashWilliams",
+    "next_active": "BooleanInfinitePigeonhole",
+    "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "NashWilliams": "hard"
+      "BooleanInfinitePigeonhole": "easy"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to NashWilliams and use Local mode. Preserve the protected theorem statement, imports, BODY marker, and accepted TeX proof. This is a substantial 176-line argument: close the active theorem in this burst while allowing only genuine, substantive helpers with complete paired NL proofs, never wrappers or SKETCH proofs. Follow the vetted structure: well-founded prefix-tree induction, the ray subtree identification, restriction of each ray to the prescribed nested tail before applying induction (the settled pm-0012 constraint), SubFrontCharacterization to recover the arbitrary homogeneous base, and the final Boolean thinning and FrontRestrict conclusion. Do not build a separate Ramsey development; later finite homogeneous results derive from NashWilliams as recorded in pm-0003.",
+    "comments": "Keep the NashWilliams coarse anchor and route to BooleanInfinitePigeonhole in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted NL proof. Close this elementary two-color infinite-pigeonhole argument directly by the finite-union contradiction; add no helpers and do not touch NashWilliams or SubFrontCharacterization. After this support node is closed, the next burst should address the substantive SubFrontCharacterization proof.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 194,
+    "cycle": 195,
     "decision": "Continue",
     "difficulty_updates": {
-      "NashWilliams": {
-        "Set": "Hard"
+      "BooleanInfinitePigeonhole": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "NashWilliams",
-    "next_active_coarse": "NashWilliams",
+    "next_active": "BooleanInfinitePigeonhole",
+    "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The clean FrontRayClosure cone is complete, so advance the coarse anchor to the central NashWilliams proof.",
-    "request_id": 591,
+    "reason": "NashWilliams is closed, but its anchor remains open on two direct support nodes; close the small Boolean pigeonhole lemma first.",
+    "request_id": 593,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_591_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_593_decision.context.json"
 }

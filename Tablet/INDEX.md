@@ -96,7 +96,7 @@
 | MainProp | theorem | proof | open | - | MainProp | ContMorEq, EmapLemma, RmapLemma |
 | MultiSequence | definition | definition | closed | - | - | IncSeq |
 | MultiSequenceRestrict | definition | definition | closed | - | - | IncSeqComp, MultiSequence |
-| NashWilliams | theorem | proof | open | - | Nash--Williams | BooleanInfinitePigeonhole, Front, FrontRayClosure, FrontRestrict, FrontRestriction, FrontTreeWellFounded, SubFrontCharacterization |
+| NashWilliams | theorem | proof | closed | - | Nash--Williams | BooleanInfinitePigeonhole, Front, FrontRayClosure, FrontRestrict, FrontRestriction, FrontTreeWellFounded, InitialSegmentInsert, SubFrontCharacterization |
 | NoBadPerfectSuper | lemma | proof | open | - | A super-sequence is not both perfect and bad | BadSuperSequence, BaseShift, FrontPrefixExists, InfiniteSetEnumeration, PerfectSuperSequence |
 | OrbitBlock | definition | definition | closed | - | - | OrbitPoint |
 | OrbitBlockCoverage | lemma | proof | open | - | - | OrbitBlock, OrbitEmbedding, OrbitUnbounded |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 113 | **Open:** 72
+**Total:** 185 nodes | **Closed:** 114 | **Open:** 71
