@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 832,
+  "event_count": 835,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -723,7 +723,6 @@
     "351cf7b30cf9f8ac": "{\"own_tex\":\"6f44e8bd881c781f85cc932fc69c3df2806724ee5e816ac7039916052fe639a5\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "3524e62e3b2107ba": "3615ce054cbd8cd6ee7459a5fa868c22a9533fe20efe1bbf7703814fe2c45516",
     "3552d7dd12cf2eea": "bff27dd53eda4974077b3ba4a47b19a8f9027e14898350b3e3ef61d41b87b223",
-    "3563aa20c759ad39": "aae2428c8664d2b5aaefbbcd44e4d63aa2627d3ab1462e5d9f4a33084b427ee4",
     "3564c25237cc4524": "873a6d259753233a354b6df3c12d5d15a8412f309c59210ba57837dac34ed147",
     "35af82966eb39c10": "a5e1615ae6e1c71580a489dfee6a365084f3b2b7f4d959413c91cb6893f57545",
     "35e2e6bc37b81c0a": "001bb557eb62a719af966fc1358048054fc23579fde5ba3bd330ec832fd95a8a",
@@ -1003,6 +1002,7 @@
     "4ce2c302fb57b35a": "6ada531b61a870054dadf6e569fc1819985ab0e5c2efb71726ad36cb1c42d8e5",
     "4ce9454f93c13075": "2e380060bc6bb12076eb3cac92e13ddc4e3ef25f619980e4b9e3c28552078e03",
     "4d099065df025d89": "a10e80bfdede98931f7a96683ae16e8910f8859a5fafb21c117073819ea7e2de",
+    "4d1514fdd48e5907": "worker-result-local-closure-issuance-cycle-211",
     "4d2ab31aa1178ea0": "5abd6c398195fdbaccbf77c06f59c767867760da8bc25236dab25339fdc7ecd8",
     "4d415a5dd4f78230": "{\"own_tex\":\"8be0ea8522f379262c937df662a931b0c01e00f5a20ceacd474bf4bb2632a8a9\",\"lean_semantic_closure\":\"4668ff101dfa6176f658d8a6e1e65def2347b7ae617677b6a4f70d6b964c287f\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"MultiSequenceRestrict\",\"PrefixAgree\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "4d462d963d06b8b8": "{\"own_tex\":\"0eaa9099c4f247ba2e300feb8c346fca6ae0f9b18514ae64feb70416b362d34e\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
@@ -1380,7 +1380,6 @@
     "69c40ce9c1812916": "sound-v2:1980be5f28ae43f94dad7123b30951a8ec15fc471ab769aa891150f0c6033443",
     "69c8e37b92c8b2c4": "{\"own_tex\":\"78cda29b52a5ac3772938577cf7407c1cca323df6649f05e75f9c2bbdf0b72c0\",\"lean_semantic_closure\":\"03a789bbbf0cc6b45806aa75e0e0d3a47d702b3e534539587d0085e6aad8f415\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BadSuperSequence\":\"e67d8ab38bd700d9d33e4fb21a4a8a980004ba9a69b1b3a1c11e643f34a19017\",\"DecidingFrontSet\":\"0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f\",\"DecidingPrefix\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"FiniteShift\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\",\"SuperSequence\":\"d3ab95edc5f61f213f2774d0267dc101c0ba08045deb28b8fdeb0db49044305a\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BadSuperSequence\",\"DecidingFrontSet\",\"DecidingPrefix\",\"FiniteShift\",\"Front\",\"FrontBase\",\"IncSeq\",\"IncSeqComp\",\"InitialSegment\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"RightComp\",\"ShiftMap\",\"SuccSeq\",\"SuperSequence\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "6a03307cd64e3426": "724d4ae1966a74405bc8342871a6026a6fb18f0cd442b906b3b596b9c55f07bd",
-    "6a221f77f0624e24": "b8538f47c8800e4cdc590fa35b68fe0c824d1802b033839c73e56ee62b2da72a",
     "6a22762a2047e390": "3bf5c96ec55268419765567879794f1ca406cf82f881a1852a73cf0f4be6f91f",
     "6a2ff763e69dc748": "08166145186071227f04534d050b7d553b874df14221786ce253b5347aa6508c",
     "6a5ee5ea6c6a1bf9": "1280e494bf0444141e5a47e403f56de6318200364cc9f50c11ab624cee3668fb",
@@ -1447,6 +1446,7 @@
     "6eba2d075c69c0c6": "c3aa718e88aee885353375988e70989823fefdd9acfbd6dd30192f6b0c68d915",
     "6ecf1142c38e6897": "e1b8ed073dc226e675b313bec44243467c308210a3c21e2df0468cfba82fc2a2",
     "6ee0b28ec9e834d2": "63855166e45c0c1b47c560ad3cb88e751401b5cfd2e4048c0d9183479786acf0",
+    "6f020c2caeabdfc9": "7d54311ee96df9a49a0d7b3539e094a8577e7c5c64f558502d723e79d0f78170",
     "6f2690ff1b400d46": "{\"own_tex\":\"09268b85edfedb4a0c0b745778f21888c3d91821fcc12640cc71d85b7d13d5db\",\"lean_semantic_closure\":\"525d4b1001a89f93d4e445b23f9631b41e57b76aa89d3bc2b081183c4e93e6cb\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"BaseIncSeq\":\"6c60e0dad52a54330a1324e014c97c8bff0c34618649f32c7de87b7b8efa6222\",\"BaseLocallyConstant\":\"4ea3922f96b6fe8c3758270c31ece74a667fbd1548d54e163ec9e54a17b3c4c0\",\"BaseMultiSequence\":\"e04b8d7d601f4074051e35072e33f8b0a13edbcb06c28bab0bc629e38c3a0f2a\",\"BaseRestrict\":\"c61ca27bf38d1f7390e9c2d8bfa258be6d76261b2e2bce4215849898052dcd26\",\"Bqo\":\"d569ccf248858db17940536dd2dc9d02f435fff4ac09b3859b9a624f281ba33b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PerfectMultiSequence\":\"eda8449879f6345d53aeff6c08eee97ceda122b2aa4a567da72c9c72c7370edf\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"BaseIncSeq\",\"BaseLocallyConstant\",\"BaseMultiSequence\",\"BaseRestrict\",\"Bqo\",\"IncSeq\",\"IncSeqComp\",\"LocallyConstant\",\"MultiSequence\",\"PerfectMultiSequence\",\"PrefixAgree\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "6f41ff8513c81139": "sound-v2:2c25bb67a60eb00a8aa8daf3a589d854e3454a052b8dadc479c15780f8a64df4",
     "6f44b9c4405125ee": "9f0bb676f6062d0e0143860e3add8ceead8fe5392dbe55179484496190b699d7",
@@ -1486,7 +1486,6 @@
     "71cc494d36da4eb2": "118ce0d1536d4dc2097e7d9673139f74fac388e65ff063c1b8c82a681646eadd",
     "71fec1322cb79c6d": "sound-v2:c61b1d9bbbd79fd2db9106b78f166d9f0fbe8bccf9aa72aa09fb3dc54e622aca",
     "720439a767938525": "afa00cc0ee1e5031d4fc1c8597f8717a2e6c1aa1ffddbf1de6092733d687d1b4",
-    "7238f37376f6d845": "a0e6b3f0b4530658fe587762b36367ef7590ced1c30a17c3f9b47bd7f28c0a06",
     "7244ba4d6d1227ee": "1703f4778cba180266bb1c6d145a815a81eef48b2c4f70401e209e820e030080",
     "724702526fa8cd25": "12d800508633244ba96b595819d487fd9da79c09d43c0d6f8c942bafa760e97f",
     "724a869c709df6f0": "sound-v2:65888920b44f52901370d8f597cb08cf6f9a7d8c170e3c418544ee8d3ceb35a7",
@@ -1528,7 +1527,6 @@
     "74bb50051291260c": "6c5f39eda8f70beddba2e228723d72a54cc13c1abeb7700f5d166e20f809966b",
     "74c7352a8bea27f7": "392da37abdc6a221a0ebc0b4e34546e28946c8fd621403fd5e684ec3c9a2c107",
     "74d641741080f63f": "8e1e73a1516fa1e6d2c0310d2b0d479958d0dd69316d1e2e1b1f0f652032909c",
-    "750beb6ed4265883": "e5b2ed1dae0fea7d8f39e42675d02e5d91d971cac13dc2ad59d5aeea68b61ce5",
     "75173a761a5e37f7": "59a55fe587606db181a973ca7b2440b0e7e31d0fa076105bb9913da01a498940",
     "752fcdcf44444160": "1351dcf3f6ab3c21325e1292f7b298738859bbe785145c7f9977c1164828c958",
     "754856b759ea7015": "05775db8a2b0f18739fe8c2c9dcc12b7a81f7d1db93c7655b44095a044480a65",
@@ -1626,6 +1624,7 @@
     "7d3ee3092f22637a": "cd6ffeb4d0c3fc7ac8fda5ace9f3714f5e859226b621ba0185f3b25d8d7b6a07",
     "7d4e19ad589f1075": "8d521c241dc395a8f93b8740da0f8aab2e7b956dba6038114f1fb71307a4f163",
     "7d523db1be106641": "{\"own_tex\":\"8686a3201066686815df5ad020ca4d9acce5a49c0cd6315dbd462c59ce7be7bf\",\"lean_semantic_closure\":\"f24b8e51257bb5196bdc0f170923377a13ee9992adcd433e2309c50861b4f1be\",\"lean_relevant_definition_descendants\":{\"BaseIncSeq\":\"6c60e0dad52a54330a1324e014c97c8bff0c34618649f32c7de87b7b8efa6222\",\"BaseMultiSequence\":\"e04b8d7d601f4074051e35072e33f8b0a13edbcb06c28bab0bc629e38c3a0f2a\",\"BaseShift\":\"61a06e758fbe65467cdea714f8ab0ea3685321490f3779df23547d66c09bf0fc\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaseIncSeq\",\"BaseMultiSequence\",\"BaseShift\",\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+    "7d71566944f99b56": "a69fb3ff5a1454c577c60a84e44ed9895ac32b7e2a4a86e257e9e25498486b18",
     "7d79d1032f7f4f63": "f738e5f1de5ba8e5806f92ea0d8491069c8189a37bc013f290b67623977b9a53",
     "7d89ba71d16c2121": "e140a8759d703a01736caa2567a29ce58de4d85462ce8fa11cc7aac934c08fe3",
     "7dad93274fe6ba46": "{\"own_tex\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"lean_semantic_closure\":\"1a9dba16f85af3d4f3f0632d40eb1102856bcdea6905af8c1fa5778eb01480fa\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -1665,7 +1664,6 @@
     "802a6978ccd6431f": "568e81691204c0b40223867e738c3ca9bba4744df2601649c534c772f0691779",
     "802cbd5b98dedf03": "sound-v2:b8d5f93ebc04a2676883ba2d970551217baab7b05101596bc6e678622528aec1",
     "804a83606c781484": "{\"own_tex\":\"6f44e8bd881c781f85cc932fc69c3df2806724ee5e816ac7039916052fe639a5\",\"lean_semantic_closure\":\"11aba8dc4efbe38b3e24bf5b8c6fcf7de5f9fe91fb89238b65c7e71d67b0dcad\",\"lean_relevant_definition_descendants\":{\"DecidingFrontSet\":\"0523f41d757194c71e896d5f913cb1bfccc808773b591786e2004227d6d9276f\",\"DecidingPrefix\":\"f51a98c852065c7414a5209bc3050a1609c710a8f1116bfe280f69c16bcc221f\",\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"LocallyConstant\":\"8ea95118cd8c1b1f08307f9f16074fda22aac9487375e6b4618ecc371c264841\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"PrefixAgree\":\"97b26137acdc996a2c24204f071afee47fc999f506596acdaf200879b1b86ef8\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"DecidingFrontSet\",\"DecidingPrefix\",\"Front\",\"FrontBase\",\"IncSeq\",\"InitialSegment\",\"LocallyConstant\",\"MultiSequence\",\"PrefixAgree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-    "80525c4f0a7dc152": "86eae6b8c3f9fb46e0964dff7a399cfc84e43425d95e3f614053958770cd62e7",
     "8079d4ed3b88ac1e": "c98b342f77edd4e32e1066cc722ae52777928c09cbe55f0ee0b4da8b26466a1f",
     "8086cd3715506cc0": "934fb746462fa0b0617fcd68efcb752af71d2ee367f70dadcf125eefd5ac780c",
     "809333e6cf593bdf": "fd77c09c725a68b13b3636443156fb9dc43ba3cb82583e1e894861192b0a94af",
@@ -1871,6 +1869,7 @@
     "915317d6a0065766": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"lean_semantic_closure\":\"8c4986e1a9c4975f580f327324910d6d5bdd09f960c0374965ebc3ce1344bfa9\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "918a03056b7315c5": "6bf17efd690006706d24f445cf4d2fc32e5b2776c5c3314b1c85a5fab59eb2c6",
     "91a6eea3f8a8f9dd": "f3beb912c8141344c4c39613a985516a59a959683d87327a39de2a8523c5d6f4",
+    "91abbea1dbceec98": "1a893e901bcb62d4de46e55ca5f6cd96f8415af17fa50004a7b92396f981cca0",
     "91be5c1643d19df1": "9aa382bfb818ff66c819df80fe46b908839b045151187663d3542d5546903ae3",
     "91c5146e178d0e96": "527f6ce89a57cf7a7ba8d12dbb835e694815a83d6fa0a6e72cec3970f166edfb",
     "91ca2c855ddee930": "ca4eba70072b2550d470321aa5e811a2f3ab3434f9162241055e8efa17aeaa5c",
@@ -2059,6 +2058,7 @@
     "a177da352aa5914f": "f220e726e31bdb681e340e821528649be32ae3b3794da02b5874e55aa3aae2d0",
     "a1865dad47cee18c": "c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0",
     "a19a4bcabef2ae7a": "1fd5cf24cae21a6116bcbbc8eba80f699df9d12627488b877b22471938b7b084",
+    "a1a1565900e2c053": "7e458992bdc8d9d26c938966a4f712ea98f70624ddd65218755373d69f6d7e82",
     "a1b0b7f860e029bb": "ddc95a899a53b6e7d6e8db4a4f61c7d17c96645d61ec7fe7338be135625165d5",
     "a1cb929583e266fd": "0b65c219d834134584ea9004a0da7e36bf488197a51b0f9c3a7bc5307759c526",
     "a1d18096716f4ea8": "FrontBridgeTerminal._proof_1_2",
@@ -2109,6 +2109,7 @@
     "a5806f75e56efb25": "21c4f2d925e7c54a30afe47fd5b092621f03172af7718bd0c74d3cda02560957",
     "a5b92df9b06a9d87": "b12309c493ec89a2724f32000606f2b88002ea0c64b585fb572cfb59fcb8e18f",
     "a5baa2438b7f22a8": "644cfb59b8b5c6a9b2085d18f352fd703c142701cfa7b619379e1fff40f64ba3",
+    "a5d8e5cb315b7002": "0a699c04006f08ea95b61aeca19af3ff78779a07bbc8327db8cfcdaf8cae2258",
     "a5e119f644a117d8": "27ac2f6e80dee7b03bf73c5c94f6812976b237159f250be8095871f2b8c7f01a",
     "a6151c964f5d8966": "6a0281b9f451fe77c44fd25e7b1c35f4c67530ec50bcf07ccc617df0287ace7a",
     "a635a85f5892d2c2": "dd55a8ea9447005ae85ef042d2a17ded6d5972eb8c1dc3d3fb3f9b71c97a2928",
@@ -2120,6 +2121,7 @@
     "a67a17f4842d453a": "6c8007e2d58af7c3a88c716302e29703602260ead591546f32b0084ab670a67b",
     "a6d3435c825b65f0": "2290bee906d91321952a51c1a47f109cafc1f7e83619df3d9bdebfaf1c9fe9cd",
     "a6d950f8a7287d21": "2319c19b6125e4b4888cc753e4948d3900ef482f2857232dba3cdb6cde91fae7",
+    "a6e1315c227ba196": "7c199501e09d8d7b86976184f539ece963e1e9d80137d016cfbc9989fb066fca",
     "a6e4113517c07592": "0edacd0f90874dfb91ebb1ff54b8b96625e4f268bc804b9f182a5931592d6e1b",
     "a6fcb631f6acce24": "1409cd0c101154fb7bffd55c494d9c07d840f0ec38ee9b96ee7163f97502a092",
     "a6fef6ddde1e223e": "d119afd79b95f72634983712f30e8b27deebd690d23b174942fcbc143dc4e5b7",
@@ -2218,7 +2220,6 @@
     "ad98b8e36d08b6ab": "99d48556b4c3a551ed93b75a63f21aeef0b27422b67d192d1a35766eced0ba77",
     "ada1e44a022ca64d": "b9820d6fd485d05497a3995181a327c29cad4b736d18e0f113987ed6a1b4e78c",
     "ada7de7e814a4dda": "0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d",
-    "adb6ebe0dc725ff0": "3b4e2532e2f1c7f259c9f477aead2e9e74b772cad75a511d6ec7c02c7a090932",
     "adbf7d8260ba506d": "ca0831012804623259cfc6e4d94ce9390e5f1c5accd5e0df787406c442e89175",
     "adc8e424e9c7575b": "5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018",
     "addd764b981af4bc": "db95c538df1896a3db33ecdcaa10637c07141a7d5a6234916aa204e18b9d3ac4",
@@ -2748,7 +2749,6 @@
     "d34dee444688f11e": "0c413205f549d134f25854c9622d73cac67dcbb4f5796a7a53711edbb82eb518",
     "d36e27d90eb57a0e": "FrontTreeWellFounded._simp_1_2",
     "d3795529801ba7ea": "7cea6d0a5c57b1df6613353bcfaa6d008e5a191358b7cd31f3aee4341d661dca",
-    "d37b49535d493424": "29309abcfa6b6b39b85f0d56030da01421ee639488f44cb14130c2d354308982",
     "d37faa8a51ac854f": "6ab9be744b5fd17153def99e15c0c8de909d1c79cfbf4f582e827a3811d59c6c",
     "d39e4c973cce8c47": "ff78932ad9522834dbf4bd24e3e9fe9d01bc47e4ffe50e1dae28e8a1b961844b",
     "d3bf9719b7e8e970": "e3cd2b7f3be9c6bf08f0ed1388127bfab4ba20b055446353bf8e3b621b135f94",
@@ -3215,6 +3215,7 @@
     "fa3809661026d840": "4cfc28bb86101d51070c3b932fc628aa3255fbc67d685205341a3b78f10af372",
     "fa637496b06788e6": "ContinuousRelHom.mk._flat_ctor",
     "fa691fede912144d": "3801133699725276bc5f914587f25114e9ca7a8891dd6037e4ee91045c5ff6ce",
+    "fa798b6c4a3fc213": "535d49a27e0dd4e5486b1116742c193870ebe02d2a4805f5f3e2c5121849e215",
     "fa895bb1889489ef": "b3f2416cc80baa31d81ca8f6d440d29287ea61674ecd4c5e5ff905b159dc3487",
     "fa93b5919c6ee84f": "e2abd22d0d07fe653dc1fabcd019e17c41a2f554637530755b9db6d33ad6bc09",
     "fab17ae6492d8bb7": "sound-v2:f7a054d96d855691cf39ecd4b6da0938f58005eae8e6d7ec98167e1ccba90e85",
@@ -10440,6 +10441,83 @@
         "$r": "fb6fb19b3ecadc3c"
       }
     ],
+    "1b01323e53c37173": [
+      "BadMultiRestrict",
+      {
+        "$s": "41cfa12f84c70377"
+      },
+      "BadMultiToSuper",
+      "BadSuperRestrict",
+      "BadSuperToBase",
+      "BaseBqoRestriction",
+      "BlockSigmaContinuous",
+      "BlockSigmaEmbedding",
+      "BlockSigmaIntertwines",
+      "BqoIffGeneralShift",
+      "ConverseGame",
+      "EmapLemma",
+      "FinitePrefixExtension",
+      "GBetterRelIff",
+      "HerCtblNodeClosure",
+      "MainProp",
+      "NoBadPerfectSuper",
+      "OrbitBlockCoverage",
+      "OrbitEmbedding",
+      "OrbitUnbounded",
+      "PerfectBaseToSuper",
+      "PerfectMultiRestrict",
+      "PerfectMultiToSuper",
+      "PerfectSuperRestrict",
+      "PerfectSuperToBase",
+      "PerfectSuperToMulti",
+      "PowerCopiedFailureMove",
+      {
+        "$s": "5fd62f6199ae512b"
+      },
+      {
+        "$s": "86b2632417374ebd"
+      },
+      {
+        "$s": "9a013b8cdeb9d5ff"
+      },
+      {
+        "$s": "55d1a8fd6d560eea"
+      },
+      "PowerCopiedSupport",
+      {
+        "$s": "2e7a9f9ae663f9f8"
+      },
+      {
+        "$s": "c92d93fd7a69a2a5"
+      },
+      "PowerCopiedTerminates",
+      {
+        "$s": "77d96f473077081d"
+      },
+      {
+        "$s": "50a07aa664204053"
+      },
+      "PowerIResponseFailure",
+      "PowerIResponseLegal",
+      "PowerIResponseWitness",
+      "PowerMoveInSupport",
+      "PowerQPresBqo",
+      "PowerQReflection",
+      {
+        "$s": "6947ec3a7b56b112"
+      },
+      "PowerShiftIterShift",
+      "PowerWqoBadPairSequence",
+      "RadoEmbedding",
+      "RmapLemma",
+      "ShiftDichotomy",
+      "Subarr",
+      "SuperSequenceExtension",
+      "TildeFAtomIffFront",
+      "TildeFFrontEquation",
+      "TildeFHerCtbl",
+      "TildeFNonfrontEquation"
+    ],
     "1b230f25b66dc93a": {
       "declaration_kind": "theorem",
       "owner": {
@@ -12607,6 +12685,11 @@
       "reached_declaration": "PowerQ.rec",
       "visibility": "exported"
     },
+    "20922afee3fd7baa": {
+      "PowerPresentationEq": "196e8cf2fb293aec",
+      "PowerQ": "ef8d4ad5b7e7b7b4",
+      "PowerSupport": "b8912fafb68b599d"
+    },
     "20d432fa909ca495": {
       "artifact_bundle": {
         "$r": "d72f5f0f84cec13c"
@@ -14679,17 +14762,6 @@
         "$r": "1bf1d9ef66a52048"
       }
     ],
-    "26c8eed53f075cd7": [
-      {
-        "$r": "b148f1d027efcec2"
-      },
-      {
-        "$r": "b2744dc20d24ec14"
-      },
-      {
-        "$r": "e2c15c19c08db96b"
-      }
-    ],
     "26cf06f69ed28844": [
       {
         "$r": "0e3553026ca3cf31"
@@ -14811,84 +14883,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "27c9c547078b95cd": [
-      "BadMultiRestrict",
-      {
-        "$s": "41cfa12f84c70377"
-      },
-      "BadMultiToSuper",
-      "BadSuperRestrict",
-      "BadSuperToBase",
-      "BaseBqoRestriction",
-      "BlockSigmaContinuous",
-      "BlockSigmaEmbedding",
-      "BlockSigmaIntertwines",
-      "BqoIffGeneralShift",
-      "ConverseGame",
-      "EmapLemma",
-      "FinitePrefixExtension",
-      "GBetterRelIff",
-      "HerCtblNodeClosure",
-      "MainProp",
-      "NoBadPerfectSuper",
-      "OrbitBlockCoverage",
-      "OrbitEmbedding",
-      "OrbitUnbounded",
-      "PerfectBaseToSuper",
-      "PerfectMultiRestrict",
-      "PerfectMultiToSuper",
-      "PerfectSuperRestrict",
-      "PerfectSuperToBase",
-      "PerfectSuperToMulti",
-      "PowerCopiedFailureMove",
-      {
-        "$s": "5fd62f6199ae512b"
-      },
-      {
-        "$s": "86b2632417374ebd"
-      },
-      {
-        "$s": "9a013b8cdeb9d5ff"
-      },
-      {
-        "$s": "55d1a8fd6d560eea"
-      },
-      "PowerCopiedSupport",
-      {
-        "$s": "2e7a9f9ae663f9f8"
-      },
-      {
-        "$s": "c92d93fd7a69a2a5"
-      },
-      "PowerCopiedTerminates",
-      {
-        "$s": "77d96f473077081d"
-      },
-      {
-        "$s": "50a07aa664204053"
-      },
-      "PowerIResponseFailure",
-      "PowerIResponseLegal",
-      "PowerIResponseWitness",
-      "PowerMoveInSupport",
-      "PowerQPresBqo",
-      "PowerQReflection",
-      {
-        "$s": "6947ec3a7b56b112"
-      },
-      "PowerShiftIterShift",
-      "PowerSupportInvariant",
-      "PowerWqoBadPairSequence",
-      "RadoEmbedding",
-      "RmapLemma",
-      "ShiftDichotomy",
-      "Subarr",
-      "SuperSequenceExtension",
-      "TildeFAtomIffFront",
-      "TildeFFrontEquation",
-      "TildeFHerCtbl",
-      "TildeFNonfrontEquation"
-    ],
     "27cb9df0706ec153": {
       "consumer": "HerCtblPowerIsPreorder",
       "declaration_kind": "definition",
@@ -15219,6 +15213,41 @@
       },
       "ProperPrefixSet": {
         "$s": "96e2c2a74513c8fd"
+      }
+    },
+    "29531d9174339de6": {
+      "corr_current_fingerprints": {
+        "$r": "347e431a985519cc"
+      },
+      "coverage": {
+        "$r": "48f5e857a8dd953e"
+      },
+      "deviation_current_fingerprints": {},
+      "open_nodes": {
+        "$r": "1b01323e53c37173"
+      },
+      "paper_current_fingerprints": {
+        "$r": "fb64625e19c055d8"
+      },
+      "placeholder_definition_nodes": [],
+      "present_nodes": {
+        "$r": "df09dd9d06ff24bc"
+      },
+      "protected_closure_nodes_per_target": {
+        "$r": "617eae7f4e15e479"
+      },
+      "sketch_proof_nodes": [],
+      "sound_current_fingerprint_parts": {
+        "$r": "fc62c58a88100dc3"
+      },
+      "sound_current_fingerprints": {
+        "$r": "584b7f89f4ac0981"
+      },
+      "substantiveness_current_fingerprints": {
+        "$r": "95d39d0c8bd86967"
+      },
+      "target_fingerprints": {
+        "$r": "347e431a985519cc"
       }
     },
     "29580ec9d862fba7": {
@@ -20101,566 +20130,6 @@
       },
       "level": "exported"
     },
-    "3b3e265d1721ccce": {
-      "BadMultiRestrict": {
-        "$r": "69e7a9346369b33d"
-      },
-      "BadMultiSequence": {
-        "$r": "da1bec0b1c9050ee"
-      },
-      "BadMultiToNontrivialSuper": {
-        "$r": "36b3e789a134b1eb"
-      },
-      "BadMultiToSuper": {
-        "$r": "b432a332459b3a45"
-      },
-      "BadPairSequence": {
-        "$r": "47a9ec8ac9439841"
-      },
-      "BadSuperRestrict": {
-        "$r": "5c17917f858eebc9"
-      },
-      "BadSuperSequence": {
-        "$r": "86d45f65b21ae859"
-      },
-      "BadSuperToBase": {
-        "$r": "e972ebc57b75f74e"
-      },
-      "BaireContinuous": {
-        "$r": "feab35cb280cc409"
-      },
-      "BaseBad": {
-        "$r": "aa0acdf1fe9b7cf1"
-      },
-      "BaseBqoRestriction": {
-        "$r": "d9e11a762a5cdb8c"
-      },
-      "BaseIncSeq": {
-        "$r": "0951a3322755574a"
-      },
-      "BaseLocallyConstant": {
-        "$r": "9665c860b85c33d6"
-      },
-      "BaseMultiSequence": {
-        "$r": "68a111d1df23109b"
-      },
-      "BasePerfect": {
-        "$r": "adfff35fe754b996"
-      },
-      "BaseRestrict": {
-        "$r": "382357bb312a2acb"
-      },
-      "BaseRightComp": {
-        "$r": "0f89c29b687b98fa"
-      },
-      "BaseShift": {
-        "$r": "2e60c14686798a10"
-      },
-      "BetterRel": {
-        "$r": "86e5ccde8e2e796d"
-      },
-      "BlockSigma": {
-        "$r": "9df79f52e4e1f4a4"
-      },
-      "BlockSigmaContinuous": {
-        "$r": "242ef4f2a3575633"
-      },
-      "BlockSigmaEmbedding": {
-        "$r": "ca4c1c664a0333a9"
-      },
-      "BlockSigmaIntertwines": {
-        "$r": "5c68c7fd4094ce48"
-      },
-      "BooleanInfinitePigeonhole": {
-        "$r": "05fa0b08c27645ae"
-      },
-      "Bqo": {
-        "$r": "a9f55eb18f37cd61"
-      },
-      "BqoHerCtblWellF": {
-        "$r": "c5fcc05a6aa1c772"
-      },
-      "BqoHerCtblWqo": {
-        "$r": "af499bb01a95bee4"
-      },
-      "BqoIffGeneralShift": {
-        "$r": "0d0b9a1315054217"
-      },
-      "BqoImpliesWqo": {
-        "$r": "8a12454754fb495a"
-      },
-      "CardinalityFront": {
-        "$r": "a7b5b70b33fdebca"
-      },
-      "CardinalityFrontIsFront": {
-        "$r": "3cb1fc0028d60fce"
-      },
-      "ContMor": {
-        "$r": "86ae4226b30bc2c8"
-      },
-      "ContMorEq": {
-        "$r": "717141c608ad04b1"
-      },
-      "ContinuousHom": {
-        "$r": "1534f504292c7338"
-      },
-      "ContinuousRelHom": {
-        "$r": "881e66e8cba27a21"
-      },
-      "ConverseGame": {
-        "$r": "9cd25ee1d9c3003b"
-      },
-      "DecidingFront": {
-        "$r": "7d5afc772840daf9"
-      },
-      "DecidingFrontAgreement": {
-        "$r": "9c15f3eba15b2014"
-      },
-      "DecidingFrontInitialTrans": {
-        "$r": "21087713ccface0c"
-      },
-      "DecidingFrontMinimal": {
-        "$r": "48efe65d0e82a49f"
-      },
-      "DecidingFrontSet": {
-        "$r": "d501b77f86d2bb72"
-      },
-      "DecidingPrefix": {
-        "$r": "f6c852e41e13f91a"
-      },
-      "DecidingValue": {
-        "$r": "906348026ae95079"
-      },
-      "EmapLemma": {
-        "$r": "9eb4f168bd527f48"
-      },
-      "FinitePrefixExtension": {
-        "$r": "ed6e9582feedae1a"
-      },
-      "FiniteShift": {
-        "$r": "b8c448d90b2e9fef"
-      },
-      "FirstMovedPoint": {
-        "$r": "dab24456ed12b433"
-      },
-      "Front": {
-        "$r": "8a55d26a4f639b18"
-      },
-      "FrontBase": {
-        "$r": "bb5431a9ee4a0dcf"
-      },
-      "FrontBridge": {
-        "$r": "e3d9cec04bf71c3f"
-      },
-      "FrontBridgeInit": {
-        "$r": "de283ab91939ebc3"
-      },
-      "FrontBridgeStep": {
-        "$r": "3d53f2d9ffe48851"
-      },
-      "FrontBridgeTail": {
-        "$r": "056a1fec6683f6ca"
-      },
-      "FrontBridgeTailInsert": {
-        "$r": "555a5fa6bbcf96f4"
-      },
-      "FrontBridgeTerminal": {
-        "$r": "14f56bb88493ea48"
-      },
-      "FrontNontrivialBase": {
-        "$r": "d9656c7074178083"
-      },
-      "FrontPrefix": {
-        "$r": "a8dd3d90054604c9"
-      },
-      "FrontPrefixExists": {
-        "$r": "4a6feb21b6ba776b"
-      },
-      "FrontPrefixUnique": {
-        "$r": "d0c8ec39c408315b"
-      },
-      "FrontRayBase": {
-        "$r": "71fcab819b2e451e"
-      },
-      "FrontRayClosure": {
-        "$r": "22366f48ab226cbc"
-      },
-      "FrontRayDense": {
-        "$r": "26355fe4f9c2253b"
-      },
-      "FrontRayPrefixFree": {
-        "$r": "da1c59748d1e9da6"
-      },
-      "FrontRestrict": {
-        "$r": "8487a830583cda4d"
-      },
-      "FrontRestriction": {
-        "$r": "7ed6a8bc6c4f51a4"
-      },
-      "FrontTreeImmediateExtensions": {
-        "$r": "936f6b461e961657"
-      },
-      "FrontTreeOrderedExtension": {
-        "$r": "3cc8356ccc914fe7"
-      },
-      "FrontTreeSingleton": {
-        "$r": "b7032e5cd93c0810"
-      },
-      "FrontTreeWellFounded": {
-        "$r": "22753d71a46635f6"
-      },
-      "GBetterRel": {
-        "$r": "0a052173c793f00d"
-      },
-      "GBetterRelIff": {
-        "$r": "ea06eaa1de6bb76c"
-      },
-      "GoodMultiSequence": {
-        "$r": "13847dddd8a41588"
-      },
-      "HerCtblCode": {
-        "$r": "f56c9e969bfe8286"
-      },
-      "HerCtblCodeErase": {
-        "$r": "100d76b210b6cb10"
-      },
-      "HerCtblNodeClosure": {
-        "$r": "3bd919667776bc5b"
-      },
-      "HerCtblPower": {
-        "$r": "0f9ca87f51725045"
-      },
-      "HerCtblPowerIsPreorder": {
-        "$r": "90771eced1e49b8c"
-      },
-      "HerCtblRel": {
-        "$r": "115010ad9ef17853"
-      },
-      "HerCtblWqoIffWellFounded": {
-        "$r": "eb0f2d4c4b93c5ec"
-      },
-      "HereditarilyCountable": {
-        "$r": "0f0df0cf1639da21"
-      },
-      "HereditarilyCountableAtom": {
-        "$r": "3b8365ce116df01a"
-      },
-      "HereditarilyCountablePresentationInvariant": {
-        "$r": "5774bd9db3a1d432"
-      },
-      "IncSeq": {
-        "$r": "05b14093084a5884"
-      },
-      "IncSeqComp": {
-        "$r": "6a30fbe502c53f14"
-      },
-      "IncSeqId": {
-        "$r": "7ce952ca3a0cb662"
-      },
-      "IncSeqPointwiseLe": {
-        "$r": "d982dddee627a7e2"
-      },
-      "IncreasingPair": {
-        "$r": "901ebd6b56f28ca9"
-      },
-      "InfiniteSetEnumeration": {
-        "$r": "a2a839a5091d26fb"
-      },
-      "InitialSegment": {
-        "$r": "fa07ac68c9de2fa3"
-      },
-      "InitialSegmentInsert": {
-        "$r": "3c34b68d6bae2a1f"
-      },
-      "LocallyConstant": {
-        "$r": "1d9b132e83fea2d5"
-      },
-      "MainProp": {
-        "$r": "06386fd0678b0f63"
-      },
-      "MultiSequence": {
-        "$r": "36e4acf99cb958ad"
-      },
-      "MultiSequenceRestrict": {
-        "$r": "87b9e0b610f0a06e"
-      },
-      "NashWilliams": {
-        "$r": "dfa63cdc3a127f23"
-      },
-      "NoBadPerfectSuper": {
-        "$r": "42c72d46ad030213"
-      },
-      "OrbitBlock": {
-        "$r": "c62ab80ec8de83c5"
-      },
-      "OrbitBlockCoverage": {
-        "$r": "7144d0465746a4eb"
-      },
-      "OrbitEmbedding": {
-        "$r": "a80b8122cb970253"
-      },
-      "OrbitPoint": {
-        "$r": "00ef5fd61340464c"
-      },
-      "OrbitUnbounded": {
-        "$r": "ed5362ffd8434424"
-      },
-      "PerfectBaseToSuper": {
-        "$r": "2a5b9fd0d2fb7e39"
-      },
-      "PerfectMultiRestrict": {
-        "$r": "4944a7ab4898d4a2"
-      },
-      "PerfectMultiSequence": {
-        "$r": "231a2515f20724da"
-      },
-      "PerfectMultiToSuper": {
-        "$r": "5a7abcfda5091d89"
-      },
-      "PerfectSuperRestrict": {
-        "$r": "fd433158c92ba69d"
-      },
-      "PerfectSuperSequence": {
-        "$r": "57f299e7cac79bb4"
-      },
-      "PerfectSuperToBase": {
-        "$r": "1373045e2de5fb26"
-      },
-      "PerfectSuperToMulti": {
-        "$r": "d908361f6133809c"
-      },
-      "PowerChild": {
-        "$r": "c6d6527a567b1dc1"
-      },
-      "PowerChildSupport": {
-        "$r": "98d8e507c0f62f02"
-      },
-      "PowerChildWellFounded": {
-        "$r": "5942e65092eb5cc4"
-      },
-      "PowerCopiedFailureMove": {
-        "$r": "555c6e56aa3bef7f"
-      },
-      "PowerCopiedFiniteDependence": {
-        "$r": "a59e8033661ceabf"
-      },
-      "PowerCopiedFiniteTerminal": {
-        "$r": "7d4a43546f750f29"
-      },
-      "PowerCopiedLeft": {
-        "$r": "eb10a7402a9b3427"
-      },
-      "PowerCopiedOrbitDependence": {
-        "$r": "8bafa830935b8e72"
-      },
-      "PowerCopiedShiftIdentity": {
-        "$r": "068e004eea927e63"
-      },
-      "PowerCopiedSupport": {
-        "$r": "047a796a898b4eb9"
-      },
-      "PowerCopiedTerminalAt": {
-        "$r": "75fbf1812a315ee1"
-      },
-      "PowerCopiedTerminalShift": {
-        "$r": "a2e8ad65972aede3"
-      },
-      "PowerCopiedTerminalSupport": {
-        "$r": "9c5ed8e1316a0853"
-      },
-      "PowerCopiedTerminates": {
-        "$r": "f337b7542a82ce77"
-      },
-      "PowerFiniteOrbitConstancy": {
-        "$r": "3e7c74c707726094"
-      },
-      "PowerGameDescent": {
-        "$r": "26a8a381da165bc0"
-      },
-      "PowerGameDescentWellFounded": {
-        "$r": "e73f442e5407990c"
-      },
-      "PowerIResponse": {
-        "$r": "47490af90d6d6f2c"
-      },
-      "PowerIResponseFailure": {
-        "$r": "06a3b1506555e6eb"
-      },
-      "PowerIResponseLegal": {
-        "$r": "9f50a9b68857c2cb"
-      },
-      "PowerIResponseWitness": {
-        "$r": "ff6c5894259543ac"
-      },
-      "PowerMove": {
-        "$r": "b83fe013efd5453e"
-      },
-      "PowerMoveInSupport": {
-        "$r": "4e7c370ea888f016"
-      },
-      "PowerPresentationEq": {
-        "$r": "cc7743c174df5a93"
-      },
-      "PowerPresentationEqEquivalence": {
-        "$r": "80f061b4fd205dc7"
-      },
-      "PowerQ": {
-        "$r": "e0a8d7f623a194c0"
-      },
-      "PowerQIsPreorder": {
-        "$r": "32c97117095daff7"
-      },
-      "PowerQPresBqo": {
-        "$r": "02a76d93830abfc6"
-      },
-      "PowerQReflection": {
-        "$r": "62eb65e55e08c8bb"
-      },
-      "PowerRel": {
-        "$r": "c71e6d1925b27694"
-      },
-      "PowerRelAtomAtom": {
-        "$r": "6219d6951510062f"
-      },
-      "PowerRelAtomNode": {
-        "$r": "1d02ec722102e4ee"
-      },
-      "PowerRelCongrLeft": {
-        "$r": "e0dfbc97cf7babce"
-      },
-      "PowerRelCongrRight": {
-        "$r": "7e8e168486965d1d"
-      },
-      "PowerRelNodeAtom": {
-        "$r": "578bb96fa2fabc59"
-      },
-      "PowerRelNodeNode": {
-        "$r": "f1dc843e3813d5d8"
-      },
-      "PowerRelRefl": {
-        "$r": "de1f5035122eda2c"
-      },
-      "PowerRelTrans": {
-        "$r": "9822e360dc0fc953"
-      },
-      "PowerShiftIter": {
-        "$r": "63d2e4e6552d9c10"
-      },
-      "PowerShiftIterPrefixAgree": {
-        "$r": "96569affcf4e5511"
-      },
-      "PowerShiftIterShift": {
-        "$r": "ee90dffba77e2180"
-      },
-      "PowerSupport": {
-        "$r": "4cbb8a5aa5fafb10"
-      },
-      "PowerSupportInvariant": {
-        "$r": "4185d71bc78d5b31"
-      },
-      "PowerSupportNonempty": {
-        "$r": "d8ebc5c62f350ade"
-      },
-      "PowerWqoBadPairSequence": {
-        "$r": "14f947d25f1ae1bd"
-      },
-      "Preamble": {
-        "$r": "f8d915076828a54a"
-      },
-      "PrefixAgree": {
-        "$r": "e65b2587af24cff9"
-      },
-      "PrefixTree": {
-        "$r": "e5c7a499b4bf3625"
-      },
-      "ProperInitialSegment": {
-        "$r": "b92a1412e4e4d4fa"
-      },
-      "ProperPrefixSet": {
-        "$r": "8fc28edee9785520"
-      },
-      "QuadrupleHomogeneous": {
-        "$r": "ad5879c52489b910"
-      },
-      "RadoEmbedding": {
-        "$r": "75889401cb994f27"
-      },
-      "RadoOrder": {
-        "$r": "8f74e3c3d5265954"
-      },
-      "Ray": {
-        "$r": "74b5a07ca9a88392"
-      },
-      "RelationEmbedding": {
-        "$r": "35fecb5ecd5bf554"
-      },
-      "RestrictionLocallyConstant": {
-        "$r": "1abecc56b3f1ac08"
-      },
-      "RestrictionShift": {
-        "$r": "c1d039621635ab5f"
-      },
-      "RightComp": {
-        "$r": "a952c31750e36be0"
-      },
-      "RmapLemma": {
-        "$r": "da4e869b2669f6a0"
-      },
-      "SetDomination": {
-        "$r": "d7d952369cee1a89"
-      },
-      "ShiftDichotomy": {
-        "$r": "9a6729c376999096"
-      },
-      "ShiftMap": {
-        "$r": "c69977fd272228e0"
-      },
-      "SubFrontCharacterization": {
-        "$r": "ca162cfc80efd66a"
-      },
-      "Subarr": {
-        "$r": "5af597fc0758fa1a"
-      },
-      "SuccSeq": {
-        "$r": "d869f6a4cfedf679"
-      },
-      "SuperNW": {
-        "$r": "a58cf6e4cfe774d1"
-      },
-      "SuperSequence": {
-        "$r": "0cfba8607eab05a1"
-      },
-      "SuperSequenceExtension": {
-        "$r": "4528de32cd251035"
-      },
-      "SuperSequenceRestrict": {
-        "$r": "71b34623760bd082"
-      },
-      "TailSet": {
-        "$r": "c059040f5eb70e61"
-      },
-      "TildeF": {
-        "$r": "19b12934f3923a1e"
-      },
-      "TildeFAtomIffFront": {
-        "$r": "58f6de0e49cbf4c1"
-      },
-      "TildeFFrontEquation": {
-        "$r": "7219c5db3f9fd9ae"
-      },
-      "TildeFHerCtbl": {
-        "$r": "e2f24eccb885b024"
-      },
-      "TildeFNonfrontEquation": {
-        "$r": "b9225c6e91e55464"
-      },
-      "TildeFSingleton": {
-        "$r": "f75413d3c4d7a636"
-      },
-      "TripleHomogeneous": {
-        "$r": "1ef702ce7aa9cc3d"
-      }
-    },
     "3b408233e5cdc95b": {
       "consumer": "BetterRel",
       "declaration_kind": "definition",
@@ -22156,59 +21625,6 @@
         "$s": "6ee0b28ec9e834d2"
       },
       "size_bytes": 20360
-    },
-    "4185d71bc78d5b31": {
-      "accepted_at_snapshot_id": "revalidate-cycle-13",
-      "active_decl_hash": {
-        "$s": "7238f37376f6d845"
-      },
-      "active_statement_hash": {
-        "$s": "2f629e25514abeed"
-      },
-      "approved_axioms_hash": {
-        "$s": "dcbabda85544c6d2"
-      },
-      "axcheck_status": "Agreed",
-      "boundary_theorems": {},
-      "checker_script_hash": {
-        "$s": "60fd30bb38022227"
-      },
-      "closure_version": "patch_c_v1",
-      "kernel_axioms": [
-        "sorryAx"
-      ],
-      "kernel_semantic_hashes": {
-        "$r": "84e2a1239039523b"
-      },
-      "lake_executable_hash": {
-        "$s": "6eb9202e934e0861"
-      },
-      "lake_manifest_hash": {
-        "$s": "bf3ed8814aacccc4"
-      },
-      "lean_executable_hash": {
-        "$s": "5a2778d0a0ed328c"
-      },
-      "node": "PowerSupportInvariant",
-      "node_certificate": {
-        "$r": "c1783a5651d00627"
-      },
-      "node_certificate_evidence": {
-        "$r": "a4e6e9f3039f427c"
-      },
-      "preamble_hash": {
-        "$s": "62d66a35aa3d3c82"
-      },
-      "seed_support_definition_deps": {},
-      "seed_support_evidence_root": null,
-      "seed_support_file_hashes": {},
-      "strict_definition_deps": {
-        "$r": "fc2adfe4345526fd"
-      },
-      "strict_theorem_deps": {},
-      "toolchain_hash": {
-        "$s": "da4fc0388adf0949"
-      }
     },
     "41890094080fccb3": {
       "artifact_bundle": {
@@ -25115,41 +24531,6 @@
         "$r": "c68d6a937bc74cb0"
       }
     ],
-    "4ede5e1b4c34a78c": {
-      "corr_current_fingerprints": {
-        "$r": "347e431a985519cc"
-      },
-      "coverage": {
-        "$r": "48f5e857a8dd953e"
-      },
-      "deviation_current_fingerprints": {},
-      "open_nodes": {
-        "$r": "27c9c547078b95cd"
-      },
-      "paper_current_fingerprints": {
-        "$r": "fb64625e19c055d8"
-      },
-      "placeholder_definition_nodes": [],
-      "present_nodes": {
-        "$r": "df09dd9d06ff24bc"
-      },
-      "protected_closure_nodes_per_target": {
-        "$r": "617eae7f4e15e479"
-      },
-      "sketch_proof_nodes": [],
-      "sound_current_fingerprint_parts": {
-        "$r": "fc62c58a88100dc3"
-      },
-      "sound_current_fingerprints": {
-        "$r": "584b7f89f4ac0981"
-      },
-      "substantiveness_current_fingerprints": {
-        "$r": "95d39d0c8bd86967"
-      },
-      "target_fingerprints": {
-        "$r": "347e431a985519cc"
-      }
-    },
     "4edfb7c9e1923107": {
       "kind": "inductive",
       "name": "ContinuousHom"
@@ -30726,6 +30107,62 @@
       "semantics": "semantic_definition_use",
       "visibility": "exported"
     },
+    "61cbc4e291419b13": {
+      "accepted_at_snapshot_id": {
+        "$s": "4d1514fdd48e5907"
+      },
+      "active_decl_hash": {
+        "$s": "91abbea1dbceec98"
+      },
+      "active_statement_hash": {
+        "$s": "2f629e25514abeed"
+      },
+      "approved_axioms_hash": {
+        "$s": "dcbabda85544c6d2"
+      },
+      "axcheck_status": "Agreed",
+      "boundary_theorems": {},
+      "checker_script_hash": {
+        "$s": "60fd30bb38022227"
+      },
+      "closure_version": "patch_c_v1",
+      "kernel_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "kernel_semantic_hashes": {
+        "$r": "84e2a1239039523b"
+      },
+      "lake_executable_hash": {
+        "$s": "6eb9202e934e0861"
+      },
+      "lake_manifest_hash": {
+        "$s": "bf3ed8814aacccc4"
+      },
+      "lean_executable_hash": {
+        "$s": "5a2778d0a0ed328c"
+      },
+      "node": "PowerSupportInvariant",
+      "node_certificate": {
+        "$r": "a14a9a7af0ee8f43"
+      },
+      "node_certificate_evidence": {
+        "$r": "e95945a851f252e9"
+      },
+      "preamble_hash": {
+        "$s": "62d66a35aa3d3c82"
+      },
+      "seed_support_definition_deps": {},
+      "seed_support_evidence_root": null,
+      "seed_support_file_hashes": {},
+      "strict_definition_deps": {
+        "$r": "20922afee3fd7baa"
+      },
+      "strict_theorem_deps": {},
+      "toolchain_hash": {
+        "$s": "da4fc0388adf0949"
+      }
+    },
     "61cea742e6c1a626": {
       "declaration_kind": "definition",
       "owner": "OrbitBlock",
@@ -35622,6 +35059,29 @@
       "semantics": "semantic_definition_use",
       "visibility": "exported"
     },
+    "743eccfb5b4d555c": [
+      {
+        "$r": "b148f1d027efcec2"
+      },
+      {
+        "$r": "10e5a788e7da0355"
+      },
+      {
+        "$r": "d0ef767867b6ccf5"
+      },
+      {
+        "$r": "1fcab0479ff600a7"
+      },
+      {
+        "$r": "2091462d3c85ad67"
+      },
+      {
+        "$r": "b2744dc20d24ec14"
+      },
+      {
+        "$r": "e2c15c19c08db96b"
+      }
+    ],
     "745e59bf6bd4a434": [
       {
         "$r": "ec3a7d99152f68b0"
@@ -36136,6 +35596,11 @@
         "$r": "06add7b53e04430e"
       }
     },
+    "75a94f2982044fab": [
+      {
+        "$r": "be70351d269653fe"
+      }
+    ],
     "75e3be39c683f299": [
       "Init",
       "Tablet.IncSeqId",
@@ -48903,6 +48368,29 @@
         "$r": "5547b1b2e93a74d3"
       }
     ],
+    "9ffb09bbd847376f": [
+      {
+        "$r": "03db7052c8fc7472"
+      },
+      {
+        "$r": "bb1e523a0aeda753"
+      },
+      {
+        "$r": "eb1494e89d58b1dd"
+      },
+      {
+        "$r": "fb039d3ad1fc5a38"
+      },
+      {
+        "$r": "c491b822c8cd0d82"
+      },
+      {
+        "$r": "d409599a092272d5"
+      },
+      {
+        "$r": "6a42583266d60d1a"
+      }
+    ],
     "a018e2929874f0d0": [
       {
         "$r": "609b009e7fb5f1b3"
@@ -49141,6 +48629,63 @@
       "MultiSequence": "cde631bc1bef82ee",
       "MultiSequenceRestrict": "c3ff3d9f025a84de",
       "PerfectMultiSequence": "8b0175d0d302f361"
+    },
+    "a14a9a7af0ee8f43": {
+      "artifact_bundle": {
+        "$r": "75a94f2982044fab"
+      },
+      "artifact_bundle_root": {
+        "$s": "fa798b6c4a3fc213"
+      },
+      "axiom_policy_root": {
+        "$s": "7b67735588a1364f"
+      },
+      "build_root": {
+        "$s": "a1a1565900e2c053"
+      },
+      "certified_node_root": {
+        "$s": "a5d8e5cb315b7002"
+      },
+      "declaration_manifest": {
+        "$r": "800cc08eb2398f47"
+      },
+      "declaration_manifest_root": {
+        "$s": "6fdb932c3e01f8d7"
+      },
+      "dependency_certificate_roots": {
+        "$r": "5b4e5f03c3128e11"
+      },
+      "exact_use_witnesses": {
+        "$r": "9ffb09bbd847376f"
+      },
+      "local_module_root": {
+        "$s": "6f020c2caeabdfc9"
+      },
+      "logic_root": {
+        "$s": "7d71566944f99b56"
+      },
+      "module_name": "Tablet.PowerSupportInvariant",
+      "node": "PowerSupportInvariant",
+      "observed_declaration_uses": {
+        "$r": "743eccfb5b4d555c"
+      },
+      "principal_declaration": "PowerSupportInvariant",
+      "semantic_root": {
+        "$s": "fa93b5919c6ee84f"
+      },
+      "source_sha256": {
+        "$s": "91abbea1dbceec98"
+      },
+      "toolchain_root": {
+        "$s": "8325443df62739a2"
+      },
+      "version": "node-certificate-v2",
+      "visibility_manifest_roots": {
+        "$r": "0292c36440fd2efb"
+      },
+      "visibility_manifests": {
+        "$r": "23e209585899c3c9"
+      }
     },
     "a15be2c6d022c93f": {
       "combined_sound_fp": {
@@ -50121,30 +49666,6 @@
         "$r": "5a17820aaa54b2b0"
       }
     ],
-    "a4e6e9f3039f427c": {
-      "artifact_bundle": {
-        "$r": "c2550bede821ad1b"
-      },
-      "declaration_manifest": {
-        "$r": "800cc08eb2398f47"
-      },
-      "direct_imports": {
-        "$r": "3c1900f77dbd8ee2"
-      },
-      "exact_declaration_uses": {
-        "$r": "26c8eed53f075cd7"
-      },
-      "principal_declaration": "PowerSupportInvariant",
-      "replay_declaration_manifest": {
-        "$r": "800cc08eb2398f47"
-      },
-      "source_sha256": {
-        "$s": "7238f37376f6d845"
-      },
-      "visibility_manifests": {
-        "$r": "23e209585899c3c9"
-      }
-    },
     "a4eb8817bcc5ebd4": [
       "OrbitBlock",
       "OrbitEmbedding",
@@ -55454,13 +54975,6 @@
         "$s": "678790535ad0f71c"
       }
     },
-    "b8998cf889b1d437": {
-      "level": "exported",
-      "sha256": {
-        "$s": "6a221f77f0624e24"
-      },
-      "size_bytes": 9464
-    },
     "b899dbbe9a526ffa": {
       "consumer": "BaireContinuous",
       "declaration_kind": "definition",
@@ -57134,6 +56648,13 @@
         "$s": "72b6b2f3e79229b2"
       }
     },
+    "be70351d269653fe": {
+      "level": "exported",
+      "sha256": {
+        "$s": "a6e1315c227ba196"
+      },
+      "size_bytes": 37432
+    },
     "beac8f9dd01371e7": {
       "artifact_bundle": {
         "$r": "bd8334a79aecad83"
@@ -57958,63 +57479,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "c1783a5651d00627": {
-      "artifact_bundle": {
-        "$r": "c2550bede821ad1b"
-      },
-      "artifact_bundle_root": {
-        "$s": "80525c4f0a7dc152"
-      },
-      "axiom_policy_root": {
-        "$s": "7b67735588a1364f"
-      },
-      "build_root": {
-        "$s": "3563aa20c759ad39"
-      },
-      "certified_node_root": {
-        "$s": "d37b49535d493424"
-      },
-      "declaration_manifest": {
-        "$r": "800cc08eb2398f47"
-      },
-      "declaration_manifest_root": {
-        "$s": "6fdb932c3e01f8d7"
-      },
-      "dependency_certificate_roots": {
-        "$r": "5b4e5f03c3128e11"
-      },
-      "exact_use_witnesses": {
-        "$r": "cb20b81758f024d6"
-      },
-      "local_module_root": {
-        "$s": "adb6ebe0dc725ff0"
-      },
-      "logic_root": {
-        "$s": "750beb6ed4265883"
-      },
-      "module_name": "Tablet.PowerSupportInvariant",
-      "node": "PowerSupportInvariant",
-      "observed_declaration_uses": {
-        "$r": "26c8eed53f075cd7"
-      },
-      "principal_declaration": "PowerSupportInvariant",
-      "semantic_root": {
-        "$s": "fa93b5919c6ee84f"
-      },
-      "source_sha256": {
-        "$s": "7238f37376f6d845"
-      },
-      "toolchain_root": {
-        "$s": "8325443df62739a2"
-      },
-      "version": "node-certificate-v2",
-      "visibility_manifest_roots": {
-        "$r": "0292c36440fd2efb"
-      },
-      "visibility_manifests": {
-        "$r": "23e209585899c3c9"
-      }
-    },
     "c17a175c80c61e2c": {
       "artifact_bundle": {
         "$r": "9093061e7cf0da6c"
@@ -58259,11 +57723,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "c2550bede821ad1b": [
-      {
-        "$r": "b8998cf889b1d437"
-      }
-    ],
     "c25ac98b71ccb7d6": {
       "artifact_bundle": {
         "$r": "2b2e90796f084406"
@@ -58635,6 +58094,20 @@
         "$r": "4185518aa59d33cd"
       }
     ],
+    "c491b822c8cd0d82": {
+      "consumer": "PowerSupportInvariant",
+      "declaration_kind": "constructor",
+      "membership_witness": {
+        "$s": "c54172a760ab44e5"
+      },
+      "owner": "PowerQ",
+      "owner_root": {
+        "$s": "9f0263c4cc3ce786"
+      },
+      "reached_declaration": "PowerQ.node",
+      "semantics": "semantic_definition_use",
+      "visibility": "exported"
+    },
     "c496af611e87900b": {
       "consumer": "BadSuperToBase",
       "declaration_kind": "definition",
@@ -60358,17 +59831,6 @@
       "kind": "definition",
       "name": "ProperPrefixSet"
     },
-    "cb20b81758f024d6": [
-      {
-        "$r": "03db7052c8fc7472"
-      },
-      {
-        "$r": "bb1e523a0aeda753"
-      },
-      {
-        "$r": "6a42583266d60d1a"
-      }
-    ],
     "cb2801b8d6b805cc": {
       "artifact_bundle": {
         "$r": "d30d651051bd8db9"
@@ -61503,6 +60965,566 @@
       },
       "level": "exported"
     },
+    "cfcb7c9f1cac8909": {
+      "BadMultiRestrict": {
+        "$r": "69e7a9346369b33d"
+      },
+      "BadMultiSequence": {
+        "$r": "da1bec0b1c9050ee"
+      },
+      "BadMultiToNontrivialSuper": {
+        "$r": "36b3e789a134b1eb"
+      },
+      "BadMultiToSuper": {
+        "$r": "b432a332459b3a45"
+      },
+      "BadPairSequence": {
+        "$r": "47a9ec8ac9439841"
+      },
+      "BadSuperRestrict": {
+        "$r": "5c17917f858eebc9"
+      },
+      "BadSuperSequence": {
+        "$r": "86d45f65b21ae859"
+      },
+      "BadSuperToBase": {
+        "$r": "e972ebc57b75f74e"
+      },
+      "BaireContinuous": {
+        "$r": "feab35cb280cc409"
+      },
+      "BaseBad": {
+        "$r": "aa0acdf1fe9b7cf1"
+      },
+      "BaseBqoRestriction": {
+        "$r": "d9e11a762a5cdb8c"
+      },
+      "BaseIncSeq": {
+        "$r": "0951a3322755574a"
+      },
+      "BaseLocallyConstant": {
+        "$r": "9665c860b85c33d6"
+      },
+      "BaseMultiSequence": {
+        "$r": "68a111d1df23109b"
+      },
+      "BasePerfect": {
+        "$r": "adfff35fe754b996"
+      },
+      "BaseRestrict": {
+        "$r": "382357bb312a2acb"
+      },
+      "BaseRightComp": {
+        "$r": "0f89c29b687b98fa"
+      },
+      "BaseShift": {
+        "$r": "2e60c14686798a10"
+      },
+      "BetterRel": {
+        "$r": "86e5ccde8e2e796d"
+      },
+      "BlockSigma": {
+        "$r": "9df79f52e4e1f4a4"
+      },
+      "BlockSigmaContinuous": {
+        "$r": "242ef4f2a3575633"
+      },
+      "BlockSigmaEmbedding": {
+        "$r": "ca4c1c664a0333a9"
+      },
+      "BlockSigmaIntertwines": {
+        "$r": "5c68c7fd4094ce48"
+      },
+      "BooleanInfinitePigeonhole": {
+        "$r": "05fa0b08c27645ae"
+      },
+      "Bqo": {
+        "$r": "a9f55eb18f37cd61"
+      },
+      "BqoHerCtblWellF": {
+        "$r": "c5fcc05a6aa1c772"
+      },
+      "BqoHerCtblWqo": {
+        "$r": "af499bb01a95bee4"
+      },
+      "BqoIffGeneralShift": {
+        "$r": "0d0b9a1315054217"
+      },
+      "BqoImpliesWqo": {
+        "$r": "8a12454754fb495a"
+      },
+      "CardinalityFront": {
+        "$r": "a7b5b70b33fdebca"
+      },
+      "CardinalityFrontIsFront": {
+        "$r": "3cb1fc0028d60fce"
+      },
+      "ContMor": {
+        "$r": "86ae4226b30bc2c8"
+      },
+      "ContMorEq": {
+        "$r": "717141c608ad04b1"
+      },
+      "ContinuousHom": {
+        "$r": "1534f504292c7338"
+      },
+      "ContinuousRelHom": {
+        "$r": "881e66e8cba27a21"
+      },
+      "ConverseGame": {
+        "$r": "9cd25ee1d9c3003b"
+      },
+      "DecidingFront": {
+        "$r": "7d5afc772840daf9"
+      },
+      "DecidingFrontAgreement": {
+        "$r": "9c15f3eba15b2014"
+      },
+      "DecidingFrontInitialTrans": {
+        "$r": "21087713ccface0c"
+      },
+      "DecidingFrontMinimal": {
+        "$r": "48efe65d0e82a49f"
+      },
+      "DecidingFrontSet": {
+        "$r": "d501b77f86d2bb72"
+      },
+      "DecidingPrefix": {
+        "$r": "f6c852e41e13f91a"
+      },
+      "DecidingValue": {
+        "$r": "906348026ae95079"
+      },
+      "EmapLemma": {
+        "$r": "9eb4f168bd527f48"
+      },
+      "FinitePrefixExtension": {
+        "$r": "ed6e9582feedae1a"
+      },
+      "FiniteShift": {
+        "$r": "b8c448d90b2e9fef"
+      },
+      "FirstMovedPoint": {
+        "$r": "dab24456ed12b433"
+      },
+      "Front": {
+        "$r": "8a55d26a4f639b18"
+      },
+      "FrontBase": {
+        "$r": "bb5431a9ee4a0dcf"
+      },
+      "FrontBridge": {
+        "$r": "e3d9cec04bf71c3f"
+      },
+      "FrontBridgeInit": {
+        "$r": "de283ab91939ebc3"
+      },
+      "FrontBridgeStep": {
+        "$r": "3d53f2d9ffe48851"
+      },
+      "FrontBridgeTail": {
+        "$r": "056a1fec6683f6ca"
+      },
+      "FrontBridgeTailInsert": {
+        "$r": "555a5fa6bbcf96f4"
+      },
+      "FrontBridgeTerminal": {
+        "$r": "14f56bb88493ea48"
+      },
+      "FrontNontrivialBase": {
+        "$r": "d9656c7074178083"
+      },
+      "FrontPrefix": {
+        "$r": "a8dd3d90054604c9"
+      },
+      "FrontPrefixExists": {
+        "$r": "4a6feb21b6ba776b"
+      },
+      "FrontPrefixUnique": {
+        "$r": "d0c8ec39c408315b"
+      },
+      "FrontRayBase": {
+        "$r": "71fcab819b2e451e"
+      },
+      "FrontRayClosure": {
+        "$r": "22366f48ab226cbc"
+      },
+      "FrontRayDense": {
+        "$r": "26355fe4f9c2253b"
+      },
+      "FrontRayPrefixFree": {
+        "$r": "da1c59748d1e9da6"
+      },
+      "FrontRestrict": {
+        "$r": "8487a830583cda4d"
+      },
+      "FrontRestriction": {
+        "$r": "7ed6a8bc6c4f51a4"
+      },
+      "FrontTreeImmediateExtensions": {
+        "$r": "936f6b461e961657"
+      },
+      "FrontTreeOrderedExtension": {
+        "$r": "3cc8356ccc914fe7"
+      },
+      "FrontTreeSingleton": {
+        "$r": "b7032e5cd93c0810"
+      },
+      "FrontTreeWellFounded": {
+        "$r": "22753d71a46635f6"
+      },
+      "GBetterRel": {
+        "$r": "0a052173c793f00d"
+      },
+      "GBetterRelIff": {
+        "$r": "ea06eaa1de6bb76c"
+      },
+      "GoodMultiSequence": {
+        "$r": "13847dddd8a41588"
+      },
+      "HerCtblCode": {
+        "$r": "f56c9e969bfe8286"
+      },
+      "HerCtblCodeErase": {
+        "$r": "100d76b210b6cb10"
+      },
+      "HerCtblNodeClosure": {
+        "$r": "3bd919667776bc5b"
+      },
+      "HerCtblPower": {
+        "$r": "0f9ca87f51725045"
+      },
+      "HerCtblPowerIsPreorder": {
+        "$r": "90771eced1e49b8c"
+      },
+      "HerCtblRel": {
+        "$r": "115010ad9ef17853"
+      },
+      "HerCtblWqoIffWellFounded": {
+        "$r": "eb0f2d4c4b93c5ec"
+      },
+      "HereditarilyCountable": {
+        "$r": "0f0df0cf1639da21"
+      },
+      "HereditarilyCountableAtom": {
+        "$r": "3b8365ce116df01a"
+      },
+      "HereditarilyCountablePresentationInvariant": {
+        "$r": "5774bd9db3a1d432"
+      },
+      "IncSeq": {
+        "$r": "05b14093084a5884"
+      },
+      "IncSeqComp": {
+        "$r": "6a30fbe502c53f14"
+      },
+      "IncSeqId": {
+        "$r": "7ce952ca3a0cb662"
+      },
+      "IncSeqPointwiseLe": {
+        "$r": "d982dddee627a7e2"
+      },
+      "IncreasingPair": {
+        "$r": "901ebd6b56f28ca9"
+      },
+      "InfiniteSetEnumeration": {
+        "$r": "a2a839a5091d26fb"
+      },
+      "InitialSegment": {
+        "$r": "fa07ac68c9de2fa3"
+      },
+      "InitialSegmentInsert": {
+        "$r": "3c34b68d6bae2a1f"
+      },
+      "LocallyConstant": {
+        "$r": "1d9b132e83fea2d5"
+      },
+      "MainProp": {
+        "$r": "06386fd0678b0f63"
+      },
+      "MultiSequence": {
+        "$r": "36e4acf99cb958ad"
+      },
+      "MultiSequenceRestrict": {
+        "$r": "87b9e0b610f0a06e"
+      },
+      "NashWilliams": {
+        "$r": "dfa63cdc3a127f23"
+      },
+      "NoBadPerfectSuper": {
+        "$r": "42c72d46ad030213"
+      },
+      "OrbitBlock": {
+        "$r": "c62ab80ec8de83c5"
+      },
+      "OrbitBlockCoverage": {
+        "$r": "7144d0465746a4eb"
+      },
+      "OrbitEmbedding": {
+        "$r": "a80b8122cb970253"
+      },
+      "OrbitPoint": {
+        "$r": "00ef5fd61340464c"
+      },
+      "OrbitUnbounded": {
+        "$r": "ed5362ffd8434424"
+      },
+      "PerfectBaseToSuper": {
+        "$r": "2a5b9fd0d2fb7e39"
+      },
+      "PerfectMultiRestrict": {
+        "$r": "4944a7ab4898d4a2"
+      },
+      "PerfectMultiSequence": {
+        "$r": "231a2515f20724da"
+      },
+      "PerfectMultiToSuper": {
+        "$r": "5a7abcfda5091d89"
+      },
+      "PerfectSuperRestrict": {
+        "$r": "fd433158c92ba69d"
+      },
+      "PerfectSuperSequence": {
+        "$r": "57f299e7cac79bb4"
+      },
+      "PerfectSuperToBase": {
+        "$r": "1373045e2de5fb26"
+      },
+      "PerfectSuperToMulti": {
+        "$r": "d908361f6133809c"
+      },
+      "PowerChild": {
+        "$r": "c6d6527a567b1dc1"
+      },
+      "PowerChildSupport": {
+        "$r": "98d8e507c0f62f02"
+      },
+      "PowerChildWellFounded": {
+        "$r": "5942e65092eb5cc4"
+      },
+      "PowerCopiedFailureMove": {
+        "$r": "555c6e56aa3bef7f"
+      },
+      "PowerCopiedFiniteDependence": {
+        "$r": "a59e8033661ceabf"
+      },
+      "PowerCopiedFiniteTerminal": {
+        "$r": "7d4a43546f750f29"
+      },
+      "PowerCopiedLeft": {
+        "$r": "eb10a7402a9b3427"
+      },
+      "PowerCopiedOrbitDependence": {
+        "$r": "8bafa830935b8e72"
+      },
+      "PowerCopiedShiftIdentity": {
+        "$r": "068e004eea927e63"
+      },
+      "PowerCopiedSupport": {
+        "$r": "047a796a898b4eb9"
+      },
+      "PowerCopiedTerminalAt": {
+        "$r": "75fbf1812a315ee1"
+      },
+      "PowerCopiedTerminalShift": {
+        "$r": "a2e8ad65972aede3"
+      },
+      "PowerCopiedTerminalSupport": {
+        "$r": "9c5ed8e1316a0853"
+      },
+      "PowerCopiedTerminates": {
+        "$r": "f337b7542a82ce77"
+      },
+      "PowerFiniteOrbitConstancy": {
+        "$r": "3e7c74c707726094"
+      },
+      "PowerGameDescent": {
+        "$r": "26a8a381da165bc0"
+      },
+      "PowerGameDescentWellFounded": {
+        "$r": "e73f442e5407990c"
+      },
+      "PowerIResponse": {
+        "$r": "47490af90d6d6f2c"
+      },
+      "PowerIResponseFailure": {
+        "$r": "06a3b1506555e6eb"
+      },
+      "PowerIResponseLegal": {
+        "$r": "9f50a9b68857c2cb"
+      },
+      "PowerIResponseWitness": {
+        "$r": "ff6c5894259543ac"
+      },
+      "PowerMove": {
+        "$r": "b83fe013efd5453e"
+      },
+      "PowerMoveInSupport": {
+        "$r": "4e7c370ea888f016"
+      },
+      "PowerPresentationEq": {
+        "$r": "cc7743c174df5a93"
+      },
+      "PowerPresentationEqEquivalence": {
+        "$r": "80f061b4fd205dc7"
+      },
+      "PowerQ": {
+        "$r": "e0a8d7f623a194c0"
+      },
+      "PowerQIsPreorder": {
+        "$r": "32c97117095daff7"
+      },
+      "PowerQPresBqo": {
+        "$r": "02a76d93830abfc6"
+      },
+      "PowerQReflection": {
+        "$r": "62eb65e55e08c8bb"
+      },
+      "PowerRel": {
+        "$r": "c71e6d1925b27694"
+      },
+      "PowerRelAtomAtom": {
+        "$r": "6219d6951510062f"
+      },
+      "PowerRelAtomNode": {
+        "$r": "1d02ec722102e4ee"
+      },
+      "PowerRelCongrLeft": {
+        "$r": "e0dfbc97cf7babce"
+      },
+      "PowerRelCongrRight": {
+        "$r": "7e8e168486965d1d"
+      },
+      "PowerRelNodeAtom": {
+        "$r": "578bb96fa2fabc59"
+      },
+      "PowerRelNodeNode": {
+        "$r": "f1dc843e3813d5d8"
+      },
+      "PowerRelRefl": {
+        "$r": "de1f5035122eda2c"
+      },
+      "PowerRelTrans": {
+        "$r": "9822e360dc0fc953"
+      },
+      "PowerShiftIter": {
+        "$r": "63d2e4e6552d9c10"
+      },
+      "PowerShiftIterPrefixAgree": {
+        "$r": "96569affcf4e5511"
+      },
+      "PowerShiftIterShift": {
+        "$r": "ee90dffba77e2180"
+      },
+      "PowerSupport": {
+        "$r": "4cbb8a5aa5fafb10"
+      },
+      "PowerSupportInvariant": {
+        "$r": "61cbc4e291419b13"
+      },
+      "PowerSupportNonempty": {
+        "$r": "d8ebc5c62f350ade"
+      },
+      "PowerWqoBadPairSequence": {
+        "$r": "14f947d25f1ae1bd"
+      },
+      "Preamble": {
+        "$r": "f8d915076828a54a"
+      },
+      "PrefixAgree": {
+        "$r": "e65b2587af24cff9"
+      },
+      "PrefixTree": {
+        "$r": "e5c7a499b4bf3625"
+      },
+      "ProperInitialSegment": {
+        "$r": "b92a1412e4e4d4fa"
+      },
+      "ProperPrefixSet": {
+        "$r": "8fc28edee9785520"
+      },
+      "QuadrupleHomogeneous": {
+        "$r": "ad5879c52489b910"
+      },
+      "RadoEmbedding": {
+        "$r": "75889401cb994f27"
+      },
+      "RadoOrder": {
+        "$r": "8f74e3c3d5265954"
+      },
+      "Ray": {
+        "$r": "74b5a07ca9a88392"
+      },
+      "RelationEmbedding": {
+        "$r": "35fecb5ecd5bf554"
+      },
+      "RestrictionLocallyConstant": {
+        "$r": "1abecc56b3f1ac08"
+      },
+      "RestrictionShift": {
+        "$r": "c1d039621635ab5f"
+      },
+      "RightComp": {
+        "$r": "a952c31750e36be0"
+      },
+      "RmapLemma": {
+        "$r": "da4e869b2669f6a0"
+      },
+      "SetDomination": {
+        "$r": "d7d952369cee1a89"
+      },
+      "ShiftDichotomy": {
+        "$r": "9a6729c376999096"
+      },
+      "ShiftMap": {
+        "$r": "c69977fd272228e0"
+      },
+      "SubFrontCharacterization": {
+        "$r": "ca162cfc80efd66a"
+      },
+      "Subarr": {
+        "$r": "5af597fc0758fa1a"
+      },
+      "SuccSeq": {
+        "$r": "d869f6a4cfedf679"
+      },
+      "SuperNW": {
+        "$r": "a58cf6e4cfe774d1"
+      },
+      "SuperSequence": {
+        "$r": "0cfba8607eab05a1"
+      },
+      "SuperSequenceExtension": {
+        "$r": "4528de32cd251035"
+      },
+      "SuperSequenceRestrict": {
+        "$r": "71b34623760bd082"
+      },
+      "TailSet": {
+        "$r": "c059040f5eb70e61"
+      },
+      "TildeF": {
+        "$r": "19b12934f3923a1e"
+      },
+      "TildeFAtomIffFront": {
+        "$r": "58f6de0e49cbf4c1"
+      },
+      "TildeFFrontEquation": {
+        "$r": "7219c5db3f9fd9ae"
+      },
+      "TildeFHerCtbl": {
+        "$r": "e2f24eccb885b024"
+      },
+      "TildeFNonfrontEquation": {
+        "$r": "b9225c6e91e55464"
+      },
+      "TildeFSingleton": {
+        "$r": "f75413d3c4d7a636"
+      },
+      "TripleHomogeneous": {
+        "$r": "1ef702ce7aa9cc3d"
+      }
+    },
     "cfdaf7c4828f3b1f": {
       "consumer": "TildeFNonfrontEquation",
       "declaration_kind": "definition",
@@ -62543,6 +62565,20 @@
       "ProperPrefixSet": {
         "$s": "5e42ca89f2b141b0"
       }
+    },
+    "d409599a092272d5": {
+      "consumer": "PowerSupportInvariant",
+      "declaration_kind": "recursor",
+      "membership_witness": {
+        "$s": "6d86c46e41cbdaa1"
+      },
+      "owner": "PowerQ",
+      "owner_root": {
+        "$s": "9f0263c4cc3ce786"
+      },
+      "reached_declaration": "PowerQ.rec",
+      "semantics": "semantic_definition_use",
+      "visibility": "exported"
     },
     "d41e4b3ddeab9467": [
       {
@@ -69305,6 +69341,30 @@
         "$r": "ef4ea738bc3a2e9d"
       }
     ],
+    "e95945a851f252e9": {
+      "artifact_bundle": {
+        "$r": "75a94f2982044fab"
+      },
+      "declaration_manifest": {
+        "$r": "800cc08eb2398f47"
+      },
+      "direct_imports": {
+        "$r": "3c1900f77dbd8ee2"
+      },
+      "exact_declaration_uses": {
+        "$r": "743eccfb5b4d555c"
+      },
+      "principal_declaration": "PowerSupportInvariant",
+      "replay_declaration_manifest": {
+        "$r": "800cc08eb2398f47"
+      },
+      "source_sha256": {
+        "$s": "91abbea1dbceec98"
+      },
+      "visibility_manifests": {
+        "$r": "23e209585899c3c9"
+      }
+    },
     "e9642b2ab1af82ee": [
       {
         "$r": "2110da2362297961"
@@ -69952,6 +70012,20 @@
       },
       "reached_declaration": "HerCtblPower",
       "semantics": "principal_assumption",
+      "visibility": "exported"
+    },
+    "eb1494e89d58b1dd": {
+      "consumer": "PowerSupportInvariant",
+      "declaration_kind": "constructor",
+      "membership_witness": {
+        "$s": "c4920a32c1ba090a"
+      },
+      "owner": "PowerQ",
+      "owner_root": {
+        "$s": "9f0263c4cc3ce786"
+      },
+      "reached_declaration": "PowerQ.atom",
+      "semantics": "semantic_definition_use",
       "visibility": "exported"
     },
     "eb54325f1402e137": {
@@ -74788,6 +74862,20 @@
         "$r": "33a1a9159b5864cd"
       }
     ],
+    "fb039d3ad1fc5a38": {
+      "consumer": "PowerSupportInvariant",
+      "declaration_kind": "definition",
+      "membership_witness": {
+        "$s": "2e4f2d6f3bbcca4a"
+      },
+      "owner": "PowerQ",
+      "owner_root": {
+        "$s": "9f0263c4cc3ce786"
+      },
+      "reached_declaration": "PowerQ.casesOn",
+      "semantics": "semantic_definition_use",
+      "visibility": "exported"
+    },
     "fb08df202e9e6cd6": [
       {
         "$r": "115f2facd26ab22c"
@@ -74986,11 +75074,6 @@
         "$r": "2363a75c98450a00"
       }
     ],
-    "fc2adfe4345526fd": {
-      "PowerPresentationEq": "196e8cf2fb293aec",
-      "PowerQ": "1f06fec9c525a2b8",
-      "PowerSupport": "b8912fafb68b599d"
-    },
     "fc32c1f91425a15f": [
       {
         "$r": "314ab96acb725440"
@@ -76276,17 +76359,23 @@
     }
   },
   "checkpoint": {
-    "active_node": "PowerSupportInvariant",
-    "committed": {
-      "$r": "4ede5e1b4c34a78c"
+    "active_node": {
+      "$s": "50a07aa664204053"
     },
-    "cycle": 210,
+    "committed": {
+      "$r": "29531d9174339de6"
+    },
+    "cycle": 211,
     "gate_kind": "None",
     "phase": "ProofFormalization"
   },
   "state": {
-    "active_coarse_node": "PowerSupportInvariant",
-    "active_node": "PowerSupportInvariant",
+    "active_coarse_node": {
+      "$s": "50a07aa664204053"
+    },
+    "active_node": {
+      "$s": "50a07aa664204053"
+    },
     "approved_targets": {
       "configured_targets": {
         "$r": "ae7b3cb4657bcad4"
@@ -76461,6 +76550,10 @@
         "closed_by": "worker",
         "cycle": 208
       },
+      "PowerSupportInvariant": {
+        "closed_by": "worker",
+        "cycle": 211
+      },
       "PowerSupportNonempty": {
         "closed_by": "worker",
         "cycle": 210
@@ -76494,7 +76587,7 @@
       "$r": "9450395de46854fa"
     },
     "committed": {
-      "$r": "4ede5e1b4c34a78c"
+      "$r": "29531d9174339de6"
     },
     "committed_deps": {
       "$r": "998b8c68f0925beb"
@@ -76502,7 +76595,7 @@
     "committed_deviation_files": {},
     "committed_local_closure_failures": {},
     "committed_local_closure_records": {
-      "$r": "3b3e265d1721ccce"
+      "$r": "cfcb7c9f1cac8909"
     },
     "committed_local_closure_unverified_nodes": [],
     "committed_node_deviation_claims": {},
@@ -76532,7 +76625,7 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 210,
+    "cycle": 211,
     "cycles_in_coarse_repair_mode": 0,
     "cycles_since_clean": 0,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
@@ -77230,13 +77323,13 @@
         "cost_version": "2",
         "heartbeats": null,
         "heartbeats_key": null,
-        "measured_at_snapshot_id": "cycle-12",
+        "measured_at_snapshot_id": "cycle-211",
         "node": "PowerSupportInvariant",
-        "olean_size_bytes": 9584,
-        "peak_rss_kib": 1676932,
+        "olean_size_bytes": 37432,
+        "peak_rss_kib": 1678124,
         "peak_rss_process": "lean",
-        "source_closure_hash": "8d5fb337cd41ebc831b5c1ab260a0301d01272b42d6279406abe15e8df9b5911",
-        "walltime_ms": 2210
+        "source_closure_hash": "c5ffbcf3193b5a15dd7cc2b0ade508c2a173e29a5b1c324adb216c02230561bf",
+        "walltime_ms": 2278
       },
       "PowerSupportNonempty": {
         "cost_version": "2",
@@ -77463,6 +77556,7 @@
       "PowerRelTrans",
       "PowerShiftIter",
       "PowerSupport",
+      "PowerSupportInvariant",
       "PowerSupportNonempty",
       "Preamble",
       "PrefixAgree",
@@ -77506,7 +77600,7 @@
     "in_flight_request": null,
     "invalid_attempt": false,
     "last_audit_request_cycle": 6,
-    "last_clean_commit": "6e61e2d04439543739b3ba686fcaabce4a52957c",
+    "last_clean_commit": "ad1c27e0918d95bb227dcefec06759935c97e141",
     "last_clean_corr_approved_fingerprints": {
       "$r": "347e431a985519cc"
     },
@@ -77520,12 +77614,12 @@
     "last_clean_deviation_files": {},
     "last_clean_deviation_status": {},
     "last_clean_live": {
-      "$r": "4ede5e1b4c34a78c"
+      "$r": "29531d9174339de6"
     },
     "last_clean_local_closure_failures": {},
     "last_clean_local_closure_mirror_ready": true,
     "last_clean_local_closure_records": {
-      "$r": "3b3e265d1721ccce"
+      "$r": "cfcb7c9f1cac8909"
     },
     "last_clean_local_closure_unverified_nodes": [],
     "last_clean_node_deviation_claims": {},
@@ -77577,18 +77671,18 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "Closed PowerSupportNonempty by structural induction on PowerQ. The atom case exhibits its atom in the singleton support; the node case chooses an index from the Nonempty witness, applies the induction hypothesis to that child, and inserts the atom into the indexed union. The protected imports, theorem statement, BODY marker, and accepted TeX proof were preserved. No helper nodes or other Tablet nodes were added or edited.",
+    "latest_worker_comments": "Preserved the protected theorem statement, imports, BODY marker, and accepted TeX proof. The node case applies the induction hypothesis to matched children in both directions and the full tablet build succeeds.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Closed PowerSupportNonempty with the requested atom/node support induction.",
+    "latest_worker_summary": "Closed PowerSupportInvariant by structural induction on the left PowerQ presentation, with explicit atom, mixed-tag, and node cases and both indexed-union support inclusions.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
     "live": {
-      "$r": "4ede5e1b4c34a78c"
+      "$r": "29531d9174339de6"
     },
     "local_closure_failures": {},
     "local_closure_records": {
-      "$r": "3b3e265d1721ccce"
+      "$r": "cfcb7c9f1cac8909"
     },
     "local_closure_unverified_nodes": [],
     "max_theorem_invalid_attempt": 2,
@@ -77808,7 +77902,9 @@
       "mode": "Local",
       "must_close_active": true,
       "next_worker_context_mode": "resume",
-      "node": "PowerSupportInvariant",
+      "node": {
+        "$s": "50a07aa664204053"
+      },
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [],
       "protected_semantic_change_nodes": [],
@@ -77896,212 +77992,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 210,
+      "next_index": 211,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblNodeClosure",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedFailureMove",
-            {
-              "$s": "5fd62f6199ae512b"
-            },
-            {
-              "$s": "86b2632417374ebd"
-            },
-            "PowerCopiedLeft",
-            {
-              "$s": "9a013b8cdeb9d5ff"
-            },
-            {
-              "$s": "55d1a8fd6d560eea"
-            },
-            "PowerCopiedSupport",
-            "PowerCopiedTerminalAt",
-            {
-              "$s": "2e7a9f9ae663f9f8"
-            },
-            {
-              "$s": "c92d93fd7a69a2a5"
-            },
-            "PowerCopiedTerminates",
-            {
-              "$s": "77d96f473077081d"
-            },
-            "PowerGameDescent",
-            {
-              "$s": "50a07aa664204053"
-            },
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerMoveInSupport",
-            "PowerPresentationEq",
-            {
-              "$s": "93d700ae7b9523b8"
-            },
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerQPresBqo",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelCongrLeft",
-            "PowerRelCongrRight",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerRelRefl",
-            "PowerRelTrans",
-            "PowerShiftIter",
-            {
-              "$s": "6947ec3a7b56b112"
-            },
-            "PowerShiftIterShift",
-            "PowerSupport",
-            "PowerSupportInvariant",
-            "PowerSupportNonempty",
-            "PowerWqoBadPairSequence",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "QuadrupleHomogeneous",
-            "RadoEmbedding",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            {
-              "$s": "b415d99a5587255c"
-            },
-            "RestrictionShift",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftDichotomy",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "Subarr",
-            "SuccSeq",
-            "SuperNW",
-            "SuperSequence",
-            "SuperSequenceExtension",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFAtomIffFront",
-            "TildeFFrontEquation",
-            "TildeFHerCtbl",
-            "TildeFNonfrontEquation",
-            "TildeFSingleton",
-            "TripleHomogeneous"
-          ],
-          "snapshot_index": 146
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -79886,6 +79778,15 @@
             "$r": "df09dd9d06ff24bc"
           },
           "snapshot_index": 209
+        },
+        {
+          "present": {
+            "$r": "df09dd9d06ff24bc"
+          },
+          "progressed": {
+            "$r": "df09dd9d06ff24bc"
+          },
+          "snapshot_index": 210
         }
       ]
     },
@@ -79894,12 +79795,12 @@
     "proof_nodes": {
       "$r": "a575696378df3eb1"
     },
-    "request_seq": 623,
+    "request_seq": 625,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Switch the coarse anchor to PowerSupportInvariant and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Induct on PowerPresentationEq with the atom, impossible mixed-tag, and node cases explicit. In the node case prove both support inclusions from the two matching directions, applying the induction hypothesis to the matched children and using the indexed-union support definition; finish by set extensionality. Do not add wrappers or leave helper obligations open.",
+    "reviewer_comments": "Switch the coarse anchor to PowerGameDescentWellFounded and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Implement the stated nested induction: outer well-founded induction on the first PowerQ coordinate, with a motive quantified over every second coordinate, and inner induction on the second coordinate. Unpack PowerGameDescent into exactly its first-coordinate child predecessor or equal-first-coordinate second-child predecessor cases, using PowerChildWellFounded with the child-to-parent orientation. Do not add wrappers or leave helper obligations open.",
     "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
-    "shallow_coarse_closed_count": 121,
+    "shallow_coarse_closed_count": 122,
     "sound_approved_fingerprints": {
       "$r": "2b7c2a9ed07954d0"
     },

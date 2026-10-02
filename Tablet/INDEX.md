@@ -153,7 +153,7 @@
 | PowerShiftIterPrefixAgree | lemma | proof | open | - | Finite-prefix agreement survives finitely many shifts | PowerShiftIter, PrefixAgree |
 | PowerShiftIterShift | lemma | proof | open | - | Shift iterates commute with the first shift | PowerShiftIter |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
-| PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
+| PowerSupportInvariant | lemma | proof | closed | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
 | PowerSupportNonempty | lemma | proof | closed | - | Nonempty support | PowerSupport |
 | PowerWqoBadPairSequence | lemma | proof | open | - | Bad-witness characterization | BadPairSequence, SetDomination |
 | Preamble | preamble | preamble | closed | - | - | - |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 129 | **Open:** 56
+**Total:** 185 nodes | **Closed:** 130 | **Open:** 55

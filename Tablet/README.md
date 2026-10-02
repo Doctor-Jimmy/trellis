@@ -161,7 +161,7 @@
 | PowerShiftIterPrefixAgree | proof | Finite-prefix agreement survives finitely many shifts | open |
 | PowerShiftIterShift | proof | Shift iterates commute with the first shift | open |
 | PowerSupport | definition | - | closed |
-| PowerSupportInvariant | proof | Support respects presentation equivalence | open |
+| PowerSupportInvariant | proof | Support respects presentation equivalence | closed |
 | PowerSupportNonempty | proof | Nonempty support | closed |
 | PowerWqoBadPairSequence | proof | Bad-witness characterization | open |
 | PrefixAgree | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 129/185 closed
+**Summary:** 130/185 closed

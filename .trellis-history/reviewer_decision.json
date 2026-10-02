@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerSupportNonempty is closed; advance to invariance of support under presentation equivalence.",
-    "comments": "Switch the coarse anchor to PowerSupportInvariant and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Induct on PowerPresentationEq with the atom, impossible mixed-tag, and node cases explicit. In the node case prove both support inclusions from the two matching directions, applying the induction hypothesis to the matched children and using the indexed-union support definition; finish by set extensionality. Do not add wrappers or leave helper obligations open.",
+    "reason": "PowerSupportInvariant is closed; advance to well-foundedness of the copied pair descent.",
+    "comments": "Switch the coarse anchor to PowerGameDescentWellFounded and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Implement the stated nested induction: outer well-founded induction on the first PowerQ coordinate, with a motive quantified over every second coordinate, and inner induction on the second coordinate. Unpack PowerGameDescent into exactly its first-coordinate child predecessor or equal-first-coordinate second-child predecessor cases, using PowerChildWellFounded with the child-to-parent orientation. Do not add wrappers or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerSupportInvariant",
-    "next_active_coarse": "PowerSupportInvariant",
+    "next_active": "PowerGameDescentWellFounded",
+    "next_active_coarse": "PowerGameDescentWellFounded",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerSupportInvariant": "easy"
+      "PowerGameDescentWellFounded": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerSupportInvariant and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Induct on PowerPresentationEq with the atom, impossible mixed-tag, and node cases explicit. In the node case prove both support inclusions from the two matching directions, applying the induction hypothesis to the matched children and using the indexed-union support definition; finish by set extensionality. Do not add wrappers or leave helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerGameDescentWellFounded and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Implement the stated nested induction: outer well-founded induction on the first PowerQ coordinate, with a motive quantified over every second coordinate, and inner induction on the second coordinate. Unpack PowerGameDescent into exactly its first-coordinate child predecessor or equal-first-coordinate second-child predecessor cases, using PowerChildWellFounded with the child-to-parent orientation. Do not add wrappers or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 210,
+    "cycle": 211,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerSupportInvariant": {
-        "Set": "Easy"
+      "PowerGameDescentWellFounded": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerSupportInvariant",
-    "next_active_coarse": "PowerSupportInvariant",
+    "next_active": "PowerGameDescentWellFounded",
+    "next_active_coarse": "PowerGameDescentWellFounded",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerSupportNonempty is closed; advance to invariance of support under presentation equivalence.",
-    "request_id": 623,
+    "reason": "PowerSupportInvariant is closed; advance to well-foundedness of the copied pair descent.",
+    "request_id": 625,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_623_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_625_decision.context.json"
 }
