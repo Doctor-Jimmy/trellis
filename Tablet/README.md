@@ -155,7 +155,7 @@
 | PowerRelCongrRight | proof | Right presentation invariance | closed |
 | PowerRelNodeAtom | proof | Node--atom reduction | closed |
 | PowerRelNodeNode | proof | Node--node reduction | closed |
-| PowerRelRefl | proof | Reflexivity of the lifted relation | open |
+| PowerRelRefl | proof | Reflexivity of the lifted relation | closed |
 | PowerRelTrans | proof | Transitivity of the lifted relation | open |
 | PowerShiftIter | definition | - | closed |
 | PowerShiftIterPrefixAgree | proof | Finite-prefix agreement survives finitely many shifts | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 125/185 closed
+**Summary:** 126/185 closed
