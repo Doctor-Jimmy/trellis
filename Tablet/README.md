@@ -137,7 +137,7 @@
 | PowerGameDescent | definition | - | closed |
 | PowerGameDescentWellFounded | proof | Well-foundedness of copied pair descent | closed |
 | PowerIResponse | definition | - | closed |
-| PowerIResponseFailure | proof | The canonical response preserves failure | open |
+| PowerIResponseFailure | proof | The canonical response preserves failure | closed |
 | PowerIResponseLegal | proof | The canonical response is legal | closed |
 | PowerIResponseWitness | proof | A failed comparison has a canonical one-round response | closed |
 | PowerMove | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 134/185 closed
+**Summary:** 135/185 closed

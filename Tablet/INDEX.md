@@ -129,7 +129,7 @@
 | PowerGameDescent | definition | definition | closed | - | - | PowerChild |
 | PowerGameDescentWellFounded | lemma | proof | closed | - | Well-foundedness of copied pair descent | PowerChildWellFounded, PowerGameDescent |
 | PowerIResponse | definition | definition | closed | - | - | PowerMove |
-| PowerIResponseFailure | lemma | proof | open | - | The canonical response preserves failure | PowerIResponseLegal |
+| PowerIResponseFailure | lemma | proof | closed | - | The canonical response preserves failure | PowerIResponseLegal |
 | PowerIResponseLegal | lemma | proof | closed | - | The canonical response is legal | PowerIResponseWitness |
 | PowerIResponseWitness | lemma | proof | closed | - | A failed comparison has a canonical one-round response | PowerIResponse, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
 | PowerMove | definition | definition | closed | - | - | PowerChild, PowerRel |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 134 | **Open:** 51
+**Total:** 185 nodes | **Closed:** 135 | **Open:** 50

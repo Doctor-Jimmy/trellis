@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerIResponseLegal is closed; close the canonical response failure-preservation lemma next.",
-    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseFailure. Preserve its theorem statement, import, BODY marker, and accepted TeX proof. Apply PowerIResponseWitness to obtain a witness whose every legal right move preserves failure, unfold PowerIResponse to show the positive branch selects that witness, identify the canonical response with it, and apply the universal clause to the given PowerMove y y'. Do not add wrappers or leave helper obligations open.",
+    "reason": "PowerCopiedFailureMove and its response lemmas are shallowly closed; advance to the direct copied-support induction.",
+    "comments": "Switch the coarse anchor to PowerCopiedSupport and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the inclusion by induction on k for fixed x and n. At depth zero, use BadMultiSequence on y = PowerShiftIter n x, the PowerShiftIter successor identity, the depth-zero PowerCopiedLeft equation, PowerIResponseLegal, and PowerMoveInSupport. In the successor case, use the legal move supplied by PowerCopiedFailureMove, apply PowerMoveInSupport, and compose that inclusion with the induction hypothesis. Do not add wrappers, edit unrelated nodes, or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerIResponseFailure",
-    "next_active_coarse": "",
+    "next_active": "PowerCopiedSupport",
+    "next_active_coarse": "PowerCopiedSupport",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerIResponseFailure": "easy"
+      "PowerCopiedSupport": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseFailure. Preserve its theorem statement, import, BODY marker, and accepted TeX proof. Apply PowerIResponseWitness to obtain a witness whose every legal right move preserves failure, unfold PowerIResponse to show the positive branch selects that witness, identify the canonical response with it, and apply the universal clause to the given PowerMove y y'. Do not add wrappers or leave helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerCopiedSupport and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the inclusion by induction on k for fixed x and n. At depth zero, use BadMultiSequence on y = PowerShiftIter n x, the PowerShiftIter successor identity, the depth-zero PowerCopiedLeft equation, PowerIResponseLegal, and PowerMoveInSupport. In the successor case, use the legal move supplied by PowerCopiedFailureMove, apply PowerMoveInSupport, and compose that inclusion with the induction hypothesis. Do not add wrappers, edit unrelated nodes, or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 215,
+    "cycle": 216,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerIResponseFailure": {
-        "Set": "Easy"
+      "PowerCopiedSupport": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerIResponseFailure",
-    "next_active_coarse": null,
+    "next_active": "PowerCopiedSupport",
+    "next_active_coarse": "PowerCopiedSupport",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerIResponseLegal is closed; close the canonical response failure-preservation lemma next.",
-    "request_id": 633,
+    "reason": "PowerCopiedFailureMove and its response lemmas are shallowly closed; advance to the direct copied-support induction.",
+    "request_id": 635,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_633_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_635_decision.context.json"
 }
