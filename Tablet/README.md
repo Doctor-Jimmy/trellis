@@ -168,7 +168,7 @@
 | PrefixTree | definition | - | closed |
 | ProperInitialSegment | definition | - | closed |
 | ProperPrefixSet | definition | - | closed |
-| QuadrupleHomogeneous | proof | Homogeneous quadruples | open |
+| QuadrupleHomogeneous | proof | Homogeneous quadruples | closed |
 | RadoEmbedding | proof | Rado embedding | open |
 | RadoOrder | definition | Rado order | closed |
 | Ray | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 118/185 closed
+**Summary:** 119/185 closed

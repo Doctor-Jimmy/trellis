@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TripleHomogeneous is closed; advance to the corresponding quadruple consequence of NashWilliams.",
-    "comments": "Switch the coarse anchor to QuadrupleHomogeneous and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. The proof may use genuine substantive helpers with complete paired NL proofs, but no wrappers or SKETCH proofs. Follow the finite-front route: build the four-element CardinalityFront, establish the coloring fiber is a subset of it, apply NashWilliams, rule out the trivial sub-front by cardinality, derive the base containment, and use an explicit tail branch to show every four-element subset of the resulting base lies in the homogeneous sub-front. This is the quadruple instance of the NashWilliams consequences in pm-0003; do not create a separate Ramsey development or edit TripleHomogeneous.",
+    "reason": "QuadrupleHomogeneous is closed; advance to the finite-color super-sequence consequence of NashWilliams.",
+    "comments": "Switch the coarse anchor to SuperNW and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Make a focused closure attempt using the existing NashWilliams and SuperSequence support: formalize the finite-codomain induction, the selected-color fiber branch, and the complement branch with the restricted codomain and composed front inclusion. Do not add a wrapper that merely repackages NashWilliams or create a separate Ramsey development; keep any helper genuinely smaller and mechanically closed because new open obligations are disallowed.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "QuadrupleHomogeneous",
-    "next_active_coarse": "QuadrupleHomogeneous",
+    "next_active": "SuperNW",
+    "next_active_coarse": "SuperNW",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "QuadrupleHomogeneous": "hard"
+      "SuperNW": "hard"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to QuadrupleHomogeneous and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof while closing the active theorem. The proof may use genuine substantive helpers with complete paired NL proofs, but no wrappers or SKETCH proofs. Follow the finite-front route: build the four-element CardinalityFront, establish the coloring fiber is a subset of it, apply NashWilliams, rule out the trivial sub-front by cardinality, derive the base containment, and use an explicit tail branch to show every four-element subset of the resulting base lies in the homogeneous sub-front. This is the quadruple instance of the NashWilliams consequences in pm-0003; do not create a separate Ramsey development or edit TripleHomogeneous.",
+    "comments": "Switch the coarse anchor to SuperNW and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Make a focused closure attempt using the existing NashWilliams and SuperSequence support: formalize the finite-codomain induction, the selected-color fiber branch, and the complement branch with the restricted codomain and composed front inclusion. Do not add a wrapper that merely repackages NashWilliams or create a separate Ramsey development; keep any helper genuinely smaller and mechanically closed because new open obligations are disallowed.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 199,
+    "cycle": 200,
     "decision": "Continue",
     "difficulty_updates": {
-      "QuadrupleHomogeneous": {
+      "SuperNW": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "QuadrupleHomogeneous",
-    "next_active_coarse": "QuadrupleHomogeneous",
+    "next_active": "SuperNW",
+    "next_active_coarse": "SuperNW",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TripleHomogeneous is closed; advance to the corresponding quadruple consequence of NashWilliams.",
-    "request_id": 601,
+    "reason": "QuadrupleHomogeneous is closed; advance to the finite-color super-sequence consequence of NashWilliams.",
+    "request_id": 603,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_601_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_603_decision.context.json"
 }
