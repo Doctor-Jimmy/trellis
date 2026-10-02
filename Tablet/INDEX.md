@@ -176,7 +176,7 @@
 | SubFrontCharacterization | lemma | proof | closed | - | Sub-fronts | Front, FrontRestrict, FrontRestriction |
 | Subarr | corollary | proof | open | lem:subarr | Sub-arrays and super-sequences | BadMultiRestrict, BadMultiToSuper, BadSuperRestrict, BaseBqoRestriction, DecidingFront, DecidingValue, NoBadPerfectSuper, PerfectBaseToSuper, PerfectSuperToMulti, RestrictionLocallyConstant, ShiftDichotomy, SuperSequenceExtension |
 | SuccSeq | definition | definition | closed | - | - | IncSeq |
-| SuperNW | theorem | proof | open | - | - | NashWilliams, SuperSequence |
+| SuperNW | theorem | proof | closed | - | - | NashWilliams, SuperSequence |
 | SuperSequence | definition | definition | closed | - | - | Front |
 | SuperSequenceExtension | lemma | proof | open | - | Extension from a front | BaseLocallyConstant, FrontPrefixExists, FrontPrefixUnique, SuperSequence |
 | SuperSequenceRestrict | definition | definition | closed | - | - | SuperSequence |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 119 | **Open:** 66
+**Total:** 185 nodes | **Closed:** 120 | **Open:** 65

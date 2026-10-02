@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "QuadrupleHomogeneous is closed; advance to the finite-color super-sequence consequence of NashWilliams.",
-    "comments": "Switch the coarse anchor to SuperNW and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Make a focused closure attempt using the existing NashWilliams and SuperSequence support: formalize the finite-codomain induction, the selected-color fiber branch, and the complement branch with the restricted codomain and composed front inclusion. Do not add a wrapper that merely repackages NashWilliams or create a separate Ramsey development; keep any helper genuinely smaller and mechanically closed because new open obligations are disallowed.",
+    "reason": "SuperNW is closed; advance to the direct consequence that every better quasi-order is a well quasi-order.",
+    "comments": "Switch the coarse anchor to BqoImpliesWqo and use Local mode. Preserve its protected theorem signature, imports, BODY marker, and accepted TeX proof. This is a focused closure attempt using only Bqo: assume a bad sequence witnessing failure of WellQuasiOrdered, define the multi-sequence by the first coordinate, prove local constancy from PrefixAgree, prove badness using strict increase and ShiftMap, and contradict Bqo. Do not add wrappers or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "SuperNW",
-    "next_active_coarse": "SuperNW",
+    "next_active": "BqoImpliesWqo",
+    "next_active_coarse": "BqoImpliesWqo",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "SuperNW": "hard"
+      "BqoImpliesWqo": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to SuperNW and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Make a focused closure attempt using the existing NashWilliams and SuperSequence support: formalize the finite-codomain induction, the selected-color fiber branch, and the complement branch with the restricted codomain and composed front inclusion. Do not add a wrapper that merely repackages NashWilliams or create a separate Ramsey development; keep any helper genuinely smaller and mechanically closed because new open obligations are disallowed.",
+    "comments": "Switch the coarse anchor to BqoImpliesWqo and use Local mode. Preserve its protected theorem signature, imports, BODY marker, and accepted TeX proof. This is a focused closure attempt using only Bqo: assume a bad sequence witnessing failure of WellQuasiOrdered, define the multi-sequence by the first coordinate, prove local constancy from PrefixAgree, prove badness using strict increase and ShiftMap, and contradict Bqo. Do not add wrappers or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 200,
+    "cycle": 201,
     "decision": "Continue",
     "difficulty_updates": {
-      "SuperNW": {
-        "Set": "Hard"
+      "BqoImpliesWqo": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "SuperNW",
-    "next_active_coarse": "SuperNW",
+    "next_active": "BqoImpliesWqo",
+    "next_active_coarse": "BqoImpliesWqo",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "QuadrupleHomogeneous is closed; advance to the finite-color super-sequence consequence of NashWilliams.",
-    "request_id": 603,
+    "reason": "SuperNW is closed; advance to the direct consequence that every better quasi-order is a well quasi-order.",
+    "request_id": 605,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_603_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_605_decision.context.json"
 }

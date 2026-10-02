@@ -182,7 +182,7 @@
 | ShiftMap | definition | - | closed |
 | SubFrontCharacterization | proof | Sub-fronts | closed |
 | SuccSeq | definition | - | closed |
-| SuperNW | proof | - | open |
+| SuperNW | proof | - | closed |
 | SuperSequence | definition | - | closed |
 | SuperSequenceExtension | proof | Extension from a front | open |
 | SuperSequenceRestrict | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 119/185 closed
+**Summary:** 120/185 closed
