@@ -71,7 +71,7 @@
 | FrontRestrict | definition | - | closed |
 | FrontRestriction | proof | Restriction closure | closed |
 | FrontTreeImmediateExtensions | proof | Immediate extensions in the front tree | closed |
-| FrontTreeOrderedExtension | proof | All ordered one-point extensions remain in the tree | open |
+| FrontTreeOrderedExtension | proof | All ordered one-point extensions remain in the tree | closed |
 | FrontTreeSingleton | proof | Singletons belong to a nontrivial full-base tree | open |
 | FrontTreeWellFounded | proof | Well-founded prefix tree | closed |
 | GBetterRel | definition | - | closed |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 101/179 closed
+**Summary:** 102/179 closed

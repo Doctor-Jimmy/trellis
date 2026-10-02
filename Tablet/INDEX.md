@@ -63,7 +63,7 @@
 | FrontRestrict | definition | definition | closed | - | - | Preamble |
 | FrontRestriction | lemma | proof | closed | - | Restriction closure | Front, FrontRestrict |
 | FrontTreeImmediateExtensions | lemma | proof | closed | - | Immediate extensions in the front tree | Front, PrefixTree, ProperInitialSegment |
-| FrontTreeOrderedExtension | lemma | proof | open | - | All ordered one-point extensions remain in the tree | FrontTreeWellFounded |
+| FrontTreeOrderedExtension | lemma | proof | closed | - | All ordered one-point extensions remain in the tree | FrontTreeWellFounded |
 | FrontTreeSingleton | lemma | proof | open | - | Singletons belong to a nontrivial full-base tree | Front, PrefixTree |
 | FrontTreeWellFounded | lemma | proof | closed | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
@@ -183,4 +183,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 179 nodes | **Closed:** 101 | **Open:** 78
+**Total:** 179 nodes | **Closed:** 102 | **Open:** 77
