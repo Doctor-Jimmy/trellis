@@ -1,11 +1,17 @@
 {
   "raw": {
-    "outcome": "valid",
-    "summary": "Closed PowerCopiedTerminates by accessibility induction on adjacent copied-value pairs.",
-    "comments": "Preserved the theorem statement, imports, BODY marker, and accepted TeX proof. The Lean proof obtains failure and both row moves from PowerCopiedFailureMove, proves PowerGameDescent in the node and atom cases, and uses PowerGameDescentWellFounded to reach an atomic pair. Incremental check and lake build pass; no helpers or other Tablet nodes were added or edited.",
-    "target_claim_updates": {},
+    "audit_request": null,
+    "comments": "Closed PowerCopiedTerminalSupport by applying PowerCopiedTerminates at row 0, unpacking PowerCopiedTerminalAt, applying PowerCopiedSupport at (0,k), simplifying PowerShiftIter 0 and the atom support, and transporting q membership through the support inclusion. Only the active Lean proof body changed; no helpers, imports, statements, or TeX were edited.",
+    "deleted_nodes": [],
+    "deviation_deletions": [],
+    "deviation_requests": {},
     "difficulty_updates": {},
-    "deleted_nodes": []
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": [],
+    "node_deviation_claims": {},
+    "outcome": "valid",
+    "summary": "Closed PowerCopiedTerminalSupport with the prescribed termination, terminal-atom, and support-transport argument.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -15,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the theorem statement, imports, BODY marker, and accepted TeX proof. The Lean proof obtains failure and both row moves from PowerCopiedFailureMove, proves PowerGameDescent in the node and atom cases, and uses PowerGameDescentWellFounded to reach an atomic pair. Incremental check and lake build pass; no helpers or other Tablet nodes were added or edited.",
-    "cycle": 219,
+    "comments": "Closed PowerCopiedTerminalSupport by applying PowerCopiedTerminates at row 0, unpacking PowerCopiedTerminalAt, applying PowerCopiedSupport at (0,k), simplifying PowerShiftIter 0 and the atom support, and transporting q membership through the support inclusion. Only the active Lean proof body changed; no helpers, imports, statements, or TeX were edited.",
+    "cycle": 220,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -25,12 +31,12 @@
     "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "PowerCopiedTerminates": {
+      "PowerCopiedTerminalSupport": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "065ca99057f464245b65c5ac7ba588bf15facac12804b0f92dc3d4a08d5e8297",
-            "size_bytes": 61264
+            "sha256": "d1206657c5f4ecda9f8c3c913fc9ec27b8766675ed5ed5268ed08c79ca49bc71",
+            "size_bytes": 76776
           }
         ],
         "axiomization_check": {
@@ -41,24 +47,26 @@
             "Tablet.BadMultiSequence::BadMultiSequence@exported:definition",
             "Tablet.IncSeq::IncSeq@exported:definition",
             "Tablet.MultiSequence::MultiSequence@exported:definition",
-            "Tablet.PowerChild::PowerChild@exported:definition",
-            "Tablet.PowerCopiedFailureMove::PowerCopiedFailureMove@exported:theorem",
             "Tablet.PowerCopiedLeft::PowerCopiedLeft@exported:definition",
+            "Tablet.PowerCopiedSupport::PowerCopiedSupport@exported:theorem",
             "Tablet.PowerCopiedTerminalAt::PowerCopiedTerminalAt@exported:definition",
-            "Tablet.PowerGameDescent::PowerGameDescent@exported:definition",
-            "Tablet.PowerGameDescentWellFounded::PowerGameDescentWellFounded@exported:theorem",
-            "Tablet.PowerMove::PowerMove.match_1@exported:definition",
-            "Tablet.PowerMove::PowerMove@exported:definition",
+            "Tablet.PowerCopiedTerminates::PowerCopiedTerminates@exported:theorem",
             "Tablet.PowerQ::PowerQ.atom@exported:constructor",
-            "Tablet.PowerQ::PowerQ.casesOn@exported:definition",
+            "Tablet.PowerQ::PowerQ.below@exported:definition",
+            "Tablet.PowerQ::PowerQ.brecOn.eq@exported:theorem",
+            "Tablet.PowerQ::PowerQ.brecOn.go@exported:definition",
+            "Tablet.PowerQ::PowerQ.brecOn@exported:definition",
             "Tablet.PowerQ::PowerQ.node@exported:constructor",
+            "Tablet.PowerQ::PowerQ.rec@exported:recursor",
             "Tablet.PowerQ::PowerQ@exported:inductive",
-            "Tablet.PowerRel::PowerRel@exported:definition"
+            "Tablet.PowerRel::PowerRel@exported:definition",
+            "Tablet.PowerShiftIter::PowerShiftIter@exported:definition",
+            "Tablet.PowerSupport::PowerSupport._f@exported:definition",
+            "Tablet.PowerSupport::PowerSupport.match_1@exported:definition",
+            "Tablet.PowerSupport::PowerSupport@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [
-            "Classical.choice",
-            "Quot.sound",
             "propext"
           ],
           "primary_only_axioms": [],
@@ -78,14 +86,38 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "PowerCopiedTerminates"
+            "name": "PowerCopiedTerminalSupport"
+          },
+          {
+            "kind": "theorem",
+            "name": "PowerSupport.eq_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "PowerSupport.eq_2"
+          },
+          {
+            "kind": "theorem",
+            "name": "PowerSupport.eq_def"
+          },
+          {
+            "kind": "theorem",
+            "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_2"
+          },
+          {
+            "kind": "definition",
+            "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.splitter"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.PowerCopiedFailureMove",
+          "Tablet.PowerCopiedSupport",
           "Tablet.PowerCopiedTerminalAt",
-          "Tablet.PowerGameDescentWellFounded"
+          "Tablet.PowerCopiedTerminates"
         ],
         "errors": [],
         "exact_declaration_uses": [
@@ -109,20 +141,14 @@
           },
           {
             "declaration_kind": "definition",
-            "owner": "PowerChild",
-            "reached_declaration": "PowerChild",
+            "owner": "PowerCopiedLeft",
+            "reached_declaration": "PowerCopiedLeft",
             "visibility": "exported"
           },
           {
             "declaration_kind": "theorem",
-            "owner": "PowerCopiedFailureMove",
-            "reached_declaration": "PowerCopiedFailureMove",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "PowerCopiedLeft",
-            "reached_declaration": "PowerCopiedLeft",
+            "owner": "PowerCopiedSupport",
+            "reached_declaration": "PowerCopiedSupport",
             "visibility": "exported"
           },
           {
@@ -132,27 +158,9 @@
             "visibility": "exported"
           },
           {
-            "declaration_kind": "definition",
-            "owner": "PowerGameDescent",
-            "reached_declaration": "PowerGameDescent",
-            "visibility": "exported"
-          },
-          {
             "declaration_kind": "theorem",
-            "owner": "PowerGameDescentWellFounded",
-            "reached_declaration": "PowerGameDescentWellFounded",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "PowerMove",
-            "reached_declaration": "PowerMove.match_1",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "PowerMove",
-            "reached_declaration": "PowerMove",
+            "owner": "PowerCopiedTerminates",
+            "reached_declaration": "PowerCopiedTerminates",
             "visibility": "exported"
           },
           {
@@ -164,13 +172,37 @@
           {
             "declaration_kind": "definition",
             "owner": "PowerQ",
-            "reached_declaration": "PowerQ.casesOn",
+            "reached_declaration": "PowerQ.below",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "PowerQ",
+            "reached_declaration": "PowerQ.brecOn.eq",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PowerQ",
+            "reached_declaration": "PowerQ.brecOn.go",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PowerQ",
+            "reached_declaration": "PowerQ.brecOn",
             "visibility": "exported"
           },
           {
             "declaration_kind": "constructor",
             "owner": "PowerQ",
             "reached_declaration": "PowerQ.node",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "recursor",
+            "owner": "PowerQ",
+            "reached_declaration": "PowerQ.rec",
             "visibility": "exported"
           },
           {
@@ -184,41 +216,87 @@
             "owner": "PowerRel",
             "reached_declaration": "PowerRel",
             "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PowerShiftIter",
+            "reached_declaration": "PowerShiftIter",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PowerSupport",
+            "reached_declaration": "PowerSupport._f",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PowerSupport",
+            "reached_declaration": "PowerSupport.match_1",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PowerSupport",
+            "reached_declaration": "PowerSupport",
+            "visibility": "exported"
           }
         ],
         "kernel_axioms": [
-          "Classical.choice",
-          "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "PowerCopiedTerminates",
+        "principal_declaration": "PowerCopiedTerminalSupport",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"PowerCopiedTerminates\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.PowerChild::PowerChild@exported:definition\",\"Tablet.PowerCopiedFailureMove::PowerCopiedFailureMove@exported:theorem\",\"Tablet.PowerCopiedLeft::PowerCopiedLeft@exported:definition\",\"Tablet.PowerCopiedTerminalAt::PowerCopiedTerminalAt@exported:definition\",\"Tablet.PowerGameDescent::PowerGameDescent@exported:definition\",\"Tablet.PowerGameDescentWellFounded::PowerGameDescentWellFounded@exported:theorem\",\"Tablet.PowerMove::PowerMove.match_1@exported:definition\",\"Tablet.PowerMove::PowerMove@exported:definition\",\"Tablet.PowerQ::PowerQ.atom@exported:constructor\",\"Tablet.PowerQ::PowerQ.casesOn@exported:definition\",\"Tablet.PowerQ::PowerQ.node@exported:constructor\",\"Tablet.PowerQ::PowerQ@exported:inductive\",\"Tablet.PowerRel::PowerRel@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"PowerCopiedTerminates\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"PowerCopiedTerminates\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerChild\",\"reached_declaration\":\"PowerChild\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"PowerCopiedFailureMove\",\"reached_declaration\":\"PowerCopiedFailureMove\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerCopiedLeft\",\"reached_declaration\":\"PowerCopiedLeft\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerCopiedTerminalAt\",\"reached_declaration\":\"PowerCopiedTerminalAt\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerGameDescent\",\"reached_declaration\":\"PowerGameDescent\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"PowerGameDescentWellFounded\",\"reached_declaration\":\"PowerGameDescentWellFounded\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerMove\",\"reached_declaration\":\"PowerMove.match_1\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerMove\",\"reached_declaration\":\"PowerMove\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.atom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.casesOn\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.node\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerRel\",\"reached_declaration\":\"PowerRel\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"PowerCopiedTerminates\",\"principal_declaration\":\"PowerCopiedTerminates\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"PowerChild\",\"semantic_hash\":\"5ec649d4b658c9e6\"},{\"name\":\"PowerCopiedLeft\",\"semantic_hash\":\"bec58b58371c6077\"},{\"name\":\"PowerCopiedTerminalAt\",\"semantic_hash\":\"e9138b44800c4a15\"},{\"name\":\"PowerGameDescent\",\"semantic_hash\":\"aa9427da0e16aa1b\"},{\"name\":\"PowerMove\",\"semantic_hash\":\"b51920ec52cb8301\"},{\"name\":\"PowerMove\",\"semantic_hash\":\"9a33dfbfd4b80b15\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1a7622b0590b3994\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"ef8d4ad5b7e7b7b4\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1f06fec9c525a2b8\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"eb448a4c139aebf2\"},{\"name\":\"PowerRel\",\"semantic_hash\":\"e5b8f884861e2141\"}],\"strict_theorem_deps\":[{\"name\":\"PowerCopiedFailureMove\",\"value_hash\":\"293cbd66caf4f362\"},{\"name\":\"PowerGameDescentWellFounded\",\"value_hash\":\"95e4d9a1cfd4a701\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"PowerCopiedTerminalSupport\",\"PowerSupport.eq_1\",\"PowerSupport.eq_2\",\"PowerSupport.eq_def\",\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_1\",\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_2\",\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.splitter\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.PowerCopiedLeft::PowerCopiedLeft@exported:definition\",\"Tablet.PowerCopiedSupport::PowerCopiedSupport@exported:theorem\",\"Tablet.PowerCopiedTerminalAt::PowerCopiedTerminalAt@exported:definition\",\"Tablet.PowerCopiedTerminates::PowerCopiedTerminates@exported:theorem\",\"Tablet.PowerQ::PowerQ.atom@exported:constructor\",\"Tablet.PowerQ::PowerQ.below@exported:definition\",\"Tablet.PowerQ::PowerQ.brecOn.eq@exported:theorem\",\"Tablet.PowerQ::PowerQ.brecOn.go@exported:definition\",\"Tablet.PowerQ::PowerQ.brecOn@exported:definition\",\"Tablet.PowerQ::PowerQ.node@exported:constructor\",\"Tablet.PowerQ::PowerQ.rec@exported:recursor\",\"Tablet.PowerQ::PowerQ@exported:inductive\",\"Tablet.PowerRel::PowerRel@exported:definition\",\"Tablet.PowerShiftIter::PowerShiftIter@exported:definition\",\"Tablet.PowerSupport::PowerSupport._f@exported:definition\",\"Tablet.PowerSupport::PowerSupport.match_1@exported:definition\",\"Tablet.PowerSupport::PowerSupport@exported:definition\"],\"kernel_axioms\":[\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"PowerCopiedTerminalSupport\",\"PowerSupport.eq_1\",\"PowerSupport.eq_2\",\"PowerSupport.eq_def\",\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_1\",\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_2\",\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.splitter\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"PowerCopiedTerminalSupport\"},{\"kind\":\"theorem\",\"name\":\"PowerSupport.eq_1\"},{\"kind\":\"theorem\",\"name\":\"PowerSupport.eq_2\"},{\"kind\":\"theorem\",\"name\":\"PowerSupport.eq_def\"},{\"kind\":\"theorem\",\"name\":\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_1\"},{\"kind\":\"theorem\",\"name\":\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_2\"},{\"kind\":\"definition\",\"name\":\"_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.splitter\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerCopiedLeft\",\"reached_declaration\":\"PowerCopiedLeft\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"PowerCopiedSupport\",\"reached_declaration\":\"PowerCopiedSupport\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerCopiedTerminalAt\",\"reached_declaration\":\"PowerCopiedTerminalAt\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"PowerCopiedTerminates\",\"reached_declaration\":\"PowerCopiedTerminates\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.atom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.below\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.brecOn.eq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.brecOn.go\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.brecOn\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.node\",\"visibility\":\"exported\"},{\"declaration_kind\":\"recursor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.rec\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerRel\",\"reached_declaration\":\"PowerRel\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerShiftIter\",\"reached_declaration\":\"PowerShiftIter\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerSupport\",\"reached_declaration\":\"PowerSupport._f\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerSupport\",\"reached_declaration\":\"PowerSupport.match_1\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerSupport\",\"reached_declaration\":\"PowerSupport\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"propext\"],\"node\":\"PowerCopiedTerminalSupport\",\"principal_declaration\":\"PowerCopiedTerminalSupport\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"PowerCopiedLeft\",\"semantic_hash\":\"bec58b58371c6077\"},{\"name\":\"PowerCopiedTerminalAt\",\"semantic_hash\":\"e9138b44800c4a15\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1f06fec9c525a2b8\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1a7622b0590b3994\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"6213f59b5f72f7e5\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"eb448a4c139aebf2\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"f405e8e5f68cb63f\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"64610d30cc774d28\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"9db3f01f6b02c467\"},{\"name\":\"PowerRel\",\"semantic_hash\":\"e5b8f884861e2141\"},{\"name\":\"PowerShiftIter\",\"semantic_hash\":\"4253695083a62b35\"},{\"name\":\"PowerSupport\",\"semantic_hash\":\"9a33dfbfd4b80b15\"},{\"name\":\"PowerSupport\",\"semantic_hash\":\"2b7fde7ac8e54949\"},{\"name\":\"PowerSupport\",\"semantic_hash\":\"b8912fafb68b599d\"}],\"strict_theorem_deps\":[{\"name\":\"PowerCopiedSupport\",\"value_hash\":\"8117fb6d9f8d90cf\"},{\"name\":\"PowerCopiedTerminates\",\"value_hash\":\"ee55f10e2ccc561f\"},{\"name\":\"PowerQ\",\"value_hash\":\"f58d743ca911f399\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "PowerCopiedTerminates"
+            "name": "PowerCopiedTerminalSupport"
+          },
+          {
+            "kind": "theorem",
+            "name": "PowerSupport.eq_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "PowerSupport.eq_2"
+          },
+          {
+            "kind": "theorem",
+            "name": "PowerSupport.eq_def"
+          },
+          {
+            "kind": "theorem",
+            "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_2"
+          },
+          {
+            "kind": "definition",
+            "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.splitter"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "42430260f722fd54e7ab440ba5300b18d065b28cb82fc647e42afcf87583d59b",
+        "source_sha256": "a71e309cc6c29dd519ca35549ad021f6797ec6f998a6aadc055c839cf0a0af9a",
         "status": "ok",
         "strict_definition_deps": {
           "BadMultiSequence": "12b952b1af44d358",
           "IncSeq": "1722254285ddeb5c",
           "MultiSequence": "cde631bc1bef82ee",
-          "PowerChild": "5ec649d4b658c9e6",
           "PowerCopiedLeft": "bec58b58371c6077",
           "PowerCopiedTerminalAt": "e9138b44800c4a15",
-          "PowerGameDescent": "aa9427da0e16aa1b",
-          "PowerMove": "9a33dfbfd4b80b15",
-          "PowerQ": "eb448a4c139aebf2",
-          "PowerRel": "e5b8f884861e2141"
+          "PowerQ": "9db3f01f6b02c467",
+          "PowerRel": "e5b8f884861e2141",
+          "PowerShiftIter": "4253695083a62b35",
+          "PowerSupport": "b8912fafb68b599d"
         },
         "strict_theorem_deps": {
-          "PowerCopiedFailureMove": "293cbd66caf4f362",
-          "PowerGameDescentWellFounded": "95e4d9a1cfd4a701"
+          "PowerCopiedSupport": "8117fb6d9f8d90cf",
+          "PowerCopiedTerminates": "ee55f10e2ccc561f",
+          "PowerQ": "f58d743ca911f399"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -226,7 +304,31 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "PowerCopiedTerminates"
+                "name": "PowerCopiedTerminalSupport"
+              },
+              {
+                "kind": "theorem",
+                "name": "PowerSupport.eq_1"
+              },
+              {
+                "kind": "theorem",
+                "name": "PowerSupport.eq_2"
+              },
+              {
+                "kind": "theorem",
+                "name": "PowerSupport.eq_def"
+              },
+              {
+                "kind": "theorem",
+                "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_1"
+              },
+              {
+                "kind": "theorem",
+                "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.eq_2"
+              },
+              {
+                "kind": "definition",
+                "name": "_private.Tablet.PowerCopiedTerminalSupport.0.PowerSupport.match_1.splitter"
               }
             ],
             "level": "exported"
@@ -241,7 +343,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 640,
+    "request_id": 642,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -496,7 +598,6 @@
         "PowerCopiedOrbitDependence",
         "PowerCopiedShiftIdentity",
         "PowerCopiedTerminalShift",
-        "PowerCopiedTerminalSupport",
         "PowerFiniteOrbitConstancy",
         "PowerQPresBqo",
         "PowerQReflection",
@@ -3024,7 +3125,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed PowerCopiedTerminates by accessibility induction on adjacent copied-value pairs.",
+    "summary": "Closed PowerCopiedTerminalSupport with the prescribed termination, terminal-atom, and support-transport argument.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3196,7 +3297,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "2dac7e14083b8fb0fb9a7e6fab91e66da0e1d338763cf10835e5ffdd42eebcb7",
+    "INDEX.md": "ca4d48584fd1939b1241fa9aeb1b931426647365d58a946eda52063c4e614709",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3275,7 +3376,7 @@
     "PowerCopiedTerminalAt.tex": "eaf2f02dd66703731e3bce61b0724212b1cc9311605aab019dc1db1b43d15bf4",
     "PowerCopiedTerminalShift.lean": "420002afe5f2df9711386d35e933381906b8b317ede22234e91f5191eca003bb",
     "PowerCopiedTerminalShift.tex": "2b33bc0ae74af3de1d6032c941b58ab6bcbaba796068b17ce553cac80727fbbf",
-    "PowerCopiedTerminalSupport.lean": "db89b60049988b30e0a4920dbbdea722686837641362101e9ce518937b69ecd4",
+    "PowerCopiedTerminalSupport.lean": "a71e309cc6c29dd519ca35549ad021f6797ec6f998a6aadc055c839cf0a0af9a",
     "PowerCopiedTerminalSupport.tex": "5a3766b41064e17dea8878eea9b9d471a79b3d62d7c61d5316cad5b76da48231",
     "PowerCopiedTerminates.lean": "42430260f722fd54e7ab440ba5300b18d065b28cb82fc647e42afcf87583d59b",
     "PowerCopiedTerminates.tex": "96dd700dd877798f76ef643f08bc5d9f41d87c0b90e897f18fdf4bcebc9c2b57",
@@ -3353,7 +3454,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "a3af6a2ae8071e7d9301302dde039c35d1b6b800fe980f79e2f854165007a768",
+    "README.md": "b997b5f0dad6a05f69e1a951635c7df209a67428b094a883ad19c154d64d8c99",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3408,7 +3509,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_640_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_642_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
