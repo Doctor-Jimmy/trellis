@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedFailureMove is closed; close its first unresolved response prerequisite, PowerIResponseWitness.",
-    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseWitness. Preserve the witness theorem statement, imports, BODY marker, and accepted TeX proof. Split by the four presentation tag pairs and use the corresponding PowerRel reduction clauses: unchanged atom moves for atom cases, a right-child failure family for atom/node, a left-child witness for node/atom, and the universal-existential failure witness for node/node. In every branch identify the legal moves through PowerMove and prove the required universal failure. Do not edit the copied theorem or add wrappers; leave no helper obligations open.",
+    "reason": "PowerIResponseWitness is closed; close the canonical response legality lemma next.",
+    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseLegal. Preserve its theorem statement, import, BODY marker, and accepted TeX proof. Apply PowerIResponseWitness to obtain a legal witness and its universal failure property, unfold the conditional definition of PowerIResponse, show the positive branch is selected, and identify the canonical response with the witness so its PowerMove component gives the conclusion. Do not add wrappers or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerIResponseWitness",
+    "next_active": "PowerIResponseLegal",
     "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerIResponseWitness": "easy"
+      "PowerIResponseLegal": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseWitness. Preserve the witness theorem statement, imports, BODY marker, and accepted TeX proof. Split by the four presentation tag pairs and use the corresponding PowerRel reduction clauses: unchanged atom moves for atom cases, a right-child failure family for atom/node, a left-child witness for node/atom, and the universal-existential failure witness for node/node. In every branch identify the legal moves through PowerMove and prove the required universal failure. Do not edit the copied theorem or add wrappers; leave no helper obligations open.",
+    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseLegal. Preserve its theorem statement, import, BODY marker, and accepted TeX proof. Apply PowerIResponseWitness to obtain a legal witness and its universal failure property, unfold the conditional definition of PowerIResponse, show the positive branch is selected, and identify the canonical response with the witness so its PowerMove component gives the conclusion. Do not add wrappers or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 213,
+    "cycle": 214,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerIResponseWitness": {
+      "PowerIResponseLegal": {
         "Set": "Easy"
       }
     },
@@ -47,7 +47,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerIResponseWitness",
+    "next_active": "PowerIResponseLegal",
     "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedFailureMove is closed; close its first unresolved response prerequisite, PowerIResponseWitness.",
-    "request_id": 629,
+    "reason": "PowerIResponseWitness is closed; close the canonical response legality lemma next.",
+    "request_id": 631,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_629_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_631_decision.context.json"
 }

@@ -139,7 +139,7 @@
 | PowerIResponse | definition | - | closed |
 | PowerIResponseFailure | proof | The canonical response preserves failure | open |
 | PowerIResponseLegal | proof | The canonical response is legal | open |
-| PowerIResponseWitness | proof | A failed comparison has a canonical one-round response | open |
+| PowerIResponseWitness | proof | A failed comparison has a canonical one-round response | closed |
 | PowerMove | definition | - | closed |
 | PowerMoveInSupport | proof | Moves stay in support | open |
 | PowerPresentationEq | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 132/185 closed
+**Summary:** 133/185 closed

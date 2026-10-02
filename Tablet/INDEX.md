@@ -131,7 +131,7 @@
 | PowerIResponse | definition | definition | closed | - | - | PowerMove |
 | PowerIResponseFailure | lemma | proof | open | - | The canonical response preserves failure | PowerIResponseLegal |
 | PowerIResponseLegal | lemma | proof | open | - | The canonical response is legal | PowerIResponseWitness |
-| PowerIResponseWitness | lemma | proof | open | - | A failed comparison has a canonical one-round response | PowerIResponse, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
+| PowerIResponseWitness | lemma | proof | closed | - | A failed comparison has a canonical one-round response | PowerIResponse, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
 | PowerMove | definition | definition | closed | - | - | PowerChild, PowerRel |
 | PowerMoveInSupport | lemma | proof | open | - | Moves stay in support | PowerChildSupport, PowerMove |
 | PowerPresentationEq | definition | definition | closed | - | - | PowerQ |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 132 | **Open:** 53
+**Total:** 185 nodes | **Closed:** 133 | **Open:** 52
