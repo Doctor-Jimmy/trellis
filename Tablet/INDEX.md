@@ -30,7 +30,7 @@
 | BqoHerCtblWellF | theorem | proof | closed | - | - | BqoHerCtblWqo, HerCtblWqoIffWellFounded |
 | BqoHerCtblWqo | theorem | proof | closed | - | - | BadMultiToNontrivialSuper, BqoImpliesWqo, ConverseGame, PowerQPresBqo, TildeFHerCtbl, TildeFSingleton |
 | BqoIffGeneralShift | corollary | proof | open | - | - | BadMultiSequence, Bqo, GBetterRel, GBetterRelIff, IncSeqId, RightComp, ShiftMap, SuccSeq |
-| BqoImpliesWqo | lemma | proof | open | - | Better quasi-order implies well quasi-order | Bqo |
+| BqoImpliesWqo | lemma | proof | closed | - | Better quasi-order implies well quasi-order | Bqo |
 | CardinalityFront | definition | definition | closed | - | Constant-cardinality front | Preamble |
 | CardinalityFrontIsFront | lemma | proof | closed | - | - | CardinalityFront, Front, InfiniteSetEnumeration |
 | ContMor | definition | definition | closed | - | - | ContinuousHom |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 120 | **Open:** 65
+**Total:** 185 nodes | **Closed:** 121 | **Open:** 64

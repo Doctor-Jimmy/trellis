@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "SuperNW is closed; advance to the direct consequence that every better quasi-order is a well quasi-order.",
-    "comments": "Switch the coarse anchor to BqoImpliesWqo and use Local mode. Preserve its protected theorem signature, imports, BODY marker, and accepted TeX proof. This is a focused closure attempt using only Bqo: assume a bad sequence witnessing failure of WellQuasiOrdered, define the multi-sequence by the first coordinate, prove local constancy from PrefixAgree, prove badness using strict increase and ShiftMap, and contradict Bqo. Do not add wrappers or leave helper obligations open.",
+    "reason": "BqoImpliesWqo is closed; advance to the foundational equivalence theorem for tagged powerset presentations.",
+    "comments": "Switch the coarse anchor to PowerPresentationEqEquivalence and use Local mode. Preserve its protected statement, import, BODY marker, and accepted TeX proof. Close the reflexive, symmetric, and transitive parts by structural induction on PowerQ, explicitly handling atom/node false cases and composing both matching directions through a middle node. The theorem has several downstream powerset users, so a genuine smaller helper is acceptable if needed, but do not repackage the whole equivalence argument or edit unrelated nodes; complete any new helper proof rather than leaving an avoidable wrapper obligation.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BqoImpliesWqo",
-    "next_active_coarse": "BqoImpliesWqo",
+    "next_active": "PowerPresentationEqEquivalence",
+    "next_active_coarse": "PowerPresentationEqEquivalence",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BqoImpliesWqo": "easy"
+      "PowerPresentationEqEquivalence": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to BqoImpliesWqo and use Local mode. Preserve its protected theorem signature, imports, BODY marker, and accepted TeX proof. This is a focused closure attempt using only Bqo: assume a bad sequence witnessing failure of WellQuasiOrdered, define the multi-sequence by the first coordinate, prove local constancy from PrefixAgree, prove badness using strict increase and ShiftMap, and contradict Bqo. Do not add wrappers or leave helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerPresentationEqEquivalence and use Local mode. Preserve its protected statement, import, BODY marker, and accepted TeX proof. Close the reflexive, symmetric, and transitive parts by structural induction on PowerQ, explicitly handling atom/node false cases and composing both matching directions through a middle node. The theorem has several downstream powerset users, so a genuine smaller helper is acceptable if needed, but do not repackage the whole equivalence argument or edit unrelated nodes; complete any new helper proof rather than leaving an avoidable wrapper obligation.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 201,
+    "cycle": 202,
     "decision": "Continue",
     "difficulty_updates": {
-      "BqoImpliesWqo": {
-        "Set": "Easy"
+      "PowerPresentationEqEquivalence": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BqoImpliesWqo",
-    "next_active_coarse": "BqoImpliesWqo",
+    "next_active": "PowerPresentationEqEquivalence",
+    "next_active_coarse": "PowerPresentationEqEquivalence",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "SuperNW is closed; advance to the direct consequence that every better quasi-order is a well quasi-order.",
-    "request_id": 605,
+    "reason": "BqoImpliesWqo is closed; advance to the foundational equivalence theorem for tagged powerset presentations.",
+    "request_id": 607,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_605_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_607_decision.context.json"
 }

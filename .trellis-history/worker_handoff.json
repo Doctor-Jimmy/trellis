@@ -1,8 +1,8 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed SuperNW in Lean by finite-codomain induction using NashWilliams, including the selected-color fiber and the recursive complement branch.",
-    "comments": "Preserved Tablet/SuperNW.lean imports, theorem signature, BODY marker, and accepted TeX proof. The proof handles finite-type equivalence transport, the empty codomain, the none fiber, and the Option complement map into the smaller codomain, then composes the two front inclusions. No helpers or other Tablet nodes were added or edited; incremental-check and lake build pass.",
+    "summary": "Closed BqoImpliesWqo in Lean using the first-coordinate multi-sequence constructed from a sequence with no related increasing pair.",
+    "comments": "Preserved Tablet/BqoImpliesWqo.lean imports, theorem signature, BODY marker, and accepted TeX proof. The proof derives the bad sequence from the negated WellQuasiOrdered definition, establishes local constancy at prefix length 1 via PrefixAgree, and establishes badness using strict increase and ShiftMap. No helpers or other Tablet nodes were added or edited; incremental-check and lake build pass.",
     "target_claim_updates": {},
     "difficulty_updates": {},
     "deleted_nodes": [],
@@ -21,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved Tablet/SuperNW.lean imports, theorem signature, BODY marker, and accepted TeX proof. The proof handles finite-type equivalence transport, the empty codomain, the none fiber, and the Option complement map into the smaller codomain, then composes the two front inclusions. No helpers or other Tablet nodes were added or edited; incremental-check and lake build pass.",
-    "cycle": 201,
+    "comments": "Preserved Tablet/BqoImpliesWqo.lean imports, theorem signature, BODY marker, and accepted TeX proof. The proof derives the bad sequence from the negated WellQuasiOrdered definition, establishes local constancy at prefix length 1 via PrefixAgree, and establishes badness using strict increase and ShiftMap. No helpers or other Tablet nodes were added or edited; incremental-check and lake build pass.",
+    "cycle": 202,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -31,12 +31,12 @@
     "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "SuperNW": {
+      "BqoImpliesWqo": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "0edb1847fb93d63bed1f0df1eaefc6412abc5450d560bff600f87a32c3343de3",
-            "size_bytes": 96592
+            "sha256": "9a7f928813b90d0f724bc5644c06874700980b88b2189f0cb61bdf7ed385752a",
+            "size_bytes": 26768
           }
         ],
         "axiomization_check": {
@@ -44,15 +44,13 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
-            "Tablet.Front::Front.dense@exported:theorem",
-            "Tablet.Front::Front.infinite_base@exported:theorem",
-            "Tablet.Front::Front@exported:inductive",
-            "Tablet.NashWilliams::NashWilliams@exported:theorem",
-            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
-            "Tablet.SuperSequence::SuperSequence.front@exported:theorem",
-            "Tablet.SuperSequence::SuperSequence.mk@exported:constructor",
-            "Tablet.SuperSequence::SuperSequence.value@exported:definition",
-            "Tablet.SuperSequence::SuperSequence@exported:inductive"
+            "Tablet.BadMultiSequence::BadMultiSequence@exported:definition",
+            "Tablet.Bqo::Bqo@exported:definition",
+            "Tablet.IncSeq::IncSeq@exported:definition",
+            "Tablet.LocallyConstant::LocallyConstant@exported:definition",
+            "Tablet.MultiSequence::MultiSequence@exported:definition",
+            "Tablet.PrefixAgree::PrefixAgree@exported:definition",
+            "Tablet.ShiftMap::ShiftMap@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [
@@ -77,68 +75,63 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "SuperNW"
+            "name": "BqoImpliesWqo"
+          },
+          {
+            "kind": "theorem",
+            "name": "BqoImpliesWqo._proof_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "BqoImpliesWqo._proof_1_2"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.NashWilliams",
-          "Tablet.SuperSequence"
+          "Tablet.Bqo"
         ],
         "errors": [],
         "exact_declaration_uses": [
           {
-            "declaration_kind": "theorem",
-            "owner": "Front",
-            "reached_declaration": "Front.dense",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "Front",
-            "reached_declaration": "Front.infinite_base",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "inductive",
-            "owner": "Front",
-            "reached_declaration": "Front",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "NashWilliams",
-            "reached_declaration": "NashWilliams",
+            "declaration_kind": "definition",
+            "owner": "BadMultiSequence",
+            "reached_declaration": "BadMultiSequence",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "ProperPrefixSet",
-            "reached_declaration": "ProperPrefixSet",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence.front",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "constructor",
-            "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence.mk",
+            "owner": "Bqo",
+            "reached_declaration": "Bqo",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence.value",
+            "owner": "IncSeq",
+            "reached_declaration": "IncSeq",
             "visibility": "exported"
           },
           {
-            "declaration_kind": "inductive",
-            "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence",
+            "declaration_kind": "definition",
+            "owner": "LocallyConstant",
+            "reached_declaration": "LocallyConstant",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "MultiSequence",
+            "reached_declaration": "MultiSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PrefixAgree",
+            "reached_declaration": "PrefixAgree",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ShiftMap",
+            "reached_declaration": "ShiftMap",
             "visibility": "exported"
           }
         ],
@@ -147,36 +140,52 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "SuperNW",
+        "principal_declaration": "BqoImpliesWqo",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"SuperNW\"],\"boundary_theorems\":[\"Tablet.Front::Front.dense@exported:theorem\",\"Tablet.Front::Front.infinite_base@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.NashWilliams::NashWilliams@exported:theorem\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.SuperSequence::SuperSequence.front@exported:theorem\",\"Tablet.SuperSequence::SuperSequence.mk@exported:constructor\",\"Tablet.SuperSequence::SuperSequence.value@exported:definition\",\"Tablet.SuperSequence::SuperSequence@exported:inductive\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"SuperNW\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"SuperNW\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.dense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.infinite_base\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"NashWilliams\",\"reached_declaration\":\"NashWilliams\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.value\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"SuperNW\",\"principal_declaration\":\"SuperNW\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"97f9f0f5dc5dec42\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"2ab38a5f61409383\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"d1cbc9e5f5417c3a\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"b6659350d53796ce\"},{\"name\":\"Front\",\"value_hash\":\"cf6cd0fffa0c1f96\"},{\"name\":\"NashWilliams\",\"value_hash\":\"34f8ba625e6160d4\"},{\"name\":\"SuperSequence\",\"value_hash\":\"064e0cd704aab6c4\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"BqoImpliesWqo\",\"BqoImpliesWqo._proof_1_1\",\"BqoImpliesWqo._proof_1_2\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.Bqo::Bqo@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.PrefixAgree::PrefixAgree@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"BqoImpliesWqo\",\"BqoImpliesWqo._proof_1_1\",\"BqoImpliesWqo._proof_1_2\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"BqoImpliesWqo\"},{\"kind\":\"theorem\",\"name\":\"BqoImpliesWqo._proof_1_1\"},{\"kind\":\"theorem\",\"name\":\"BqoImpliesWqo._proof_1_2\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Bqo\",\"reached_declaration\":\"Bqo\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixAgree\",\"reached_declaration\":\"PrefixAgree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"BqoImpliesWqo\",\"principal_declaration\":\"BqoImpliesWqo\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"Bqo\",\"semantic_hash\":\"3fb1a54d22d9b578\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"PrefixAgree\",\"semantic_hash\":\"0e59d4fb59a4ae04\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"}],\"strict_theorem_deps\":[]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "SuperNW"
+            "name": "BqoImpliesWqo"
+          },
+          {
+            "kind": "theorem",
+            "name": "BqoImpliesWqo._proof_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "BqoImpliesWqo._proof_1_2"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "2568905ad4d44b2b8a9df84aa2320a73941bca8d3cdb0e770854c6841d239212",
+        "source_sha256": "2bdbe7175556f0d888d0111ef11193180ee57c54025c85baba04c78f1c8a5dc2",
         "status": "ok",
         "strict_definition_deps": {
-          "Front": "54804e268105ccdb",
-          "ProperPrefixSet": "8d7d85f7e2dcc1fd",
-          "SuperSequence": "d1cbc9e5f5417c3a"
+          "BadMultiSequence": "12b952b1af44d358",
+          "Bqo": "3fb1a54d22d9b578",
+          "IncSeq": "1722254285ddeb5c",
+          "LocallyConstant": "3be73314501d2a70",
+          "MultiSequence": "cde631bc1bef82ee",
+          "PrefixAgree": "0e59d4fb59a4ae04",
+          "ShiftMap": "2072518c2402a1ed"
         },
-        "strict_theorem_deps": {
-          "Front": "cf6cd0fffa0c1f96",
-          "NashWilliams": "34f8ba625e6160d4",
-          "SuperSequence": "064e0cd704aab6c4"
-        },
+        "strict_theorem_deps": {},
         "timed_out": false,
         "visibility_manifests": [
           {
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "SuperNW"
+                "name": "BqoImpliesWqo"
+              },
+              {
+                "kind": "theorem",
+                "name": "BqoImpliesWqo._proof_1_1"
+              },
+              {
+                "kind": "theorem",
+                "name": "BqoImpliesWqo._proof_1_2"
               }
             ],
             "level": "exported"
@@ -191,7 +200,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 604,
+    "request_id": 606,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -425,7 +434,6 @@
         "BlockSigmaEmbedding",
         "BlockSigmaIntertwines",
         "BqoIffGeneralShift",
-        "BqoImpliesWqo",
         "ConverseGame",
         "EmapLemma",
         "FinitePrefixExtension",
@@ -2992,7 +3000,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed SuperNW in Lean by finite-codomain induction using NashWilliams, including the selected-color fiber and the recursive complement branch.",
+    "summary": "Closed BqoImpliesWqo in Lean using the first-coordinate multi-sequence constructed from a sequence with no related increasing pair.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3056,7 +3064,7 @@
     "BqoHerCtblWqo.tex": "9cd501df1ba83f963900bf32c065d83ed305e4a5d033ec7c4cd902a2a9c60485",
     "BqoIffGeneralShift.lean": "7dbf02853a591af14d1b88f5fb6b755e49a9041a96e467995f9c2d292560f0dd",
     "BqoIffGeneralShift.tex": "30915b1b6d083c9a0a033eea823fbd2ce4920e73efde63663fd8d07f0b5e8c34",
-    "BqoImpliesWqo.lean": "5d033358a1d31af1dbd86bdfe0f34e3436480204e7d851a4010ffadecd194b5d",
+    "BqoImpliesWqo.lean": "2bdbe7175556f0d888d0111ef11193180ee57c54025c85baba04c78f1c8a5dc2",
     "BqoImpliesWqo.tex": "059f749851f5955687c003f3266a9b6884dd43d892e413b59a280f2678fe9cd2",
     "CardinalityFront.lean": "3b5e2a78409bb3c24faa5816d9fb891c44a7375f5580b115529a08fccda10990",
     "CardinalityFront.tex": "2c4bd0b7a688a244651feadb64d57b5108c99bf35c4e325a8e89fddb1a0fce65",
@@ -3164,7 +3172,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "eadf6ad5e0c2e70af4677596d9a95fd0ddcf2356c8b821c9944cbf76701132e3",
+    "INDEX.md": "791e241f754e3761b4d8413c69f4801692df1caa6b59cf99a1ffd390f5eb25f9",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3321,7 +3329,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "252cb4bd1e802f3b2532b4b8d815c9219579abb4be2404630fb1859134a3485a",
+    "README.md": "b2101946a105aa618fd3a60653c22603fd52fbe23a7fa7d68d019e9704970a7b",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3376,7 +3384,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_604_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_606_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

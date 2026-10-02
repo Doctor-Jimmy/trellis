@@ -38,7 +38,7 @@
 | BqoHerCtblWellF | proof | - | closed |
 | BqoHerCtblWqo | proof | - | closed |
 | BqoIffGeneralShift | proof | - | open |
-| BqoImpliesWqo | proof | Better quasi-order implies well quasi-order | open |
+| BqoImpliesWqo | proof | Better quasi-order implies well quasi-order | closed |
 | CardinalityFront | definition | Constant-cardinality front | closed |
 | CardinalityFrontIsFront | proof | - | closed |
 | ContMor | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 120/185 closed
+**Summary:** 121/185 closed
