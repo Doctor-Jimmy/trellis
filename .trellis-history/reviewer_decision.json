@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "DecidingFront closed with three accepted closed helpers and no blockers. Advance to the short but structurally important FrontTreeWellFounded theorem, which supports three downstream arguments.",
-    "comments": "Switch the coarse anchor to FrontTreeWellFounded and use Local mode. Preserve the theorem statement, imports, marker, and accepted NL proof. Keep the relation orientation exactly r u v := ProperInitialSegment v.1 u.1, so a relation predecessor is a strict extension; use the front base, density, and prefix-free clauses to rule out an infinite branch. Genuine helpers for branch extraction or finite-prefix bookkeeping are allowed and must have complete NL proofs, never SKETCH; do not add wrappers or reverse the recursion relation.",
+    "reason": "FrontTreeWellFounded closed cleanly with the intended relation orientation. Advance to FrontTreeImmediateExtensions, a self-contained finite-set extension lemma with three downstream users.",
+    "comments": "Switch the coarse anchor to FrontTreeImmediateExtensions and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Unpack the PrefixTree witness t, use s notin F to obtain a genuine cutoff and nonempty difference, choose the least new element, prove insert n s is an initial segment of t and remains in PrefixTree F, then discharge countability as a subtype of Nat. Add no helpers or support-DAG changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontTreeWellFounded",
-    "next_active_coarse": "FrontTreeWellFounded",
+    "next_active": "FrontTreeImmediateExtensions",
+    "next_active_coarse": "FrontTreeImmediateExtensions",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontTreeWellFounded": "hard"
+      "FrontTreeImmediateExtensions": "hard"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontTreeWellFounded and use Local mode. Preserve the theorem statement, imports, marker, and accepted NL proof. Keep the relation orientation exactly r u v := ProperInitialSegment v.1 u.1, so a relation predecessor is a strict extension; use the front base, density, and prefix-free clauses to rule out an infinite branch. Genuine helpers for branch extraction or finite-prefix bookkeeping are allowed and must have complete NL proofs, never SKETCH; do not add wrappers or reverse the recursion relation.",
+    "comments": "Switch the coarse anchor to FrontTreeImmediateExtensions and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Unpack the PrefixTree witness t, use s notin F to obtain a genuine cutoff and nonempty difference, choose the least new element, prove insert n s is an initial segment of t and remains in PrefixTree F, then discharge countability as a subtype of Nat. Add no helpers or support-DAG changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 186,
+    "cycle": 187,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontTreeWellFounded": {
+      "FrontTreeImmediateExtensions": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontTreeWellFounded",
-    "next_active_coarse": "FrontTreeWellFounded",
+    "next_active": "FrontTreeImmediateExtensions",
+    "next_active_coarse": "FrontTreeImmediateExtensions",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "DecidingFront closed with three accepted closed helpers and no blockers. Advance to the short but structurally important FrontTreeWellFounded theorem, which supports three downstream arguments.",
-    "request_id": 571,
+    "reason": "FrontTreeWellFounded closed cleanly with the intended relation orientation. Advance to FrontTreeImmediateExtensions, a self-contained finite-set extension lemma with three downstream users.",
+    "request_id": 573,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_571_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_573_decision.context.json"
 }

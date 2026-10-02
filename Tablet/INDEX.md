@@ -65,7 +65,7 @@
 | FrontTreeImmediateExtensions | lemma | proof | open | - | Immediate extensions in the front tree | Front, PrefixTree, ProperInitialSegment |
 | FrontTreeOrderedExtension | lemma | proof | open | - | All ordered one-point extensions remain in the tree | FrontTreeWellFounded |
 | FrontTreeSingleton | lemma | proof | open | - | Singletons belong to a nontrivial full-base tree | Front, PrefixTree |
-| FrontTreeWellFounded | lemma | proof | open | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
+| FrontTreeWellFounded | lemma | proof | closed | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
 | GBetterRelIff | theorem | proof | open | - | g-BQO | BetterRel, Bqo, ContinuousRelHom, DecidingFront, DecidingValue, Front, GBetterRel, IncSeq, IncSeqComp, IncSeqId, InfiniteSetEnumeration, LocallyConstant, MainProp, MultiSequenceRestrict, NashWilliams, PrefixAgree, ProperPrefixSet, RestrictionLocallyConstant, RightComp |
 | GoodMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
@@ -183,4 +183,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 179 nodes | **Closed:** 99 | **Open:** 80
+**Total:** 179 nodes | **Closed:** 100 | **Open:** 79

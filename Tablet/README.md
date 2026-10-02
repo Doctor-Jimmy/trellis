@@ -73,7 +73,7 @@
 | FrontTreeImmediateExtensions | proof | Immediate extensions in the front tree | open |
 | FrontTreeOrderedExtension | proof | All ordered one-point extensions remain in the tree | open |
 | FrontTreeSingleton | proof | Singletons belong to a nontrivial full-base tree | open |
-| FrontTreeWellFounded | proof | Well-founded prefix tree | open |
+| FrontTreeWellFounded | proof | Well-founded prefix tree | closed |
 | GBetterRel | definition | - | closed |
 | GBetterRelIff | proof | g-BQO | open |
 | GoodMultiSequence | definition | - | closed |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 99/179 closed
+**Summary:** 100/179 closed

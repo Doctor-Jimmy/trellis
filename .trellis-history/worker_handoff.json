@@ -1,25 +1,16 @@
 {
   "raw": {
-    "audit_request": null,
-    "comments": "Closed DecidingFront with its preserved statement and NL proof. Added three substantive, Lean-closed helpers: finite-prefix agreement, transitivity of finite initial segments, and minimal deciding-prefix extraction. The active theorem now assembles local constancy, density, prefix-freeness, and the constant/nonconstant base split. Incremental check, lake build, and the full tablet structural check pass.",
+    "comments": "Closed only the proof body of FrontTreeWellFounded. The theorem statement, imports, BODY marker, and accepted NL proof were preserved. The proof follows the required extension-oriented relation by ruling out every descending chain: its finite-node union is infinite, density supplies a front prefix, finite capture places that prefix and its boundary in one chain node, and prefix-freeness yields the contradiction. Incremental check and lake build pass.",
     "deleted_nodes": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {
-      "DecidingFrontAgreement": "easy",
-      "DecidingFrontInitialTrans": "easy",
-      "DecidingFrontMinimal": "hard"
-    },
+    "difficulty_updates": {},
     "memory_challenges": [],
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Closed DecidingFront in Lean and decomposed the finite-prefix and minimality arguments into three genuine closed helpers.",
-    "target_claim_updates": {
-      "DecidingFrontAgreement": [],
-      "DecidingFrontInitialTrans": [],
-      "DecidingFrontMinimal": []
-    }
+    "summary": "Closed FrontTreeWellFounded in Lean with the required strict-extension relation orientation.",
+    "target_claim_updates": {}
   },
   "response": {
     "acceptance_check_passed": true,
@@ -29,59 +20,22 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Closed DecidingFront with its preserved statement and NL proof. Added three substantive, Lean-closed helpers: finite-prefix agreement, transitivity of finite initial segments, and minimal deciding-prefix extraction. The active theorem now assembles local constancy, density, prefix-freeness, and the constant/nonconstant base split. Incremental check, lake build, and the full tablet structural check pass.",
-    "cycle": 186,
+    "comments": "Closed only the proof body of FrontTreeWellFounded. The theorem statement, imports, BODY marker, and accepted NL proof were preserved. The proof follows the required extension-oriented relation by ruling out every descending chain: its finite-node union is infinite, density supplies a front prefix, finite capture places that prefix and its boundary in one chain node, and prefix-freeness yields the contradiction. Incremental check and lake build pass.",
+    "cycle": 187,
     "deleted_nodes": [],
-    "dep_updates": {
-      "DecidingFront": {
-        "Set": [
-          "DecidingFrontAgreement",
-          "DecidingFrontMinimal",
-          "DecidingFrontSet",
-          "Front",
-          "InfiniteSetEnumeration"
-        ]
-      },
-      "DecidingFrontAgreement": {
-        "Set": [
-          "PrefixAgree",
-          "ProperPrefixSet"
-        ]
-      },
-      "DecidingFrontInitialTrans": {
-        "Set": [
-          "InitialSegment"
-        ]
-      },
-      "DecidingFrontMinimal": {
-        "Set": [
-          "DecidingFrontInitialTrans",
-          "DecidingFrontSet"
-        ]
-      }
-    },
+    "dep_updates": {},
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
-    "difficulty_updates": {
-      "DecidingFrontAgreement": {
-        "Set": "Easy"
-      },
-      "DecidingFrontInitialTrans": {
-        "Set": "Easy"
-      },
-      "DecidingFrontMinimal": {
-        "Set": "Hard"
-      }
-    },
+    "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "DecidingFront": {
+      "FrontTreeWellFounded": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "a6bf86b2d662f15db41bf9ffec6e2b0b4436fd7c90de22e4aed1eb73f71e1550",
-            "size_bytes": 98648
+            "sha256": "dc0cdcf87007f2352c6e298d33f0f5b980cc7dd53a634ea22065f0768033debd",
+            "size_bytes": 138536
           }
         ],
         "axiomization_check": {
@@ -89,19 +43,13 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
-            "Tablet.DecidingFrontAgreement::DecidingFrontAgreement@exported:theorem",
-            "Tablet.DecidingFrontMinimal::DecidingFrontMinimal@exported:theorem",
-            "Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition",
-            "Tablet.DecidingPrefix::DecidingPrefix@exported:definition",
-            "Tablet.Front::Front.mk@exported:constructor",
+            "Tablet.Front::Front.base_condition@exported:theorem",
+            "Tablet.Front::Front.dense@exported:theorem",
+            "Tablet.Front::Front.prefix_free@exported:theorem",
             "Tablet.Front::Front@exported:inductive",
             "Tablet.FrontBase::FrontBase@exported:definition",
-            "Tablet.IncSeq::IncSeq@exported:definition",
-            "Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem",
             "Tablet.InitialSegment::InitialSegment@exported:definition",
-            "Tablet.LocallyConstant::LocallyConstant@exported:definition",
-            "Tablet.MultiSequence::MultiSequence@exported:definition",
-            "Tablet.PrefixAgree::PrefixAgree@exported:definition",
+            "Tablet.PrefixTree::PrefixTree@exported:definition",
             "Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition",
             "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition"
           ],
@@ -128,47 +76,45 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "DecidingFront"
+            "name": "FrontTreeWellFounded"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontTreeWellFounded._proof_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontTreeWellFounded._proof_1_3"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontTreeWellFounded._simp_1_2"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.DecidingFrontAgreement",
-          "Tablet.DecidingFrontMinimal",
-          "Tablet.DecidingFrontSet",
           "Tablet.Front",
-          "Tablet.InfiniteSetEnumeration"
+          "Tablet.PrefixTree",
+          "Tablet.ProperInitialSegment"
         ],
         "errors": [],
         "exact_declaration_uses": [
           {
             "declaration_kind": "theorem",
-            "owner": "DecidingFrontAgreement",
-            "reached_declaration": "DecidingFrontAgreement",
+            "owner": "Front",
+            "reached_declaration": "Front.base_condition",
             "visibility": "exported"
           },
           {
             "declaration_kind": "theorem",
-            "owner": "DecidingFrontMinimal",
-            "reached_declaration": "DecidingFrontMinimal",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "DecidingFrontSet",
-            "reached_declaration": "DecidingFrontSet",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "DecidingPrefix",
-            "reached_declaration": "DecidingPrefix",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "constructor",
             "owner": "Front",
-            "reached_declaration": "Front.mk",
+            "reached_declaration": "Front.dense",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.prefix_free",
             "visibility": "exported"
           },
           {
@@ -185,38 +131,14 @@
           },
           {
             "declaration_kind": "definition",
-            "owner": "IncSeq",
-            "reached_declaration": "IncSeq",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "InfiniteSetEnumeration",
-            "reached_declaration": "InfiniteSetEnumeration",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
             "owner": "InitialSegment",
             "reached_declaration": "InitialSegment",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "LocallyConstant",
-            "reached_declaration": "LocallyConstant",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "MultiSequence",
-            "reached_declaration": "MultiSequence",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "PrefixAgree",
-            "reached_declaration": "PrefixAgree",
+            "owner": "PrefixTree",
+            "reached_declaration": "PrefixTree",
             "visibility": "exported"
           },
           {
@@ -237,36 +159,41 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "DecidingFront",
+        "principal_declaration": "FrontTreeWellFounded",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"DecidingFront\"],\"boundary_theorems\":[\"Tablet.DecidingFrontAgreement::DecidingFrontAgreement@exported:theorem\",\"Tablet.DecidingFrontMinimal::DecidingFrontMinimal@exported:theorem\",\"Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition\",\"Tablet.DecidingPrefix::DecidingPrefix@exported:definition\",\"Tablet.Front::Front.mk@exported:constructor\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBase::FrontBase@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.PrefixAgree::PrefixAgree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"DecidingFront\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"DecidingFront\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingFrontAgreement\",\"reached_declaration\":\"DecidingFrontAgreement\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingFrontMinimal\",\"reached_declaration\":\"DecidingFrontMinimal\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingFrontSet\",\"reached_declaration\":\"DecidingFrontSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingPrefix\",\"reached_declaration\":\"DecidingPrefix\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"Front\",\"reached_declaration\":\"Front.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBase\",\"reached_declaration\":\"FrontBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"InfiniteSetEnumeration\",\"reached_declaration\":\"InfiniteSetEnumeration\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixAgree\",\"reached_declaration\":\"PrefixAgree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"DecidingFront\",\"principal_declaration\":\"DecidingFront\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"DecidingFrontSet\",\"semantic_hash\":\"4e9eb434d9142940\"},{\"name\":\"DecidingPrefix\",\"semantic_hash\":\"4077cf3cce7f7a11\"},{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"Front\",\"semantic_hash\":\"b20335ad00752f5b\"},{\"name\":\"FrontBase\",\"semantic_hash\":\"3b1543cbd1e93873\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"PrefixAgree\",\"semantic_hash\":\"0e59d4fb59a4ae04\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"}],\"strict_theorem_deps\":[{\"name\":\"DecidingFrontAgreement\",\"value_hash\":\"b607c001cd299c41\"},{\"name\":\"DecidingFrontMinimal\",\"value_hash\":\"18454629e0166ae6\"},{\"name\":\"InfiniteSetEnumeration\",\"value_hash\":\"4c699c796ec567a4\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontTreeWellFounded\",\"FrontTreeWellFounded._proof_1_1\",\"FrontTreeWellFounded._proof_1_3\",\"FrontTreeWellFounded._simp_1_2\"],\"boundary_theorems\":[\"Tablet.Front::Front.base_condition@exported:theorem\",\"Tablet.Front::Front.dense@exported:theorem\",\"Tablet.Front::Front.prefix_free@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBase::FrontBase@exported:definition\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.PrefixTree::PrefixTree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontTreeWellFounded\",\"FrontTreeWellFounded._proof_1_1\",\"FrontTreeWellFounded._proof_1_3\",\"FrontTreeWellFounded._simp_1_2\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontTreeWellFounded\"},{\"kind\":\"theorem\",\"name\":\"FrontTreeWellFounded._proof_1_1\"},{\"kind\":\"theorem\",\"name\":\"FrontTreeWellFounded._proof_1_3\"},{\"kind\":\"theorem\",\"name\":\"FrontTreeWellFounded._simp_1_2\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.base_condition\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.dense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.prefix_free\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBase\",\"reached_declaration\":\"FrontBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixTree\",\"reached_declaration\":\"PrefixTree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontTreeWellFounded\",\"principal_declaration\":\"FrontTreeWellFounded\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontBase\",\"semantic_hash\":\"3b1543cbd1e93873\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"PrefixTree\",\"semantic_hash\":\"94b89b18d87975df\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"eaeea17e726345c0\"},{\"name\":\"Front\",\"value_hash\":\"cf6cd0fffa0c1f96\"},{\"name\":\"Front\",\"value_hash\":\"10c55c754b74fd56\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "DecidingFront"
+            "name": "FrontTreeWellFounded"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontTreeWellFounded._proof_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontTreeWellFounded._proof_1_3"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontTreeWellFounded._simp_1_2"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "e790a1237e00024aa9f76300c79c241171e54dcfbc6f3cb1b2fdb750fc216218",
+        "source_sha256": "54e8d4d8dda1ede9a062a8c4aaa953d8cda592dbee04efc936f4815fae6a0ecd",
         "status": "ok",
         "strict_definition_deps": {
-          "DecidingFrontSet": "4e9eb434d9142940",
-          "DecidingPrefix": "4077cf3cce7f7a11",
-          "Front": "b20335ad00752f5b",
+          "Front": "54804e268105ccdb",
           "FrontBase": "3b1543cbd1e93873",
-          "IncSeq": "1722254285ddeb5c",
           "InitialSegment": "653306d9681a21e4",
-          "LocallyConstant": "3be73314501d2a70",
-          "MultiSequence": "cde631bc1bef82ee",
-          "PrefixAgree": "0e59d4fb59a4ae04",
+          "PrefixTree": "94b89b18d87975df",
           "ProperInitialSegment": "b0b2a1c37bea1919",
           "ProperPrefixSet": "8d7d85f7e2dcc1fd"
         },
         "strict_theorem_deps": {
-          "DecidingFrontAgreement": "b607c001cd299c41",
-          "DecidingFrontMinimal": "18454629e0166ae6",
-          "InfiniteSetEnumeration": "4c699c796ec567a4"
+          "Front": "10c55c754b74fd56"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -274,345 +201,19 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "DecidingFront"
-              }
-            ],
-            "level": "exported"
-          }
-        ]
-      },
-      "DecidingFrontAgreement": {
-        "artifact_bundle": [
-          {
-            "level": "exported",
-            "sha256": "8feb260735a1ace55359ca2237702573ad6c1974853bf0d3cc569cbd39a523ac",
-            "size_bytes": 86152
-          }
-        ],
-        "axiomization_check": {
-          "agreed": true,
-          "axcheck_only_axioms": [],
-          "axcheck_only_boundaries": [],
-          "boundary_theorems": [
-            "Tablet.IncSeq::IncSeq@exported:definition",
-            "Tablet.PrefixAgree::PrefixAgree@exported:definition",
-            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition"
-          ],
-          "error": null,
-          "kernel_axioms": [
-            "Classical.choice",
-            "Quot.sound",
-            "propext"
-          ],
-          "primary_only_axioms": [],
-          "primary_only_boundaries": [],
-          "skipped": false
-        },
-        "boundary_theorems": {},
-        "checker_identity": {
-          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
-          "closure_version": "patch_c_v1",
-          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
-          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
-          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
-          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
-          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
-        },
-        "declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontAgreement"
-          }
-        ],
-        "direct_imports": [
-          "Init",
-          "Tablet.PrefixAgree",
-          "Tablet.ProperPrefixSet"
-        ],
-        "errors": [],
-        "exact_declaration_uses": [
-          {
-            "declaration_kind": "definition",
-            "owner": "IncSeq",
-            "reached_declaration": "IncSeq",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "PrefixAgree",
-            "reached_declaration": "PrefixAgree",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "ProperPrefixSet",
-            "reached_declaration": "ProperPrefixSet",
-            "visibility": "exported"
-          }
-        ],
-        "kernel_axioms": [
-          "Classical.choice",
-          "Quot.sound",
-          "propext"
-        ],
-        "principal_declaration": "DecidingFrontAgreement",
-        "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"DecidingFrontAgreement\"],\"boundary_theorems\":[\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.PrefixAgree::PrefixAgree@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"DecidingFrontAgreement\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"DecidingFrontAgreement\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixAgree\",\"reached_declaration\":\"PrefixAgree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"DecidingFrontAgreement\",\"principal_declaration\":\"DecidingFrontAgreement\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"PrefixAgree\",\"semantic_hash\":\"0e59d4fb59a4ae04\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"}],\"strict_theorem_deps\":[]}\n",
-        "replay_declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontAgreement"
-          }
-        ],
-        "returncode": 0,
-        "seed_support_definition_deps": {},
-        "source_sha256": "bc4977f6e2a8584551dbd8568e203c8fbfadc0bfc7f52a3e04563f42fbd77e4c",
-        "status": "ok",
-        "strict_definition_deps": {
-          "IncSeq": "1722254285ddeb5c",
-          "PrefixAgree": "0e59d4fb59a4ae04",
-          "ProperPrefixSet": "8d7d85f7e2dcc1fd"
-        },
-        "strict_theorem_deps": {},
-        "timed_out": false,
-        "visibility_manifests": [
-          {
-            "declarations": [
-              {
-                "kind": "theorem",
-                "name": "DecidingFrontAgreement"
-              }
-            ],
-            "level": "exported"
-          }
-        ]
-      },
-      "DecidingFrontInitialTrans": {
-        "artifact_bundle": [
-          {
-            "level": "exported",
-            "sha256": "1d6c2a4af4203d9026d85c4388c9956eb6e0cb22c71a51144a094be087df7006",
-            "size_bytes": 33480
-          }
-        ],
-        "axiomization_check": {
-          "agreed": true,
-          "axcheck_only_axioms": [],
-          "axcheck_only_boundaries": [],
-          "boundary_theorems": [
-            "Tablet.InitialSegment::InitialSegment@exported:definition"
-          ],
-          "error": null,
-          "kernel_axioms": [
-            "Classical.choice",
-            "Quot.sound",
-            "propext"
-          ],
-          "primary_only_axioms": [],
-          "primary_only_boundaries": [],
-          "skipped": false
-        },
-        "boundary_theorems": {},
-        "checker_identity": {
-          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
-          "closure_version": "patch_c_v1",
-          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
-          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
-          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
-          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
-          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
-        },
-        "declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontInitialTrans"
-          },
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontInitialTrans._simp_1_1"
-          }
-        ],
-        "direct_imports": [
-          "Init",
-          "Tablet.InitialSegment"
-        ],
-        "errors": [],
-        "exact_declaration_uses": [
-          {
-            "declaration_kind": "definition",
-            "owner": "InitialSegment",
-            "reached_declaration": "InitialSegment",
-            "visibility": "exported"
-          }
-        ],
-        "kernel_axioms": [
-          "Classical.choice",
-          "Quot.sound",
-          "propext"
-        ],
-        "principal_declaration": "DecidingFrontInitialTrans",
-        "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"DecidingFrontInitialTrans\",\"DecidingFrontInitialTrans._simp_1_1\"],\"boundary_theorems\":[\"Tablet.InitialSegment::InitialSegment@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"DecidingFrontInitialTrans\",\"DecidingFrontInitialTrans._simp_1_1\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"DecidingFrontInitialTrans\"},{\"kind\":\"theorem\",\"name\":\"DecidingFrontInitialTrans._simp_1_1\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"DecidingFrontInitialTrans\",\"principal_declaration\":\"DecidingFrontInitialTrans\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"}],\"strict_theorem_deps\":[]}\n",
-        "replay_declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontInitialTrans"
-          },
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontInitialTrans._simp_1_1"
-          }
-        ],
-        "returncode": 0,
-        "seed_support_definition_deps": {},
-        "source_sha256": "5a0095251fd0fcc5abb92da9be82bfd9c13a7a70b85b69daf36316372f096c3b",
-        "status": "ok",
-        "strict_definition_deps": {
-          "InitialSegment": "653306d9681a21e4"
-        },
-        "strict_theorem_deps": {},
-        "timed_out": false,
-        "visibility_manifests": [
-          {
-            "declarations": [
-              {
-                "kind": "theorem",
-                "name": "DecidingFrontInitialTrans"
+                "name": "FrontTreeWellFounded"
               },
               {
                 "kind": "theorem",
-                "name": "DecidingFrontInitialTrans._simp_1_1"
-              }
-            ],
-            "level": "exported"
-          }
-        ]
-      },
-      "DecidingFrontMinimal": {
-        "artifact_bundle": [
-          {
-            "level": "exported",
-            "sha256": "820285fceb7b56aaabf90c22fa598f4ed24db524437d29da6862195a717edf4f",
-            "size_bytes": 34800
-          }
-        ],
-        "axiomization_check": {
-          "agreed": true,
-          "axcheck_only_axioms": [],
-          "axcheck_only_boundaries": [],
-          "boundary_theorems": [
-            "Tablet.DecidingFrontInitialTrans::DecidingFrontInitialTrans@exported:theorem",
-            "Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition",
-            "Tablet.DecidingPrefix::DecidingPrefix@exported:definition",
-            "Tablet.InitialSegment::InitialSegment@exported:definition",
-            "Tablet.MultiSequence::MultiSequence@exported:definition",
-            "Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition"
-          ],
-          "error": null,
-          "kernel_axioms": [
-            "Classical.choice",
-            "Quot.sound",
-            "propext"
-          ],
-          "primary_only_axioms": [],
-          "primary_only_boundaries": [],
-          "skipped": false
-        },
-        "boundary_theorems": {},
-        "checker_identity": {
-          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
-          "closure_version": "patch_c_v1",
-          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
-          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
-          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
-          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
-          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
-        },
-        "declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontMinimal"
-          }
-        ],
-        "direct_imports": [
-          "Init",
-          "Tablet.DecidingFrontInitialTrans",
-          "Tablet.DecidingFrontSet"
-        ],
-        "errors": [],
-        "exact_declaration_uses": [
-          {
-            "declaration_kind": "theorem",
-            "owner": "DecidingFrontInitialTrans",
-            "reached_declaration": "DecidingFrontInitialTrans",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "DecidingFrontSet",
-            "reached_declaration": "DecidingFrontSet",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "DecidingPrefix",
-            "reached_declaration": "DecidingPrefix",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "InitialSegment",
-            "reached_declaration": "InitialSegment",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "MultiSequence",
-            "reached_declaration": "MultiSequence",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "ProperInitialSegment",
-            "reached_declaration": "ProperInitialSegment",
-            "visibility": "exported"
-          }
-        ],
-        "kernel_axioms": [
-          "Classical.choice",
-          "Quot.sound",
-          "propext"
-        ],
-        "principal_declaration": "DecidingFrontMinimal",
-        "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"DecidingFrontMinimal\"],\"boundary_theorems\":[\"Tablet.DecidingFrontInitialTrans::DecidingFrontInitialTrans@exported:theorem\",\"Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition\",\"Tablet.DecidingPrefix::DecidingPrefix@exported:definition\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"DecidingFrontMinimal\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"DecidingFrontMinimal\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingFrontInitialTrans\",\"reached_declaration\":\"DecidingFrontInitialTrans\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingFrontSet\",\"reached_declaration\":\"DecidingFrontSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingPrefix\",\"reached_declaration\":\"DecidingPrefix\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"DecidingFrontMinimal\",\"principal_declaration\":\"DecidingFrontMinimal\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"DecidingFrontSet\",\"semantic_hash\":\"4e9eb434d9142940\"},{\"name\":\"DecidingPrefix\",\"semantic_hash\":\"4077cf3cce7f7a11\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"}],\"strict_theorem_deps\":[{\"name\":\"DecidingFrontInitialTrans\",\"value_hash\":\"aa7a1dc69f856928\"}]}\n",
-        "replay_declaration_manifest": [
-          {
-            "kind": "theorem",
-            "name": "DecidingFrontMinimal"
-          }
-        ],
-        "returncode": 0,
-        "seed_support_definition_deps": {},
-        "source_sha256": "9cb2e6fe4a12bed0f45c2c32c8e2f053d2956b124101c8b86f31a4adb4bd2f2d",
-        "status": "ok",
-        "strict_definition_deps": {
-          "DecidingFrontSet": "4e9eb434d9142940",
-          "DecidingPrefix": "4077cf3cce7f7a11",
-          "InitialSegment": "653306d9681a21e4",
-          "MultiSequence": "cde631bc1bef82ee",
-          "ProperInitialSegment": "b0b2a1c37bea1919"
-        },
-        "strict_theorem_deps": {
-          "DecidingFrontInitialTrans": "aa7a1dc69f856928"
-        },
-        "timed_out": false,
-        "visibility_manifests": [
-          {
-            "declarations": [
+                "name": "FrontTreeWellFounded._proof_1_1"
+              },
               {
                 "kind": "theorem",
-                "name": "DecidingFrontMinimal"
+                "name": "FrontTreeWellFounded._proof_1_3"
+              },
+              {
+                "kind": "theorem",
+                "name": "FrontTreeWellFounded._simp_1_2"
               }
             ],
             "level": "exported"
@@ -623,31 +224,11 @@
     "local_closure_revalidation": null,
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
-    "node_kind_updates": {
-      "DecidingFrontAgreement": {
-        "Set": "Proof"
-      },
-      "DecidingFrontInitialTrans": {
-        "Set": "Proof"
-      },
-      "DecidingFrontMinimal": {
-        "Set": "Proof"
-      }
-    },
+    "node_kind_updates": {},
     "outcome": "Valid",
-    "proof_node_updates": {
-      "DecidingFrontAgreement": {
-        "Set": true
-      },
-      "DecidingFrontInitialTrans": {
-        "Set": true
-      },
-      "DecidingFrontMinimal": {
-        "Set": true
-      }
-    },
+    "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 568,
+    "request_id": 572,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -888,7 +469,6 @@
         "FrontTreeImmediateExtensions",
         "FrontTreeOrderedExtension",
         "FrontTreeSingleton",
-        "FrontTreeWellFounded",
         "GBetterRelIff",
         "HerCtblNodeClosure",
         "MainProp",
@@ -3378,18 +2958,8 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed DecidingFront in Lean and decomposed the finite-prefix and minimality arguments into three genuine closed helpers.",
-    "target_claim_updates": {
-      "DecidingFrontAgreement": {
-        "Set": []
-      },
-      "DecidingFrontInitialTrans": {
-        "Set": []
-      },
-      "DecidingFrontMinimal": {
-        "Set": []
-      }
-    },
+    "summary": "Closed FrontTreeWellFounded in Lean with the required strict-extension relation orientation.",
+    "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
     "under_model_reasoning": "",
@@ -3522,7 +3092,7 @@
     "FrontTreeOrderedExtension.tex": "8380224cea47b7919fad804dcb993b10b7efc885993b1a7b30ebeeee3e749224",
     "FrontTreeSingleton.lean": "68c833e1ec7889f3aac4429b01302f4b09f85deae5a31787259734f09a4b771c",
     "FrontTreeSingleton.tex": "8cec538b7946194d484ed89afebd323ee6fec03ed2746b819d48a96f7e28a21d",
-    "FrontTreeWellFounded.lean": "3943bc18810693f1b4cf03e5d637e265e344c7eaab6fe3874e3d06c83c99af40",
+    "FrontTreeWellFounded.lean": "54e8d4d8dda1ede9a062a8c4aaa953d8cda592dbee04efc936f4815fae6a0ecd",
     "FrontTreeWellFounded.tex": "a5d8963928814e7fed5b1ab9226d2c101176905323642547ac6ffd808fa4c900",
     "GBetterRel.lean": "74b2ee6d5480afc56c3d6ffb555fb3bf3a813d20b5b1645410cea52e38a12ee7",
     "GBetterRel.tex": "e5762c0ca6a3cf0ba19e7ecfb4a23e8ae4e554b6a4d9bbf1d78881ff070588b1",
@@ -3550,7 +3120,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "fecdde0bb9178a90bc8f15edcde4c3a0bac29f7e2bc4c916201367f6b6846369",
+    "INDEX.md": "d42896fc33d53f1fd1c44e493f86d1fd0ff64f637425a02cd7d5540c77ba05ac",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3705,7 +3275,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "f3162e9725969360a93fdfab93c7c5d692f213d5cb9121541dc2c6709535b29f",
+    "README.md": "7832ad718cf43c7abd5f823461e14be0a52c498c460385dc6e1559c17a10987b",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3760,7 +3330,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_568_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_572_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
