@@ -57,10 +57,14 @@
 | FrontBridgeTail | definition | definition | closed | - | Finite bridge tail | InitialSegment |
 | FrontBridgeTailInsert | helper | proof | closed | - | Appending a larger point to the finite bridge tail | FrontBridgeTail |
 | FrontBridgeTerminal | lemma | proof | closed | - | A terminal bridge gives a finite shift | FiniteShift, FrontBridge, InfiniteSetEnumeration |
+| FrontNontrivialBase | helper | proof | closed | - | Nontrivial front members and base | Front |
 | FrontPrefix | definition | definition | closed | - | - | Front, IncSeq |
 | FrontPrefixExists | lemma | proof | closed | - | Front member existence | FrontPrefix |
 | FrontPrefixUnique | lemma | proof | closed | - | Front member uniqueness | FrontPrefix |
-| FrontRayClosure | lemma | proof | open | - | Ray closure | Front, Ray, TailSet |
+| FrontRayBase | helper | proof | closed | - | Base of a nontrivial ray | Front, FrontNontrivialBase, FrontRayDense, FrontRayPrefixFree, Ray, TailSet |
+| FrontRayClosure | lemma | proof | closed | - | Ray closure | Front, FrontNontrivialBase, FrontRayBase, FrontRayDense, FrontRayPrefixFree, Ray, TailSet |
+| FrontRayDense | helper | proof | closed | - | Density of a ray | FrontNontrivialBase, Ray, TailSet |
+| FrontRayPrefixFree | helper | proof | closed | - | Prefix-freeness of a ray | Front, Ray |
 | FrontRestrict | definition | definition | closed | - | - | Preamble |
 | FrontRestriction | lemma | proof | closed | - | Restriction closure | Front, FrontRestrict |
 | FrontTreeImmediateExtensions | lemma | proof | closed | - | Immediate extensions in the front tree | Front, PrefixTree, ProperInitialSegment |
@@ -185,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 181 nodes | **Closed:** 108 | **Open:** 73
+**Total:** 185 nodes | **Closed:** 113 | **Open:** 72

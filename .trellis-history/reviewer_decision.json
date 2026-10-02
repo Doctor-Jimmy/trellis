@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontBridgeTerminal closed cleanly and completes the bridge support for ConverseGame. Advance to FrontRayClosure, the dependency-ready front theorem feeding NashWilliams.",
-    "comments": "Switch the coarse anchor to FrontRayClosure and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into substantive helpers with complete NL proofs, never SKETCH or wrappers: establish that a nontrivial front has no empty member and therefore has FrontBase F = X; prove ray density by applying hF.dense to insert n into an infinite tail and removing n from the witness; then handle the ray base and prefix-free clauses by inserting the common least element. Finish the two inclusions in the front decomposition equality. Do not alter the support DAG or coarse statements.",
+    "reason": "The clean FrontRayClosure cone is complete, so advance the coarse anchor to the central NashWilliams proof.",
+    "comments": "Switch the coarse anchor to NashWilliams and use Local mode. Preserve the protected theorem statement, imports, BODY marker, and accepted TeX proof. This is a substantial 176-line argument: close the active theorem in this burst while allowing only genuine, substantive helpers with complete paired NL proofs, never wrappers or SKETCH proofs. Follow the vetted structure: well-founded prefix-tree induction, the ray subtree identification, restriction of each ray to the prescribed nested tail before applying induction (the settled pm-0012 constraint), SubFrontCharacterization to recover the arbitrary homogeneous base, and the final Boolean thinning and FrontRestrict conclusion. Do not build a separate Ramsey development; later finite homogeneous results derive from NashWilliams as recorded in pm-0003.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontRayClosure",
-    "next_active_coarse": "FrontRayClosure",
+    "next_active": "NashWilliams",
+    "next_active_coarse": "NashWilliams",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontRayClosure": "hard"
+      "NashWilliams": "hard"
     },
     "allow_new_obligations": true,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontRayClosure and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into substantive helpers with complete NL proofs, never SKETCH or wrappers: establish that a nontrivial front has no empty member and therefore has FrontBase F = X; prove ray density by applying hF.dense to insert n into an infinite tail and removing n from the witness; then handle the ray base and prefix-free clauses by inserting the common least element. Finish the two inclusions in the front decomposition equality. Do not alter the support DAG or coarse statements.",
+    "comments": "Switch the coarse anchor to NashWilliams and use Local mode. Preserve the protected theorem statement, imports, BODY marker, and accepted TeX proof. This is a substantial 176-line argument: close the active theorem in this burst while allowing only genuine, substantive helpers with complete paired NL proofs, never wrappers or SKETCH proofs. Follow the vetted structure: well-founded prefix-tree induction, the ray subtree identification, restriction of each ray to the prescribed nested tail before applying induction (the settled pm-0012 constraint), SubFrontCharacterization to recover the arbitrary homogeneous base, and the final Boolean thinning and FrontRestrict conclusion. Do not build a separate Ramsey development; later finite homogeneous results derive from NashWilliams as recorded in pm-0003.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 193,
+    "cycle": 194,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontRayClosure": {
+      "NashWilliams": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontRayClosure",
-    "next_active_coarse": "FrontRayClosure",
+    "next_active": "NashWilliams",
+    "next_active_coarse": "NashWilliams",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontBridgeTerminal closed cleanly and completes the bridge support for ConverseGame. Advance to FrontRayClosure, the dependency-ready front theorem feeding NashWilliams.",
-    "request_id": 587,
+    "reason": "The clean FrontRayClosure cone is complete, so advance the coarse anchor to the central NashWilliams proof.",
+    "request_id": 591,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_587_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_591_decision.context.json"
 }

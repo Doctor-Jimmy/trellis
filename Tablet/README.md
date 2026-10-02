@@ -65,10 +65,14 @@
 | FrontBridgeTail | definition | Finite bridge tail | closed |
 | FrontBridgeTailInsert | proof | Appending a larger point to the finite bridge tail | closed |
 | FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | closed |
+| FrontNontrivialBase | proof | Nontrivial front members and base | closed |
 | FrontPrefix | definition | - | closed |
 | FrontPrefixExists | proof | Front member existence | closed |
 | FrontPrefixUnique | proof | Front member uniqueness | closed |
-| FrontRayClosure | proof | Ray closure | open |
+| FrontRayBase | proof | Base of a nontrivial ray | closed |
+| FrontRayClosure | proof | Ray closure | closed |
+| FrontRayDense | proof | Density of a ray | closed |
+| FrontRayPrefixFree | proof | Prefix-freeness of a ray | closed |
 | FrontRestrict | definition | - | closed |
 | FrontRestriction | proof | Restriction closure | closed |
 | FrontTreeImmediateExtensions | proof | Immediate extensions in the front tree | closed |
@@ -191,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 108/181 closed
+**Summary:** 113/185 closed

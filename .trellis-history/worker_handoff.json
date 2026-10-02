@@ -1,9 +1,14 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed FrontBridgeTerminal with a complete Lean proof of the terminal finite-shift construction.",
-    "comments": "Preserved the active theorem statement, imports, BODY marker, and accepted NL proof. The proof unpacks FrontBridge, enumerates the infinite set consisting of u and all values above max(u), proves both proper-prefix witnesses, establishes the exact shifted-range identity via ShiftMap, and assembles FiniteShift. No helper nodes, statements, TeX files, support imports, target claims, deviations, or deletions were added.",
-    "target_claim_updates": {},
+    "summary": "Closed FrontRayClosure with a complete Lean proof and decomposed the proof into four substantive, Lean-closed helper nodes for nontrivial-front bases, ray density, ray prefix-freeness, and nontrivial-ray bases.",
+    "comments": "Preserved FrontRayClosure's statement and TeX proof. The new helpers have complete paired TeX proofs with explicit citations, and the active proof establishes ray infinitude, the trivial/nontrivial ray base split, prefix-freeness, and both inclusions of the decomposition. Node checks, the full tablet structural check, and lake build all pass.",
+    "target_claim_updates": {
+      "FrontNontrivialBase": [],
+      "FrontRayDense": [],
+      "FrontRayPrefixFree": [],
+      "FrontRayBase": []
+    },
     "difficulty_updates": {},
     "deviation_requests": {},
     "node_deviation_claims": {},
@@ -21,22 +26,100 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the active theorem statement, imports, BODY marker, and accepted NL proof. The proof unpacks FrontBridge, enumerates the infinite set consisting of u and all values above max(u), proves both proper-prefix witnesses, establishes the exact shifted-range identity via ShiftMap, and assembles FiniteShift. No helper nodes, statements, TeX files, support imports, target claims, deviations, or deletions were added.",
-    "cycle": 193,
+    "comments": "Preserved FrontRayClosure's statement and TeX proof. The new helpers have complete paired TeX proofs with explicit citations, and the active proof establishes ray infinitude, the trivial/nontrivial ray base split, prefix-freeness, and both inclusions of the decomposition. Node checks, the full tablet structural check, and lake build all pass.",
+    "cycle": 194,
     "deleted_nodes": [],
-    "dep_updates": {},
+    "dep_updates": {
+      "FrontNontrivialBase": {
+        "Set": [
+          "Front"
+        ]
+      },
+      "FrontRayBase": {
+        "Set": [
+          "Front",
+          "FrontNontrivialBase",
+          "FrontRayDense",
+          "FrontRayPrefixFree",
+          "Ray",
+          "TailSet"
+        ]
+      },
+      "FrontRayClosure": {
+        "Set": [
+          "Front",
+          "FrontNontrivialBase",
+          "FrontRayBase",
+          "FrontRayDense",
+          "FrontRayPrefixFree",
+          "Ray",
+          "TailSet"
+        ]
+      },
+      "FrontRayDense": {
+        "Set": [
+          "FrontNontrivialBase",
+          "Ray",
+          "TailSet"
+        ]
+      },
+      "FrontRayPrefixFree": {
+        "Set": [
+          "Front",
+          "Ray"
+        ]
+      }
+    },
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
     "difficulty_updates": {},
+    "elaboration_costs": {
+      "FrontNontrivialBase": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "FrontNontrivialBase",
+        "olean_size_bytes": 32336,
+        "peak_rss_kib": 1697520,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "630557e8231ecee74be67eac29e9bd63dd1a79e3e36a9232d5ddfbb9c470f39a",
+        "walltime_ms": 2340
+      },
+      "FrontRayDense": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "FrontRayDense",
+        "olean_size_bytes": 62856,
+        "peak_rss_kib": 1679808,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "12d60e488d0d8e109af2e0bac03c5f607be81d16207aadcc087077c2ddad78b4",
+        "walltime_ms": 2343
+      },
+      "FrontRayPrefixFree": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "FrontRayPrefixFree",
+        "olean_size_bytes": 47968,
+        "peak_rss_kib": 1675780,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "a45f6481499aa0f6c2165567abfb375e572f37a69c0e1f55287638f4d8451e48",
+        "walltime_ms": 2361
+      }
+    },
     "kind": "worker",
     "local_closure_results": {
-      "FrontBridgeTerminal": {
+      "FrontNontrivialBase": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "d583558c636f5943d3662341a5c2ecc40c6a742f1f65c87548458a11605f6e3f",
-            "size_bytes": 144000
+            "sha256": "ecd1c8e0fac9f3defd213a86c7d6d3307c90e778bdb1402112029c14144bb59a",
+            "size_bytes": 32336
           }
         ],
         "axiomization_check": {
@@ -44,16 +127,11 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
-            "Tablet.FiniteShift::FiniteShift@exported:definition",
-            "Tablet.FrontBridge::FrontBridge@exported:definition",
-            "Tablet.FrontBridgeTail::FrontBridgeTail@exported:definition",
-            "Tablet.IncSeq::IncSeq@exported:definition",
-            "Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem",
-            "Tablet.InitialSegment::InitialSegment@exported:definition",
-            "Tablet.PrefixTree::PrefixTree@exported:definition",
-            "Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition",
-            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
-            "Tablet.ShiftMap::ShiftMap@exported:definition"
+            "Tablet.Front::Front.base_condition@exported:theorem",
+            "Tablet.Front::Front.prefix_free@exported:theorem",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.FrontBase::FrontBase@exported:definition",
+            "Tablet.InitialSegment::InitialSegment@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [
@@ -78,53 +156,200 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "FrontBridge.eq_1"
+            "name": "FrontNontrivialBase"
           },
           {
             "kind": "theorem",
-            "name": "FrontBridgeTerminal"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTerminal._proof_1_2"
+            "name": "FrontNontrivialBase._simp_1_1"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.FiniteShift",
-          "Tablet.FrontBridge",
-          "Tablet.InfiniteSetEnumeration"
+          "Tablet.Front"
         ],
         "errors": [],
         "exact_declaration_uses": [
           {
-            "declaration_kind": "definition",
-            "owner": "FiniteShift",
-            "reached_declaration": "FiniteShift",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "FrontBridge",
-            "reached_declaration": "FrontBridge",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "FrontBridgeTail",
-            "reached_declaration": "FrontBridgeTail",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "IncSeq",
-            "reached_declaration": "IncSeq",
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.base_condition",
             "visibility": "exported"
           },
           {
             "declaration_kind": "theorem",
-            "owner": "InfiniteSetEnumeration",
-            "reached_declaration": "InfiniteSetEnumeration",
+            "owner": "Front",
+            "reached_declaration": "Front.prefix_free",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "inductive",
+            "owner": "Front",
+            "reached_declaration": "Front",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "FrontBase",
+            "reached_declaration": "FrontBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "InitialSegment",
+            "reached_declaration": "InitialSegment",
+            "visibility": "exported"
+          }
+        ],
+        "kernel_axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "principal_declaration": "FrontNontrivialBase",
+        "raw_stderr": "",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontNontrivialBase\",\"FrontNontrivialBase._simp_1_1\"],\"boundary_theorems\":[\"Tablet.Front::Front.base_condition@exported:theorem\",\"Tablet.Front::Front.prefix_free@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBase::FrontBase@exported:definition\",\"Tablet.InitialSegment::InitialSegment@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontNontrivialBase\",\"FrontNontrivialBase._simp_1_1\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontNontrivialBase\"},{\"kind\":\"theorem\",\"name\":\"FrontNontrivialBase._simp_1_1\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.base_condition\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.prefix_free\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBase\",\"reached_declaration\":\"FrontBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontNontrivialBase\",\"principal_declaration\":\"FrontNontrivialBase\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontBase\",\"semantic_hash\":\"3b1543cbd1e93873\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"eaeea17e726345c0\"},{\"name\":\"Front\",\"value_hash\":\"10c55c754b74fd56\"}]}\n",
+        "replay_declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontNontrivialBase"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontNontrivialBase._simp_1_1"
+          }
+        ],
+        "returncode": 0,
+        "seed_support_definition_deps": {},
+        "source_sha256": "a6b786dd98564bb068d6e1d036c517c916adbd25b4ff7aef64c42bdc98c32412",
+        "status": "ok",
+        "strict_definition_deps": {
+          "Front": "54804e268105ccdb",
+          "FrontBase": "3b1543cbd1e93873",
+          "InitialSegment": "653306d9681a21e4"
+        },
+        "strict_theorem_deps": {
+          "Front": "10c55c754b74fd56"
+        },
+        "timed_out": false,
+        "visibility_manifests": [
+          {
+            "declarations": [
+              {
+                "kind": "theorem",
+                "name": "FrontNontrivialBase"
+              },
+              {
+                "kind": "theorem",
+                "name": "FrontNontrivialBase._simp_1_1"
+              }
+            ],
+            "level": "exported"
+          }
+        ]
+      },
+      "FrontRayBase": {
+        "artifact_bundle": [
+          {
+            "level": "exported",
+            "sha256": "a81044c3c79672c843f0c4c9fa580bf0dd53aedd4b037724cbf035bf62cb03ec",
+            "size_bytes": 63760
+          }
+        ],
+        "axiomization_check": {
+          "agreed": true,
+          "axcheck_only_axioms": [],
+          "axcheck_only_boundaries": [],
+          "boundary_theorems": [
+            "Tablet.Front::Front.infinite_base@exported:theorem",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.FrontBase::FrontBase@exported:definition",
+            "Tablet.FrontNontrivialBase::FrontNontrivialBase@exported:theorem",
+            "Tablet.FrontRayDense::FrontRayDense@exported:theorem",
+            "Tablet.FrontRayPrefixFree::FrontRayPrefixFree@exported:theorem",
+            "Tablet.InitialSegment::InitialSegment@exported:definition",
+            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
+            "Tablet.Ray::Ray@exported:definition",
+            "Tablet.TailSet::TailSet@exported:definition"
+          ],
+          "error": null,
+          "kernel_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "primary_only_axioms": [],
+          "primary_only_boundaries": [],
+          "skipped": false
+        },
+        "boundary_theorems": {},
+        "checker_identity": {
+          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
+          "closure_version": "patch_c_v1",
+          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
+          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
+          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
+          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        },
+        "declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontRayBase"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayBase._simp_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayBase._simp_1_2"
+          }
+        ],
+        "direct_imports": [
+          "Init",
+          "Tablet.Front",
+          "Tablet.FrontNontrivialBase",
+          "Tablet.FrontRayDense",
+          "Tablet.FrontRayPrefixFree",
+          "Tablet.Ray",
+          "Tablet.TailSet"
+        ],
+        "errors": [],
+        "exact_declaration_uses": [
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.infinite_base",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "inductive",
+            "owner": "Front",
+            "reached_declaration": "Front",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "FrontBase",
+            "reached_declaration": "FrontBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontNontrivialBase",
+            "reached_declaration": "FrontNontrivialBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontRayDense",
+            "reached_declaration": "FrontRayDense",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontRayPrefixFree",
+            "reached_declaration": "FrontRayPrefixFree",
             "visibility": "exported"
           },
           {
@@ -135,14 +360,340 @@
           },
           {
             "declaration_kind": "definition",
-            "owner": "PrefixTree",
-            "reached_declaration": "PrefixTree",
+            "owner": "ProperPrefixSet",
+            "reached_declaration": "ProperPrefixSet",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "ProperInitialSegment",
-            "reached_declaration": "ProperInitialSegment",
+            "owner": "Ray",
+            "reached_declaration": "Ray",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "TailSet",
+            "reached_declaration": "TailSet",
+            "visibility": "exported"
+          }
+        ],
+        "kernel_axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "principal_declaration": "FrontRayBase",
+        "raw_stderr": "",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontRayBase\",\"FrontRayBase._simp_1_1\",\"FrontRayBase._simp_1_2\"],\"boundary_theorems\":[\"Tablet.Front::Front.infinite_base@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBase::FrontBase@exported:definition\",\"Tablet.FrontNontrivialBase::FrontNontrivialBase@exported:theorem\",\"Tablet.FrontRayDense::FrontRayDense@exported:theorem\",\"Tablet.FrontRayPrefixFree::FrontRayPrefixFree@exported:theorem\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.Ray::Ray@exported:definition\",\"Tablet.TailSet::TailSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontRayBase\",\"FrontRayBase._simp_1_1\",\"FrontRayBase._simp_1_2\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontRayBase\"},{\"kind\":\"theorem\",\"name\":\"FrontRayBase._simp_1_1\"},{\"kind\":\"theorem\",\"name\":\"FrontRayBase._simp_1_2\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.infinite_base\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBase\",\"reached_declaration\":\"FrontBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontNontrivialBase\",\"reached_declaration\":\"FrontNontrivialBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontRayDense\",\"reached_declaration\":\"FrontRayDense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontRayPrefixFree\",\"reached_declaration\":\"FrontRayPrefixFree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Ray\",\"reached_declaration\":\"Ray\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"TailSet\",\"reached_declaration\":\"TailSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontRayBase\",\"principal_declaration\":\"FrontRayBase\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontBase\",\"semantic_hash\":\"3b1543cbd1e93873\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"Ray\",\"semantic_hash\":\"d568b0bcc8209e21\"},{\"name\":\"TailSet\",\"semantic_hash\":\"34a1bfb26c1b69f0\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"b6659350d53796ce\"},{\"name\":\"FrontNontrivialBase\",\"value_hash\":\"da48a9f590de5216\"},{\"name\":\"FrontRayDense\",\"value_hash\":\"23f729b96d478057\"},{\"name\":\"FrontRayPrefixFree\",\"value_hash\":\"603255c11902637c\"}]}\n",
+        "replay_declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontRayBase"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayBase._simp_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayBase._simp_1_2"
+          }
+        ],
+        "returncode": 0,
+        "seed_support_definition_deps": {},
+        "source_sha256": "579ad344e6e441cd402c955d7e03c7c1fe396cef1ac8bebd97d8b9b33c1756d6",
+        "status": "ok",
+        "strict_definition_deps": {
+          "Front": "54804e268105ccdb",
+          "FrontBase": "3b1543cbd1e93873",
+          "InitialSegment": "653306d9681a21e4",
+          "ProperPrefixSet": "8d7d85f7e2dcc1fd",
+          "Ray": "d568b0bcc8209e21",
+          "TailSet": "34a1bfb26c1b69f0"
+        },
+        "strict_theorem_deps": {
+          "Front": "b6659350d53796ce",
+          "FrontNontrivialBase": "da48a9f590de5216",
+          "FrontRayDense": "23f729b96d478057",
+          "FrontRayPrefixFree": "603255c11902637c"
+        },
+        "timed_out": false,
+        "visibility_manifests": [
+          {
+            "declarations": [
+              {
+                "kind": "theorem",
+                "name": "FrontRayBase"
+              },
+              {
+                "kind": "theorem",
+                "name": "FrontRayBase._simp_1_1"
+              },
+              {
+                "kind": "theorem",
+                "name": "FrontRayBase._simp_1_2"
+              }
+            ],
+            "level": "exported"
+          }
+        ]
+      },
+      "FrontRayClosure": {
+        "artifact_bundle": [
+          {
+            "level": "exported",
+            "sha256": "4b87063d009f7e8c0fcb49ca445ef9d8b96cfb6dfc227233f3deecb689bb233d",
+            "size_bytes": 42488
+          }
+        ],
+        "axiomization_check": {
+          "agreed": true,
+          "axcheck_only_axioms": [],
+          "axcheck_only_boundaries": [],
+          "boundary_theorems": [
+            "Tablet.Front::Front.infinite_base@exported:theorem",
+            "Tablet.Front::Front.mk@exported:constructor",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.FrontBase::FrontBase@exported:definition",
+            "Tablet.FrontNontrivialBase::FrontNontrivialBase@exported:theorem",
+            "Tablet.FrontRayBase::FrontRayBase@exported:theorem",
+            "Tablet.FrontRayDense::FrontRayDense@exported:theorem",
+            "Tablet.FrontRayPrefixFree::FrontRayPrefixFree@exported:theorem",
+            "Tablet.InitialSegment::InitialSegment@exported:definition",
+            "Tablet.Ray::Ray@exported:definition",
+            "Tablet.TailSet::TailSet@exported:definition"
+          ],
+          "error": null,
+          "kernel_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "primary_only_axioms": [],
+          "primary_only_boundaries": [],
+          "skipped": false
+        },
+        "boundary_theorems": {},
+        "checker_identity": {
+          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
+          "closure_version": "patch_c_v1",
+          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
+          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
+          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
+          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        },
+        "declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontRayClosure"
+          }
+        ],
+        "direct_imports": [
+          "Init",
+          "Tablet.Front",
+          "Tablet.FrontNontrivialBase",
+          "Tablet.FrontRayBase",
+          "Tablet.FrontRayDense",
+          "Tablet.FrontRayPrefixFree",
+          "Tablet.Ray",
+          "Tablet.TailSet"
+        ],
+        "errors": [],
+        "exact_declaration_uses": [
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.infinite_base",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "constructor",
+            "owner": "Front",
+            "reached_declaration": "Front.mk",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "inductive",
+            "owner": "Front",
+            "reached_declaration": "Front",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "FrontBase",
+            "reached_declaration": "FrontBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontNontrivialBase",
+            "reached_declaration": "FrontNontrivialBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontRayBase",
+            "reached_declaration": "FrontRayBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontRayDense",
+            "reached_declaration": "FrontRayDense",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontRayPrefixFree",
+            "reached_declaration": "FrontRayPrefixFree",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "InitialSegment",
+            "reached_declaration": "InitialSegment",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "Ray",
+            "reached_declaration": "Ray",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "TailSet",
+            "reached_declaration": "TailSet",
+            "visibility": "exported"
+          }
+        ],
+        "kernel_axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "principal_declaration": "FrontRayClosure",
+        "raw_stderr": "",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontRayClosure\"],\"boundary_theorems\":[\"Tablet.Front::Front.infinite_base@exported:theorem\",\"Tablet.Front::Front.mk@exported:constructor\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBase::FrontBase@exported:definition\",\"Tablet.FrontNontrivialBase::FrontNontrivialBase@exported:theorem\",\"Tablet.FrontRayBase::FrontRayBase@exported:theorem\",\"Tablet.FrontRayDense::FrontRayDense@exported:theorem\",\"Tablet.FrontRayPrefixFree::FrontRayPrefixFree@exported:theorem\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.Ray::Ray@exported:definition\",\"Tablet.TailSet::TailSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontRayClosure\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontRayClosure\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.infinite_base\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"Front\",\"reached_declaration\":\"Front.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBase\",\"reached_declaration\":\"FrontBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontNontrivialBase\",\"reached_declaration\":\"FrontNontrivialBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontRayBase\",\"reached_declaration\":\"FrontRayBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontRayDense\",\"reached_declaration\":\"FrontRayDense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontRayPrefixFree\",\"reached_declaration\":\"FrontRayPrefixFree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Ray\",\"reached_declaration\":\"Ray\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"TailSet\",\"reached_declaration\":\"TailSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontRayClosure\",\"principal_declaration\":\"FrontRayClosure\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"Front\",\"semantic_hash\":\"b20335ad00752f5b\"},{\"name\":\"FrontBase\",\"semantic_hash\":\"3b1543cbd1e93873\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"Ray\",\"semantic_hash\":\"d568b0bcc8209e21\"},{\"name\":\"TailSet\",\"semantic_hash\":\"34a1bfb26c1b69f0\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"b6659350d53796ce\"},{\"name\":\"FrontNontrivialBase\",\"value_hash\":\"da48a9f590de5216\"},{\"name\":\"FrontRayBase\",\"value_hash\":\"b621a67636e43ded\"},{\"name\":\"FrontRayDense\",\"value_hash\":\"23f729b96d478057\"},{\"name\":\"FrontRayPrefixFree\",\"value_hash\":\"603255c11902637c\"}]}\n",
+        "replay_declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontRayClosure"
+          }
+        ],
+        "returncode": 0,
+        "seed_support_definition_deps": {},
+        "source_sha256": "fdbc0a0f58b21800a48d651dc73d853dd0c61cec3e0461bf9234d1f59f60427a",
+        "status": "ok",
+        "strict_definition_deps": {
+          "Front": "b20335ad00752f5b",
+          "FrontBase": "3b1543cbd1e93873",
+          "InitialSegment": "653306d9681a21e4",
+          "Ray": "d568b0bcc8209e21",
+          "TailSet": "34a1bfb26c1b69f0"
+        },
+        "strict_theorem_deps": {
+          "Front": "b6659350d53796ce",
+          "FrontNontrivialBase": "da48a9f590de5216",
+          "FrontRayBase": "b621a67636e43ded",
+          "FrontRayDense": "23f729b96d478057",
+          "FrontRayPrefixFree": "603255c11902637c"
+        },
+        "timed_out": false,
+        "visibility_manifests": [
+          {
+            "declarations": [
+              {
+                "kind": "theorem",
+                "name": "FrontRayClosure"
+              }
+            ],
+            "level": "exported"
+          }
+        ]
+      },
+      "FrontRayDense": {
+        "artifact_bundle": [
+          {
+            "level": "exported",
+            "sha256": "6c31e83c49db006b4ba6e15d61c1c50da879b719affa8595b79791dabc2c897f",
+            "size_bytes": 62856
+          }
+        ],
+        "axiomization_check": {
+          "agreed": true,
+          "axcheck_only_axioms": [],
+          "axcheck_only_boundaries": [],
+          "boundary_theorems": [
+            "Tablet.Front::Front.dense@exported:theorem",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.FrontBase::FrontBase@exported:definition",
+            "Tablet.FrontNontrivialBase::FrontNontrivialBase@exported:theorem",
+            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
+            "Tablet.Ray::Ray@exported:definition",
+            "Tablet.TailSet::TailSet@exported:definition"
+          ],
+          "error": null,
+          "kernel_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "primary_only_axioms": [],
+          "primary_only_boundaries": [],
+          "skipped": false
+        },
+        "boundary_theorems": {},
+        "checker_identity": {
+          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
+          "closure_version": "patch_c_v1",
+          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
+          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
+          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
+          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        },
+        "declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontRayDense"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayDense._simp_1_1"
+          }
+        ],
+        "direct_imports": [
+          "Init",
+          "Tablet.FrontNontrivialBase",
+          "Tablet.Ray",
+          "Tablet.TailSet"
+        ],
+        "errors": [],
+        "exact_declaration_uses": [
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.dense",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "inductive",
+            "owner": "Front",
+            "reached_declaration": "Front",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "FrontBase",
+            "reached_declaration": "FrontBase",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FrontNontrivialBase",
+            "reached_declaration": "FrontNontrivialBase",
             "visibility": "exported"
           },
           {
@@ -153,8 +704,14 @@
           },
           {
             "declaration_kind": "definition",
-            "owner": "ShiftMap",
-            "reached_declaration": "ShiftMap",
+            "owner": "Ray",
+            "reached_declaration": "Ray",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "TailSet",
+            "reached_declaration": "TailSet",
             "visibility": "exported"
           }
         ],
@@ -163,40 +720,33 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "FrontBridgeTerminal",
+        "principal_declaration": "FrontRayDense",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontBridge.eq_1\",\"FrontBridgeTerminal\",\"FrontBridgeTerminal._proof_1_2\"],\"boundary_theorems\":[\"Tablet.FiniteShift::FiniteShift@exported:definition\",\"Tablet.FrontBridge::FrontBridge@exported:definition\",\"Tablet.FrontBridgeTail::FrontBridgeTail@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.PrefixTree::PrefixTree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontBridge.eq_1\",\"FrontBridgeTerminal\",\"FrontBridgeTerminal._proof_1_2\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontBridge.eq_1\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeTerminal\"},{\"kind\":\"theorem\",\"name\":\"FrontBridgeTerminal._proof_1_2\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"FiniteShift\",\"reached_declaration\":\"FiniteShift\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBridge\",\"reached_declaration\":\"FrontBridge\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBridgeTail\",\"reached_declaration\":\"FrontBridgeTail\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"InfiniteSetEnumeration\",\"reached_declaration\":\"InfiniteSetEnumeration\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixTree\",\"reached_declaration\":\"PrefixTree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontBridgeTerminal\",\"principal_declaration\":\"FrontBridgeTerminal\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"FiniteShift\",\"semantic_hash\":\"e2dfc558f39abbda\"},{\"name\":\"FrontBridge\",\"semantic_hash\":\"1de686beeefd9c76\"},{\"name\":\"FrontBridgeTail\",\"semantic_hash\":\"559791fb6299f5d1\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"PrefixTree\",\"semantic_hash\":\"94b89b18d87975df\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"}],\"strict_theorem_deps\":[{\"name\":\"InfiniteSetEnumeration\",\"value_hash\":\"4c699c796ec567a4\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontRayDense\",\"FrontRayDense._simp_1_1\"],\"boundary_theorems\":[\"Tablet.Front::Front.dense@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.FrontBase::FrontBase@exported:definition\",\"Tablet.FrontNontrivialBase::FrontNontrivialBase@exported:theorem\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.Ray::Ray@exported:definition\",\"Tablet.TailSet::TailSet@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontRayDense\",\"FrontRayDense._simp_1_1\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontRayDense\"},{\"kind\":\"theorem\",\"name\":\"FrontRayDense._simp_1_1\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.dense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FrontBase\",\"reached_declaration\":\"FrontBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontNontrivialBase\",\"reached_declaration\":\"FrontNontrivialBase\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Ray\",\"reached_declaration\":\"Ray\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"TailSet\",\"reached_declaration\":\"TailSet\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontRayDense\",\"principal_declaration\":\"FrontRayDense\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"FrontBase\",\"semantic_hash\":\"3b1543cbd1e93873\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"Ray\",\"semantic_hash\":\"d568b0bcc8209e21\"},{\"name\":\"TailSet\",\"semantic_hash\":\"34a1bfb26c1b69f0\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"cf6cd0fffa0c1f96\"},{\"name\":\"FrontNontrivialBase\",\"value_hash\":\"da48a9f590de5216\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "FrontBridge.eq_1"
+            "name": "FrontRayDense"
           },
           {
             "kind": "theorem",
-            "name": "FrontBridgeTerminal"
-          },
-          {
-            "kind": "theorem",
-            "name": "FrontBridgeTerminal._proof_1_2"
+            "name": "FrontRayDense._simp_1_1"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "fec454c0494460896ba5d528b3b8acf2eebc3999c2cea25c2112d93634af190f",
+        "source_sha256": "a9d9e8871868491f522520bbefc6e42d3d1ec72adb8de45a448050656ae24e09",
         "status": "ok",
         "strict_definition_deps": {
-          "FiniteShift": "e2dfc558f39abbda",
-          "FrontBridge": "1de686beeefd9c76",
-          "FrontBridgeTail": "559791fb6299f5d1",
-          "IncSeq": "1722254285ddeb5c",
-          "InitialSegment": "653306d9681a21e4",
-          "PrefixTree": "94b89b18d87975df",
-          "ProperInitialSegment": "b0b2a1c37bea1919",
+          "Front": "54804e268105ccdb",
+          "FrontBase": "3b1543cbd1e93873",
           "ProperPrefixSet": "8d7d85f7e2dcc1fd",
-          "ShiftMap": "2072518c2402a1ed"
+          "Ray": "d568b0bcc8209e21",
+          "TailSet": "34a1bfb26c1b69f0"
         },
         "strict_theorem_deps": {
-          "InfiniteSetEnumeration": "4c699c796ec567a4"
+          "Front": "cf6cd0fffa0c1f96",
+          "FrontNontrivialBase": "da48a9f590de5216"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -204,15 +754,150 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "FrontBridge.eq_1"
+                "name": "FrontRayDense"
               },
               {
                 "kind": "theorem",
-                "name": "FrontBridgeTerminal"
+                "name": "FrontRayDense._simp_1_1"
+              }
+            ],
+            "level": "exported"
+          }
+        ]
+      },
+      "FrontRayPrefixFree": {
+        "artifact_bundle": [
+          {
+            "level": "exported",
+            "sha256": "c28a74443d4b8b1712a2f63c3a3165fb98cf8d2974176a91d9c3cf96aaf9c880",
+            "size_bytes": 47968
+          }
+        ],
+        "axiomization_check": {
+          "agreed": true,
+          "axcheck_only_axioms": [],
+          "axcheck_only_boundaries": [],
+          "boundary_theorems": [
+            "Tablet.Front::Front.prefix_free@exported:theorem",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.InitialSegment::InitialSegment@exported:definition",
+            "Tablet.Ray::Ray@exported:definition"
+          ],
+          "error": null,
+          "kernel_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "primary_only_axioms": [],
+          "primary_only_boundaries": [],
+          "skipped": false
+        },
+        "boundary_theorems": {},
+        "checker_identity": {
+          "checker_script_hash": "c2876ad4a8a736c97e83ae1eef972cc417d2bd63ed6d0ce2800e19861e7f427e",
+          "closure_version": "patch_c_v1",
+          "lake_executable_hash": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3",
+          "lake_manifest_hash": "4fdd7a6e1c7682fa953f455afd57a10bd36dc86744f743504f5d6add3370bee1",
+          "lean_executable_hash": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+          "preamble_hash": "f16b9dc32b6f5e4ef850cc80946c84c8c20c66edceca34230a0b51a630a57365",
+          "toolchain_hash": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        },
+        "declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontRayPrefixFree"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayPrefixFree._simp_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayPrefixFree._simp_1_2"
+          }
+        ],
+        "direct_imports": [
+          "Init",
+          "Tablet.Front",
+          "Tablet.Ray"
+        ],
+        "errors": [],
+        "exact_declaration_uses": [
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.prefix_free",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "inductive",
+            "owner": "Front",
+            "reached_declaration": "Front",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "InitialSegment",
+            "reached_declaration": "InitialSegment",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "Ray",
+            "reached_declaration": "Ray",
+            "visibility": "exported"
+          }
+        ],
+        "kernel_axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "principal_declaration": "FrontRayPrefixFree",
+        "raw_stderr": "",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"FrontRayPrefixFree\",\"FrontRayPrefixFree._simp_1_1\",\"FrontRayPrefixFree._simp_1_2\"],\"boundary_theorems\":[\"Tablet.Front::Front.prefix_free@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.InitialSegment::InitialSegment@exported:definition\",\"Tablet.Ray::Ray@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"FrontRayPrefixFree\",\"FrontRayPrefixFree._simp_1_1\",\"FrontRayPrefixFree._simp_1_2\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"FrontRayPrefixFree\"},{\"kind\":\"theorem\",\"name\":\"FrontRayPrefixFree._simp_1_1\"},{\"kind\":\"theorem\",\"name\":\"FrontRayPrefixFree._simp_1_2\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.prefix_free\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"InitialSegment\",\"reached_declaration\":\"InitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Ray\",\"reached_declaration\":\"Ray\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"FrontRayPrefixFree\",\"principal_declaration\":\"FrontRayPrefixFree\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"InitialSegment\",\"semantic_hash\":\"653306d9681a21e4\"},{\"name\":\"Ray\",\"semantic_hash\":\"d568b0bcc8209e21\"}],\"strict_theorem_deps\":[{\"name\":\"Front\",\"value_hash\":\"eaeea17e726345c0\"}]}\n",
+        "replay_declaration_manifest": [
+          {
+            "kind": "theorem",
+            "name": "FrontRayPrefixFree"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayPrefixFree._simp_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "FrontRayPrefixFree._simp_1_2"
+          }
+        ],
+        "returncode": 0,
+        "seed_support_definition_deps": {},
+        "source_sha256": "bab5ea31ac952330ca507fb5e4a2aad9b804019f99f796fb2822cd96a16836ce",
+        "status": "ok",
+        "strict_definition_deps": {
+          "Front": "54804e268105ccdb",
+          "InitialSegment": "653306d9681a21e4",
+          "Ray": "d568b0bcc8209e21"
+        },
+        "strict_theorem_deps": {
+          "Front": "eaeea17e726345c0"
+        },
+        "timed_out": false,
+        "visibility_manifests": [
+          {
+            "declarations": [
+              {
+                "kind": "theorem",
+                "name": "FrontRayPrefixFree"
               },
               {
                 "kind": "theorem",
-                "name": "FrontBridgeTerminal._proof_1_2"
+                "name": "FrontRayPrefixFree._simp_1_1"
+              },
+              {
+                "kind": "theorem",
+                "name": "FrontRayPrefixFree._simp_1_2"
               }
             ],
             "level": "exported"
@@ -223,11 +908,37 @@
     "local_closure_revalidation": null,
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
-    "node_kind_updates": {},
+    "node_kind_updates": {
+      "FrontNontrivialBase": {
+        "Set": "Proof"
+      },
+      "FrontRayBase": {
+        "Set": "Proof"
+      },
+      "FrontRayDense": {
+        "Set": "Proof"
+      },
+      "FrontRayPrefixFree": {
+        "Set": "Proof"
+      }
+    },
     "outcome": "Valid",
-    "proof_node_updates": {},
+    "proof_node_updates": {
+      "FrontNontrivialBase": {
+        "Set": true
+      },
+      "FrontRayBase": {
+        "Set": true
+      },
+      "FrontRayDense": {
+        "Set": true
+      },
+      "FrontRayPrefixFree": {
+        "Set": true
+      }
+    },
     "protected_semantic_change_nodes": [],
-    "request_id": 586,
+    "request_id": 588,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -285,10 +996,14 @@
         "FrontBridgeTail": "{\"own_tex\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\",\"lean_semantic_closure\":\"dec8aa185a2e13c10ffa9b8931f5aa17dc2374c2a7e87168643ea74f3360fe54\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontBridgeTailInsert": "{\"own_tex\":\"c627fdb7dc2b86520ca7e578076852e93e636c4eecc4c1484eba26ffa2372b02\",\"lean_semantic_closure\":\"d7f72317c0e839d5a31205a42ad2dbe49988c0b6e39aaff58f1b2cdcc9bd180a\",\"lean_relevant_definition_descendants\":{\"FrontBridgeTail\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\"},\"lean_relevant_dependencies\":[\"FrontBridgeTail\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontBridgeTerminal": "{\"own_tex\":\"6e06c37bedc3a377125f1b2c564cd6e1b41feb6c96666b397a0cef1b0fdb743f\",\"lean_semantic_closure\":\"6d6941d7964fb61de48e973c1e53824941f8f0bebb352f2487c2cc613a38214e\",\"lean_relevant_definition_descendants\":{\"FiniteShift\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"FrontBridge\":\"1de39c2a76e256e40ce5e3f03d622d8afef3fe48f91f96be7826b20f0bded6d5\",\"FrontBridgeTail\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"FiniteShift\",\"FrontBridge\",\"FrontBridgeTail\",\"IncSeq\",\"IncSeqComp\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontNontrivialBase": "{\"own_tex\":\"34e74eaa0863b108d264f7b93aaa0d46f5595ec05bac8266b31a72ec9faf5098\",\"lean_semantic_closure\":\"140cb5f762a88ae4bee47f4630877acffacdce1b1eb16768d99ac57c28a9759d\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontPrefix": "{\"own_tex\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"lean_semantic_closure\":\"77434b186efb28eeda6e3185c27ab2c783c0eea86285477ece54acbd0fe2b421\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontPrefixExists": "{\"own_tex\":\"7fa213a60b9df880691293e10b87981adedcf045f2b1908ac47266232465857c\",\"lean_semantic_closure\":\"b9fcc68bd2e5a4b6655b0bba19141c739b680cd3f5565219f942e2462c67bf18\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontPrefix\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontPrefix\",\"IncSeq\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontPrefixUnique": "{\"own_tex\":\"a3f5de0463be4195c4de172cd8a14fa435a901fc41ea0d4df9a97471e3d43cbe\",\"lean_semantic_closure\":\"c0930d1a7ad3667d7c950bdd0fd33f6befe1e056eca77d09e5130ee5feda6e08\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontPrefix\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontPrefix\",\"IncSeq\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayBase": "{\"own_tex\":\"249a780706237da5949398c8beb5d9b66cbe0c884ca88833f7644a0d0d515acb\",\"lean_semantic_closure\":\"6edc3373880f32b9dd8dcbca9eab6f5606c8b4dedf5e62beee0b4a846a2e42bd\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"lean_semantic_closure\":\"df88ab2fe24deb2dd9fbde1d02e356e7774c701d9685aba33bb5c014f160ecd2\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayDense": "{\"own_tex\":\"afaa59776dc57f0719170a945ef935c801176827b8705f59c945440a833bb242\",\"lean_semantic_closure\":\"f4f77c0802a83018ab628b7d7635a3d250a769950acdbe2ff76d4d6a3e27f2b0\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayPrefixFree": "{\"own_tex\":\"d298226a0d337315af0fbc7a806f868c65ff91f21c503ace66c42f13d4521c9c\",\"lean_semantic_closure\":\"f27464f928e6487633526fe5055f7ff3f8b9b02d56420889dd5dda2c8b10032a\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"lean_semantic_closure\":\"2bcb8b3472ad7df228c0e3ae11e029782002cde409d9fc6da22d8c760ec04364\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"lean_semantic_closure\":\"8c4986e1a9c4975f580f327324910d6d5bdd09f960c0374965ebc3ce1344bfa9\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontTreeImmediateExtensions": "{\"own_tex\":\"1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb\",\"lean_semantic_closure\":\"2729e231aec52612a87744145287beb13f4fe577e2d2b7b18047ac6bde147ba8\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -463,7 +1178,6 @@
         "ConverseGame",
         "EmapLemma",
         "FinitePrefixExtension",
-        "FrontRayClosure",
         "GBetterRelIff",
         "HerCtblNodeClosure",
         "MainProp",
@@ -590,10 +1304,14 @@
         "FrontBridgeTail",
         "FrontBridgeTailInsert",
         "FrontBridgeTerminal",
+        "FrontNontrivialBase",
         "FrontPrefix",
         "FrontPrefixExists",
         "FrontPrefixUnique",
+        "FrontRayBase",
         "FrontRayClosure",
+        "FrontRayDense",
+        "FrontRayPrefixFree",
         "FrontRestrict",
         "FrontRestriction",
         "FrontTreeImmediateExtensions",
@@ -1327,6 +2045,14 @@
           },
           "own_tex_hash": "cdac6863c0af20427f78cc575012006038742880e778e47af4a35fba2d6df702"
         },
+        "FrontNontrivialBase": {
+          "combined_sound_fp": "sound-v2:0ce95140919a2ac226ed44d77cd5597baadf5d8dc0ee0642557ada0eb899c844",
+          "dep_statement_hashes": {
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "InitialSegment": "b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6"
+          },
+          "own_tex_hash": "852201b21aa69fd3b33af993459ba1cddee942b09eb5da0411b9da3079176bf0"
+        },
         "FrontPrefix": {
           "combined_sound_fp": "sound-v2:9177919531134e1aff535fdcfa8b95fce6a5c46a912c994ab5e53ffe89cc71b4",
           "dep_statement_hashes": {},
@@ -1352,6 +2078,19 @@
           },
           "own_tex_hash": "b3c5b27755688ced53274b11c79a1bd9c1ce560680689b2da848f95c33bcf75c"
         },
+        "FrontRayBase": {
+          "combined_sound_fp": "sound-v2:a7fe8dcbf167f03b5c879449343f2a0eeadc16f80eb4f4fdb12094a324319a81",
+          "dep_statement_hashes": {
+            "FrontBase": "5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b",
+            "FrontNontrivialBase": "34e74eaa0863b108d264f7b93aaa0d46f5595ec05bac8266b31a72ec9faf5098",
+            "FrontRayDense": "afaa59776dc57f0719170a945ef935c801176827b8705f59c945440a833bb242",
+            "FrontRayPrefixFree": "d298226a0d337315af0fbc7a806f868c65ff91f21c503ace66c42f13d4521c9c",
+            "InitialSegment": "b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6",
+            "Ray": "9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b",
+            "TailSet": "8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e"
+          },
+          "own_tex_hash": "5418f205d518f53b99d267fb1e5b46e9004bb95a83a6795443e7b0ce9cd8c165"
+        },
         "FrontRayClosure": {
           "combined_sound_fp": "sound-v2:8656bc256cae9d51bb7092a487df99523f044742965d6deb09e58deb7aad82db",
           "dep_statement_hashes": {
@@ -1363,6 +2102,26 @@
             "TailSet": "8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e"
           },
           "own_tex_hash": "69b39ae9c879a58ec77aa455fc7434a2ba45f171b7fae284a30a168d2030f635"
+        },
+        "FrontRayDense": {
+          "combined_sound_fp": "sound-v2:7c9b1be9c4751ed4aa7d96973ed4662d59f3fa8df81b03003b0aaa3d504a10ca",
+          "dep_statement_hashes": {
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "FrontNontrivialBase": "34e74eaa0863b108d264f7b93aaa0d46f5595ec05bac8266b31a72ec9faf5098",
+            "ProperPrefixSet": "bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d",
+            "Ray": "9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b",
+            "TailSet": "8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e"
+          },
+          "own_tex_hash": "a645f9a053fd6e15e9bc486f214e96897d9ccfacff8cac9eb2d93b502d4402b5"
+        },
+        "FrontRayPrefixFree": {
+          "combined_sound_fp": "sound-v2:3cfc8b9b6bf039b99d069695a8c60d5cae3ee6bd8f169d37b1be3b7ab735b95d",
+          "dep_statement_hashes": {
+            "Front": "f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b",
+            "InitialSegment": "b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6",
+            "Ray": "9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b"
+          },
+          "own_tex_hash": "c462bd35d49761b3e47cce9677848ea5b0c59cf95d5e3bd4bc2d1dde6b6d2f60"
         },
         "FrontRestrict": {
           "combined_sound_fp": "sound-v2:fdc4327d7aa648c52062803de9991bf434e69363e24d983c3d7e480104e66fa3",
@@ -2475,10 +3234,14 @@
         "FrontBridgeTail": "sound-v2:e105d00289b743782156d227c66b367c18b3225b7dc12827d43f8d1b8b9cc5ee",
         "FrontBridgeTailInsert": "sound-v2:b9c2e4a337efd09cf254cc76be51443ce27e96fc6623189831d6fcec6e06e78b",
         "FrontBridgeTerminal": "sound-v2:34c538a92e962c604ef9767ffa2e32f5bcebce1c37ff9764913d7caafaf1e4bf",
+        "FrontNontrivialBase": "sound-v2:0ce95140919a2ac226ed44d77cd5597baadf5d8dc0ee0642557ada0eb899c844",
         "FrontPrefix": "sound-v2:9177919531134e1aff535fdcfa8b95fce6a5c46a912c994ab5e53ffe89cc71b4",
         "FrontPrefixExists": "sound-v2:d333222327cc93e6b7327b0b41ab9999e9ac11a41686a1885b4b9f2c037d40ad",
         "FrontPrefixUnique": "sound-v2:2cf8b039ca930d08c7da258e48f7c349f2346359c7022c4713bbf6d9ca58c87b",
+        "FrontRayBase": "sound-v2:a7fe8dcbf167f03b5c879449343f2a0eeadc16f80eb4f4fdb12094a324319a81",
         "FrontRayClosure": "sound-v2:8656bc256cae9d51bb7092a487df99523f044742965d6deb09e58deb7aad82db",
+        "FrontRayDense": "sound-v2:7c9b1be9c4751ed4aa7d96973ed4662d59f3fa8df81b03003b0aaa3d504a10ca",
+        "FrontRayPrefixFree": "sound-v2:3cfc8b9b6bf039b99d069695a8c60d5cae3ee6bd8f169d37b1be3b7ab735b95d",
         "FrontRestrict": "sound-v2:fdc4327d7aa648c52062803de9991bf434e69363e24d983c3d7e480104e66fa3",
         "FrontRestriction": "sound-v2:dc2368ee2f49f3a38e7d9cac16406c63d02ebe652db4cd6f5c99872f096170fe",
         "FrontTreeImmediateExtensions": "sound-v2:ce27041f8635be13b780b15aa6782a3fed7a782a82038dd27eb5136f7ed661e3",
@@ -2659,10 +3422,14 @@
         "FrontBridgeTail": "{\"own_tex\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "FrontBridgeTailInsert": "{\"own_tex\":\"c627fdb7dc2b86520ca7e578076852e93e636c4eecc4c1484eba26ffa2372b02\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontBridgeTerminal": "{\"own_tex\":\"6e06c37bedc3a377125f1b2c564cd6e1b41feb6c96666b397a0cef1b0fdb743f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontNontrivialBase": "{\"own_tex\":\"34e74eaa0863b108d264f7b93aaa0d46f5595ec05bac8266b31a72ec9faf5098\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontPrefix": "{\"own_tex\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "FrontPrefixExists": "{\"own_tex\":\"7fa213a60b9df880691293e10b87981adedcf045f2b1908ac47266232465857c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontPrefixUnique": "{\"own_tex\":\"a3f5de0463be4195c4de172cd8a14fa435a901fc41ea0d4df9a97471e3d43cbe\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontRayBase": "{\"own_tex\":\"249a780706237da5949398c8beb5d9b66cbe0c884ca88833f7644a0d0d515acb\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontRayDense": "{\"own_tex\":\"afaa59776dc57f0719170a945ef935c801176827b8705f59c945440a833bb242\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
+        "FrontRayPrefixFree": "{\"own_tex\":\"d298226a0d337315af0fbc7a806f868c65ff91f21c503ace66c42f13d4521c9c\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
         "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
         "FrontTreeImmediateExtensions": "{\"own_tex\":\"1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
@@ -2843,10 +3610,14 @@
         "FrontBridgeTail": "{\"own_tex\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\",\"lean_semantic_closure\":\"dec8aa185a2e13c10ffa9b8931f5aa17dc2374c2a7e87168643ea74f3360fe54\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontBridgeTailInsert": "{\"own_tex\":\"c627fdb7dc2b86520ca7e578076852e93e636c4eecc4c1484eba26ffa2372b02\",\"lean_semantic_closure\":\"d7f72317c0e839d5a31205a42ad2dbe49988c0b6e39aaff58f1b2cdcc9bd180a\",\"lean_relevant_definition_descendants\":{\"FrontBridgeTail\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\"},\"lean_relevant_dependencies\":[\"FrontBridgeTail\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontBridgeTerminal": "{\"own_tex\":\"6e06c37bedc3a377125f1b2c564cd6e1b41feb6c96666b397a0cef1b0fdb743f\",\"lean_semantic_closure\":\"6d6941d7964fb61de48e973c1e53824941f8f0bebb352f2487c2cc613a38214e\",\"lean_relevant_definition_descendants\":{\"FiniteShift\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"FrontBridge\":\"1de39c2a76e256e40ce5e3f03d622d8afef3fe48f91f96be7826b20f0bded6d5\",\"FrontBridgeTail\":\"5abba5bd8cc99cdb51565f5bc82ba651848d0929ff23b0e3fcb2a90815ab0b53\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"FiniteShift\",\"FrontBridge\",\"FrontBridgeTail\",\"IncSeq\",\"IncSeqComp\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontNontrivialBase": "{\"own_tex\":\"34e74eaa0863b108d264f7b93aaa0d46f5595ec05bac8266b31a72ec9faf5098\",\"lean_semantic_closure\":\"140cb5f762a88ae4bee47f4630877acffacdce1b1eb16768d99ac57c28a9759d\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontPrefix": "{\"own_tex\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"lean_semantic_closure\":\"77434b186efb28eeda6e3185c27ab2c783c0eea86285477ece54acbd0fe2b421\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontPrefixExists": "{\"own_tex\":\"7fa213a60b9df880691293e10b87981adedcf045f2b1908ac47266232465857c\",\"lean_semantic_closure\":\"b9fcc68bd2e5a4b6655b0bba19141c739b680cd3f5565219f942e2462c67bf18\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontPrefix\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontPrefix\",\"IncSeq\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontPrefixUnique": "{\"own_tex\":\"a3f5de0463be4195c4de172cd8a14fa435a901fc41ea0d4df9a97471e3d43cbe\",\"lean_semantic_closure\":\"c0930d1a7ad3667d7c950bdd0fd33f6befe1e056eca77d09e5130ee5feda6e08\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontPrefix\":\"328562958e964f26336df480d29a896fb5e9ec3c7738372d02570c98d4747414\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontPrefix\",\"IncSeq\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayBase": "{\"own_tex\":\"249a780706237da5949398c8beb5d9b66cbe0c884ca88833f7644a0d0d515acb\",\"lean_semantic_closure\":\"6edc3373880f32b9dd8dcbca9eab6f5606c8b4dedf5e62beee0b4a846a2e42bd\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRayClosure": "{\"own_tex\":\"3384decc2ff9a21e7cd1a98337ad78d5965150891a08828f7aa1836e43410b28\",\"lean_semantic_closure\":\"df88ab2fe24deb2dd9fbde1d02e356e7774c701d9685aba33bb5c014f160ecd2\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayDense": "{\"own_tex\":\"afaa59776dc57f0719170a945ef935c801176827b8705f59c945440a833bb242\",\"lean_semantic_closure\":\"f4f77c0802a83018ab628b7d7635a3d250a769950acdbe2ff76d4d6a3e27f2b0\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\",\"TailSet\":\"8b2920d53f194f4b74a41a0a6f406f35534bb575061011a97e7e65fd62db0c1e\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\",\"TailSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
+        "FrontRayPrefixFree": "{\"own_tex\":\"d298226a0d337315af0fbc7a806f868c65ff91f21c503ace66c42f13d4521c9c\",\"lean_semantic_closure\":\"f27464f928e6487633526fe5055f7ff3f8b9b02d56420889dd5dda2c8b10032a\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\",\"Ray\":\"9953d4701de54a5db1c1f13e2c352062ce7c446bbe78f8c46052b0b40939113b\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"ProperPrefixSet\",\"Ray\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestrict": "{\"own_tex\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"lean_semantic_closure\":\"2bcb8b3472ad7df228c0e3ae11e029782002cde409d9fc6da22d8c760ec04364\",\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontRestriction": "{\"own_tex\":\"277fb33b55b86938ce79baa19b28da54416110d519e594fd189705e19775a6fe\",\"lean_semantic_closure\":\"8c4986e1a9c4975f580f327324910d6d5bdd09f960c0374965ebc3ce1344bfa9\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"FrontRestrict\":\"c3a34ec446c30ece1c7fb2817eaeaafe4f145516e5d8e203160e1ab6e0b408b0\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"FrontRestrict\",\"InitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
         "FrontTreeImmediateExtensions": "{\"own_tex\":\"1ec5c2d2f710ad3fa8d4502ad02bc1605fbd67fe776ab828473ad787f9232fdb\",\"lean_semantic_closure\":\"2729e231aec52612a87744145287beb13f4fe577e2d2b7b18047ac6bde147ba8\",\"lean_relevant_definition_descendants\":{\"Front\":\"f9799b409177e8246201e8e4d701b8186015d579ffe017314a1227a9393e812b\",\"FrontBase\":\"5a163c4d96e2a4f7129573346f6fbfd8fc1ace214fb4712957623cfb852b070b\",\"InitialSegment\":\"b7a491861ae9cb3211538640cc10ea1ad961e305300633c9f9c18d5f2074d0b6\",\"PrefixTree\":\"d11776497b8569afcaf9f178ab0d807bcff749d57bd52be50d6b017484ccb6f1\",\"ProperInitialSegment\":\"3e1430b05a7a36995130b072757b390fe89526d074d109da469a31935b44e3e4\",\"ProperPrefixSet\":\"bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d\"},\"lean_relevant_dependencies\":[\"Front\",\"FrontBase\",\"InitialSegment\",\"PrefixTree\",\"ProperInitialSegment\",\"ProperPrefixSet\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -2975,8 +3746,21 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed FrontBridgeTerminal with a complete Lean proof of the terminal finite-shift construction.",
-    "target_claim_updates": {},
+    "summary": "Closed FrontRayClosure with a complete Lean proof and decomposed the proof into four substantive, Lean-closed helper nodes for nontrivial-front bases, ray density, ray prefix-freeness, and nontrivial-ray bases.",
+    "target_claim_updates": {
+      "FrontNontrivialBase": {
+        "Set": []
+      },
+      "FrontRayBase": {
+        "Set": []
+      },
+      "FrontRayDense": {
+        "Set": []
+      },
+      "FrontRayPrefixFree": {
+        "Set": []
+      }
+    },
     "transport_failure": false,
     "under_model_disproof": "",
     "under_model_reasoning": "",
@@ -3093,14 +3877,22 @@
     "FrontBridgeTailInsert.tex": "521fb99a84e1f123801ca4d1361e76ba5d39a24ef57e77d3fb07ba2f560e669d",
     "FrontBridgeTerminal.lean": "fec454c0494460896ba5d528b3b8acf2eebc3999c2cea25c2112d93634af190f",
     "FrontBridgeTerminal.tex": "cdac6863c0af20427f78cc575012006038742880e778e47af4a35fba2d6df702",
+    "FrontNontrivialBase.lean": "a6b786dd98564bb068d6e1d036c517c916adbd25b4ff7aef64c42bdc98c32412",
+    "FrontNontrivialBase.tex": "852201b21aa69fd3b33af993459ba1cddee942b09eb5da0411b9da3079176bf0",
     "FrontPrefix.lean": "9d1fe4111eed5c2d72d4491e0eda57d0919fe311e69f7919d418959865ad29c7",
     "FrontPrefix.tex": "f34e53437f6a87db27ed2a7acb2c82f407ca4e53cdaa35972a513804cfc612e2",
     "FrontPrefixExists.lean": "194da0b4c093c24bf758ccf798c231a8f9b4d1de37cadeb51c3106aecfa462a5",
     "FrontPrefixExists.tex": "7efdbdd4595352395b90bf91aef1c17123f50762ebf9946d135a465479fa0887",
     "FrontPrefixUnique.lean": "2004f270805d71ea0edae4d299eb43c7f2c27d4969fee9d9e993a94cabed0228",
     "FrontPrefixUnique.tex": "b3c5b27755688ced53274b11c79a1bd9c1ce560680689b2da848f95c33bcf75c",
-    "FrontRayClosure.lean": "d13861a1525d08624675bca2c8420ac3b41c8cde584441382a1df91d22c24cf2",
+    "FrontRayBase.lean": "579ad344e6e441cd402c955d7e03c7c1fe396cef1ac8bebd97d8b9b33c1756d6",
+    "FrontRayBase.tex": "5418f205d518f53b99d267fb1e5b46e9004bb95a83a6795443e7b0ce9cd8c165",
+    "FrontRayClosure.lean": "fdbc0a0f58b21800a48d651dc73d853dd0c61cec3e0461bf9234d1f59f60427a",
     "FrontRayClosure.tex": "69b39ae9c879a58ec77aa455fc7434a2ba45f171b7fae284a30a168d2030f635",
+    "FrontRayDense.lean": "a9d9e8871868491f522520bbefc6e42d3d1ec72adb8de45a448050656ae24e09",
+    "FrontRayDense.tex": "a645f9a053fd6e15e9bc486f214e96897d9ccfacff8cac9eb2d93b502d4402b5",
+    "FrontRayPrefixFree.lean": "bab5ea31ac952330ca507fb5e4a2aad9b804019f99f796fb2822cd96a16836ce",
+    "FrontRayPrefixFree.tex": "c462bd35d49761b3e47cce9677848ea5b0c59cf95d5e3bd4bc2d1dde6b6d2f60",
     "FrontRestrict.lean": "962e5eae1670db34fe90b25dbd0706239a790752229d243328322af8136eea76",
     "FrontRestrict.tex": "5eadc568ab62c17fe8032a3389cd9bf2aad2a699cda02858c73486415b267475",
     "FrontRestriction.lean": "0002ded1fda4f4e0cf280456a3a514b71d74ac72fc855f56a320b1c9db2c5939",
@@ -3139,7 +3931,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "018ea258df0ccd054ca2a03f448369f7d5fc0a1972685b463274c76b647258fe",
+    "INDEX.md": "2688813755b24868b8bc5547d97b601536ad15dd56fc16765e0bcd252c0a9eda",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3296,7 +4088,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "56c6f812c4c62f231746e639a91f09b56a66db2b06556f0cf55b7addd3a362fc",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "582f97c5160700a2e174cdf0bdfe52b32e08066d749a756962db3b4740452eae",
+    "README.md": "7bb4e83e298030187a9c547ae824936fc7bc1d45b5b38cd155d9fbf7e2f3ddb5",
     "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3351,7 +4143,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_586_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_588_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],
