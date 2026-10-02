@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 722,
+  "event_count": 724,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -8,6 +8,7 @@
       "corr",
       "human_gate",
       "paper",
+      "review:proof_formalization",
       "review:theorem_stating",
       "sound",
       "stuck_math_audit",
@@ -67661,17 +67662,17 @@
     }
   },
   "checkpoint": {
-    "active_node": null,
+    "active_node": "IncSeqPointwiseLe",
     "committed": {
       "$r": "18766c1c8c523cb1"
     },
-    "cycle": 175,
+    "cycle": 176,
     "gate_kind": "None",
     "phase": "ProofFormalization"
   },
   "state": {
-    "active_coarse_node": null,
-    "active_node": null,
+    "active_coarse_node": "IncSeqPointwiseLe",
+    "active_node": "IncSeqPointwiseLe",
     "approved_targets": {
       "configured_targets": {
         "$r": "ae7b3cb4657bcad4"
@@ -67727,7 +67728,7 @@
       ]
     },
     "assumption_authoring": null,
-    "attempt": 1,
+    "attempt": 0,
     "audit_burst_retry_count": 0,
     "audit_plan": null,
     "cleanup_active_task": null,
@@ -67779,7 +67780,7 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 175,
+    "cycle": 176,
     "cycles_in_coarse_repair_mode": 0,
     "cycles_since_clean": 0,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
@@ -68541,7 +68542,101 @@
         "walltime_ms": 2316
       }
     },
-    "ever_shallow_coarse_closed": [],
+    "ever_shallow_coarse_closed": [
+      "BadMultiSequence",
+      "BadPairSequence",
+      "BadSuperSequence",
+      "BaireContinuous",
+      "BaseBad",
+      "BaseIncSeq",
+      "BaseLocallyConstant",
+      "BaseMultiSequence",
+      "BasePerfect",
+      "BaseRestrict",
+      "BaseRightComp",
+      "BaseShift",
+      "BetterRel",
+      "BlockSigma",
+      "Bqo",
+      "BqoHerCtblWellF",
+      "BqoHerCtblWqo",
+      "CardinalityFront",
+      "ContMor",
+      "ContMorEq",
+      "ContinuousHom",
+      "ContinuousRelHom",
+      "DecidingFrontSet",
+      "DecidingPrefix",
+      "FiniteShift",
+      "Front",
+      "FrontBase",
+      "FrontBridge",
+      "FrontBridgeTail",
+      "FrontPrefix",
+      "FrontRestrict",
+      "GBetterRel",
+      "GoodMultiSequence",
+      "HerCtblCode",
+      "HerCtblCodeErase",
+      "HerCtblPower",
+      "HerCtblPowerIsPreorder",
+      "HerCtblRel",
+      {
+        "$s": "19fb7b62eea67a5d"
+      },
+      "HereditarilyCountable",
+      {
+        "$s": "248a162fe13df6db"
+      },
+      {
+        "$s": "0de210e54bc47028"
+      },
+      "IncSeq",
+      "IncSeqComp",
+      "IncSeqId",
+      "IncreasingPair",
+      "InitialSegment",
+      "LocallyConstant",
+      "MultiSequence",
+      "MultiSequenceRestrict",
+      "OrbitBlock",
+      "OrbitPoint",
+      "PerfectMultiSequence",
+      "PerfectSuperSequence",
+      "PowerChild",
+      "PowerCopiedLeft",
+      "PowerCopiedTerminalAt",
+      "PowerGameDescent",
+      "PowerIResponse",
+      "PowerMove",
+      "PowerPresentationEq",
+      "PowerQ",
+      "PowerQIsPreorder",
+      "PowerRel",
+      "PowerRelAtomAtom",
+      "PowerRelAtomNode",
+      "PowerRelNodeAtom",
+      "PowerRelNodeNode",
+      "PowerShiftIter",
+      "PowerSupport",
+      "Preamble",
+      "PrefixAgree",
+      "PrefixTree",
+      "ProperInitialSegment",
+      "ProperPrefixSet",
+      "RadoOrder",
+      "Ray",
+      "RelationEmbedding",
+      "RightComp",
+      "SetDomination",
+      "ShiftMap",
+      "SuccSeq",
+      "SuperSequence",
+      "SuperSequenceRestrict",
+      "TailSet",
+      "TildeF",
+      "TildeFSingleton"
+    ],
     "force_review_after_cone_clean": false,
     "force_stuck_math_audit_after_rewind": false,
     "gap_human_escalation": null,
@@ -68556,7 +68651,7 @@
     "in_flight_request": null,
     "invalid_attempt": false,
     "last_audit_request_cycle": 6,
-    "last_clean_commit": "0a55c948c5579eda012af16f9a07d81af97172a4",
+    "last_clean_commit": "9e4dd9ae36c610047cb587706c617e945ee612da",
     "last_clean_corr_approved_fingerprints": {
       "$r": "538c85158e8c38da"
     },
@@ -68722,7 +68817,7 @@
       "IncSeq": "Hard",
       "IncSeqComp": "Hard",
       "IncSeqId": "Hard",
-      "IncSeqPointwiseLe": "Hard",
+      "IncSeqPointwiseLe": "Easy",
       "IncreasingPair": "Hard",
       "InfiniteSetEnumeration": "Hard",
       "InitialSegment": "Easy",
@@ -68842,11 +68937,24 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": false,
+      "authorized_nodes": [],
+      "consumed_global_repair_grant": false,
+      "mode": "Local",
+      "must_close_active": true,
+      "next_worker_context_mode": "resume",
+      "node": "IncSeqPointwiseLe",
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "ProofFormalization",
     "plan_review_cadence_enabled": true,
-    "post_advance_routing_pending": true,
+    "post_advance_routing_pending": false,
     "previous_corr_lane_findings": {
       "PowerCopiedSupport": {
         "v1": {
@@ -68880,164 +68988,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 175,
+      "next_index": 176,
       "snapshots": [
-        {
-          "present": {
-            "$r": "9450395de46854fa"
-          },
-          "progressed": [
-            "BadMultiSequence",
-            "BadPairSequence",
-            "BadSuperSequence",
-            "BaireContinuous",
-            "BaseBad",
-            "BaseIncSeq",
-            "BaseLocallyConstant",
-            "BaseMultiSequence",
-            "BasePerfect",
-            "BaseRestrict",
-            "BaseRightComp",
-            "BaseShift",
-            "BetterRel",
-            "BlockSigma",
-            "BlockSigmaContinuous",
-            "BlockSigmaEmbedding",
-            "BlockSigmaIntertwines",
-            {
-              "$s": "4c3bac0512a45c96"
-            },
-            "Bqo",
-            "BqoHerCtblWellF",
-            "BqoHerCtblWqo",
-            "BqoIffGeneralShift",
-            "CardinalityFront",
-            "CardinalityFrontIsFront",
-            "ContMor",
-            "ContMorEq",
-            "ContinuousHom",
-            "ContinuousRelHom",
-            "DecidingFront",
-            "DecidingFrontSet",
-            "DecidingPrefix",
-            "DecidingValue",
-            "EmapLemma",
-            "FinitePrefixExtension",
-            "FiniteShift",
-            "FirstMovedPoint",
-            "Front",
-            "FrontBase",
-            "FrontBridge",
-            "FrontBridgeInit",
-            "FrontBridgeStep",
-            "FrontBridgeTail",
-            "FrontBridgeTerminal",
-            "FrontPrefix",
-            "FrontPrefixExists",
-            "FrontPrefixUnique",
-            "FrontRayClosure",
-            "FrontRestrict",
-            "FrontRestriction",
-            {
-              "$s": "ba060752f87266a9"
-            },
-            {
-              "$s": "ce47bd99c3ed46e0"
-            },
-            "FrontTreeSingleton",
-            "FrontTreeWellFounded",
-            "GBetterRel",
-            "GBetterRelIff",
-            "GoodMultiSequence",
-            "HerCtblCode",
-            "HerCtblCodeErase",
-            "HerCtblNodeClosure",
-            "HerCtblPower",
-            "HerCtblPowerIsPreorder",
-            "HerCtblRel",
-            {
-              "$s": "19fb7b62eea67a5d"
-            },
-            "HereditarilyCountable",
-            {
-              "$s": "248a162fe13df6db"
-            },
-            {
-              "$s": "0de210e54bc47028"
-            },
-            "IncSeq",
-            "IncSeqComp",
-            "IncSeqId",
-            "IncSeqPointwiseLe",
-            "IncreasingPair",
-            "InfiniteSetEnumeration",
-            "InitialSegment",
-            "LocallyConstant",
-            "MainProp",
-            "MultiSequence",
-            "MultiSequenceRestrict",
-            "NashWilliams",
-            "OrbitBlock",
-            "OrbitBlockCoverage",
-            "OrbitEmbedding",
-            "OrbitPoint",
-            "OrbitUnbounded",
-            "PerfectMultiSequence",
-            "PerfectSuperSequence",
-            "PowerChild",
-            "PowerChildWellFounded",
-            "PowerCopiedLeft",
-            "PowerCopiedTerminalAt",
-            "PowerGameDescent",
-            "PowerIResponse",
-            "PowerIResponseFailure",
-            "PowerIResponseLegal",
-            "PowerIResponseWitness",
-            "PowerMove",
-            "PowerPresentationEq",
-            "PowerQ",
-            "PowerQIsPreorder",
-            "PowerRel",
-            "PowerRelAtomAtom",
-            "PowerRelAtomNode",
-            "PowerRelNodeAtom",
-            "PowerRelNodeNode",
-            "PowerShiftIter",
-            "PowerSupport",
-            "Preamble",
-            "PrefixAgree",
-            "PrefixTree",
-            "ProperInitialSegment",
-            "ProperPrefixSet",
-            "RadoOrder",
-            "Ray",
-            "RelationEmbedding",
-            "RestrictionShift",
-            "RightComp",
-            "RmapLemma",
-            "SetDomination",
-            "ShiftDichotomy",
-            "ShiftMap",
-            {
-              "$s": "b93919442f024c21"
-            },
-            "Subarr",
-            "SuccSeq",
-            "SuperNW",
-            "SuperSequence",
-            "SuperSequenceExtension",
-            "SuperSequenceRestrict",
-            "TailSet",
-            "TildeF",
-            "TildeFAtomIffFront",
-            "TildeFFrontEquation",
-            "TildeFHerCtbl",
-            "TildeFNonfrontEquation",
-            "TildeFSingleton",
-            "TripleHomogeneous"
-          ],
-          "snapshot_index": 111
-        },
         {
           "present": {
             "$r": "9450395de46854fa"
@@ -74554,6 +74506,15 @@
             "$r": "9450395de46854fa"
           },
           "snapshot_index": 174
+        },
+        {
+          "present": {
+            "$r": "9450395de46854fa"
+          },
+          "progressed": {
+            "$r": "9450395de46854fa"
+          },
+          "snapshot_index": 175
         }
       ]
     },
@@ -74562,12 +74523,12 @@
     "proof_nodes": {
       "$r": "056e141d6837a530"
     },
-    "request_seq": 548,
+    "request_seq": 549,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "",
+    "reviewer_comments": "Use Local mode to edit only the proof body of Tablet/IncSeqPointwiseLe.lean. Preserve the statement and the accepted NL proof structure. Close the induction on n using the strict order-embedding property of IncSeq and arithmetic on Nat; do not add helpers or reopen any statement.",
     "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
-    "shallow_coarse_closed_count": 0,
+    "shallow_coarse_closed_count": 87,
     "sound_approved_fingerprints": {
       "$r": "2b7c2a9ed07954d0"
     },
