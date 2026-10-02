@@ -1,20 +1,20 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "IncSeqPointwiseLe is closed with no blockers, so the current coarse anchor is clean and should advance bottom-up to its immediate dependent FirstMovedPoint. That theorem has only the closed IncSeqId definition and the newly closed pointwise inequality as support.",
-    "comments": "Switch the coarse anchor to FirstMovedPoint and use Local mode. Edit only its proof body, preserve the statement and NL proof, and close it without helpers or statement changes. Use IncSeqPointwiseLe to turn non-identity into a nonempty set of strict moved points, choose its least element by Nat well-ordering, and use minimality plus pointwise domination to prove all earlier values are fixed.",
+    "reason": "FirstMovedPoint is closed and the clean anchor can advance to InfiniteSetEnumeration, the most reused remaining low-level proof in this frontier. Its only dependency is the closed IncSeq definition, but its least-element recursion and range-surjectivity argument are substantial enough to permit genuine construction helpers while requiring the active theorem itself to close.",
+    "comments": "Switch the coarse anchor to InfiniteSetEnumeration. Use Local mode and close the active theorem in this burst. You may add only genuine helpers for the increasing least-element construction, strict increase, or the reverse range inclusion, each with a complete NL proof; do not create a wrapper that merely restates the target or alter the theorem statement. Preserve the accepted enumeration argument and the IncSeq interface.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FirstMovedPoint",
-    "next_active_coarse": "FirstMovedPoint",
+    "next_active": "InfiniteSetEnumeration",
+    "next_active_coarse": "InfiniteSetEnumeration",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FirstMovedPoint": "easy"
+      "InfiniteSetEnumeration": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
@@ -24,7 +24,7 @@
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FirstMovedPoint and use Local mode. Edit only its proof body, preserve the statement and NL proof, and close it without helpers or statement changes. Use IncSeqPointwiseLe to turn non-identity into a nonempty set of strict moved points, choose its least element by Nat well-ordering, and use minimality plus pointwise domination to prove all earlier values are fixed.",
+    "comments": "Switch the coarse anchor to InfiniteSetEnumeration. Use Local mode and close the active theorem in this burst. You may add only genuine helpers for the increasing least-element construction, strict increase, or the reverse range inclusion, each with a complete NL proof; do not create a wrapper that merely restates the target or alter the theorem statement. Preserve the accepted enumeration argument and the IncSeq interface.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 177,
+    "cycle": 178,
     "decision": "Continue",
     "difficulty_updates": {
-      "FirstMovedPoint": {
-        "Set": "Easy"
+      "InfiniteSetEnumeration": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FirstMovedPoint",
-    "next_active_coarse": "FirstMovedPoint",
+    "next_active": "InfiniteSetEnumeration",
+    "next_active_coarse": "InfiniteSetEnumeration",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "IncSeqPointwiseLe is closed with no blockers, so the current coarse anchor is clean and should advance bottom-up to its immediate dependent FirstMovedPoint. That theorem has only the closed IncSeqId definition and the newly closed pointwise inequality as support.",
-    "request_id": 551,
+    "reason": "FirstMovedPoint is closed and the clean anchor can advance to InfiniteSetEnumeration, the most reused remaining low-level proof in this frontier. Its only dependency is the closed IncSeq definition, but its least-element recursion and range-surjectivity argument are substantial enough to permit genuine construction helpers while requiring the active theorem itself to close.",
+    "request_id": 553,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_551_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_553_decision.context.json"
 }

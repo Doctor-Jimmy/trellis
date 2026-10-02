@@ -45,7 +45,7 @@
 | EmapLemma | lemma | proof | open | - | - | BlockSigmaContinuous, BlockSigmaEmbedding, BlockSigmaIntertwines, ContMor, FirstMovedPoint, RightComp, ShiftMap |
 | FinitePrefixExtension | lemma | proof | open | - | Infinite extension of a finite prefix | IncSeq, ProperPrefixSet |
 | FiniteShift | definition | definition | closed | - | - | ProperPrefixSet, ShiftMap |
-| FirstMovedPoint | lemma | proof | open | - | - | IncSeqId, IncSeqPointwiseLe |
+| FirstMovedPoint | lemma | proof | closed | - | - | IncSeqId, IncSeqPointwiseLe |
 | Front | definition | definition | closed | - | Explicit front | FrontBase, InitialSegment, ProperPrefixSet |
 | FrontBase | definition | definition | closed | - | - | Preamble |
 | FrontBridge | definition | definition | closed | - | Finite bridge state | Front, FrontBridgeTail, PrefixTree, ProperInitialSegment |
@@ -180,4 +180,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 176 nodes | **Closed:** 87 | **Open:** 89
+**Total:** 176 nodes | **Closed:** 88 | **Open:** 88

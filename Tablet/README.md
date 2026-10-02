@@ -53,7 +53,7 @@
 | EmapLemma | proof | - | open |
 | FinitePrefixExtension | proof | Infinite extension of a finite prefix | open |
 | FiniteShift | definition | - | closed |
-| FirstMovedPoint | proof | - | open |
+| FirstMovedPoint | proof | - | closed |
 | Front | definition | Explicit front | closed |
 | FrontBase | definition | - | closed |
 | FrontBridge | definition | Finite bridge state | closed |
@@ -186,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 87/176 closed
+**Summary:** 88/176 closed
