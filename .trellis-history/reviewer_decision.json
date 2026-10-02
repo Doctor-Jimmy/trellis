@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontTreeSingleton closed cleanly. Advance to FrontBridgeInit, whose FrontBridge, singleton, and ordered-extension supports are all now closed.",
-    "comments": "Switch the coarse anchor to FrontBridgeInit and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Unfold FrontBridge and FrontBridgeTail, establish both singleton PrefixTree memberships with FrontTreeSingleton, compute the tail of {m,n} as {n} from m<n, and prove the singleton initial-segment relation by the cutoff n. Split on membership of {m} and {n} in F: use FrontTreeOrderedExtension for the left non-front case and the equality/initial-segment alternatives for the front cases, while supplying the required nonempty clauses. Add no helpers or support-DAG changes.",
+    "reason": "FrontBridgeInit closed cleanly. Advance to the central FrontBridgeStep transition, whose direct support is closed and whose 142-line proof merits genuine local decomposition.",
+    "comments": "Switch the coarse anchor to FrontBridgeStep and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into substantive helpers with complete NL proofs, never SKETCH or wrappers: first isolate the finite-set identity FrontBridgeTail (insert q u) = insert q (FrontBridgeTail u) when u is nonempty and q is above u, and then isolate transport of an InitialSegment through such an appended point. Use those facts to handle the two hright cases, unpack hb's eight FrontBridge clauses, apply FrontTreeOrderedExtension for the new left tree node when needed, and finish the explicit left-move legality assertions. Do not alter the support DAG or coarse statements.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontBridgeInit",
-    "next_active_coarse": "FrontBridgeInit",
+    "next_active": "FrontBridgeStep",
+    "next_active_coarse": "FrontBridgeStep",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontBridgeInit": "hard"
+      "FrontBridgeStep": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontBridgeInit and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Unfold FrontBridge and FrontBridgeTail, establish both singleton PrefixTree memberships with FrontTreeSingleton, compute the tail of {m,n} as {n} from m<n, and prove the singleton initial-segment relation by the cutoff n. Split on membership of {m} and {n} in F: use FrontTreeOrderedExtension for the left non-front case and the equality/initial-segment alternatives for the front cases, while supplying the required nonempty clauses. Add no helpers or support-DAG changes.",
+    "comments": "Switch the coarse anchor to FrontBridgeStep and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into substantive helpers with complete NL proofs, never SKETCH or wrappers: first isolate the finite-set identity FrontBridgeTail (insert q u) = insert q (FrontBridgeTail u) when u is nonempty and q is above u, and then isolate transport of an InitialSegment through such an appended point. Use those facts to handle the two hright cases, unpack hb's eight FrontBridge clauses, apply FrontTreeOrderedExtension for the new left tree node when needed, and finish the explicit left-move legality assertions. Do not alter the support DAG or coarse statements.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 190,
+    "cycle": 191,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontBridgeInit": {
+      "FrontBridgeStep": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontBridgeInit",
-    "next_active_coarse": "FrontBridgeInit",
+    "next_active": "FrontBridgeStep",
+    "next_active_coarse": "FrontBridgeStep",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontTreeSingleton closed cleanly. Advance to FrontBridgeInit, whose FrontBridge, singleton, and ordered-extension supports are all now closed.",
-    "request_id": 579,
+    "reason": "FrontBridgeInit closed cleanly. Advance to the central FrontBridgeStep transition, whose direct support is closed and whose 142-line proof merits genuine local decomposition.",
+    "request_id": 581,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_579_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_581_decision.context.json"
 }

@@ -60,7 +60,7 @@
 | Front | definition | Explicit front | closed |
 | FrontBase | definition | - | closed |
 | FrontBridge | definition | Finite bridge state | closed |
-| FrontBridgeInit | proof | Initial bridge | open |
+| FrontBridgeInit | proof | Initial bridge | closed |
 | FrontBridgeStep | proof | Bridge response transition | open |
 | FrontBridgeTail | definition | Finite bridge tail | closed |
 | FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | open |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 103/179 closed
+**Summary:** 104/179 closed
