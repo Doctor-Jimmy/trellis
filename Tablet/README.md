@@ -66,7 +66,7 @@
 | FrontPrefixUnique | proof | Front member uniqueness | closed |
 | FrontRayClosure | proof | Ray closure | open |
 | FrontRestrict | definition | - | closed |
-| FrontRestriction | proof | Restriction closure | open |
+| FrontRestriction | proof | Restriction closure | closed |
 | FrontTreeImmediateExtensions | proof | Immediate extensions in the front tree | open |
 | FrontTreeOrderedExtension | proof | All ordered one-point extensions remain in the tree | open |
 | FrontTreeSingleton | proof | Singletons belong to a nontrivial full-base tree | open |
@@ -186,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 91/176 closed
+**Summary:** 92/176 closed

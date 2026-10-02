@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontPrefixUnique closed directly with no helpers. The clean frontier should now advance to FrontRestriction, a short foundational lemma with three downstream users, including NashWilliams, and only closed Front and FrontRestrict definitions as support.",
-    "comments": "Switch the coarse anchor to FrontRestriction and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Construct the Front structure for FrontRestrict F Y: inherit infinitude and prefix-freeness, establish the base alternative with the restricted-base definition and the trivial-front case, and prove density by applying hF.dense to an arbitrary infinite Z subset of Y, explicitly showing the witness lies in the restriction.",
+    "reason": "FrontRestriction closed cleanly. Advance to the short, well-supported RestrictionShift identity and require direct Lean closure before introducing further obligations.",
+    "comments": "Switch the coarse anchor to RestrictionShift and use Local mode. Edit only its proof body; preserve the theorem statement, imports, marker, and accepted NL proof. Prove the identity pointwise by unfolding ShiftMap and IncSeqComp (or using their composition lemmas); no helper nodes or support-DAG changes are needed.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontRestriction",
-    "next_active_coarse": "FrontRestriction",
+    "next_active": "RestrictionShift",
+    "next_active_coarse": "RestrictionShift",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontRestriction": "easy"
+      "RestrictionShift": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontRestriction and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Construct the Front structure for FrontRestrict F Y: inherit infinitude and prefix-freeness, establish the base alternative with the restricted-base definition and the trivial-front case, and prove density by applying hF.dense to an arbitrary infinite Z subset of Y, explicitly showing the witness lies in the restriction.",
+    "comments": "Switch the coarse anchor to RestrictionShift and use Local mode. Edit only its proof body; preserve the theorem statement, imports, marker, and accepted NL proof. Prove the identity pointwise by unfolding ShiftMap and IncSeqComp (or using their composition lemmas); no helper nodes or support-DAG changes are needed.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 181,
+    "cycle": 182,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontRestriction": {
+      "RestrictionShift": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontRestriction",
-    "next_active_coarse": "FrontRestriction",
+    "next_active": "RestrictionShift",
+    "next_active_coarse": "RestrictionShift",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontPrefixUnique closed directly with no helpers. The clean frontier should now advance to FrontRestriction, a short foundational lemma with three downstream users, including NashWilliams, and only closed Front and FrontRestrict definitions as support.",
-    "request_id": 559,
+    "reason": "FrontRestriction closed cleanly. Advance to the short, well-supported RestrictionShift identity and require direct Lean closure before introducing further obligations.",
+    "request_id": 561,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_559_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_561_decision.context.json"
 }

@@ -58,7 +58,7 @@
 | FrontPrefixUnique | lemma | proof | closed | - | Front member uniqueness | FrontPrefix |
 | FrontRayClosure | lemma | proof | open | - | Ray closure | Front, Ray, TailSet |
 | FrontRestrict | definition | definition | closed | - | - | Preamble |
-| FrontRestriction | lemma | proof | open | - | Restriction closure | Front, FrontRestrict |
+| FrontRestriction | lemma | proof | closed | - | Restriction closure | Front, FrontRestrict |
 | FrontTreeImmediateExtensions | lemma | proof | open | - | Immediate extensions in the front tree | Front, PrefixTree, ProperInitialSegment |
 | FrontTreeOrderedExtension | lemma | proof | open | - | All ordered one-point extensions remain in the tree | FrontTreeWellFounded |
 | FrontTreeSingleton | lemma | proof | open | - | Singletons belong to a nontrivial full-base tree | Front, PrefixTree |
@@ -180,4 +180,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 176 nodes | **Closed:** 91 | **Open:** 85
+**Total:** 176 nodes | **Closed:** 92 | **Open:** 84
