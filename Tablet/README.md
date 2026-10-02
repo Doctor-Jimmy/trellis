@@ -62,7 +62,7 @@
 | FrontBridgeTail | definition | Finite bridge tail | closed |
 | FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | open |
 | FrontPrefix | definition | - | closed |
-| FrontPrefixExists | proof | Front member existence | open |
+| FrontPrefixExists | proof | Front member existence | closed |
 | FrontPrefixUnique | proof | Front member uniqueness | open |
 | FrontRayClosure | proof | Ray closure | open |
 | FrontRestrict | definition | - | closed |
@@ -186,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 89/176 closed
+**Summary:** 90/176 closed

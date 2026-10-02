@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "InfiniteSetEnumeration closed directly and the clean anchor can advance to FrontPrefixExists. This theorem has three downstream users, depends only on the closed FrontPrefix definition, and is small enough for a focused proof-body closure without introducing new obligations.",
-    "comments": "Switch the coarse anchor to FrontPrefixExists and use Local mode. Edit only its proof body, preserve the statement and accepted NL proof, and do not add helpers or alter the support DAG. Prove that the range of an IncSeq is infinite from injectivity, apply the dense field of Front to that range using the supplied inclusion into X, and package the resulting member and ProperPrefixSet witness as FrontPrefix.",
+    "reason": "FrontPrefixExists closed directly with no structural changes. Advance the clean coarse anchor to FrontPrefixUnique, the sibling interface lemma whose only dependency is the closed FrontPrefix definition and whose proof is a bounded cutoff comparison followed by Front prefix-freeness.",
+    "comments": "Switch the coarse anchor to FrontPrefixUnique and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Unpack both FrontPrefix hypotheses and their ProperPrefixSet witnesses, compare the cutoff elements in the range, derive one InitialSegment relation in the unequal cases (and the equality relation in the equal case), then apply the prefix_free field of Front to conclude s = t.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontPrefixExists",
-    "next_active_coarse": "FrontPrefixExists",
+    "next_active": "FrontPrefixUnique",
+    "next_active_coarse": "FrontPrefixUnique",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontPrefixExists": "easy"
+      "FrontPrefixUnique": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontPrefixExists and use Local mode. Edit only its proof body, preserve the statement and accepted NL proof, and do not add helpers or alter the support DAG. Prove that the range of an IncSeq is infinite from injectivity, apply the dense field of Front to that range using the supplied inclusion into X, and package the resulting member and ProperPrefixSet witness as FrontPrefix.",
+    "comments": "Switch the coarse anchor to FrontPrefixUnique and use Local mode. Edit only its proof body, preserve the theorem statement and NL proof, and add no helpers. Unpack both FrontPrefix hypotheses and their ProperPrefixSet witnesses, compare the cutoff elements in the range, derive one InitialSegment relation in the unequal cases (and the equality relation in the equal case), then apply the prefix_free field of Front to conclude s = t.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 179,
+    "cycle": 180,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontPrefixExists": {
+      "FrontPrefixUnique": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontPrefixExists",
-    "next_active_coarse": "FrontPrefixExists",
+    "next_active": "FrontPrefixUnique",
+    "next_active_coarse": "FrontPrefixUnique",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "InfiniteSetEnumeration closed directly and the clean anchor can advance to FrontPrefixExists. This theorem has three downstream users, depends only on the closed FrontPrefix definition, and is small enough for a focused proof-body closure without introducing new obligations.",
-    "request_id": 555,
+    "reason": "FrontPrefixExists closed directly with no structural changes. Advance the clean coarse anchor to FrontPrefixUnique, the sibling interface lemma whose only dependency is the closed FrontPrefix definition and whose proof is a bounded cutoff comparison followed by Front prefix-freeness.",
+    "request_id": 557,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_555_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_557_decision.context.json"
 }
