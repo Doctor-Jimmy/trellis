@@ -154,7 +154,7 @@
 | PowerShiftIterShift | lemma | proof | open | - | Shift iterates commute with the first shift | PowerShiftIter |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
 | PowerSupportInvariant | lemma | proof | open | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
-| PowerSupportNonempty | lemma | proof | open | - | Nonempty support | PowerSupport |
+| PowerSupportNonempty | lemma | proof | closed | - | Nonempty support | PowerSupport |
 | PowerWqoBadPairSequence | lemma | proof | open | - | Bad-witness characterization | BadPairSequence, SetDomination |
 | Preamble | preamble | preamble | closed | - | - | - |
 | PrefixAgree | definition | definition | closed | - | - | IncSeq |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 128 | **Open:** 57
+**Total:** 185 nodes | **Closed:** 129 | **Open:** 56

@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerChildSupport is closed; advance to nonemptiness of every presentation's support.",
-    "comments": "Switch the coarse anchor to PowerSupportNonempty and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Follow the recursive PowerQ cases exactly: the atom branch exhibits its atom in the singleton support, while the node branch chooses an index from the Nonempty witness, applies induction to that child, and inserts the resulting atom into the indexed union. Do not add wrappers or leave helper obligations open.",
+    "reason": "PowerSupportNonempty is closed; advance to invariance of support under presentation equivalence.",
+    "comments": "Switch the coarse anchor to PowerSupportInvariant and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Induct on PowerPresentationEq with the atom, impossible mixed-tag, and node cases explicit. In the node case prove both support inclusions from the two matching directions, applying the induction hypothesis to the matched children and using the indexed-union support definition; finish by set extensionality. Do not add wrappers or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerSupportNonempty",
-    "next_active_coarse": "PowerSupportNonempty",
+    "next_active": "PowerSupportInvariant",
+    "next_active_coarse": "PowerSupportInvariant",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerSupportNonempty": "easy"
+      "PowerSupportInvariant": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerSupportNonempty and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Follow the recursive PowerQ cases exactly: the atom branch exhibits its atom in the singleton support, while the node branch chooses an index from the Nonempty witness, applies induction to that child, and inserts the resulting atom into the indexed union. Do not add wrappers or leave helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerSupportInvariant and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Induct on PowerPresentationEq with the atom, impossible mixed-tag, and node cases explicit. In the node case prove both support inclusions from the two matching directions, applying the induction hypothesis to the matched children and using the indexed-union support definition; finish by set extensionality. Do not add wrappers or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 209,
+    "cycle": 210,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerSupportNonempty": {
+      "PowerSupportInvariant": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerSupportNonempty",
-    "next_active_coarse": "PowerSupportNonempty",
+    "next_active": "PowerSupportInvariant",
+    "next_active_coarse": "PowerSupportInvariant",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerChildSupport is closed; advance to nonemptiness of every presentation's support.",
-    "request_id": 621,
+    "reason": "PowerSupportNonempty is closed; advance to invariance of support under presentation equivalence.",
+    "request_id": 623,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_621_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_623_decision.context.json"
 }

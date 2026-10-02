@@ -162,7 +162,7 @@
 | PowerShiftIterShift | proof | Shift iterates commute with the first shift | open |
 | PowerSupport | definition | - | closed |
 | PowerSupportInvariant | proof | Support respects presentation equivalence | open |
-| PowerSupportNonempty | proof | Nonempty support | open |
+| PowerSupportNonempty | proof | Nonempty support | closed |
 | PowerWqoBadPairSequence | proof | Bad-witness characterization | open |
 | PrefixAgree | definition | - | closed |
 | PrefixTree | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 128/185 closed
+**Summary:** 129/185 closed
