@@ -156,7 +156,7 @@
 | PowerRelNodeAtom | proof | Node--atom reduction | closed |
 | PowerRelNodeNode | proof | Node--node reduction | closed |
 | PowerRelRefl | proof | Reflexivity of the lifted relation | closed |
-| PowerRelTrans | proof | Transitivity of the lifted relation | open |
+| PowerRelTrans | proof | Transitivity of the lifted relation | closed |
 | PowerShiftIter | definition | - | closed |
 | PowerShiftIterPrefixAgree | proof | Finite-prefix agreement survives finitely many shifts | open |
 | PowerShiftIterShift | proof | Shift iterates commute with the first shift | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 126/185 closed
+**Summary:** 127/185 closed

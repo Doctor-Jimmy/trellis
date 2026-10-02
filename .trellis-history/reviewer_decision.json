@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerRelRefl is closed; advance to transitivity of the lifted relation.",
-    "comments": "Switch the coarse anchor to PowerRelTrans and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Formalize the well-founded induction on triples of presentations, explicitly covering all atom/node tag cases and preserving the universal/existential quantifier order in the four PowerRel reductions. Use the closed PowerRelRefl and PowerChild well-foundedness support; do not introduce a wrapper or edit unrelated nodes. Because this is the substantial final link of the relation chain, meaningful local helpers are allowed, but the active theorem must close.",
+    "reason": "PowerRelTrans is closed; advance to the foundational child-support inclusion.",
+    "comments": "Switch the coarse anchor to PowerChildSupport and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Close the direct structural argument from PowerChild and PowerSupport: for a node child of a parent, every atom in the child's recursive support occurs in the parent's indexed union support. Keep the atom and node cases explicit as required by the definitions, do not add a wrapper, and leave no helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerRelTrans",
-    "next_active_coarse": "PowerRelTrans",
+    "next_active": "PowerChildSupport",
+    "next_active_coarse": "PowerChildSupport",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerRelTrans": "hard"
+      "PowerChildSupport": "easy"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerRelTrans and use Local mode. Preserve its protected theorem statement, import, BODY marker, and accepted TeX proof. Formalize the well-founded induction on triples of presentations, explicitly covering all atom/node tag cases and preserving the universal/existential quantifier order in the four PowerRel reductions. Use the closed PowerRelRefl and PowerChild well-foundedness support; do not introduce a wrapper or edit unrelated nodes. Because this is the substantial final link of the relation chain, meaningful local helpers are allowed, but the active theorem must close.",
+    "comments": "Switch the coarse anchor to PowerChildSupport and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Close the direct structural argument from PowerChild and PowerSupport: for a node child of a parent, every atom in the child's recursive support occurs in the parent's indexed union support. Keep the atom and node cases explicit as required by the definitions, do not add a wrapper, and leave no helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 207,
+    "cycle": 208,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerRelTrans": {
-        "Set": "Hard"
+      "PowerChildSupport": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerRelTrans",
-    "next_active_coarse": "PowerRelTrans",
+    "next_active": "PowerChildSupport",
+    "next_active_coarse": "PowerChildSupport",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerRelRefl is closed; advance to transitivity of the lifted relation.",
-    "request_id": 617,
+    "reason": "PowerRelTrans is closed; advance to the foundational child-support inclusion.",
+    "request_id": 619,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_617_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_619_decision.context.json"
 }

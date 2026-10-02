@@ -148,7 +148,7 @@
 | PowerRelNodeAtom | lemma | proof | closed | - | Node--atom reduction | PowerRel |
 | PowerRelNodeNode | lemma | proof | closed | - | Node--node reduction | PowerRel |
 | PowerRelRefl | lemma | proof | closed | - | Reflexivity of the lifted relation | PowerRelCongrRight |
-| PowerRelTrans | lemma | proof | open | - | Transitivity of the lifted relation | PowerRelRefl |
+| PowerRelTrans | lemma | proof | closed | - | Transitivity of the lifted relation | PowerRelRefl |
 | PowerShiftIter | definition | definition | closed | - | - | ShiftMap |
 | PowerShiftIterPrefixAgree | lemma | proof | open | - | Finite-prefix agreement survives finitely many shifts | PowerShiftIter, PrefixAgree |
 | PowerShiftIterShift | lemma | proof | open | - | Shift iterates commute with the first shift | PowerShiftIter |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 126 | **Open:** 59
+**Total:** 185 nodes | **Closed:** 127 | **Open:** 58
