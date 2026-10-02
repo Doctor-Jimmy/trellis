@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontTreeOrderedExtension closed cleanly. Advance to FrontTreeSingleton, the short dependency needed by FrontBridgeInit, with both of its definition supports already closed.",
-    "comments": "Switch the coarse anchor to FrontTreeSingleton and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Use htriv with hF.base_condition to obtain the full-base alternative, apply hF.dense to the tail consisting of n and all larger naturals, and unpack the ProperPrefixSet witness. Rule out cutoff n using the witness's nonemptiness, then prove {n} is an InitialSegment of the witness by the equality case or the least element of its difference, and finish with PrefixTree. Add no helpers or support-DAG changes.",
+    "reason": "FrontTreeSingleton closed cleanly. Advance to FrontBridgeInit, whose FrontBridge, singleton, and ordered-extension supports are all now closed.",
+    "comments": "Switch the coarse anchor to FrontBridgeInit and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Unfold FrontBridge and FrontBridgeTail, establish both singleton PrefixTree memberships with FrontTreeSingleton, compute the tail of {m,n} as {n} from m<n, and prove the singleton initial-segment relation by the cutoff n. Split on membership of {m} and {n} in F: use FrontTreeOrderedExtension for the left non-front case and the equality/initial-segment alternatives for the front cases, while supplying the required nonempty clauses. Add no helpers or support-DAG changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontTreeSingleton",
-    "next_active_coarse": "FrontTreeSingleton",
+    "next_active": "FrontBridgeInit",
+    "next_active_coarse": "FrontBridgeInit",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontTreeSingleton": "easy"
+      "FrontBridgeInit": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontTreeSingleton and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Use htriv with hF.base_condition to obtain the full-base alternative, apply hF.dense to the tail consisting of n and all larger naturals, and unpack the ProperPrefixSet witness. Rule out cutoff n using the witness's nonemptiness, then prove {n} is an InitialSegment of the witness by the equality case or the least element of its difference, and finish with PrefixTree. Add no helpers or support-DAG changes.",
+    "comments": "Switch the coarse anchor to FrontBridgeInit and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Unfold FrontBridge and FrontBridgeTail, establish both singleton PrefixTree memberships with FrontTreeSingleton, compute the tail of {m,n} as {n} from m<n, and prove the singleton initial-segment relation by the cutoff n. Split on membership of {m} and {n} in F: use FrontTreeOrderedExtension for the left non-front case and the equality/initial-segment alternatives for the front cases, while supplying the required nonempty clauses. Add no helpers or support-DAG changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 189,
+    "cycle": 190,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontTreeSingleton": {
-        "Set": "Easy"
+      "FrontBridgeInit": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontTreeSingleton",
-    "next_active_coarse": "FrontTreeSingleton",
+    "next_active": "FrontBridgeInit",
+    "next_active_coarse": "FrontBridgeInit",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontTreeOrderedExtension closed cleanly. Advance to FrontTreeSingleton, the short dependency needed by FrontBridgeInit, with both of its definition supports already closed.",
-    "request_id": 577,
+    "reason": "FrontTreeSingleton closed cleanly. Advance to FrontBridgeInit, whose FrontBridge, singleton, and ordered-extension supports are all now closed.",
+    "request_id": 579,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_577_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_579_decision.context.json"
 }
