@@ -79,7 +79,7 @@
 | IncSeq | definition | definition | closed | - | - | Preamble |
 | IncSeqComp | definition | definition | closed | - | - | IncSeq |
 | IncSeqId | definition | definition | closed | - | - | IncSeq |
-| IncSeqPointwiseLe | lemma | proof | open | - | - | IncSeq |
+| IncSeqPointwiseLe | lemma | proof | closed | - | - | IncSeq |
 | IncreasingPair | definition | definition | closed | - | - | Preamble |
 | InfiniteSetEnumeration | lemma | proof | open | - | Increasing enumeration of an infinite set | IncSeq |
 | InitialSegment | definition | definition | closed | - | - | Preamble |
@@ -180,4 +180,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | open | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 176 nodes | **Closed:** 86 | **Open:** 90
+**Total:** 176 nodes | **Closed:** 87 | **Open:** 89

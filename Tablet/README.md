@@ -87,7 +87,7 @@
 | IncSeq | definition | - | closed |
 | IncSeqComp | definition | - | closed |
 | IncSeqId | definition | - | closed |
-| IncSeqPointwiseLe | proof | - | open |
+| IncSeqPointwiseLe | proof | - | closed |
 | IncreasingPair | definition | - | closed |
 | InfiniteSetEnumeration | proof | Increasing enumeration of an infinite set | open |
 | InitialSegment | definition | - | closed |
@@ -186,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 86/176 closed
+**Summary:** 87/176 closed
