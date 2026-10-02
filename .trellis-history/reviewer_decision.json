@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontTreeWellFounded closed cleanly with the intended relation orientation. Advance to FrontTreeImmediateExtensions, a self-contained finite-set extension lemma with three downstream users.",
-    "comments": "Switch the coarse anchor to FrontTreeImmediateExtensions and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Unpack the PrefixTree witness t, use s notin F to obtain a genuine cutoff and nonempty difference, choose the least new element, prove insert n s is an initial segment of t and remains in PrefixTree F, then discharge countability as a subtype of Nat. Add no helpers or support-DAG changes.",
+    "reason": "FrontTreeImmediateExtensions closed cleanly. Advance to FrontTreeOrderedExtension, whose direct support is now closed and which feeds FrontBridgeInit and FrontBridgeStep.",
+    "comments": "Switch the coarse anchor to FrontTreeOrderedExtension and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Use the FrontTreeWellFounded orientation and the PrefixTree witness t. Unpack ProperInitialSegment s (insert n s) to identify n as the cutoff and show n is not in s; construct the infinite tail set, apply hF.dense, compare the density witness cutoff against n using prefix-freeness, then show insert n s is an InitialSegment of that witness. Add no helpers or support-DAG changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontTreeImmediateExtensions",
-    "next_active_coarse": "FrontTreeImmediateExtensions",
+    "next_active": "FrontTreeOrderedExtension",
+    "next_active_coarse": "FrontTreeOrderedExtension",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontTreeImmediateExtensions": "hard"
+      "FrontTreeOrderedExtension": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontTreeImmediateExtensions and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Unpack the PrefixTree witness t, use s notin F to obtain a genuine cutoff and nonempty difference, choose the least new element, prove insert n s is an initial segment of t and remains in PrefixTree F, then discharge countability as a subtype of Nat. Add no helpers or support-DAG changes.",
+    "comments": "Switch the coarse anchor to FrontTreeOrderedExtension and use Local mode. Edit only its proof body; preserve the statement, imports, BODY marker, and accepted NL proof. Use the FrontTreeWellFounded orientation and the PrefixTree witness t. Unpack ProperInitialSegment s (insert n s) to identify n as the cutoff and show n is not in s; construct the infinite tail set, apply hF.dense, compare the density witness cutoff against n using prefix-freeness, then show insert n s is an InitialSegment of that witness. Add no helpers or support-DAG changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 187,
+    "cycle": 188,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontTreeImmediateExtensions": {
+      "FrontTreeOrderedExtension": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontTreeImmediateExtensions",
-    "next_active_coarse": "FrontTreeImmediateExtensions",
+    "next_active": "FrontTreeOrderedExtension",
+    "next_active_coarse": "FrontTreeOrderedExtension",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontTreeWellFounded closed cleanly with the intended relation orientation. Advance to FrontTreeImmediateExtensions, a self-contained finite-set extension lemma with three downstream users.",
-    "request_id": 573,
+    "reason": "FrontTreeImmediateExtensions closed cleanly. Advance to FrontTreeOrderedExtension, whose direct support is now closed and which feeds FrontBridgeInit and FrontBridgeStep.",
+    "request_id": 575,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_573_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_575_decision.context.json"
 }
