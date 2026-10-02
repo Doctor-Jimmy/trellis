@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerGameDescentWellFounded is closed; advance to the copied failure and legal-move induction.",
-    "comments": "Switch the coarse anchor to PowerCopiedFailureMove and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Formalize the simultaneous induction on depth for all rows: at depth zero use BadMultiSequence on the shifted enumerations, the PowerShiftIter successor identity, and the legal/failure PowerIResponse clauses; in the successor step use the right-row legal move, the two PowerCopiedLeft successor equations, and PowerIResponseFailure followed by PowerIResponseLegal. Keep the failure and move assertions paired and preserve all existential/universal quantifier order. Do not introduce a wrapper or edit unrelated nodes; meaningful local decomposition is allowed, but the active theorem must close.",
+    "reason": "PowerCopiedFailureMove is closed; close its first unresolved response prerequisite, PowerIResponseWitness.",
+    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseWitness. Preserve the witness theorem statement, imports, BODY marker, and accepted TeX proof. Split by the four presentation tag pairs and use the corresponding PowerRel reduction clauses: unchanged atom moves for atom cases, a right-child failure family for atom/node, a left-child witness for node/atom, and the universal-existential failure witness for node/node. In every branch identify the legal moves through PowerMove and prove the required universal failure. Do not edit the copied theorem or add wrappers; leave no helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedFailureMove",
-    "next_active_coarse": "PowerCopiedFailureMove",
+    "next_active": "PowerIResponseWitness",
+    "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerCopiedFailureMove": "hard"
+      "PowerIResponseWitness": "easy"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerCopiedFailureMove and use Local mode. Preserve its protected theorem statement, imports, BODY marker, and accepted TeX proof. Formalize the simultaneous induction on depth for all rows: at depth zero use BadMultiSequence on the shifted enumerations, the PowerShiftIter successor identity, and the legal/failure PowerIResponse clauses; in the successor step use the right-row legal move, the two PowerCopiedLeft successor equations, and PowerIResponseFailure followed by PowerIResponseLegal. Keep the failure and move assertions paired and preserve all existential/universal quantifier order. Do not introduce a wrapper or edit unrelated nodes; meaningful local decomposition is allowed, but the active theorem must close.",
+    "comments": "Keep the coarse anchor at PowerCopiedFailureMove and use Local mode on PowerIResponseWitness. Preserve the witness theorem statement, imports, BODY marker, and accepted TeX proof. Split by the four presentation tag pairs and use the corresponding PowerRel reduction clauses: unchanged atom moves for atom cases, a right-child failure family for atom/node, a left-child witness for node/atom, and the universal-existential failure witness for node/node. In every branch identify the legal moves through PowerMove and prove the required universal failure. Do not edit the copied theorem or add wrappers; leave no helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 212,
+    "cycle": 213,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerCopiedFailureMove": {
-        "Set": "Hard"
+      "PowerIResponseWitness": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerCopiedFailureMove",
-    "next_active_coarse": "PowerCopiedFailureMove",
+    "next_active": "PowerIResponseWitness",
+    "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerGameDescentWellFounded is closed; advance to the copied failure and legal-move induction.",
-    "request_id": 627,
+    "reason": "PowerCopiedFailureMove is closed; close its first unresolved response prerequisite, PowerIResponseWitness.",
+    "request_id": 629,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_627_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_629_decision.context.json"
 }
