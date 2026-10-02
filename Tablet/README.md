@@ -151,7 +151,7 @@
 | PowerRel | definition | - | closed |
 | PowerRelAtomAtom | proof | Atom--atom reduction | closed |
 | PowerRelAtomNode | proof | Atom--node reduction | closed |
-| PowerRelCongrLeft | proof | Left presentation invariance | open |
+| PowerRelCongrLeft | proof | Left presentation invariance | closed |
 | PowerRelCongrRight | proof | Right presentation invariance | open |
 | PowerRelNodeAtom | proof | Node--atom reduction | closed |
 | PowerRelNodeNode | proof | Node--node reduction | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 122/185 closed
+**Summary:** 123/185 closed

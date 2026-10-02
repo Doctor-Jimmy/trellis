@@ -143,7 +143,7 @@
 | PowerRel | definition | definition | closed | - | - | PowerChildWellFounded |
 | PowerRelAtomAtom | lemma | proof | closed | - | Atom--atom reduction | PowerRel |
 | PowerRelAtomNode | lemma | proof | closed | - | Atom--node reduction | PowerRel |
-| PowerRelCongrLeft | lemma | proof | open | - | Left presentation invariance | PowerPresentationEqEquivalence, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
+| PowerRelCongrLeft | lemma | proof | closed | - | Left presentation invariance | PowerPresentationEqEquivalence, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
 | PowerRelCongrRight | lemma | proof | open | - | Right presentation invariance | PowerRelCongrLeft |
 | PowerRelNodeAtom | lemma | proof | closed | - | Node--atom reduction | PowerRel |
 | PowerRelNodeNode | lemma | proof | closed | - | Node--node reduction | PowerRel |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 122 | **Open:** 63
+**Total:** 185 nodes | **Closed:** 123 | **Open:** 62
