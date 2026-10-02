@@ -61,8 +61,9 @@
 | FrontBase | definition | - | closed |
 | FrontBridge | definition | Finite bridge state | closed |
 | FrontBridgeInit | proof | Initial bridge | closed |
-| FrontBridgeStep | proof | Bridge response transition | open |
+| FrontBridgeStep | proof | Bridge response transition | closed |
 | FrontBridgeTail | definition | Finite bridge tail | closed |
+| FrontBridgeTailInsert | proof | Appending a larger point to the finite bridge tail | closed |
 | FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | open |
 | FrontPrefix | definition | - | closed |
 | FrontPrefixExists | proof | Front member existence | closed |
@@ -94,6 +95,7 @@
 | IncreasingPair | definition | - | closed |
 | InfiniteSetEnumeration | proof | Increasing enumeration of an infinite set | closed |
 | InitialSegment | definition | - | closed |
+| InitialSegmentInsert | proof | Transporting an initial segment through an appended point | closed |
 | LocallyConstant | definition | - | closed |
 | MainProp | proof | MainProp | open |
 | MultiSequence | definition | - | closed |
@@ -189,4 +191,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 104/179 closed
+**Summary:** 107/181 closed

@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontBridgeInit closed cleanly. Advance to the central FrontBridgeStep transition, whose direct support is closed and whose 142-line proof merits genuine local decomposition.",
-    "comments": "Switch the coarse anchor to FrontBridgeStep and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into substantive helpers with complete NL proofs, never SKETCH or wrappers: first isolate the finite-set identity FrontBridgeTail (insert q u) = insert q (FrontBridgeTail u) when u is nonempty and q is above u, and then isolate transport of an InitialSegment through such an appended point. Use those facts to handle the two hright cases, unpack hb's eight FrontBridge clauses, apply FrontTreeOrderedExtension for the new left tree node when needed, and finish the explicit left-move legality assertions. Do not alter the support DAG or coarse statements.",
+    "reason": "FrontBridgeStep and its two substantive helpers are clean and verified. Advance to FrontBridgeTerminal, the remaining bridge lemma feeding ConverseGame.",
+    "comments": "Switch the coarse anchor to FrontBridgeTerminal and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into genuine helpers with complete NL proofs, never SKETCH or wrappers: unpack FrontBridge to obtain the two initial-segment clauses and nonemptiness of u; enumerate the infinite extension of u above max u; prove the first proper-prefix witness from InitialSegment s u; and establish the exact shifted-range identity after removing the least element, using ShiftMap, RightComp, and SuccSeq. Then convert the FrontBridgeTail clause for t into the second proper-prefix witness and assemble FiniteShift. Do not alter the support DAG or coarse statements.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FrontBridgeStep",
-    "next_active_coarse": "FrontBridgeStep",
+    "next_active": "FrontBridgeTerminal",
+    "next_active_coarse": "FrontBridgeTerminal",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FrontBridgeStep": "hard"
+      "FrontBridgeTerminal": "hard"
     },
     "allow_new_obligations": true,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to FrontBridgeStep and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into substantive helpers with complete NL proofs, never SKETCH or wrappers: first isolate the finite-set identity FrontBridgeTail (insert q u) = insert q (FrontBridgeTail u) when u is nonempty and q is above u, and then isolate transport of an InitialSegment through such an appended point. Use those facts to handle the two hright cases, unpack hb's eight FrontBridge clauses, apply FrontTreeOrderedExtension for the new left tree node when needed, and finish the explicit left-move legality assertions. Do not alter the support DAG or coarse statements.",
+    "comments": "Switch the coarse anchor to FrontBridgeTerminal and use Local mode. Preserve its statement, imports, BODY marker, and accepted NL proof while closing the active theorem. Decompose only into genuine helpers with complete NL proofs, never SKETCH or wrappers: unpack FrontBridge to obtain the two initial-segment clauses and nonemptiness of u; enumerate the infinite extension of u above max u; prove the first proper-prefix witness from InitialSegment s u; and establish the exact shifted-range identity after removing the least element, using ShiftMap, RightComp, and SuccSeq. Then convert the FrontBridgeTail clause for t into the second proper-prefix witness and assemble FiniteShift. Do not alter the support DAG or coarse statements.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 191,
+    "cycle": 192,
     "decision": "Continue",
     "difficulty_updates": {
-      "FrontBridgeStep": {
+      "FrontBridgeTerminal": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FrontBridgeStep",
-    "next_active_coarse": "FrontBridgeStep",
+    "next_active": "FrontBridgeTerminal",
+    "next_active_coarse": "FrontBridgeTerminal",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontBridgeInit closed cleanly. Advance to the central FrontBridgeStep transition, whose direct support is closed and whose 142-line proof merits genuine local decomposition.",
-    "request_id": 581,
+    "reason": "FrontBridgeStep and its two substantive helpers are clean and verified. Advance to FrontBridgeTerminal, the remaining bridge lemma feeding ConverseGame.",
+    "request_id": 585,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_581_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_585_decision.context.json"
 }
