@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedSupport is closed; close its remaining direct support lemma PowerMoveInSupport.",
-    "comments": "Keep the coarse anchor at PowerCopiedSupport and use Local mode on PowerMoveInSupport. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Introduce the PowerMove hypothesis and split the source presentation into atom and node cases. The atom case reduces the move to the same presentation and the support inclusion to equality; the node case exposes a PowerChild move and applies PowerChildSupport. Do not add wrappers or leave helper obligations open.",
+    "reason": "PowerCopiedSupport and PowerMoveInSupport are closed; advance to the central copied-row termination lemma.",
+    "comments": "Switch the coarse anchor to PowerCopiedTerminates and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Fix h, hbad, x, and n, write P_j as the pair of adjacent copied values in rows n and n+1, and obtain their failure and both row moves from PowerCopiedFailureMove. Show that whenever P_j is not a pair of atoms, PowerMove gives PowerGameDescent P_(j+1) P_j: use the first-coordinate child when row n is a node, and when it is an atom use the unchanged first move and the second-coordinate child. Apply PowerGameDescentWellFounded via accessibility induction to obtain a finite atomic pair, then unfold PowerCopiedTerminalAt. Do not add wrappers or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerMoveInSupport",
-    "next_active_coarse": "",
+    "next_active": "PowerCopiedTerminates",
+    "next_active_coarse": "PowerCopiedTerminates",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerMoveInSupport": "easy"
+      "PowerCopiedTerminates": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep the coarse anchor at PowerCopiedSupport and use Local mode on PowerMoveInSupport. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Introduce the PowerMove hypothesis and split the source presentation into atom and node cases. The atom case reduces the move to the same presentation and the support inclusion to equality; the node case exposes a PowerChild move and applies PowerChildSupport. Do not add wrappers or leave helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerCopiedTerminates and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Fix h, hbad, x, and n, write P_j as the pair of adjacent copied values in rows n and n+1, and obtain their failure and both row moves from PowerCopiedFailureMove. Show that whenever P_j is not a pair of atoms, PowerMove gives PowerGameDescent P_(j+1) P_j: use the first-coordinate child when row n is a node, and when it is an atom use the unchanged first move and the second-coordinate child. Apply PowerGameDescentWellFounded via accessibility induction to obtain a finite atomic pair, then unfold PowerCopiedTerminalAt. Do not add wrappers or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 217,
+    "cycle": 218,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerMoveInSupport": {
-        "Set": "Easy"
+      "PowerCopiedTerminates": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerMoveInSupport",
-    "next_active_coarse": null,
+    "next_active": "PowerCopiedTerminates",
+    "next_active_coarse": "PowerCopiedTerminates",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedSupport is closed; close its remaining direct support lemma PowerMoveInSupport.",
-    "request_id": 637,
+    "reason": "PowerCopiedSupport and PowerMoveInSupport are closed; advance to the central copied-row termination lemma.",
+    "request_id": 639,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_637_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_639_decision.context.json"
 }

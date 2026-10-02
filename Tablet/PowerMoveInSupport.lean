@@ -7,4 +7,12 @@ universe u
 theorem PowerMoveInSupport {Q : Type u} {x x' : PowerQ Q} :
     PowerMove x x' → PowerSupport x' ⊆ PowerSupport x := by
 -- BODY
-  sorry
+  intro hmove
+  cases x with
+  | atom q =>
+      have hx' : x' = .atom q := by
+        simpa [PowerMove] using hmove
+      subst x'
+      exact Set.Subset.rfl
+  | node ι hι f =>
+      exact PowerChildSupport hmove

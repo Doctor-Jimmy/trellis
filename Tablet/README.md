@@ -141,7 +141,7 @@
 | PowerIResponseLegal | proof | The canonical response is legal | closed |
 | PowerIResponseWitness | proof | A failed comparison has a canonical one-round response | closed |
 | PowerMove | definition | - | closed |
-| PowerMoveInSupport | proof | Moves stay in support | open |
+| PowerMoveInSupport | proof | Moves stay in support | closed |
 | PowerPresentationEq | definition | - | closed |
 | PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | closed |
 | PowerQ | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 136/185 closed
+**Summary:** 137/185 closed

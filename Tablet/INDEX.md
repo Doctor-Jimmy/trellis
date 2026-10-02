@@ -133,7 +133,7 @@
 | PowerIResponseLegal | lemma | proof | closed | - | The canonical response is legal | PowerIResponseWitness |
 | PowerIResponseWitness | lemma | proof | closed | - | A failed comparison has a canonical one-round response | PowerIResponse, PowerRelAtomAtom, PowerRelAtomNode, PowerRelNodeAtom, PowerRelNodeNode |
 | PowerMove | definition | definition | closed | - | - | PowerChild, PowerRel |
-| PowerMoveInSupport | lemma | proof | open | - | Moves stay in support | PowerChildSupport, PowerMove |
+| PowerMoveInSupport | lemma | proof | closed | - | Moves stay in support | PowerChildSupport, PowerMove |
 | PowerPresentationEq | definition | definition | closed | - | - | PowerQ |
 | PowerPresentationEqEquivalence | lemma | proof | closed | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
 | PowerQ | definition | definition | closed | - | - | Preamble |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 136 | **Open:** 49
+**Total:** 185 nodes | **Closed:** 137 | **Open:** 48
