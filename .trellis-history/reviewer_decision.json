@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "FrontRestriction closed cleanly. Advance to the short, well-supported RestrictionShift identity and require direct Lean closure before introducing further obligations.",
-    "comments": "Switch the coarse anchor to RestrictionShift and use Local mode. Edit only its proof body; preserve the theorem statement, imports, marker, and accepted NL proof. Prove the identity pointwise by unfolding ShiftMap and IncSeqComp (or using their composition lemmas); no helper nodes or support-DAG changes are needed.",
+    "reason": "RestrictionShift closed cleanly. Advance to RestrictionLocallyConstant, whose two support definitions are closed and whose direct prefix-agreement proof has several downstream users.",
+    "comments": "Switch the coarse anchor to RestrictionLocallyConstant and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Fix x, obtain a local-constancy length for IncSeqComp z x, take the same length for x, and show coordinatewise that agreement is preserved by z before applying MultiSequenceRestrict. Add no helpers or support-DAG changes.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "RestrictionShift",
-    "next_active_coarse": "RestrictionShift",
+    "next_active": "RestrictionLocallyConstant",
+    "next_active_coarse": "RestrictionLocallyConstant",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "RestrictionShift": "easy"
+      "RestrictionLocallyConstant": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to RestrictionShift and use Local mode. Edit only its proof body; preserve the theorem statement, imports, marker, and accepted NL proof. Prove the identity pointwise by unfolding ShiftMap and IncSeqComp (or using their composition lemmas); no helper nodes or support-DAG changes are needed.",
+    "comments": "Switch the coarse anchor to RestrictionLocallyConstant and use Local mode. Edit only its proof body; preserve the statement, imports, marker, and accepted NL proof. Fix x, obtain a local-constancy length for IncSeqComp z x, take the same length for x, and show coordinatewise that agreement is preserved by z before applying MultiSequenceRestrict. Add no helpers or support-DAG changes.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 182,
+    "cycle": 183,
     "decision": "Continue",
     "difficulty_updates": {
-      "RestrictionShift": {
+      "RestrictionLocallyConstant": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "RestrictionShift",
-    "next_active_coarse": "RestrictionShift",
+    "next_active": "RestrictionLocallyConstant",
+    "next_active_coarse": "RestrictionLocallyConstant",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "FrontRestriction closed cleanly. Advance to the short, well-supported RestrictionShift identity and require direct Lean closure before introducing further obligations.",
-    "request_id": 561,
+    "reason": "RestrictionShift closed cleanly. Advance to RestrictionLocallyConstant, whose two support definitions are closed and whose direct prefix-agreement proof has several downstream users.",
+    "request_id": 563,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_561_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_563_decision.context.json"
 }

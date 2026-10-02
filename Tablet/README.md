@@ -165,7 +165,7 @@
 | Ray | definition | - | closed |
 | RelationEmbedding | definition | Relation embedding | closed |
 | RestrictionLocallyConstant | proof | Restriction preserves local constancy | open |
-| RestrictionShift | proof | Restriction and shift | open |
+| RestrictionShift | proof | Restriction and shift | closed |
 | RightComp | definition | - | closed |
 | RmapLemma | proof | - | open |
 | SetDomination | definition | Domination on subsets | closed |
@@ -186,4 +186,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | open |
 
-**Summary:** 92/176 closed
+**Summary:** 93/176 closed

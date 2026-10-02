@@ -6,4 +6,5 @@ theorem RestrictionShift (z : IncSeq) :
     ∀ x : IncSeq,
       IncSeqComp z (ShiftMap x) = ShiftMap (IncSeqComp z x) := by
 -- BODY
-  sorry
+  intro x
+  rfl
