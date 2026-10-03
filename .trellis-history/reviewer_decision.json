@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The PowerCopiedShiftIdentity cone is shallowly closed; advance to PowerCopiedTerminalShift, whose support is now complete.",
-    "comments": "Switch the coarse anchor to PowerCopiedTerminalShift and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Apply PowerCopiedFiniteTerminal to h, hbad, and x to obtain k, q, q' and the two terminal atom equations. Then apply PowerCopiedShiftIdentity with n=0 and this k, simplify 0+1 to 1, and rewrite with the second atom equation to obtain the shifted terminal equality. Do not add wrappers or helpers, and leave no obligations open.",
+    "reason": "The terminal-shift cone is shallowly closed; advance to the copied-game orbit-dependence lemma needed by the reflection argument.",
+    "comments": "Switch the coarse anchor to PowerCopiedOrbitDependence and use Local mode. Preserve its theorem statement, import, BODY marker, and accepted TeX proof. Prove the stronger row-uniform assertion by induction on depth m: under agreement of h on PowerShiftIter j x and PowerShiftIter j y for j <= i+m+2, the copied-left values at row i and depth m agree. In the base case use the depth-zero PowerCopiedLeft clauses and agreement at i and i+1; in the successor case derive the induction hypotheses at rows i and i+1 from the successor bound and use determinism of PowerIResponse. Finish by specializing to i=n and m=k. Do not add wrappers or helpers, change imports, or leave obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedTerminalShift",
-    "next_active_coarse": "PowerCopiedTerminalShift",
+    "next_active": "PowerCopiedOrbitDependence",
+    "next_active_coarse": "PowerCopiedOrbitDependence",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerCopiedTerminalShift": "easy"
+      "PowerCopiedOrbitDependence": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerCopiedTerminalShift and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Apply PowerCopiedFiniteTerminal to h, hbad, and x to obtain k, q, q' and the two terminal atom equations. Then apply PowerCopiedShiftIdentity with n=0 and this k, simplify 0+1 to 1, and rewrite with the second atom equation to obtain the shifted terminal equality. Do not add wrappers or helpers, and leave no obligations open.",
+    "comments": "Switch the coarse anchor to PowerCopiedOrbitDependence and use Local mode. Preserve its theorem statement, import, BODY marker, and accepted TeX proof. Prove the stronger row-uniform assertion by induction on depth m: under agreement of h on PowerShiftIter j x and PowerShiftIter j y for j <= i+m+2, the copied-left values at row i and depth m agree. In the base case use the depth-zero PowerCopiedLeft clauses and agreement at i and i+1; in the successor case derive the induction hypotheses at rows i and i+1 from the successor bound and use determinism of PowerIResponse. Finish by specializing to i=n and m=k. Do not add wrappers or helpers, change imports, or leave obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 224,
+    "cycle": 225,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerCopiedTerminalShift": {
-        "Set": "Easy"
+      "PowerCopiedOrbitDependence": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerCopiedTerminalShift",
-    "next_active_coarse": "PowerCopiedTerminalShift",
+    "next_active": "PowerCopiedOrbitDependence",
+    "next_active_coarse": "PowerCopiedOrbitDependence",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The PowerCopiedShiftIdentity cone is shallowly closed; advance to PowerCopiedTerminalShift, whose support is now complete.",
-    "request_id": 651,
+    "reason": "The terminal-shift cone is shallowly closed; advance to the copied-game orbit-dependence lemma needed by the reflection argument.",
+    "request_id": 653,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_651_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_653_decision.context.json"
 }

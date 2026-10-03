@@ -130,7 +130,7 @@
 | PowerCopiedShiftIdentity | proof | Stabilization under the shift | closed |
 | PowerCopiedSupport | proof | Support of the copied left values | closed |
 | PowerCopiedTerminalAt | definition | - | closed |
-| PowerCopiedTerminalShift | proof | The terminal atom stabilizes under shifting | open |
+| PowerCopiedTerminalShift | proof | The terminal atom stabilizes under shifting | closed |
 | PowerCopiedTerminalSupport | proof | The terminal atom lies in the original support | closed |
 | PowerCopiedTerminates | proof | Every copied row reaches atoms | closed |
 | PowerFiniteOrbitConstancy | proof | A finite shift orbit is decided by one finite prefix | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 143/185 closed
+**Summary:** 144/185 closed

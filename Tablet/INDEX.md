@@ -122,7 +122,7 @@
 | PowerCopiedShiftIdentity | lemma | proof | closed | - | Stabilization under the shift | PowerCopiedLeft, PowerShiftIterShift |
 | PowerCopiedSupport | lemma | proof | closed | - | Support of the copied left values | PowerCopiedFailureMove, PowerMoveInSupport |
 | PowerCopiedTerminalAt | definition | definition | closed | - | - | PowerCopiedLeft |
-| PowerCopiedTerminalShift | lemma | proof | open | - | The terminal atom stabilizes under shifting | PowerCopiedFiniteTerminal, PowerCopiedShiftIdentity |
+| PowerCopiedTerminalShift | lemma | proof | closed | - | The terminal atom stabilizes under shifting | PowerCopiedFiniteTerminal, PowerCopiedShiftIdentity |
 | PowerCopiedTerminalSupport | lemma | proof | closed | - | The terminal atom lies in the original support | PowerCopiedSupport, PowerCopiedTerminalAt, PowerCopiedTerminates |
 | PowerCopiedTerminates | lemma | proof | closed | - | Every copied row reaches atoms | PowerCopiedFailureMove, PowerCopiedTerminalAt, PowerGameDescentWellFounded |
 | PowerFiniteOrbitConstancy | lemma | proof | open | - | A finite shift orbit is decided by one finite prefix | LocallyConstant, PowerShiftIterPrefixAgree |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 143 | **Open:** 42
+**Total:** 185 nodes | **Closed:** 144 | **Open:** 41
