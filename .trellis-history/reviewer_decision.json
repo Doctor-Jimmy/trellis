@@ -1,8 +1,8 @@
 {
   "raw": {
-    "decision": "done",
-    "reason": "All cleanup tasks are terminal, there are no pending tasks or verifier blockers, and the only failed burst was a stale lint proposal. Finish this round while requesting a fresh audit to reconcile that stale diagnostic against the current corpus.",
-    "comments": "Do not retry the failed TildeFHerCtbl task: its single attempt is terminally Failed and the authoritative acceptance baseline reported no matching pre-burst diagnostic. The completed extraction and six lint fixes remain accepted; use the re-audit to check the final corpus for any genuinely actionable cleanup.",
+    "decision": "continue",
+    "reason": "Dispatch five independent high-confidence LintFix tasks with distinct targets: tasks 8, 9, 11, 14, and 17.",
+    "comments": "Apply only the audit-prescribed simp or simp-argument replacements in the five authorized nodes. Preserve all declarations, statements, imports, and proof results; leave the remaining same-node diagnostics and FrontBridgeStep extraction pending.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -24,24 +24,37 @@
     "authorized_nodes": [],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
-    "cleanup_batch_tasks": null,
+    "cleanup_batch_tasks": [
+      8,
+      9,
+      11,
+      14,
+      17
+    ],
     "cleanup_repair_node": null,
-    "cleanup_request_reaudit": true
+    "cleanup_request_reaudit": false
   },
   "response": {
     "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
+    "cleanup_batch_tasks": [
+      8,
+      9,
+      11,
+      14,
+      17
+    ],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
-    "cleanup_request_reaudit": true,
+    "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not retry the failed TildeFHerCtbl task: its single attempt is terminally Failed and the authoritative acceptance baseline reported no matching pre-burst diagnostic. The completed extraction and six lint fixes remain accepted; use the re-audit to check the final corpus for any genuinely actionable cleanup.",
+    "comments": "Apply only the audit-prescribed simp or simp-argument replacements in the five authorized nodes. Preserve all declarations, statements, imports, and proof results; leave the remaining same-node diagnostics and FrontBridgeStep extraction pending.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 270,
-    "decision": "Done",
+    "cycle": 271,
+    "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [],
@@ -58,8 +71,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "All cleanup tasks are terminal, there are no pending tasks or verifier blockers, and the only failed burst was a stale lint proposal. Finish this round while requesting a fresh audit to reconcile that stale diagnostic against the current corpus.",
-    "request_id": 743,
+    "reason": "Dispatch five independent high-confidence LintFix tasks with distinct targets: tasks 8, 9, 11, 14, and 17.",
+    "request_id": 745,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -69,5 +82,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_743_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_745_decision.context.json"
 }

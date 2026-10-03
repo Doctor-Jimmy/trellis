@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 1012,
+  "event_count": 1015,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -54774,6 +54774,10 @@
         "$s": "5082b829f8866f2c"
       }
     },
+    "b0210a99b8cf71aa": {
+      "kind": "lint_fix",
+      "warning_text": "Try `simp at hk` instead of `simpa using hk`"
+    },
     "b027730140f4c9fc": {
       "consumer": {
         "$s": "77d96f473077081d"
@@ -79314,17 +79318,17 @@
     }
   },
   "checkpoint": {
-    "active_node": "TildeFHerCtbl",
+    "active_node": "InfiniteSetEnumeration",
     "committed": {
       "$r": "43893ceaf4fc1129"
     },
-    "cycle": 270,
+    "cycle": 271,
     "gate_kind": "None",
     "phase": "Cleanup"
   },
   "state": {
     "active_coarse_node": null,
-    "active_node": "TildeFHerCtbl",
+    "active_node": "InfiniteSetEnumeration",
     "approved_targets": {
       "configured_targets": {
         "$r": "ae7b3cb4657bcad4"
@@ -79383,10 +79387,17 @@
     "attempt": 0,
     "audit_burst_retry_count": 0,
     "audit_plan": null,
+    "cleanup_active_batch": [
+      8,
+      9,
+      11,
+      14,
+      17
+    ],
     "cleanup_active_task": null,
-    "cleanup_audit_burst_count": 0,
+    "cleanup_audit_burst_count": 1,
     "cleanup_audit_round": 2,
-    "cleanup_audit_scratchpad": "",
+    "cleanup_audit_scratchpad": "Fresh scan: no shared proof-block regions were reported. No exact mathlib or tablet wrapper substitution was found, and no dead block was sufficiently certain. Protected targets and the prior terminal tasks were excluded; the selected warnings are current lake-build diagnostics.",
     "cleanup_audit_tasks": [
       {
         "audit_origin_round": 1,
@@ -79507,6 +79518,160 @@
         },
         "swept_parents": [],
         "target_node": "TildeFHerCtbl"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "kind": "lint_fix",
+          "warning_text": "try 'simp' instead of 'simpa'"
+        },
+        "rationale": "The current lake build reports this simplification twice, at the two finite-enumeration endpoint witnesses. Replacing the unnecessary `simpa` calls with `simp` is a local proof-style cleanup in an unprotected foundational node.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "InfiniteSetEnumeration"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "kind": "lint_fix",
+          "warning_text": "Try `simp at hn` instead of `simpa using hn`"
+        },
+        "rationale": "The live build gives a precise `simp at hn` suggestion in the empty-front branch. Applying it only changes tactic presentation and preserves the theorem and proof result.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "DecidingFront"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "$r": "b0210a99b8cf71aa"
+        },
+        "rationale": "A second independent linter warning in this node recommends simplifying `hk` in place. This is a deterministic single-file hygiene fix and is distinct from the `hn` warning above.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "DecidingFront"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "$r": "b0210a99b8cf71aa"
+        },
+        "rationale": "The build identifies an unnecessary `simpa using hk` in the restriction argument. The suggested `simp at hk` replacement is local and leaves the front statement unchanged.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "FrontRestriction"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "kind": "lint_fix",
+          "warning_text": "try 'simp' instead of 'simpa'"
+        },
+        "rationale": "This central restriction proof also has a plain unnecessary `simpa` warning. Fixing it is a direct linter-guided cleanup with no interface or mathematical change.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "FrontRestriction"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "kind": "lint_fix",
+          "warning_text": "Try `simp at hsne` instead of `simpa using hsne`"
+        },
+        "rationale": "The remaining `simpa using hsne` warning is independent of the other two warnings in this node. Rewriting it as the suggested in-place simplification removes noise from a frequently reused restriction lemma.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "FrontRestriction"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "$r": "b0210a99b8cf71aa"
+        },
+        "rationale": "The live build reports this exact `simp at hk` improvement twice in the large base-to-super construction. One node-scoped cleanup can apply the same deterministic replacement at both occurrences without changing the statement.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "PerfectBaseToSuper"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "kind": "lint_fix",
+          "warning_text": "This simp argument is unused: hnext"
+        },
+        "rationale": "Lean marks the local `hnext` simp argument as unused in the long construction proof. Removing only that argument is a mechanically justified proof-hygiene fix.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "PerfectBaseToSuper"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "kind": "lint_fix",
+          "warning_text": "This simp argument is unused: hi_eq"
+        },
+        "rationale": "Lean likewise marks `hi_eq` as an unused simp argument in a later branch. Omitting that argument makes the proof term cleaner while retaining the same simplification and theorem.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "PerfectBaseToSuper"
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "High",
+        "kind": {
+          "kind": "lint_fix",
+          "warning_text": "Try `simp at hkU` instead of `simpa using hkU`"
+        },
+        "rationale": "After the earlier unused-binder cleanup, the live build still reports one unnecessary `simpa using hkU`. Applying the suggested `simp at hkU` is a local fix in a relatively expensive eligible proof node.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": {
+          "$s": "ba060752f87266a9"
+        }
+      },
+      {
+        "audit_origin_round": 2,
+        "confidence": "Medium",
+        "kind": {
+          "hint": "Around lines 37-95 and 119-185, factor the repeated handling of the two `hright` cases: the `FrontBridgeTail` insertion equality, nonemptiness, initial-segment, and resulting bridge fields. Parameterize the helper by the current left-side set and return the intermediate bridge/tail facts needed by the final conjunction; target a substantially smaller proof term in FrontBridgeStep.",
+          "kind": "extract_helper",
+          "ordinal": 1
+        },
+        "rationale": "This eligible proof has the largest measured proof artifact in the corpus (176472-byte olean) and repeats the same right-branch tail insertion and initial-segment construction in both left cases. Extract one helper around that repeated construction, returning the tail/bridge facts each branch needs, with the objective of materially shrinking and cheapening the parent.",
+        "status": {
+          "kind": "pending"
+        },
+        "swept_parents": [],
+        "target_node": "FrontBridgeStep"
       }
     ],
     "cleanup_consecutive_invalid_workers": 1,
@@ -80155,7 +80320,7 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 270,
+    "cycle": 271,
     "cycles_in_coarse_repair_mode": 0,
     "cycles_since_clean": 0,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
@@ -81132,7 +81297,7 @@
     "in_flight_request": null,
     "invalid_attempt": false,
     "last_audit_request_cycle": 6,
-    "last_clean_commit": "71691f5935426c77a9748a20b089980d7ec37322",
+    "last_clean_commit": "0135aec9a60e59e64f22174b45de000656a06fd1",
     "last_clean_corr_approved_fingerprints": {
       "$r": "3c71731e4e3cb654"
     },
@@ -81415,7 +81580,28 @@
     "pending_global_repair_request": null,
     "pending_protected_reapproval_nodes": [],
     "pending_protected_semantic_scope_confirmation": null,
-    "pending_task": null,
+    "pending_task": {
+      "allow_new_obligations": true,
+      "authorized_nodes": [
+        "DecidingFront",
+        "FrontRestriction",
+        {
+          "$s": "ba060752f87266a9"
+        },
+        "InfiniteSetEnumeration",
+        "PerfectBaseToSuper"
+      ],
+      "consumed_global_repair_grant": false,
+      "mode": "Cleanup",
+      "must_close_active": false,
+      "next_worker_context_mode": "resume",
+      "node": "InfiniteSetEnumeration",
+      "orphan_cleanup_nodes": [],
+      "paper_focus_ranges": [],
+      "protected_semantic_change_nodes": [],
+      "task_blockers": [],
+      "work_style_hint": "none"
+    },
     "pending_worker_audit_request": null,
     "phase": "Cleanup",
     "plan_review_cadence_enabled": true,
@@ -81455,17 +81641,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 271,
+      "next_index": 272,
       "snapshots": [
-        {
-          "present": {
-            "$r": "df09dd9d06ff24bc"
-          },
-          "progressed": {
-            "$r": "df09dd9d06ff24bc"
-          },
-          "snapshot_index": 207
-        },
         {
           "present": {
             "$r": "df09dd9d06ff24bc"
@@ -82032,6 +82209,15 @@
             "$r": "e99817cba7337999"
           },
           "snapshot_index": 270
+        },
+        {
+          "present": {
+            "$r": "e99817cba7337999"
+          },
+          "progressed": {
+            "$r": "e99817cba7337999"
+          },
+          "snapshot_index": 271
         }
       ]
     },
@@ -82040,9 +82226,9 @@
     "proof_nodes": {
       "$r": "9ebb22a98c68946c"
     },
-    "request_seq": 743,
+    "request_seq": 745,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "",
+    "reviewer_comments": "Apply only the audit-prescribed simp or simp-argument replacements in the five authorized nodes. Preserve all declarations, statements, imports, and proof results; leave the remaining same-node diagnostics and FrontBridgeStep extraction pending.",
     "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
     "shallow_coarse_closed_count": 164,
