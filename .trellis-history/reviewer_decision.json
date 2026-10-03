@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "ConverseGame is closed. Advance to BadSuperRestrict, the short direct badness-preservation prerequisite for Subarr with all dependencies already closed.",
-    "comments": "Work on BadSuperRestrict in Local mode and close it directly without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Instantiate BadSuperSequence on arbitrary s and t in the restricted front, use the subset inclusion to apply the original badness statement, and rewrite restricted values with SuperSequenceRestrict. Leave no obligations open.",
+    "reason": "BadSuperRestrict is closed. Advance to BadMultiRestrict, the remaining short badness-preservation prerequisite for Subarr with a fully closed support cone.",
+    "comments": "Work on BadMultiRestrict in Local mode and close it directly without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Apply BadMultiSequence to z composed with x, rewrite the restricted values using MultiSequenceRestrict, and use RestrictionShift to identify z composed with ShiftMap x with ShiftMap of z composed with x. Leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BadSuperRestrict",
-    "next_active_coarse": "BadSuperRestrict",
+    "next_active": "BadMultiRestrict",
+    "next_active_coarse": "BadMultiRestrict",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BadSuperRestrict": "easy"
+      "BadMultiRestrict": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on BadSuperRestrict in Local mode and close it directly without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Instantiate BadSuperSequence on arbitrary s and t in the restricted front, use the subset inclusion to apply the original badness statement, and rewrite restricted values with SuperSequenceRestrict. Leave no obligations open.",
+    "comments": "Work on BadMultiRestrict in Local mode and close it directly without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Apply BadMultiSequence to z composed with x, rewrite the restricted values using MultiSequenceRestrict, and use RestrictionShift to identify z composed with ShiftMap x with ShiftMap of z composed with x. Leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 253,
+    "cycle": 254,
     "decision": "Continue",
     "difficulty_updates": {
-      "BadSuperRestrict": {
+      "BadMultiRestrict": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BadSuperRestrict",
-    "next_active_coarse": "BadSuperRestrict",
+    "next_active": "BadMultiRestrict",
+    "next_active_coarse": "BadMultiRestrict",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "ConverseGame is closed. Advance to BadSuperRestrict, the short direct badness-preservation prerequisite for Subarr with all dependencies already closed.",
-    "request_id": 709,
+    "reason": "BadSuperRestrict is closed. Advance to BadMultiRestrict, the remaining short badness-preservation prerequisite for Subarr with a fully closed support cone.",
+    "request_id": 711,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_709_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_711_decision.context.json"
 }

@@ -9,4 +9,5 @@ theorem BadSuperRestrict {Q : Type} (r : Q → Q → Prop)
     BadSuperSequence r f →
       BadSuperSequence r (SuperSequenceRestrict f F' Y hF' hsub) := by
 -- BODY
-  sorry
+  intro hbad s t hs ht hshift
+  exact hbad s t (hsub hs) (hsub ht) hshift
