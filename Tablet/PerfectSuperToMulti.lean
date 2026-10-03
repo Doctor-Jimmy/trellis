@@ -23,6 +23,7 @@ theorem PerfectSuperToMulti {Q : Type} (r : Q → Q → Prop)
     ∃ z : IncSeq, PerfectMultiSequence r (MultiSequenceRestrict h z) := by
 -- BODY
   classical
+  have _ := hlc
   obtain ⟨z, hz⟩ := InfiniteSetEnumeration Y hF'.infinite_base
   refine ⟨z, ?_⟩
   intro x

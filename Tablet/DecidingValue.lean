@@ -11,6 +11,7 @@ theorem DecidingValue {E : Type u} (h : MultiSequence E)
         ProperPrefixSet s.1 (Set.range (x : Nat → Nat)) → v s = h x := by
 -- BODY
   classical
+  have _ := hlc
   choose y hy using (fun s : DecidingFrontSet h => FinitePrefixExtension s.1)
   refine ⟨fun s => h (y s), ?_⟩
   intro s x hx

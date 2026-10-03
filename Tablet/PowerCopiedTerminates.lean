@@ -60,8 +60,7 @@ theorem PowerCopiedTerminates {Q : Type u} (r : Q → Q → Prop)
       ∀ j, p = P j → ∃ k, PowerCopiedTerminalAt r h x n k := by
     intro p hp
     refine Acc.recOn hp ?_
-    intro p hp ih
-    intro j hpj
+    intro p hp ih j hpj
     by_cases hterm : ∃ q q', p.1 = .atom q ∧ p.2 = .atom q'
     · rcases hterm with ⟨q, q', hq, hq'⟩
       refine ⟨j, q, q', ?_, ?_⟩

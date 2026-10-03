@@ -12,8 +12,7 @@ theorem PowerGameDescentWellFounded {Q : Type u} :
   rcases p with ⟨a, b⟩
   refine (PowerChildWellFounded.induction
     (C := fun a => ∀ b, Acc (@PowerGameDescent Q) (a, b)) a ?_) b
-  intro a ih
-  intro b
+  intro a ih b
   refine PowerChildWellFounded.induction
     (C := fun b => Acc (@PowerGameDescent Q) (a, b)) b ?_
   intro b ihb

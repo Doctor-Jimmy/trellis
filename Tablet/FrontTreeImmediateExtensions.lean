@@ -12,6 +12,7 @@ theorem FrontTreeImmediateExtensions (F : Set (Finset Nat)) (X : Set Nat)
         insert n s ∈ PrefixTree F} := by
 -- BODY
   classical
+  have _ := hF
   rcases hs with ⟨t, htF, hst⟩
   have hne : s ≠ t := by
     intro hst'

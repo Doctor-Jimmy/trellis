@@ -105,8 +105,7 @@ theorem FrontBridgeStep (F : Set (Finset Nat))
       exact (Nat.lt_irrefl q) (hqu q hq_u)
     have hleft_tree : ∀ q, (∀ j ∈ u, j < q) → u ∉ F →
         insert q u ∈ PrefixTree F := by
-      intro q hqu
-      intro huF
+      intro q hqu huF
       exact FrontTreeOrderedExtension F hF u hu_tree huF q
         (hleft_proper q hqu)
     have hfinal_eq : s ∈ F → u = s := by

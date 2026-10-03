@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Dispatch the six independent pending LintFix tasks 1 through 6 as one atomic batch; each has a specific current lake-build diagnostic and a distinct unprotected target.",
-    "comments": "Apply only the requested local lint repairs, preserve declarations and manuscript statements, and ensure every named pre-burst diagnostic is absent afterward. Task 7 remains pending for a later burst.",
+    "reason": "Dispatch the sole remaining pending cleanup task, the targeted TildeFHerCtbl letI-to-let lint fix.",
+    "comments": "Edit only Tablet/TildeFHerCtbl.lean, replace the proposition-valued letI with let as requested, preserve the declaration and proof result, and remove the named pre-burst diagnostic.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -21,17 +21,12 @@
       "consulted_cited_ranges": false
     },
     "work_style_hint": "none",
-    "authorized_nodes": [],
-    "cleanup_dismiss_tasks": [],
-    "cleanup_next_task": null,
-    "cleanup_batch_tasks": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
+    "authorized_nodes": [
+      "TildeFHerCtbl"
     ],
+    "cleanup_dismiss_tasks": [],
+    "cleanup_next_task": 7,
+    "cleanup_batch_tasks": null,
     "cleanup_repair_node": null,
     "cleanup_request_reaudit": false
   },
@@ -39,23 +34,17 @@
     "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
-    "authorized_nodes": [],
-    "cleanup_batch_tasks": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
+    "authorized_nodes": [
+      "TildeFHerCtbl"
     ],
     "cleanup_dismiss_tasks": [],
-    "cleanup_next_task": null,
+    "cleanup_next_task": 7,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Apply only the requested local lint repairs, preserve declarations and manuscript statements, and ensure every named pre-burst diagnostic is absent afterward. Task 7 remains pending for a later burst.",
+    "comments": "Edit only Tablet/TildeFHerCtbl.lean, replace the proposition-valued letI with let as requested, preserve the declaration and proof result, and remove the named pre-burst diagnostic.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 268,
+    "cycle": 269,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -73,8 +62,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Dispatch the six independent pending LintFix tasks 1 through 6 as one atomic batch; each has a specific current lake-build diagnostic and a distinct unprotected target.",
-    "request_id": 739,
+    "reason": "Dispatch the sole remaining pending cleanup task, the targeted TildeFHerCtbl letI-to-let lint fix.",
+    "request_id": 741,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -84,5 +73,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_739_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_741_decision.context.json"
 }
