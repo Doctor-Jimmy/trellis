@@ -1,14 +1,14 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed TildeFAtomIffFront by the front/non-front case split using the two recursion equations and constructor disjointness.",
-    "comments": "Preserved the active theorem statement, imports, BODY marker, and TeX proof. No helpers or other node edits were made.",
+    "summary": "Closed ShiftDichotomy in Lean using the locally constant Boolean shift coloring, its deciding front and value map, Nash-Williams homogenization, enumeration of the homogeneous base, and the RestrictionShift transport identities.",
+    "comments": "The active theorem signature, imports, BODY marker, and accepted TeX were preserved. The Lean proof compiles with no sorry in ShiftDichotomy; no helper nodes or deviations were needed.",
     "target_claim_updates": {},
     "difficulty_updates": {},
+    "deleted_nodes": [],
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
-    "deleted_nodes": [],
     "memory_challenges": [],
     "needs_restructure_suggested_nodes": []
   },
@@ -20,36 +20,22 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the active theorem statement, imports, BODY marker, and TeX proof. No helpers or other node edits were made.",
-    "cycle": 247,
+    "comments": "The active theorem signature, imports, BODY marker, and accepted TeX were preserved. The Lean proof compiles with no sorry in ShiftDichotomy; no helper nodes or deviations were needed.",
+    "cycle": 248,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
     "difficulty_updates": {},
-    "elaboration_costs": {
-      "TildeFAtomIffFront": {
-        "cost_version": "2",
-        "heartbeats": null,
-        "heartbeats_key": null,
-        "measured_at_snapshot_id": "",
-        "node": "TildeFAtomIffFront",
-        "olean_size_bytes": 29928,
-        "peak_rss_kib": 1675924,
-        "peak_rss_process": "lean",
-        "source_closure_hash": "270ffff6ff5226504b64381d425ef03f6216cf0d9950c3a42341f9d548145495",
-        "walltime_ms": 2234
-      }
-    },
     "kind": "worker",
     "local_closure_results": {
-      "TildeFAtomIffFront": {
+      "ShiftDichotomy": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "b1560a50aa4ce65ab4397b81a4cda4bf779678af355ac78fd1e5c9bbb671d92b",
-            "size_bytes": 29928
+            "sha256": "69e728a989f48e1935601cbfe3a716878f2fb0161e32a8b25dc5c06e278c9b11",
+            "size_bytes": 109344
           }
         ],
         "axiomization_check": {
@@ -57,19 +43,25 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
-            "Tablet.FrontTreeImmediateExtensions::FrontTreeImmediateExtensions@exported:theorem",
-            "Tablet.PowerQ::PowerQ.atom@exported:constructor",
-            "Tablet.PowerQ::PowerQ.ctorIdx@exported:definition",
-            "Tablet.PowerQ::PowerQ.node@exported:constructor",
-            "Tablet.PowerQ::PowerQ@exported:inductive",
-            "Tablet.PrefixTree::PrefixTree@exported:definition",
-            "Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition",
-            "Tablet.SuperSequence::SuperSequence.front@exported:theorem",
-            "Tablet.SuperSequence::SuperSequence.value@exported:definition",
-            "Tablet.SuperSequence::SuperSequence@exported:inductive",
-            "Tablet.TildeF::TildeF@exported:definition",
-            "Tablet.TildeFFrontEquation::TildeFFrontEquation@exported:theorem",
-            "Tablet.TildeFNonfrontEquation::TildeFNonfrontEquation@exported:theorem"
+            "Tablet.BadMultiSequence::BadMultiSequence@exported:definition",
+            "Tablet.DecidingFront::DecidingFront@exported:theorem",
+            "Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition",
+            "Tablet.DecidingValue::DecidingValue@exported:theorem",
+            "Tablet.Front::Front.dense@exported:theorem",
+            "Tablet.Front::Front.infinite_base@exported:theorem",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.IncSeq::IncSeq@exported:definition",
+            "Tablet.IncSeqComp::IncSeqComp@exported:definition",
+            "Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem",
+            "Tablet.LocallyConstant::LocallyConstant@exported:definition",
+            "Tablet.MultiSequence::MultiSequence@exported:definition",
+            "Tablet.MultiSequenceRestrict::MultiSequenceRestrict@exported:definition",
+            "Tablet.NashWilliams::NashWilliams@exported:theorem",
+            "Tablet.PerfectMultiSequence::PerfectMultiSequence@exported:definition",
+            "Tablet.PrefixAgree::PrefixAgree@exported:definition",
+            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
+            "Tablet.RestrictionShift::RestrictionShift@exported:theorem",
+            "Tablet.ShiftMap::ShiftMap@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [
@@ -94,93 +86,138 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "TildeFAtomIffFront"
+            "name": "ShiftDichotomy"
+          },
+          {
+            "kind": "theorem",
+            "name": "ShiftDichotomy._proof_1_1"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.TildeF",
-          "Tablet.TildeFFrontEquation",
-          "Tablet.TildeFNonfrontEquation"
+          "Tablet.BadMultiSequence",
+          "Tablet.DecidingFront",
+          "Tablet.DecidingValue",
+          "Tablet.InfiniteSetEnumeration",
+          "Tablet.MultiSequenceRestrict",
+          "Tablet.NashWilliams",
+          "Tablet.PerfectMultiSequence",
+          "Tablet.RestrictionShift"
         ],
         "errors": [],
         "exact_declaration_uses": [
           {
-            "declaration_kind": "theorem",
-            "owner": "FrontTreeImmediateExtensions",
-            "reached_declaration": "FrontTreeImmediateExtensions",
+            "declaration_kind": "definition",
+            "owner": "BadMultiSequence",
+            "reached_declaration": "BadMultiSequence",
             "visibility": "exported"
           },
           {
-            "declaration_kind": "constructor",
-            "owner": "PowerQ",
-            "reached_declaration": "PowerQ.atom",
+            "declaration_kind": "theorem",
+            "owner": "DecidingFront",
+            "reached_declaration": "DecidingFront",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "PowerQ",
-            "reached_declaration": "PowerQ.ctorIdx",
+            "owner": "DecidingFrontSet",
+            "reached_declaration": "DecidingFrontSet",
             "visibility": "exported"
           },
           {
-            "declaration_kind": "constructor",
-            "owner": "PowerQ",
-            "reached_declaration": "PowerQ.node",
+            "declaration_kind": "theorem",
+            "owner": "DecidingValue",
+            "reached_declaration": "DecidingValue",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.dense",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "Front",
+            "reached_declaration": "Front.infinite_base",
             "visibility": "exported"
           },
           {
             "declaration_kind": "inductive",
-            "owner": "PowerQ",
-            "reached_declaration": "PowerQ",
+            "owner": "Front",
+            "reached_declaration": "Front",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "PrefixTree",
-            "reached_declaration": "PrefixTree",
+            "owner": "IncSeq",
+            "reached_declaration": "IncSeq",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "ProperInitialSegment",
-            "reached_declaration": "ProperInitialSegment",
+            "owner": "IncSeqComp",
+            "reached_declaration": "IncSeqComp",
             "visibility": "exported"
           },
           {
             "declaration_kind": "theorem",
-            "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence.front",
+            "owner": "InfiniteSetEnumeration",
+            "reached_declaration": "InfiniteSetEnumeration",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence.value",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "inductive",
-            "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence",
+            "owner": "LocallyConstant",
+            "reached_declaration": "LocallyConstant",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "TildeF",
-            "reached_declaration": "TildeF",
+            "owner": "MultiSequence",
+            "reached_declaration": "MultiSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "MultiSequenceRestrict",
+            "reached_declaration": "MultiSequenceRestrict",
             "visibility": "exported"
           },
           {
             "declaration_kind": "theorem",
-            "owner": "TildeFFrontEquation",
-            "reached_declaration": "TildeFFrontEquation",
+            "owner": "NashWilliams",
+            "reached_declaration": "NashWilliams",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PerfectMultiSequence",
+            "reached_declaration": "PerfectMultiSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PrefixAgree",
+            "reached_declaration": "PrefixAgree",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ProperPrefixSet",
+            "reached_declaration": "ProperPrefixSet",
             "visibility": "exported"
           },
           {
             "declaration_kind": "theorem",
-            "owner": "TildeFNonfrontEquation",
-            "reached_declaration": "TildeFNonfrontEquation",
+            "owner": "RestrictionShift",
+            "reached_declaration": "RestrictionShift",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ShiftMap",
+            "reached_declaration": "ShiftMap",
             "visibility": "exported"
           }
         ],
@@ -189,31 +226,44 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "TildeFAtomIffFront",
+        "principal_declaration": "ShiftDichotomy",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"TildeFAtomIffFront\"],\"boundary_theorems\":[\"Tablet.FrontTreeImmediateExtensions::FrontTreeImmediateExtensions@exported:theorem\",\"Tablet.PowerQ::PowerQ.atom@exported:constructor\",\"Tablet.PowerQ::PowerQ.ctorIdx@exported:definition\",\"Tablet.PowerQ::PowerQ.node@exported:constructor\",\"Tablet.PowerQ::PowerQ@exported:inductive\",\"Tablet.PrefixTree::PrefixTree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.SuperSequence::SuperSequence.front@exported:theorem\",\"Tablet.SuperSequence::SuperSequence.value@exported:definition\",\"Tablet.SuperSequence::SuperSequence@exported:inductive\",\"Tablet.TildeF::TildeF@exported:definition\",\"Tablet.TildeFFrontEquation::TildeFFrontEquation@exported:theorem\",\"Tablet.TildeFNonfrontEquation::TildeFNonfrontEquation@exported:theorem\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"TildeFAtomIffFront\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"TildeFAtomIffFront\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"FrontTreeImmediateExtensions\",\"reached_declaration\":\"FrontTreeImmediateExtensions\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.atom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.ctorIdx\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.node\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixTree\",\"reached_declaration\":\"PrefixTree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.value\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"TildeF\",\"reached_declaration\":\"TildeF\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"TildeFFrontEquation\",\"reached_declaration\":\"TildeFFrontEquation\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"TildeFNonfrontEquation\",\"reached_declaration\":\"TildeFNonfrontEquation\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"TildeFAtomIffFront\",\"principal_declaration\":\"TildeFAtomIffFront\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"PowerQ\",\"semantic_hash\":\"eb448a4c139aebf2\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1f06fec9c525a2b8\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1a7622b0590b3994\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"7eb611d2516caf3c\"},{\"name\":\"PrefixTree\",\"semantic_hash\":\"94b89b18d87975df\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"97f9f0f5dc5dec42\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"2ab38a5f61409383\"},{\"name\":\"TildeF\",\"semantic_hash\":\"47ceb2e3e597eb36\"}],\"strict_theorem_deps\":[{\"name\":\"FrontTreeImmediateExtensions\",\"value_hash\":\"f9d6f16f3d411a53\"},{\"name\":\"SuperSequence\",\"value_hash\":\"064e0cd704aab6c4\"},{\"name\":\"TildeFFrontEquation\",\"value_hash\":\"8e169a93658d552c\"},{\"name\":\"TildeFNonfrontEquation\",\"value_hash\":\"c7298532aa52a8dc\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"ShiftDichotomy\",\"ShiftDichotomy._proof_1_1\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.DecidingFront::DecidingFront@exported:theorem\",\"Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition\",\"Tablet.DecidingValue::DecidingValue@exported:theorem\",\"Tablet.Front::Front.dense@exported:theorem\",\"Tablet.Front::Front.infinite_base@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqComp::IncSeqComp@exported:definition\",\"Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.MultiSequenceRestrict::MultiSequenceRestrict@exported:definition\",\"Tablet.NashWilliams::NashWilliams@exported:theorem\",\"Tablet.PerfectMultiSequence::PerfectMultiSequence@exported:definition\",\"Tablet.PrefixAgree::PrefixAgree@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.RestrictionShift::RestrictionShift@exported:theorem\",\"Tablet.ShiftMap::ShiftMap@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"ShiftDichotomy\",\"ShiftDichotomy._proof_1_1\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"ShiftDichotomy\"},{\"kind\":\"theorem\",\"name\":\"ShiftDichotomy._proof_1_1\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingFront\",\"reached_declaration\":\"DecidingFront\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingFrontSet\",\"reached_declaration\":\"DecidingFrontSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingValue\",\"reached_declaration\":\"DecidingValue\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.dense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.infinite_base\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqComp\",\"reached_declaration\":\"IncSeqComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"InfiniteSetEnumeration\",\"reached_declaration\":\"InfiniteSetEnumeration\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequenceRestrict\",\"reached_declaration\":\"MultiSequenceRestrict\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"NashWilliams\",\"reached_declaration\":\"NashWilliams\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PerfectMultiSequence\",\"reached_declaration\":\"PerfectMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixAgree\",\"reached_declaration\":\"PrefixAgree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"RestrictionShift\",\"reached_declaration\":\"RestrictionShift\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"ShiftDichotomy\",\"principal_declaration\":\"ShiftDichotomy\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"DecidingFrontSet\",\"semantic_hash\":\"4e9eb434d9142940\"},{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqComp\",\"semantic_hash\":\"b92c60fdc6b8c664\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"MultiSequenceRestrict\",\"semantic_hash\":\"c3ff3d9f025a84de\"},{\"name\":\"PerfectMultiSequence\",\"semantic_hash\":\"8b0175d0d302f361\"},{\"name\":\"PrefixAgree\",\"semantic_hash\":\"0e59d4fb59a4ae04\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"}],\"strict_theorem_deps\":[{\"name\":\"DecidingFront\",\"value_hash\":\"bd450244457d804c\"},{\"name\":\"DecidingValue\",\"value_hash\":\"a4f935637884b3fe\"},{\"name\":\"Front\",\"value_hash\":\"cf6cd0fffa0c1f96\"},{\"name\":\"Front\",\"value_hash\":\"b6659350d53796ce\"},{\"name\":\"InfiniteSetEnumeration\",\"value_hash\":\"4c699c796ec567a4\"},{\"name\":\"NashWilliams\",\"value_hash\":\"34f8ba625e6160d4\"},{\"name\":\"RestrictionShift\",\"value_hash\":\"d3c041fa085625c5\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "TildeFAtomIffFront"
+            "name": "ShiftDichotomy"
+          },
+          {
+            "kind": "theorem",
+            "name": "ShiftDichotomy._proof_1_1"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "400270208a36e4197107ec2015c2fa78d07c2cdcdd48ce60475366cba929a810",
+        "source_sha256": "ddffe0997a4affcf811c03ff634bb080239f41648494927c660cef47d5f4bddb",
         "status": "ok",
         "strict_definition_deps": {
-          "PowerQ": "7eb611d2516caf3c",
-          "PrefixTree": "94b89b18d87975df",
-          "ProperInitialSegment": "b0b2a1c37bea1919",
-          "SuperSequence": "2ab38a5f61409383",
-          "TildeF": "47ceb2e3e597eb36"
+          "BadMultiSequence": "12b952b1af44d358",
+          "DecidingFrontSet": "4e9eb434d9142940",
+          "Front": "54804e268105ccdb",
+          "IncSeq": "1722254285ddeb5c",
+          "IncSeqComp": "b92c60fdc6b8c664",
+          "LocallyConstant": "3be73314501d2a70",
+          "MultiSequence": "cde631bc1bef82ee",
+          "MultiSequenceRestrict": "c3ff3d9f025a84de",
+          "PerfectMultiSequence": "8b0175d0d302f361",
+          "PrefixAgree": "0e59d4fb59a4ae04",
+          "ProperPrefixSet": "8d7d85f7e2dcc1fd",
+          "ShiftMap": "2072518c2402a1ed"
         },
         "strict_theorem_deps": {
-          "FrontTreeImmediateExtensions": "f9d6f16f3d411a53",
-          "SuperSequence": "064e0cd704aab6c4",
-          "TildeFFrontEquation": "8e169a93658d552c",
-          "TildeFNonfrontEquation": "c7298532aa52a8dc"
+          "DecidingFront": "bd450244457d804c",
+          "DecidingValue": "a4f935637884b3fe",
+          "Front": "b6659350d53796ce",
+          "InfiniteSetEnumeration": "4c699c796ec567a4",
+          "NashWilliams": "34f8ba625e6160d4",
+          "RestrictionShift": "d3c041fa085625c5"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -221,7 +271,11 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "TildeFAtomIffFront"
+                "name": "ShiftDichotomy"
+              },
+              {
+                "kind": "theorem",
+                "name": "ShiftDichotomy._proof_1_1"
               }
             ],
             "level": "exported"
@@ -236,7 +290,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 696,
+    "request_id": 698,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -477,7 +531,6 @@
         "PerfectSuperRestrict",
         "PerfectSuperToBase",
         "PerfectSuperToMulti",
-        "ShiftDichotomy",
         "Subarr"
       ],
       "paper_current_fingerprints": {
@@ -2991,7 +3044,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed TildeFAtomIffFront by the front/non-front case split using the two recursion equations and constructor disjointness.",
+    "summary": "Closed ShiftDichotomy in Lean using the locally constant Boolean shift coloring, its deciding front and value map, Nash-Williams homogenization, enumeration of the homogeneous base, and the RestrictionShift transport identities.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3163,7 +3216,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "2af6b84cac77b6719a4cd65e092b18c0635ffb250e1df005816cd2544920301c",
+    "INDEX.md": "2bab07f78e58b5aa9b51af9f0cf2ce42e3e21376f3d5e69e2f5e41c282975cd7",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3320,7 +3373,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "fc3d06bf70465fd987f2164c78d4002d2780cb225b5156091018e69a4bafa78e",
+    "README.md": "131dcb0844b77059c9c1996381bd675b4e142a7a93de74eccc8a3770ae8905e0",
     "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3339,7 +3392,7 @@
     "RmapLemma.tex": "98b6f71e7f53dd495af8ee5919071222ea8ca58ca42c73c187741ae013311bbf",
     "SetDomination.lean": "c8df3dd91184d1638fd759ab69a96b91d004ede9a0c72e237b0c211c3d4a3d1d",
     "SetDomination.tex": "e8e56556fc2ffce4accee7d2604027c54508ccd98be0abba515c6822808fdd15",
-    "ShiftDichotomy.lean": "679f3cd9fa0cd4c12656b10b2a170ce2404fba12ee005edcf720a277826400b4",
+    "ShiftDichotomy.lean": "ddffe0997a4affcf811c03ff634bb080239f41648494927c660cef47d5f4bddb",
     "ShiftDichotomy.tex": "00b68b9b147b4ad98476b95892171d965ee12c997847b43de8db5698d90400e3",
     "ShiftMap.lean": "b91fa810f87c9b2b979a4c09f5fe8645641d1a6856eb6f8d4671222b49459763",
     "ShiftMap.tex": "ced9ab97fbfaecc1f61b5f6d98a7fef71d8ef1417e3fa504d9c3deff2a58e135",
@@ -3375,7 +3428,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_696_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_698_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

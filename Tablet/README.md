@@ -178,7 +178,7 @@
 | RightComp | definition | - | closed |
 | RmapLemma | proof | - | closed |
 | SetDomination | definition | Domination on subsets | closed |
-| ShiftDichotomy | proof | Perfect-or-bad shift dichotomy | open |
+| ShiftDichotomy | proof | Perfect-or-bad shift dichotomy | closed |
 | ShiftMap | definition | - | closed |
 | SubFrontCharacterization | proof | Sub-fronts | closed |
 | SuccSeq | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 166/185 closed
+**Summary:** 167/185 closed
