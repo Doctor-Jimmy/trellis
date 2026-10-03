@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "NoBadPerfectSuper is closed and its coarse cone is clean. Advance to PerfectBaseToSuper, the substantial direct support theorem for Subarr, whose imported support is already closed.",
-    "comments": "Work on PerfectBaseToSuper in Local mode with a complete-decomposition closure burst. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Formalize the exact transport from a perfect base restriction to a perfect restricted super-sequence; introduce only genuine intermediate helpers needed by the 200-line argument, each with a complete non-SKETCH NL proof. Do not add a wrapper that merely defers the target. Close the active theorem in this burst.",
+    "reason": "PerfectBaseToSuper closed directly. Advance to PerfectSuperToMulti, the remaining substantive prerequisite imported by Subarr; its own imported support is already closed.",
+    "comments": "Work on PerfectSuperToMulti in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Follow the proof's finite-shift transport: enumerate the subbase, compose with an arbitrary sequence and its shift, use the front density and value equation, invoke RestrictionShift and the perfect restricted super-sequence, then conclude perfectness of the multi-sequence restriction. Leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PerfectBaseToSuper",
-    "next_active_coarse": "PerfectBaseToSuper",
+    "next_active": "PerfectSuperToMulti",
+    "next_active_coarse": "PerfectSuperToMulti",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PerfectBaseToSuper": "hard"
+      "PerfectSuperToMulti": "hard"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on PerfectBaseToSuper in Local mode with a complete-decomposition closure burst. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Formalize the exact transport from a perfect base restriction to a perfect restricted super-sequence; introduce only genuine intermediate helpers needed by the 200-line argument, each with a complete non-SKETCH NL proof. Do not add a wrapper that merely defers the target. Close the active theorem in this burst.",
+    "comments": "Work on PerfectSuperToMulti in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Follow the proof's finite-shift transport: enumerate the subbase, compose with an arbitrary sequence and its shift, use the front density and value equation, invoke RestrictionShift and the perfect restricted super-sequence, then conclude perfectness of the multi-sequence restriction. Leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 256,
+    "cycle": 257,
     "decision": "Continue",
     "difficulty_updates": {
-      "PerfectBaseToSuper": {
+      "PerfectSuperToMulti": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PerfectBaseToSuper",
-    "next_active_coarse": "PerfectBaseToSuper",
+    "next_active": "PerfectSuperToMulti",
+    "next_active_coarse": "PerfectSuperToMulti",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "NoBadPerfectSuper is closed and its coarse cone is clean. Advance to PerfectBaseToSuper, the substantial direct support theorem for Subarr, whose imported support is already closed.",
-    "request_id": 715,
+    "reason": "PerfectBaseToSuper closed directly. Advance to PerfectSuperToMulti, the remaining substantive prerequisite imported by Subarr; its own imported support is already closed.",
+    "request_id": 717,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_715_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_717_decision.context.json"
 }
