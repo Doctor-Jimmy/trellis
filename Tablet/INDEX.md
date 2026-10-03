@@ -76,7 +76,7 @@
 | GoodMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | HerCtblCode | definition | definition | closed | - | - | Preamble |
 | HerCtblCodeErase | definition | definition | closed | - | - | HerCtblCode, PowerQ |
-| HerCtblNodeClosure | lemma | proof | open | - | Countable hereditary-node closure | HerCtblCodeErase, HerCtblPower, PowerPresentationEqEquivalence |
+| HerCtblNodeClosure | lemma | proof | closed | - | Countable hereditary-node closure | HerCtblCodeErase, HerCtblPower, PowerPresentationEqEquivalence |
 | HerCtblPower | definition | definition | closed | - | - | HereditarilyCountable |
 | HerCtblPowerIsPreorder | lemma | proof | closed | - | The hereditary countable carrier is a preorder | HerCtblRel, PowerQIsPreorder |
 | HerCtblRel | definition | definition | closed | - | - | HerCtblPower, PowerRel |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 163 | **Open:** 22
+**Total:** 185 nodes | **Closed:** 164 | **Open:** 21

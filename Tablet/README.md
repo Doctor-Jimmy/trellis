@@ -84,7 +84,7 @@
 | GoodMultiSequence | definition | - | closed |
 | HerCtblCode | definition | - | closed |
 | HerCtblCodeErase | definition | - | closed |
-| HerCtblNodeClosure | proof | Countable hereditary-node closure | open |
+| HerCtblNodeClosure | proof | Countable hereditary-node closure | closed |
 | HerCtblPower | definition | - | closed |
 | HerCtblPowerIsPreorder | proof | The hereditary countable carrier is a preorder | closed |
 | HerCtblRel | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 163/185 closed
+**Summary:** 164/185 closed
