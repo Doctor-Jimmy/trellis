@@ -22,7 +22,7 @@
 | BaseShift | definition | definition | closed | - | - | BaseIncSeq, ShiftMap |
 | BetterRel | definition | definition | closed | - | - | ContinuousRelHom, ShiftMap |
 | BlockSigma | definition | definition | closed | - | - | OrbitPoint |
-| BlockSigmaContinuous | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, PrefixAgree |
+| BlockSigmaContinuous | lemma | proof | closed | - | - | BlockSigma, OrbitBlockCoverage, PrefixAgree |
 | BlockSigmaEmbedding | lemma | proof | open | - | - | BlockSigma, IncSeq, OrbitBlockCoverage |
 | BlockSigmaIntertwines | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, RightComp, SuccSeq |
 | BooleanInfinitePigeonhole | lemma | proof | closed | - | Infinite pigeonhole | Preamble |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 156 | **Open:** 29
+**Total:** 185 nodes | **Closed:** 157 | **Open:** 28

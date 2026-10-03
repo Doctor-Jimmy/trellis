@@ -30,7 +30,7 @@
 | BaseShift | definition | - | closed |
 | BetterRel | definition | - | closed |
 | BlockSigma | definition | - | closed |
-| BlockSigmaContinuous | proof | - | open |
+| BlockSigmaContinuous | proof | - | closed |
 | BlockSigmaEmbedding | proof | - | open |
 | BlockSigmaIntertwines | proof | - | open |
 | BooleanInfinitePigeonhole | proof | Infinite pigeonhole | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 156/185 closed
+**Summary:** 157/185 closed

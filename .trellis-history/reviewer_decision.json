@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "RmapLemma is closed; continue repairing MainProp's support by closing the prefix-continuity prerequisite BlockSigmaContinuous for EmapLemma.",
-    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaContinuous in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive continuity argument without wrappers or helpers: use OrbitBlockCoverage to identify the unique block index for each output coordinate below n, recursively accumulate a finite bound on all relevant indices, and use PrefixAgree to show the two BlockSigma values agree coordinatewise. Do not alter statements or imports and leave no obligations open.",
+    "reason": "BlockSigmaContinuous is closed; continue repairing MainProp's support by closing the block-map embedding prerequisite for EmapLemma.",
+    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaEmbedding in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive increasing-injection construction without wrappers or helpers: establish strict increase and iterate-composition identities for g, obtain the unique orbit block from OrbitBlockCoverage, identify the least-index definition of BlockSigma, and prove strict increase across the initial interval, within blocks, and at block boundaries using f(n) >= n. Do not alter statements or imports and leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BlockSigmaContinuous",
+    "next_active": "BlockSigmaEmbedding",
     "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BlockSigmaContinuous": "hard"
+      "BlockSigmaEmbedding": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaContinuous in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive continuity argument without wrappers or helpers: use OrbitBlockCoverage to identify the unique block index for each output coordinate below n, recursively accumulate a finite bound on all relevant indices, and use PrefixAgree to show the two BlockSigma values agree coordinatewise. Do not alter statements or imports and leave no obligations open.",
+    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaEmbedding in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive increasing-injection construction without wrappers or helpers: establish strict increase and iterate-composition identities for g, obtain the unique orbit block from OrbitBlockCoverage, identify the least-index definition of BlockSigma, and prove strict increase across the initial interval, within blocks, and at block boundaries using f(n) >= n. Do not alter statements or imports and leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 237,
+    "cycle": 238,
     "decision": "Continue",
     "difficulty_updates": {
-      "BlockSigmaContinuous": {
+      "BlockSigmaEmbedding": {
         "Set": "Hard"
       }
     },
@@ -47,7 +47,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BlockSigmaContinuous",
+    "next_active": "BlockSigmaEmbedding",
     "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "RmapLemma is closed; continue repairing MainProp's support by closing the prefix-continuity prerequisite BlockSigmaContinuous for EmapLemma.",
-    "request_id": 677,
+    "reason": "BlockSigmaContinuous is closed; continue repairing MainProp's support by closing the block-map embedding prerequisite for EmapLemma.",
+    "request_id": 679,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_677_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_679_decision.context.json"
 }
