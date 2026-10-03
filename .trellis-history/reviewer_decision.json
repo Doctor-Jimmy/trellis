@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "HerCtblNodeClosure is closed and the anchor is cleanly unlocked; consolidate the completed front recursion into the hereditary-countability theorem TildeFHerCtbl.",
-    "comments": "Switch the coarse anchor to TildeFHerCtbl and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual well-founded induction directly: use the front equation and HereditarilyCountableAtom in the front case; in the non-front case use the non-front equation, package the induction witnesses into HerCtblPower, transport them across the ULift index, and apply HerCtblNodeClosure using the nonempty countable extension type. Do not introduce wrappers or helpers, and leave no obligations open; all cited recursion and countability support nodes are now closed.",
+    "reason": "TildeFHerCtbl is closed and the anchor is cleanly unlocked; finish the short semantic consolidation identifying exactly the front nodes at which the recursion yields atoms.",
+    "comments": "Switch the coarse anchor to TildeFAtomIffFront and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the two directions directly: at a front node use TildeFFrontEquation and the supplied front value, while at a non-front node use TildeFNonfrontEquation and disjointness of the atom and node constructors. Do not introduce wrappers or helpers, and leave no obligations open; both recursion-equation support nodes are already closed.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "TildeFHerCtbl",
-    "next_active_coarse": "TildeFHerCtbl",
+    "next_active": "TildeFAtomIffFront",
+    "next_active_coarse": "TildeFAtomIffFront",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "TildeFHerCtbl": "hard"
+      "TildeFAtomIffFront": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to TildeFHerCtbl and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual well-founded induction directly: use the front equation and HereditarilyCountableAtom in the front case; in the non-front case use the non-front equation, package the induction witnesses into HerCtblPower, transport them across the ULift index, and apply HerCtblNodeClosure using the nonempty countable extension type. Do not introduce wrappers or helpers, and leave no obligations open; all cited recursion and countability support nodes are now closed.",
+    "comments": "Switch the coarse anchor to TildeFAtomIffFront and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the two directions directly: at a front node use TildeFFrontEquation and the supplied front value, while at a non-front node use TildeFNonfrontEquation and disjointness of the atom and node constructors. Do not introduce wrappers or helpers, and leave no obligations open; both recursion-equation support nodes are already closed.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 245,
+    "cycle": 246,
     "decision": "Continue",
     "difficulty_updates": {
-      "TildeFHerCtbl": {
-        "Set": "Hard"
+      "TildeFAtomIffFront": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "TildeFHerCtbl",
-    "next_active_coarse": "TildeFHerCtbl",
+    "next_active": "TildeFAtomIffFront",
+    "next_active_coarse": "TildeFAtomIffFront",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "HerCtblNodeClosure is closed and the anchor is cleanly unlocked; consolidate the completed front recursion into the hereditary-countability theorem TildeFHerCtbl.",
-    "request_id": 693,
+    "reason": "TildeFHerCtbl is closed and the anchor is cleanly unlocked; finish the short semantic consolidation identifying exactly the front nodes at which the recursion yields atoms.",
+    "request_id": 695,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_693_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_695_decision.context.json"
 }
