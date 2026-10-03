@@ -1,29 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "ShiftDichotomy is closed, but its coarse cone still has the open support node FinitePrefixExtension; route that remaining dependency before advancing the anchor.",
-    "comments": "Keep ShiftDichotomy as the coarse anchor and use Local mode on FinitePrefixExtension. Preserve the support theorem statement, imports, BODY marker, and accepted TeX proof. Close the explicit finite-prefix construction without wrappers or helpers: handle the empty set with the identity increasing sequence, handle the nonempty set by enumerating its elements and continuing with the consecutive tail after its maximum, and verify the resulting ProperPrefixSet witness. Leave no obligations open.",
+    "reason": "The ShiftDichotomy cone is cleanly closed. Advance to the downstream BaseBqoRestriction theorem, whose imports are closed and whose substantial proof is the next useful coarse goal.",
+    "comments": "Work on BaseBqoRestriction in Local mode. Close the theorem in this burst, using helpers only when they express genuine intermediate mathematics needed by the paper proof; do not introduce wrappers that merely defer the target. Preserve the vetted theorem statement, imports, BODY marker, and TeX statement, and ensure any helper has a complete non-SKETCH natural-language proof and a real role in the restriction argument.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "FinitePrefixExtension",
+    "next_active": "BaseBqoRestriction",
+    "next_active_coarse": "BaseBqoRestriction",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "FinitePrefixExtension": "easy"
+      "BaseBqoRestriction": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -31,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep ShiftDichotomy as the coarse anchor and use Local mode on FinitePrefixExtension. Preserve the support theorem statement, imports, BODY marker, and accepted TeX proof. Close the explicit finite-prefix construction without wrappers or helpers: handle the empty set with the identity increasing sequence, handle the nonempty set by enumerating its elements and continuing with the consecutive tail after its maximum, and verify the resulting ProperPrefixSet witness. Leave no obligations open.",
+    "comments": "Work on BaseBqoRestriction in Local mode. Close the theorem in this burst, using helpers only when they express genuine intermediate mathematics needed by the paper proof; do not introduce wrappers that merely defer the target. Preserve the vetted theorem statement, imports, BODY marker, and TeX statement, and ensure any helper has a complete non-SKETCH natural-language proof and a real role in the restriction argument.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 248,
+    "cycle": 249,
     "decision": "Continue",
     "difficulty_updates": {
-      "FinitePrefixExtension": {
-        "Set": "Easy"
+      "BaseBqoRestriction": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -46,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "FinitePrefixExtension",
-    "next_active_coarse": null,
+    "next_active": "BaseBqoRestriction",
+    "next_active_coarse": "BaseBqoRestriction",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -56,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "ShiftDichotomy is closed, but its coarse cone still has the open support node FinitePrefixExtension; route that remaining dependency before advancing the anchor.",
-    "request_id": 699,
+    "reason": "The ShiftDichotomy cone is cleanly closed. Advance to the downstream BaseBqoRestriction theorem, whose imports are closed and whose substantial proof is the next useful coarse goal.",
+    "request_id": 701,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -65,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_699_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_701_decision.context.json"
 }
