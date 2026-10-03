@@ -9,7 +9,7 @@
 | BadPairSequence | definition | definition | closed | - | Bad sequence of sequences | IncreasingPair |
 | BadSuperRestrict | lemma | proof | closed | - | Badness under sub-front restriction | BadSuperSequence, SuperSequenceRestrict |
 | BadSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
-| BadSuperToBase | lemma | proof | open | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseIncSeq, BaseLocallyConstant, BaseShift, FiniteShift, FrontPrefix, ProperPrefixSet, SuperSequence, SuperSequenceExtension |
+| BadSuperToBase | lemma | proof | closed | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseIncSeq, BaseLocallyConstant, BaseShift, FiniteShift, FrontPrefix, ProperPrefixSet, SuperSequence, SuperSequenceExtension |
 | BaireContinuous | definition | definition | closed | - | - | PrefixAgree |
 | BaseBad | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
 | BaseBqoRestriction | lemma | proof | closed | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BaseRestrict, Bqo, InfiniteSetEnumeration, PerfectMultiSequence, RestrictionLocallyConstant, ShiftDichotomy |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 183 | **Open:** 2
+**Total:** 185 nodes | **Closed:** 184 | **Open:** 1

@@ -17,7 +17,7 @@
 | BadPairSequence | definition | Bad sequence of sequences | closed |
 | BadSuperRestrict | proof | Badness under sub-front restriction | closed |
 | BadSuperSequence | definition | - | closed |
-| BadSuperToBase | proof | Super-sequence badness gives base badness | open |
+| BadSuperToBase | proof | Super-sequence badness gives base badness | closed |
 | BaireContinuous | definition | - | closed |
 | BaseBad | definition | - | closed |
 | BaseBqoRestriction | proof | Base invariance of the bqo restriction property | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 183/185 closed
+**Summary:** 184/185 closed

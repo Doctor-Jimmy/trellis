@@ -19,4 +19,15 @@ theorem BadSuperToBase {Q : Type} (r : Q → Q → Prop)
             h x = f.value ⟨s, hs.1⟩) ∧
           BaseBad r h := by
 -- BODY
-  sorry
+  intro hbad
+  obtain ⟨h, hlc, hext⟩ := SuperSequenceExtension F X f.front f
+  refine ⟨h, hlc, hext, ?_⟩
+  intro x
+  obtain ⟨s, hs, hsval⟩ := hext x
+  obtain ⟨t, ht, htval⟩ := hext (BaseShift X x)
+  have hshift : FiniteShift s t := by
+    refine ⟨x.1, hs.2, ?_⟩
+    simpa [BaseShift] using ht.2
+  have hbadst := hbad s t hs.1 ht.1 hshift
+  rw [← hsval, ← htval] at hbadst
+  exact hbadst

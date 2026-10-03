@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectSuperToBase closed directly and cleanly. Advance to BadSuperToBase to complete the remaining super-to-base transport pair; its imported support is already closed and the proof has no structural blocker.",
-    "comments": "Work on BadSuperToBase in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Obtain the base multi-sequence, local constancy, and extension equation from SuperSequenceExtension. For an arbitrary base sequence use BaseShift to form its shift, apply the extension equation to both, unpack the FrontPrefix witnesses, use the original enumeration as the FiniteShift witness, and apply BadSuperSequence to derive BaseBad after rewriting the two values. Leave no obligations open.",
+    "reason": "BadSuperToBase closed directly and cleanly. Advance to the sole remaining open coarse node, PerfectMultiToSuper, whose support is already closed and whose proof is a short direct transport.",
+    "comments": "Work on PerfectMultiToSuper in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Unpack the FiniteShift witness to obtain an increasing enumeration x and the two proper-prefix facts, apply the coherence hypothesis hf to the front elements using x and ShiftMap x, then rewrite the perfectness assertion for h into the required perfectness assertion for f. Leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BadSuperToBase",
-    "next_active_coarse": "BadSuperToBase",
+    "next_active": "PerfectMultiToSuper",
+    "next_active_coarse": "PerfectMultiToSuper",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BadSuperToBase": "hard"
+      "PerfectMultiToSuper": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on BadSuperToBase in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Obtain the base multi-sequence, local constancy, and extension equation from SuperSequenceExtension. For an arbitrary base sequence use BaseShift to form its shift, apply the extension equation to both, unpack the FrontPrefix witnesses, use the original enumeration as the FiniteShift witness, and apply BadSuperSequence to derive BaseBad after rewriting the two values. Leave no obligations open.",
+    "comments": "Work on PerfectMultiToSuper in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Unpack the FiniteShift witness to obtain an increasing enumeration x and the two proper-prefix facts, apply the coherence hypothesis hf to the front elements using x and ShiftMap x, then rewrite the perfectness assertion for h into the required perfectness assertion for f. Leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 264,
+    "cycle": 265,
     "decision": "Continue",
     "difficulty_updates": {
-      "BadSuperToBase": {
-        "Set": "Hard"
+      "PerfectMultiToSuper": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BadSuperToBase",
-    "next_active_coarse": "BadSuperToBase",
+    "next_active": "PerfectMultiToSuper",
+    "next_active_coarse": "PerfectMultiToSuper",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectSuperToBase closed directly and cleanly. Advance to BadSuperToBase to complete the remaining super-to-base transport pair; its imported support is already closed and the proof has no structural blocker.",
-    "request_id": 731,
+    "reason": "BadSuperToBase closed directly and cleanly. Advance to the sole remaining open coarse node, PerfectMultiToSuper, whose support is already closed and whose proof is a short direct transport.",
+    "request_id": 733,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_731_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_733_decision.context.json"
 }
