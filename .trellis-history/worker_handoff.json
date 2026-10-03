@@ -1,16 +1,16 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed BadMultiToSuper by unpacking the finite-shift witness, rewriting both super-sequence values with hf, and applying BadMultiSequence.",
-    "comments": "Preserved the active theorem statement, imports, BODY marker, and TeX proof. No helpers or other nodes were added or edited.",
+    "summary": "Closed BadMultiToNontrivialSuper by constructing the super-sequence from DecidingFront and DecidingValue, applying BadMultiToSuper, and ruling out the empty deciding prefix via identity-shift equality and reflexivity.",
+    "comments": "Preserved the theorem statement, imports, BODY marker, and accepted TeX proof. No helpers, wrappers, imports, or other nodes were added or edited.",
+    "audit_request": null,
+    "needs_restructure_suggested_nodes": [],
     "target_claim_updates": {},
     "difficulty_updates": {},
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
-    "deleted_nodes": [],
-    "needs_restructure_suggested_nodes": [],
-    "memory_challenges": []
+    "deleted_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -20,8 +20,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Preserved the active theorem statement, imports, BODY marker, and TeX proof. No helpers or other nodes were added or edited.",
-    "cycle": 251,
+    "comments": "Preserved the theorem statement, imports, BODY marker, and accepted TeX proof. No helpers, wrappers, imports, or other nodes were added or edited.",
+    "cycle": 252,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -30,12 +30,12 @@
     "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "BadMultiToSuper": {
+      "BadMultiToNontrivialSuper": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "f7e68b32bac33552c2cbc302454cc9dd790a98d3d0c3ca803bba0452445a76b3",
-            "size_bytes": 19728
+            "sha256": "7ce513526ab8ba143249981893fb824b8f6004e5f829f3f802bdf02c832e04a9",
+            "size_bytes": 33784
           }
         ],
         "axiomization_check": {
@@ -44,18 +44,25 @@
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
             "Tablet.BadMultiSequence::BadMultiSequence@exported:definition",
+            "Tablet.BadMultiToSuper::BadMultiToSuper@exported:theorem",
             "Tablet.BadSuperSequence::BadSuperSequence@exported:definition",
+            "Tablet.DecidingFront::DecidingFront@exported:theorem",
             "Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition",
-            "Tablet.FiniteShift::FiniteShift@exported:definition",
+            "Tablet.DecidingPrefix::DecidingPrefix@exported:definition",
+            "Tablet.DecidingValue::DecidingValue@exported:theorem",
             "Tablet.IncSeq::IncSeq@exported:definition",
+            "Tablet.IncSeqId::IncSeqId@exported:definition",
+            "Tablet.LocallyConstant::LocallyConstant@exported:definition",
             "Tablet.MultiSequence::MultiSequence@exported:definition",
+            "Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition",
             "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
             "Tablet.ShiftMap::ShiftMap@exported:definition",
-            "Tablet.SuperSequence::SuperSequence.value@exported:definition",
+            "Tablet.SuperSequence::SuperSequence.mk@exported:constructor",
             "Tablet.SuperSequence::SuperSequence@exported:inductive"
           ],
           "error": null,
           "kernel_axioms": [
+            "Classical.choice",
             "Quot.sound",
             "propext"
           ],
@@ -76,16 +83,18 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BadMultiToSuper"
+            "name": "BadMultiToNontrivialSuper"
           }
         ],
         "direct_imports": [
           "Init",
           "Tablet.BadMultiSequence",
-          "Tablet.BadSuperSequence",
+          "Tablet.BadMultiToSuper",
+          "Tablet.DecidingFront",
           "Tablet.DecidingFrontSet",
-          "Tablet.DecidingPrefix",
-          "Tablet.DecidingValue"
+          "Tablet.DecidingValue",
+          "Tablet.IncSeqId",
+          "Tablet.ShiftMap"
         ],
         "errors": [],
         "exact_declaration_uses": [
@@ -96,9 +105,21 @@
             "visibility": "exported"
           },
           {
+            "declaration_kind": "theorem",
+            "owner": "BadMultiToSuper",
+            "reached_declaration": "BadMultiToSuper",
+            "visibility": "exported"
+          },
+          {
             "declaration_kind": "definition",
             "owner": "BadSuperSequence",
             "reached_declaration": "BadSuperSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "DecidingFront",
+            "reached_declaration": "DecidingFront",
             "visibility": "exported"
           },
           {
@@ -109,8 +130,14 @@
           },
           {
             "declaration_kind": "definition",
-            "owner": "FiniteShift",
-            "reached_declaration": "FiniteShift",
+            "owner": "DecidingPrefix",
+            "reached_declaration": "DecidingPrefix",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "DecidingValue",
+            "reached_declaration": "DecidingValue",
             "visibility": "exported"
           },
           {
@@ -121,8 +148,26 @@
           },
           {
             "declaration_kind": "definition",
+            "owner": "IncSeqId",
+            "reached_declaration": "IncSeqId",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "LocallyConstant",
+            "reached_declaration": "LocallyConstant",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
             "owner": "MultiSequence",
             "reached_declaration": "MultiSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ProperInitialSegment",
+            "reached_declaration": "ProperInitialSegment",
             "visibility": "exported"
           },
           {
@@ -138,9 +183,9 @@
             "visibility": "exported"
           },
           {
-            "declaration_kind": "definition",
+            "declaration_kind": "constructor",
             "owner": "SuperSequence",
-            "reached_declaration": "SuperSequence.value",
+            "reached_declaration": "SuperSequence.mk",
             "visibility": "exported"
           },
           {
@@ -151,41 +196,49 @@
           }
         ],
         "kernel_axioms": [
+          "Classical.choice",
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "BadMultiToSuper",
+        "principal_declaration": "BadMultiToNontrivialSuper",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"BadMultiToSuper\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.BadSuperSequence::BadSuperSequence@exported:definition\",\"Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition\",\"Tablet.FiniteShift::FiniteShift@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\",\"Tablet.SuperSequence::SuperSequence.value@exported:definition\",\"Tablet.SuperSequence::SuperSequence@exported:inductive\"],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"BadMultiToSuper\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"BadMultiToSuper\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"BadSuperSequence\",\"reached_declaration\":\"BadSuperSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingFrontSet\",\"reached_declaration\":\"DecidingFrontSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"FiniteShift\",\"reached_declaration\":\"FiniteShift\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.value\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"node\":\"BadMultiToSuper\",\"principal_declaration\":\"BadMultiToSuper\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"BadSuperSequence\",\"semantic_hash\":\"fa271bc1689b4bcd\"},{\"name\":\"DecidingFrontSet\",\"semantic_hash\":\"4e9eb434d9142940\"},{\"name\":\"FiniteShift\",\"semantic_hash\":\"e2dfc558f39abbda\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"97f9f0f5dc5dec42\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"2ab38a5f61409383\"}],\"strict_theorem_deps\":[]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"BadMultiToNontrivialSuper\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.BadMultiToSuper::BadMultiToSuper@exported:theorem\",\"Tablet.BadSuperSequence::BadSuperSequence@exported:definition\",\"Tablet.DecidingFront::DecidingFront@exported:theorem\",\"Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition\",\"Tablet.DecidingPrefix::DecidingPrefix@exported:definition\",\"Tablet.DecidingValue::DecidingValue@exported:theorem\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqId::IncSeqId@exported:definition\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\",\"Tablet.SuperSequence::SuperSequence.mk@exported:constructor\",\"Tablet.SuperSequence::SuperSequence@exported:inductive\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"BadMultiToNontrivialSuper\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"BadMultiToNontrivialSuper\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"BadMultiToSuper\",\"reached_declaration\":\"BadMultiToSuper\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"BadSuperSequence\",\"reached_declaration\":\"BadSuperSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingFront\",\"reached_declaration\":\"DecidingFront\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingFrontSet\",\"reached_declaration\":\"DecidingFrontSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingPrefix\",\"reached_declaration\":\"DecidingPrefix\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingValue\",\"reached_declaration\":\"DecidingValue\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqId\",\"reached_declaration\":\"IncSeqId\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"BadMultiToNontrivialSuper\",\"principal_declaration\":\"BadMultiToNontrivialSuper\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"BadSuperSequence\",\"semantic_hash\":\"fa271bc1689b4bcd\"},{\"name\":\"DecidingFrontSet\",\"semantic_hash\":\"4e9eb434d9142940\"},{\"name\":\"DecidingPrefix\",\"semantic_hash\":\"4077cf3cce7f7a11\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqId\",\"semantic_hash\":\"dcd58ce5a1fd8179\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"d1cbc9e5f5417c3a\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"97f9f0f5dc5dec42\"}],\"strict_theorem_deps\":[{\"name\":\"BadMultiToSuper\",\"value_hash\":\"d172dd0d186ccce5\"},{\"name\":\"DecidingFront\",\"value_hash\":\"bd450244457d804c\"},{\"name\":\"DecidingValue\",\"value_hash\":\"a4f935637884b3fe\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BadMultiToSuper"
+            "name": "BadMultiToNontrivialSuper"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "0608711911888da62b8ce70ebb909be63649ae0c16e5e06ffdeb078aa41a5e11",
+        "source_sha256": "109e13c24e72f13182f746be5d8f5cf660661a9ebba28f64582b5cb14e37daef",
         "status": "ok",
         "strict_definition_deps": {
           "BadMultiSequence": "12b952b1af44d358",
           "BadSuperSequence": "fa271bc1689b4bcd",
           "DecidingFrontSet": "4e9eb434d9142940",
-          "FiniteShift": "e2dfc558f39abbda",
+          "DecidingPrefix": "4077cf3cce7f7a11",
           "IncSeq": "1722254285ddeb5c",
+          "IncSeqId": "dcd58ce5a1fd8179",
+          "LocallyConstant": "3be73314501d2a70",
           "MultiSequence": "cde631bc1bef82ee",
+          "ProperInitialSegment": "b0b2a1c37bea1919",
           "ProperPrefixSet": "8d7d85f7e2dcc1fd",
           "ShiftMap": "2072518c2402a1ed",
-          "SuperSequence": "2ab38a5f61409383"
+          "SuperSequence": "97f9f0f5dc5dec42"
         },
-        "strict_theorem_deps": {},
+        "strict_theorem_deps": {
+          "BadMultiToSuper": "d172dd0d186ccce5",
+          "DecidingFront": "bd450244457d804c",
+          "DecidingValue": "a4f935637884b3fe"
+        },
         "timed_out": false,
         "visibility_manifests": [
           {
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "BadMultiToSuper"
+                "name": "BadMultiToNontrivialSuper"
               }
             ],
             "level": "exported"
@@ -200,7 +253,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 704,
+    "request_id": 706,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -425,7 +478,6 @@
       "deviation_current_fingerprints": {},
       "open_nodes": [
         "BadMultiRestrict",
-        "BadMultiToNontrivialSuper",
         "BadSuperRestrict",
         "BadSuperToBase",
         "BqoIffGeneralShift",
@@ -2951,7 +3003,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed BadMultiToSuper by unpacking the finite-shift witness, rewriting both super-sequence values with hf, and applying BadMultiSequence.",
+    "summary": "Closed BadMultiToNontrivialSuper by constructing the super-sequence from DecidingFront and DecidingValue, applying BadMultiToSuper, and ruling out the empty deciding prefix via identity-shift equality and reflexivity.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -2963,7 +3015,7 @@
     "BadMultiRestrict.tex": "72b15ebe869cc4aa6dff72705265ade2c30b3ce77852d562d09af8f09198985c",
     "BadMultiSequence.lean": "c8e59b213bb7944e20699042e2cbe40884615796b77254d497cddcc1346f58e5",
     "BadMultiSequence.tex": "025a30459d51cb480e3806f48dc1a5c2860e9e0a46d0f001973fa0482002890f",
-    "BadMultiToNontrivialSuper.lean": "f897d02741de6f2987b495628d2af4a6f4a4c34eb58995a9fd864fd22c33fd2e",
+    "BadMultiToNontrivialSuper.lean": "109e13c24e72f13182f746be5d8f5cf660661a9ebba28f64582b5cb14e37daef",
     "BadMultiToNontrivialSuper.tex": "1a67cf79f46fd9cd7336b66ae2cca27ca78efc8daeb82d7a6d75de31754ff1e6",
     "BadMultiToSuper.lean": "0608711911888da62b8ce70ebb909be63649ae0c16e5e06ffdeb078aa41a5e11",
     "BadMultiToSuper.tex": "d05a48d8086d61182df9d9491335bfe99f1c0e05ac284ccb7eb569259b0c1f6e",
@@ -3123,7 +3175,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "7b819ebc6af44daa44079509c6951d1ef4d2ceae9fad73a978fc24d990560dff",
+    "INDEX.md": "cc3b968a8dfcea6b1dde6bb74b93afd9d6b20f24284e8ef7a81f7656d00627a2",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3280,7 +3332,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "735414db5ed7118d62f98c94e387f49b752cd1b6ab289c4a50e8e2e5aed0ca23",
+    "README.md": "e3b194d7b4d20bfcad76ac05a10d440f0d4cd1658468ca8906a0a5b598b0ef81",
     "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3335,7 +3387,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_704_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_706_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

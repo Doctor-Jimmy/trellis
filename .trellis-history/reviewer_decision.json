@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BadMultiToSuper is closed. Advance to BadMultiToNontrivialSuper, whose dependencies are all closed and which is the direct badness bridge needed by the hereditarily-countable target branch.",
-    "comments": "Work on BadMultiToNontrivialSuper in Local mode and close it without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Build the super-sequence from DecidingFront and DecidingValue, invoke BadMultiToSuper for badness, and prove nontriviality by assuming the empty deciding prefix, comparing the identity and shifted identity via ProperPrefixSet and DecidingPrefix, then contradicting reflexivity against BadMultiSequence. Leave no obligations open.",
+    "reason": "BadMultiToNontrivialSuper is closed. Advance to ConverseGame, the direct hereditarily-countable badness theorem with a fully closed support cone and a downstream use in BqoHerCtblWqo.",
+    "comments": "Work on ConverseGame in Local mode and close it without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the established bridge induction: maintain the FrontBridge invariant and the PowerRel comparison, recurse on strict extensions in either coordinate using the node/node, node/atom, and atom/node reductions, and finish only at front nodes where FrontBridgeTerminal yields FiniteShift and contradicts BadSuperSequence. Do not weaken the bridge invariant to FiniteShift alone; leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BadMultiToNontrivialSuper",
-    "next_active_coarse": "BadMultiToNontrivialSuper",
+    "next_active": "ConverseGame",
+    "next_active_coarse": "ConverseGame",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BadMultiToNontrivialSuper": "hard"
+      "ConverseGame": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on BadMultiToNontrivialSuper in Local mode and close it without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Build the super-sequence from DecidingFront and DecidingValue, invoke BadMultiToSuper for badness, and prove nontriviality by assuming the empty deciding prefix, comparing the identity and shifted identity via ProperPrefixSet and DecidingPrefix, then contradicting reflexivity against BadMultiSequence. Leave no obligations open.",
+    "comments": "Work on ConverseGame in Local mode and close it without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the established bridge induction: maintain the FrontBridge invariant and the PowerRel comparison, recurse on strict extensions in either coordinate using the node/node, node/atom, and atom/node reductions, and finish only at front nodes where FrontBridgeTerminal yields FiniteShift and contradicts BadSuperSequence. Do not weaken the bridge invariant to FiniteShift alone; leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 251,
+    "cycle": 252,
     "decision": "Continue",
     "difficulty_updates": {
-      "BadMultiToNontrivialSuper": {
+      "ConverseGame": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BadMultiToNontrivialSuper",
-    "next_active_coarse": "BadMultiToNontrivialSuper",
+    "next_active": "ConverseGame",
+    "next_active_coarse": "ConverseGame",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BadMultiToSuper is closed. Advance to BadMultiToNontrivialSuper, whose dependencies are all closed and which is the direct badness bridge needed by the hereditarily-countable target branch.",
-    "request_id": 705,
+    "reason": "BadMultiToNontrivialSuper is closed. Advance to ConverseGame, the direct hereditarily-countable badness theorem with a fully closed support cone and a downstream use in BqoHerCtblWqo.",
+    "request_id": 707,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_705_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_707_decision.context.json"
 }
