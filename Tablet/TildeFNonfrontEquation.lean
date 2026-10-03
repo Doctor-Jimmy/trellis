@@ -16,4 +16,6 @@ theorem TildeFNonfrontEquation {Q : Type u} {F : Set (Finset Nat)}
             (FrontTreeImmediateExtensions F Set.univ f.front s.1 s.2 hs).1)⟩)
         (fun i => TildeF f ⟨insert i.down.1 s.1, i.down.2.2⟩) := by
 -- BODY
-  sorry
+  unfold TildeF
+  rw [WellFounded.fix_eq]
+  simp only [dif_neg hs]

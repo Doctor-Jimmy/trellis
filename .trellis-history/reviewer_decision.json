@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TildeFFrontEquation is closed and the anchor is cleanly unlocked; advance to the sibling non-front recursion equation, which is a direct prerequisite for the same downstream hereditary-countability and atom/front arguments.",
-    "comments": "Switch the coarse anchor to TildeFNonfrontEquation and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the definitional non-front branch directly: unfold TildeF under hs, use FrontTreeImmediateExtensions for the nonempty extension witness, identify the lifted subtype index and recursive arguments, and simplify the well-founded recursion equation. Do not introduce wrappers or helpers, and leave no obligations open; use the existing TildeF and FrontTreeImmediateExtensions support.",
+    "reason": "TildeFNonfrontEquation is closed and the anchor is cleanly unlocked; advance to the foundational countable-node hereditary-closure theorem needed by TildeFHerCtbl and the separate well-foundedness route.",
+    "comments": "Switch the coarse anchor to HerCtblNodeClosure and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual presentation-equivalence construction without wrappers or helpers: obtain a countable surjection from Nat onto I, choose hereditary-countability codes for the f i, assemble the ULift Nat-indexed code, and prove the two directions of PowerPresentationEq using surjectivity and symmetry before applying the defining hereditary-countability predicate. Use the existing HerCtblPower, HerCtblCodeErase, and PowerPresentationEqEquivalence support, and leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "TildeFNonfrontEquation",
-    "next_active_coarse": "TildeFNonfrontEquation",
+    "next_active": "HerCtblNodeClosure",
+    "next_active_coarse": "HerCtblNodeClosure",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "TildeFNonfrontEquation": "easy"
+      "HerCtblNodeClosure": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to TildeFNonfrontEquation and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the definitional non-front branch directly: unfold TildeF under hs, use FrontTreeImmediateExtensions for the nonempty extension witness, identify the lifted subtype index and recursive arguments, and simplify the well-founded recursion equation. Do not introduce wrappers or helpers, and leave no obligations open; use the existing TildeF and FrontTreeImmediateExtensions support.",
+    "comments": "Switch the coarse anchor to HerCtblNodeClosure and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual presentation-equivalence construction without wrappers or helpers: obtain a countable surjection from Nat onto I, choose hereditary-countability codes for the f i, assemble the ULift Nat-indexed code, and prove the two directions of PowerPresentationEq using surjectivity and symmetry before applying the defining hereditary-countability predicate. Use the existing HerCtblPower, HerCtblCodeErase, and PowerPresentationEqEquivalence support, and leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 243,
+    "cycle": 244,
     "decision": "Continue",
     "difficulty_updates": {
-      "TildeFNonfrontEquation": {
-        "Set": "Easy"
+      "HerCtblNodeClosure": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "TildeFNonfrontEquation",
-    "next_active_coarse": "TildeFNonfrontEquation",
+    "next_active": "HerCtblNodeClosure",
+    "next_active_coarse": "HerCtblNodeClosure",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TildeFFrontEquation is closed and the anchor is cleanly unlocked; advance to the sibling non-front recursion equation, which is a direct prerequisite for the same downstream hereditary-countability and atom/front arguments.",
-    "request_id": 689,
+    "reason": "TildeFNonfrontEquation is closed and the anchor is cleanly unlocked; advance to the foundational countable-node hereditary-closure theorem needed by TildeFHerCtbl and the separate well-foundedness route.",
+    "request_id": 691,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_689_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_691_decision.context.json"
 }

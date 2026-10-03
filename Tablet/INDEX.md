@@ -185,8 +185,8 @@
 | TildeFAtomIffFront | lemma | proof | open | - | Atoms occur exactly at front nodes | TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
 | TildeFFrontEquation | lemma | proof | closed | - | Front recursion equation | SuperSequence, TildeF |
 | TildeFHerCtbl | lemma | proof | open | - | Hereditary countability of the front recursion | FrontTreeImmediateExtensions, HerCtblNodeClosure, HereditarilyCountableAtom, TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
-| TildeFNonfrontEquation | lemma | proof | open | - | Non-front recursion equation | FrontTreeImmediateExtensions, TildeF |
+| TildeFNonfrontEquation | lemma | proof | closed | - | Non-front recursion equation | FrontTreeImmediateExtensions, TildeF |
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 162 | **Open:** 23
+**Total:** 185 nodes | **Closed:** 163 | **Open:** 22

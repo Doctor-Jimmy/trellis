@@ -191,8 +191,8 @@
 | TildeFAtomIffFront | proof | Atoms occur exactly at front nodes | open |
 | TildeFFrontEquation | proof | Front recursion equation | closed |
 | TildeFHerCtbl | proof | Hereditary countability of the front recursion | open |
-| TildeFNonfrontEquation | proof | Non-front recursion equation | open |
+| TildeFNonfrontEquation | proof | Non-front recursion equation | closed |
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 162/185 closed
+**Summary:** 163/185 closed
