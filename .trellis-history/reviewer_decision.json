@@ -1,55 +1,56 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BadSuperToBase closed directly and cleanly. Advance to the sole remaining open coarse node, PerfectMultiToSuper, whose support is already closed and whose proof is a short direct transport.",
-    "comments": "Work on PerfectMultiToSuper in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Unpack the FiniteShift witness to obtain an increasing enumeration x and the two proper-prefix facts, apply the coherence hypothesis hf to the front elements using x and ShiftMap x, then rewrite the perfectness assertion for h into the required perfectness assertion for f. Leave no obligations open.",
+    "reason": "Dispatch the highest-value pending cleanup task: extract the duplicated 54-line proof region from QuadrupleHomogeneous and TripleHomogeneous into one shared helper.",
+    "comments": "The verification surface is clean and recent proof-formalization bursts have been accepted. Start with the declared shared extraction; preserve both parent statements, make the helper serve both parents, and keep the net changed-parent-plus-helper line count strictly decreasing.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PerfectMultiToSuper",
-    "next_active_coarse": "PerfectMultiToSuper",
-    "next_mode": "local",
+    "next_active": "",
+    "next_active_coarse": "",
+    "next_mode": "cleanup",
     "reset": "none",
     "reset_node": "",
-    "difficulty_updates": {
-      "PerfectMultiToSuper": "easy"
-    },
-    "allow_new_obligations": false,
-    "must_close_active": true,
-    "authorized_node_ids": [],
+    "difficulty_updates": {},
+    "allow_new_obligations": true,
+    "must_close_active": false,
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
     "paper_focus_ranges": [],
-    "protected_semantic_change_node_ids": [],
-    "confirm_protected_semantic_change_scope": false
+    "paper_grounding": {
+      "basis_summary": "",
+      "consulted_cited_ranges": false
+    },
+    "work_style_hint": "none",
+    "authorized_nodes": [],
+    "cleanup_dismiss_tasks": [],
+    "cleanup_next_task": 0,
+    "cleanup_batch_tasks": null,
+    "cleanup_repair_node": null,
+    "cleanup_request_reaudit": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
     "cleanup_dismiss_tasks": [],
-    "cleanup_next_task": null,
+    "cleanup_next_task": 0,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on PerfectMultiToSuper in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Unpack the FiniteShift witness to obtain an increasing enumeration x and the two proper-prefix facts, apply the coherence hypothesis hf to the front elements using x and ShiftMap x, then rewrite the perfectness assertion for h into the required perfectness assertion for f. Leave no obligations open.",
+    "comments": "The verification surface is clean and recent proof-formalization bursts have been accepted. Start with the declared shared extraction; preserve both parent statements, make the helper serve both parents, and keep the net changed-parent-plus-helper line count strictly decreasing.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 265,
+    "cycle": 267,
     "decision": "Continue",
-    "difficulty_updates": {
-      "PerfectMultiToSuper": {
-        "Set": "Easy"
-      }
-    },
+    "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [],
     "global_repair_request": null,
     "kind": "review",
-    "must_close_active": true,
-    "next_active": "PerfectMultiToSuper",
-    "next_active_coarse": "PerfectMultiToSuper",
-    "next_mode": "Local",
+    "must_close_active": false,
+    "next_active": null,
+    "next_active_coarse": null,
+    "next_mode": "Cleanup",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
     "paper_grounding": {
@@ -57,8 +58,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BadSuperToBase closed directly and cleanly. Advance to the sole remaining open coarse node, PerfectMultiToSuper, whose support is already closed and whose proof is a short direct transport.",
-    "request_id": 733,
+    "reason": "Dispatch the highest-value pending cleanup task: extract the duplicated 54-line proof region from QuadrupleHomogeneous and TripleHomogeneous into one shared helper.",
+    "request_id": 736,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +69,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_733_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_736_decision.context.json"
 }
