@@ -178,7 +178,7 @@
 | SuccSeq | definition | definition | closed | - | - | IncSeq |
 | SuperNW | theorem | proof | closed | - | - | NashWilliams, SuperSequence |
 | SuperSequence | definition | definition | closed | - | - | Front |
-| SuperSequenceExtension | lemma | proof | open | - | Extension from a front | BaseLocallyConstant, FrontPrefixExists, FrontPrefixUnique, SuperSequence |
+| SuperSequenceExtension | lemma | proof | closed | - | Extension from a front | BaseLocallyConstant, FrontPrefixExists, FrontPrefixUnique, SuperSequence |
 | SuperSequenceRestrict | definition | definition | closed | - | - | SuperSequence |
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TildeF | definition | definition | closed | - | - | FrontTreeImmediateExtensions, FrontTreeWellFounded, PowerQ, SuperSequence |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 160 | **Open:** 25
+**Total:** 185 nodes | **Closed:** 161 | **Open:** 24

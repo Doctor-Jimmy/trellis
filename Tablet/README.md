@@ -184,7 +184,7 @@
 | SuccSeq | definition | - | closed |
 | SuperNW | proof | - | closed |
 | SuperSequence | definition | - | closed |
-| SuperSequenceExtension | proof | Extension from a front | open |
+| SuperSequenceExtension | proof | Extension from a front | closed |
 | SuperSequenceRestrict | definition | - | closed |
 | TailSet | definition | - | closed |
 | TildeF | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 160/185 closed
+**Summary:** 161/185 closed
