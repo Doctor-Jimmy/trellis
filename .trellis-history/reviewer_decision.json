@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The Rado embedding target is closed; advance to the short configured MainProp aggregation and require its direct proof to be completed.",
-    "comments": "Switch the coarse anchor to MainProp and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close it without helpers by unfolding ContMorEq and pairing RmapLemma g hg with EmapLemma g hg. This is a genuine aggregation of the two distinct directional homomorphism results, not a wrapper for deferred work. Do not alter protected statements or imports and leave no obligations open.",
+    "reason": "MainProp is closed but its support cone is not; first close the foundational OrbitEmbedding dependency needed by RmapLemma while retaining MainProp as the coarse anchor.",
+    "comments": "Keep MainProp as the coarse anchor and route to OrbitEmbedding in Local mode. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Prove the orbit map is an increasing embedding by induction: establish that every iterate of g is strictly increasing, establish g^[n](g x) = g^[n+1](x), apply these to k < g k to obtain strict growth of the orbit, and conclude order embedding and the OrbitPoint equation. Do not add helpers, alter statements or imports, or leave obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "MainProp",
-    "next_active_coarse": "MainProp",
+    "next_active": "OrbitEmbedding",
+    "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "MainProp": "easy"
+      "OrbitEmbedding": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to MainProp and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close it without helpers by unfolding ContMorEq and pairing RmapLemma g hg with EmapLemma g hg. This is a genuine aggregation of the two distinct directional homomorphism results, not a wrapper for deferred work. Do not alter protected statements or imports and leave no obligations open.",
+    "comments": "Keep MainProp as the coarse anchor and route to OrbitEmbedding in Local mode. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Prove the orbit map is an increasing embedding by induction: establish that every iterate of g is strictly increasing, establish g^[n](g x) = g^[n+1](x), apply these to k < g k to obtain strict growth of the orbit, and conclude order embedding and the OrbitPoint equation. Do not add helpers, alter statements or imports, or leave obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 232,
+    "cycle": 233,
     "decision": "Continue",
     "difficulty_updates": {
-      "MainProp": {
+      "OrbitEmbedding": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "MainProp",
-    "next_active_coarse": "MainProp",
+    "next_active": "OrbitEmbedding",
+    "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The Rado embedding target is closed; advance to the short configured MainProp aggregation and require its direct proof to be completed.",
-    "request_id": 667,
+    "reason": "MainProp is closed but its support cone is not; first close the foundational OrbitEmbedding dependency needed by RmapLemma while retaining MainProp as the coarse anchor.",
+    "request_id": 669,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_667_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_669_decision.context.json"
 }

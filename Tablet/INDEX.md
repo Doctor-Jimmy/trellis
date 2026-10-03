@@ -93,7 +93,7 @@
 | InitialSegment | definition | definition | closed | - | - | Preamble |
 | InitialSegmentInsert | helper | proof | closed | - | Transporting an initial segment through an appended point | InitialSegment |
 | LocallyConstant | definition | definition | closed | - | - | MultiSequence, PrefixAgree |
-| MainProp | theorem | proof | open | - | MainProp | ContMorEq, EmapLemma, RmapLemma |
+| MainProp | theorem | proof | closed | - | MainProp | ContMorEq, EmapLemma, RmapLemma |
 | MultiSequence | definition | definition | closed | - | - | IncSeq |
 | MultiSequenceRestrict | definition | definition | closed | - | - | IncSeqComp, MultiSequence |
 | NashWilliams | theorem | proof | closed | - | Nash--Williams | BooleanInfinitePigeonhole, Front, FrontRayClosure, FrontRestrict, FrontRestriction, FrontTreeWellFounded, InitialSegmentInsert, SubFrontCharacterization |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 151 | **Open:** 34
+**Total:** 185 nodes | **Closed:** 152 | **Open:** 33

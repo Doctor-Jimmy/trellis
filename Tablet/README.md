@@ -101,7 +101,7 @@
 | InitialSegment | definition | - | closed |
 | InitialSegmentInsert | proof | Transporting an initial segment through an appended point | closed |
 | LocallyConstant | definition | - | closed |
-| MainProp | proof | MainProp | open |
+| MainProp | proof | MainProp | closed |
 | MultiSequence | definition | - | closed |
 | MultiSequenceRestrict | definition | - | closed |
 | NashWilliams | proof | Nash--Williams | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 151/185 closed
+**Summary:** 152/185 closed

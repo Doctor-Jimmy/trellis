@@ -6,4 +6,5 @@ import Tablet.EmapLemma
 theorem MainProp (g : IncSeq) (hg : g ≠ IncSeqId) :
     ContMorEq (RightComp g) ShiftMap := by
 -- BODY
-  sorry
+  unfold ContMorEq
+  exact ⟨RmapLemma g hg, EmapLemma g hg⟩
