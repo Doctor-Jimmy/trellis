@@ -103,7 +103,7 @@ theorem FrontTreeImmediateExtensions (F : Set (Finset Nat)) (X : Set Nat)
           · have hkU : k ∈ t.filter (fun z => n < z) :=
               Finset.mem_filter.mpr ⟨hk, hnk'⟩
             rw [hu_empty] at hkU
-            have : False := by simpa using hkU
+            have : False := by simp at hkU
             exact this.elim
           · exact Finset.mem_insert.mpr
               (Or.inl (Nat.le_antisymm (Nat.le_of_not_gt hnk') hnk))

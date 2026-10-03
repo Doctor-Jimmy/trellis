@@ -81,7 +81,7 @@ theorem InfiniteSetEnumeration (X : Set Nat) (hX : X.Infinite) :
               simpa [hpk] using hf_step k
             exact (Nat.not_lt_of_ge hnext_le_p) hpk_lt
           have hnext_eq : f (k + 1) = n := Nat.le_antisymm hnext_le hn_le_next
-          exact ⟨k + 1, by simpa [hx_apply, hnext_eq]⟩
+          exact ⟨k + 1, by simp [hx_apply, hnext_eq]⟩
         · have hleast : ∀ m ∈ X, n ≤ m := by
             intro m hm
             by_contra hmn
@@ -91,4 +91,4 @@ theorem InfiniteSetEnumeration (X : Set Nat) (hX : X.Infinite) :
             apply Nat.find_min' h_nonempty
             exact hn
           have hf0_eq : f 0 = n := Nat.le_antisymm hf0_le_n hn0_le
-          exact ⟨0, by simpa [hx_apply, hf0_eq]⟩
+          exact ⟨0, by simp [hx_apply, hf0_eq]⟩

@@ -56,7 +56,7 @@ theorem PerfectBaseToSuper {Q : Type} (r : Q → Q → Prop)
       ext k
       constructor
       · intro hk
-        exact False.elim (by simpa using hk)
+        simp at hk
       · intro hk
         have hku : k ∈ u := (Finset.mem_filter.mp hk).1
         have hkm : k < m := (Finset.mem_filter.mp hk).2
@@ -114,7 +114,7 @@ theorem PerfectBaseToSuper {Q : Type} (r : Q → Q → Prop)
           intro k
           constructor
           · intro hk
-            exact False.elim (by simpa using hk)
+            simp at hk
           · rintro ⟨⟨n, rfl⟩, hn⟩
             exact (Nat.not_lt_zero n (w.lt_iff_lt.mp hn)).elim
         refine ⟨y, ?_, ?_, ?_⟩

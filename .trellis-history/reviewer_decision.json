@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Dispatch five independent high-confidence LintFix tasks with distinct targets: tasks 8, 9, 11, 14, and 17.",
-    "comments": "Apply only the audit-prescribed simp or simp-argument replacements in the five authorized nodes. Preserve all declarations, statements, imports, and proof results; leave the remaining same-node diagnostics and FrontBridgeStep extraction pending.",
+    "reason": "Dispatch the three independent pending LintFix tasks 10, 12, and 15, whose targets DecidingFront, FrontRestriction, and PerfectBaseToSuper are distinct.",
+    "comments": "Apply only the specified simp-at or simp replacement in each target. Preserve all declarations, statements, imports, and proof results; leave tasks 13, 16, and 18 pending.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -25,11 +25,9 @@
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
     "cleanup_batch_tasks": [
-      8,
-      9,
-      11,
-      14,
-      17
+      10,
+      12,
+      15
     ],
     "cleanup_repair_node": null,
     "cleanup_request_reaudit": false
@@ -40,20 +38,18 @@
     "audit_request": null,
     "authorized_nodes": [],
     "cleanup_batch_tasks": [
-      8,
-      9,
-      11,
-      14,
-      17
+      10,
+      12,
+      15
     ],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Apply only the audit-prescribed simp or simp-argument replacements in the five authorized nodes. Preserve all declarations, statements, imports, and proof results; leave the remaining same-node diagnostics and FrontBridgeStep extraction pending.",
+    "comments": "Apply only the specified simp-at or simp replacement in each target. Preserve all declarations, statements, imports, and proof results; leave tasks 13, 16, and 18 pending.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 271,
+    "cycle": 272,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -71,8 +67,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Dispatch five independent high-confidence LintFix tasks with distinct targets: tasks 8, 9, 11, 14, and 17.",
-    "request_id": 745,
+    "reason": "Dispatch the three independent pending LintFix tasks 10, 12, and 15, whose targets DecidingFront, FrontRestriction, and PerfectBaseToSuper are distinct.",
+    "request_id": 747,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -82,5 +78,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_745_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_747_decision.context.json"
 }

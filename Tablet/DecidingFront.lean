@@ -77,7 +77,7 @@ theorem DecidingFront {E : Type u} (h : MultiSequence E)
         intro t ht htd
         rcases ht.1 with hteq | ⟨n, hn, htn⟩
         · exact ht.2 hteq
-        · simpa using hn
+        · simp at hn
       left
       ext s
       constructor

@@ -30,7 +30,7 @@ theorem FrontRestriction (F : Set (Finset Nat)) (X : Set Nat)
               ext k
               constructor
               · intro hk
-                exact False.elim (by simpa using hk)
+                simp at hk
               · intro hk
                 have hkT : k ∈ t := (Finset.mem_filter.mp hk).1
                 have hkm : k < m := (Finset.mem_filter.mp hk).2
