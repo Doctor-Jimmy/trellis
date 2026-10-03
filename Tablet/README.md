@@ -176,7 +176,7 @@
 | RestrictionLocallyConstant | proof | Restriction preserves local constancy | closed |
 | RestrictionShift | proof | Restriction and shift | closed |
 | RightComp | definition | - | closed |
-| RmapLemma | proof | - | open |
+| RmapLemma | proof | - | closed |
 | SetDomination | definition | Domination on subsets | closed |
 | ShiftDichotomy | proof | Perfect-or-bad shift dichotomy | open |
 | ShiftMap | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 155/185 closed
+**Summary:** 156/185 closed

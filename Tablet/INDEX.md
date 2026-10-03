@@ -169,7 +169,7 @@
 | RestrictionLocallyConstant | lemma | proof | closed | - | Restriction preserves local constancy | LocallyConstant, MultiSequenceRestrict |
 | RestrictionShift | lemma | proof | closed | - | Restriction and shift | MultiSequenceRestrict, ShiftMap |
 | RightComp | definition | definition | closed | - | - | IncSeqComp |
-| RmapLemma | lemma | proof | open | - | - | ContMor, FirstMovedPoint, OrbitEmbedding, RightComp, ShiftMap |
+| RmapLemma | lemma | proof | closed | - | - | ContMor, FirstMovedPoint, OrbitEmbedding, RightComp, ShiftMap |
 | SetDomination | definition | definition | closed | - | Domination on subsets | Preamble |
 | ShiftDichotomy | lemma | proof | open | - | Perfect-or-bad shift dichotomy | BadMultiSequence, DecidingFront, DecidingValue, InfiniteSetEnumeration, MultiSequenceRestrict, NashWilliams, PerfectMultiSequence, RestrictionShift |
 | ShiftMap | definition | definition | closed | - | - | RightComp, SuccSeq |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 155 | **Open:** 30
+**Total:** 185 nodes | **Closed:** 156 | **Open:** 29
