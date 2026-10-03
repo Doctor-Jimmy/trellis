@@ -32,7 +32,7 @@
 | BlockSigma | definition | - | closed |
 | BlockSigmaContinuous | proof | - | closed |
 | BlockSigmaEmbedding | proof | - | closed |
-| BlockSigmaIntertwines | proof | - | open |
+| BlockSigmaIntertwines | proof | - | closed |
 | BooleanInfinitePigeonhole | proof | Infinite pigeonhole | closed |
 | Bqo | definition | - | closed |
 | BqoHerCtblWellF | proof | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 158/185 closed
+**Summary:** 159/185 closed

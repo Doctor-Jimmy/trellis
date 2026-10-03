@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BlockSigmaEmbedding is closed; continue repairing MainProp's support by closing the remaining BlockSigma intertwining prerequisite for EmapLemma.",
-    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaIntertwines in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual intertwining argument without wrappers or helpers: split below the initial orbit point using the fixed-point hypothesis, locate the unique orbit block of l via OrbitBlockCoverage, show g(l) lies in the successor block, unfold both BlockSigma branches, and finish with f(n) >= n, natural subtraction arithmetic, and the iterate identity g^[a](g l)=g^[a+1](l). Do not alter statements or imports and leave no obligations open.",
+    "reason": "BlockSigmaIntertwines is closed; close EmapLemma now that all of its substantive BlockSigma prerequisites are complete.",
+    "comments": "Keep MainProp as the coarse anchor and route to EmapLemma in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the aggregation without wrappers or helpers: obtain the least moved point from FirstMovedPoint, use BlockSigmaEmbedding to choose the IncSeq-valued block map, use BlockSigmaContinuous for prefix continuity, and use BlockSigmaIntertwines together with ShiftMap and RightComp to prove the commuting equation coordinatewise. Do not alter statements or imports and leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BlockSigmaIntertwines",
+    "next_active": "EmapLemma",
     "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BlockSigmaIntertwines": "hard"
+      "EmapLemma": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaIntertwines in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual intertwining argument without wrappers or helpers: split below the initial orbit point using the fixed-point hypothesis, locate the unique orbit block of l via OrbitBlockCoverage, show g(l) lies in the successor block, unfold both BlockSigma branches, and finish with f(n) >= n, natural subtraction arithmetic, and the iterate identity g^[a](g l)=g^[a+1](l). Do not alter statements or imports and leave no obligations open.",
+    "comments": "Keep MainProp as the coarse anchor and route to EmapLemma in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the aggregation without wrappers or helpers: obtain the least moved point from FirstMovedPoint, use BlockSigmaEmbedding to choose the IncSeq-valued block map, use BlockSigmaContinuous for prefix continuity, and use BlockSigmaIntertwines together with ShiftMap and RightComp to prove the commuting equation coordinatewise. Do not alter statements or imports and leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 239,
+    "cycle": 240,
     "decision": "Continue",
     "difficulty_updates": {
-      "BlockSigmaIntertwines": {
-        "Set": "Hard"
+      "EmapLemma": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,7 +47,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BlockSigmaIntertwines",
+    "next_active": "EmapLemma",
     "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BlockSigmaEmbedding is closed; continue repairing MainProp's support by closing the remaining BlockSigma intertwining prerequisite for EmapLemma.",
-    "request_id": 681,
+    "reason": "BlockSigmaIntertwines is closed; close EmapLemma now that all of its substantive BlockSigma prerequisites are complete.",
+    "request_id": 683,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_681_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_683_decision.context.json"
 }

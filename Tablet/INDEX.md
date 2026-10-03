@@ -24,7 +24,7 @@
 | BlockSigma | definition | definition | closed | - | - | OrbitPoint |
 | BlockSigmaContinuous | lemma | proof | closed | - | - | BlockSigma, OrbitBlockCoverage, PrefixAgree |
 | BlockSigmaEmbedding | lemma | proof | closed | - | - | BlockSigma, IncSeq, OrbitBlockCoverage |
-| BlockSigmaIntertwines | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, RightComp, SuccSeq |
+| BlockSigmaIntertwines | lemma | proof | closed | - | - | BlockSigma, OrbitBlockCoverage, RightComp, SuccSeq |
 | BooleanInfinitePigeonhole | lemma | proof | closed | - | Infinite pigeonhole | Preamble |
 | Bqo | definition | definition | closed | - | - | BadMultiSequence, LocallyConstant |
 | BqoHerCtblWellF | theorem | proof | closed | - | - | BqoHerCtblWqo, HerCtblWqoIffWellFounded |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 158 | **Open:** 27
+**Total:** 185 nodes | **Closed:** 159 | **Open:** 26
