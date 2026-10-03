@@ -126,7 +126,7 @@
 | PowerCopiedFiniteDependence | proof | Finite dependence of a copied move | closed |
 | PowerCopiedFiniteTerminal | proof | Finite terminal dependence | closed |
 | PowerCopiedLeft | definition | - | closed |
-| PowerCopiedOrbitDependence | proof | Finite dependence on the enumeration orbit | open |
+| PowerCopiedOrbitDependence | proof | Finite dependence on the enumeration orbit | closed |
 | PowerCopiedShiftIdentity | proof | Stabilization under the shift | closed |
 | PowerCopiedSupport | proof | Support of the copied left values | closed |
 | PowerCopiedTerminalAt | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 144/185 closed
+**Summary:** 145/185 closed
