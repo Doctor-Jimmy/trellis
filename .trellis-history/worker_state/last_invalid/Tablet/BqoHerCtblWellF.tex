@@ -1,0 +1,35 @@
+\begin{theorem}
+Let $Q$ be a type and let $r$ be a quasi-order on $Q$.  Write
+$\mathsf{HerCtblPower}(Q)$ for the hereditary countable non-empty part of
+the full tagged hierarchy, and equip it with the induced relation
+$\mathsf{HerCtblRel}(r)$.  Then $Q$ is better-quasi-ordered if and only if
+$\mathsf{HerCtblPower}(Q)$ is well-founded for the strict-part relation
+\[
+(a,b)\longmapsto
+\mathsf{HerCtblRel}(r)(a,b)\mathbin{\wedge}
+\neg\mathsf{HerCtblRel}(r)(b,a).
+\]
+Here the strict part is oriented from the later, strictly smaller element
+$a$ to the earlier element $b$, as in a descending chain.
+\end{theorem}
+\begin{proof}
+Assume first that $Q$ is better-quasi-ordered.  By
+\noderef{BqoHerCtblWqo}, the hereditary carrier equipped with
+$\mathsf{HerCtblRel}(r)$ is well-quasi-ordered.  Applying
+\noderef{HerCtblWqoIffWellFounded} to this quasi-order gives well-foundedness
+of the relation
+\[
+(a,b)\longmapsto
+\mathsf{HerCtblRel}(r)(a,b)\mathbin{\wedge}
+\neg\mathsf{HerCtblRel}(r)(b,a),
+\]
+where a successive pair in a descending chain is therefore
+$(a_{n+1},a_n)$.
+
+Conversely, suppose that this strict-part relation on
+$\mathsf{HerCtblPower}(Q)$ is well-founded.  The same equivalence
+\noderef{HerCtblWqoIffWellFounded}, used in the reverse direction, implies
+that $\mathsf{HerCtblRel}(r)$ is well-quasi-ordered.  The reverse direction
+of \noderef{BqoHerCtblWqo} then implies that $Q$ is better-quasi-ordered.
+Thus the two conditions are equivalent.
+\end{proof}

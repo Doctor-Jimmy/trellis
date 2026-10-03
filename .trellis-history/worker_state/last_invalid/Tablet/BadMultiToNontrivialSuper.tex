@@ -1,0 +1,50 @@
+\begin{lemma}[A bad multi-sequence has a nontrivial deciding front]
+Let $r$ be a reflexive relation on $Q$.  If
+$h:\mathsf{IncSeq}\to Q$ is locally constant and bad for $r$, then there is
+a super-sequence
+\[
+f:F^h\to Q,
+\qquad F^h=\mathsf{DecidingFrontSet}(h),
+\]
+which is bad, and $\emptyset\notin F^h$.
+\end{lemma}
+\begin{proof}
+By \noderef{DecidingFront}, the set
+$F^h=\mathsf{DecidingFrontSet}(h)$ is a front on $\mathbb N$.  By
+\noderef{DecidingValue}, there is a map
+$v:F^h\to Q$ satisfying
+\[
+v(s)=h(x)
+\quad\text{whenever }s\text{ is a proper prefix of the range of }x.
+\]
+Package this front and value map as
+\[
+f=\langle \noderef{DecidingFront}(h),v\rangle,
+\]
+which has the required \noderef{SuperSequence} type.  The displayed value
+equation is exactly the hypothesis required by \noderef{BadMultiToSuper};
+therefore \noderef{BadMultiToSuper}, together with the assumed
+\noderef{BadMultiSequence} badness of $h$, proves
+$\mathsf{BadSuperSequence}(r,f)$.
+
+It remains to prove that the front is nontrivial.  Suppose instead that
+$\emptyset\in F^h$.  Unfolding \noderef{DecidingFrontSet}, this gives
+$\mathsf{DecidingPrefix}(h,\emptyset)$.  For every increasing enumeration
+$x$, the empty set is a proper prefix of its range by \noderef{ProperPrefixSet}: use the first value
+$x(0)$ as the witnessing next element, and use monotonicity of $x$ to show
+that no element of its range is below $x(0)$.  In particular, this application of
+\noderef{ProperPrefixSet} holds for
+$\mathsf{IncSeqId}$ and for $\mathsf{ShiftMap}(\mathsf{IncSeqId})$, where
+the relevant increasing enumerations are supplied by
+\noderef{IncSeqId} and \noderef{ShiftMap}.  The deciding-prefix equality from
+\noderef{DecidingPrefix}, applied to these two proper-prefix instances,
+therefore gives
+\[
+h(\mathsf{IncSeqId})
+=h(\mathsf{ShiftMap}(\mathsf{IncSeqId})).
+\]
+Reflexivity of $r$ now gives the relation between these two values, while
+\noderef{BadMultiSequence} gives its negation at
+$\mathsf{IncSeqId}$.  This contradiction proves
+$\emptyset\notin\mathsf{DecidingFrontSet}(h)$, completing the lemma.
+\end{proof}

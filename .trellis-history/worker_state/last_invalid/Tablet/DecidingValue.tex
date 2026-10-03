@@ -1,0 +1,18 @@
+\begin{lemma}[Value map on the deciding front]
+For every locally constant $h$, there is a unique-value map
+$h^{\dcl}:F^h\to E$ such that
+\[
+h^{\dcl}(s)=h(Y)\quad\text{whenever }s\segs Y.
+\]
+\end{lemma}
+\begin{proof}
+Existence of an enumeration extending any finite initial segment is
+\noderef{FinitePrefixExtension}.  If two such enumerations extend the same $s$, the defining
+conjunction in \noderef{DecidingFrontSet} says that $s$ is a deciding prefix.
+By \noderef{DecidingPrefix}, any two enumerations having $s$ as a proper
+initial segment therefore have equal $h$-values.  Hence choose any extension
+and define $h^{\dcl}(s)$ by its value.  If $Y$ is another extension of $s$,
+the same \noderef{DecidingPrefix} equality shows that this value is $h(Y)$.
+Thus the definition is independent of the choice and has the displayed
+property.
+\end{proof}

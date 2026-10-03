@@ -1,0 +1,85 @@
+\begin{lemma}[Structural equivalence is an equivalence relation]
+The relation $\mathsf{PowerPresentationEq}$ is reflexive, symmetric, and
+transitive on $\mathsf{PowerQ}(Q)$.
+\end{lemma}
+\begin{proof}
+The induction and all case distinctions below use the two constructors of the
+tagged inductive carrier \noderef{PowerQ}.  We unfold the recursive relation
+from \noderef{PowerPresentationEq}; its atom--node and node--atom clauses are
+both the proposition \(\mathsf{False}\).
+
+For reflexivity, induct on \(x\in\mathsf{PowerQ}(Q)\).  If
+\(x=\mathsf{atom}(q)\), the atom--atom clause asks for \(q=q\), which is
+given by reflexivity of equality.  If
+\(x=\mathsf{node}(\iota,h,f)\), the relation has two conjuncts.  For each
+\(i\in\iota\), choose the same index \(i\) on the other side; the induction
+hypothesis gives
+\(\mathsf{PowerPresentationEq}(f(i),f(i))\).  This proves the forward
+conjunct \(\forall i\,\exists j\), and choosing the same index in the
+reverse direction proves the backward conjunct \(\forall j\,\exists i\).
+Thus every presentation is related to itself.  The nonemptiness witness
+\(h\) is part of the node constructor supplied by \noderef{PowerQ}, although
+it is not needed for these two matching clauses.
+
+For symmetry, perform the same simultaneous structural induction on the two
+presentations occurring in a relation.  In the atom--atom case,
+\(q=q'\) reverses to \(q'=q\).  If exactly one presentation is an atom, the
+assumed relation is \(\mathsf{False}\), so there is no case to prove; these
+are precisely the atom--node and node--atom clauses of
+\noderef{PowerPresentationEq}.  In the node--node case, write the assumed
+relation as
+\[
+ H_{\to}:\forall i\in\iota,\ \exists j\in\kappa,\ \mathsf{PowerPresentationEq}(f(i),g(j)),
+ \qquad
+ H_{\leftarrow}:\forall j\in\kappa,\ \exists i\in\iota,\ \mathsf{PowerPresentationEq}(f(i),g(j)).
+\]
+Given \(j\in\kappa\), choose the witness \(i\) supplied by
+\(H_{\leftarrow}\); the induction hypothesis reverses its matching relation
+to \(\mathsf{PowerPresentationEq}(g(j),f(i))\).  This proves the forward
+clause for the reversed pair.  Given \(i\in\iota\), use \(H_{\to}\) and
+the induction hypothesis in the same way to prove the reversed backward
+clause.  Hence the relation is symmetric.
+
+For transitivity, let \(x,y,z\in\mathsf{PowerQ}(Q)\) and assume
+\(\mathsf{PowerPresentationEq}(x,y)\) and
+\(\mathsf{PowerPresentationEq}(y,z)\).  Use simultaneous structural
+induction on these three presentations.  If all three are atoms, write the
+two hypotheses as \(q=q'\) and \(q'=q''\); their composite gives
+\(q=q''\).  Every mixed-tag arrangement has a false premise: whenever the
+first and middle tags differ, the first relation is one of the two mixed
+\(\mathsf{False}\) clauses, and whenever the middle and last tags differ, the
+second relation is such a clause.  Thus the arrangements with one or two
+atom--node changes, including atom--node and node--atom in either order,
+are impossible and require no further construction.
+
+It remains to consider three nodes
+\(x=\mathsf{node}(\iota,h,f)\),
+\(y=\mathsf{node}(\kappa,h',g)\), and
+\(z=\mathsf{node}(\lambda,h'',k)\).  Write the first relation as its
+forward and backward matching clauses
+\[
+ H_{\to}:\forall i\in\iota,\ \exists j\in\kappa,\ \mathsf{PowerPresentationEq}(f(i),g(j)),
+ \qquad
+ H_{\leftarrow}:\forall j\in\kappa,\ \exists i\in\iota,\ \mathsf{PowerPresentationEq}(f(i),g(j)),
+\]
+and write the second relation similarly as
+\[
+ K_{\to}:\forall j\in\kappa,\ \exists \ell\in\lambda,\ \mathsf{PowerPresentationEq}(g(j),k(\ell)),
+ \qquad
+ K_{\leftarrow}:\forall \ell\in\lambda,\ \exists j\in\kappa,\ \mathsf{PowerPresentationEq}(g(j),k(\ell)).
+\]
+For the forward clause of the composite, fix \(i\in\iota\).  Choose
+\(j\in\kappa\) and a witness
+\(e:\mathsf{PowerPresentationEq}(f(i),g(j))\) from \(H_{\to}\).  Choose
+\(\ell\in\lambda\) and a witness
+\(d:\mathsf{PowerPresentationEq}(g(j),k(\ell))\) from \(K_{\to}\).
+The induction hypothesis for these three children composes \(e\) and \(d\),
+giving \(\mathsf{PowerPresentationEq}(f(i),k(\ell))\).  This is the required
+\(\ell\)-witness.  For the backward clause, fix \(\ell\in\lambda\).  Use
+\(K_{\leftarrow}\) to choose \(j\in\kappa\) and its matching witness, then
+use \(H_{\leftarrow}\) to choose \(i\in\iota\) matching that middle child.
+The induction hypothesis again composes the two witnesses and gives
+\(\mathsf{PowerPresentationEq}(f(i),k(\ell))\).  These two constructions
+establish the node--node relation from \(x\) to \(z\), so the relation is
+transitive and therefore an equivalence relation.
+\end{proof}

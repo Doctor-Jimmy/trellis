@@ -1,0 +1,14 @@
+\begin{lemma}[Support decreases along a child]
+If $\mathsf{PowerChild}(x,y)$, then
+\[
+\mathsf{PowerSupport}(x)\subseteq\mathsf{PowerSupport}(y).
+\]
+\end{lemma}
+\begin{proof}
+Unfold the child relation from \noderef{PowerChild}.  The right-hand
+presentation must be a node and the left-hand presentation is one of its
+children.  The recursive support definition in \noderef{PowerSupport} says
+that the support of every child is one of the sets in the union defining the
+support of the parent.  Thus every atom occurring below the child also occurs
+below the parent, which is the required inclusion.
+\end{proof}

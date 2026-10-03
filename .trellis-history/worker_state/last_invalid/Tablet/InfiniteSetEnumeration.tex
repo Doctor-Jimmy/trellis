@@ -1,0 +1,64 @@
+\begin{lemma}[Increasing enumeration of an infinite set]
+Every infinite $X\subseteq\mathbb N$ has a strictly increasing enumeration
+$x\in\mathsf{IncSeq}$ whose range is exactly $X$.
+\end{lemma}
+\begin{proof}
+We construct a map $x:\mathbb N\to\mathbb N$ by least-element recursion.  First,
+$X$ is nonempty, since an empty set is finite, so let $x(0)$ be the least
+element of $X$.  Suppose that $x(k)\in X$ has already been defined.  The set
+
+\[
+X_{>x(k)}=\{m\in X\mid x(k)<m\}
+\]
+
+is nonempty.  Indeed, if it were empty, then every element of $X$ would be
+at most $x(k)$, so $X\subseteq\{0,1,\ldots,x(k)\}$.  The latter is finite,
+and hence $X$ would be finite, contradicting the hypothesis.  Therefore the
+well-ordering of $\mathbb N$ gives a least element of $X_{>x(k)}$; define
+$x(k+1)$ to be that element.  This also proves inductively that
+
+\[
+x(k)\in X\quad\text{and}\quad x(k)<x(k+1)
+\]
+
+for every $k$.  If $i<j$, repeated use of these inequalities gives
+$x(i)<x(j)$.  Conversely, if $x(i)<x(j)$ and $j\leq i$, monotonicity gives
+$x(j)\leq x(i)$, a contradiction.  Thus $x$ preserves and reflects the
+order on $\mathbb N$.  By the definition of $\mathsf{IncSeq}$ in
+\noderef{IncSeq}, this makes $x$ an element of $\mathsf{IncSeq}$, and the
+induction just given shows $\operatorname{range}(x)\subseteq X$.
+
+It remains to prove the reverse inclusion.  For each fixed $n\in X$, put
+
+\[
+F_n=\{m\in X\mid m<n\}.
+\]
+
+This is finite because it is contained in the finite initial segment
+$\{0,1,\ldots,n-1\}$.  We prove simultaneously for every $j\in\mathbb N$
+that, whenever $n\in X$ and $|F_n|=j$, the recursion lists precisely the
+members of $F_n$ before reaching $n$: namely,
+
+\[
+x(j)=n
+\qquad\text{and}\qquad
+\{x(i)\mid i<j\}=F_n.
+\]
+
+For $j=0$, $F_n$ is empty, so no member of $X$ is below $n$.  Thus $n$ is
+the least element of $X$, and the definition gives $x(0)=n$; the displayed
+set equality is empty on both sides.  Now assume the assertion for $j$ and
+let $n\in X$ satisfy $|F_n|=j+1$.  The finite nonempty set $F_n$ has a
+greatest element $p$.  Every member of $X$ below $p$ is a member of $F_n$
+other than $p$, so $F_p=F_n\setminus\{p\}$ and $|F_p|=j$.  The induction
+hypothesis gives $x(j)=p$ and lists exactly $F_p$ before $p$.  Since $p$ is
+the greatest element of $F_n$, there is no member of $X$ strictly between
+$p$ and $n$.  Consequently $n$ is the least member of $X$ greater than
+$x(j)=p$, and the recursive definition gives $x(j+1)=n$.  Strict increase
+then makes the first $j+1$ values the $j+1$ distinct elements of $X$ below
+$n$, so $\{x(i)\mid i<j+1\}=F_n$.  This completes the induction.
+
+Applying the result to any $n\in X$ gives $x(|F_n|)=n$, so
+$X\subseteq\operatorname{range}(x)$.  The two inclusions prove
+$\operatorname{range}(x)=X$.
+\end{proof}

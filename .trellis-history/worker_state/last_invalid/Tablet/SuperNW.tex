@@ -1,0 +1,52 @@
+\begin{theorem}
+Let $E$ be a finite set, let $F$ be a front on an infinite set $X$, and let
+$f:F\to E$ be a super-sequence.  Then there are an infinite set $Y$, a
+front $F'$ on $Y$ with $F'\subseteq F$, and a color $c\in E$ such that the
+restriction of $f$ to $F'$ is constantly $c$.
+\end{theorem}
+\begin{proof}
+We prove the assertion by induction on the cardinality of the finite
+codomain.  The induction assertion is uniform in the front, its infinite
+base, and the value map.  If the codomain is empty, there is no such value
+map: by the density clause in \noderef{Front}, the front has a member, and
+the map would have to assign that member a value in the empty set.  Thus this
+case is vacuous.
+
+Now suppose that $E$ is nonempty and choose a color $e\in E$.  Consider the
+fiber
+\[
+   S_e=\{s\in F\mid f(s)=e\}.
+\]
+Apply \noderef{NashWilliams} to the subset $S_e\subseteq F$.  We obtain a
+front $F_0$ on an infinite base $Y_0$, an inclusion $F_0\subseteq F$, and
+exactly one of the following two alternatives:
+\[
+  \text{(selected color)}\quad F_0\subseteq S_e,
+  \qquad\text{or}\qquad
+  \text{(complement)}\quad F_0\cap S_e=\emptyset.
+\]
+
+In the selected-color case, use $F_0$, $Y_0$, its front structure, and its
+inclusion into $F$.  The definition of a super-sequence in
+\noderef{SuperSequence} lets us restrict the value map along that inclusion;
+the definition of $S_e$ then gives
+$f(s)=e$ for every $s\in F_0$.  This is the required constant
+sub-super-sequence, with constant $e$.
+
+In the complement case, every $s\in F_0$ satisfies $f(s)\ne e$.  Put
+$E_0=E\setminus\{e\}$.  This is finite and has cardinality strictly smaller
+than that of $E$.  Define a value map $g:F_0\to E_0$ by
+$g(s)=f(s)$, regarding $f(s)$ as an element of $E_0$ using
+$F_0\cap S_e=\emptyset$.  Together with the front $F_0$ on $Y_0$, this is
+again a super-sequence in the sense of \noderef{SuperSequence}.  The
+induction hypothesis supplies a front $F_1$ on an infinite base $Y_1$, an
+inclusion $F_1\subseteq F_0$, and a color $c_0\in E_0$ such that
+$g(s)=c_0$ for every $s\in F_1$.
+
+Finally, compose $F_1\subseteq F_0$ with $F_0\subseteq F$.  The same front
+$F_1$ is therefore a sub-front of the original domain, and the defining
+equation $g(s)=f(s)$ shows that the original map $f$ is constantly the
+underlying color $c_0\in E$ on $F_1$.  In either case the recursion removes a
+color or terminates at the selected color, so the finite induction yields
+the asserted constant sub-super-sequence.
+\end{proof}

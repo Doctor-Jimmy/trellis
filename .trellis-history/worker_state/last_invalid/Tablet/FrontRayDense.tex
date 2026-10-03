@@ -1,0 +1,34 @@
+\begin{helper}[Density of a ray]
+Let $F$ be a nontrivial front on $X$ and let $n\in X$.  Every infinite
+$Y\subseteq\mathsf{TailSet}(X,n)$ has a member $s$ of $\mathsf{Ray}(F,n)$
+with $\mathsf{ProperPrefixSet}(s,Y)$.
+\end{helper}
+\begin{proof}
+By \noderef{FrontNontrivialBase}, every member of $F$ is nonempty.  Let
+$Y\subseteq\mathsf{TailSet}(X,n)$ be infinite.  Then
+$\{n\}\cup Y$ is infinite because it contains the infinite set $Y$, and
+it is contained in $X$ because $n\in X$ and $Y\subseteq X$ by
+\noderef{TailSet}.  Apply the density clause of \noderef{Front} to obtain
+$u\in F$ and a cutoff $m\in\{n\}\cup Y$ such that
+
+\[
+u=\{k\in\{n\}\cup Y\mid k<m\}.
+\]
+
+The cutoff cannot be $n$.  Indeed, in that case the displayed set would
+be empty: $n$ is not less than itself, and every element of $Y$ is greater
+than $n$ by \noderef{TailSet}.  This contradicts the nonemptiness of $u$.
+Thus $m\in Y$, and $n<m$.  The displayed equation now shows $n\in u$.
+
+Set $s=u\setminus\{n\}$.  Every element of $s$ lies in $Y$ and is greater
+than $n$, while inserting $n$ back gives $\{n\}\cup s=u\in F$.  Hence
+$s\in\mathsf{Ray}(F,n)$ by \noderef{Ray}.  Removing $n$ from the displayed
+cutoff equation gives
+
+\[
+s=\{k\in Y\mid k<m\},
+\]
+
+so $\mathsf{ProperPrefixSet}(s,Y)$ by \noderef{ProperPrefixSet}.  This is
+the required ray-density conclusion.
+\end{proof}

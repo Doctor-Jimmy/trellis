@@ -1,0 +1,79 @@
+\begin{lemma}
+Let $g\in\mathsf{IncSeq}$ be nonidentity.  There is a prefix-continuous map
+$\rho:\mathsf{IncSeq}\to\mathsf{IncSeq}$ satisfying
+\[
+\rho(f\circ g)=\rho(f)\circ\mathsf{SuccSeq}
+\]
+for every $f$.  Equivalently, right composition by $g$ continuously
+homomorphically maps to the ordinary shift.
+\end{lemma}
+\begin{proof}
+By the nonidentity hypothesis and \noderef{FirstMovedPoint}, choose the
+least moved point $k_g$ with $k_g<g(k_g)$.  Apply \noderef{OrbitEmbedding} to
+this inequality and
+choose $G\in\mathsf{IncSeq}$ satisfying
+\[
+G(n)=\mathsf{OrbitPoint}(g,k_g,n)
+\]
+for every $n$.  By the definition of \noderef{OrbitPoint}, this means
+$G(n)=g^{[n]}(k_g)$.  For $f\in\mathsf{IncSeq}$ define
+\[
+\rho(f)=f\circ G.
+\]
+This value is in $\mathsf{IncSeq}$: by \noderef{IncSeq}, both $f$ and $G$
+are order embeddings, and their composite is order preserving and
+injective, hence is again an order embedding.
+
+We verify prefix-continuity using the criterion in \noderef{BaireContinuous}
+and the meaning of prefix agreement in \noderef{PrefixAgree}.  Fix
+$f\in\mathsf{IncSeq}$ and an output length $m$.  If $m=0$, choose input
+length $k=0$; the conclusion is the vacuous statement
+\(\operatorname{PrefixAgree}(0,\rho(f),\rho(h))\) for every $h$.
+Suppose instead that $m>0$, and choose
+\[
+k=G(m-1)+1.
+\]
+Let $h\in\mathsf{IncSeq}$ satisfy
+$\operatorname{PrefixAgree}(k,f,h)$.  For every $i<m$, we have
+$i\leq m-1$, and the order-preserving property of the order embedding
+$G$ gives $G(i)\leq G(m-1)<k$.  Thus prefix agreement gives
+$h(G(i))=f(G(i))$.  Consequently
+\[
+\rho(h)(i)=h(G(i))=f(G(i))=\rho(f)(i)
+\]
+for every $i<m$, so
+$\operatorname{PrefixAgree}(m,\rho(f),\rho(h))$.  This supplies the
+witness required by \noderef{BaireContinuous} for every $f$ and $m$.
+
+It remains to prove the homomorphism equation.  From
+\noderef{OrbitPoint} and the displayed choice of $G$, the successor rule
+for function iterates gives, for every $n$,
+\[
+g(G(n))=g\bigl(g^{[n]}(k_g)\bigr)=g^{[n+1]}(k_g)=G(n+1).
+\]
+This calculation uses only the definition of the orbit and the iterate
+recursion, not the proof of \noderef{OrbitEmbedding}.  Therefore, for every
+$f\in\mathsf{IncSeq}$ and $n\in\mathbb N$,
+\[
+\begin{aligned}
+\rho(f\circ g)(n)
+  &=f\bigl(g(G(n))\bigr)\\
+  &=f(G(n+1))\\
+  &=\rho(f)(n+1).
+\end{aligned}
+\]
+By \noderef{RightComp}, $f\circ g=\mathsf{RightComp}(g)(f)$.  By
+\noderef{ShiftMap} and \noderef{SuccSeq},
+\[
+\rho(f)\circ\mathsf{SuccSeq}=\mathsf{ShiftMap}(\rho(f)),
+\qquad
+(\rho(f)\circ\mathsf{SuccSeq})(n)=\rho(f)(n+1).
+\]
+Thus the coordinate equalities give
+\[
+\rho(\mathsf{RightComp}(g)(f))
+ =\mathsf{ShiftMap}(\rho(f))
+\]
+for every $f$.  Together with the prefix-continuity just proved, this is a
+\noderef{ContMor} witness, and hence establishes the stated conclusion.
+\end{proof}

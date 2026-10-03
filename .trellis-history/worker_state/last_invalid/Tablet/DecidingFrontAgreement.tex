@@ -1,0 +1,23 @@
+\begin{helper}[Finite-prefix agreement]
+If $x,y\in\mathsf{IncSeq}$ and the first $n$ values of $x$ form a proper
+prefix of the range of $y$, then the first $n$ values of $x$ and $y$ agree
+pointwise.
+\end{helper}
+\begin{proof}
+Write $P_x=\{x(i)\mid i<n\}$.  By
+\noderef{ProperPrefixSet}, choose a cutoff $y(j)$ such that
+$P_x=\{y(i)\mid i<j\}$.  The order embeddings are injective, so both sides
+have cardinalities $n$ and $j$, respectively.  Hence $n=j$.
+
+We now prove $x(i)=y(i)$ for every $i<n$ by strong induction on $i$.  For
+$i=0$, both $x(0)$ and $y(0)$ belong to the common finite set.  Every value
+of either increasing enumeration is at least its zeroth value, so each is
+at most the other; therefore they are equal.  For the induction step,
+membership in the common set gives indices $k,j<n$ with
+$x(k)=y(i+1)$ and $y(j)=x(i+1)$.  If $y(i+1)<x(i+1)$, strict increase of
+$x$ gives $k<i+1$.  If $k=i$, the induction hypothesis gives
+$x(i)=y(i)$ and hence $y(i)=y(i+1)$, contradicting strict increase; if
+$k<i$, the induction hypothesis gives the same contradiction.  Thus
+$x(i+1)\le y(i+1)$.  The symmetric argument gives the reverse inequality,
+and antisymmetry gives equality.  This proves the stated prefix agreement.
+\end{proof}

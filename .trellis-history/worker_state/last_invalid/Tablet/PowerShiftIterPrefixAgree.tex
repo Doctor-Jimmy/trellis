@@ -1,0 +1,56 @@
+\begin{lemma}[Finite-prefix agreement survives finitely many shifts]
+If two increasing enumerations agree through their first $n+j$ entries, then
+their $j$-fold shifts agree through their first $n$ entries:
+\[
+\mathsf{PrefixAgree}(n+j,x,y)
+\Longrightarrow
+\mathsf{PrefixAgree}\bigl(n,\mathsf{PowerShiftIter}(j,x),
+  \mathsf{PowerShiftIter}(j,y)\bigr).
+\]
+\end{lemma}
+\begin{proof}
+We prove the assertion by induction on $j$, simultaneously for every
+prefix length $n$.  For $j=0$, the defining equation for
+\noderef{PowerShiftIter} gives
+\(\mathsf{PowerShiftIter}(0,x)=x\) and
+\(\mathsf{PowerShiftIter}(0,y)=y\).  Since $n+0=n$, the conclusion is
+\(\mathsf{PrefixAgree}(n,x,y)\), which is exactly the hypothesis
+\(h_{xy}\).
+
+Suppose now that the assertion has been proved for $j$, for every prefix
+length.  Let
+\(h_{xy}:\mathsf{PrefixAgree}(n+(j+1),x,y)\).  The elementary natural-number
+identity
+\[
+n+(j+1)=(n+1)+j
+\]
+therefore turns this into
+\(\mathsf{PrefixAgree}((n+1)+j,x,y)\).  Apply the induction hypothesis
+with prefix parameter $n+1$.  Writing
+\[
+a=\mathsf{PowerShiftIter}(j,x),\qquad
+b=\mathsf{PowerShiftIter}(j,y),
+\]
+we obtain, by the definition of \noderef{PrefixAgree}, the pointwise
+statement
+\[
+\forall k<n+1,\qquad a(k)=b(k).
+\]
+
+It remains to prove agreement after one further shift.  By the successor
+equation in \noderef{PowerShiftIter}, the two sequences in the desired
+conclusion are \(\mathsf{ShiftMap}(a)\) and \(\mathsf{ShiftMap}(b)\).
+Fix an arbitrary \(i<n\).  By the definitions of \noderef{ShiftMap},
+\noderef{RightComp}, and \noderef{SuccSeq},
+\[
+\mathsf{ShiftMap}(a)(i)=a(i+1),\qquad
+\mathsf{ShiftMap}(b)(i)=b(i+1).
+\]
+The inequality \(i<n\) implies \(i+1<n+1\), so the preceding pointwise
+statement, applied at $i+1$, gives \(a(i+1)=b(i+1)\).  Consequently
+\(\mathsf{ShiftMap}(a)(i)=\mathsf{ShiftMap}(b)(i)\) for every $i<n$.
+Unfolding \noderef{PrefixAgree} now yields
+\(\mathsf{PrefixAgree}(n,\mathsf{ShiftMap}(a),\mathsf{ShiftMap}(b))\),
+which is exactly the required successor case after unfolding
+\noderef{PowerShiftIter} once more.
+\end{proof}

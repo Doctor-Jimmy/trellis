@@ -1,0 +1,126 @@
+\begin{lemma}
+If $X$ is infinite, then $\mathsf{CardinalityFront}(k,X)=[X]^k$ is a
+front on $X$ for every $k\in\mathbb N$.
+\end{lemma}
+\begin{proof}
+Put $F=\mathsf{CardinalityFront}(k,X)$, as defined in
+\noderef{CardinalityFront}.  We verify the four fields in the explicit
+definition of a front in \noderef{Front}.  The infinite-base field is
+exactly the given hypothesis $h_X:X$ is infinite.
+
+We first verify the base alternative.  Suppose that $k=0$.  By the
+definition of $F$, a finite set $s$ belongs to $F$ exactly when
+
+\[
+|s|=0\quad\text{and}\quad s\subseteq X.
+\]
+
+The first condition is equivalent to $s=\emptyset$.  The empty set does
+satisfy the second condition, so in this case
+
+\[
+F=\{\emptyset\}.
+\tag{1}
+\]
+
+Now suppose that $k>0$.  We prove
+$\mathsf{FrontBase}(F)=X$, using the definition of the base in
+\noderef{FrontBase}.  If $n\in\mathsf{FrontBase}(F)$, there is an
+$s\in F$ with $n\in s$.  Membership $s\in F$ gives $s\subseteq X$ by
+\noderef{CardinalityFront}, and hence $n\in X$.  This proves
+$\mathsf{FrontBase}(F)\subseteq X$.
+
+For the converse, fix $x\in X$.  The set $X\setminus\{x\}$ is infinite:
+if it were finite, then adjoining the at most one point $x$ would make
+$X$ finite, contrary to $h_X$.  An infinite set contains any prescribed
+finite number of pairwise distinct points.  Indeed, choose them
+inductively; after finitely many choices, their finite set cannot exhaust
+an infinite set, so another point remains.  Therefore choose pairwise
+distinct
+
+\[
+a_1,\ldots,a_{k-1}\in X\setminus\{x\};
+\]
+
+when $k=1$ this is the empty list.  Let
+$s=\{x,a_1,\ldots,a_{k-1}\}$.  All its displayed elements are distinct,
+so $|s|=k$, and every element of $s$ lies in $X$.  Thus
+$s\in\mathsf{CardinalityFront}(k,X)$, and $x\in s$.  The definition of
+\noderef{FrontBase} now gives
+$x\in\mathsf{FrontBase}(F)$.  Hence $X\subseteq\mathsf{FrontBase}(F)$,
+which proves
+
+\[
+\mathsf{FrontBase}(F)=X\qquad(k>0).
+\tag{2}
+\]
+
+Equations (1) and (2) establish the base alternative in all cases.
+
+Next let $s,t\in F$ and assume
+$\mathsf{InitialSegment}(s,t)$.  If $s=t$, the required conclusion is
+immediate.  Otherwise, the non-equality clause in the definition of
+\noderef{InitialSegment} supplies an $n\in t$ such that
+
+\[
+s=\{m\in t\mid m<n\}.
+\]
+
+Thus $s\subseteq t$, while $n\notin s$ because $n<n$ is false.  Hence
+$s$ is a proper subset of the finite set $t$, so $|s|<|t|$.  On the
+other hand, membership of both sets in $F$, by
+\noderef{CardinalityFront}, gives $|s|=k=|t|$, a contradiction.  Thus
+the prefix-free clause from \noderef{Front} holds.
+
+It remains to prove density.  Let $Y\subseteq X$ be infinite.  By
+\noderef{InfiniteSetEnumeration}, choose an increasing enumeration
+$y\in\mathsf{IncSeq}$ such that
+$\operatorname{range}(y)=Y$.  By the definition of \noderef{IncSeq},
+$y$ is an order embedding: it is injective, it satisfies
+$i<j\Rightarrow y(i)<y(j)$, and it reflects strict order.  The range
+equality also says that every $y(i)$ belongs to $Y$ and that every member
+of $Y$ is $y(j)$ for some $j$.
+
+First suppose that $k=0$.  Take $s=\emptyset$.  Then $s\in F$ by the
+definition of $F$.  The element $y(0)$ belongs to $Y$.  If $m\in Y$ and
+$m<y(0)$, write $m=y(j)$ using the range equality.  Order reflection
+would give $j<0$, which is impossible.  Consequently
+
+\[
+\forall m,\qquad m\in\emptyset
+\quad\Longleftrightarrow\quad m\in Y\text{ and }m<y(0).
+\]
+
+Together with $y(0)\in Y$, this is exactly
+$\mathsf{ProperPrefixSet}(\emptyset,Y)$ by the definition in
+\noderef{ProperPrefixSet}.  This supplies the required density witness in
+the case $k=0$.
+
+Now suppose that $k>0$ and let
+
+\[
+s=\{y(i)\mid i<k\}.
+\]
+
+The values $y(0),\ldots,y(k-1)$ are pairwise distinct by injectivity, so
+$|s|=k$.  Each value belongs to $Y\subseteq X$, hence $s\subseteq X$.
+Therefore $s\in F$.  We use $y(k)$ as the cutoff.  It belongs to $Y$,
+and for every natural number $m$ we have
+
+\[
+m\in s
+\quad\Longleftrightarrow\quad m\in Y\text{ and }m<y(k).
+\tag{3}
+\]
+
+For the forward implication, write $m=y(i)$ with $i<k$; strict increase
+gives $y(i)<y(k)$.  For the reverse implication, write $m=y(j)$ using
+$m\in Y$.  From $y(j)=m<y(k)$ and order reflection we get $j<k$, so
+$m=y(j)\in s$.  Equation (3), together with $y(k)\in Y$, is precisely
+$\mathsf{ProperPrefixSet}(s,Y)$ by \noderef{ProperPrefixSet}.
+
+We have therefore established the infinite-base field, the base
+alternative, prefix-freeness, and density.  By the four defining fields
+of \noderef{Front}, these facts prove
+$\mathsf{Front}(\mathsf{CardinalityFront}(k,X),X)$.
+\end{proof}

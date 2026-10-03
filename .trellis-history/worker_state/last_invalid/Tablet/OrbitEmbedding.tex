@@ -1,0 +1,66 @@
+\begin{lemma}
+If $k<g(k)$, then the orbit map
+$G(n)=g^{[n]}(k)$ is an increasing embedding of $\mathbb N$ into itself.
+\end{lemma}
+\begin{proof}
+By \noderef{IncSeq}, the map $g$ is an order embedding, so
+
+\[
+x<y \quad\Longrightarrow\quad g(x)<g(y).
+\tag{1}
+\]
+
+We first prove by induction on $n$ that every iterate $g^{[n]}$ is strictly
+increasing.  For $n=0$, the iterate is the identity, so $x<y$ implies
+$g^{[0]}(x)=x<y=g^{[0]}(y)$.  Suppose that $g^{[n]}$ is strictly
+increasing.  If $x<y$, the induction hypothesis gives
+$g^{[n]}(x)<g^{[n]}(y)$, and then (1), applied to these two values, gives
+
+\[
+g\bigl(g^{[n]}(x)\bigr)<g\bigl(g^{[n]}(y)\bigr).
+\]
+
+Unfolding the successor clause in the definition of the iterate identifies
+the two sides with $g^{[n+1]}(x)$ and $g^{[n+1]}(y)$, respectively.  This
+proves the claim for every $n$.
+
+We next establish, also by induction on $n$, the iterate identity
+
+\[
+g^{[n]}(g(x))=g^{[n+1]}(x) \qquad\text{for every }x.
+\tag{2}
+\]
+
+For $n=0$, the left side is $g^{[0]}(g(x))=g(x)$, which is
+$g^{[1]}(x)$ by the successor definition.  For the induction step, assume
+(2) holds for $n$.  Then, using the same successor definition and the
+induction hypothesis at $x$,
+
+\[
+\begin{aligned}
+g^{[n+1]}(g(x))
+  &=g\bigl(g^{[n]}(g(x))\bigr)\\
+  &=g\bigl(g^{[n+1]}(x)\bigr)\\
+  &=g^{[n+2]}(x).
+\end{aligned}
+\]
+
+Thus (2) holds for all $n$.
+
+Apply the first induction result to the assumed inequality $k<g(k)$.
+For every $n$ this gives
+
+\[
+g^{[n]}(k)<g^{[n]}(g(k))=g^{[n+1]}(k),
+\tag{3}
+\]
+
+where the equality is (2) with $x=k$.  By the definition of the orbit point
+in \noderef{OrbitPoint}, if $G(n)=g^{[n]}(k)$ then (3) is precisely
+$G(n)<G(n+1)$ for every $n$.  Hence $G$ is strictly increasing.  Therefore
+$n<m$ implies $G(n)<G(m)$ by induction on the interval from $n$ to $m$;
+in particular, $G$ is injective.  A strictly increasing map from the
+linearly ordered naturals to themselves is an order embedding, so this $G$
+is an element of $\mathsf{IncSeq}$ and satisfies
+$G(n)=\mathsf{OrbitPoint}(g,k,n)$ for every $n$, as required.
+\end{proof}

@@ -1,0 +1,25 @@
+\begin{helper}[Transporting an initial segment through an appended point]
+Let $v$ be an initial segment of the finite set $u$.  If every member of
+$u$ is smaller than $q$, then $v$ is an initial segment of
+$u\cup\{q\}$.  In the equality case $v=u$, use $q$ as the new cutoff.
+In the cutoff case
+$v=\{j\in u\mid j<n\}$ for some $n\in u$, retain the same cutoff
+$n$; the appended point is larger than $n$ and therefore does not enter
+the filtered set.
+\end{helper}
+\begin{proof}
+Unfold \noderef{InitialSegment}.  If $v=u$, then every element of $u$ is
+below $q$, so
+\[
+ u=\{j\in u\cup\{q\}\mid j<q\},
+\]
+which is the cutoff alternative for an initial segment of the enlarged set.
+Otherwise there are $n\in u$ and
+$v=\{j\in u\mid j<n\}$.  Since $n<q$, the same cutoff $n$ belongs to
+$u\cup\{q\}$ and
+\[
+ \{j\in u\cup\{q\}\mid j<n\}
+ =\{j\in u\mid j<n\}=v.
+\]
+Thus the cutoff alternative holds in both cases.
+\end{proof}

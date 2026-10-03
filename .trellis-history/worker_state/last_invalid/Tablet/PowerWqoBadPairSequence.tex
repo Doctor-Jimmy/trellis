@@ -1,0 +1,32 @@
+\begin{lemma}[Bad-witness characterization]
+Let $r$ be a quasi-order on $Q$.  The domination quasi-order on
+$\mathcal P(Q)$ fails to be well-quasi-ordered if and only if there is a
+bad sequence of sequences $f:[\omega]^2\to Q$, namely
+\[
+\forall m<n<l\qquad f(m,n)\nleq f(n,l).
+\]
+\end{lemma}
+\begin{proof}
+Assume first that the relation from \noderef{SetDomination},
+$\mathsf{SetDomination}(r)$, is not well-quasi-ordered.
+By the sequence characterization of well-quasi-ordering, there is a
+sequence $(P_n)_{n\in\omega}$ of subsets of $Q$ for which no $m<n$ has
+$P_m\preceq_r P_n$.  For each $m<n$, failure of domination supplies
+$q_m^n\in P_m$ such that no member of $P_n$ is $r$-above $q_m^n$.
+Define $f(m,n)=q_m^n$.  If $m<n<l$ and
+$r(f(m,n),f(n,l))$ held, then $f(n,l)\in P_n$ would contradict the
+choice of $q_m^n$.  Hence $f$ is bad in the sense of
+\noderef{BadPairSequence}.
+
+Conversely, let $f$ be bad and put
+\[
+P_m=\{f(m,n)\mid m<n\}.
+\]
+If $m<n$, then $f(m,n)\in P_m$.  It cannot be dominated by $P_n$:
+every element of $P_n$ has the form $f(n,l)$ with $n<l$, and badness
+for $m<n<l$ says that
+$\neg r(f(m,n),f(n,l))$.  Thus no $P_m$ is dominated by a later
+$P_n$, so this sequence witnesses failure of
+$\mathsf{WellQuasiOrdered}(\mathsf{SetDomination}(r))$.
+The two implications prove the equivalence.
+\end{proof}

@@ -1,0 +1,15 @@
+\begin{lemma}[Restriction and shift]
+For every $z,x\in\mathsf{IncSeq}$,
+\[
+z\circ\mathsf{ShiftMap}(x)
+=\mathsf{ShiftMap}(z\circ x).
+\]
+\end{lemma}
+\begin{proof}
+By \noderef{ShiftMap}, the left side is
+$z\circ(x\circ\mathsf{SuccSeq})$.  The right side is
+$(z\circ x)\circ\mathsf{SuccSeq}$.  These are equal by associativity of
+composition, with the order recorded by \noderef{IncSeqComp}.  Applying
+any multi-sequence to this equality gives the corresponding evaluation
+identity for \noderef{MultiSequenceRestrict}.
+\end{proof}

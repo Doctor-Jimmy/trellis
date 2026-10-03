@@ -1,0 +1,11 @@
+\begin{lemma}
+Let $g\in\mathsf{IncSeq}$ and $k\in\mathbb N$ satisfy $k<g(k)$.  Then the
+orbit is unbounded: for every $l\in\mathbb N$ there is an $n$ with
+$l<\mathsf{OrbitPoint}(g,k,n)$.
+\end{lemma}
+\begin{proof}
+The orbit is strictly increasing by \noderef{OrbitEmbedding}.  If it were
+bounded by $l$, all its values would lie in the finite set
+$\{0,\ldots,l\}$, contradicting injectivity of the infinitely many orbit
+indices.  Hence some orbit value is larger than each prescribed $l$.
+\end{proof}

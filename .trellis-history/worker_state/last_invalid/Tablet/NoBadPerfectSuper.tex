@@ -1,0 +1,121 @@
+\begin{lemma}[A super-sequence is not both perfect and bad]
+No super-sequence is simultaneously perfect and bad for the same relation.
+\end{lemma}
+\begin{proof}
+Assume, for a contradiction, that
+
+\[
+h_P:\mathsf{PerfectSuperSequence}(r,f)
+\qquad\text{and}\qquad
+h_B:\mathsf{BadSuperSequence}(r,f).
+\]
+
+The structure \noderef{SuperSequence} records the front
+$f.\mathsf{front}:\mathsf{Front}(F,X)$.  Its infinite-base field therefore
+gives
+
+\[
+h_X:X.\mathsf{Infinite}.
+\]
+
+Apply \noderef{InfiniteSetEnumeration} to $X$ and $h_X$.  We obtain an
+increasing enumeration $x\in\mathsf{IncSeq}$ and an equality
+
+\[
+h_{\mathrm{range}}:\operatorname{range}(x)=X.
+\]
+
+Consequently
+
+\[
+h_{x,X}:\operatorname{range}(x)\subseteq X,
+\]
+
+because if $n\in\operatorname{range}(x)$, then
+$n\in X$ after rewriting by $h_{\mathrm{range}}$.
+
+Apply \noderef{FrontPrefixExists} to the front $f.\mathsf{front}$, the
+enumeration $x$, and $h_{x,X}$.  Choose $s$ and
+
+\[
+p_s:\mathsf{FrontPrefix}(F,s,x).
+\]
+
+By the definition of \noderef{FrontPrefix}, its two components are
+
+\[
+h_s:p_s.1\;\text{with }h_s:s\in F,
+\qquad
+q_s:p_s.2\;\text{with }
+\mathsf{ProperPrefixSet}(s,\operatorname{range}(x)).
+\tag{1}
+\]
+
+We next obtain the corresponding prefix after shifting.  Form the base
+enumeration
+
+\[
+\bar x:=\langle x,h_{x,X}\rangle\in\mathsf{BaseIncSeq}(X),
+\]
+
+where the subtype is the one defined in \noderef{BaseIncSeq}.  By
+\noderef{BaseShift} and the composition identity in \noderef{ShiftMap},
+$\mathsf{BaseShift}_X(\bar x)$ is again in
+$\mathsf{BaseIncSeq}(X)$, its first component is
+$\mathsf{ShiftMap}(x)$, and its second component gives
+
+\[
+h_{\operatorname{shift}}:\operatorname{range}(\mathsf{ShiftMap}(x))\subseteq X.
+\tag{2}
+\]
+
+Apply \noderef{FrontPrefixExists} again, now to $f.\mathsf{front}$, the
+increasing enumeration $\mathsf{ShiftMap}(x)$, and (2).  Choose $t$ and
+
+\[
+p_t:\mathsf{FrontPrefix}(F,t,\mathsf{ShiftMap}(x)).
+\]
+
+Unpacking \noderef{FrontPrefix} once more gives
+
+\[
+h_t:p_t.1\;\text{with }h_t:t\in F,
+\qquad
+q_t:p_t.2\;\text{with }
+\mathsf{ProperPrefixSet}
+   (t,\operatorname{range}(\mathsf{ShiftMap}(x))).
+\tag{3}
+\]
+
+The same increasing enumeration $x$ witnesses the finite shift from $s$ to
+$t$: the first required proper-prefix condition is $q_s$ from (1), and the
+second is $q_t$ from (3).  Hence, by the defining existential in
+\noderef{FiniteShift},
+
+\[
+h_{\mathrm{shift}}^{s,t}:\mathsf{FiniteShift}(s,t).
+\tag{4}
+\]
+
+Now use $h_P$ with the explicit front-membership proofs $h_s$ and $h_t$
+and the witness (4).  By the defining statement in
+\noderef{PerfectSuperSequence}, this yields
+
+\[
+r\bigl(f.\mathsf{value}\langle s,h_s\rangle,
+       f.\mathsf{value}\langle t,h_t\rangle\bigr).
+\tag{5}
+\]
+
+Use $h_B$ with exactly the same $s,t,h_s,h_t$, and (4).  The defining
+statement in \noderef{BadSuperSequence} yields
+
+\[
+\neg r\bigl(f.\mathsf{value}\langle s,h_s\rangle,
+            f.\mathsf{value}\langle t,h_t\rangle\bigr).
+\tag{6}
+\]
+
+Statements (5) and (6) are a proposition and its negation, so they give a
+contradiction.  Therefore no $f$ can satisfy both perfectness and badness.
+\end{proof}

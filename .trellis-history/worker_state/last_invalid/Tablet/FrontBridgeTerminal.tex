@@ -1,0 +1,74 @@
+\begin{lemma}[A terminal bridge gives a finite shift]
+If $\mathsf{FrontBridge}(F,s,t,u)$ and both $s,t$ belong to $F$, then
+$s\mathrel{\mathsf{FiniteShift}}t$.
+\end{lemma}
+\begin{proof}
+By the bridge clauses in \noderef{FrontBridge}, together with $hs$ and
+$ht$, we have
+\[
+  \mathsf{InitialSegment}(s,u)
+  \qquad\text{and}\qquad
+  \mathsf{InitialSegment}\bigl(t,\mathsf{FrontBridgeTail}(u)\bigr).
+\]
+The same bridge statement gives that $u$ is nonempty.  Unpacking the two
+displayed relations using \noderef{InitialSegment}, each is either equality
+or the cut below a member of its right-hand finite set.
+
+Put
+\[
+  X=u\cup\{k\in\mathbb N\mid\max(u)<k\}.
+\]
+This set is infinite, since it contains every natural number greater than
+the finite bound $\max(u)$.  By \noderef{InfiniteSetEnumeration}, choose
+$x\in\mathsf{IncSeq}$ with $\operatorname{range}(x)=X$.  Every member of
+$u$ is at most $\max(u)$, while every member of $X\setminus u$ is greater
+than $\max(u)$.  Thus $x$ lists all members of $u$ first, followed by the
+continuation above $\max(u)$.
+
+We first prove the required prefix assertion for $s$.  If $s=u$, use the
+witness $\max(u)+1$.  It belongs to $X$, and for every $k\in X$,
+\[
+  k<\max(u)+1\quad\Longleftrightarrow\quad k\in u,
+\]
+because a member of $X\setminus u$ is strictly greater than $\max(u)$.
+Hence $s=\{k\in\operatorname{range}(x)\mid k<\max(u)+1\}$.  If instead
+\noderef{InitialSegment} gives $a\in u$ and
+$s=\{k\in u\mid k<a\}$, then $a\in X$ and, for every $k\in X$,
+\[
+  k<a\quad\Longleftrightarrow\quad k\in u\text{ and }k<a,
+\]
+since $a\leq\max(u)$.  Thus in this case $a$ is a witness as well.  By
+the definition of \noderef{ProperPrefixSet},
+\[
+  \mathsf{ProperPrefixSet}\bigl(s,\operatorname{range}(x)\bigr).
+\]
+
+Now unfold \noderef{FrontBridgeTail}.  Since $u$ is nonempty, it is exactly
+$u$ with its least member removed.  By the definition of
+\noderef{ShiftMap}, $\operatorname{range}(\mathsf{ShiftMap}(x))$ is the
+range of the increasing enumeration after its first value is removed.
+The first value is the least member of $X$, namely the least member of
+$u$.  Consequently,
+\[
+  \operatorname{range}(\mathsf{ShiftMap}(x))
+  =\mathsf{FrontBridgeTail}(u)\cup
+    \{k\in\mathbb N\mid\max(u)<k\}.
+\]
+Use the second initial-segment relation above.  If
+$t=\mathsf{FrontBridgeTail}(u)$, the witness $\max(u)+1$ belongs to the
+shifted range and its elements below it are exactly
+$\mathsf{FrontBridgeTail}(u)$.  Otherwise, \noderef{InitialSegment} gives
+$a\in\mathsf{FrontBridgeTail}(u)$ and
+$t=\{k\in\mathsf{FrontBridgeTail}(u)\mid k<a\}$.  The value $a$ belongs
+to the shifted range, and no continuation value is below $a$, so the
+elements of the shifted range below $a$ are exactly the displayed finite
+set.  In either case the explicit witness and the definition of
+\noderef{ProperPrefixSet} give
+\[
+  \mathsf{ProperPrefixSet}\bigl(t,
+    \operatorname{range}(\mathsf{ShiftMap}(x))\bigr).
+\]
+The two proper-prefix assertions are precisely the conjuncts in the
+definition of \noderef{FiniteShift}; therefore
+$s\mathrel{\mathsf{FiniteShift}}t$.
+\end{proof}

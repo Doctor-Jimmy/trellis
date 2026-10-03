@@ -1,0 +1,59 @@
+\begin{lemma}[Immediate extensions in the front tree]
+Let $F$ be a front on $X$.  If $s\in T(F)$ but $s\notin F$, then the type
+\[
+  E_s=\{n\in\mathbb N\mid
+  \mathsf{ProperInitialSegment}(s,s\cup\{n\})
+  \text{ and }s\cup\{n\}\in T(F)\}
+\]
+of ordered one-point extensions of $s$ in the prefix tree is nonempty and
+countable.  The proper-initial-segment condition means that the new point is
+the next point above the finite prefix $s$, as in the paper's notation
+$n\in\omega/s$.
+\end{lemma}
+\begin{proof}
+Since $s\in T(F)$, \noderef{PrefixTree} gives $t\in F$ and
+$\mathsf{InitialSegment}(s,t)$.  Since $s\notin F$ while $t\in F$, we have
+$s\ne t$ directly.  Thus the unequal alternative in the definition of
+\noderef{InitialSegment} supplies an $m\in t$ such that
+
+\[
+  s=\{k\in t\mid k<m\}.
+\]
+
+In particular $m\notin s$, so $m\in t\setminus s$.  This explicitly proves
+that $t\setminus s$ is nonempty before taking a least element.  Let
+$n=\min(t\setminus s)$, using the well-ordering of $\mathbb N$.  Every
+$k\in t$ with $k<n$ belongs to $s$: otherwise $k\in t\setminus s$ would
+contradict the minimality of $n$.  Also $n=m$.  Indeed, the displayed
+description of $s$ says that every element of $t$ below $m$ lies in $s$, so
+$m$ is a lower bound for $t\setminus s$; since $m\in t\setminus s$ and $n$
+is its least element, the two inequalities give $n=m$.  Consequently
+
+\[
+  s=\{k\in t\mid k<n\},\qquad n\in t\setminus s.
+\]
+
+We next show that $s\cup\{n\}$ is an initial segment of $t$.  If no element
+of $t$ is larger than $n$, then every element of $t$ is either below $n$ or
+is $n$, and the displayed equality gives $s\cup\{n\}=t$, which is an
+initial segment by equality.  Otherwise let $q$ be the least element of the
+nonempty finite set $\{k\in t\mid n<k\}$.  There is no element of $t$
+strictly between $n$ and $q$, so
+
+\[
+  s\cup\{n\}=\{k\in t\mid k<q\},
+\]
+
+which is an initial segment by \noderef{InitialSegment}.  In either case,
+\noderef{PrefixTree} puts $s\cup\{n\}$ in $T(F)$, using the same witness
+$t\in F$.  Moreover the first displayed equality shows that every element
+of $s$ is below $n$, and hence
+$s=\{k\in s\cup\{n\}\mid k<n\}$.  Thus $s$ is an initial segment of
+$s\cup\{n\}$ by \noderef{InitialSegment}; it is unequal to that set because
+$n\notin s$.  Therefore it is a proper initial segment by
+\noderef{ProperInitialSegment}, and $n$ witnesses membership in $E_s$.
+
+Finally $E_s$ is a subtype of $\mathbb N$, so it is countable by the
+standard countability of $\mathbb N$ and closure of countability under
+subtypes.
+\end{proof}

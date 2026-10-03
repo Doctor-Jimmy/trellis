@@ -1,0 +1,32 @@
+\begin{lemma}[Hereditary countability of the front recursion]
+For every $s\in T(F)$, the recursively defined value
+$\widetilde f(s)$ belongs to the hereditary countable part of the full
+hierarchy:
+\[
+  \mathsf{HereditarilyCountable}(\widetilde f(s)).
+\]
+\end{lemma}
+\begin{proof}
+Proceed by well-founded induction on the extension-oriented relation of
+\noderef{FrontTreeWellFounded}.  If $s\in F$, the front equation
+\noderef{TildeFFrontEquation} identifies the value with an atom, and atoms
+are hereditarily countable by \noderef{HereditarilyCountableAtom}.
+If $s\notin F$, the non-front equation
+\noderef{TildeFNonfrontEquation} identifies the value with a full node
+indexed by the nonempty type $E_s$ of ordered one-point extensions.  For
+each $n\in E_s$, the recursive induction hypothesis gives hereditary
+countability of $\widetilde f(s\cup\{n\})$.  Thus the induction hypotheses
+form a family
+\[
+ g:E_s\longrightarrow\mathsf{HerCtblPower}(Q),\qquad
+ g(n)=\bigl(\widetilde f(s\cup\{n\}),
+             \text{its induction witness}\bigr),
+\]
+using the subtype definition \noderef{HerCtblPower}.  The extension lemma
+\noderef{FrontTreeImmediateExtensions} gives that $E_s$ is nonempty and
+countable; the same is true of its universe lift.  Transport $g$ along the
+lift's down projection and apply the countable hereditary-node closure theorem
+\noderef{HerCtblNodeClosure}.  It proves hereditary countability of exactly
+the node in the non-front recursion equation.  These are the two recursion
+cases, so the assertion holds for all tree nodes.
+\end{proof}

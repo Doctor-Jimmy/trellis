@@ -1,0 +1,12 @@
+\begin{lemma}
+If $g\in\mathsf{IncSeq}$ is not the identity, then there is a least moved
+point $k_g$: $k_g<g(k_g)$ and every $j<k_g$ is fixed by $g$.
+\end{lemma}
+\begin{proof}
+By \noderef{IncSeqPointwiseLe}, every $j$ satisfies $j\leq g(j)$, so a point
+is moved exactly when the inequality is strict.  Since $g\neq\mathrm{id}$,
+some point is moved.  The nonempty set of moved points therefore has a least
+element $k_g$ by well-ordering of $\mathbb N$.  Its defining property is
+$k_g<g(k_g)$, and minimality says that no $j<k_g$ is moved.  Combining this
+with $j\leq g(j)$ gives $g(j)=j$ for every $j<k_g$.
+\end{proof}

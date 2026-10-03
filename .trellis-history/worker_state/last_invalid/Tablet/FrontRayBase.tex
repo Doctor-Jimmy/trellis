@@ -1,0 +1,42 @@
+\begin{helper}[Base of a nontrivial ray]
+Let $F$ be a nontrivial front on $X$, let $n\in X$, and suppose
+$\mathsf{Ray}(F,n)\ne\{\emptyset\}$.  Then
+
+\[
+\mathsf{FrontBase}(\mathsf{Ray}(F,n))=\mathsf{TailSet}(X,n).
+\]
+\end{helper}
+\begin{proof}
+For the inclusion from left to right, let
+$k\in\mathsf{FrontBase}(\mathsf{Ray}(F,n))$.  By
+\noderef{FrontBase}, choose $s\in\mathsf{Ray}(F,n)$ with $k\in s$.
+The definition of \noderef{Ray} gives $n<k$ and
+$\{n\}\cup s\in F$.  Thus $k\in\mathsf{FrontBase}(F)$, so
+$k\in X$ by \noderef{FrontNontrivialBase}; consequently
+$k\in\mathsf{TailSet}(X,n)$ by \noderef{TailSet}.
+
+Conversely, fix $k\in\mathsf{TailSet}(X,n)$ and put
+$Y=\{k\}\cup\mathsf{TailSet}(X,k)$.  The tail
+$\mathsf{TailSet}(X,k)$ is infinite: it is obtained from the infinite
+base $X$ by removing the finite initial segment $\{0,\ldots,k\}$.  Hence
+$Y$ is infinite.  Also $Y\subseteq\mathsf{TailSet}(X,n)$: its first
+element is $k$, and every element of its second part is greater than $k$.
+By \noderef{FrontRayDense}, choose $s\in\mathsf{Ray}(F,n)$ and a cutoff
+$m\in Y$ such that
+
+\[
+s=\{j\in Y\mid j<m\}.
+\]
+
+The set $s$ is nonempty.  Otherwise $\emptyset\in\mathsf{Ray}(F,n)$;
+then every $t\in\mathsf{Ray}(F,n)$ is equal to $\emptyset$, because
+$\emptyset$ is an initial segment of $t$ by \noderef{InitialSegment}, and
+\noderef{FrontRayPrefixFree} applies.  This would make the ray trivial,
+contrary to the hypothesis.
+
+Choose $q\in s$.  Since $q\in Y$, either $q=k$ or $k<q$, so $k\le q<m$.
+Therefore $k<m$, and the displayed cutoff equation gives $k\in s$.
+The definition of \noderef{FrontBase} now yields
+$k\in\mathsf{FrontBase}(\mathsf{Ray}(F,n))$, proving the reverse
+inclusion.
+\end{proof}

@@ -1,0 +1,104 @@
+\begin{lemma}[Finite dependence on the enumeration orbit]
+For fixed $r,n,k$, the copied value
+$\mathsf{PowerCopiedLeft}_r(h,x,n,k)$ depends only on the finitely many
+values of $h$ on the first $n+k+2$ shifts of $x$.  Thus, if $x$ and $y$
+give the same $h$-values at all these shifts, then
+\[
+\mathsf{PowerCopiedLeft}_r(h,x,n,k)
+=\mathsf{PowerCopiedLeft}_r(h,y,n,k).
+\]
+\end{lemma}
+\begin{proof}
+We prove the following stronger assertion by induction on the depth $m$:
+for every row $i$, if
+\[
+ h(\mathsf{PowerShiftIter}(j,x))
+ =h(\mathsf{PowerShiftIter}(j,y))
+ \qquad\text{for every }j\leq i+m+2,
+ \tag{1}
+\]
+then
+\[
+ \mathsf{PowerCopiedLeft}_r(h,x,i,m)
+ =\mathsf{PowerCopiedLeft}_r(h,y,i,m).
+ \tag{2}
+\]
+
+For the base case $m=0$, fix an arbitrary row $i$ and assume (1), so in
+particular the assumed agreement holds at $j=i$ and at $j=i+1$, since
+$i\leq i+2$ and $i+1\leq i+2$.  The depth-zero clause of
+\noderef{PowerCopiedLeft}, instantiated at $i$, gives
+\[
+\begin{aligned}
+\mathsf{PowerCopiedLeft}_r(h,x,i,0)
+  &=\mathsf{PowerIResponse}_r\bigl(
+      h(\mathsf{PowerShiftIter}(i,x)),
+      h(\mathsf{PowerShiftIter}(i+1,x))\bigr),\\
+\mathsf{PowerCopiedLeft}_r(h,y,i,0)
+  &=\mathsf{PowerIResponse}_r\bigl(
+      h(\mathsf{PowerShiftIter}(i,y)),
+      h(\mathsf{PowerShiftIter}(i+1,y))\bigr).
+\end{aligned}
+\tag{3}
+\]
+The two arguments in the first response in (3) equal the corresponding
+arguments in the second response by the cases $j=i$ and $j=i+1$ of (1).
+By the definition of the fixed response function
+\noderef{PowerIResponse}, equal pairs of inputs have equal responses.
+Thus (2) holds for this arbitrary $i$, and hence for every row at depth
+zero.
+
+For the successor step, assume the strengthened assertion at depth $m$.
+Fix an arbitrary row $i$ and assume agreement through the successor bound
+\[
+ j\leq i+(m+1)+2,
+ \qquad\text{equivalently }j\leq i+m+3.
+ \tag{4}
+\]
+First, if $j\leq i+m+2$, then $j\leq i+m+3$ by monotonicity of addition,
+so (4) supplies the induction hypothesis at depth $m$ for row $i$:
+\[
+ \mathsf{PowerCopiedLeft}_r(h,x,i,m)
+ =\mathsf{PowerCopiedLeft}_r(h,y,i,m).
+ \tag{5}
+\]
+Second, the same full bound (4) is the bound needed for row $i+1$, because
+\[
+ (i+1)+m+2=i+m+3.
+\]
+Consequently the induction hypothesis at depth $m$ for row $i+1$ gives
+\[
+ \mathsf{PowerCopiedLeft}_r(h,x,i+1,m)
+ =\mathsf{PowerCopiedLeft}_r(h,y,i+1,m).
+ \tag{6}
+\]
+The successor-depth clause of \noderef{PowerCopiedLeft}, applied at row
+$i$ for the two enumerations, gives
+\[
+\begin{aligned}
+\mathsf{PowerCopiedLeft}_r(h,x,i,m+1)
+ &=\mathsf{PowerIResponse}_r\bigl(
+     \mathsf{PowerCopiedLeft}_r(h,x,i,m),
+     \mathsf{PowerCopiedLeft}_r(h,x,i+1,m)\bigr),\\
+\mathsf{PowerCopiedLeft}_r(h,y,i,m+1)
+ &=\mathsf{PowerIResponse}_r\bigl(
+     \mathsf{PowerCopiedLeft}_r(h,y,i,m),
+     \mathsf{PowerCopiedLeft}_r(h,y,i+1,m)\bigr).
+\end{aligned}
+\tag{7}
+\]
+The first inputs in (7) are equal by (5), and the second inputs are equal
+by (6).  Therefore the two pairs supplied to the same deterministic
+function \noderef{PowerIResponse} are equal, so the two outputs in (7) are
+equal.  This proves the strengthened assertion at depth $m+1$ for the
+arbitrary row $i$, and hence for every row.
+
+Finally instantiate the strengthened assertion at depth $k$ and row
+$i=n$.  Its premise then says that for every $j\leq n+k+2$,
+\[
+h(\mathsf{PowerShiftIter}(j,x))
+=h(\mathsf{PowerShiftIter}(j,y)),
+\]
+which is exactly the stated hypothesis \(\mathsf{hag}\); its conclusion is
+the required equality.
+\end{proof}

@@ -1,0 +1,13 @@
+\begin{lemma}[Shift iterates commute with the first shift]
+For every $n$ and increasing enumeration $x$,
+\[
+\mathsf{PowerShiftIter}(n,\mathsf{ShiftMap}(x))
+=\mathsf{PowerShiftIter}(n+1,x).
+\]
+\end{lemma}
+\begin{proof}
+Induct on $n$.  The case $n=0$ is the defining equation for the zeroth
+iterate.  In the successor case, unfold the recursive definition in
+\noderef{PowerShiftIter} and apply the induction hypothesis under
+$\mathsf{ShiftMap}$.  This proves the equality for every iterate.
+\end{proof}

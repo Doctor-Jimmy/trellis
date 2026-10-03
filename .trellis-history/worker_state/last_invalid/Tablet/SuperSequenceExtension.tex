@@ -1,0 +1,122 @@
+\begin{lemma}[Extension from a front]
+Let $f:F\to E$ be a super-sequence on a front $F$ on an arbitrary infinite
+base $X$.  There is a locally constant base multi-sequence
+$f^{\upcl}:\mathsf{BaseIncSeq}(X)\to E$ such that, whenever
+$s\segs\operatorname{range}(x)$ with $s\in F$, its value at $x$ is $f(s)$.
+\end{lemma}
+\begin{proof}
+For each $x\in\mathsf{BaseIncSeq}(X)$, write $x_0=x.1$.  By the definition
+of \noderef{BaseIncSeq},
+\[
+  \operatorname{range}(x_0)\subseteq X.
+\]
+Apply \noderef{FrontPrefixExists} to $F$, $X$, the front hypothesis $hF$,
+and the increasing enumeration $x_0$, using this range-containment fact.
+We obtain a finite set $s_x$ and a proof
+\[
+  h_x:\mathsf{FrontPrefix}(F,s_x,x_0).
+\]
+For this proof, \noderef{FrontPrefix} gives both
+$s_x\in F$ and
+\(\mathsf{ProperPrefixSet}(s_x,\operatorname{range}(x_0))\).
+Choose one such pair $(s_x,h_x)$ for every $x$, and define
+\[
+  h(x)=f.\mathsf{value}\,\langle s_x,h_x.1\rangle.
+\]
+This is well-defined as an element of $E$ because, by the definition of
+\noderef{SuperSequence}, the field $f.\mathsf{value}$ has domain $F$ and
+$h_x.1$ is a proof that $s_x\in F$.
+
+We prove that $h$ is locally constant in the sense of
+\noderef{BaseLocallyConstant}.  Fix $x\in\mathsf{BaseIncSeq}(X)$ and use
+the selected $s_x$ and $h_x$.  Unpacking the second conjunct of
+$h_x$ with the definition of \noderef{ProperPrefixSet}, choose
+\(q\in\operatorname{range}(x_0)\) such that
+\[
+  \forall k\in\mathbb N,\qquad
+  k\in s_x\ \Longleftrightarrow\ k\in\operatorname{range}(x_0)
+  \text{ and } k<q.                                      \tag{1}
+\]
+Since $q$ is in the range, choose $j\in\mathbb N$ with
+\(x_0(j)=q\), and put
+\[
+  N=j+1.
+\]
+We claim that every $y\in\mathsf{BaseIncSeq}(X)$ satisfying
+\(\mathsf{PrefixAgree}(N,x_0,y.1)\) also satisfies
+\[
+  \mathsf{FrontPrefix}(F,s_x,y.1).                         \tag{2}
+\]
+
+By the definition of \noderef{PrefixAgree}, agreement at the index $j<N$,
+together with $x_0(j)=q$, gives
+\[
+  y.1(j)=x_0(j)=q.                                         \tag{3}
+\]
+We verify the proper-prefix condition in (2), using the definition of
+\noderef{ProperPrefixSet}.  Let $k$ be a natural number.
+
+Suppose first that $k\in s_x$.  By (1), there is an index $i$ with
+$x_0(i)=k$ and $x_0(i)<x_0(j)$.  By the order-embedding property of the
+increasing sequence $x_0$, recalled in \noderef{IncSeq},
+$x_0(i)<x_0(j)$ implies $i<j$.  Hence $i<N$, so prefix agreement gives
+\(y.1(i)=x_0(i)=k\).  Thus
+\(k\in\operatorname{range}(y.1)\) and, by (3), $k<q=y.1(j)$.
+
+Conversely, suppose that
+\(k\in\operatorname{range}(y.1)\) and $k<q$.  Choose $i$ with
+$y.1(i)=k$.  By (3), this is $y.1(i)<y.1(j)$.  Since $y.1$ is an
+increasing sequence, again by \noderef{IncSeq}, $i<j<N$.  Prefix agreement
+therefore gives $x_0(i)=y.1(i)=k$, so
+$k\in\operatorname{range}(x_0)$.  Formula (1) now gives $k\in s_x$.
+
+The two implications prove
+\[
+  \forall k,\qquad k\in s_x\ \Longleftrightarrow\ k\in\operatorname{range}(y.1)
+  \text{ and } k<q.
+\]
+Together with (3), this is
+\(\mathsf{ProperPrefixSet}(s_x,\operatorname{range}(y.1))\), and
+$s_x\in F$ was already part of $h_x$.  This proves (2) by
+\noderef{FrontPrefix}.  Notice explicitly what the cutoff does: all entries
+below $q$ occur before index $j$ and are fixed by agreement, while strict
+increase forces every later entry to be greater than $q$.
+
+Let $(s_y,h_y)$ be the pair selected in the construction for $y$.  The
+definition of the selection gives
+\(\mathsf{FrontPrefix}(F,s_y,y.1)\), while (2) gives
+\(\mathsf{FrontPrefix}(F,s_x,y.1)\).  The uniqueness theorem
+\noderef{FrontPrefixUnique}, applied explicitly with the front $F$, base
+$X$, the already fixed front proof $hF$, enumeration $y.1$, and the two
+FrontPrefix witnesses $h_y$ and the newly proved witness for $s_x$ in (2),
+yields
+\[
+  s_y=s_x.                                                  \tag{4}
+\]
+The defining equations for $h(y)$ and $h(x)$ use the two dependent values
+\[
+  f.\mathsf{value}\,\langle s_y,h_y.1\rangle,
+  \qquad
+  f.\mathsf{value}\,\langle s_x,h_x.1\rangle.
+\]
+After rewriting by (4), the two membership proofs in $F$ are equal by
+proof irrelevance, so the two subtype arguments are equal.  The function
+field $f.\mathsf{value}$ from \noderef{SuperSequence} then gives
+\(h(y)=h(x)\).  Thus the explicit cutoff $N$ witnesses the clause in
+\noderef{BaseLocallyConstant} for $x$, and since $x$ was arbitrary,
+$\mathsf{BaseLocallyConstant}(h)$ holds.
+
+It remains to prove the displayed existential equation.  Fix any
+$x\in\mathsf{BaseIncSeq}(X)$ and use the selected pair $(s_x,h_x)$.
+Take $s=s_x$ and $hs=h_x$.  By the definition of $h$,
+\[
+  h(x)=f.\mathsf{value}\,\langle s_x,h_x.1\rangle
+       =f.\mathsf{value}\,\langle s,hs.1\rangle.
+\]
+More generally, if the existential witness is presented as any other
+$s$ with a proof $hs:\mathsf{FrontPrefix}(F,s,x.1)$, then
+\noderef{FrontPrefixUnique} gives $s=s_x$; after this rewrite the two proofs
+that $s\in F$ are equal by proof irrelevance, and the corresponding
+dependent values of $f.\mathsf{value}$ are equal.  Hence the required
+existential holds for every $x$, completing the proof.
+\end{proof}

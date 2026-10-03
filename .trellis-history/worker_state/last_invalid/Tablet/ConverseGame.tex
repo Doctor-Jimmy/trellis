@@ -1,0 +1,108 @@
+\begin{lemma}[Converse game]
+Let $Q$ be a type, let $r$ be a relation on $Q$, and let $F$ be a front on
+$\mathbb N$ with $\emptyset\notin F$.  Let
+$f:F\to Q$ be a super-sequence, and suppose that $f$ is bad.  Define the
+hereditarily countable singleton sequence
+\[
+a(k)=\left\langle\widetilde f(\{k\}),\
+  \mathsf{HereditarilyCountable}(\widetilde f(\{k\}))\right\rangle
+  \in\mathsf{HerCtblPower}(Q),
+\]
+where the hereditary witness is supplied by
+\noderef{TildeFHerCtbl} and singleton membership by
+\noderef{FrontTreeSingleton}.  Then $a$ is bad for
+$\mathsf{HerCtblRel}(r)$: for all $m<n$,
+\[
+\neg\mathsf{HerCtblRel}(r)(a(m),a(n)).
+\]
+\end{lemma}
+\begin{proof}
+Fix $m<n$ and suppose, toward a contradiction, that
+\mathsf{HerCtblRel}(r)(a(m),a(n)).  By the definition of
+\noderef{HerCtblRel}, this is the comparison
+\[
+\mathsf{PowerRel}(r)(\widetilde f(\{m\}),\widetilde f(\{n\})).
+\]
+The singleton terms are defined by \noderef{TildeFSingleton}, and their
+hereditary witnesses are legitimate by \noderef{TildeFHerCtbl}.
+
+We run the copying game from the paper.  Start with
+$s_0=\{m\}$, $t_0=\{n\}$, and $u_0=\{m,n\}$.  By the structure of a
+super-sequence \noderef{SuperSequence}, $f$ supplies a front on the full
+base.  Thus \noderef{FrontBridgeInit} yields
+\[
+\mathsf{FrontBridge}(F,s_0,t_0,u_0).
+\]
+We maintain this bridge while preserving a comparison
+\[
+\mathsf{PowerRel}(r)(\widetilde f(s),\widetilde f(t))             \tag{*}
+\]
+for the current tree nodes $s,t$.  The induction is well-founded on the
+lexicographic product of the two tree relations
+\[
+\mathsf{ProperInitialSegment}(s,s')
+\quad\text{and}\quad
+\mathsf{ProperInitialSegment}(t,t'),
+\]
+with a recursive call made whenever one coordinate is replaced by a
+strict extension.  This is well-founded by
+\noderef{FrontTreeWellFounded}; its product lexicographic relation is
+therefore well-founded as well.
+
+Suppose first that $s\notin F$.  The bridge definition
+\noderef{FrontBridge} gives an ordered one-point extension $u$ of $s$,
+with $u\in T(F)$.  Thus $u$ is one of the children in the non-front
+recursion equation \noderef{TildeFNonfrontEquation}.  The same legality is
+also the conclusion of \noderef{FrontBridgeStep}, and the all-extensions
+form \noderef{FrontTreeOrderedExtension} ensures that no extra choice of
+front member is being made.  If also $t\notin F$, the two values in (*)
+are nodes.  By \noderef{PowerRelNodeNode}, the comparison supplies a right
+child $t'$ with
+\[
+\mathsf{PowerRel}(r)(\widetilde f(u),\widetilde f(t')).
+\]
+Write this child as $t'=t\cup\{n\}$.  Since $t$ is the finite tail of
+$u$ in the nonterminal bridge clause, the ordered-extension condition makes
+$n$ larger than every member of $t$, hence larger than every member of $u$.
+Thus this is exactly the first response alternative in
+\noderef{FrontBridgeStep}.  Hence
+\noderef{FrontBridgeStep} supplies an updated bridge
+\mathsf{FrontBridge}(F,u,t',u')$, and the induction hypothesis applies
+to $(u,t')$.  The left coordinate has strictly extended $s$.
+
+If instead $t\in F$, the right value in (*) is an atom by
+\noderef{TildeFFrontEquation}.  The node--atom reduction
+\noderef{PowerRelNodeAtom} says that every left child is related to this
+atom, in particular the prescribed child $u$.  We append a fresh point
+above the current bridge and retain the terminal right node.  The second
+case of \noderef{FrontBridgeStep} gives the resulting bridge, and the
+induction hypothesis again applies to the strict left extension $(u,t)$.
+
+Now suppose that $s\in F$ and $t\notin F$.  The left value is an atom by
+\noderef{TildeFFrontEquation}.  By \noderef{PowerRelAtomNode}, the
+comparison (*) supplies a child $t'$ of the right node with
+\[
+\mathsf{PowerRel}(r)(\widetilde f(s),\widetilde f(t')).
+\]
+Write the child as $t'=t\cup\{n\}$.  As above, the tail clause in
+\noderef{FrontBridge} and the ordered-extension condition put $n$ above
+every member of the bridge.  Choose it as the right response in
+\noderef{FrontBridgeStep}, keep the terminal left node,
+and obtain a bridge for $(s,t')$.  This is a strict extension in the
+right coordinate, so the induction hypothesis applies.
+
+It remains to consider $s,t\in F$.  The front equation
+\noderef{TildeFFrontEquation} and the atom--atom reduction
+\noderef{PowerRelAtomAtom} turn (*) into
+\[
+r\bigl(f(\langle s,\,s\in F\rangle),
+       f(\langle t,\,t\in F\rangle)\bigr).
+\]
+The bridge has now reached two terminal front nodes.  By
+\noderef{FrontBridgeTerminal}, it supplies
+$\mathsf{FiniteShift}(s,t)$.  This contradicts the badness hypothesis
+\noderef{BadSuperSequence}, applied to $s,t$, their displayed front
+membership proofs, and this finite shift.  Thus the terminal case is
+impossible, and well-founded induction rules out the original comparison.
+Since $m<n$ was arbitrary, the sequence $a$ is bad as claimed.
+\end{proof}

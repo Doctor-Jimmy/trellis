@@ -1,0 +1,49 @@
+\begin{lemma}[Finite terminal dependence]
+If $h$ is bad for $\mathsf{PowerRel}(r)$, then for every $x$ there are
+$k\in\mathbb N$ and atoms $q,q'\in Q$ such that
+\[
+L_{0,k}=\mathsf{atom}(q),\qquad L_{1,k}=\mathsf{atom}(q'),
+\]
+and the atom $q$ is unchanged by replacing $h$ with any multi-sequence that
+agrees with $h$ on the finite shift prefix
+$h(\mathsf{PowerShiftIter}(j,x))$ for $j\le k+2$.
+\end{lemma}
+\begin{proof}
+Fix $x$.  Applying \noderef{PowerCopiedTerminates} with $n=0$ gives a
+natural number $k$ such that
+\[
+\mathsf{PowerCopiedTerminalAt}_r(h,x,0,k)
+\]
+holds.  By the definition of this terminal condition in
+\noderef{PowerCopiedTerminalAt}, unpacking its existential gives atoms
+$q,q'\in Q$ satisfying
+\[
+\mathsf{PowerCopiedLeft}_r(h,x,0,k)=\mathsf{atom}(q),
+\qquad
+\mathsf{PowerCopiedLeft}_r(h,x,1,k)=\mathsf{atom}(q').
+\]
+
+It remains to prove the final universal clause for this $k$ and $q$.
+Let $h':\mathsf{MultiSequence}(\mathsf{PowerQ}(Q))$ be arbitrary and
+assume
+\[
+\forall j\leq k+2,\qquad
+h'(\mathsf{PowerShiftIter}(j,x))
+ =h(\mathsf{PowerShiftIter}(j,x)).
+\]
+This is the hypothesis of \noderef{PowerCopiedFiniteDependence} with
+$n=0$, since its agreement condition is oriented as
+$h'(\mathsf{PowerShiftIter}(j,x))=h(\mathsf{PowerShiftIter}(j,x))$
+and its bound becomes $j\leq 0+k+2$.  Therefore
+\[
+\mathsf{PowerCopiedLeft}_r(h',x,0,k)
+ =\mathsf{PowerCopiedLeft}_r(h,x,0,k).
+\]
+Combining this equality with the first atom equation above gives
+\[
+\mathsf{PowerCopiedLeft}_r(h',x,0,k)
+ =\mathsf{PowerCopiedLeft}_r(h,x,0,k)
+ =\mathsf{atom}(q),
+\]
+which proves the required universal clause and hence the lemma.
+\end{proof}

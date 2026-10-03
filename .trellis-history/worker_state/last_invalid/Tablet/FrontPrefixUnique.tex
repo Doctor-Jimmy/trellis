@@ -1,0 +1,43 @@
+\begin{lemma}[Front member uniqueness]
+Let $F$ be a family of finite subsets which is a front on $X$, let $x$ be
+an increasing enumeration, and let $s,t$ be finite subsets such that
+$\mathsf{FrontPrefix}(F,s,x)$ and
+$\mathsf{FrontPrefix}(F,t,x)$.
+Then $s=t$.
+\end{lemma}
+\begin{proof}
+By \noderef{FrontPrefix}, the hypotheses give $s\in F$, $t\in F$, and
+\(\mathsf{ProperPrefixSet}(s,\operatorname{range}(x))\) and
+\(\mathsf{ProperPrefixSet}(t,\operatorname{range}(x))\).  Unpacking these
+two proper-prefix assertions using \noderef{ProperPrefixSet}, choose
+$a,b\in\operatorname{range}(x)$ such that
+\[
+s=\{k\in\operatorname{range}(x)\mid k<a\},\qquad
+t=\{k\in\operatorname{range}(x)\mid k<b\}.
+\]
+We compare the two cutoffs.
+
+If $a=b$, the two displayed descriptions have the same right-hand side,
+so $s=t$.  If $a<b$, then $a\in\operatorname{range}(x)$ and $a<b$, hence
+$a\in t$.  For every natural number $k$,
+\[
+k\in t\text{ and }k<a
+\quad\Longleftrightarrow\quad
+k\in\operatorname{range}(x)\text{ and }k<b\text{ and }k<a
+\quad\Longleftrightarrow\quad
+k\in\operatorname{range}(x)\text{ and }k<a
+\quad\Longleftrightarrow\quad k\in s.
+\]
+Thus $s=\{k\in t\mid k<a\}$, and since $a\in t$ this is precisely
+$\mathsf{InitialSegment}(s,t)$ by \noderef{InitialSegment}.  Finally, if
+$b<a$, the symmetric argument gives $b\in s$ and
+$t=\{k\in s\mid k<b\}$, so
+$\mathsf{InitialSegment}(t,s)$ by \noderef{InitialSegment}.
+
+In the equality case, \(\mathsf{InitialSegment}(s,t)\) also holds by the
+equality clause of \noderef{InitialSegment}.  Therefore in all cases one
+of $\mathsf{InitialSegment}(s,t)$ or
+$\mathsf{InitialSegment}(t,s)$ holds.  Applying the prefix-free clause of
+the front hypothesis \noderef{Front} to the already established members
+$s,t\in F$ forces $s=t$.
+\end{proof}

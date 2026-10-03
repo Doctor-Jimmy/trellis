@@ -1,0 +1,10 @@
+\begin{definition}
+Let $f:F\to Q$ be a super-sequence on a front over $\mathbb N$, and let
+$T(F)=\mathsf{PrefixTree}(F)$.  The map
+$\widetilde f:T(F)\to\mathsf{PowerQ}(Q)$ is defined by well-founded recursion
+along the proper-extension relation from
+\noderef{FrontTreeWellFounded}.  At a front node $s$ it is the atom labelled
+by $f(s)$.  At a non-front node $s$ it is the full hierarchy node whose
+children are the values at all ordered one-point extensions
+$s\cup\{n\}\in T(F)$.
+\end{definition}

@@ -1,0 +1,81 @@
+\begin{lemma}
+Assume $k<g(k)$ and put $G(n)=g^{[n]}(k)$.  Every $l\in\mathbb N$ either
+satisfies $l<G(0)$ or belongs to exactly one orbit block
+$[G(n),G(n+1))$.
+\end{lemma}
+\begin{proof}
+Fix $l\in\mathbb N$.  By \noderef{OrbitEmbedding}, choose an increasing
+embedding $G$ such that
+
+\[
+G(j)=\mathsf{OrbitPoint}(g,k,j)=g^{[j]}(k)
+\qquad\text{for every }j\in\mathbb N,
+\]
+
+where the second equality is the definition of \noderef{OrbitPoint}.
+We prove the required disjunction by cases.
+
+First suppose that $l<G(0)$.  This is the left side of the disjunction,
+so the conclusion holds.
+
+Now suppose that $G(0)\leq l$.  Applying \noderef{OrbitUnbounded} to
+$g,k,hk$ and this $l$ gives an $r\in\mathbb N$ with
+
+\[
+l<\mathsf{OrbitPoint}(g,k,r)=G(r).
+\]
+
+The index $r$ cannot be $0$: if $r=0$, this inequality would say
+$l<G(0)$, contradicting $G(0)\leq l$.  Hence $r=m+1$ for some
+$m\in\mathbb N$, and therefore $l<G(m+1)$.  The set
+
+\[
+S=\{j\in\mathbb N\mid l<G(j+1)\}
+\]
+
+is consequently nonempty.  Let $n$ be its least element.  Then
+$l<G(n+1)$.
+
+We next prove $G(n)\leq l$.  If $n=0$, this is exactly the present
+assumption $G(0)\leq l$.  If $n=t+1$, then $t<n$, so the minimality of
+$n$ implies that $t\notin S$.  Thus $\neg(l<G(t+1))$, and linearity of
+the order on $\mathbb N$ gives $G(t+1)\leq l$.  Since
+$G(n)=G(t+1)$, we again obtain $G(n)\leq l$.
+
+The two inequalities just proved are precisely the defining clauses of
+the orbit block: by \noderef{OrbitBlock},
+
+\[
+\mathsf{OrbitBlock}(g,k,n,l)
+\quad\Longleftrightarrow\quad
+G(n)\leq l\ \text{ and }\ l<G(n+1).
+\]
+
+Thus at least one such index exists.  It remains to prove uniqueness.
+Suppose that both $n$ and $m$ satisfy
+$\mathsf{OrbitBlock}(g,k,\mathord\cdot,l)$.  Unpacking
+\noderef{OrbitBlock} gives
+
+\[
+G(n)\leq l<G(n+1),
+\qquad
+G(m)\leq l<G(m+1).
+\]
+
+If $n<m$, then $n+1\leq m$.  Since $G$ is increasing by
+\noderef{OrbitEmbedding}, this gives $G(n+1)\leq G(m)$.  Hence
+
+\[
+l<G(n+1)\leq G(m)\leq l,
+\]
+
+which is impossible.  If instead $m<n$, the same argument with the
+indices interchanged gives
+
+\[
+l<G(m+1)\leq G(n)\leq l,
+\]
+
+again impossible.  Linearity therefore forces $n=m$, proving the
+existence and uniqueness asserted in the right side of the disjunction.
+\end{proof}

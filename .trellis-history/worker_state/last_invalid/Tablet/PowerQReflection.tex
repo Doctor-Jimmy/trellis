@@ -1,0 +1,123 @@
+\begin{theorem}[Reflection to the base quasi-order]
+Let $Q$ be a quasi-order.  If
+$h:\mathsf{IncSeq}\to\mathsf{PowerQ}(Q)$ is locally constant and bad for
+$\mathsf{PowerRel}(r)$, then there is a locally constant multi-sequence
+$g:\mathsf{IncSeq}\to Q$ which is bad for $r$ and satisfies
+\[
+g(x)\in\mathsf{PowerSupport}(h(x))
+\qquad\text{for every }x\in\mathsf{IncSeq}.
+\]
+\end{theorem}
+\begin{proof}
+For an increasing enumeration $z$, write
+\[
+L_{n,j}(z)=\mathsf{PowerCopiedLeft}_r(h,z,n,j).
+\]
+The copied-row definition \noderef{PowerCopiedLeft} says that at depth zero
+$L_{n,0}(z)$ is the canonical response \noderef{PowerIResponse} to the
+adjacent pair
+\[
+\bigl(h(\mathsf{PowerShiftIter}(n,z)),
+      h(\mathsf{PowerShiftIter}(n+1,z))\bigr),
+\]
+and that at depth $j+1$ the value in row $n$ is the same canonical response
+to $L_{n,j}(z)$ and $L_{n+1,j}(z)$.  Thus row $n+1$ supplies the copied right
+move, and all later values are determined by these fixed responses.
+
+Fix $x$.  Applying the termination statement
+\noderef{PowerCopiedTerminates} with $n=0$ shows that this copied play
+reaches a depth satisfying the terminal condition
+\noderef{PowerCopiedTerminalAt}, so the first two row values are atoms.  We choose the
+common depth and labels supplied by the finite-terminal conclusion
+\noderef{PowerCopiedFiniteTerminal}; write them as $k,q_x,q'_x$, so that
+\[
+L_{0,k}(x)=\mathsf{atom}(q_x),\qquad
+L_{1,k}(x)=\mathsf{atom}(q'_x).
+\]
+The same conclusion says that if a replacement multi-sequence agrees with
+$h$ on the shift values through index $k+2$, then its first-row value at
+depth $k$ is still $\mathsf{atom}(q_x)$.
+
+The first conjunct of \noderef{PowerCopiedFailureMove}, at row $0$ and
+depth $k$, gives
+\[
+\neg\mathsf{PowerRel}(r)(L_{0,k}(x),L_{1,k}(x)).
+\]
+Substituting the two atom equations and using the atom--atom equivalence
+\noderef{PowerRelAtomAtom} yields
+\[
+\neg r(q_x,q'_x). \tag{1}
+\]
+The shift identity \noderef{PowerCopiedShiftIdentity}, with $n=0$, gives
+\[
+L_{0,k}(\mathsf{ShiftMap}(x))=L_{1,k}(x)
+  =\mathsf{atom}(q'_x). \tag{2}
+\]
+
+We next make the terminal label independent of all choices.  The second
+conjunct of \noderef{PowerCopiedFailureMove} says that each successive
+$L_{n,j+1}(z)$ is a legal move from $L_{n,j}(z)$.  By the atom clause in the
+definition \noderef{PowerMove}, a legal move whose source is
+$\mathsf{atom}(q)$ must equal $\mathsf{atom}(q)$.  Hence, once a row value is
+an atom, it remains that same atom at every later depth.  If two depths in
+the same row are terminal, compare them in increasing order and use this
+persistence; the two atom labels are equal.  By
+\noderef{PowerCopiedTerminates}, every row-zero copied play has a terminal
+depth, so we may define $g(z)$ to be its unique terminal row-zero atom.
+Equation (2) and the same uniqueness give
+\[
+g(x)=q_x,\qquad g(\mathsf{ShiftMap}(x))=q'_x. \tag{3}
+\]
+
+For the support assertion, \noderef{PowerCopiedSupport} at $n=0$ and
+depth $k$ gives
+\[
+\mathsf{PowerSupport}(L_{0,k}(x))
+ \subseteq \mathsf{PowerSupport}(h(\mathsf{PowerShiftIter}(0,x))).
+\]
+By the atom clause of \noderef{PowerSupport}, the left side contains $q_x$;
+by the defining zeroth-iterate equation in \noderef{PowerShiftIter}, the
+right side is $\mathsf{PowerSupport}(h(x))$.  Therefore
+\[
+g(x)=q_x\in\mathsf{PowerSupport}(h(x)). \tag{4}
+\]
+Combining (1) and (3), for every $x$ we have
+\[
+\neg r\bigl(g(x),g(\mathsf{ShiftMap}(x))\bigr).
+\]
+By the definition \noderef{BadMultiSequence}, this is exactly
+$\mathsf{BadMultiSequence}\,r\,g$.
+
+It remains to prove local constancy.  Fix $x$, and use the finite-terminal
+choice above, with its depth $k$ and label $q_x$.  Apply
+\noderef{PowerFiniteOrbitConstancy} to $h$, $x$, and $m=k+2$.  We obtain a
+finite prefix length $N$ such that, whenever
+$\mathsf{PrefixAgree}(N,x,y)$, then
+\[
+h(\mathsf{PowerShiftIter}(j,y))
+ =h(\mathsf{PowerShiftIter}(j,x))
+\quad\text{for every }j\leq k+2. \tag{5}
+\]
+For such a $y$, (5) is exactly the hypothesis of
+\noderef{PowerCopiedOrbitDependence} with row $n=0$ and depth $k$; the bound
+there is $0+k+2$, with the equality orientation reversed by symmetry if
+necessary.  Consequently,
+\[
+L_{0,k}(y)=L_{0,k}(x)=\mathsf{atom}(q_x). \tag{6}
+\]
+Apply \noderef{PowerCopiedTerminates} to $y$ and row $0$, and use the
+terminal condition \noderef{PowerCopiedTerminalAt} to choose a depth $\ell$
+whose first-row value is $\mathsf{atom}(p)$.  If $\ell\leq k$,
+the legal moves supplied by \noderef{PowerCopiedFailureMove} carry this
+atom unchanged at each successor depth, and induction over the finite
+interval from $\ell$ to $k$ gives $p=q_x$.  If
+$k\leq\ell$, induction over the finite interval carries the atom in (6) to
+depth $\ell$ unchanged and again gives $p=q_x$.  Thus the unique terminal
+label of $y$ is $q_x$, and
+\[
+g(y)=q_x=g(x).
+\]
+This holds for every $y$ with the finite-prefix agreement in (5).  By the
+definition \noderef{LocallyConstant}, $g$ is locally constant, completing
+the proof.
+\end{proof}

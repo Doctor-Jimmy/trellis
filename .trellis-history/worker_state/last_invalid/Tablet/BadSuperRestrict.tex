@@ -1,0 +1,22 @@
+\begin{lemma}[Badness under sub-front restriction]
+If a super-sequence is bad, then its restriction to any sub-front is bad.
+\end{lemma}
+\begin{proof}
+Take arbitrary $s,t\in F'$ with $\mathsf{FiniteShift}\ s\ t$.  Since
+$F'\subseteq F$, these same previously established $s,t$ are members of
+$F$, and the same finite-shift relation holds between them.  By the defining
+badness statement for the original super-sequence, explicitly
+\noderef{BadSuperSequence}, these $s,t\in F$ with
+$\mathsf{FiniteShift}\ s\ t$ satisfy
+\[
+\neg r\bigl(f(s),f(t)\bigr).
+\]
+By \noderef{SuperSequenceRestrict}, the value of the restricted
+super-sequence at $s$ (respectively, at $t$) is the value of $f$ at the same
+finite set, viewed through the inclusion $F'\hookrightarrow F$.  Hence the
+displayed inequality is exactly
+\[
+\neg r\bigl((f\!\restriction F')(s),(f\!\restriction F')(t)\bigr),
+\]
+which proves that the restriction is bad.
+\end{proof}

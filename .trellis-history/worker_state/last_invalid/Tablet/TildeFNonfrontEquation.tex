@@ -1,0 +1,23 @@
+\begin{lemma}[Non-front recursion equation]
+For $s\in T(F)\setminus F$, let
+\[
+ E_s=\{n\mid \mathsf{ProperInitialSegment}(s,s\cup\{n\})
+                 \text{ and }s\cup\{n\}\in T(F)\}.
+\]
+Then
+\[
+ \widetilde f(s)=
+ \mathsf{node}\bigl(E_s,(\widetilde f(s\cup\{n\}))_{n\in E_s}\bigr).
+\]
+The index type is lifted into the universe required by the full hierarchy.
+\end{lemma}
+\begin{proof}
+The hypothesis selects the non-front branch of the defining recursion in
+\noderef{TildeF}.  The extension result \noderef{FrontTreeImmediateExtensions}
+supplies a nonempty index type $E_s$; as a subtype of $\mathbb N$ it is
+countable, but the definition still inserts it into the unrestricted
+hierarchy as $\mathsf{ULift}(E_s)$.  For a lifted index $i$, its underlying
+element is $n=i.\mathsf{down}$, and the recursive call is made at
+$s\cup\{n\}$ with the proper-extension witness in $E_s$.  Unfolding the
+well-founded fix therefore gives exactly the displayed node and family.
+\end{proof}

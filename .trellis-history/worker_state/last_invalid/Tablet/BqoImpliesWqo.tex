@@ -1,0 +1,44 @@
+\begin{lemma}[Better quasi-order implies well quasi-order]
+For every type $Q$ and relation $r$ on $Q$,
+\[
+\mathsf{Bqo}(r)\longrightarrow \mathsf{WellQuasiOrdered}(r).
+\]
+No reflexivity, transitivity, or other order hypothesis is required for this
+implication.
+\end{lemma}
+\begin{proof}
+Assume $\mathsf{Bqo}(r)$ and suppose, toward a contradiction, that
+$r$ is not well-quasi-ordering.  By the sequence definition of
+$\mathsf{WellQuasiOrdered}$ from the shared environment, there is a sequence
+$a:\mathbb N\to Q$ such that for all $m<n$,
+\[
+\neg r(a(m),a(n)).
+\]
+Define a multi-sequence $h:\mathsf{IncSeq}\to Q$ by
+\[
+h(x)=a(x(0)).
+\]
+This has the required type because \noderef{MultiSequence} identifies a
+multi-sequence with a map out of \noderef{IncSeq}'s increasing
+enumerations.
+
+We first check local constancy.  For any $x$, take the one-entry prefix
+length $1$.  If $y$ agrees with $x$ on this prefix, then
+\noderef{PrefixAgree} gives $y(0)=x(0)$, and hence
+$h(y)=a(y(0))=a(x(0))=h(x)$.  Thus the definition of
+\noderef{LocallyConstant} is satisfied.
+
+We next check badness.  For any increasing enumeration $x$, strict
+monotonicity gives $x(0)<x(1)$.  The assumed badness of $a$ therefore yields
+\[
+\neg r(a(x(0)),a(x(1))).
+\]
+By the definition of \noderef{ShiftMap}, the shifted enumeration has first
+entry $x(1)$, so this is exactly
+\[
+\neg r(h(x),h(\mathsf{ShiftMap}(x))).
+\]
+Consequently \noderef{BadMultiSequence} says that $h$ is a bad
+multi-sequence.  Its local constancy and badness contradict the defining
+exclusion in \noderef{Bqo}.  Hence $r$ is well-quasi-ordered.
+\end{proof}

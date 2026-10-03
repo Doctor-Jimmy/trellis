@@ -1,0 +1,199 @@
+\begin{theorem}[g-BQO]
+For every nonidentity $g\in\mathsf{IncSeq}$ and every binary relation $R$
+on a discrete type $A$,
+\[
+(A,R)\text{ is a $g$-better-relation}
+\quad\Longleftrightarrow\quad
+(A,R)\text{ is a better-relation}.
+\]
+In particular, if $Q$ is a quasi-order with relation $\leq$, then
+\[
+Q\text{ is $g$-bqo}\quad\Longleftrightarrow\quad Q\text{ is bqo}.
+\]
+\end{theorem}
+\begin{proof}
+Fix $g\neq\mathsf{IncSeqId}$.  By \noderef{MainProp},
+\noderef{ContMorEq}, and the definition of \noderef{ContMor}, choose
+continuous homomorphisms
+\[
+ K:(\mathsf{IncSeq},\mathsf{RightComp}(g))\longrightarrow
+       (\mathsf{IncSeq},\mathsf{ShiftMap}),
+ \qquad
+ L:(\mathsf{IncSeq},\mathsf{ShiftMap})\longrightarrow
+       (\mathsf{IncSeq},\mathsf{RightComp}(g)).
+\]
+Thus, by the two fields of \noderef{ContinuousHom}, $K$ and $L$ are
+prefix-continuous and satisfy
+\[
+ K(\mathsf{RightComp}(g)(x))=\mathsf{ShiftMap}(K(x)),
+ \qquad
+ L(\mathsf{ShiftMap}(x))=\mathsf{RightComp}(g)(L(x)).
+\]
+
+We spell out how these maps transport complement homomorphisms.  Let
+$H:(\mathsf{IncSeq},\mathsf{ShiftMap})\to(A,R^{\complement})$ be a
+continuous homomorphism in the sense of \noderef{ContinuousRelHom}.  Define
+$J(x)=H(K(x))$.  To check local constancy at $x$, first use local constancy
+of $H$ to choose an output length $m$ such that every $z$ agreeing with
+$K(x)$ through $m$ has $H(z)=H(K(x))$.  Prefix-continuity of $K$ then gives
+an input length $k$ such that agreement with $x$ through $k$ forces
+$K(z)$ to agree with $K(x)$ through $m$.  Consequently $J(z)=J(x)$ for
+all such $z$.  For the homomorphism equation, use the first displayed
+commutation equation and then the homomorphism field of $H$:
+\[
+ R^{\complement}(J(x),J(\mathsf{RightComp}(g)(x)))
+ =R^{\complement}(H(K(x)),H(\mathsf{ShiftMap}(K(x)))) .
+\]
+Thus $J$ is a complement homomorphism for $\mathsf{RightComp}(g)$.  The
+same argument with $L$ in place of $K$ transports a complement homomorphism
+in the reverse direction.  Therefore the absence of the complement
+homomorphism in the second clause of \noderef{GBetterRel} is equivalent to
+the absence in \noderef{BetterRel}; the source actions are precisely those
+of \noderef{RightComp} and \noderef{ShiftMap}.
+
+It remains to justify, in the detail needed for the first clause of
+\noderef{GBetterRel}, why absence of an $R$-homomorphic restriction is the
+same as the existence of a complement homomorphism.  Fix a locally constant
+$\varphi:\mathsf{IncSeq}\to A$ and define the Boolean coloring
+\[
+c(y)=
+\begin{cases}
+1&\text{if }R(\varphi(y),\varphi(\mathsf{RightComp}(g)(y))),\\
+0&\text{otherwise.}
+\end{cases}
+\]
+This is locally constant.  To check this at $y$, use
+\noderef{LocallyConstant} to choose $n$ deciding $\varphi$ at $y$ and $m$
+deciding $\varphi$ at $\mathsf{RightComp}(g)(y)$.  If $y'$ agrees with $y$
+on the first $n$ entries, then $\varphi(y')=\varphi(y)$.  If it agrees on
+the first $g(m)$ entries, then for each $i<m$ the order-embedding property
+of $g$, recorded by \noderef{IncSeq}, gives $g(i)<g(m)$, and hence
+\[
+\mathsf{RightComp}(g)(y')(i)=y'(g(i))=y(g(i))
+ =\mathsf{RightComp}(g)(y)(i).
+\]
+The evaluation identity uses \noderef{RightComp}.  Thus the two
+right-composed sequences agree through $m$, so their
+$\varphi$-values are equal as well.  By \noderef{PrefixAgree}, taking a
+prefix long enough to satisfy both bounds makes both arguments of $R$ and
+therefore $c$ constant.  This proves local constancy of $c$.
+
+Let $F=F^c$ be the set of minimal deciding prefixes.  By
+\noderef{DecidingFront}, $F$ is a front on $\mathbb N$.  By
+\noderef{DecidingValue}, there is a map
+$v:F\to\{0,1\}$ such that whenever $s\in F$ and
+$\mathsf{ProperPrefixSet}(s,\operatorname{range}(x))$ in the sense of
+\noderef{ProperPrefixSet},
+\[
+v(s)=c(x). \tag{1}
+\]
+Let $S=\{s\in F\mid v(s)=1\}$.  Applying \noderef{NashWilliams} to
+$F$, its infinite base $\mathbb N$, and $S\subseteq F$ gives a front $F'$ on
+an infinite set $Y$, with $F'\subseteq F$, such that either
+$F'\subseteq S$ or $F'\cap S=\varnothing$.  The front conclusion and its
+infinite-base clause are part of \noderef{Front}.  Choose, using
+\noderef{InfiniteSetEnumeration}, an increasing enumeration $z$ of $Y$:
+\[
+\operatorname{range}(z)=Y. \tag{2}
+\]
+
+Fix $x\in\mathsf{IncSeq}$.  The range of
+$\mathsf{IncSeqComp}(z,x)$ is an infinite subset of $Y$: it is the range of
+an increasing enumeration by \noderef{IncSeq} and \noderef{IncSeqComp}, and
+it is contained in $\operatorname{range}(z)=Y$.  The density clause of the
+front \noderef{Front} therefore gives an $s_x\in F'$ with
+\[
+\mathsf{ProperPrefixSet}(s_x,
+  \operatorname{range}(\mathsf{IncSeqComp}(z,x))). \tag{3}
+\]
+Since $s_x\in F'\subseteq F$, equation (1) gives
+\[
+v(s_x)=c(\mathsf{IncSeqComp}(z,x)). \tag{4}
+\]
+If $F'\subseteq S$, then (4) is $c(\mathsf{IncSeqComp}(z,x))=1$.
+If $F'\cap S=\varnothing$, then $s_x\notin S$; because $s_x\in F$ and
+$v(s_x)\in\{0,1\}$, (4) is instead
+$c(\mathsf{IncSeqComp}(z,x))=0$.  Thus the coloring is constant on the
+whole right ideal $z\circ\mathsf{IncSeq}$.
+
+Put
+\[
+\psi=\mathsf{MultiSequenceRestrict}(\varphi,z),
+\qquad
+\psi(x)=\varphi(\mathsf{IncSeqComp}(z,x)).
+\]
+By \noderef{MultiSequenceRestrict} this is exactly restriction to the base
+enumerated by $z$, and \noderef{RestrictionLocallyConstant} makes $\psi$
+locally constant.  The required action identity is, for every $x$,
+\[
+\mathsf{RightComp}(g)(\mathsf{IncSeqComp}(z,x))
+ =\mathsf{IncSeqComp}(z,\mathsf{RightComp}(g)(x)). \tag{5}
+\]
+Indeed, by \noderef{RightComp} and \noderef{IncSeqComp}, the two sides are
+respectively $(z\circ x)\circ g$ and $z\circ(x\circ g)$, and these are
+equal by associativity of composition.
+
+If the homogeneous value above is $1$, the definition of $c$, equation
+(5), and the displayed formula for $\psi$ give, for every $x$,
+\[
+R(\psi(x),\psi(\mathsf{RightComp}(g)(x))).
+\]
+Together with the local-constancy field already proved, these are exactly
+the two fields of a \noderef{ContinuousRelHom}; taking $f=z$ supplies the
+first clause of \noderef{GBetterRel} for $\varphi$.  If the homogeneous value
+is $0$, the same calculation gives
+\[
+\neg R(\psi(x),\psi(\mathsf{RightComp}(g)(x)))
+\quad\text{for every }x,
+\]
+so the same two fields instead give a continuous homomorphism into
+$R^{\complement}$.  Consequently, if the second clause of
+\noderef{GBetterRel} holds, the zero case is impossible and the first clause
+holds for every locally constant $\varphi$.
+
+Conversely, suppose that
+$H:(\mathsf{IncSeq},\mathsf{RightComp}(g))\to(A,R^{\complement})$ is a
+continuous homomorphism in the sense of \noderef{ContinuousRelHom}.  For
+each $f\in\mathsf{IncSeq}$ define
+\[
+H_f=\mathsf{MultiSequenceRestrict}(H.\mathsf{toFun},f),
+\qquad H_f(y)=H.\mathsf{toFun}(\mathsf{IncSeqComp}(f,y)).
+\]
+The local-constancy field of $H$ and
+\noderef{RestrictionLocallyConstant} show that $H_f$ is locally constant.
+The same associativity calculation as (5), using
+\noderef{RightComp} and \noderef{IncSeqComp}, gives
+\[
+R^{\complement}(H_f(y),H_f(\mathsf{RightComp}(g)(y)))
+\]
+for every $y$, by the homomorphism field of $H$.  Hence every $H_f$ is a
+continuous complement homomorphism.  If the first clause of
+\noderef{GBetterRel} held for the locally constant map $H.\mathsf{toFun}$,
+it would provide an $f$ and an $R$-homomorphism whose function is exactly
+$H_f$.  At any input its homomorphism field would assert $R(a,b)$ while the
+preceding paragraph asserts $R^{\complement}(a,b)=\neg R(a,b)$, a
+contradiction.  Thus the first clause fails whenever a complement
+homomorphism exists, and the two clauses in \noderef{GBetterRel} are
+equivalent.  Combining this with the transport of the second clause to the
+no-complement formulation in \noderef{BetterRel} proves the first displayed
+equivalence.
+
+Finally let $r$ be a quasi-order on $Q$.  By \noderef{BetterRel}, the
+ordinary better-relation condition is the nonexistence of a
+\noderef{ContinuousRelHom} from the shift into the complement relation.
+Unpacking such a structure gives a locally constant map
+$h:\mathsf{IncSeq}\to Q$ and, for every $x$,
+\[
+ \neg r(h(x),h(\mathsf{ShiftMap}(x))).
+\]
+By \noderef{BadMultiSequence}, this last condition says exactly that $h$
+is bad for $r$.  Conversely, a locally constant bad multi-sequence supplies
+the two fields of a \noderef{ContinuousRelHom} into the complement
+relation.  Therefore the absence of this homomorphism is equivalent to the
+statement in \noderef{Bqo} that every locally constant $h$ is not bad.
+Thus $\operatorname{BetterRel}(r)\leftrightarrow\operatorname{Bqo}(r)$,
+and the already proved general equivalence yields
+\[
+ \operatorname{GBetterRel}(g,r)\leftrightarrow\operatorname{Bqo}(r).
+\]
+\end{proof}

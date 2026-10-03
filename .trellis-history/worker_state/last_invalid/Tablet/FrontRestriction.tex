@@ -1,0 +1,16 @@
+\begin{lemma}[Restriction closure]
+If $F$ is a front on $X$ and $Y\subseteq X$ is infinite, then
+$F\mathbin{|}Y$ is a front on $Y$.
+\end{lemma}
+\begin{proof}
+Prefix-freeness is inherited from $F$.  By the operation in
+\noderef{FrontRestrict}, if $Z\subseteq Y$ is infinite,
+then $Z\subseteq X$ is infinite, so density of $F$ gives an $s\in F$ with
+$s\segs Z$.  Since $s\subseteq Z\subseteq Y$, this member lies in
+$F\mathbin{|}Y$, proving density.  The base of the restriction is contained
+in $Y$ by definition.  Conversely, for each $n\in Y$, density applied to
+$\{n\}\cup Y/n$ gives a member of the restriction containing $n$; hence its
+base is $Y$ unless the restriction is trivial.  The exceptional case is
+allowed by the first clause of \noderef{Front}.  Thus all three clauses of
+the front definition hold.
+\end{proof}

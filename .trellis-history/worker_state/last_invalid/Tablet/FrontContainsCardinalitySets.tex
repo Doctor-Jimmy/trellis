@@ -1,0 +1,41 @@
+\begin{helper}[Fronts of fixed cardinality contain all subsets of that cardinality]
+Let $F$ be a front on $Y$ in the sense of \noderef{Front}, let $k>0$, and suppose that every member of $F$
+has cardinality $k$.  Then every finite set $s\subseteq Y$ with
+$|s|=k$ belongs to $F$.
+\end{helper}
+\begin{proof}
+Fix $s\subseteq Y$ with $|s|=k$.  Since $k>0$, $s$ is nonempty; let
+$m=\max s$.  The tail, as defined in \noderef{TailSet},
+
+\[
+T=\{q\in Y\mid m<q\}
+\]
+
+is infinite.  Indeed, the infinite-base clause of the front definition gives
+that $Y$ is infinite, while $Y\setminus\{0,\ldots,m\}$ is obtained by
+removing a finite set.  The displayed tail contains this cofinite remainder,
+so it is infinite.  Put $Z=s\cup T$.  The hypothesis $s\subseteq Y$ and the
+definition of $T$ give $Z\subseteq Y$, and $Z$ is infinite because it contains
+$T$.
+
+Apply the density clause in the definition of the front to $Z$.  We obtain
+$t\in F$ and $\mathsf{ProperPrefixSet}(t,Z)$.  By the definition of
+$\mathsf{ProperPrefixSet}$, there is an $n\in Z$ such that
+
+\[
+q\in t\quad\Longleftrightarrow\quad q\in Z\text{ and }q<n
+\tag{1}
+\]
+
+for every $q$.  The fixed-cardinality hypothesis gives $|t|=k$.
+
+We prove $t=s$.  If $n\in s$, then every member of $t$ is an element of
+$s$ strictly below $n$: elements of the tail $T$ are greater than $m$, while
+$n\le m$ because $n\in s$.  Thus $t\subseteq s\setminus\{n\}$, whose
+cardinality is $k-1$, contradicting $|t|=k$.  Therefore $n\in T$, so
+$m<n$.  Every member of $s$ is at most $m$ and hence is in $t$ by (1), giving
+$s\subseteq t$.  If $q\in t\setminus s$, then (1) implies $q\in T$ and
+$m<q<n$.  The set $s\cup\{q\}$ would then be a subset of $t$ and have
+cardinality $k+1$, again contradicting $|t|=k$.  Hence $t\subseteq s$, and
+therefore $t=s$.  Since $t\in F$, the desired conclusion $s\in F$ follows.
+\end{proof}

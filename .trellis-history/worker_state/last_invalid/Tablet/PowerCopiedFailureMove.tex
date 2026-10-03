@@ -1,0 +1,121 @@
+\begin{lemma}[Failure and legal moves in the copied triangle]
+Let $h$ be bad for $\mathsf{PowerRel}(r)$.  For every increasing
+enumeration $x$, row $n$, and depth $k$, the copied pair is failed and the
+next left value is a legal move:
+\[
+\begin{split}
+&\neg\mathsf{PowerRel}(r)(L_{n,k},L_{n+1,k}),\\
+&\mathsf{PowerMove}(L_{n,k},L_{n,k+1}),
+\end{split}
+\]
+where $L_{n,k}=\mathsf{PowerCopiedLeft}_r(h,x,n,k)$.
+\end{lemma}
+\begin{proof}
+Fix an arbitrary increasing enumeration $x$.  Using the notation of
+\noderef{PowerCopiedLeft}, write
+\[
+ S_i=\mathsf{PowerShiftIter}(i,x)
+ \quad\text{and}\quad
+ L_{i,j}=\mathsf{PowerCopiedLeft}_r(h,x,i,j).
+\]
+We prove simultaneously for every row $i$ and every depth $j$ that
+\[
+ F_{i,j}:=\neg\mathsf{PowerRel}(r)(L_{i,j},L_{i+1,j})
+ \quad\text{and}\quad
+ M_{i,j}:=\mathsf{PowerMove}(L_{i,j},L_{i,j+1}).
+\]
+
+We use induction on the depth.  First consider depth zero.  By the definition of badness in
+\noderef{BadMultiSequence}, applied to the increasing enumeration $S_i$,
+we have
+\[
+ \neg\mathsf{PowerRel}(r)(h(S_i),h(\mathsf{ShiftMap}(S_i))).
+ \tag{1}
+\]
+The successor equation in \noderef{PowerShiftIter} identifies
+$\mathsf{ShiftMap}(S_i)$ with $S_{i+1}$.  Thus, for every $i$,
+\[
+ R_i:=\neg\mathsf{PowerRel}(r)(h(S_i),h(S_{i+1})).
+ \tag{2}
+\]
+In particular, (2) gives the raw failures $R_n$ and $R_{n+1}$ for the two
+adjacent rows under consideration.
+
+The depth-zero clause of \noderef{PowerCopiedLeft} gives, for every $i$,
+\[
+ L_{i,0}=\mathsf{PowerIResponse}_r(h(S_i),h(S_{i+1})).
+ \tag{3}
+\]
+Applying \noderef{PowerIResponseLegal} to $R_n$ and using (3) gives the
+legal move
+\[
+ \mathsf{PowerMove}(h(S_n),L_{n,0}).
+ \tag{4}
+\]
+Applying the same lemma to $R_{n+1}$ and using (3) at row $n+1$ gives
+\[
+ \mathsf{PowerMove}(h(S_{n+1}),L_{n+1,0}).
+ \tag{5}
+\]
+Now apply \noderef{PowerIResponseFailure} to the raw failure $R_n$ and the
+right-hand legal move (5).  Its conclusion is
+\[
+ \neg\mathsf{PowerRel}(r)\bigl(
+ \mathsf{PowerIResponse}_r(h(S_n),h(S_{n+1})),L_{n+1,0}\bigr).
+ \tag{6}
+\]
+Using (3) once more, (6) is exactly $F_{n,0}$.
+
+Finally apply \noderef{PowerIResponseLegal} to the failed pair in (6), after
+rewriting its first coordinate by (3).  The successor-depth clause of
+\noderef{PowerCopiedLeft} says
+\[
+ L_{n,1}=\mathsf{PowerIResponse}_r(L_{n,0},L_{n+1,0}).
+ \tag{7}
+\]
+Consequently the resulting legal response is
+$\mathsf{PowerMove}(L_{n,0},L_{n,1})$, which is $M_{n,0}$.
+
+For the induction step, assume that $F_{i,k}$ and $M_{i,k}$ hold for every
+row $i$.  In particular, $F_{n,k}$ holds, and $M_{n+1,k}$ gives the legal
+right-row move
+\[
+ \mathsf{PowerMove}(L_{n+1,k},L_{n+1,k+1}).
+ \tag{8}
+\]
+The successor-depth clause of \noderef{PowerCopiedLeft}, applied once to
+row $n$ and once to row $n+1$, gives the two equations
+\[
+ \begin{split}
+ L_{n,k+1}&=\mathsf{PowerIResponse}_r(L_{n,k},L_{n+1,k}),\\
+ L_{n+1,k+1}&=\mathsf{PowerIResponse}_r(L_{n+1,k},L_{n+2,k}).
+ \end{split}
+ \tag{9}
+\]
+Apply \noderef{PowerIResponseFailure} to $F_{n,k}$ and the legal move (8).
+It yields
+\[
+ \neg\mathsf{PowerRel}(r)\bigl(
+ \mathsf{PowerIResponse}_r(L_{n,k},L_{n+1,k}),L_{n+1,k+1}\bigr).
+ \tag{10}
+\]
+The first equation in (9) rewrites (10) as $F_{n,k+1}$.
+
+Apply \noderef{PowerIResponseLegal} to the failed pair (10).  The
+successor-depth clause of \noderef{PowerCopiedLeft}, now at depth $k+1$,
+also gives
+\[
+ L_{n,k+2}=\mathsf{PowerIResponse}_r(L_{n,k+1},L_{n+1,k+1}).
+ \tag{11}
+\]
+Using the first equation in (9) and then (11), the legal response supplied
+by \noderef{PowerIResponseLegal} is precisely
+\[
+ \mathsf{PowerMove}(L_{n,k+1},L_{n,k+2}),
+\]
+which is $M_{n,k+1}$.  Thus both assertions hold at depth $k+1$ for row
+$n$, and since $n$ was arbitrary the induction is simultaneous over all
+rows.  Therefore the two claims in the lemma hold for every $n$ and $k$.
+Since $x$ was arbitrary, this proves the lemma for every increasing
+enumeration.
+\end{proof}

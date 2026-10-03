@@ -1,0 +1,115 @@
+\begin{lemma}[Transitivity of the lifted relation]
+If $r$ is a preorder on $Q$, then for all
+$X,Y,Z\in\mathsf{PowerQ}(Q)$,
+\[
+\mathsf{PowerRel}(r)(X,Y)\land\mathsf{PowerRel}(r)(Y,Z)
+\Longrightarrow\mathsf{PowerRel}(r)(X,Z).
+\].
+\end{lemma}
+\begin{proof}
+Write $A\preceq B$ for $\mathsf{PowerRel}(r)(A,B)$ as defined in
+\noderef{PowerRel}.  We prove, by well-founded induction, the assertion
+
+\[
+  A\preceq B\ \land\ B\preceq C\ \Longrightarrow\ A\preceq C
+\]
+
+on triples $(A,B,C)$, ordered lexicographically by three copies of the
+child-to-parent relation \noderef{PowerChildWellFounded}.  This order is
+well-founded because the child relation is well-founded.  Consequently the
+induction hypothesis applies whenever one coordinate is replaced by one of
+its children, with all earlier coordinates unchanged.  At each use below,
+the relevant equivalence is the corresponding recursion equation for
+\noderef{PowerRel}, namely one of the four reductions
+\noderef{PowerRelAtomAtom}, \noderef{PowerRelAtomNode},
+\noderef{PowerRelNodeAtom}, and \noderef{PowerRelNodeNode}.
+
+First suppose that $A=\mathsf{atom}(a)$, $B=\mathsf{atom}(b)$, and
+$C=\mathsf{atom}(c)$.  By \noderef{PowerRelAtomAtom}, the two hypotheses
+are $r(a,b)$ and $r(b,c)$.  Transitivity of $r$, supplied by the assumed
+$\mathsf{IsPreorder}$ structure, gives $r(a,c)$, and a final application of
+\noderef{PowerRelAtomAtom} gives $A\preceq C$.
+
+Now let $A=\mathsf{atom}(a)$ and $B=\mathsf{atom}(b)$.  If
+$C=\mathsf{node}(\kappa,h,g)$, the second hypothesis has, by
+\noderef{PowerRelAtomNode}, the form
+\[
+  \exists k\in\kappa,\quad \mathsf{atom}(b)\preceq g(k).
+\]
+Choose such a $k$.  The induction hypothesis for
+$(\mathsf{atom}(a),\mathsf{atom}(b),g(k))$ is available because $g(k)$ is
+a child of $C$; it combines the first hypothesis with the displayed
+comparison and yields $\mathsf{atom}(a)\preceq g(k)$.  The existential
+conclusion in \noderef{PowerRelAtomNode} then gives
+$\mathsf{atom}(a)\preceq C$.
+
+Next let $A=\mathsf{atom}(a)$, $B=\mathsf{node}(\iota,h,f)$, and
+$C=\mathsf{atom}(c)$.  By \noderef{PowerRelAtomNode}, the first hypothesis
+provides an index $i\in\iota$ with
+$\mathsf{atom}(a)\preceq f(i)$.  By \noderef{PowerRelNodeAtom}, the second
+hypothesis supplies $f(i)\preceq\mathsf{atom}(c)$ for every $i$, in
+particular for this chosen one.  Since $f(i)$ is a child of $B$, the
+induction hypothesis for $(\mathsf{atom}(a),f(i),\mathsf{atom}(c))$ gives
+$\mathsf{atom}(a)\preceq\mathsf{atom}(c)$.  The atom--atom conclusion
+follows through \noderef{PowerRelAtomAtom}.
+
+If instead $C=\mathsf{node}(\kappa,h',g)$, the same first reduction gives
+$i\in\iota$ with $\mathsf{atom}(a)\preceq f(i)$.  The second reduction,
+\noderef{PowerRelNodeNode}, says that for this $i$ there is a
+$j\in\kappa$ with $f(i)\preceq g(j)$.  Apply the induction hypothesis to
+$(\mathsf{atom}(a),f(i),g(j))$: the middle entry is a child of $B$ (and the
+last is a child of $C$), so the triple is lower in the induction order.
+It gives $\mathsf{atom}(a)\preceq g(j)$, and the existential conclusion of
+\noderef{PowerRelAtomNode} proves $\mathsf{atom}(a)\preceq C$.  This
+explicitly preserves the order $\exists i\,\exists j$ arising from the
+first and second comparisons.
+
+It remains to consider a node as the leftmost term.  Let
+$A=\mathsf{node}(\iota,h,f)$ and $B=\mathsf{atom}(b)$.  If
+$C=\mathsf{atom}(c)$, the first hypothesis, by
+\noderef{PowerRelNodeAtom}, says $f(i)\preceq\mathsf{atom}(b)$ for every
+$i\in\iota$, while the second is $r(b,c)$ by
+\noderef{PowerRelAtomAtom}.  For each $i$, use the induction hypothesis on
+$(f(i),\mathsf{atom}(b),\mathsf{atom}(c))$; the first coordinate is a child
+of $A$.  It gives $f(i)\preceq\mathsf{atom}(c)$ for every $i$, which is
+exactly the universal conclusion required by \noderef{PowerRelNodeAtom}.
+
+If $C=\mathsf{node}(\kappa,h',g)$, the second hypothesis, by
+\noderef{PowerRelAtomNode}, supplies one fixed $j\in\kappa$ with
+$\mathsf{atom}(b)\preceq g(j)$.  For every $i\in\iota$, the first
+hypothesis gives $f(i)\preceq\mathsf{atom}(b)$ by
+\noderef{PowerRelNodeAtom}.  The induction hypothesis on
+$(f(i),\mathsf{atom}(b),g(j))$ is valid because $f(i)$ is a child of $A$;
+it yields $f(i)\preceq g(j)$.  Thus for every $i$ we can use this same $j$,
+and \noderef{PowerRelNodeNode} gives $A\preceq C$.  The quantifiers have
+the required order $\forall i\,\exists j$.
+
+Finally let both $A=\mathsf{node}(\iota,h,f)$ and
+$B=\mathsf{node}(\kappa,h',g)$ be nodes.  If
+$C=\mathsf{atom}(c)$, the first hypothesis and
+\noderef{PowerRelNodeNode} say that for every $i\in\iota$ there is a
+$j\in\kappa$ with $f(i)\preceq g(j)$.  The second hypothesis and
+\noderef{PowerRelNodeAtom} say that every such $g(j)$ satisfies
+$g(j)\preceq\mathsf{atom}(c)$.  For each $i$, choose the corresponding
+$j$ and apply the induction hypothesis to
+$(f(i),g(j),\mathsf{atom}(c))$; the first coordinate is a child of $A$.
+This gives $f(i)\preceq\mathsf{atom}(c)$ for every $i$, which is the
+node--atom conclusion of \noderef{PowerRelNodeAtom}.
+
+If also $C=\mathsf{node}(\lambda,h'',k)$, then for every $i\in\iota$ the
+first hypothesis, via \noderef{PowerRelNodeNode}, gives a $j\in\kappa$ with
+$f(i)\preceq g(j)$.  For this $j$, the second hypothesis, again via
+\noderef{PowerRelNodeNode}, gives a $\ell\in\lambda$ with
+$g(j)\preceq k(\ell)$.  Apply the induction hypothesis to
+$(f(i),g(j),k(\ell))$.  Its first coordinate is a child of $A$, so this is
+a genuine descent even though both later coordinates also changed.  We
+obtain $f(i)\preceq k(\ell)$.  Therefore, for every $i$, there exists an
+$\ell$ with this comparison, and the universal-then-existential conclusion
+of \noderef{PowerRelNodeNode} proves $A\preceq C$.
+
+These eight tag triples exhaust the atom/node constructors of
+$\mathsf{PowerQ}(Q)$.  In every recursive case the witnesses are chosen in
+the same existential/universal order as in the four cited reductions, and
+each recursive comparison is covered by the well-founded induction
+hypothesis.  Hence $\mathsf{PowerRel}(r)$ is transitive.
+\end{proof}

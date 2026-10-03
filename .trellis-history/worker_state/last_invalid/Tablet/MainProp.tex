@@ -1,0 +1,23 @@
+\begin{theorem}[MainProp]
+For every increasing injective function $g:\mathbb N\to\mathbb N$ with
+$g\neq\mathrm{id}_{\mathbb N}$, the dynamical systems of increasing
+embeddings given by right composition with $g$ and by the ordinary shift
+are continuously homomorphically equivalent:
+\[
+(\mathsf{IncSeq},\mathsf{RightComp}(g))
+\quad\text{and}\quad
+(\mathsf{IncSeq},\mathsf{ShiftMap}).
+\]
+\end{theorem}
+\begin{proof}
+The node \noderef{RmapLemma} supplies
+\(\mathsf{ContMor}(\mathsf{RightComp}(g),\mathsf{ShiftMap})\), namely a
+prefix-continuous homomorphism from right composition by $g$ to the shift.
+The node \noderef{EmapLemma} supplies
+\(\mathsf{ContMor}(\mathsf{ShiftMap},\mathsf{RightComp}(g))\), namely a
+prefix-continuous homomorphism in the reverse direction.  By
+\noderef{ContMorEq}, continuous homomorphic equivalence is exactly the
+conjunction of these two statements.  Hence the two supplied homomorphisms
+establish that the displayed systems are continuously homomorphically
+equivalent.
+\end{proof}
