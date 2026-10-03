@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedFiniteDependence is closed; advance to the finite terminal-dependence consequence.",
-    "comments": "Switch the coarse anchor to PowerCopiedFiniteTerminal and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Apply PowerCopiedTerminates at row 0 to obtain k and the two terminal atoms q and q'. For an arbitrary h' agreeing with h through j <= k+2, apply PowerCopiedFiniteDependence with n=0 and the same k; its bound is exactly the assumed finite-prefix agreement. Rewrite the resulting copied-left equality with the first terminal atom equation to obtain the universal atom conclusion. Do not add wrappers or leave helper obligations open.",
+    "reason": "PowerCopiedFiniteTerminal is closed; advance to the shift identity needed for terminal-shift transport.",
+    "comments": "Switch the coarse anchor to PowerCopiedShiftIdentity and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the stronger assertion for every row i and depth m that PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i + 1) m. In the base case unfold the depth-zero clauses and use PowerShiftIterShift at i and i+1 to identify the two PowerIResponse inputs. In the successor case apply the induction hypotheses at rows i and i+1, unfold the successor clauses, and use determinism of PowerIResponse. Specialize at i=n and m=k. Do not add wrappers or leave helper obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedFiniteTerminal",
-    "next_active_coarse": "PowerCopiedFiniteTerminal",
+    "next_active": "PowerCopiedShiftIdentity",
+    "next_active_coarse": "PowerCopiedShiftIdentity",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerCopiedFiniteTerminal": "easy"
+      "PowerCopiedShiftIdentity": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerCopiedFiniteTerminal and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Apply PowerCopiedTerminates at row 0 to obtain k and the two terminal atoms q and q'. For an arbitrary h' agreeing with h through j <= k+2, apply PowerCopiedFiniteDependence with n=0 and the same k; its bound is exactly the assumed finite-prefix agreement. Rewrite the resulting copied-left equality with the first terminal atom equation to obtain the universal atom conclusion. Do not add wrappers or leave helper obligations open.",
+    "comments": "Switch the coarse anchor to PowerCopiedShiftIdentity and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the stronger assertion for every row i and depth m that PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i + 1) m. In the base case unfold the depth-zero clauses and use PowerShiftIterShift at i and i+1 to identify the two PowerIResponse inputs. In the successor case apply the induction hypotheses at rows i and i+1, unfold the successor clauses, and use determinism of PowerIResponse. Specialize at i=n and m=k. Do not add wrappers or leave helper obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 221,
+    "cycle": 222,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerCopiedFiniteTerminal": {
-        "Set": "Easy"
+      "PowerCopiedShiftIdentity": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerCopiedFiniteTerminal",
-    "next_active_coarse": "PowerCopiedFiniteTerminal",
+    "next_active": "PowerCopiedShiftIdentity",
+    "next_active_coarse": "PowerCopiedShiftIdentity",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedFiniteDependence is closed; advance to the finite terminal-dependence consequence.",
-    "request_id": 645,
+    "reason": "PowerCopiedFiniteTerminal is closed; advance to the shift identity needed for terminal-shift transport.",
+    "request_id": 647,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_645_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_647_decision.context.json"
 }

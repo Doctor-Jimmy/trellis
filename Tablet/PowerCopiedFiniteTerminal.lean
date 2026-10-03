@@ -16,4 +16,13 @@ theorem PowerCopiedFiniteTerminal {Q : Type u} (r : Q → Q → Prop)
           h' (PowerShiftIter j x) = h (PowerShiftIter j x)) →
         PowerCopiedLeft r h' x 0 k = .atom q := by
 -- BODY
-  sorry
+  obtain ⟨k, hk⟩ := PowerCopiedTerminates r h hbad x 0
+  rcases hk with ⟨q, q', hq, hq'⟩
+  refine ⟨k, q, q', hq, hq', ?_⟩
+  intro h' hag
+  have hcopy := PowerCopiedFiniteDependence r h h' x 0 k (by
+    intro j hj
+    exact hag j (by omega))
+  calc
+    PowerCopiedLeft r h' x 0 k = PowerCopiedLeft r h x 0 k := hcopy
+    _ = .atom q := hq

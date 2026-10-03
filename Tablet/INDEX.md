@@ -116,7 +116,7 @@
 | PowerChildWellFounded | lemma | proof | closed | - | Well-founded hierarchy descent | PowerChild |
 | PowerCopiedFailureMove | lemma | proof | closed | - | Failure and legal moves in the copied triangle | BadMultiSequence, PowerCopiedLeft, PowerIResponseFailure, PowerIResponseLegal |
 | PowerCopiedFiniteDependence | lemma | proof | closed | - | Finite dependence of a copied move | PowerCopiedLeft |
-| PowerCopiedFiniteTerminal | lemma | proof | open | - | Finite terminal dependence | PowerCopiedFiniteDependence, PowerCopiedTerminalAt, PowerCopiedTerminates |
+| PowerCopiedFiniteTerminal | lemma | proof | closed | - | Finite terminal dependence | PowerCopiedFiniteDependence, PowerCopiedTerminalAt, PowerCopiedTerminates |
 | PowerCopiedLeft | definition | definition | closed | - | - | MultiSequence, PowerIResponse, PowerShiftIter |
 | PowerCopiedOrbitDependence | lemma | proof | open | - | Finite dependence on the enumeration orbit | PowerCopiedLeft |
 | PowerCopiedShiftIdentity | lemma | proof | open | - | Stabilization under the shift | PowerCopiedLeft, PowerShiftIterShift |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 140 | **Open:** 45
+**Total:** 185 nodes | **Closed:** 141 | **Open:** 44
