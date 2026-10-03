@@ -1,20 +1,20 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The finite-orbit support cone is shallowly closed; advance to the substantive reflection theorem and require its proof construction to be completed.",
-    "comments": "Switch the coarse anchor to PowerQReflection and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the active theorem in this burst, allowing new obligations only for genuine auxiliary facts rather than wrappers. Follow the TeX proof: for each x use PowerCopiedFiniteTerminal to obtain k and terminal atoms, use PowerCopiedFailureMove plus the atom clause of PowerMove to establish persistence and uniqueness of terminal labels, and define g by the unique terminal row-zero atom. Use PowerCopiedFailureMove and PowerRelAtomAtom for badness, PowerCopiedSupport and the zeroth iterate for support, and PowerFiniteOrbitConstancy with m=k+2 together with PowerCopiedOrbitDependence for local constancy. Any helper should expose a real reusable atom-persistence or terminal-label-uniqueness fact, carry a complete NL proof, and be mechanically closed if feasible; do not repackage the target or alter protected statements/imports.",
+    "reason": "The PowerQ reflection cone is shallowly closed, so advance to the configured preservation theorem and require its direct proof to be completed.",
+    "comments": "Switch the coarse anchor to PowerQPresBqo and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the theorem without helpers: unfold Bqo, introduce an arbitrary locally constant h and a badness assumption, apply PowerQReflection to obtain a locally constant bad g with the same relation, and contradict the assumed Bqo r using its defining implication. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerQReflection",
-    "next_active_coarse": "PowerQReflection",
+    "next_active": "PowerQPresBqo",
+    "next_active_coarse": "PowerQPresBqo",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerQReflection": "hard"
+      "PowerQPresBqo": "easy"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
@@ -24,7 +24,7 @@
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerQReflection and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the active theorem in this burst, allowing new obligations only for genuine auxiliary facts rather than wrappers. Follow the TeX proof: for each x use PowerCopiedFiniteTerminal to obtain k and terminal atoms, use PowerCopiedFailureMove plus the atom clause of PowerMove to establish persistence and uniqueness of terminal labels, and define g by the unique terminal row-zero atom. Use PowerCopiedFailureMove and PowerRelAtomAtom for badness, PowerCopiedSupport and the zeroth iterate for support, and PowerFiniteOrbitConstancy with m=k+2 together with PowerCopiedOrbitDependence for local constancy. Any helper should expose a real reusable atom-persistence or terminal-label-uniqueness fact, carry a complete NL proof, and be mechanically closed if feasible; do not repackage the target or alter protected statements/imports.",
+    "comments": "Switch the coarse anchor to PowerQPresBqo and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the theorem without helpers: unfold Bqo, introduce an arbitrary locally constant h and a badness assumption, apply PowerQReflection to obtain a locally constant bad g with the same relation, and contradict the assumed Bqo r using its defining implication. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 228,
+    "cycle": 229,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerQReflection": {
-        "Set": "Hard"
+      "PowerQPresBqo": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerQReflection",
-    "next_active_coarse": "PowerQReflection",
+    "next_active": "PowerQPresBqo",
+    "next_active_coarse": "PowerQPresBqo",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The finite-orbit support cone is shallowly closed; advance to the substantive reflection theorem and require its proof construction to be completed.",
-    "request_id": 659,
+    "reason": "The PowerQ reflection cone is shallowly closed, so advance to the configured preservation theorem and require its direct proof to be completed.",
+    "request_id": 661,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_659_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_661_decision.context.json"
 }

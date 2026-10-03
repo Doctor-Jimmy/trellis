@@ -147,7 +147,7 @@
 | PowerQ | definition | - | closed |
 | PowerQIsPreorder | proof | The lifted relation is a preorder | closed |
 | PowerQPresBqo | proof | - | open |
-| PowerQReflection | proof | Reflection to the base quasi-order | open |
+| PowerQReflection | proof | Reflection to the base quasi-order | closed |
 | PowerRel | definition | - | closed |
 | PowerRelAtomAtom | proof | Atom--atom reduction | closed |
 | PowerRelAtomNode | proof | Atom--node reduction | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 147/185 closed
+**Summary:** 148/185 closed
