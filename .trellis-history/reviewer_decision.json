@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectBaseToSuper closed directly. Advance to PerfectSuperToMulti, the remaining substantive prerequisite imported by Subarr; its own imported support is already closed.",
-    "comments": "Work on PerfectSuperToMulti in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Follow the proof's finite-shift transport: enumerate the subbase, compose with an arbitrary sequence and its shift, use the front density and value equation, invoke RestrictionShift and the perfect restricted super-sequence, then conclude perfectness of the multi-sequence restriction. Leave no obligations open.",
+    "reason": "PerfectSuperToMulti closed directly, so all imported support of Subarr is now closed. Advance to Subarr, the central aggregation theorem for the completed sub-array and super-sequence arguments.",
+    "comments": "Work on Subarr in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Follow the stated equivalence: derive the base restriction clause from BaseBqoRestriction, transport it to super-sequences using SuperSequenceExtension and PerfectBaseToSuper, and prove the converse by DecidingFront, DecidingValue, BadMultiToSuper, BadSuperRestrict, and NoBadPerfectSuper. Leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PerfectSuperToMulti",
-    "next_active_coarse": "PerfectSuperToMulti",
+    "next_active": "Subarr",
+    "next_active_coarse": "Subarr",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PerfectSuperToMulti": "hard"
+      "Subarr": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on PerfectSuperToMulti in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Follow the proof's finite-shift transport: enumerate the subbase, compose with an arbitrary sequence and its shift, use the front density and value equation, invoke RestrictionShift and the perfect restricted super-sequence, then conclude perfectness of the multi-sequence restriction. Leave no obligations open.",
+    "comments": "Work on Subarr in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Follow the stated equivalence: derive the base restriction clause from BaseBqoRestriction, transport it to super-sequences using SuperSequenceExtension and PerfectBaseToSuper, and prove the converse by DecidingFront, DecidingValue, BadMultiToSuper, BadSuperRestrict, and NoBadPerfectSuper. Leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 257,
+    "cycle": 258,
     "decision": "Continue",
     "difficulty_updates": {
-      "PerfectSuperToMulti": {
+      "Subarr": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PerfectSuperToMulti",
-    "next_active_coarse": "PerfectSuperToMulti",
+    "next_active": "Subarr",
+    "next_active_coarse": "Subarr",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectBaseToSuper closed directly. Advance to PerfectSuperToMulti, the remaining substantive prerequisite imported by Subarr; its own imported support is already closed.",
-    "request_id": 717,
+    "reason": "PerfectSuperToMulti closed directly, so all imported support of Subarr is now closed. Advance to Subarr, the central aggregation theorem for the completed sub-array and super-sequence arguments.",
+    "request_id": 719,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_717_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_719_decision.context.json"
 }

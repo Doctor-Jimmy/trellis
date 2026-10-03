@@ -118,7 +118,7 @@
 | PerfectSuperRestrict | proof | Perfectness under sub-front restriction | open |
 | PerfectSuperSequence | definition | - | closed |
 | PerfectSuperToBase | proof | Super-sequence perfectness gives base perfectness | open |
-| PerfectSuperToMulti | proof | Perfect sub-super-sequences give perfect sub-multi-sequences | open |
+| PerfectSuperToMulti | proof | Perfect sub-super-sequences give perfect sub-multi-sequences | closed |
 | PowerChild | definition | - | closed |
 | PowerChildSupport | proof | Support decreases along a child | closed |
 | PowerChildWellFounded | proof | Well-founded hierarchy descent | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 176/185 closed
+**Summary:** 177/185 closed
