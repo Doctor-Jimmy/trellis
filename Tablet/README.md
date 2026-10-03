@@ -123,7 +123,7 @@
 | PowerChildSupport | proof | Support decreases along a child | closed |
 | PowerChildWellFounded | proof | Well-founded hierarchy descent | closed |
 | PowerCopiedFailureMove | proof | Failure and legal moves in the copied triangle | closed |
-| PowerCopiedFiniteDependence | proof | Finite dependence of a copied move | open |
+| PowerCopiedFiniteDependence | proof | Finite dependence of a copied move | closed |
 | PowerCopiedFiniteTerminal | proof | Finite terminal dependence | open |
 | PowerCopiedLeft | definition | - | closed |
 | PowerCopiedOrbitDependence | proof | Finite dependence on the enumeration orbit | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 139/185 closed
+**Summary:** 140/185 closed
