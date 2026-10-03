@@ -159,7 +159,7 @@
 | PowerRelTrans | proof | Transitivity of the lifted relation | closed |
 | PowerShiftIter | definition | - | closed |
 | PowerShiftIterPrefixAgree | proof | Finite-prefix agreement survives finitely many shifts | open |
-| PowerShiftIterShift | proof | Shift iterates commute with the first shift | open |
+| PowerShiftIterShift | proof | Shift iterates commute with the first shift | closed |
 | PowerSupport | definition | - | closed |
 | PowerSupportInvariant | proof | Support respects presentation equivalence | closed |
 | PowerSupportNonempty | proof | Nonempty support | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 142/185 closed
+**Summary:** 143/185 closed
