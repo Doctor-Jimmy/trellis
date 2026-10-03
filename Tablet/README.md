@@ -17,16 +17,12 @@
 | BadPairSequence | definition | Bad sequence of sequences | closed |
 | BadSuperRestrict | proof | Badness under sub-front restriction | closed |
 | BadSuperSequence | definition | - | closed |
-| BadSuperToBase | proof | Super-sequence badness gives base badness | closed |
 | BaireContinuous | definition | - | closed |
-| BaseBad | definition | - | closed |
 | BaseBqoRestriction | proof | Base invariance of the bqo restriction property | closed |
 | BaseIncSeq | definition | - | closed |
 | BaseLocallyConstant | definition | - | closed |
 | BaseMultiSequence | definition | - | closed |
-| BasePerfect | definition | - | closed |
 | BaseRestrict | definition | - | closed |
-| BaseRightComp | definition | - | closed |
 | BaseShift | definition | - | closed |
 | BetterRel | definition | - | closed |
 | BlockSigma | definition | - | closed |
@@ -65,6 +61,7 @@
 | FrontBridgeTail | definition | Finite bridge tail | closed |
 | FrontBridgeTailInsert | proof | Appending a larger point to the finite bridge tail | closed |
 | FrontBridgeTerminal | proof | A terminal bridge gives a finite shift | closed |
+| FrontContainsCardinalitySets | proof | Fronts of fixed cardinality contain all subsets of that cardinality | closed |
 | FrontNontrivialBase | proof | Nontrivial front members and base | closed |
 | FrontPrefix | definition | - | closed |
 | FrontPrefixExists | proof | Front member existence | closed |
@@ -81,7 +78,6 @@
 | FrontTreeWellFounded | proof | Well-founded prefix tree | closed |
 | GBetterRel | definition | - | closed |
 | GBetterRelIff | proof | g-BQO | closed |
-| GoodMultiSequence | definition | - | closed |
 | HerCtblCode | definition | - | closed |
 | HerCtblCodeErase | definition | - | closed |
 | HerCtblNodeClosure | proof | Countable hereditary-node closure | closed |
@@ -91,7 +87,6 @@
 | HerCtblWqoIffWellFounded | proof | Hereditary WQO and strict well-foundedness | closed |
 | HereditarilyCountable | definition | - | closed |
 | HereditarilyCountableAtom | proof | Atoms are hereditarily countable | closed |
-| HereditarilyCountablePresentationInvariant | proof | Hereditary countability is presentation invariant | closed |
 | IncSeq | definition | - | closed |
 | IncSeqComp | definition | - | closed |
 | IncSeqId | definition | - | closed |
@@ -112,12 +107,8 @@
 | OrbitPoint | definition | - | closed |
 | OrbitUnbounded | proof | - | closed |
 | PerfectBaseToSuper | proof | Perfect base extensions yield perfect sub-super-sequences | closed |
-| PerfectMultiRestrict | proof | Perfectness under restriction | closed |
 | PerfectMultiSequence | definition | - | closed |
-| PerfectMultiToSuper | proof | Multi-sequence perfectness gives super-sequence perfectness | closed |
-| PerfectSuperRestrict | proof | Perfectness under sub-front restriction | closed |
 | PerfectSuperSequence | definition | - | closed |
-| PerfectSuperToBase | proof | Super-sequence perfectness gives base perfectness | closed |
 | PerfectSuperToMulti | proof | Perfect sub-super-sequences give perfect sub-multi-sequences | closed |
 | PowerChild | definition | - | closed |
 | PowerChildSupport | proof | Support decreases along a child | closed |
@@ -161,8 +152,6 @@
 | PowerShiftIterPrefixAgree | proof | Finite-prefix agreement survives finitely many shifts | closed |
 | PowerShiftIterShift | proof | Shift iterates commute with the first shift | closed |
 | PowerSupport | definition | - | closed |
-| PowerSupportInvariant | proof | Support respects presentation equivalence | closed |
-| PowerSupportNonempty | proof | Nonempty support | closed |
 | PowerWqoBadPairSequence | proof | Bad-witness characterization | closed |
 | PrefixAgree | definition | - | closed |
 | PrefixTree | definition | - | closed |
@@ -188,11 +177,10 @@
 | SuperSequenceRestrict | definition | - | closed |
 | TailSet | definition | - | closed |
 | TildeF | definition | - | closed |
-| TildeFAtomIffFront | proof | Atoms occur exactly at front nodes | closed |
 | TildeFFrontEquation | proof | Front recursion equation | closed |
 | TildeFHerCtbl | proof | Hereditary countability of the front recursion | closed |
 | TildeFNonfrontEquation | proof | Non-front recursion equation | closed |
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 185/185 closed
+**Summary:** 173/173 closed

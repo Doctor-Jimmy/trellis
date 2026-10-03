@@ -9,16 +9,12 @@
 | BadPairSequence | definition | definition | closed | - | Bad sequence of sequences | IncreasingPair |
 | BadSuperRestrict | lemma | proof | closed | - | Badness under sub-front restriction | BadSuperSequence, SuperSequenceRestrict |
 | BadSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
-| BadSuperToBase | lemma | proof | closed | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseIncSeq, BaseLocallyConstant, BaseShift, FiniteShift, FrontPrefix, ProperPrefixSet, SuperSequence, SuperSequenceExtension |
 | BaireContinuous | definition | definition | closed | - | - | PrefixAgree |
-| BaseBad | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
 | BaseBqoRestriction | lemma | proof | closed | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BaseRestrict, Bqo, InfiniteSetEnumeration, PerfectMultiSequence, RestrictionLocallyConstant, ShiftDichotomy |
 | BaseIncSeq | definition | definition | closed | - | - | IncSeq |
 | BaseLocallyConstant | definition | definition | closed | - | - | BaseMultiSequence, PrefixAgree |
 | BaseMultiSequence | definition | definition | closed | - | - | BaseIncSeq |
-| BasePerfect | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
 | BaseRestrict | definition | definition | closed | - | - | BaseMultiSequence, IncSeqComp, MultiSequence |
-| BaseRightComp | definition | definition | closed | - | - | BaseIncSeq, RightComp |
 | BaseShift | definition | definition | closed | - | - | BaseIncSeq, ShiftMap |
 | BetterRel | definition | definition | closed | - | - | ContinuousRelHom, ShiftMap |
 | BlockSigma | definition | definition | closed | - | - | OrbitPoint |
@@ -57,6 +53,7 @@
 | FrontBridgeTail | definition | definition | closed | - | Finite bridge tail | InitialSegment |
 | FrontBridgeTailInsert | helper | proof | closed | - | Appending a larger point to the finite bridge tail | FrontBridgeTail |
 | FrontBridgeTerminal | lemma | proof | closed | - | A terminal bridge gives a finite shift | FiniteShift, FrontBridge, InfiniteSetEnumeration |
+| FrontContainsCardinalitySets | helper | proof | closed | - | Fronts of fixed cardinality contain all subsets of that cardinality | Front, TailSet |
 | FrontNontrivialBase | helper | proof | closed | - | Nontrivial front members and base | Front |
 | FrontPrefix | definition | definition | closed | - | - | Front, IncSeq |
 | FrontPrefixExists | lemma | proof | closed | - | Front member existence | FrontPrefix |
@@ -73,7 +70,6 @@
 | FrontTreeWellFounded | lemma | proof | closed | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
 | GBetterRelIff | theorem | proof | closed | - | g-BQO | BetterRel, Bqo, ContinuousRelHom, DecidingFront, DecidingValue, Front, GBetterRel, IncSeq, IncSeqComp, IncSeqId, InfiniteSetEnumeration, LocallyConstant, MainProp, MultiSequenceRestrict, NashWilliams, PrefixAgree, ProperPrefixSet, RestrictionLocallyConstant, RightComp |
-| GoodMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | HerCtblCode | definition | definition | closed | - | - | Preamble |
 | HerCtblCodeErase | definition | definition | closed | - | - | HerCtblCode, PowerQ |
 | HerCtblNodeClosure | lemma | proof | closed | - | Countable hereditary-node closure | HerCtblCodeErase, HerCtblPower, PowerPresentationEqEquivalence |
@@ -83,7 +79,6 @@
 | HerCtblWqoIffWellFounded | helper | proof | closed | - | Hereditary WQO and strict well-foundedness | HerCtblNodeClosure, HerCtblPowerIsPreorder, HerCtblRel, PowerRelNodeNode, PowerRelRefl |
 | HereditarilyCountable | definition | definition | closed | - | - | HerCtblCodeErase, PowerPresentationEq |
 | HereditarilyCountableAtom | lemma | proof | closed | - | Atoms are hereditarily countable | HereditarilyCountable, PowerPresentationEqEquivalence |
-| HereditarilyCountablePresentationInvariant | lemma | proof | closed | - | Hereditary countability is presentation invariant | HereditarilyCountable, PowerPresentationEqEquivalence |
 | IncSeq | definition | definition | closed | - | - | Preamble |
 | IncSeqComp | definition | definition | closed | - | - | IncSeq |
 | IncSeqId | definition | definition | closed | - | - | IncSeq |
@@ -104,12 +99,8 @@
 | OrbitPoint | definition | definition | closed | - | - | IncSeq |
 | OrbitUnbounded | lemma | proof | closed | - | - | OrbitEmbedding, OrbitPoint |
 | PerfectBaseToSuper | lemma | proof | closed | - | Perfect base extensions yield perfect sub-super-sequences | BaseIncSeq, BaseRestrict, FiniteShift, Front, FrontPrefix, FrontRestrict, FrontRestriction, IncSeq, IncSeqComp, InfiniteSetEnumeration, InitialSegment, PerfectMultiSequence, PerfectSuperSequence, ProperPrefixSet, RestrictionShift, ShiftMap, SuperSequence, SuperSequenceExtension, SuperSequenceRestrict |
-| PerfectMultiRestrict | lemma | proof | closed | - | Perfectness under restriction | MultiSequenceRestrict, PerfectMultiSequence, RestrictionShift |
 | PerfectMultiSequence | definition | definition | closed | - | - | MultiSequence, ShiftMap |
-| PerfectMultiToSuper | lemma | proof | closed | - | Multi-sequence perfectness gives super-sequence perfectness | DecidingFrontSet, DecidingPrefix, PerfectMultiSequence, PerfectSuperSequence |
-| PerfectSuperRestrict | lemma | proof | closed | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
 | PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
-| PerfectSuperToBase | lemma | proof | closed | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, BaseShift, FiniteShift, FrontPrefix, FrontPrefixExists, PerfectSuperSequence, ProperPrefixSet, ShiftMap, SuperSequenceExtension |
 | PerfectSuperToMulti | lemma | proof | closed | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, DecidingValue, FiniteShift, Front, InfiniteSetEnumeration, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, RestrictionShift, SuperSequenceRestrict |
 | PowerChild | definition | definition | closed | - | - | PowerQ |
 | PowerChildSupport | lemma | proof | closed | - | Support decreases along a child | PowerChild, PowerSupport |
@@ -153,15 +144,13 @@
 | PowerShiftIterPrefixAgree | lemma | proof | closed | - | Finite-prefix agreement survives finitely many shifts | PowerShiftIter, PrefixAgree |
 | PowerShiftIterShift | lemma | proof | closed | - | Shift iterates commute with the first shift | PowerShiftIter |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
-| PowerSupportInvariant | lemma | proof | closed | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
-| PowerSupportNonempty | lemma | proof | closed | - | Nonempty support | PowerSupport |
 | PowerWqoBadPairSequence | lemma | proof | closed | - | Bad-witness characterization | BadPairSequence, SetDomination |
 | Preamble | preamble | preamble | closed | - | - | - |
 | PrefixAgree | definition | definition | closed | - | - | IncSeq |
 | PrefixTree | definition | definition | closed | - | - | InitialSegment |
 | ProperInitialSegment | definition | definition | closed | - | - | InitialSegment |
 | ProperPrefixSet | definition | definition | closed | - | - | Preamble |
-| QuadrupleHomogeneous | lemma | proof | closed | - | Homogeneous quadruples | CardinalityFrontIsFront, NashWilliams |
+| QuadrupleHomogeneous | lemma | proof | closed | - | Homogeneous quadruples | CardinalityFrontIsFront, FrontContainsCardinalitySets, NashWilliams |
 | RadoEmbedding | theorem | proof | closed | - | Rado embedding | InfiniteSetEnumeration, PowerWqoBadPairSequence, QuadrupleHomogeneous, RadoOrder, RelationEmbedding, TripleHomogeneous |
 | RadoOrder | definition | definition | closed | - | Rado order | IncreasingPair |
 | Ray | definition | definition | closed | - | - | Preamble |
@@ -182,11 +171,10 @@
 | SuperSequenceRestrict | definition | definition | closed | - | - | SuperSequence |
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TildeF | definition | definition | closed | - | - | FrontTreeImmediateExtensions, FrontTreeWellFounded, PowerQ, SuperSequence |
-| TildeFAtomIffFront | lemma | proof | closed | - | Atoms occur exactly at front nodes | TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
 | TildeFFrontEquation | lemma | proof | closed | - | Front recursion equation | SuperSequence, TildeF |
 | TildeFHerCtbl | lemma | proof | closed | - | Hereditary countability of the front recursion | FrontTreeImmediateExtensions, HerCtblNodeClosure, HereditarilyCountableAtom, TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
 | TildeFNonfrontEquation | lemma | proof | closed | - | Non-front recursion equation | FrontTreeImmediateExtensions, TildeF |
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
-| TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
+| TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, FrontContainsCardinalitySets, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 185 | **Open:** 0
+**Total:** 173 nodes | **Closed:** 173 | **Open:** 0

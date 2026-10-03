@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Dispatch the highest-value pending cleanup task: extract the duplicated 54-line proof region from QuadrupleHomogeneous and TripleHomogeneous into one shared helper.",
-    "comments": "The verification surface is clean and recent proof-formalization bursts have been accepted. Start with the declared shared extraction; preserve both parent statements, make the helper serve both parents, and keep the net changed-parent-plus-helper line count strictly decreasing.",
+    "reason": "Dispatch the six independent pending LintFix tasks 1 through 6 as one atomic batch; each has a specific current lake-build diagnostic and a distinct unprotected target.",
+    "comments": "Apply only the requested local lint repairs, preserve declarations and manuscript statements, and ensure every named pre-burst diagnostic is absent afterward. Task 7 remains pending for a later burst.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -23,8 +23,15 @@
     "work_style_hint": "none",
     "authorized_nodes": [],
     "cleanup_dismiss_tasks": [],
-    "cleanup_next_task": 0,
-    "cleanup_batch_tasks": null,
+    "cleanup_next_task": null,
+    "cleanup_batch_tasks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
     "cleanup_repair_node": null,
     "cleanup_request_reaudit": false
   },
@@ -33,14 +40,22 @@
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
+    "cleanup_batch_tasks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
     "cleanup_dismiss_tasks": [],
-    "cleanup_next_task": 0,
+    "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "The verification surface is clean and recent proof-formalization bursts have been accepted. Start with the declared shared extraction; preserve both parent statements, make the helper serve both parents, and keep the net changed-parent-plus-helper line count strictly decreasing.",
+    "comments": "Apply only the requested local lint repairs, preserve declarations and manuscript statements, and ensure every named pre-burst diagnostic is absent afterward. Task 7 remains pending for a later burst.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 267,
+    "cycle": 268,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -58,8 +73,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Dispatch the highest-value pending cleanup task: extract the duplicated 54-line proof region from QuadrupleHomogeneous and TripleHomogeneous into one shared helper.",
-    "request_id": 736,
+    "reason": "Dispatch the six independent pending LintFix tasks 1 through 6 as one atomic batch; each has a specific current lake-build diagnostic and a distinct unprotected target.",
+    "request_id": 739,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -69,5 +84,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_736_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_739_decision.context.json"
 }
