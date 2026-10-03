@@ -80,7 +80,7 @@
 | FrontTreeSingleton | proof | Singletons belong to a nontrivial full-base tree | closed |
 | FrontTreeWellFounded | proof | Well-founded prefix tree | closed |
 | GBetterRel | definition | - | closed |
-| GBetterRelIff | proof | g-BQO | open |
+| GBetterRelIff | proof | g-BQO | closed |
 | GoodMultiSequence | definition | - | closed |
 | HerCtblCode | definition | - | closed |
 | HerCtblCodeErase | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 178/185 closed
+**Summary:** 179/185 closed

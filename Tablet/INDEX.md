@@ -72,7 +72,7 @@
 | FrontTreeSingleton | lemma | proof | closed | - | Singletons belong to a nontrivial full-base tree | Front, PrefixTree |
 | FrontTreeWellFounded | lemma | proof | closed | - | Well-founded prefix tree | Front, PrefixTree, ProperInitialSegment |
 | GBetterRel | definition | definition | closed | - | - | ContinuousRelHom, RightComp |
-| GBetterRelIff | theorem | proof | open | - | g-BQO | BetterRel, Bqo, ContinuousRelHom, DecidingFront, DecidingValue, Front, GBetterRel, IncSeq, IncSeqComp, IncSeqId, InfiniteSetEnumeration, LocallyConstant, MainProp, MultiSequenceRestrict, NashWilliams, PrefixAgree, ProperPrefixSet, RestrictionLocallyConstant, RightComp |
+| GBetterRelIff | theorem | proof | closed | - | g-BQO | BetterRel, Bqo, ContinuousRelHom, DecidingFront, DecidingValue, Front, GBetterRel, IncSeq, IncSeqComp, IncSeqId, InfiniteSetEnumeration, LocallyConstant, MainProp, MultiSequenceRestrict, NashWilliams, PrefixAgree, ProperPrefixSet, RestrictionLocallyConstant, RightComp |
 | GoodMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | HerCtblCode | definition | definition | closed | - | - | Preamble |
 | HerCtblCodeErase | definition | definition | closed | - | - | HerCtblCode, PowerQ |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 178 | **Open:** 7
+**Total:** 185 nodes | **Closed:** 179 | **Open:** 6
