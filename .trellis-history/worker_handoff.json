@@ -1,8 +1,8 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed BqoIffGeneralShift directly with the accepted statement and imports. The proof handles the identity increasing sequence by reflexivity, uses GBetterRelIff and GBetterRel in the nonidentity case, and derives the converse from BadMultiSequence with SuccSeq and ShiftMap.",
-    "comments": "Only the active Lean proof body was edited. The theorem statement, imports, BODY marker, and TeX proof were preserved; no helper nodes, open obligations, or semantic changes were introduced. Incremental checking, lake build, and the standalone node checker pass.",
+    "summary": "Closed PerfectSuperRestrict by applying the original perfectness implication to the unchanged FiniteShift premise and the restricted values reduced through SuperSequenceRestrict.",
+    "comments": "Preserved the accepted theorem statement, imports, BODY marker, and TeX proof. The active node is Lean-closed.",
     "target_claim_updates": {},
     "difficulty_updates": {},
     "deviation_requests": {},
@@ -10,7 +10,6 @@
     "deviation_deletions": [],
     "deleted_nodes": [],
     "needs_restructure_suggested_nodes": [],
-    "audit_request": null,
     "memory_challenges": []
   },
   "response": {
@@ -21,8 +20,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Only the active Lean proof body was edited. The theorem statement, imports, BODY marker, and TeX proof were preserved; no helper nodes, open obligations, or semantic changes were introduced. Incremental checking, lake build, and the standalone node checker pass.",
-    "cycle": 261,
+    "comments": "Preserved the accepted theorem statement, imports, BODY marker, and TeX proof. The active node is Lean-closed.",
+    "cycle": 262,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -30,27 +29,27 @@
     "deviation_requests": {},
     "difficulty_updates": {},
     "elaboration_costs": {
-      "BqoIffGeneralShift": {
+      "PerfectSuperRestrict": {
         "cost_version": "2",
         "heartbeats": null,
         "heartbeats_key": null,
         "measured_at_snapshot_id": "",
-        "node": "BqoIffGeneralShift",
-        "olean_size_bytes": 31544,
-        "peak_rss_kib": 1684108,
+        "node": "PerfectSuperRestrict",
+        "olean_size_bytes": 10352,
+        "peak_rss_kib": 1675560,
         "peak_rss_process": "lean",
-        "source_closure_hash": "b5227677f71025a147a191e9f6db55f1bb2bec75f88deff6a27dd417cf9c6ce7",
-        "walltime_ms": 2474
+        "source_closure_hash": "546ec4133bce35367e31179801c5b2049b9f016f3de799929a7bd85edc9de2d9",
+        "walltime_ms": 2244
       }
     },
     "kind": "worker",
     "local_closure_results": {
-      "BqoIffGeneralShift": {
+      "PerfectSuperRestrict": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "4ff77d96c40e1dd26b7c754121ebbd2485e3309fa379783da66a23b7164d4b14",
-            "size_bytes": 31544
+            "sha256": "feb5256f1e17c7db4bc27733fd2aedf139fc5480cc1f8607ce9b642c41dfe30a",
+            "size_bytes": 10352
           }
         ],
         "axiomization_check": {
@@ -58,26 +57,14 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
-            "Tablet.BadMultiSequence::BadMultiSequence@exported:definition",
-            "Tablet.BetterRel::BetterRel@exported:definition",
-            "Tablet.Bqo::Bqo@exported:definition",
-            "Tablet.ContinuousRelHom::ContinuousRelHom.hom@exported:theorem",
-            "Tablet.ContinuousRelHom::ContinuousRelHom.toFun@exported:definition",
-            "Tablet.ContinuousRelHom::ContinuousRelHom@exported:inductive",
-            "Tablet.GBetterRel::GBetterRel@exported:definition",
-            "Tablet.GBetterRelIff::GBetterRelIff@exported:theorem",
-            "Tablet.IncSeq::IncSeq@exported:definition",
-            "Tablet.IncSeqComp::IncSeqComp@exported:definition",
-            "Tablet.IncSeqId::IncSeqId@exported:definition",
-            "Tablet.LocallyConstant::LocallyConstant@exported:definition",
-            "Tablet.MultiSequence::MultiSequence@exported:definition",
-            "Tablet.RightComp::RightComp@exported:definition",
-            "Tablet.ShiftMap::ShiftMap@exported:definition",
-            "Tablet.SuccSeq::SuccSeq@exported:definition"
+            "Tablet.FiniteShift::FiniteShift@exported:definition",
+            "Tablet.Front::Front@exported:inductive",
+            "Tablet.PerfectSuperSequence::PerfectSuperSequence@exported:definition",
+            "Tablet.SuperSequence::SuperSequence@exported:inductive",
+            "Tablet.SuperSequenceRestrict::SuperSequenceRestrict@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [
-            "Classical.choice",
             "Quot.sound",
             "propext"
           ],
@@ -98,163 +85,79 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BqoIffGeneralShift"
+            "name": "PerfectSuperRestrict"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.BadMultiSequence",
-          "Tablet.Bqo",
-          "Tablet.GBetterRel",
-          "Tablet.GBetterRelIff",
-          "Tablet.IncSeqId",
-          "Tablet.RightComp",
-          "Tablet.ShiftMap",
-          "Tablet.SuccSeq"
+          "Tablet.PerfectSuperSequence",
+          "Tablet.SuperSequenceRestrict"
         ],
         "errors": [],
         "exact_declaration_uses": [
           {
             "declaration_kind": "definition",
-            "owner": "BadMultiSequence",
-            "reached_declaration": "BadMultiSequence",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "BetterRel",
-            "reached_declaration": "BetterRel",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "Bqo",
-            "reached_declaration": "Bqo",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "ContinuousRelHom",
-            "reached_declaration": "ContinuousRelHom.hom",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "ContinuousRelHom",
-            "reached_declaration": "ContinuousRelHom.toFun",
+            "owner": "FiniteShift",
+            "reached_declaration": "FiniteShift",
             "visibility": "exported"
           },
           {
             "declaration_kind": "inductive",
-            "owner": "ContinuousRelHom",
-            "reached_declaration": "ContinuousRelHom",
+            "owner": "Front",
+            "reached_declaration": "Front",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "GBetterRel",
-            "reached_declaration": "GBetterRel",
+            "owner": "PerfectSuperSequence",
+            "reached_declaration": "PerfectSuperSequence",
             "visibility": "exported"
           },
           {
-            "declaration_kind": "theorem",
-            "owner": "GBetterRelIff",
-            "reached_declaration": "GBetterRelIff",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "IncSeq",
-            "reached_declaration": "IncSeq",
+            "declaration_kind": "inductive",
+            "owner": "SuperSequence",
+            "reached_declaration": "SuperSequence",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "IncSeqComp",
-            "reached_declaration": "IncSeqComp",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "IncSeqId",
-            "reached_declaration": "IncSeqId",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "LocallyConstant",
-            "reached_declaration": "LocallyConstant",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "MultiSequence",
-            "reached_declaration": "MultiSequence",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "RightComp",
-            "reached_declaration": "RightComp",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "ShiftMap",
-            "reached_declaration": "ShiftMap",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "SuccSeq",
-            "reached_declaration": "SuccSeq",
+            "owner": "SuperSequenceRestrict",
+            "reached_declaration": "SuperSequenceRestrict",
             "visibility": "exported"
           }
         ],
         "kernel_axioms": [
-          "Classical.choice",
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "BqoIffGeneralShift",
+        "principal_declaration": "PerfectSuperRestrict",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"BqoIffGeneralShift\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.BetterRel::BetterRel@exported:definition\",\"Tablet.Bqo::Bqo@exported:definition\",\"Tablet.ContinuousRelHom::ContinuousRelHom.hom@exported:theorem\",\"Tablet.ContinuousRelHom::ContinuousRelHom.toFun@exported:definition\",\"Tablet.ContinuousRelHom::ContinuousRelHom@exported:inductive\",\"Tablet.GBetterRel::GBetterRel@exported:definition\",\"Tablet.GBetterRelIff::GBetterRelIff@exported:theorem\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqComp::IncSeqComp@exported:definition\",\"Tablet.IncSeqId::IncSeqId@exported:definition\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.RightComp::RightComp@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\",\"Tablet.SuccSeq::SuccSeq@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"BqoIffGeneralShift\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"BqoIffGeneralShift\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"BetterRel\",\"reached_declaration\":\"BetterRel\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Bqo\",\"reached_declaration\":\"Bqo\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.hom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.toFun\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"GBetterRel\",\"reached_declaration\":\"GBetterRel\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"GBetterRelIff\",\"reached_declaration\":\"GBetterRelIff\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqComp\",\"reached_declaration\":\"IncSeqComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqId\",\"reached_declaration\":\"IncSeqId\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"RightComp\",\"reached_declaration\":\"RightComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuccSeq\",\"reached_declaration\":\"SuccSeq\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"BqoIffGeneralShift\",\"principal_declaration\":\"BqoIffGeneralShift\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"BetterRel\",\"semantic_hash\":\"766b82899a2c86bf\"},{\"name\":\"Bqo\",\"semantic_hash\":\"3fb1a54d22d9b578\"},{\"name\":\"ContinuousRelHom\",\"semantic_hash\":\"ad97ba061d39ad12\"},{\"name\":\"ContinuousRelHom\",\"semantic_hash\":\"31182acee4a1ade4\"},{\"name\":\"GBetterRel\",\"semantic_hash\":\"b94cc650e664265a\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqComp\",\"semantic_hash\":\"b92c60fdc6b8c664\"},{\"name\":\"IncSeqId\",\"semantic_hash\":\"dcd58ce5a1fd8179\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"RightComp\",\"semantic_hash\":\"c25c30d043f69e82\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"},{\"name\":\"SuccSeq\",\"semantic_hash\":\"30d2c1d13988115c\"}],\"strict_theorem_deps\":[{\"name\":\"ContinuousRelHom\",\"value_hash\":\"00875bc2ec7c2fc9\"},{\"name\":\"GBetterRelIff\",\"value_hash\":\"90807e177d1fff33\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"PerfectSuperRestrict\"],\"boundary_theorems\":[\"Tablet.FiniteShift::FiniteShift@exported:definition\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.PerfectSuperSequence::PerfectSuperSequence@exported:definition\",\"Tablet.SuperSequence::SuperSequence@exported:inductive\",\"Tablet.SuperSequenceRestrict::SuperSequenceRestrict@exported:definition\"],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"PerfectSuperRestrict\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"PerfectSuperRestrict\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"FiniteShift\",\"reached_declaration\":\"FiniteShift\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PerfectSuperSequence\",\"reached_declaration\":\"PerfectSuperSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuperSequenceRestrict\",\"reached_declaration\":\"SuperSequenceRestrict\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"node\":\"PerfectSuperRestrict\",\"principal_declaration\":\"PerfectSuperRestrict\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"FiniteShift\",\"semantic_hash\":\"e2dfc558f39abbda\"},{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"PerfectSuperSequence\",\"semantic_hash\":\"578bd6a28473ae49\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"97f9f0f5dc5dec42\"},{\"name\":\"SuperSequenceRestrict\",\"semantic_hash\":\"f5ceca2ceabaa0e7\"}],\"strict_theorem_deps\":[]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BqoIffGeneralShift"
+            "name": "PerfectSuperRestrict"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "d74b3c0e6878da7e4383a0730754e6c4af4211aefbfa91c9cfb452a0dfe953d9",
+        "source_sha256": "c3362368a5def0e081ef3f7a741bc275e56e8b82eb4ddb4b7d62860b27df3a42",
         "status": "ok",
         "strict_definition_deps": {
-          "BadMultiSequence": "12b952b1af44d358",
-          "BetterRel": "766b82899a2c86bf",
-          "Bqo": "3fb1a54d22d9b578",
-          "ContinuousRelHom": "31182acee4a1ade4",
-          "GBetterRel": "b94cc650e664265a",
-          "IncSeq": "1722254285ddeb5c",
-          "IncSeqComp": "b92c60fdc6b8c664",
-          "IncSeqId": "dcd58ce5a1fd8179",
-          "LocallyConstant": "3be73314501d2a70",
-          "MultiSequence": "cde631bc1bef82ee",
-          "RightComp": "c25c30d043f69e82",
-          "ShiftMap": "2072518c2402a1ed",
-          "SuccSeq": "30d2c1d13988115c"
+          "FiniteShift": "e2dfc558f39abbda",
+          "Front": "54804e268105ccdb",
+          "PerfectSuperSequence": "578bd6a28473ae49",
+          "SuperSequence": "97f9f0f5dc5dec42",
+          "SuperSequenceRestrict": "f5ceca2ceabaa0e7"
         },
-        "strict_theorem_deps": {
-          "ContinuousRelHom": "00875bc2ec7c2fc9",
-          "GBetterRelIff": "90807e177d1fff33"
-        },
+        "strict_theorem_deps": {},
         "timed_out": false,
         "visibility_manifests": [
           {
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "BqoIffGeneralShift"
+                "name": "PerfectSuperRestrict"
               }
             ],
             "level": "exported"
@@ -269,7 +172,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 724,
+    "request_id": 726,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -496,7 +399,6 @@
         "BadSuperToBase",
         "PerfectMultiRestrict",
         "PerfectMultiToSuper",
-        "PerfectSuperRestrict",
         "PerfectSuperToBase"
       ],
       "paper_current_fingerprints": {
@@ -3010,7 +2912,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed BqoIffGeneralShift directly with the accepted statement and imports. The proof handles the identity increasing sequence by reflexivity, uses GBetterRelIff and GBetterRel in the nonidentity case, and derives the converse from BadMultiSequence with SuccSeq and ShiftMap.",
+    "summary": "Closed PerfectSuperRestrict by applying the original perfectness implication to the unchanged FiniteShift premise and the restricted values reduced through SuperSequenceRestrict.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3182,7 +3084,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "a4cb5266275890ac5e08993e673d3c86092bd8e2dc6a15ef23c28082406a30eb",
+    "INDEX.md": "5ef0a5741192d962e3d4421f632ff19847c1b8c190cad50912e5b6dc4ade40cb",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3229,7 +3131,7 @@
     "PerfectMultiSequence.tex": "15b52af9be1f94ee26d50fc7e5b3344c1a9159281d4cef12657b7348739770d2",
     "PerfectMultiToSuper.lean": "bc8dd81f15577baa0b9befc239305e76881e86b16a327c3d4e52d24666384cc6",
     "PerfectMultiToSuper.tex": "5340ada5b8295c9f264b59a97d44c184f701e1c6b4df29844e76de7476ede92b",
-    "PerfectSuperRestrict.lean": "7f01c08d80758651f2d7ba50c3f8052357ac5693dbf048e2cdb9f5a7802a9c55",
+    "PerfectSuperRestrict.lean": "c3362368a5def0e081ef3f7a741bc275e56e8b82eb4ddb4b7d62860b27df3a42",
     "PerfectSuperRestrict.tex": "05775db8a2b0f18739fe8c2c9dcc12b7a81f7d1db93c7655b44095a044480a65",
     "PerfectSuperSequence.lean": "9ae15c32479b67ece376c7f33a151b101bdb63db436b64182d8982fa5ceda204",
     "PerfectSuperSequence.tex": "a58ea238cc596e0300749ae4414ef4e0ac444e8f8a449e9be5933c14bec66c4d",
@@ -3339,7 +3241,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "09cdffdd8eca28940bf04265ea399772a35e09f6e7e2cea4594deb9b4d8e1f8b",
+    "README.md": "d3b2171efeb8a7e0e83b153681b9b806b1ff6e5fc0eef7793538dfc9b28b925a",
     "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3394,7 +3296,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_724_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_726_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

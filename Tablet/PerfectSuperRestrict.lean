@@ -9,4 +9,5 @@ theorem PerfectSuperRestrict {Q : Type} (r : Q → Q → Prop)
     PerfectSuperSequence r f →
       PerfectSuperSequence r (SuperSequenceRestrict f F' Y hF' hsub) := by
 -- BODY
-  sorry
+  intro h s t hs ht hshift
+  exact h s t (hsub hs) (hsub ht) hshift

@@ -107,7 +107,7 @@
 | PerfectMultiRestrict | lemma | proof | open | - | Perfectness under restriction | MultiSequenceRestrict, PerfectMultiSequence, RestrictionShift |
 | PerfectMultiSequence | definition | definition | closed | - | - | MultiSequence, ShiftMap |
 | PerfectMultiToSuper | lemma | proof | open | - | Multi-sequence perfectness gives super-sequence perfectness | DecidingFrontSet, DecidingPrefix, PerfectMultiSequence, PerfectSuperSequence |
-| PerfectSuperRestrict | lemma | proof | open | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
+| PerfectSuperRestrict | lemma | proof | closed | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
 | PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
 | PerfectSuperToBase | lemma | proof | open | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, BaseShift, FiniteShift, FrontPrefix, FrontPrefixExists, PerfectSuperSequence, ProperPrefixSet, ShiftMap, SuperSequenceExtension |
 | PerfectSuperToMulti | lemma | proof | closed | - | Perfect sub-super-sequences give perfect sub-multi-sequences | DecidingFrontSet, DecidingValue, FiniteShift, Front, InfiniteSetEnumeration, LocallyConstant, MultiSequenceRestrict, PerfectMultiSequence, PerfectSuperSequence, RestrictionShift, SuperSequenceRestrict |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 180 | **Open:** 5
+**Total:** 185 nodes | **Closed:** 181 | **Open:** 4

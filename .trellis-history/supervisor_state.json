@@ -1,6 +1,6 @@
 {
   "$format": "trellis-shared-state/1",
-  "event_count": 985,
+  "event_count": 988,
   "metadata": {
     "repo_path": "/home/james/math/bqo3",
     "config_path": "/home/james/math/bqo3/trellis.config.json",
@@ -74,7 +74,6 @@
     "01f5d56ae9b2fd0c": "62c5107920b357aa0de8d90c179c0a5020b8845dc33fad29470f2f01c03b8c4f",
     "020eec6df4f5265f": "worker-result-local-closure-issuance-cycle-247",
     "0213fa8b5ad075d4": "f6ac27a8631f5d80f33a547acb185621d974554a1e0d778133c8b1fdd1e50aa5",
-    "0222ccd54e98cf6f": "332f6c9088e759b8df488be1783b9c77f7d0595db0c4405af93aebca388c02c0",
     "0236aceca0107f6a": "{\"own_tex\":\"6e06c37bedc3a377125f1b2c564cd6e1b41feb6c96666b397a0cef1b0fdb743f\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "027d26c78fa0c3e4": "0d6f47174e2adde16b6374ee718c0a9493cf7fb6b8fd26522b261b6886693338",
     "027d7881326c1bb2": "0d78b6b0e83e8497d7aaf735a4f9b98f6bf5dac4fe3fdc40b3b09f067b809a55",
@@ -272,7 +271,6 @@
     "11595eb15849ba07": "8d0d1cf5859078d816edb2917e698694cec9d8ee65c167c1f5cf80c8dacff8ce",
     "115cb0bec955942c": "42430260f722fd54e7ab440ba5300b18d065b28cb82fc647e42afcf87583d59b",
     "116781156f609b27": "{\"own_tex\":\"d89b984c7350d9a206109f21a7fe2f448dba11df7f369ce4a007b5fae3f7223b\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
-    "116c53db4ed62f8a": "ad37284e95d64054147e2d73655b1816d0dbcb1d3557bef624982a3577988cdb",
     "119771a9baae136c": "c5583afa77e86820541ae5de66275e620655caf0b3c0e5d204ba0d0983fed08a",
     "119f70c756db9491": "3a39f343d66897cad4bb1d4ba1c49a6392f6fa0b10faaae7df27013a594a0028",
     "11af42d6b996a6dc": "1698b86b96497699b941260987859b7a3377a48d3727814aa9de7ba775bfcb14",
@@ -422,6 +420,7 @@
     "1ca0d8ecb3d25787": "e309bb0906ac4d34e5b43071930bd867faa2ff2c08a4b34c5898a25e153836cd",
     "1cb26430d3678b98": "f7751e34c54f92b1a7cdb80d3cb8d875c0afa028c8ec92aeeb06f39dbd5d9214",
     "1cb45811626b37e1": "adecd02b95236007ba590af14d0434b3fd6e6901ec6e0f2cce2e3a615a234250",
+    "1cb8fa48fb588144": "0dd124da9188a380021036fe5d53334f903ceb6fb35507556d515008d2d2fc65",
     "1cbc6e6dec011cc7": "d802ad66eb71a4560ffd132192dc125de78011cb5fa9575d529f43234c9d0426",
     "1cd06c734ccc7ea4": "60a4fd2da5d1f8e4f0c4a2006613e3639dceef22a72015051f14ae9551dd79d2",
     "1cd085e4fc611715": "a2d10076698f1f0a9ab50f7c6df828a37fa0b67d9ce0a5cbefc8362b6e86ad74",
@@ -727,6 +726,7 @@
     "343a4befdad6d15b": "0efe748c5d2052a83baea1c0b5a79ffd95dccfd18def51fdb60764e743b59f13",
     "34708d10e2baf43f": "e0a851c389f33b0e682d9958a38529d3f5e18a7b42ce8caad324031d463fe519",
     "348385e397a07daf": "21689c5fd7ff41c71aac05030b10d0722d20ffb366eeacb017db3417408ad8d5",
+    "3493fb704b11cc4c": "worker-result-local-closure-issuance-cycle-262",
     "34b5e406981c747b": "74c421eb58d70accfafbc5b12ca1c2e1086e0350218a242ac2010c7720b83f6b",
     "34f2f78a24fcf1bc": "afac5983c0676355f46fddda0740dae30e85483c6c0f6f3a192ce101544ed5d1",
     "34fc93cfa0657c49": "1696a5c07320745f2581fa9f668aa2ef0278cfb9daacb1070a01d435aa3d6e5b",
@@ -886,6 +886,7 @@
     "42876f504a61f306": "bc0d0d4056db6f30ba12e330605c282736e572525cc0b9146afcebe58b27dd9d",
     "428cf41cab4cbb6d": "{\"own_tex\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"lean_semantic_closure\":\"02a6ffe5f9eabadc69c34835c0eb2978fd98feeea7539cd360342f75d8bdcaa9\",\"lean_relevant_definition_descendants\":{\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "4294260473adab82": "bcd55910ee161d7d0b90ef0916bf93578eabf1c563aaaaf61562b19380daa80b",
+    "42a88eb3cb3547f1": "0c2fdccf47f81d153df5219fc6b4a55f650cda4fbfdd9a3528c3f92e9b3c0c73",
     "42cf49c23ae2fe97": "060ea389f0c48f7cbdaa2f2fc2c4e8a4c2509b6f663729adbe59f9183b817913",
     "42d4e2176a3526e6": "1ebd4bdc52bfb36648a5dde53acf06a08acb574cbca67f12c21c44c6c3713122",
     "42f24f403131ee35": "07fd16d31fcdcf7b944ee079e9c75569a8b90050e38a3f110d1c39ae092836a4",
@@ -993,7 +994,6 @@
     "4a0cd4e151e18e24": "5cae1ca100f31b1816c930de52b5ae830d3492d2eb0743ab9d969ccabd3708ae",
     "4a13941f2116f87e": "bf42f1e5b69d3913801108b029f21e8482ea4c920a694eaf1a13d23301e48e13",
     "4a1e036222d3ae26": "bb8e25ca96cbd1987f3241d3725cbbb2ddd6f1191aa6d5652570cd3e740c077d",
-    "4a64ed8f4a38d16d": "5a858242cfec3439d43bcb47bf1c161a6fab8387a989c9acc9d7fb8518844c7b",
     "4abcc7060f62cc9b": "95d73d7abd41e6cd7834a5e5811e4fd8c0ec8521a6214a3744c3cab0e9b6984d",
     "4ac954f6966169d1": "61b60928382df81828b5a15b65275c447e9c3ae64621dec67030cd8c64a15c7c",
     "4acc24c2e0ea6058": "3179af5d5aa5ccff5dfbf27a5ca7dd0afdd69f90cfde9f133f4ee1d76d3d81d7",
@@ -1394,6 +1394,7 @@
     "65d0ddcad1577659": "1e7bc30b3c5be74a545206114709c4607daf5c735af812947219ac098d3c067e",
     "65d89c4c815b4bf0": "0b8a38adb8ad1a8c474830858227950de080ef84f177214ebd157410fbb6e93c",
     "65e3975ffd491649": "8186ff5f17189bcdc676dde724960a2b517b7dd81d161059d98dbfe15cb8087b",
+    "65ee3ddf930e13e0": "fcbaa6d011f6cb3a617ad16ca75de38b94594953a685be01eefe1d809ab10b19",
     "65ef72b85fdc0885": "{\"own_tex\":\"61a06e758fbe65467cdea714f8ab0ea3685321490f3779df23547d66c09bf0fc\",\"lean_semantic_closure\":\"c9ea3ecc7da6d6fb1d3d41ce0994b0f197045d97623df87e2619596cbd525ee3\",\"lean_relevant_definition_descendants\":{\"BaseIncSeq\":\"6c60e0dad52a54330a1324e014c97c8bff0c34618649f32c7de87b7b8efa6222\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BaseIncSeq\",\"IncSeq\",\"IncSeqComp\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "65f9cc34fb0c8cad": "690a3325b7bf52d21dba0ce2e60b337f83f554350e19a7c0e037c451637d5dd9",
     "660b449f007973d5": "f18a8c693a4169691ac07ed7c320628a763e9b8cb28776fa9700694506281928",
@@ -1615,7 +1616,6 @@
     "75d1c48992220450": "2a01acfc37830b10e0f374bde1efd766d3fdb9bfb13bf3354c84ee9cfbea738d",
     "75e4b9ada09890b8": "sound-v2:c757f3cb1e5b2dd690885964a0fe9dfad4286499e5ab77ed4add4e6c3ea2d677",
     "75fb2447d598cc9b": "{\"own_tex\":\"789c382feb9e46380ca04a53c2213cd76a2325335037bb48624d8c4a4ffa91af\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"definition\",\"claimed_deviation_fingerprints\":{}}",
-    "7601b479ba836319": "3a639b422eb0bbcd2951711690d62f245d47fc9abaa1466e5d4ac4f99b22a3c8",
     "76111a0f0f146351": "df2f55ce943908b69669f3c1a08deca9034f35e4f3a0c97295be87d7e534f0cf",
     "762635a30688d0ba": "d139f0cec54f464cbd055a3a21fbf86ada301bb04c1915c6ddbc1e6b0307e6ca",
     "76299d5bc0c9f46d": "a11fb84ba34f065bf54309b251e6e636d583d55c0bfb9e484d60877d4d5dcf09",
@@ -1738,7 +1738,6 @@
     "7fa7a6985449db34": "3bb2a8b0c038a85f1747956610bb7778db0286f162e5e0207b18544b3d2d1ca5",
     "7fb4f48dd887cbcf": "f7c301c2379d52da66c938b0ce99153843bb1c35b2d26aebd9402410895f3aa7",
     "7fbd216949e3bc85": "065ca99057f464245b65c5ac7ba588bf15facac12804b0f92dc3d4a08d5e8297",
-    "7fc2a673cce29202": "5443de37494b5cc68474c1d53761aa6d4fc0d34ca1894871e9bcc9d70b47f857",
     "7fd42469c87b3a78": "290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262",
     "7fd73583b2da4036": "a25dad15902a1d7ea587ee0a4eaff046e22495a6f45068a4411d31a6ff21867a",
     "7ff143adb453fdee": "1f9f81221de84c4d62df39888e27d505d172277c9d4e49db4776b0eef6c12043",
@@ -2004,7 +2003,6 @@
     "9430c5eacc26e06c": "sound-v2:2c83a88e4274478fcabb8d91e24e419a78df2001be34b7b5cc06815dbbf1b79b",
     "9435d8efadc07201": "1f2427c6d5c2dc6d7592c2c0ef6e7312f345d5881bdbab1fa714ec0301cfde1b",
     "9453e5ab579545cd": "0cb486a5faddd610dab96eedce7bba76abfdc96c1665b20df85ac189a7fc2293",
-    "946994c86b52a0b8": "269badada302a54817c7e0072cc770cc780394b7f709a28464798b2a8ca592b2",
     "9486d3d15d7d719e": "c5b73ca02de195721b41d4e6cc70917f217d5e2dcbdc0bd25602ffee5852ddf7",
     "949966db71363d82": "{\"own_tex\":\"0cfb0caa0e7cf47b511c854b5e4f7ab3c241e1cfe86a5847fc5bfd61f9212c34\",\"paper_source_sha\":\"060c3d6f285f3ea33c99c530731d45848c1b90600be1c356066dfe760f1f0e3a\",\"node_kind\":\"proof\",\"claimed_deviation_fingerprints\":{}}",
     "94dfc67512c8c314": "a2f5ed3f042290ef010f6adf71688712b322160ccff688a837422e798753129b",
@@ -2381,6 +2379,7 @@
     "b0a2e03f42b58c56": "{\"own_tex\":\"716482de56f149477a9e950341c883ff5eaee6c0348c1b9bb7480040419ff686\",\"lean_semantic_closure\":\"4c79795b37b4c66c32f755491c382c21f8adf1097d9523165dfa3ade34a23367\",\"lean_relevant_definition_descendants\":{\"BlockSigma\":\"83ce5324ed4003defce8e207195d1a6fadd710d00885e6aecd4e28f9743adb36\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"BlockSigma\",\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "b0b46ed3e8dee877": "ea7a5d21aba29646704d3d66420acd9c1d50355f3bd4016280d83fa9c5993023",
     "b0ca79d51dc4a667": "{\"target\":\"thm BqoHerCtblWqo\",\"covering_nodes\":{\"BqoHerCtblWqo\":\"d2915662ba054f2648409b1be1b70a007d36c8874d2ea99213e94fafb810c0b3\"},\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"152afb5fec3e0792b3255fda14969fc2a29d1334a5c5effd3838f6567ab4633f\",\"Bqo\":\"19d50ba3f5773a3342db6ab2c576cc6026655548daa91cd6d333b74ec908d914\",\"HerCtblCode\":\"49cbd5c8b1af7cda2775b8eeea067f9f156d6bbd54cd22b261b98ea9513ea7dc\",\"HerCtblCodeErase\":\"3412235edd2e7f0b0aa7a362af8366b8d1a23c40bbd878f96632ae28edf29219\",\"HerCtblPower\":\"6d98d2012e5d2dd14f811c9467b735361366f489e8ab1a378d02a54c82358fca\",\"HerCtblRel\":\"bf8ac5dffae8b86bc414b3f181e381cd584607fa3fda697b021eda91799f59aa\",\"HereditarilyCountable\":\"fdc9e08c058bea082bd7c8d3a60ae870587828005e7962f248f5ab395744b76e\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"LocallyConstant\":\"d4da1db21d78147438a1f7854673a6551d776fe194c50956663e376cd365c14c\",\"MultiSequence\":\"00a4470af891eefc6dc25fd9fa8e07167f4ece6dcfafb640187e8fe3a8c9578c\",\"PowerChild\":\"2e278e8f953e91271a4ae53269464000814a8cccf1ec5f8aecf60da22abd55c4\",\"PowerPresentationEq\":\"883b047ffd503099cdd60224de3be2aa159403432228f9e953de163fcfa7c189\",\"PowerQ\":\"8bdf96f8b21c4683fd8dbb28579053e7c553907eb4163626ed3cb2985f5d847c\",\"PowerRel\":\"8ad4bdac40cf0cabe5725284e32639caaa0bb4b86fe0007ec6b35ac85ad40b22\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"aa65f648bd357872581ab1b37334909c7aee8d559c9ee42d9976c617084c97a2\",\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
+    "b0ccf55321f7e1c5": "f756a95a68d7d26d95ac9c5025960cb7fa80e9e49c3d452406f6021fead3672a",
     "b0d9803c752f419a": "{\"own_tex\":\"5b0e1d0edc52d120299a3cec456a4ca2e64a64074bdd4d5197f1444bdcf27018\",\"lean_semantic_closure\":\"a359d6e317c1d230da93bc1573885afb42d47a1f45abccb55285aad001862169\",\"lean_relevant_definition_descendants\":{\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"OrbitPoint\":\"aede6f27184f89af4d9a5500568110e43e3fb3a5d30ba1af7f14147b4791bf94\"},\"lean_relevant_dependencies\":[\"IncSeq\",\"OrbitPoint\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
     "b1078dbec6833d2f": "9315d4810aba7bed920fc802683f35cbb4d6029eaa0505682ccf861804465010",
     "b1112ea1181aec43": "worker-result-local-closure-issuance-cycle-188",
@@ -2585,6 +2584,7 @@
     "be340df85e44dba0": "0e5e60c20a84d75c79bfef63af12c3603412605b3d77fa80b3dd7d02929ae17a",
     "be373c03ad5139c5": "b8e8af1de2beac704873623bf5c658b3b32062916a631bcd8e2d2098aa6d61fb",
     "be3f45e22cd50252": "79478950faa2b640c34b1c0a0093ebc957887b22386dcac732d8388b13778678",
+    "be522c64cfddf33d": "feb5256f1e17c7db4bc27733fd2aedf139fc5480cc1f8607ce9b642c41dfe30a",
     "be670dd1c7a50998": "b68899ac4d2a81590d2126f05eb11688f52445abe3cc57425236aaa974baeae3",
     "be6ef1a5327f7f97": "8abbe71fe30fca48b0bbb71b6aa104e7637e474b79b829541477e0240c9bd764",
     "be7588983cc03bc8": "a9d908778020adb43fb4b1a3b8056400a6797f09e5554d0aea916f5f65d2402c",
@@ -2882,7 +2882,6 @@
     "d1f8f52f7adbab0d": "529e90281cde95b9621f2f514847b76c746c6d9465f74e05479d5ea57c6614d0",
     "d206ac1d7ec727b1": "ecd1c8e0fac9f3defd213a86c7d6d3307c90e778bdb1402112029c14144bb59a",
     "d21a9ea35e1e312c": "{\"own_tex\":\"dbe47203845f503f8c6a36e8173cc6d71d5ae6334aab452108fe86172107659c\",\"lean_semantic_closure\":\"c7b44439b0b6a6ada9e59e69a3efe49f3aa110166ae8d5169ce5c37ac0d38b31\",\"lean_relevant_definition_descendants\":{\"HerCtblCode\":\"290bab0600399e87294f76dcb12aecd0550340c6f2390bc267609be54b2b3262\",\"HerCtblCodeErase\":\"03f2b5e2c624766b5a9c890bbe64e10f9c400b65fc9be887f2d611825a4461ca\",\"HereditarilyCountable\":\"b95cd6c5676b3dc0b1fdfdb52e9235652c80bb13ac52b00d61765b76588251b0\",\"PowerPresentationEq\":\"aff913f88c4bb3ad1971b3c2f7af40d04a27ec73f7fe9ca1c54d0b966028e778\",\"PowerQ\":\"5110ad1625d9118e6391760d49208b831f88ccc4a9e5e3e6a6a7f25bd835ccac\"},\"lean_relevant_dependencies\":[\"HerCtblCode\",\"HerCtblCodeErase\",\"HereditarilyCountable\",\"PowerPresentationEq\",\"PowerQ\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
-    "d22d6f616459f50f": "7f01c08d80758651f2d7ba50c3f8052357ac5693dbf048e2cdb9f5a7802a9c55",
     "d22dab9d49db023f": "60dec4b0061daba7e344522181b4e27db2608fa457a1e360f878d65f580456dd",
     "d2407d798a8277fd": "546e8179d9a8a9cf23974a24f1161c4f01b654ac6c978f7bfb0022515c51761a",
     "d24df67f153449b3": "ef986f62cd6747d31478c8087e7e87a48dfb8c491c852685d7fb17fefa8adfdb",
@@ -3101,6 +3100,7 @@
     "e2e379be2e811d86": "9f4ae701ffc6c12ac0b09136ecce3ca8daa70513cba8b47ee7a5f564d1664010",
     "e2e808784f175459": "a830fb036f42c4814bd0d7c7e2aa3a44753443824131d321c03c61f61944d409",
     "e2eb83abaa51166f": "a932b111b053d073b19623be6905e31e96c1b811882a346e87e9ec61496e6e40",
+    "e2f42d0502f95028": "c3362368a5def0e081ef3f7a741bc275e56e8b82eb4ddb4b7d62860b27df3a42",
     "e31431bbe527f02a": "53654fc40cd8d8083f3f573891cd38b9b5c8a984a7d210dfd4d21db8a0a9da69",
     "e334b5e852c80ed8": "bc490765d644fd171bd00cab7911ffe6dccffe3eca1ccb5ca8a7c38f32ad1f94",
     "e347f7b064778161": "f93284dd726ff39db7e684d133d857706e5619f145d377cdf148a5a69094b69d",
@@ -3198,6 +3198,7 @@
     "e9c6732abd5a2605": "cd84a2c9315c966b3d81b58307bc1569ad2ab0052314d408516417594f3e6e80",
     "e9dbe1547395e805": "979e454328661536c437df19f51d2b343f0cce58e18caddfe589c22bfe92c218",
     "e9f16ed3ec05816f": "e53be163f6c65beeb9f5d8eae0dcac0d1c568eacc6c5ca2ecbad9bf6a15bb1be",
+    "e9f5afc5fb03766d": "4e21893de6e991ff61a1c8b500f9d42181dd05646a9ac20e07b51e389c4d19e8",
     "ea006c3598a1699a": "effce484b853e704701dc65e8787dc9040bb458238fad1bc12b529377c0af56a",
     "ea2acfb3b9d4e5cb": "sound-v2:6b087a7d6f2a24289fd8ac77909fc0f26828a601edcc3853e1964ca0044d0796",
     "ea439f9eaac22b13": "f3d4c3c960846fd21a42cd724ed9120ebe5a03c95c5992ff8749c47a32ab79fc",
@@ -7328,6 +7329,11 @@
     "0d185fe38b214ffb": [
       {
         "$r": "ed6247ca109fa531"
+      }
+    ],
+    "0d3a48eadb05ce6a": [
+      {
+        "$r": "8cd12a2371567510"
       }
     ],
     "0d3f2a82e4261980": {
@@ -12732,6 +12738,566 @@
         "$s": "2ae64356c7985bab"
       }
     },
+    "1f1f8fed134d94f2": {
+      "BadMultiRestrict": {
+        "$r": "8491d7e7405b9137"
+      },
+      "BadMultiSequence": {
+        "$r": "da1bec0b1c9050ee"
+      },
+      "BadMultiToNontrivialSuper": {
+        "$r": "2f24a75d9b942a11"
+      },
+      "BadMultiToSuper": {
+        "$r": "f2eb6429c0c3a3b7"
+      },
+      "BadPairSequence": {
+        "$r": "47a9ec8ac9439841"
+      },
+      "BadSuperRestrict": {
+        "$r": "d7b944fd5fd495ae"
+      },
+      "BadSuperSequence": {
+        "$r": "86d45f65b21ae859"
+      },
+      "BadSuperToBase": {
+        "$r": "01a9ff80e381e464"
+      },
+      "BaireContinuous": {
+        "$r": "feab35cb280cc409"
+      },
+      "BaseBad": {
+        "$r": "aa0acdf1fe9b7cf1"
+      },
+      "BaseBqoRestriction": {
+        "$r": "a0aae29c00be4356"
+      },
+      "BaseIncSeq": {
+        "$r": "0951a3322755574a"
+      },
+      "BaseLocallyConstant": {
+        "$r": "9665c860b85c33d6"
+      },
+      "BaseMultiSequence": {
+        "$r": "68a111d1df23109b"
+      },
+      "BasePerfect": {
+        "$r": "adfff35fe754b996"
+      },
+      "BaseRestrict": {
+        "$r": "382357bb312a2acb"
+      },
+      "BaseRightComp": {
+        "$r": "0f89c29b687b98fa"
+      },
+      "BaseShift": {
+        "$r": "2e60c14686798a10"
+      },
+      "BetterRel": {
+        "$r": "86e5ccde8e2e796d"
+      },
+      "BlockSigma": {
+        "$r": "9df79f52e4e1f4a4"
+      },
+      "BlockSigmaContinuous": {
+        "$r": "1f21b8e34a96d22a"
+      },
+      "BlockSigmaEmbedding": {
+        "$r": "8d38d6dab2a0aef8"
+      },
+      "BlockSigmaIntertwines": {
+        "$r": "92c6b91c0bb5ec5b"
+      },
+      "BooleanInfinitePigeonhole": {
+        "$r": "05fa0b08c27645ae"
+      },
+      "Bqo": {
+        "$r": "a9f55eb18f37cd61"
+      },
+      "BqoHerCtblWellF": {
+        "$r": "f21582e1e1677ff6"
+      },
+      "BqoHerCtblWqo": {
+        "$r": "33856d2e15e93d51"
+      },
+      "BqoIffGeneralShift": {
+        "$r": "fd302d4715d85f79"
+      },
+      "BqoImpliesWqo": {
+        "$r": "8a12454754fb495a"
+      },
+      "CardinalityFront": {
+        "$r": "a7b5b70b33fdebca"
+      },
+      "CardinalityFrontIsFront": {
+        "$r": "3cb1fc0028d60fce"
+      },
+      "ContMor": {
+        "$r": "86ae4226b30bc2c8"
+      },
+      "ContMorEq": {
+        "$r": "717141c608ad04b1"
+      },
+      "ContinuousHom": {
+        "$r": "1534f504292c7338"
+      },
+      "ContinuousRelHom": {
+        "$r": "881e66e8cba27a21"
+      },
+      "ConverseGame": {
+        "$r": "3e446c13f7c92ce6"
+      },
+      "DecidingFront": {
+        "$r": "7d5afc772840daf9"
+      },
+      "DecidingFrontAgreement": {
+        "$r": "9c15f3eba15b2014"
+      },
+      "DecidingFrontInitialTrans": {
+        "$r": "21087713ccface0c"
+      },
+      "DecidingFrontMinimal": {
+        "$r": "48efe65d0e82a49f"
+      },
+      "DecidingFrontSet": {
+        "$r": "d501b77f86d2bb72"
+      },
+      "DecidingPrefix": {
+        "$r": "f6c852e41e13f91a"
+      },
+      "DecidingValue": {
+        "$r": "80b794fdeab68485"
+      },
+      "EmapLemma": {
+        "$r": "f934b9070933e8ea"
+      },
+      "FinitePrefixExtension": {
+        "$r": "51dc0130e43a3a11"
+      },
+      "FiniteShift": {
+        "$r": "b8c448d90b2e9fef"
+      },
+      "FirstMovedPoint": {
+        "$r": "dab24456ed12b433"
+      },
+      "Front": {
+        "$r": "8a55d26a4f639b18"
+      },
+      "FrontBase": {
+        "$r": "bb5431a9ee4a0dcf"
+      },
+      "FrontBridge": {
+        "$r": "e3d9cec04bf71c3f"
+      },
+      "FrontBridgeInit": {
+        "$r": "de283ab91939ebc3"
+      },
+      "FrontBridgeStep": {
+        "$r": "3d53f2d9ffe48851"
+      },
+      "FrontBridgeTail": {
+        "$r": "056a1fec6683f6ca"
+      },
+      "FrontBridgeTailInsert": {
+        "$r": "555a5fa6bbcf96f4"
+      },
+      "FrontBridgeTerminal": {
+        "$r": "14f56bb88493ea48"
+      },
+      "FrontNontrivialBase": {
+        "$r": "d9656c7074178083"
+      },
+      "FrontPrefix": {
+        "$r": "a8dd3d90054604c9"
+      },
+      "FrontPrefixExists": {
+        "$r": "4a6feb21b6ba776b"
+      },
+      "FrontPrefixUnique": {
+        "$r": "d0c8ec39c408315b"
+      },
+      "FrontRayBase": {
+        "$r": "71fcab819b2e451e"
+      },
+      "FrontRayClosure": {
+        "$r": "22366f48ab226cbc"
+      },
+      "FrontRayDense": {
+        "$r": "26355fe4f9c2253b"
+      },
+      "FrontRayPrefixFree": {
+        "$r": "da1c59748d1e9da6"
+      },
+      "FrontRestrict": {
+        "$r": "8487a830583cda4d"
+      },
+      "FrontRestriction": {
+        "$r": "7ed6a8bc6c4f51a4"
+      },
+      "FrontTreeImmediateExtensions": {
+        "$r": "936f6b461e961657"
+      },
+      "FrontTreeOrderedExtension": {
+        "$r": "3cc8356ccc914fe7"
+      },
+      "FrontTreeSingleton": {
+        "$r": "b7032e5cd93c0810"
+      },
+      "FrontTreeWellFounded": {
+        "$r": "22753d71a46635f6"
+      },
+      "GBetterRel": {
+        "$r": "0a052173c793f00d"
+      },
+      "GBetterRelIff": {
+        "$r": "eee1743883f5499b"
+      },
+      "GoodMultiSequence": {
+        "$r": "13847dddd8a41588"
+      },
+      "HerCtblCode": {
+        "$r": "f56c9e969bfe8286"
+      },
+      "HerCtblCodeErase": {
+        "$r": "100d76b210b6cb10"
+      },
+      "HerCtblNodeClosure": {
+        "$r": "25e21af68639d6ff"
+      },
+      "HerCtblPower": {
+        "$r": "0f9ca87f51725045"
+      },
+      "HerCtblPowerIsPreorder": {
+        "$r": "90771eced1e49b8c"
+      },
+      "HerCtblRel": {
+        "$r": "115010ad9ef17853"
+      },
+      "HerCtblWqoIffWellFounded": {
+        "$r": "40374902d0ae5a5f"
+      },
+      "HereditarilyCountable": {
+        "$r": "0f0df0cf1639da21"
+      },
+      "HereditarilyCountableAtom": {
+        "$r": "3b8365ce116df01a"
+      },
+      "HereditarilyCountablePresentationInvariant": {
+        "$r": "5774bd9db3a1d432"
+      },
+      "IncSeq": {
+        "$r": "05b14093084a5884"
+      },
+      "IncSeqComp": {
+        "$r": "6a30fbe502c53f14"
+      },
+      "IncSeqId": {
+        "$r": "7ce952ca3a0cb662"
+      },
+      "IncSeqPointwiseLe": {
+        "$r": "d982dddee627a7e2"
+      },
+      "IncreasingPair": {
+        "$r": "901ebd6b56f28ca9"
+      },
+      "InfiniteSetEnumeration": {
+        "$r": "a2a839a5091d26fb"
+      },
+      "InitialSegment": {
+        "$r": "fa07ac68c9de2fa3"
+      },
+      "InitialSegmentInsert": {
+        "$r": "3c34b68d6bae2a1f"
+      },
+      "LocallyConstant": {
+        "$r": "1d9b132e83fea2d5"
+      },
+      "MainProp": {
+        "$r": "fe34c0a07bbda4c6"
+      },
+      "MultiSequence": {
+        "$r": "36e4acf99cb958ad"
+      },
+      "MultiSequenceRestrict": {
+        "$r": "87b9e0b610f0a06e"
+      },
+      "NashWilliams": {
+        "$r": "dfa63cdc3a127f23"
+      },
+      "NoBadPerfectSuper": {
+        "$r": "87d8997ccc40555f"
+      },
+      "OrbitBlock": {
+        "$r": "c62ab80ec8de83c5"
+      },
+      "OrbitBlockCoverage": {
+        "$r": "25c8292ac5c20194"
+      },
+      "OrbitEmbedding": {
+        "$r": "c7f055bb2c7e65fa"
+      },
+      "OrbitPoint": {
+        "$r": "00ef5fd61340464c"
+      },
+      "OrbitUnbounded": {
+        "$r": "96c497dda79150f7"
+      },
+      "PerfectBaseToSuper": {
+        "$r": "e951558e279dce1c"
+      },
+      "PerfectMultiRestrict": {
+        "$r": "4944a7ab4898d4a2"
+      },
+      "PerfectMultiSequence": {
+        "$r": "231a2515f20724da"
+      },
+      "PerfectMultiToSuper": {
+        "$r": "5a7abcfda5091d89"
+      },
+      "PerfectSuperRestrict": {
+        "$r": "4f6ff6f89f4083f0"
+      },
+      "PerfectSuperSequence": {
+        "$r": "57f299e7cac79bb4"
+      },
+      "PerfectSuperToBase": {
+        "$r": "fec3a6213b8b3883"
+      },
+      "PerfectSuperToMulti": {
+        "$r": "29c998e5a50453b7"
+      },
+      "PowerChild": {
+        "$r": "c6d6527a567b1dc1"
+      },
+      "PowerChildSupport": {
+        "$r": "98d8e507c0f62f02"
+      },
+      "PowerChildWellFounded": {
+        "$r": "5942e65092eb5cc4"
+      },
+      "PowerCopiedFailureMove": {
+        "$r": "3ee8fe8154af3e28"
+      },
+      "PowerCopiedFiniteDependence": {
+        "$r": "504a5899e53e068e"
+      },
+      "PowerCopiedFiniteTerminal": {
+        "$r": "705e614559e238d8"
+      },
+      "PowerCopiedLeft": {
+        "$r": "eb10a7402a9b3427"
+      },
+      "PowerCopiedOrbitDependence": {
+        "$r": "0a3c165e13b4ae0e"
+      },
+      "PowerCopiedShiftIdentity": {
+        "$r": "94a087d6ccc217cf"
+      },
+      "PowerCopiedSupport": {
+        "$r": "fcb2438c24fec648"
+      },
+      "PowerCopiedTerminalAt": {
+        "$r": "75fbf1812a315ee1"
+      },
+      "PowerCopiedTerminalShift": {
+        "$r": "9caf8a10bce42295"
+      },
+      "PowerCopiedTerminalSupport": {
+        "$r": "365fafa8163ea01e"
+      },
+      "PowerCopiedTerminates": {
+        "$r": "44255d12a2a95061"
+      },
+      "PowerFiniteOrbitConstancy": {
+        "$r": "f89caba247ec7e43"
+      },
+      "PowerGameDescent": {
+        "$r": "26a8a381da165bc0"
+      },
+      "PowerGameDescentWellFounded": {
+        "$r": "0edd445d16c53eff"
+      },
+      "PowerIResponse": {
+        "$r": "47490af90d6d6f2c"
+      },
+      "PowerIResponseFailure": {
+        "$r": "be1791cc0d955e5c"
+      },
+      "PowerIResponseLegal": {
+        "$r": "35db48af5fa913a9"
+      },
+      "PowerIResponseWitness": {
+        "$r": "77e8f6cec271caf4"
+      },
+      "PowerMove": {
+        "$r": "b83fe013efd5453e"
+      },
+      "PowerMoveInSupport": {
+        "$r": "1ce91ad6d568f430"
+      },
+      "PowerPresentationEq": {
+        "$r": "cc7743c174df5a93"
+      },
+      "PowerPresentationEqEquivalence": {
+        "$r": "80f061b4fd205dc7"
+      },
+      "PowerQ": {
+        "$r": "e0a8d7f623a194c0"
+      },
+      "PowerQIsPreorder": {
+        "$r": "32c97117095daff7"
+      },
+      "PowerQPresBqo": {
+        "$r": "65a6f5195f49a8b2"
+      },
+      "PowerQReflection": {
+        "$r": "d656e11f6c53079c"
+      },
+      "PowerRel": {
+        "$r": "c71e6d1925b27694"
+      },
+      "PowerRelAtomAtom": {
+        "$r": "6219d6951510062f"
+      },
+      "PowerRelAtomNode": {
+        "$r": "1d02ec722102e4ee"
+      },
+      "PowerRelCongrLeft": {
+        "$r": "e0dfbc97cf7babce"
+      },
+      "PowerRelCongrRight": {
+        "$r": "7e8e168486965d1d"
+      },
+      "PowerRelNodeAtom": {
+        "$r": "578bb96fa2fabc59"
+      },
+      "PowerRelNodeNode": {
+        "$r": "f1dc843e3813d5d8"
+      },
+      "PowerRelRefl": {
+        "$r": "de1f5035122eda2c"
+      },
+      "PowerRelTrans": {
+        "$r": "9822e360dc0fc953"
+      },
+      "PowerShiftIter": {
+        "$r": "63d2e4e6552d9c10"
+      },
+      "PowerShiftIterPrefixAgree": {
+        "$r": "9a54a851eb2f71fa"
+      },
+      "PowerShiftIterShift": {
+        "$r": "29af1232c806be53"
+      },
+      "PowerSupport": {
+        "$r": "4cbb8a5aa5fafb10"
+      },
+      "PowerSupportInvariant": {
+        "$r": "61cbc4e291419b13"
+      },
+      "PowerSupportNonempty": {
+        "$r": "d8ebc5c62f350ade"
+      },
+      "PowerWqoBadPairSequence": {
+        "$r": "e988bf4fd83ac906"
+      },
+      "Preamble": {
+        "$r": "f8d915076828a54a"
+      },
+      "PrefixAgree": {
+        "$r": "e65b2587af24cff9"
+      },
+      "PrefixTree": {
+        "$r": "e5c7a499b4bf3625"
+      },
+      "ProperInitialSegment": {
+        "$r": "b92a1412e4e4d4fa"
+      },
+      "ProperPrefixSet": {
+        "$r": "8fc28edee9785520"
+      },
+      "QuadrupleHomogeneous": {
+        "$r": "ad5879c52489b910"
+      },
+      "RadoEmbedding": {
+        "$r": "74771907011d662f"
+      },
+      "RadoOrder": {
+        "$r": "8f74e3c3d5265954"
+      },
+      "Ray": {
+        "$r": "74b5a07ca9a88392"
+      },
+      "RelationEmbedding": {
+        "$r": "35fecb5ecd5bf554"
+      },
+      "RestrictionLocallyConstant": {
+        "$r": "1abecc56b3f1ac08"
+      },
+      "RestrictionShift": {
+        "$r": "c1d039621635ab5f"
+      },
+      "RightComp": {
+        "$r": "a952c31750e36be0"
+      },
+      "RmapLemma": {
+        "$r": "98a2a1dd092eacdc"
+      },
+      "SetDomination": {
+        "$r": "d7d952369cee1a89"
+      },
+      "ShiftDichotomy": {
+        "$r": "22456045daa67f06"
+      },
+      "ShiftMap": {
+        "$r": "c69977fd272228e0"
+      },
+      "SubFrontCharacterization": {
+        "$r": "ca162cfc80efd66a"
+      },
+      "Subarr": {
+        "$r": "a811d505c643cf67"
+      },
+      "SuccSeq": {
+        "$r": "d869f6a4cfedf679"
+      },
+      "SuperNW": {
+        "$r": "a58cf6e4cfe774d1"
+      },
+      "SuperSequence": {
+        "$r": "0cfba8607eab05a1"
+      },
+      "SuperSequenceExtension": {
+        "$r": "f8ef9379631fd75b"
+      },
+      "SuperSequenceRestrict": {
+        "$r": "71b34623760bd082"
+      },
+      "TailSet": {
+        "$r": "c059040f5eb70e61"
+      },
+      "TildeF": {
+        "$r": "19b12934f3923a1e"
+      },
+      "TildeFAtomIffFront": {
+        "$r": "5f25bfcaeb4b57b5"
+      },
+      "TildeFFrontEquation": {
+        "$r": "13dea75b39700a1a"
+      },
+      "TildeFHerCtbl": {
+        "$r": "1910c2a9d6a40c0b"
+      },
+      "TildeFNonfrontEquation": {
+        "$r": "a5e11c49f421734a"
+      },
+      "TildeFSingleton": {
+        "$r": "84f3986354ffe0b5"
+      },
+      "TripleHomogeneous": {
+        "$r": "1ef702ce7aa9cc3d"
+      }
+    },
     "1f21b8e34a96d22a": {
       "accepted_at_snapshot_id": {
         "$s": "a7493bacbb19b4b8"
@@ -15495,6 +16061,23 @@
         "$s": "1f043c1ff012ace4"
       },
       "size_bytes": 39280
+    },
+    "26ca5f0b88ed3606": {
+      "FiniteShift": {
+        "$s": "08fbd5350ac83e8c"
+      },
+      "Front": {
+        "$s": "40a2699944f47464"
+      },
+      "PerfectSuperSequence": {
+        "$s": "3bf1637462f825c4"
+      },
+      "SuperSequence": {
+        "$s": "6001e0ef97ca31e0"
+      },
+      "SuperSequenceRestrict": {
+        "$s": "a7b4e90a5794da2f"
+      }
     },
     "26cf06f69ed28844": [
       {
@@ -20069,13 +20652,6 @@
         "$r": "0fd52fac01bd9e06"
       }
     },
-    "35b08ece0bbb02c0": {
-      "level": "exported",
-      "sha256": {
-        "$s": "4a64ed8f4a38d16d"
-      },
-      "size_bytes": 12456
-    },
     "35d00207f2f862c9": {
       "consumer": "PowerCopiedSupport",
       "declaration_kind": "definition",
@@ -20620,30 +21196,6 @@
     "37569d2bc48775ce": {
       "kind": "definition",
       "name": "PowerMove"
-    },
-    "375c95a0b6d02970": {
-      "artifact_bundle": {
-        "$r": "aef3a6cd0d9952aa"
-      },
-      "declaration_manifest": {
-        "$r": "8c595283c9b0c258"
-      },
-      "direct_imports": {
-        "$r": "9bedf8453a8edf8b"
-      },
-      "exact_declaration_uses": {
-        "$r": "7aebab1b49d698d1"
-      },
-      "principal_declaration": "PerfectSuperRestrict",
-      "replay_declaration_manifest": {
-        "$r": "8c595283c9b0c258"
-      },
-      "source_sha256": {
-        "$s": "d22d6f616459f50f"
-      },
-      "visibility_manifests": {
-        "$r": "f9303f0ed90bc4a7"
-      }
     },
     "376850fdd51313bd": {
       "combined_sound_fp": {
@@ -23511,6 +24063,63 @@
         "$r": "a6b7bea104b91198"
       }
     },
+    "423805fc727fb539": {
+      "artifact_bundle": {
+        "$r": "0d3a48eadb05ce6a"
+      },
+      "artifact_bundle_root": {
+        "$s": "65ee3ddf930e13e0"
+      },
+      "axiom_policy_root": {
+        "$s": "7b67735588a1364f"
+      },
+      "build_root": {
+        "$s": "e9f5afc5fb03766d"
+      },
+      "certified_node_root": {
+        "$s": "42a88eb3cb3547f1"
+      },
+      "declaration_manifest": {
+        "$r": "8c595283c9b0c258"
+      },
+      "declaration_manifest_root": {
+        "$s": "ced9be698617c8b5"
+      },
+      "dependency_certificate_roots": {
+        "$r": "4f738059a6cfdf50"
+      },
+      "exact_use_witnesses": {
+        "$r": "9ef87268cff7900d"
+      },
+      "local_module_root": {
+        "$s": "1cb8fa48fb588144"
+      },
+      "logic_root": {
+        "$s": "b0ccf55321f7e1c5"
+      },
+      "module_name": "Tablet.PerfectSuperRestrict",
+      "node": "PerfectSuperRestrict",
+      "observed_declaration_uses": {
+        "$r": "f720cb953a99f195"
+      },
+      "principal_declaration": "PerfectSuperRestrict",
+      "semantic_root": {
+        "$s": "3cd02e60fb8aa7a0"
+      },
+      "source_sha256": {
+        "$s": "e2f42d0502f95028"
+      },
+      "toolchain_root": {
+        "$s": "8325443df62739a2"
+      },
+      "version": "node-certificate-v2",
+      "visibility_manifest_roots": {
+        "$r": "921f2bd425ca974f"
+      },
+      "visibility_manifests": {
+        "$r": "f9303f0ed90bc4a7"
+      }
+    },
     "4240be879027ecb2": {
       "HereditarilyCountable": "aa89f5fa96f4fdb0",
       "PowerQ": "1f06fec9c525a2b8"
@@ -24834,41 +25443,6 @@
         "$s": "3d109f23052dc569"
       },
       "size_bytes": 62656
-    },
-    "483961b4ec65ad01": {
-      "corr_current_fingerprints": {
-        "$r": "347e431a985519cc"
-      },
-      "coverage": {
-        "$r": "48f5e857a8dd953e"
-      },
-      "deviation_current_fingerprints": {},
-      "open_nodes": {
-        "$r": "50fa48608a309d68"
-      },
-      "paper_current_fingerprints": {
-        "$r": "fb64625e19c055d8"
-      },
-      "placeholder_definition_nodes": [],
-      "present_nodes": {
-        "$r": "df09dd9d06ff24bc"
-      },
-      "protected_closure_nodes_per_target": {
-        "$r": "617eae7f4e15e479"
-      },
-      "sketch_proof_nodes": [],
-      "sound_current_fingerprint_parts": {
-        "$r": "fc62c58a88100dc3"
-      },
-      "sound_current_fingerprints": {
-        "$r": "584b7f89f4ac0981"
-      },
-      "substantiveness_current_fingerprints": {
-        "$r": "95d39d0c8bd86967"
-      },
-      "target_fingerprints": {
-        "$r": "347e431a985519cc"
-      }
     },
     "483a8bc289052f70": {
       "kind": "definition",
@@ -27035,6 +27609,79 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
+    "4f6ff6f89f4083f0": {
+      "accepted_at_snapshot_id": {
+        "$s": "3493fb704b11cc4c"
+      },
+      "active_decl_hash": {
+        "$s": "e2f42d0502f95028"
+      },
+      "active_statement_hash": {
+        "$s": "9941587c84ab3f1f"
+      },
+      "approved_axioms_hash": {
+        "$s": "dcbabda85544c6d2"
+      },
+      "axcheck_status": "Agreed",
+      "boundary_theorems": {},
+      "checker_script_hash": {
+        "$s": "60fd30bb38022227"
+      },
+      "closure_version": "patch_c_v1",
+      "kernel_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "kernel_semantic_hashes": {
+        "$r": "26ca5f0b88ed3606"
+      },
+      "lake_executable_hash": {
+        "$s": "6eb9202e934e0861"
+      },
+      "lake_manifest_hash": {
+        "$s": "bf3ed8814aacccc4"
+      },
+      "lean_executable_hash": {
+        "$s": "5a2778d0a0ed328c"
+      },
+      "node": "PerfectSuperRestrict",
+      "node_certificate": {
+        "$r": "423805fc727fb539"
+      },
+      "node_certificate_evidence": {
+        "$r": "7e6f560a346477ca"
+      },
+      "preamble_hash": {
+        "$s": "62d66a35aa3d3c82"
+      },
+      "seed_support_definition_deps": {},
+      "seed_support_evidence_root": null,
+      "seed_support_file_hashes": {},
+      "strict_definition_deps": {
+        "$r": "7d1d581faac5fbb5"
+      },
+      "strict_theorem_deps": {},
+      "toolchain_hash": {
+        "$s": "da4fc0388adf0949"
+      }
+    },
+    "4f738059a6cfdf50": {
+      "FiniteShift": {
+        "$s": "972ab44ea9e411a0"
+      },
+      "Front": {
+        "$s": "abaa2884f637e787"
+      },
+      "PerfectSuperSequence": {
+        "$s": "32840bb6f8178c82"
+      },
+      "SuperSequence": {
+        "$s": "ae5cce128c7a595f"
+      },
+      "SuperSequenceRestrict": {
+        "$s": "538f6ada607b50ef"
+      }
+    },
     "4f835507cfbfc771": {
       "consumer": "DecidingFront",
       "declaration_kind": "theorem",
@@ -27333,13 +27980,6 @@
         "$r": "17de69a33dbaa689"
       }
     },
-    "50fa48608a309d68": [
-      "BadSuperToBase",
-      "PerfectMultiRestrict",
-      "PerfectMultiToSuper",
-      "PerfectSuperRestrict",
-      "PerfectSuperToBase"
-    ],
     "5102dbfdea2482f1": [
       {
         "$r": "7d5af61bd7f3ad16"
@@ -27767,63 +28407,6 @@
       },
       "visibility_manifests": {
         "$r": "f01ca361842385e2"
-      }
-    },
-    "522c9a3aa824cc77": {
-      "artifact_bundle": {
-        "$r": "aef3a6cd0d9952aa"
-      },
-      "artifact_bundle_root": {
-        "$s": "7601b479ba836319"
-      },
-      "axiom_policy_root": {
-        "$s": "7b67735588a1364f"
-      },
-      "build_root": {
-        "$s": "7fc2a673cce29202"
-      },
-      "certified_node_root": {
-        "$s": "946994c86b52a0b8"
-      },
-      "declaration_manifest": {
-        "$r": "8c595283c9b0c258"
-      },
-      "declaration_manifest_root": {
-        "$s": "ced9be698617c8b5"
-      },
-      "dependency_certificate_roots": {
-        "$r": "acf71279a331708e"
-      },
-      "exact_use_witnesses": {
-        "$r": "faa363cf35ba9f86"
-      },
-      "local_module_root": {
-        "$s": "0222ccd54e98cf6f"
-      },
-      "logic_root": {
-        "$s": "116c53db4ed62f8a"
-      },
-      "module_name": "Tablet.PerfectSuperRestrict",
-      "node": "PerfectSuperRestrict",
-      "observed_declaration_uses": {
-        "$r": "7aebab1b49d698d1"
-      },
-      "principal_declaration": "PerfectSuperRestrict",
-      "semantic_root": {
-        "$s": "3cd02e60fb8aa7a0"
-      },
-      "source_sha256": {
-        "$s": "d22d6f616459f50f"
-      },
-      "toolchain_root": {
-        "$s": "8325443df62739a2"
-      },
-      "version": "node-certificate-v2",
-      "visibility_manifest_roots": {
-        "$r": "921f2bd425ca974f"
-      },
-      "visibility_manifests": {
-        "$r": "f9303f0ed90bc4a7"
       }
     },
     "523514f16ff6afd4": {
@@ -35894,12 +36477,6 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
-    "6bf2631e98235d60": {
-      "Front": "54804e268105ccdb",
-      "PerfectSuperSequence": "578bd6a28473ae49",
-      "SuperSequence": "97f9f0f5dc5dec42",
-      "SuperSequenceRestrict": "f5ceca2ceabaa0e7"
-    },
     "6bf562a11459f568": {
       "kind": "definition",
       "name": "IncreasingPair.recOn"
@@ -38075,566 +38652,6 @@
       },
       "Tablet.ShiftMap"
     ],
-    "726d2ebf08cd18ef": {
-      "BadMultiRestrict": {
-        "$r": "8491d7e7405b9137"
-      },
-      "BadMultiSequence": {
-        "$r": "da1bec0b1c9050ee"
-      },
-      "BadMultiToNontrivialSuper": {
-        "$r": "2f24a75d9b942a11"
-      },
-      "BadMultiToSuper": {
-        "$r": "f2eb6429c0c3a3b7"
-      },
-      "BadPairSequence": {
-        "$r": "47a9ec8ac9439841"
-      },
-      "BadSuperRestrict": {
-        "$r": "d7b944fd5fd495ae"
-      },
-      "BadSuperSequence": {
-        "$r": "86d45f65b21ae859"
-      },
-      "BadSuperToBase": {
-        "$r": "01a9ff80e381e464"
-      },
-      "BaireContinuous": {
-        "$r": "feab35cb280cc409"
-      },
-      "BaseBad": {
-        "$r": "aa0acdf1fe9b7cf1"
-      },
-      "BaseBqoRestriction": {
-        "$r": "a0aae29c00be4356"
-      },
-      "BaseIncSeq": {
-        "$r": "0951a3322755574a"
-      },
-      "BaseLocallyConstant": {
-        "$r": "9665c860b85c33d6"
-      },
-      "BaseMultiSequence": {
-        "$r": "68a111d1df23109b"
-      },
-      "BasePerfect": {
-        "$r": "adfff35fe754b996"
-      },
-      "BaseRestrict": {
-        "$r": "382357bb312a2acb"
-      },
-      "BaseRightComp": {
-        "$r": "0f89c29b687b98fa"
-      },
-      "BaseShift": {
-        "$r": "2e60c14686798a10"
-      },
-      "BetterRel": {
-        "$r": "86e5ccde8e2e796d"
-      },
-      "BlockSigma": {
-        "$r": "9df79f52e4e1f4a4"
-      },
-      "BlockSigmaContinuous": {
-        "$r": "1f21b8e34a96d22a"
-      },
-      "BlockSigmaEmbedding": {
-        "$r": "8d38d6dab2a0aef8"
-      },
-      "BlockSigmaIntertwines": {
-        "$r": "92c6b91c0bb5ec5b"
-      },
-      "BooleanInfinitePigeonhole": {
-        "$r": "05fa0b08c27645ae"
-      },
-      "Bqo": {
-        "$r": "a9f55eb18f37cd61"
-      },
-      "BqoHerCtblWellF": {
-        "$r": "f21582e1e1677ff6"
-      },
-      "BqoHerCtblWqo": {
-        "$r": "33856d2e15e93d51"
-      },
-      "BqoIffGeneralShift": {
-        "$r": "fd302d4715d85f79"
-      },
-      "BqoImpliesWqo": {
-        "$r": "8a12454754fb495a"
-      },
-      "CardinalityFront": {
-        "$r": "a7b5b70b33fdebca"
-      },
-      "CardinalityFrontIsFront": {
-        "$r": "3cb1fc0028d60fce"
-      },
-      "ContMor": {
-        "$r": "86ae4226b30bc2c8"
-      },
-      "ContMorEq": {
-        "$r": "717141c608ad04b1"
-      },
-      "ContinuousHom": {
-        "$r": "1534f504292c7338"
-      },
-      "ContinuousRelHom": {
-        "$r": "881e66e8cba27a21"
-      },
-      "ConverseGame": {
-        "$r": "3e446c13f7c92ce6"
-      },
-      "DecidingFront": {
-        "$r": "7d5afc772840daf9"
-      },
-      "DecidingFrontAgreement": {
-        "$r": "9c15f3eba15b2014"
-      },
-      "DecidingFrontInitialTrans": {
-        "$r": "21087713ccface0c"
-      },
-      "DecidingFrontMinimal": {
-        "$r": "48efe65d0e82a49f"
-      },
-      "DecidingFrontSet": {
-        "$r": "d501b77f86d2bb72"
-      },
-      "DecidingPrefix": {
-        "$r": "f6c852e41e13f91a"
-      },
-      "DecidingValue": {
-        "$r": "80b794fdeab68485"
-      },
-      "EmapLemma": {
-        "$r": "f934b9070933e8ea"
-      },
-      "FinitePrefixExtension": {
-        "$r": "51dc0130e43a3a11"
-      },
-      "FiniteShift": {
-        "$r": "b8c448d90b2e9fef"
-      },
-      "FirstMovedPoint": {
-        "$r": "dab24456ed12b433"
-      },
-      "Front": {
-        "$r": "8a55d26a4f639b18"
-      },
-      "FrontBase": {
-        "$r": "bb5431a9ee4a0dcf"
-      },
-      "FrontBridge": {
-        "$r": "e3d9cec04bf71c3f"
-      },
-      "FrontBridgeInit": {
-        "$r": "de283ab91939ebc3"
-      },
-      "FrontBridgeStep": {
-        "$r": "3d53f2d9ffe48851"
-      },
-      "FrontBridgeTail": {
-        "$r": "056a1fec6683f6ca"
-      },
-      "FrontBridgeTailInsert": {
-        "$r": "555a5fa6bbcf96f4"
-      },
-      "FrontBridgeTerminal": {
-        "$r": "14f56bb88493ea48"
-      },
-      "FrontNontrivialBase": {
-        "$r": "d9656c7074178083"
-      },
-      "FrontPrefix": {
-        "$r": "a8dd3d90054604c9"
-      },
-      "FrontPrefixExists": {
-        "$r": "4a6feb21b6ba776b"
-      },
-      "FrontPrefixUnique": {
-        "$r": "d0c8ec39c408315b"
-      },
-      "FrontRayBase": {
-        "$r": "71fcab819b2e451e"
-      },
-      "FrontRayClosure": {
-        "$r": "22366f48ab226cbc"
-      },
-      "FrontRayDense": {
-        "$r": "26355fe4f9c2253b"
-      },
-      "FrontRayPrefixFree": {
-        "$r": "da1c59748d1e9da6"
-      },
-      "FrontRestrict": {
-        "$r": "8487a830583cda4d"
-      },
-      "FrontRestriction": {
-        "$r": "7ed6a8bc6c4f51a4"
-      },
-      "FrontTreeImmediateExtensions": {
-        "$r": "936f6b461e961657"
-      },
-      "FrontTreeOrderedExtension": {
-        "$r": "3cc8356ccc914fe7"
-      },
-      "FrontTreeSingleton": {
-        "$r": "b7032e5cd93c0810"
-      },
-      "FrontTreeWellFounded": {
-        "$r": "22753d71a46635f6"
-      },
-      "GBetterRel": {
-        "$r": "0a052173c793f00d"
-      },
-      "GBetterRelIff": {
-        "$r": "eee1743883f5499b"
-      },
-      "GoodMultiSequence": {
-        "$r": "13847dddd8a41588"
-      },
-      "HerCtblCode": {
-        "$r": "f56c9e969bfe8286"
-      },
-      "HerCtblCodeErase": {
-        "$r": "100d76b210b6cb10"
-      },
-      "HerCtblNodeClosure": {
-        "$r": "25e21af68639d6ff"
-      },
-      "HerCtblPower": {
-        "$r": "0f9ca87f51725045"
-      },
-      "HerCtblPowerIsPreorder": {
-        "$r": "90771eced1e49b8c"
-      },
-      "HerCtblRel": {
-        "$r": "115010ad9ef17853"
-      },
-      "HerCtblWqoIffWellFounded": {
-        "$r": "40374902d0ae5a5f"
-      },
-      "HereditarilyCountable": {
-        "$r": "0f0df0cf1639da21"
-      },
-      "HereditarilyCountableAtom": {
-        "$r": "3b8365ce116df01a"
-      },
-      "HereditarilyCountablePresentationInvariant": {
-        "$r": "5774bd9db3a1d432"
-      },
-      "IncSeq": {
-        "$r": "05b14093084a5884"
-      },
-      "IncSeqComp": {
-        "$r": "6a30fbe502c53f14"
-      },
-      "IncSeqId": {
-        "$r": "7ce952ca3a0cb662"
-      },
-      "IncSeqPointwiseLe": {
-        "$r": "d982dddee627a7e2"
-      },
-      "IncreasingPair": {
-        "$r": "901ebd6b56f28ca9"
-      },
-      "InfiniteSetEnumeration": {
-        "$r": "a2a839a5091d26fb"
-      },
-      "InitialSegment": {
-        "$r": "fa07ac68c9de2fa3"
-      },
-      "InitialSegmentInsert": {
-        "$r": "3c34b68d6bae2a1f"
-      },
-      "LocallyConstant": {
-        "$r": "1d9b132e83fea2d5"
-      },
-      "MainProp": {
-        "$r": "fe34c0a07bbda4c6"
-      },
-      "MultiSequence": {
-        "$r": "36e4acf99cb958ad"
-      },
-      "MultiSequenceRestrict": {
-        "$r": "87b9e0b610f0a06e"
-      },
-      "NashWilliams": {
-        "$r": "dfa63cdc3a127f23"
-      },
-      "NoBadPerfectSuper": {
-        "$r": "87d8997ccc40555f"
-      },
-      "OrbitBlock": {
-        "$r": "c62ab80ec8de83c5"
-      },
-      "OrbitBlockCoverage": {
-        "$r": "25c8292ac5c20194"
-      },
-      "OrbitEmbedding": {
-        "$r": "c7f055bb2c7e65fa"
-      },
-      "OrbitPoint": {
-        "$r": "00ef5fd61340464c"
-      },
-      "OrbitUnbounded": {
-        "$r": "96c497dda79150f7"
-      },
-      "PerfectBaseToSuper": {
-        "$r": "e951558e279dce1c"
-      },
-      "PerfectMultiRestrict": {
-        "$r": "4944a7ab4898d4a2"
-      },
-      "PerfectMultiSequence": {
-        "$r": "231a2515f20724da"
-      },
-      "PerfectMultiToSuper": {
-        "$r": "5a7abcfda5091d89"
-      },
-      "PerfectSuperRestrict": {
-        "$r": "fd433158c92ba69d"
-      },
-      "PerfectSuperSequence": {
-        "$r": "57f299e7cac79bb4"
-      },
-      "PerfectSuperToBase": {
-        "$r": "fec3a6213b8b3883"
-      },
-      "PerfectSuperToMulti": {
-        "$r": "29c998e5a50453b7"
-      },
-      "PowerChild": {
-        "$r": "c6d6527a567b1dc1"
-      },
-      "PowerChildSupport": {
-        "$r": "98d8e507c0f62f02"
-      },
-      "PowerChildWellFounded": {
-        "$r": "5942e65092eb5cc4"
-      },
-      "PowerCopiedFailureMove": {
-        "$r": "3ee8fe8154af3e28"
-      },
-      "PowerCopiedFiniteDependence": {
-        "$r": "504a5899e53e068e"
-      },
-      "PowerCopiedFiniteTerminal": {
-        "$r": "705e614559e238d8"
-      },
-      "PowerCopiedLeft": {
-        "$r": "eb10a7402a9b3427"
-      },
-      "PowerCopiedOrbitDependence": {
-        "$r": "0a3c165e13b4ae0e"
-      },
-      "PowerCopiedShiftIdentity": {
-        "$r": "94a087d6ccc217cf"
-      },
-      "PowerCopiedSupport": {
-        "$r": "fcb2438c24fec648"
-      },
-      "PowerCopiedTerminalAt": {
-        "$r": "75fbf1812a315ee1"
-      },
-      "PowerCopiedTerminalShift": {
-        "$r": "9caf8a10bce42295"
-      },
-      "PowerCopiedTerminalSupport": {
-        "$r": "365fafa8163ea01e"
-      },
-      "PowerCopiedTerminates": {
-        "$r": "44255d12a2a95061"
-      },
-      "PowerFiniteOrbitConstancy": {
-        "$r": "f89caba247ec7e43"
-      },
-      "PowerGameDescent": {
-        "$r": "26a8a381da165bc0"
-      },
-      "PowerGameDescentWellFounded": {
-        "$r": "0edd445d16c53eff"
-      },
-      "PowerIResponse": {
-        "$r": "47490af90d6d6f2c"
-      },
-      "PowerIResponseFailure": {
-        "$r": "be1791cc0d955e5c"
-      },
-      "PowerIResponseLegal": {
-        "$r": "35db48af5fa913a9"
-      },
-      "PowerIResponseWitness": {
-        "$r": "77e8f6cec271caf4"
-      },
-      "PowerMove": {
-        "$r": "b83fe013efd5453e"
-      },
-      "PowerMoveInSupport": {
-        "$r": "1ce91ad6d568f430"
-      },
-      "PowerPresentationEq": {
-        "$r": "cc7743c174df5a93"
-      },
-      "PowerPresentationEqEquivalence": {
-        "$r": "80f061b4fd205dc7"
-      },
-      "PowerQ": {
-        "$r": "e0a8d7f623a194c0"
-      },
-      "PowerQIsPreorder": {
-        "$r": "32c97117095daff7"
-      },
-      "PowerQPresBqo": {
-        "$r": "65a6f5195f49a8b2"
-      },
-      "PowerQReflection": {
-        "$r": "d656e11f6c53079c"
-      },
-      "PowerRel": {
-        "$r": "c71e6d1925b27694"
-      },
-      "PowerRelAtomAtom": {
-        "$r": "6219d6951510062f"
-      },
-      "PowerRelAtomNode": {
-        "$r": "1d02ec722102e4ee"
-      },
-      "PowerRelCongrLeft": {
-        "$r": "e0dfbc97cf7babce"
-      },
-      "PowerRelCongrRight": {
-        "$r": "7e8e168486965d1d"
-      },
-      "PowerRelNodeAtom": {
-        "$r": "578bb96fa2fabc59"
-      },
-      "PowerRelNodeNode": {
-        "$r": "f1dc843e3813d5d8"
-      },
-      "PowerRelRefl": {
-        "$r": "de1f5035122eda2c"
-      },
-      "PowerRelTrans": {
-        "$r": "9822e360dc0fc953"
-      },
-      "PowerShiftIter": {
-        "$r": "63d2e4e6552d9c10"
-      },
-      "PowerShiftIterPrefixAgree": {
-        "$r": "9a54a851eb2f71fa"
-      },
-      "PowerShiftIterShift": {
-        "$r": "29af1232c806be53"
-      },
-      "PowerSupport": {
-        "$r": "4cbb8a5aa5fafb10"
-      },
-      "PowerSupportInvariant": {
-        "$r": "61cbc4e291419b13"
-      },
-      "PowerSupportNonempty": {
-        "$r": "d8ebc5c62f350ade"
-      },
-      "PowerWqoBadPairSequence": {
-        "$r": "e988bf4fd83ac906"
-      },
-      "Preamble": {
-        "$r": "f8d915076828a54a"
-      },
-      "PrefixAgree": {
-        "$r": "e65b2587af24cff9"
-      },
-      "PrefixTree": {
-        "$r": "e5c7a499b4bf3625"
-      },
-      "ProperInitialSegment": {
-        "$r": "b92a1412e4e4d4fa"
-      },
-      "ProperPrefixSet": {
-        "$r": "8fc28edee9785520"
-      },
-      "QuadrupleHomogeneous": {
-        "$r": "ad5879c52489b910"
-      },
-      "RadoEmbedding": {
-        "$r": "74771907011d662f"
-      },
-      "RadoOrder": {
-        "$r": "8f74e3c3d5265954"
-      },
-      "Ray": {
-        "$r": "74b5a07ca9a88392"
-      },
-      "RelationEmbedding": {
-        "$r": "35fecb5ecd5bf554"
-      },
-      "RestrictionLocallyConstant": {
-        "$r": "1abecc56b3f1ac08"
-      },
-      "RestrictionShift": {
-        "$r": "c1d039621635ab5f"
-      },
-      "RightComp": {
-        "$r": "a952c31750e36be0"
-      },
-      "RmapLemma": {
-        "$r": "98a2a1dd092eacdc"
-      },
-      "SetDomination": {
-        "$r": "d7d952369cee1a89"
-      },
-      "ShiftDichotomy": {
-        "$r": "22456045daa67f06"
-      },
-      "ShiftMap": {
-        "$r": "c69977fd272228e0"
-      },
-      "SubFrontCharacterization": {
-        "$r": "ca162cfc80efd66a"
-      },
-      "Subarr": {
-        "$r": "a811d505c643cf67"
-      },
-      "SuccSeq": {
-        "$r": "d869f6a4cfedf679"
-      },
-      "SuperNW": {
-        "$r": "a58cf6e4cfe774d1"
-      },
-      "SuperSequence": {
-        "$r": "0cfba8607eab05a1"
-      },
-      "SuperSequenceExtension": {
-        "$r": "f8ef9379631fd75b"
-      },
-      "SuperSequenceRestrict": {
-        "$r": "71b34623760bd082"
-      },
-      "TailSet": {
-        "$r": "c059040f5eb70e61"
-      },
-      "TildeF": {
-        "$r": "19b12934f3923a1e"
-      },
-      "TildeFAtomIffFront": {
-        "$r": "5f25bfcaeb4b57b5"
-      },
-      "TildeFFrontEquation": {
-        "$r": "13dea75b39700a1a"
-      },
-      "TildeFHerCtbl": {
-        "$r": "1910c2a9d6a40c0b"
-      },
-      "TildeFNonfrontEquation": {
-        "$r": "a5e11c49f421734a"
-      },
-      "TildeFSingleton": {
-        "$r": "84f3986354ffe0b5"
-      },
-      "TripleHomogeneous": {
-        "$r": "1ef702ce7aa9cc3d"
-      }
-    },
     "7277ffdeeec96ae8": {
       "BadSuperSequence": {
         "$s": "18d46317f9382189"
@@ -40919,20 +40936,6 @@
         "$r": "5e4707fcdb9cbbaf"
       }
     },
-    "7aebab1b49d698d1": [
-      {
-        "$r": "67d5a3bd6aa3d977"
-      },
-      {
-        "$r": "591dc8686274d733"
-      },
-      {
-        "$r": "1bf1d9ef66a52048"
-      },
-      {
-        "$r": "e17d16042c4dbf75"
-      }
-    ],
     "7af839198295fe0a": {
       "artifact_bundle": {
         "$r": "7a0e3a5e2f4abbc7"
@@ -41171,6 +41174,41 @@
         "$s": "6e9796a684e2ba85"
       }
     },
+    "7c04471983d3cfc7": {
+      "corr_current_fingerprints": {
+        "$r": "347e431a985519cc"
+      },
+      "coverage": {
+        "$r": "48f5e857a8dd953e"
+      },
+      "deviation_current_fingerprints": {},
+      "open_nodes": {
+        "$r": "cec8781d81ceb6f0"
+      },
+      "paper_current_fingerprints": {
+        "$r": "fb64625e19c055d8"
+      },
+      "placeholder_definition_nodes": [],
+      "present_nodes": {
+        "$r": "df09dd9d06ff24bc"
+      },
+      "protected_closure_nodes_per_target": {
+        "$r": "617eae7f4e15e479"
+      },
+      "sketch_proof_nodes": [],
+      "sound_current_fingerprint_parts": {
+        "$r": "fc62c58a88100dc3"
+      },
+      "sound_current_fingerprints": {
+        "$r": "584b7f89f4ac0981"
+      },
+      "substantiveness_current_fingerprints": {
+        "$r": "95d39d0c8bd86967"
+      },
+      "target_fingerprints": {
+        "$r": "347e431a985519cc"
+      }
+    },
     "7c3e248a3219d62f": {
       "declaration_kind": "definition",
       "owner": "PowerCopiedTerminalAt",
@@ -41344,6 +41382,13 @@
         "$r": "b4bed314a0f67058"
       }
     ],
+    "7d1d581faac5fbb5": {
+      "FiniteShift": "e2dfc558f39abbda",
+      "Front": "54804e268105ccdb",
+      "PerfectSuperSequence": "578bd6a28473ae49",
+      "SuperSequence": "97f9f0f5dc5dec42",
+      "SuperSequenceRestrict": "f5ceca2ceabaa0e7"
+    },
     "7d2aa76fd50b0b90": {
       "kind": "definition",
       "name": "BaseLocallyConstant"
@@ -41774,6 +41819,30 @@
         "$r": "af015deae59e8e9a"
       }
     ],
+    "7e6f560a346477ca": {
+      "artifact_bundle": {
+        "$r": "0d3a48eadb05ce6a"
+      },
+      "declaration_manifest": {
+        "$r": "8c595283c9b0c258"
+      },
+      "direct_imports": {
+        "$r": "9bedf8453a8edf8b"
+      },
+      "exact_declaration_uses": {
+        "$r": "f720cb953a99f195"
+      },
+      "principal_declaration": "PerfectSuperRestrict",
+      "replay_declaration_manifest": {
+        "$r": "8c595283c9b0c258"
+      },
+      "source_sha256": {
+        "$s": "e2f42d0502f95028"
+      },
+      "visibility_manifests": {
+        "$r": "f9303f0ed90bc4a7"
+      }
+    },
     "7e7464d217d4730c": [
       {
         "$r": "40cbc5cfc4d5f1a2"
@@ -46552,6 +46621,13 @@
       "visibility_manifests": {
         "$r": "6c8df2d0845abdcb"
       }
+    },
+    "8cd12a2371567510": {
+      "level": "exported",
+      "sha256": {
+        "$s": "be522c64cfddf33d"
+      },
+      "size_bytes": 10352
     },
     "8d01e832d84bc9ce": {
       "consumer": "PowerIResponseFailure",
@@ -53939,6 +54015,23 @@
         "$r": "21a982b07300ac08"
       }
     ],
+    "9ef87268cff7900d": [
+      {
+        "$r": "b9b73d8aedc3258e"
+      },
+      {
+        "$r": "a30d8bf7e8a2cb96"
+      },
+      {
+        "$r": "a109fa9bff661257"
+      },
+      {
+        "$r": "e646003a37a285fd"
+      },
+      {
+        "$r": "0013aa7ee3ae7acf"
+      }
+    ],
     "9ef8897813c986a1": {
       "Front": "54804e268105ccdb",
       "FrontBase": "3b1543cbd1e93873",
@@ -58549,20 +58642,6 @@
         "$s": "bb6ab7ad2b686d3c"
       }
     },
-    "acf71279a331708e": {
-      "Front": {
-        "$s": "abaa2884f637e787"
-      },
-      "PerfectSuperSequence": {
-        "$s": "32840bb6f8178c82"
-      },
-      "SuperSequence": {
-        "$s": "ae5cce128c7a595f"
-      },
-      "SuperSequenceRestrict": {
-        "$s": "538f6ada607b50ef"
-      }
-    },
     "acfdea08497f980a": {
       "PowerChild": {
         "$s": "31994b6284587231"
@@ -59153,11 +59232,6 @@
       "reached_declaration": "PowerRel._proof_6",
       "visibility": "exported"
     },
-    "aef3a6cd0d9952aa": [
-      {
-        "$r": "35b08ece0bbb02c0"
-      }
-    ],
     "af015deae59e8e9a": {
       "declaration_kind": "definition",
       "owner": "PrefixAgree",
@@ -62170,6 +62244,20 @@
       },
       "level": "exported"
     },
+    "b9b73d8aedc3258e": {
+      "consumer": "PerfectSuperRestrict",
+      "declaration_kind": "definition",
+      "membership_witness": {
+        "$s": "ccb3d2f2769fd01e"
+      },
+      "owner": "FiniteShift",
+      "owner_root": {
+        "$s": "972ab44ea9e411a0"
+      },
+      "reached_declaration": "FiniteShift",
+      "semantics": "principal_assumption",
+      "visibility": "exported"
+    },
     "b9c14cca5156c5fd": [
       {
         "$r": "ff837946150a9b1b"
@@ -63561,20 +63649,6 @@
         "$r": "bd3413aad7997f93"
       }
     ],
-    "be323619ae2a3b8c": {
-      "Front": {
-        "$s": "40a2699944f47464"
-      },
-      "PerfectSuperSequence": {
-        "$s": "3bf1637462f825c4"
-      },
-      "SuperSequence": {
-        "$s": "6001e0ef97ca31e0"
-      },
-      "SuperSequenceRestrict": {
-        "$s": "a7b4e90a5794da2f"
-      }
-    },
     "be3328a81ae5a00e": {
       "exported": {
         "$s": "6ce42b6925cde785"
@@ -68134,6 +68208,12 @@
       {
         "$r": "ce45029ac19b1648"
       }
+    ],
+    "cec8781d81ceb6f0": [
+      "BadSuperToBase",
+      "PerfectMultiRestrict",
+      "PerfectMultiToSuper",
+      "PerfectSuperToBase"
     ],
     "cecc31d24d5c204b": {
       "declarations": {
@@ -80563,6 +80643,23 @@
       "semantics": "principal_assumption",
       "visibility": "exported"
     },
+    "f720cb953a99f195": [
+      {
+        "$r": "64b5540157ca46d7"
+      },
+      {
+        "$r": "67d5a3bd6aa3d977"
+      },
+      {
+        "$r": "591dc8686274d733"
+      },
+      {
+        "$r": "1bf1d9ef66a52048"
+      },
+      {
+        "$r": "e17d16042c4dbf75"
+      }
+    ],
     "f7278e92a0b93c6e": [
       "Init",
       "Tablet.BadMultiToNontrivialSuper",
@@ -81963,20 +82060,6 @@
         "$r": "c053028feb444155"
       }
     ],
-    "faa363cf35ba9f86": [
-      {
-        "$r": "a30d8bf7e8a2cb96"
-      },
-      {
-        "$r": "a109fa9bff661257"
-      },
-      {
-        "$r": "e646003a37a285fd"
-      },
-      {
-        "$r": "0013aa7ee3ae7acf"
-      }
-    ],
     "faa455c9d7dcee4f": {
       "level": "exported",
       "sha256": {
@@ -83257,59 +83340,6 @@
         "$r": "0e2950a7cf73318a"
       }
     ],
-    "fd433158c92ba69d": {
-      "accepted_at_snapshot_id": "revalidate-cycle-11",
-      "active_decl_hash": {
-        "$s": "d22d6f616459f50f"
-      },
-      "active_statement_hash": {
-        "$s": "9941587c84ab3f1f"
-      },
-      "approved_axioms_hash": {
-        "$s": "dcbabda85544c6d2"
-      },
-      "axcheck_status": "Agreed",
-      "boundary_theorems": {},
-      "checker_script_hash": {
-        "$s": "60fd30bb38022227"
-      },
-      "closure_version": "patch_c_v1",
-      "kernel_axioms": {
-        "$r": "2085cc6d57659749"
-      },
-      "kernel_semantic_hashes": {
-        "$r": "be323619ae2a3b8c"
-      },
-      "lake_executable_hash": {
-        "$s": "6eb9202e934e0861"
-      },
-      "lake_manifest_hash": {
-        "$s": "bf3ed8814aacccc4"
-      },
-      "lean_executable_hash": {
-        "$s": "5a2778d0a0ed328c"
-      },
-      "node": "PerfectSuperRestrict",
-      "node_certificate": {
-        "$r": "522c9a3aa824cc77"
-      },
-      "node_certificate_evidence": {
-        "$r": "375c95a0b6d02970"
-      },
-      "preamble_hash": {
-        "$s": "62d66a35aa3d3c82"
-      },
-      "seed_support_definition_deps": {},
-      "seed_support_evidence_root": null,
-      "seed_support_file_hashes": {},
-      "strict_definition_deps": {
-        "$r": "6bf2631e98235d60"
-      },
-      "strict_theorem_deps": {},
-      "toolchain_hash": {
-        "$s": "da4fc0388adf0949"
-      }
-    },
     "fd58b89a9c482d50": [
       "Init",
       "Tablet.IncSeq",
@@ -84058,17 +84088,17 @@
     }
   },
   "checkpoint": {
-    "active_node": "PerfectSuperRestrict",
+    "active_node": "PerfectMultiRestrict",
     "committed": {
-      "$r": "483961b4ec65ad01"
+      "$r": "7c04471983d3cfc7"
     },
-    "cycle": 261,
+    "cycle": 262,
     "gate_kind": "None",
     "phase": "ProofFormalization"
   },
   "state": {
-    "active_coarse_node": "PerfectSuperRestrict",
-    "active_node": "PerfectSuperRestrict",
+    "active_coarse_node": "PerfectMultiRestrict",
+    "active_node": "PerfectMultiRestrict",
     "approved_targets": {
       "configured_targets": {
         "$r": "ae7b3cb4657bcad4"
@@ -84294,6 +84324,10 @@
       "PerfectBaseToSuper": {
         "closed_by": "worker",
         "cycle": 257
+      },
+      "PerfectSuperRestrict": {
+        "closed_by": "worker",
+        "cycle": 262
       },
       "PerfectSuperToMulti": {
         "closed_by": "worker",
@@ -84694,7 +84728,7 @@
       "TripleHomogeneous"
     ],
     "committed": {
-      "$r": "483961b4ec65ad01"
+      "$r": "7c04471983d3cfc7"
     },
     "committed_deps": {
       "$r": "998b8c68f0925beb"
@@ -84702,7 +84736,7 @@
     "committed_deviation_files": {},
     "committed_local_closure_failures": {},
     "committed_local_closure_records": {
-      "$r": "726d2ebf08cd18ef"
+      "$r": "1f1f8fed134d94f2"
     },
     "committed_local_closure_unverified_nodes": [],
     "committed_node_deviation_claims": {},
@@ -84732,7 +84766,7 @@
       "kind": "paper_manuscript",
       "paper_tex_path": "paper/paper.tex"
     },
-    "cycle": 261,
+    "cycle": 262,
     "cycles_in_coarse_repair_mode": 0,
     "cycles_since_clean": 0,
     "cycles_since_shallow_coarse_closed_count_increase": 0,
@@ -85380,13 +85414,13 @@
         "cost_version": "2",
         "heartbeats": null,
         "heartbeats_key": null,
-        "measured_at_snapshot_id": "cycle-11",
+        "measured_at_snapshot_id": "cycle-262",
         "node": "PerfectSuperRestrict",
-        "olean_size_bytes": 12456,
-        "peak_rss_kib": 1691624,
+        "olean_size_bytes": 10352,
+        "peak_rss_kib": 1675560,
         "peak_rss_process": "lean",
-        "source_closure_hash": "0b3241962240e6c3020226a8c4a7abcc82a9669723feabb4940bd7293293b8ce",
-        "walltime_ms": 2208
+        "source_closure_hash": "546ec4133bce35367e31179801c5b2049b9f016f3de799929a7bd85edc9de2d9",
+        "walltime_ms": 2244
       },
       "PerfectSuperToBase": {
         "cost_version": "2",
@@ -85671,6 +85705,7 @@
       "OrbitUnbounded",
       "PerfectBaseToSuper",
       "PerfectMultiSequence",
+      "PerfectSuperRestrict",
       "PerfectSuperSequence",
       "PerfectSuperToMulti",
       "PowerChild",
@@ -85789,7 +85824,7 @@
     "in_flight_request": null,
     "invalid_attempt": false,
     "last_audit_request_cycle": 6,
-    "last_clean_commit": "61b38d5f28b8af91ac16b36c6e132ca9995741d6",
+    "last_clean_commit": "c399efa1a4b03fe09ecb258398f0bde1c10af037",
     "last_clean_corr_approved_fingerprints": {
       "$r": "347e431a985519cc"
     },
@@ -85803,12 +85838,12 @@
     "last_clean_deviation_files": {},
     "last_clean_deviation_status": {},
     "last_clean_live": {
-      "$r": "483961b4ec65ad01"
+      "$r": "7c04471983d3cfc7"
     },
     "last_clean_local_closure_failures": {},
     "last_clean_local_closure_mirror_ready": true,
     "last_clean_local_closure_records": {
-      "$r": "726d2ebf08cd18ef"
+      "$r": "1f1f8fed134d94f2"
     },
     "last_clean_local_closure_unverified_nodes": [],
     "last_clean_node_deviation_claims": {},
@@ -85860,18 +85895,18 @@
     "latest_stuck_math_audit_rejection_reason": "",
     "latest_substantiveness_review_nodes": [],
     "latest_substantiveness_reviewer_evidence": {},
-    "latest_worker_comments": "Only the active Lean proof body was edited. The theorem statement, imports, BODY marker, and TeX proof were preserved; no helper nodes, open obligations, or semantic changes were introduced. Incremental checking, lake build, and the standalone node checker pass.",
+    "latest_worker_comments": "Preserved the accepted theorem statement, imports, BODY marker, and TeX proof. The active node is Lean-closed.",
     "latest_worker_needs_restructure_suggested_nodes": [],
-    "latest_worker_summary": "Closed BqoIffGeneralShift directly with the accepted statement and imports. The proof handles the identity increasing sequence by reflexivity, uses GBetterRelIff and GBetterRel in the nonidentity case, and derives the converse from BadMultiSequence with SuccSeq and ShiftMap.",
+    "latest_worker_summary": "Closed PerfectSuperRestrict by applying the original perfectness implication to the unchanged FiniteShift premise and the restricted values reduced through SuperSequenceRestrict.",
     "latest_worker_under_model_disproof": "",
     "latest_worker_under_model_reasoning": "",
     "latest_worker_under_model_route_opinion": "",
     "live": {
-      "$r": "483961b4ec65ad01"
+      "$r": "7c04471983d3cfc7"
     },
     "local_closure_failures": {},
     "local_closure_records": {
-      "$r": "726d2ebf08cd18ef"
+      "$r": "1f1f8fed134d94f2"
     },
     "local_closure_unverified_nodes": [],
     "max_theorem_invalid_attempt": 2,
@@ -85980,7 +86015,7 @@
       "OrbitPoint": "Hard",
       "OrbitUnbounded": "Easy",
       "PerfectBaseToSuper": "Hard",
-      "PerfectMultiRestrict": "Hard",
+      "PerfectMultiRestrict": "Easy",
       "PerfectMultiSequence": "Hard",
       "PerfectMultiToSuper": "Hard",
       "PerfectSuperRestrict": "Easy",
@@ -86091,7 +86126,7 @@
       "mode": "Local",
       "must_close_active": true,
       "next_worker_context_mode": "resume",
-      "node": "PerfectSuperRestrict",
+      "node": "PerfectMultiRestrict",
       "orphan_cleanup_nodes": [],
       "paper_focus_ranges": [],
       "protected_semantic_change_nodes": [],
@@ -86179,17 +86214,8 @@
     "process_memory_seq": 12,
     "progress_history": {
       "last_dispatched_index": 55,
-      "next_index": 261,
+      "next_index": 262,
       "snapshots": [
-        {
-          "present": {
-            "$r": "df09dd9d06ff24bc"
-          },
-          "progressed": {
-            "$r": "df09dd9d06ff24bc"
-          },
-          "snapshot_index": 197
-        },
         {
           "present": {
             "$r": "df09dd9d06ff24bc"
@@ -86756,6 +86782,15 @@
             "$r": "df09dd9d06ff24bc"
           },
           "snapshot_index": 260
+        },
+        {
+          "present": {
+            "$r": "df09dd9d06ff24bc"
+          },
+          "progressed": {
+            "$r": "df09dd9d06ff24bc"
+          },
+          "snapshot_index": 261
         }
       ]
     },
@@ -86764,12 +86799,12 @@
     "proof_nodes": {
       "$r": "a575696378df3eb1"
     },
-    "request_seq": 725,
+    "request_seq": 727,
     "retry_outcome_kind": "None",
-    "reviewer_comments": "Work on PerfectSuperRestrict in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Use the unchanged FiniteShift premise on the sub-front and rewrite both restricted values through SuperSequenceRestrict to apply the original perfectness implication. Leave no obligations open.",
+    "reviewer_comments": "Work on PerfectMultiRestrict in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Apply the original perfectness assertion to z composed with an arbitrary x, rewrite both values with MultiSequenceRestrict, and use RestrictionShift for the shifted composition. Leave no obligations open.",
     "reviewer_requested_sound_verifier_nodes": [],
     "revision_context": null,
-    "shallow_coarse_closed_count": 172,
+    "shallow_coarse_closed_count": 173,
     "sound_approved_fingerprints": {
       "$r": "2b7c2a9ed07954d0"
     },
