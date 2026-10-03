@@ -99,7 +99,7 @@
 | NashWilliams | theorem | proof | closed | - | Nash--Williams | BooleanInfinitePigeonhole, Front, FrontRayClosure, FrontRestrict, FrontRestriction, FrontTreeWellFounded, InitialSegmentInsert, SubFrontCharacterization |
 | NoBadPerfectSuper | lemma | proof | open | - | A super-sequence is not both perfect and bad | BadSuperSequence, BaseShift, FrontPrefixExists, InfiniteSetEnumeration, PerfectSuperSequence |
 | OrbitBlock | definition | definition | closed | - | - | OrbitPoint |
-| OrbitBlockCoverage | lemma | proof | open | - | - | OrbitBlock, OrbitEmbedding, OrbitUnbounded |
+| OrbitBlockCoverage | lemma | proof | closed | - | - | OrbitBlock, OrbitEmbedding, OrbitUnbounded |
 | OrbitEmbedding | lemma | proof | closed | - | - | IncSeq, OrbitPoint |
 | OrbitPoint | definition | definition | closed | - | - | IncSeq |
 | OrbitUnbounded | lemma | proof | closed | - | - | OrbitEmbedding, OrbitPoint |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 154 | **Open:** 31
+**Total:** 185 nodes | **Closed:** 155 | **Open:** 30

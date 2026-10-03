@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "OrbitUnbounded is closed; continue repairing MainProp's support cone with the direct orbit-block coverage lemma needed downstream.",
-    "comments": "Keep MainProp as the coarse anchor and route to OrbitBlockCoverage in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual existence-and-uniqueness argument without wrappers or helpers: obtain the increasing orbit embedding from OrbitEmbedding, split on l < G(0), use OrbitUnbounded to find a later orbit point above l, choose the least index n with l < G(n+1), prove G(n) <= l by minimality, and prove uniqueness from strict increase. Do not alter statements or imports and leave no obligations open.",
+    "reason": "OrbitBlockCoverage is closed; continue repairing MainProp's direct support by closing RmapLemma before tackling the BlockSigma prerequisites of EmapLemma.",
+    "comments": "Keep MainProp as the coarse anchor and route to RmapLemma in Local mode. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual construction without wrappers or helpers: obtain the least moved point from FirstMovedPoint, use OrbitEmbedding to form the increasing orbit embedding G, define rho(f) as f composed with G, prove prefix continuity by a finite input prefix bound, and derive the homomorphism equation from g(G n)=G(n+1) and the definitions of RightComp and ShiftMap. Do not alter statements or imports and leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "OrbitBlockCoverage",
+    "next_active": "RmapLemma",
     "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "OrbitBlockCoverage": "easy"
+      "RmapLemma": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep MainProp as the coarse anchor and route to OrbitBlockCoverage in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual existence-and-uniqueness argument without wrappers or helpers: obtain the increasing orbit embedding from OrbitEmbedding, split on l < G(0), use OrbitUnbounded to find a later orbit point above l, choose the least index n with l < G(n+1), prove G(n) <= l by minimality, and prove uniqueness from strict increase. Do not alter statements or imports and leave no obligations open.",
+    "comments": "Keep MainProp as the coarse anchor and route to RmapLemma in Local mode. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual construction without wrappers or helpers: obtain the least moved point from FirstMovedPoint, use OrbitEmbedding to form the increasing orbit embedding G, define rho(f) as f composed with G, prove prefix continuity by a finite input prefix bound, and derive the homomorphism equation from g(G n)=G(n+1) and the definitions of RightComp and ShiftMap. Do not alter statements or imports and leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 235,
+    "cycle": 236,
     "decision": "Continue",
     "difficulty_updates": {
-      "OrbitBlockCoverage": {
-        "Set": "Easy"
+      "RmapLemma": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,7 +47,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "OrbitBlockCoverage",
+    "next_active": "RmapLemma",
     "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "OrbitUnbounded is closed; continue repairing MainProp's support cone with the direct orbit-block coverage lemma needed downstream.",
-    "request_id": 673,
+    "reason": "OrbitBlockCoverage is closed; continue repairing MainProp's direct support by closing RmapLemma before tackling the BlockSigma prerequisites of EmapLemma.",
+    "request_id": 675,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_673_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_675_decision.context.json"
 }

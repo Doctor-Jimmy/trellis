@@ -107,7 +107,7 @@
 | NashWilliams | proof | Nash--Williams | closed |
 | NoBadPerfectSuper | proof | A super-sequence is not both perfect and bad | open |
 | OrbitBlock | definition | - | closed |
-| OrbitBlockCoverage | proof | - | open |
+| OrbitBlockCoverage | proof | - | closed |
 | OrbitEmbedding | proof | - | closed |
 | OrbitPoint | definition | - | closed |
 | OrbitUnbounded | proof | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 154/185 closed
+**Summary:** 155/185 closed
