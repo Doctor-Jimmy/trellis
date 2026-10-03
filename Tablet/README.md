@@ -114,7 +114,7 @@
 | PerfectBaseToSuper | proof | Perfect base extensions yield perfect sub-super-sequences | closed |
 | PerfectMultiRestrict | proof | Perfectness under restriction | closed |
 | PerfectMultiSequence | definition | - | closed |
-| PerfectMultiToSuper | proof | Multi-sequence perfectness gives super-sequence perfectness | open |
+| PerfectMultiToSuper | proof | Multi-sequence perfectness gives super-sequence perfectness | closed |
 | PerfectSuperRestrict | proof | Perfectness under sub-front restriction | closed |
 | PerfectSuperSequence | definition | - | closed |
 | PerfectSuperToBase | proof | Super-sequence perfectness gives base perfectness | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 184/185 closed
+**Summary:** 185/185 closed

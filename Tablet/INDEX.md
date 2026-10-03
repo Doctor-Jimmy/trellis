@@ -106,7 +106,7 @@
 | PerfectBaseToSuper | lemma | proof | closed | - | Perfect base extensions yield perfect sub-super-sequences | BaseIncSeq, BaseRestrict, FiniteShift, Front, FrontPrefix, FrontRestrict, FrontRestriction, IncSeq, IncSeqComp, InfiniteSetEnumeration, InitialSegment, PerfectMultiSequence, PerfectSuperSequence, ProperPrefixSet, RestrictionShift, ShiftMap, SuperSequence, SuperSequenceExtension, SuperSequenceRestrict |
 | PerfectMultiRestrict | lemma | proof | closed | - | Perfectness under restriction | MultiSequenceRestrict, PerfectMultiSequence, RestrictionShift |
 | PerfectMultiSequence | definition | definition | closed | - | - | MultiSequence, ShiftMap |
-| PerfectMultiToSuper | lemma | proof | open | - | Multi-sequence perfectness gives super-sequence perfectness | DecidingFrontSet, DecidingPrefix, PerfectMultiSequence, PerfectSuperSequence |
+| PerfectMultiToSuper | lemma | proof | closed | - | Multi-sequence perfectness gives super-sequence perfectness | DecidingFrontSet, DecidingPrefix, PerfectMultiSequence, PerfectSuperSequence |
 | PerfectSuperRestrict | lemma | proof | closed | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
 | PerfectSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
 | PerfectSuperToBase | lemma | proof | closed | - | Super-sequence perfectness gives base perfectness | BaseLocallyConstant, BasePerfect, BaseShift, FiniteShift, FrontPrefix, FrontPrefixExists, PerfectSuperSequence, ProperPrefixSet, ShiftMap, SuperSequenceExtension |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 184 | **Open:** 1
+**Total:** 185 nodes | **Closed:** 185 | **Open:** 0

@@ -11,4 +11,10 @@ theorem PerfectMultiToSuper {Q : Type} (r : Q → Q → Prop)
     (hh : PerfectMultiSequence r h) :
     PerfectSuperSequence r f := by
 -- BODY
-  sorry
+  intro s t hs ht hst
+  rcases hst with ⟨x, hxs, htx⟩
+  have hfs : f.value ⟨s, hs⟩ = h x := hf ⟨s, hs⟩ x hxs
+  have hft : f.value ⟨t, ht⟩ = h (ShiftMap x) :=
+    hf ⟨t, ht⟩ (ShiftMap x) htx
+  rw [hfs, hft]
+  exact hh x
