@@ -150,7 +150,7 @@
 | PowerRelRefl | lemma | proof | closed | - | Reflexivity of the lifted relation | PowerRelCongrRight |
 | PowerRelTrans | lemma | proof | closed | - | Transitivity of the lifted relation | PowerRelRefl |
 | PowerShiftIter | definition | definition | closed | - | - | ShiftMap |
-| PowerShiftIterPrefixAgree | lemma | proof | open | - | Finite-prefix agreement survives finitely many shifts | PowerShiftIter, PrefixAgree |
+| PowerShiftIterPrefixAgree | lemma | proof | closed | - | Finite-prefix agreement survives finitely many shifts | PowerShiftIter, PrefixAgree |
 | PowerShiftIterShift | lemma | proof | closed | - | Shift iterates commute with the first shift | PowerShiftIter |
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
 | PowerSupportInvariant | lemma | proof | closed | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 145 | **Open:** 40
+**Total:** 185 nodes | **Closed:** 146 | **Open:** 39

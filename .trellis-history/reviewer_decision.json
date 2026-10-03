@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The copied orbit-dependence cone is shallowly closed; advance to the prefix-agreement lemma needed for finite orbit constancy.",
-    "comments": "Switch the coarse anchor to PowerShiftIterPrefixAgree and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the result by induction on the shift count j, generalized over the prefix length n. The zero case unfolds PowerShiftIter and reduces to the hypothesis. In the successor case rewrite n+(j+1) as (n+1)+j, apply the induction hypothesis at n+1, unfold PrefixAgree, and use the successor definitions of PowerShiftIter, ShiftMap, RightComp, and SuccSeq; for i<n, the inequality i+1<n+1 supplies the needed equality. Do not add wrappers or helpers, change imports, or leave obligations open.",
+    "reason": "The prefix-agreement cone is shallowly closed; advance to the finite-orbit constancy lemma needed by the reflection theorem.",
+    "comments": "Switch the coarse anchor to PowerFiniteOrbitConstancy and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. For each j <= m obtain a local-constancy witness at PowerShiftIter j x, combine the finitely many shifted witness lengths into one N (for example by induction on m with a maximum), and use monotonicity of PrefixAgree to obtain agreement at each required n_j+j. Apply PowerShiftIterPrefixAgree with prefix n_j and shift j, then the corresponding local-constancy witness, for an arbitrary j <= m. Do not add wrappers or helpers, change imports, or leave obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerShiftIterPrefixAgree",
-    "next_active_coarse": "PowerShiftIterPrefixAgree",
+    "next_active": "PowerFiniteOrbitConstancy",
+    "next_active_coarse": "PowerFiniteOrbitConstancy",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerShiftIterPrefixAgree": "hard"
+      "PowerFiniteOrbitConstancy": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerShiftIterPrefixAgree and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the result by induction on the shift count j, generalized over the prefix length n. The zero case unfolds PowerShiftIter and reduces to the hypothesis. In the successor case rewrite n+(j+1) as (n+1)+j, apply the induction hypothesis at n+1, unfold PrefixAgree, and use the successor definitions of PowerShiftIter, ShiftMap, RightComp, and SuccSeq; for i<n, the inequality i+1<n+1 supplies the needed equality. Do not add wrappers or helpers, change imports, or leave obligations open.",
+    "comments": "Switch the coarse anchor to PowerFiniteOrbitConstancy and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. For each j <= m obtain a local-constancy witness at PowerShiftIter j x, combine the finitely many shifted witness lengths into one N (for example by induction on m with a maximum), and use monotonicity of PrefixAgree to obtain agreement at each required n_j+j. Apply PowerShiftIterPrefixAgree with prefix n_j and shift j, then the corresponding local-constancy witness, for an arbitrary j <= m. Do not add wrappers or helpers, change imports, or leave obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 226,
+    "cycle": 227,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerShiftIterPrefixAgree": {
+      "PowerFiniteOrbitConstancy": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerShiftIterPrefixAgree",
-    "next_active_coarse": "PowerShiftIterPrefixAgree",
+    "next_active": "PowerFiniteOrbitConstancy",
+    "next_active_coarse": "PowerFiniteOrbitConstancy",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The copied orbit-dependence cone is shallowly closed; advance to the prefix-agreement lemma needed for finite orbit constancy.",
-    "request_id": 655,
+    "reason": "The prefix-agreement cone is shallowly closed; advance to the finite-orbit constancy lemma needed by the reflection theorem.",
+    "request_id": 657,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_655_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_657_decision.context.json"
 }
