@@ -38,7 +38,7 @@ theorem FrontRestriction (F : Set (Finset Nat)) (X : Set Nat)
           have heq : (∅ : Finset Nat) = t :=
             hF.prefix_free hempty.1 ht.1 hempty_init
           have ht0 : t = ∅ := heq.symm
-          simpa [ht0]
+          simp [ht0]
         · intro ht
           have ht0 : t = ∅ := by simpa using ht
           simpa [ht0] using hempty
@@ -73,7 +73,7 @@ theorem FrontRestriction (F : Set (Finset Nat)) (X : Set Nat)
             obtain ⟨k, hk⟩ := hsne0
             have hks : k ∈ Y \ Set.Iio n ∧ k < m := (hsm k).mp hk
             exact hks.1.2 (by simpa [hmn'] using hks.2)
-          simpa [hs0] using hsne
+          simp [hs0] at hsne
         have hns : n ∈ s :=
           (hsm n).mpr ⟨⟨hnY, by exact Nat.not_lt.mpr (Nat.le_refl n)⟩, hnm⟩
         have hsY : ∀ k, k ∈ s → k ∈ Y := by

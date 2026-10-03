@@ -1,8 +1,8 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "Dismiss stale task 15 and dispatch actionable task 12 singly. The stale PerfectBaseToSuper diagnostic was already identified by the rejected batch; FrontRestriction task 12 remains a valid independent cleanup target.",
-    "comments": "Do not retry task 15: its hnext diagnostic was absent from the authoritative pre-burst baseline. Edit only FrontRestriction for task 12's unnecessary simpa warning, preserving its declaration, statement, imports, and proof result.",
+    "reason": "Dispatch the two remaining independent LintFix tasks as one atomic batch.",
+    "comments": "Apply only the requested FrontRestriction hsne simplification and PerfectBaseToSuper hi_eq cleanup. Preserve declarations, statements, imports, proof results, and all TeX artifacts; leave the separate FrontBridgeStep extraction pending.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -21,17 +21,13 @@
       "consulted_cited_ranges": false
     },
     "work_style_hint": "none",
-    "authorized_nodes": [
-      "FrontRestriction"
+    "authorized_nodes": [],
+    "cleanup_dismiss_tasks": [],
+    "cleanup_next_task": null,
+    "cleanup_batch_tasks": [
+      13,
+      16
     ],
-    "cleanup_dismiss_tasks": [
-      {
-        "task_index": 15,
-        "reason": "The PerfectBaseToSuper hnext diagnostic was rejected as stale by the authoritative acceptance baseline; do not retry this known-stale proposal."
-      }
-    ],
-    "cleanup_next_task": 12,
-    "cleanup_batch_tasks": null,
     "cleanup_repair_node": null,
     "cleanup_request_reaudit": false
   },
@@ -39,22 +35,19 @@
     "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
-    "authorized_nodes": [
-      "FrontRestriction"
+    "authorized_nodes": [],
+    "cleanup_batch_tasks": [
+      13,
+      16
     ],
-    "cleanup_dismiss_tasks": [
-      [
-        15,
-        "The PerfectBaseToSuper hnext diagnostic was rejected as stale by the authoritative acceptance baseline; do not retry this known-stale proposal."
-      ]
-    ],
-    "cleanup_next_task": 12,
+    "cleanup_dismiss_tasks": [],
+    "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Do not retry task 15: its hnext diagnostic was absent from the authoritative pre-burst baseline. Edit only FrontRestriction for task 12's unnecessary simpa warning, preserving its declaration, statement, imports, and proof result.",
+    "comments": "Apply only the requested FrontRestriction hsne simplification and PerfectBaseToSuper hi_eq cleanup. Preserve declarations, statements, imports, proof results, and all TeX artifacts; leave the separate FrontBridgeStep extraction pending.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 273,
+    "cycle": 274,
     "decision": "Continue",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
@@ -72,8 +65,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Dismiss stale task 15 and dispatch actionable task 12 singly. The stale PerfectBaseToSuper diagnostic was already identified by the rejected batch; FrontRestriction task 12 remains a valid independent cleanup target.",
-    "request_id": 751,
+    "reason": "Dispatch the two remaining independent LintFix tasks as one atomic batch.",
+    "request_id": 753,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -83,5 +76,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_751_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_753_decision.context.json"
 }
