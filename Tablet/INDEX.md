@@ -2,7 +2,7 @@
 
 | Name | Env | Kind | Status | Labels | Title | Imports |
 |------|-----|------|--------|--------|-------|---------|
-| BadMultiRestrict | lemma | proof | open | - | Badness under restriction | BadMultiSequence, MultiSequenceRestrict, RestrictionShift |
+| BadMultiRestrict | lemma | proof | closed | - | Badness under restriction | BadMultiSequence, MultiSequenceRestrict, RestrictionShift |
 | BadMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | BadMultiToNontrivialSuper | lemma | proof | closed | - | A bad multi-sequence has a nontrivial deciding front | BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingFrontSet, DecidingValue, IncSeqId, ShiftMap |
 | BadMultiToSuper | lemma | proof | closed | - | Multi-sequence badness gives super-sequence badness | BadMultiSequence, BadSuperSequence, DecidingFrontSet, DecidingPrefix, DecidingValue |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 173 | **Open:** 12
+**Total:** 185 nodes | **Closed:** 174 | **Open:** 11
