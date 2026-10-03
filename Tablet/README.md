@@ -53,7 +53,7 @@
 | DecidingFrontSet | definition | - | closed |
 | DecidingPrefix | definition | - | closed |
 | DecidingValue | proof | Value map on the deciding front | closed |
-| EmapLemma | proof | - | open |
+| EmapLemma | proof | - | closed |
 | FinitePrefixExtension | proof | Infinite extension of a finite prefix | open |
 | FiniteShift | definition | - | closed |
 | FirstMovedPoint | proof | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 159/185 closed
+**Summary:** 160/185 closed

@@ -45,7 +45,7 @@
 | DecidingFrontSet | definition | definition | closed | - | - | DecidingPrefix, ProperInitialSegment |
 | DecidingPrefix | definition | definition | closed | - | - | LocallyConstant, ProperInitialSegment, ProperPrefixSet |
 | DecidingValue | lemma | proof | closed | - | Value map on the deciding front | DecidingFront, FinitePrefixExtension |
-| EmapLemma | lemma | proof | open | - | - | BlockSigmaContinuous, BlockSigmaEmbedding, BlockSigmaIntertwines, ContMor, FirstMovedPoint, RightComp, ShiftMap |
+| EmapLemma | lemma | proof | closed | - | - | BlockSigmaContinuous, BlockSigmaEmbedding, BlockSigmaIntertwines, ContMor, FirstMovedPoint, RightComp, ShiftMap |
 | FinitePrefixExtension | lemma | proof | open | - | Infinite extension of a finite prefix | IncSeq, ProperPrefixSet |
 | FiniteShift | definition | definition | closed | - | - | ProperPrefixSet, ShiftMap |
 | FirstMovedPoint | lemma | proof | closed | - | - | IncSeqId, IncSeqPointwiseLe |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 159 | **Open:** 26
+**Total:** 185 nodes | **Closed:** 160 | **Open:** 25

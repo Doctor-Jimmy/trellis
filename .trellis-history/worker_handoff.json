@@ -1,8 +1,7 @@
 {
   "raw": {
     "audit_request": null,
-    "challenge_claim_updates": {},
-    "comments": "Closed the active intertwining proof in Lean while preserving its statement, imports, BODY marker, and TeX proof.",
+    "comments": "Closed only Tablet/EmapLemma.lean. The proof obtains the least moved point, chooses the IncSeq-valued block map via BlockSigmaEmbedding, derives prefix continuity from BlockSigmaContinuous, and proves the commuting equation coordinatewise using BlockSigmaIntertwines together with ShiftMap and RightComp. The statement, imports, BODY marker, and accepted TeX proof are unchanged.",
     "deleted_nodes": [],
     "deviation_deletions": [],
     "deviation_requests": {},
@@ -11,7 +10,7 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Completed BlockSigmaIntertwines: the initial fixed-point case, orbit-block successor placement, BlockSigma unfolding, increasing-index bound, subtraction arithmetic, and iterate shift are all formally proved.",
+    "summary": "Closed EmapLemma with the existing BlockSigma support and no new obligations.",
     "target_claim_updates": {}
   },
   "response": {
@@ -22,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Closed the active intertwining proof in Lean while preserving its statement, imports, BODY marker, and TeX proof.",
-    "cycle": 240,
+    "comments": "Closed only Tablet/EmapLemma.lean. The proof obtains the least moved point, chooses the IncSeq-valued block map via BlockSigmaEmbedding, derives prefix continuity from BlockSigmaContinuous, and proves the commuting equation coordinatewise using BlockSigmaIntertwines together with ShiftMap and RightComp. The statement, imports, BODY marker, and accepted TeX proof are unchanged.",
+    "cycle": 241,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -32,12 +31,12 @@
     "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "BlockSigmaIntertwines": {
+      "EmapLemma": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "199d87c9b017afa91d8a7e4e91cd8f0245cb7c9f26f63f4e4297596614075b9d",
-            "size_bytes": 152512
+            "sha256": "005e7daa1649b964f0016ccdc5a80043d0b97c41314888b9b27981985abecf86",
+            "size_bytes": 27480
           }
         ],
         "axiomization_check": {
@@ -45,13 +44,21 @@
           "axcheck_only_axioms": [],
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
+            "Tablet.BaireContinuous::BaireContinuous@exported:definition",
             "Tablet.BlockSigma::BlockSigma@exported:definition",
+            "Tablet.BlockSigmaContinuous::BlockSigmaContinuous@exported:theorem",
+            "Tablet.BlockSigmaEmbedding::BlockSigmaEmbedding@exported:theorem",
+            "Tablet.BlockSigmaIntertwines::BlockSigmaIntertwines@exported:theorem",
+            "Tablet.ContMor::ContMor@exported:definition",
+            "Tablet.ContinuousHom::ContinuousHom.mk@exported:constructor",
+            "Tablet.ContinuousHom::ContinuousHom@exported:inductive",
+            "Tablet.FirstMovedPoint::FirstMovedPoint@exported:theorem",
             "Tablet.IncSeq::IncSeq@exported:definition",
-            "Tablet.OrbitBlock::OrbitBlock@exported:definition",
-            "Tablet.OrbitBlockCoverage::OrbitBlockCoverage@exported:theorem",
-            "Tablet.OrbitEmbedding::OrbitEmbedding@exported:theorem",
-            "Tablet.OrbitPoint::OrbitPoint@exported:definition",
+            "Tablet.IncSeqComp::IncSeqComp@exported:definition",
+            "Tablet.IncSeqId::IncSeqId@exported:definition",
+            "Tablet.PrefixAgree::PrefixAgree@exported:definition",
             "Tablet.RightComp::RightComp@exported:definition",
+            "Tablet.ShiftMap::ShiftMap@exported:definition",
             "Tablet.SuccSeq::SuccSeq@exported:definition"
           ],
           "error": null,
@@ -77,34 +84,85 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BlockSigma.eq_1"
+            "name": "EmapLemma"
           },
           {
             "kind": "theorem",
-            "name": "BlockSigmaIntertwines"
+            "name": "IncSeqComp.eq_1"
           },
           {
             "kind": "theorem",
-            "name": "BlockSigmaIntertwines._proof_1_3"
+            "name": "RightComp.eq_1"
           },
           {
             "kind": "theorem",
-            "name": "OrbitPoint.eq_1"
+            "name": "ShiftMap.eq_1"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.BlockSigma",
-          "Tablet.OrbitBlockCoverage",
+          "Tablet.BlockSigmaContinuous",
+          "Tablet.BlockSigmaEmbedding",
+          "Tablet.BlockSigmaIntertwines",
+          "Tablet.ContMor",
+          "Tablet.FirstMovedPoint",
           "Tablet.RightComp",
-          "Tablet.SuccSeq"
+          "Tablet.ShiftMap"
         ],
         "errors": [],
         "exact_declaration_uses": [
           {
             "declaration_kind": "definition",
+            "owner": "BaireContinuous",
+            "reached_declaration": "BaireContinuous",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
             "owner": "BlockSigma",
             "reached_declaration": "BlockSigma",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "BlockSigmaContinuous",
+            "reached_declaration": "BlockSigmaContinuous",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "BlockSigmaEmbedding",
+            "reached_declaration": "BlockSigmaEmbedding",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "BlockSigmaIntertwines",
+            "reached_declaration": "BlockSigmaIntertwines",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ContMor",
+            "reached_declaration": "ContMor",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "constructor",
+            "owner": "ContinuousHom",
+            "reached_declaration": "ContinuousHom.mk",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "inductive",
+            "owner": "ContinuousHom",
+            "reached_declaration": "ContinuousHom",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "FirstMovedPoint",
+            "reached_declaration": "FirstMovedPoint",
             "visibility": "exported"
           },
           {
@@ -115,32 +173,32 @@
           },
           {
             "declaration_kind": "definition",
-            "owner": "OrbitBlock",
-            "reached_declaration": "OrbitBlock",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "OrbitBlockCoverage",
-            "reached_declaration": "OrbitBlockCoverage",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "OrbitEmbedding",
-            "reached_declaration": "OrbitEmbedding",
+            "owner": "IncSeqComp",
+            "reached_declaration": "IncSeqComp",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
-            "owner": "OrbitPoint",
-            "reached_declaration": "OrbitPoint",
+            "owner": "IncSeqId",
+            "reached_declaration": "IncSeqId",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PrefixAgree",
+            "reached_declaration": "PrefixAgree",
             "visibility": "exported"
           },
           {
             "declaration_kind": "definition",
             "owner": "RightComp",
             "reached_declaration": "RightComp",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "ShiftMap",
+            "reached_declaration": "ShiftMap",
             "visibility": "exported"
           },
           {
@@ -155,42 +213,49 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "BlockSigmaIntertwines",
+        "principal_declaration": "EmapLemma",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"BlockSigma.eq_1\",\"BlockSigmaIntertwines\",\"BlockSigmaIntertwines._proof_1_3\",\"OrbitPoint.eq_1\"],\"boundary_theorems\":[\"Tablet.BlockSigma::BlockSigma@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.OrbitBlock::OrbitBlock@exported:definition\",\"Tablet.OrbitBlockCoverage::OrbitBlockCoverage@exported:theorem\",\"Tablet.OrbitEmbedding::OrbitEmbedding@exported:theorem\",\"Tablet.OrbitPoint::OrbitPoint@exported:definition\",\"Tablet.RightComp::RightComp@exported:definition\",\"Tablet.SuccSeq::SuccSeq@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"BlockSigma.eq_1\",\"BlockSigmaIntertwines\",\"BlockSigmaIntertwines._proof_1_3\",\"OrbitPoint.eq_1\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"BlockSigma.eq_1\"},{\"kind\":\"theorem\",\"name\":\"BlockSigmaIntertwines\"},{\"kind\":\"theorem\",\"name\":\"BlockSigmaIntertwines._proof_1_3\"},{\"kind\":\"theorem\",\"name\":\"OrbitPoint.eq_1\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BlockSigma\",\"reached_declaration\":\"BlockSigma\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"OrbitBlock\",\"reached_declaration\":\"OrbitBlock\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"OrbitBlockCoverage\",\"reached_declaration\":\"OrbitBlockCoverage\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"OrbitEmbedding\",\"reached_declaration\":\"OrbitEmbedding\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"OrbitPoint\",\"reached_declaration\":\"OrbitPoint\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"RightComp\",\"reached_declaration\":\"RightComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuccSeq\",\"reached_declaration\":\"SuccSeq\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"BlockSigmaIntertwines\",\"principal_declaration\":\"BlockSigmaIntertwines\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BlockSigma\",\"semantic_hash\":\"1b9c67741f952f25\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"OrbitBlock\",\"semantic_hash\":\"4c51e0b8da974793\"},{\"name\":\"OrbitPoint\",\"semantic_hash\":\"22af31eef2ad68ed\"},{\"name\":\"RightComp\",\"semantic_hash\":\"c25c30d043f69e82\"},{\"name\":\"SuccSeq\",\"semantic_hash\":\"30d2c1d13988115c\"}],\"strict_theorem_deps\":[{\"name\":\"OrbitBlockCoverage\",\"value_hash\":\"7f5115e2839ac5f6\"},{\"name\":\"OrbitEmbedding\",\"value_hash\":\"0bbbcba9bc809657\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"EmapLemma\",\"IncSeqComp.eq_1\",\"RightComp.eq_1\",\"ShiftMap.eq_1\"],\"boundary_theorems\":[\"Tablet.BaireContinuous::BaireContinuous@exported:definition\",\"Tablet.BlockSigma::BlockSigma@exported:definition\",\"Tablet.BlockSigmaContinuous::BlockSigmaContinuous@exported:theorem\",\"Tablet.BlockSigmaEmbedding::BlockSigmaEmbedding@exported:theorem\",\"Tablet.BlockSigmaIntertwines::BlockSigmaIntertwines@exported:theorem\",\"Tablet.ContMor::ContMor@exported:definition\",\"Tablet.ContinuousHom::ContinuousHom.mk@exported:constructor\",\"Tablet.ContinuousHom::ContinuousHom@exported:inductive\",\"Tablet.FirstMovedPoint::FirstMovedPoint@exported:theorem\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqComp::IncSeqComp@exported:definition\",\"Tablet.IncSeqId::IncSeqId@exported:definition\",\"Tablet.PrefixAgree::PrefixAgree@exported:definition\",\"Tablet.RightComp::RightComp@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\",\"Tablet.SuccSeq::SuccSeq@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"EmapLemma\",\"IncSeqComp.eq_1\",\"RightComp.eq_1\",\"ShiftMap.eq_1\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"EmapLemma\"},{\"kind\":\"theorem\",\"name\":\"IncSeqComp.eq_1\"},{\"kind\":\"theorem\",\"name\":\"RightComp.eq_1\"},{\"kind\":\"theorem\",\"name\":\"ShiftMap.eq_1\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BaireContinuous\",\"reached_declaration\":\"BaireContinuous\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"BlockSigma\",\"reached_declaration\":\"BlockSigma\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"BlockSigmaContinuous\",\"reached_declaration\":\"BlockSigmaContinuous\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"BlockSigmaEmbedding\",\"reached_declaration\":\"BlockSigmaEmbedding\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"BlockSigmaIntertwines\",\"reached_declaration\":\"BlockSigmaIntertwines\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ContMor\",\"reached_declaration\":\"ContMor\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"ContinuousHom\",\"reached_declaration\":\"ContinuousHom.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"ContinuousHom\",\"reached_declaration\":\"ContinuousHom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FirstMovedPoint\",\"reached_declaration\":\"FirstMovedPoint\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqComp\",\"reached_declaration\":\"IncSeqComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqId\",\"reached_declaration\":\"IncSeqId\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixAgree\",\"reached_declaration\":\"PrefixAgree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"RightComp\",\"reached_declaration\":\"RightComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuccSeq\",\"reached_declaration\":\"SuccSeq\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"EmapLemma\",\"principal_declaration\":\"EmapLemma\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BaireContinuous\",\"semantic_hash\":\"07734a5c69f4b363\"},{\"name\":\"BlockSigma\",\"semantic_hash\":\"1b9c67741f952f25\"},{\"name\":\"ContMor\",\"semantic_hash\":\"62ec47c72e58ba00\"},{\"name\":\"ContinuousHom\",\"semantic_hash\":\"933d5d3125106316\"},{\"name\":\"ContinuousHom\",\"semantic_hash\":\"d40b306bbcc87c0f\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqComp\",\"semantic_hash\":\"b92c60fdc6b8c664\"},{\"name\":\"IncSeqId\",\"semantic_hash\":\"dcd58ce5a1fd8179\"},{\"name\":\"PrefixAgree\",\"semantic_hash\":\"0e59d4fb59a4ae04\"},{\"name\":\"RightComp\",\"semantic_hash\":\"c25c30d043f69e82\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"},{\"name\":\"SuccSeq\",\"semantic_hash\":\"30d2c1d13988115c\"}],\"strict_theorem_deps\":[{\"name\":\"BlockSigmaContinuous\",\"value_hash\":\"56c395b094cf5f80\"},{\"name\":\"BlockSigmaEmbedding\",\"value_hash\":\"f934600b7c80fc1f\"},{\"name\":\"BlockSigmaIntertwines\",\"value_hash\":\"9bd346bf5a31b53e\"},{\"name\":\"FirstMovedPoint\",\"value_hash\":\"21f54be6180ade5c\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "BlockSigma.eq_1"
+            "name": "EmapLemma"
           },
           {
             "kind": "theorem",
-            "name": "BlockSigmaIntertwines"
+            "name": "IncSeqComp.eq_1"
           },
           {
             "kind": "theorem",
-            "name": "BlockSigmaIntertwines._proof_1_3"
+            "name": "RightComp.eq_1"
           },
           {
             "kind": "theorem",
-            "name": "OrbitPoint.eq_1"
+            "name": "ShiftMap.eq_1"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "eebd6df6f0c384bac0cafc19ecfe9434cd7cef6d9068423976dda438745d660e",
+        "source_sha256": "02e71bf2bdea1a17f41299fbc9166f88d3e348e9ad002d7356e60bc777cdb961",
         "status": "ok",
         "strict_definition_deps": {
+          "BaireContinuous": "07734a5c69f4b363",
           "BlockSigma": "1b9c67741f952f25",
+          "ContMor": "62ec47c72e58ba00",
+          "ContinuousHom": "d40b306bbcc87c0f",
           "IncSeq": "1722254285ddeb5c",
-          "OrbitBlock": "4c51e0b8da974793",
-          "OrbitPoint": "22af31eef2ad68ed",
+          "IncSeqComp": "b92c60fdc6b8c664",
+          "IncSeqId": "dcd58ce5a1fd8179",
+          "PrefixAgree": "0e59d4fb59a4ae04",
           "RightComp": "c25c30d043f69e82",
+          "ShiftMap": "2072518c2402a1ed",
           "SuccSeq": "30d2c1d13988115c"
         },
         "strict_theorem_deps": {
-          "OrbitBlockCoverage": "7f5115e2839ac5f6",
-          "OrbitEmbedding": "0bbbcba9bc809657"
+          "BlockSigmaContinuous": "56c395b094cf5f80",
+          "BlockSigmaEmbedding": "f934600b7c80fc1f",
+          "BlockSigmaIntertwines": "9bd346bf5a31b53e",
+          "FirstMovedPoint": "21f54be6180ade5c"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -198,19 +263,19 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "BlockSigma.eq_1"
+                "name": "EmapLemma"
               },
               {
                 "kind": "theorem",
-                "name": "BlockSigmaIntertwines"
+                "name": "IncSeqComp.eq_1"
               },
               {
                 "kind": "theorem",
-                "name": "BlockSigmaIntertwines._proof_1_3"
+                "name": "RightComp.eq_1"
               },
               {
                 "kind": "theorem",
-                "name": "OrbitPoint.eq_1"
+                "name": "ShiftMap.eq_1"
               }
             ],
             "level": "exported"
@@ -225,7 +290,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 682,
+    "request_id": 684,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -457,7 +522,6 @@
         "BaseBqoRestriction",
         "BqoIffGeneralShift",
         "ConverseGame",
-        "EmapLemma",
         "FinitePrefixExtension",
         "GBetterRelIff",
         "HerCtblNodeClosure",
@@ -2987,7 +3051,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Completed BlockSigmaIntertwines: the initial fixed-point case, orbit-block successor placement, BlockSigma unfolding, increasing-index bound, subtraction arithmetic, and iterate shift are all formally proved.",
+    "summary": "Closed EmapLemma with the existing BlockSigma support and no new obligations.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3081,7 +3145,7 @@
     "DecidingPrefix.tex": "c06d2ccd7e70085256513ebaf2c3f1f4c53b065e17e1d4473b8a51c51c5e0522",
     "DecidingValue.lean": "a6e54d5e2bec4f4016575b58b195f115a2951f015382dc8139405d408705c41f",
     "DecidingValue.tex": "516dc96ec4837d38860e4a186f3b3499538c797fda52b4f0e5f7d1419b10ae5f",
-    "EmapLemma.lean": "8cfb1ea0719a0aba7c0fd233d3f32ab5a1055473f0aea4ebf9bc5825f0f4b79b",
+    "EmapLemma.lean": "02e71bf2bdea1a17f41299fbc9166f88d3e348e9ad002d7356e60bc777cdb961",
     "EmapLemma.tex": "6088fd85b25133a8bdf8213151c6287fef90a66b5036694a2000b1e7b2f9d37c",
     "FinitePrefixExtension.lean": "100601ad91b0a637f1d1e9b9ee1d07e1ebada4e304cc3803dfb351fc10fc91ed",
     "FinitePrefixExtension.tex": "87e48fbc0a012f92ed5e47fa33a5ae98c51f243651685d592e12bdd0599e70c2",
@@ -3159,7 +3223,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "b0367e850a64193f6c7b85d91311dd4c510844c6f1fe7933c522f96ef21e787d",
+    "INDEX.md": "6b4eb72ee4a336d3b02445271be61e31e1dbf1be6e3533341dbf9a95b8977ced",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3316,7 +3380,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "e99483ebf08738a8a388c7a3ec7382c887991c7bcf6b024b23ab7fe113721699",
+    "README.md": "3afa576922db6d2cfa8e5117c88ea561b55e1b9bb95ca2d0fc8ecf11e08e721d",
     "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3371,7 +3435,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_682_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_684_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

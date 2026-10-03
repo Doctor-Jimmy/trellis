@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BlockSigmaIntertwines is closed; close EmapLemma now that all of its substantive BlockSigma prerequisites are complete.",
-    "comments": "Keep MainProp as the coarse anchor and route to EmapLemma in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the aggregation without wrappers or helpers: obtain the least moved point from FirstMovedPoint, use BlockSigmaEmbedding to choose the IncSeq-valued block map, use BlockSigmaContinuous for prefix continuity, and use BlockSigmaIntertwines together with ShiftMap and RightComp to prove the commuting equation coordinatewise. Do not alter statements or imports and leave no obligations open.",
+    "reason": "MainProp and its support cone are shallowly closed; advance the coarse anchor to the high-leverage SuperSequenceExtension node.",
+    "comments": "Switch the coarse anchor to SuperSequenceExtension and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive extension construction without wrappers or open helpers: choose a FrontPrefix witness for each BaseIncSeq input, define the extension by the SuperSequence value on that front element, prove local constancy using the cutoff at the first omitted range point and FrontPrefixUnique, and finish with the defining existential equation. The prerequisites BaseLocallyConstant, FrontPrefixExists, FrontPrefixUnique, and SuperSequence are already closed. Do not alter statements or imports and leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "EmapLemma",
-    "next_active_coarse": "",
+    "next_active": "SuperSequenceExtension",
+    "next_active_coarse": "SuperSequenceExtension",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "EmapLemma": "easy"
+      "SuperSequenceExtension": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep MainProp as the coarse anchor and route to EmapLemma in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the aggregation without wrappers or helpers: obtain the least moved point from FirstMovedPoint, use BlockSigmaEmbedding to choose the IncSeq-valued block map, use BlockSigmaContinuous for prefix continuity, and use BlockSigmaIntertwines together with ShiftMap and RightComp to prove the commuting equation coordinatewise. Do not alter statements or imports and leave no obligations open.",
+    "comments": "Switch the coarse anchor to SuperSequenceExtension and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive extension construction without wrappers or open helpers: choose a FrontPrefix witness for each BaseIncSeq input, define the extension by the SuperSequence value on that front element, prove local constancy using the cutoff at the first omitted range point and FrontPrefixUnique, and finish with the defining existential equation. The prerequisites BaseLocallyConstant, FrontPrefixExists, FrontPrefixUnique, and SuperSequence are already closed. Do not alter statements or imports and leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 240,
+    "cycle": 241,
     "decision": "Continue",
     "difficulty_updates": {
-      "EmapLemma": {
-        "Set": "Easy"
+      "SuperSequenceExtension": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "EmapLemma",
-    "next_active_coarse": null,
+    "next_active": "SuperSequenceExtension",
+    "next_active_coarse": "SuperSequenceExtension",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BlockSigmaIntertwines is closed; close EmapLemma now that all of its substantive BlockSigma prerequisites are complete.",
-    "request_id": 683,
+    "reason": "MainProp and its support cone are shallowly closed; advance the coarse anchor to the high-leverage SuperSequenceExtension node.",
+    "request_id": 685,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_683_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_685_decision.context.json"
 }
