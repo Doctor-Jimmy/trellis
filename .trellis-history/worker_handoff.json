@@ -1,14 +1,16 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed GBetterRelIff in Lean while preserving its accepted signature, imports, BODY marker, and TeX proof.",
-    "comments": "The proof transports complement homomorphisms along the two MainProp continuous maps, proves the locally constant Boolean coloring, applies DecidingFront, DecidingValue, NashWilliams, and restriction to obtain the first g-better clause, and derives the quasi-order Bqo equivalence. No helper nodes or semantic statement changes were needed.",
+    "summary": "Closed BqoIffGeneralShift directly with the accepted statement and imports. The proof handles the identity increasing sequence by reflexivity, uses GBetterRelIff and GBetterRel in the nonidentity case, and derives the converse from BadMultiSequence with SuccSeq and ShiftMap.",
+    "comments": "Only the active Lean proof body was edited. The theorem statement, imports, BODY marker, and TeX proof were preserved; no helper nodes, open obligations, or semantic changes were introduced. Incremental checking, lake build, and the standalone node checker pass.",
     "target_claim_updates": {},
     "difficulty_updates": {},
     "deviation_requests": {},
     "node_deviation_claims": {},
     "deviation_deletions": [],
     "deleted_nodes": [],
+    "needs_restructure_suggested_nodes": [],
+    "audit_request": null,
     "memory_challenges": []
   },
   "response": {
@@ -19,22 +21,36 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "The proof transports complement homomorphisms along the two MainProp continuous maps, proves the locally constant Boolean coloring, applies DecidingFront, DecidingValue, NashWilliams, and restriction to obtain the first g-better clause, and derives the quasi-order Bqo equivalence. No helper nodes or semantic statement changes were needed.",
-    "cycle": 260,
+    "comments": "Only the active Lean proof body was edited. The theorem statement, imports, BODY marker, and TeX proof were preserved; no helper nodes, open obligations, or semantic changes were introduced. Incremental checking, lake build, and the standalone node checker pass.",
+    "cycle": 261,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
     "difficulty_updates": {},
+    "elaboration_costs": {
+      "BqoIffGeneralShift": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "BqoIffGeneralShift",
+        "olean_size_bytes": 31544,
+        "peak_rss_kib": 1684108,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "b5227677f71025a147a191e9f6db55f1bb2bec75f88deff6a27dd417cf9c6ce7",
+        "walltime_ms": 2474
+      }
+    },
     "kind": "worker",
     "local_closure_results": {
-      "GBetterRelIff": {
+      "BqoIffGeneralShift": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "88833f6b838e9f43191248d6224fc83bba3f610cfa4cd61f89a6208af6226293",
-            "size_bytes": 107152
+            "sha256": "4ff77d96c40e1dd26b7c754121ebbd2485e3309fa379783da66a23b7164d4b14",
+            "size_bytes": 31544
           }
         ],
         "axiomization_check": {
@@ -45,38 +61,19 @@
             "Tablet.BadMultiSequence::BadMultiSequence@exported:definition",
             "Tablet.BetterRel::BetterRel@exported:definition",
             "Tablet.Bqo::Bqo@exported:definition",
-            "Tablet.ContMor::ContMor@exported:definition",
-            "Tablet.ContMorEq::ContMorEq@exported:definition",
-            "Tablet.ContinuousHom::ContinuousHom.commutes@exported:theorem",
-            "Tablet.ContinuousHom::ContinuousHom.continuous@exported:theorem",
-            "Tablet.ContinuousHom::ContinuousHom.toFun@exported:definition",
-            "Tablet.ContinuousHom::ContinuousHom@exported:inductive",
             "Tablet.ContinuousRelHom::ContinuousRelHom.hom@exported:theorem",
-            "Tablet.ContinuousRelHom::ContinuousRelHom.locallyConstant@exported:theorem",
-            "Tablet.ContinuousRelHom::ContinuousRelHom.mk@exported:constructor",
             "Tablet.ContinuousRelHom::ContinuousRelHom.toFun@exported:definition",
             "Tablet.ContinuousRelHom::ContinuousRelHom@exported:inductive",
-            "Tablet.DecidingFront::DecidingFront@exported:theorem",
-            "Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition",
-            "Tablet.DecidingValue::DecidingValue@exported:theorem",
-            "Tablet.Front::Front.dense@exported:theorem",
-            "Tablet.Front::Front.infinite_base@exported:theorem",
-            "Tablet.Front::Front@exported:inductive",
             "Tablet.GBetterRel::GBetterRel@exported:definition",
+            "Tablet.GBetterRelIff::GBetterRelIff@exported:theorem",
             "Tablet.IncSeq::IncSeq@exported:definition",
             "Tablet.IncSeqComp::IncSeqComp@exported:definition",
             "Tablet.IncSeqId::IncSeqId@exported:definition",
-            "Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem",
             "Tablet.LocallyConstant::LocallyConstant@exported:definition",
-            "Tablet.MainProp::MainProp@exported:theorem",
             "Tablet.MultiSequence::MultiSequence@exported:definition",
-            "Tablet.MultiSequenceRestrict::MultiSequenceRestrict@exported:definition",
-            "Tablet.NashWilliams::NashWilliams@exported:theorem",
-            "Tablet.PrefixAgree::PrefixAgree@exported:definition",
-            "Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition",
-            "Tablet.RestrictionLocallyConstant::RestrictionLocallyConstant@exported:theorem",
             "Tablet.RightComp::RightComp@exported:definition",
-            "Tablet.ShiftMap::ShiftMap@exported:definition"
+            "Tablet.ShiftMap::ShiftMap@exported:definition",
+            "Tablet.SuccSeq::SuccSeq@exported:definition"
           ],
           "error": null,
           "kernel_axioms": [
@@ -101,30 +98,19 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "GBetterRelIff"
+            "name": "BqoIffGeneralShift"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.BetterRel",
+          "Tablet.BadMultiSequence",
           "Tablet.Bqo",
-          "Tablet.ContinuousRelHom",
-          "Tablet.DecidingFront",
-          "Tablet.DecidingValue",
-          "Tablet.Front",
           "Tablet.GBetterRel",
-          "Tablet.IncSeq",
-          "Tablet.IncSeqComp",
+          "Tablet.GBetterRelIff",
           "Tablet.IncSeqId",
-          "Tablet.InfiniteSetEnumeration",
-          "Tablet.LocallyConstant",
-          "Tablet.MainProp",
-          "Tablet.MultiSequenceRestrict",
-          "Tablet.NashWilliams",
-          "Tablet.PrefixAgree",
-          "Tablet.ProperPrefixSet",
-          "Tablet.RestrictionLocallyConstant",
-          "Tablet.RightComp"
+          "Tablet.RightComp",
+          "Tablet.ShiftMap",
+          "Tablet.SuccSeq"
         ],
         "errors": [],
         "exact_declaration_uses": [
@@ -147,57 +133,9 @@
             "visibility": "exported"
           },
           {
-            "declaration_kind": "definition",
-            "owner": "ContMor",
-            "reached_declaration": "ContMor",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "ContMorEq",
-            "reached_declaration": "ContMorEq",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "ContinuousHom",
-            "reached_declaration": "ContinuousHom.commutes",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "ContinuousHom",
-            "reached_declaration": "ContinuousHom.continuous",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "ContinuousHom",
-            "reached_declaration": "ContinuousHom.toFun",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "inductive",
-            "owner": "ContinuousHom",
-            "reached_declaration": "ContinuousHom",
-            "visibility": "exported"
-          },
-          {
             "declaration_kind": "theorem",
             "owner": "ContinuousRelHom",
             "reached_declaration": "ContinuousRelHom.hom",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "ContinuousRelHom",
-            "reached_declaration": "ContinuousRelHom.locallyConstant",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "constructor",
-            "owner": "ContinuousRelHom",
-            "reached_declaration": "ContinuousRelHom.mk",
             "visibility": "exported"
           },
           {
@@ -213,45 +151,15 @@
             "visibility": "exported"
           },
           {
-            "declaration_kind": "theorem",
-            "owner": "DecidingFront",
-            "reached_declaration": "DecidingFront",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "DecidingFrontSet",
-            "reached_declaration": "DecidingFrontSet",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "DecidingValue",
-            "reached_declaration": "DecidingValue",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "Front",
-            "reached_declaration": "Front.dense",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "Front",
-            "reached_declaration": "Front.infinite_base",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "inductive",
-            "owner": "Front",
-            "reached_declaration": "Front",
-            "visibility": "exported"
-          },
-          {
             "declaration_kind": "definition",
             "owner": "GBetterRel",
             "reached_declaration": "GBetterRel",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "GBetterRelIff",
+            "reached_declaration": "GBetterRelIff",
             "visibility": "exported"
           },
           {
@@ -273,57 +181,15 @@
             "visibility": "exported"
           },
           {
-            "declaration_kind": "theorem",
-            "owner": "InfiniteSetEnumeration",
-            "reached_declaration": "InfiniteSetEnumeration",
-            "visibility": "exported"
-          },
-          {
             "declaration_kind": "definition",
             "owner": "LocallyConstant",
             "reached_declaration": "LocallyConstant",
             "visibility": "exported"
           },
           {
-            "declaration_kind": "theorem",
-            "owner": "MainProp",
-            "reached_declaration": "MainProp",
-            "visibility": "exported"
-          },
-          {
             "declaration_kind": "definition",
             "owner": "MultiSequence",
             "reached_declaration": "MultiSequence",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "MultiSequenceRestrict",
-            "reached_declaration": "MultiSequenceRestrict",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "NashWilliams",
-            "reached_declaration": "NashWilliams",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "PrefixAgree",
-            "reached_declaration": "PrefixAgree",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "ProperPrefixSet",
-            "reached_declaration": "ProperPrefixSet",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "RestrictionLocallyConstant",
-            "reached_declaration": "RestrictionLocallyConstant",
             "visibility": "exported"
           },
           {
@@ -337,6 +203,12 @@
             "owner": "ShiftMap",
             "reached_declaration": "ShiftMap",
             "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "SuccSeq",
+            "reached_declaration": "SuccSeq",
+            "visibility": "exported"
           }
         ],
         "kernel_axioms": [
@@ -344,51 +216,37 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "GBetterRelIff",
+        "principal_declaration": "BqoIffGeneralShift",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"GBetterRelIff\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.BetterRel::BetterRel@exported:definition\",\"Tablet.Bqo::Bqo@exported:definition\",\"Tablet.ContMor::ContMor@exported:definition\",\"Tablet.ContMorEq::ContMorEq@exported:definition\",\"Tablet.ContinuousHom::ContinuousHom.commutes@exported:theorem\",\"Tablet.ContinuousHom::ContinuousHom.continuous@exported:theorem\",\"Tablet.ContinuousHom::ContinuousHom.toFun@exported:definition\",\"Tablet.ContinuousHom::ContinuousHom@exported:inductive\",\"Tablet.ContinuousRelHom::ContinuousRelHom.hom@exported:theorem\",\"Tablet.ContinuousRelHom::ContinuousRelHom.locallyConstant@exported:theorem\",\"Tablet.ContinuousRelHom::ContinuousRelHom.mk@exported:constructor\",\"Tablet.ContinuousRelHom::ContinuousRelHom.toFun@exported:definition\",\"Tablet.ContinuousRelHom::ContinuousRelHom@exported:inductive\",\"Tablet.DecidingFront::DecidingFront@exported:theorem\",\"Tablet.DecidingFrontSet::DecidingFrontSet@exported:definition\",\"Tablet.DecidingValue::DecidingValue@exported:theorem\",\"Tablet.Front::Front.dense@exported:theorem\",\"Tablet.Front::Front.infinite_base@exported:theorem\",\"Tablet.Front::Front@exported:inductive\",\"Tablet.GBetterRel::GBetterRel@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqComp::IncSeqComp@exported:definition\",\"Tablet.IncSeqId::IncSeqId@exported:definition\",\"Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MainProp::MainProp@exported:theorem\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.MultiSequenceRestrict::MultiSequenceRestrict@exported:definition\",\"Tablet.NashWilliams::NashWilliams@exported:theorem\",\"Tablet.PrefixAgree::PrefixAgree@exported:definition\",\"Tablet.ProperPrefixSet::ProperPrefixSet@exported:definition\",\"Tablet.RestrictionLocallyConstant::RestrictionLocallyConstant@exported:theorem\",\"Tablet.RightComp::RightComp@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"GBetterRelIff\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"GBetterRelIff\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"BetterRel\",\"reached_declaration\":\"BetterRel\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Bqo\",\"reached_declaration\":\"Bqo\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ContMor\",\"reached_declaration\":\"ContMor\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ContMorEq\",\"reached_declaration\":\"ContMorEq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"ContinuousHom\",\"reached_declaration\":\"ContinuousHom.commutes\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"ContinuousHom\",\"reached_declaration\":\"ContinuousHom.continuous\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ContinuousHom\",\"reached_declaration\":\"ContinuousHom.toFun\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"ContinuousHom\",\"reached_declaration\":\"ContinuousHom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.hom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.locallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.toFun\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingFront\",\"reached_declaration\":\"DecidingFront\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"DecidingFrontSet\",\"reached_declaration\":\"DecidingFrontSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"DecidingValue\",\"reached_declaration\":\"DecidingValue\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.dense\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"Front\",\"reached_declaration\":\"Front.infinite_base\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"Front\",\"reached_declaration\":\"Front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"GBetterRel\",\"reached_declaration\":\"GBetterRel\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqComp\",\"reached_declaration\":\"IncSeqComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqId\",\"reached_declaration\":\"IncSeqId\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"InfiniteSetEnumeration\",\"reached_declaration\":\"InfiniteSetEnumeration\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"MainProp\",\"reached_declaration\":\"MainProp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequenceRestrict\",\"reached_declaration\":\"MultiSequenceRestrict\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"NashWilliams\",\"reached_declaration\":\"NashWilliams\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixAgree\",\"reached_declaration\":\"PrefixAgree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperPrefixSet\",\"reached_declaration\":\"ProperPrefixSet\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"RestrictionLocallyConstant\",\"reached_declaration\":\"RestrictionLocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"RightComp\",\"reached_declaration\":\"RightComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"GBetterRelIff\",\"principal_declaration\":\"GBetterRelIff\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"BetterRel\",\"semantic_hash\":\"766b82899a2c86bf\"},{\"name\":\"Bqo\",\"semantic_hash\":\"3fb1a54d22d9b578\"},{\"name\":\"ContMor\",\"semantic_hash\":\"62ec47c72e58ba00\"},{\"name\":\"ContMorEq\",\"semantic_hash\":\"5ff4a648b49143c8\"},{\"name\":\"ContinuousHom\",\"semantic_hash\":\"22ff272330c2b776\"},{\"name\":\"ContinuousHom\",\"semantic_hash\":\"933d5d3125106316\"},{\"name\":\"ContinuousRelHom\",\"semantic_hash\":\"ed08b78922ee8eda\"},{\"name\":\"ContinuousRelHom\",\"semantic_hash\":\"ad97ba061d39ad12\"},{\"name\":\"ContinuousRelHom\",\"semantic_hash\":\"31182acee4a1ade4\"},{\"name\":\"DecidingFrontSet\",\"semantic_hash\":\"4e9eb434d9142940\"},{\"name\":\"Front\",\"semantic_hash\":\"54804e268105ccdb\"},{\"name\":\"GBetterRel\",\"semantic_hash\":\"b94cc650e664265a\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqComp\",\"semantic_hash\":\"b92c60fdc6b8c664\"},{\"name\":\"IncSeqId\",\"semantic_hash\":\"dcd58ce5a1fd8179\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"MultiSequenceRestrict\",\"semantic_hash\":\"c3ff3d9f025a84de\"},{\"name\":\"PrefixAgree\",\"semantic_hash\":\"0e59d4fb59a4ae04\"},{\"name\":\"ProperPrefixSet\",\"semantic_hash\":\"8d7d85f7e2dcc1fd\"},{\"name\":\"RightComp\",\"semantic_hash\":\"c25c30d043f69e82\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"}],\"strict_theorem_deps\":[{\"name\":\"ContinuousHom\",\"value_hash\":\"d444f3e910880be6\"},{\"name\":\"ContinuousHom\",\"value_hash\":\"a3fc5e6336ca9964\"},{\"name\":\"ContinuousRelHom\",\"value_hash\":\"aafa7b7aacfe02dd\"},{\"name\":\"ContinuousRelHom\",\"value_hash\":\"00875bc2ec7c2fc9\"},{\"name\":\"DecidingFront\",\"value_hash\":\"bd450244457d804c\"},{\"name\":\"DecidingValue\",\"value_hash\":\"a4f935637884b3fe\"},{\"name\":\"Front\",\"value_hash\":\"cf6cd0fffa0c1f96\"},{\"name\":\"Front\",\"value_hash\":\"b6659350d53796ce\"},{\"name\":\"InfiniteSetEnumeration\",\"value_hash\":\"4c699c796ec567a4\"},{\"name\":\"MainProp\",\"value_hash\":\"0216bf9e1fe7c33a\"},{\"name\":\"NashWilliams\",\"value_hash\":\"34f8ba625e6160d4\"},{\"name\":\"RestrictionLocallyConstant\",\"value_hash\":\"501f917611622b64\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"BqoIffGeneralShift\"],\"boundary_theorems\":[\"Tablet.BadMultiSequence::BadMultiSequence@exported:definition\",\"Tablet.BetterRel::BetterRel@exported:definition\",\"Tablet.Bqo::Bqo@exported:definition\",\"Tablet.ContinuousRelHom::ContinuousRelHom.hom@exported:theorem\",\"Tablet.ContinuousRelHom::ContinuousRelHom.toFun@exported:definition\",\"Tablet.ContinuousRelHom::ContinuousRelHom@exported:inductive\",\"Tablet.GBetterRel::GBetterRel@exported:definition\",\"Tablet.GBetterRelIff::GBetterRelIff@exported:theorem\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncSeqComp::IncSeqComp@exported:definition\",\"Tablet.IncSeqId::IncSeqId@exported:definition\",\"Tablet.LocallyConstant::LocallyConstant@exported:definition\",\"Tablet.MultiSequence::MultiSequence@exported:definition\",\"Tablet.RightComp::RightComp@exported:definition\",\"Tablet.ShiftMap::ShiftMap@exported:definition\",\"Tablet.SuccSeq::SuccSeq@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"BqoIffGeneralShift\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"BqoIffGeneralShift\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadMultiSequence\",\"reached_declaration\":\"BadMultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"BetterRel\",\"reached_declaration\":\"BetterRel\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"Bqo\",\"reached_declaration\":\"Bqo\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.hom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom.toFun\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"ContinuousRelHom\",\"reached_declaration\":\"ContinuousRelHom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"GBetterRel\",\"reached_declaration\":\"GBetterRel\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"GBetterRelIff\",\"reached_declaration\":\"GBetterRelIff\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqComp\",\"reached_declaration\":\"IncSeqComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeqId\",\"reached_declaration\":\"IncSeqId\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"LocallyConstant\",\"reached_declaration\":\"LocallyConstant\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"MultiSequence\",\"reached_declaration\":\"MultiSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"RightComp\",\"reached_declaration\":\"RightComp\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ShiftMap\",\"reached_declaration\":\"ShiftMap\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuccSeq\",\"reached_declaration\":\"SuccSeq\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"BqoIffGeneralShift\",\"principal_declaration\":\"BqoIffGeneralShift\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadMultiSequence\",\"semantic_hash\":\"12b952b1af44d358\"},{\"name\":\"BetterRel\",\"semantic_hash\":\"766b82899a2c86bf\"},{\"name\":\"Bqo\",\"semantic_hash\":\"3fb1a54d22d9b578\"},{\"name\":\"ContinuousRelHom\",\"semantic_hash\":\"ad97ba061d39ad12\"},{\"name\":\"ContinuousRelHom\",\"semantic_hash\":\"31182acee4a1ade4\"},{\"name\":\"GBetterRel\",\"semantic_hash\":\"b94cc650e664265a\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncSeqComp\",\"semantic_hash\":\"b92c60fdc6b8c664\"},{\"name\":\"IncSeqId\",\"semantic_hash\":\"dcd58ce5a1fd8179\"},{\"name\":\"LocallyConstant\",\"semantic_hash\":\"3be73314501d2a70\"},{\"name\":\"MultiSequence\",\"semantic_hash\":\"cde631bc1bef82ee\"},{\"name\":\"RightComp\",\"semantic_hash\":\"c25c30d043f69e82\"},{\"name\":\"ShiftMap\",\"semantic_hash\":\"2072518c2402a1ed\"},{\"name\":\"SuccSeq\",\"semantic_hash\":\"30d2c1d13988115c\"}],\"strict_theorem_deps\":[{\"name\":\"ContinuousRelHom\",\"value_hash\":\"00875bc2ec7c2fc9\"},{\"name\":\"GBetterRelIff\",\"value_hash\":\"90807e177d1fff33\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "GBetterRelIff"
+            "name": "BqoIffGeneralShift"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "aec70e8ebffebd78b4ea59e23bfe1633c6569e376ee4426005dda30c573ffbfb",
+        "source_sha256": "d74b3c0e6878da7e4383a0730754e6c4af4211aefbfa91c9cfb452a0dfe953d9",
         "status": "ok",
         "strict_definition_deps": {
           "BadMultiSequence": "12b952b1af44d358",
           "BetterRel": "766b82899a2c86bf",
           "Bqo": "3fb1a54d22d9b578",
-          "ContMor": "62ec47c72e58ba00",
-          "ContMorEq": "5ff4a648b49143c8",
-          "ContinuousHom": "933d5d3125106316",
           "ContinuousRelHom": "31182acee4a1ade4",
-          "DecidingFrontSet": "4e9eb434d9142940",
-          "Front": "54804e268105ccdb",
           "GBetterRel": "b94cc650e664265a",
           "IncSeq": "1722254285ddeb5c",
           "IncSeqComp": "b92c60fdc6b8c664",
           "IncSeqId": "dcd58ce5a1fd8179",
           "LocallyConstant": "3be73314501d2a70",
           "MultiSequence": "cde631bc1bef82ee",
-          "MultiSequenceRestrict": "c3ff3d9f025a84de",
-          "PrefixAgree": "0e59d4fb59a4ae04",
-          "ProperPrefixSet": "8d7d85f7e2dcc1fd",
           "RightComp": "c25c30d043f69e82",
-          "ShiftMap": "2072518c2402a1ed"
+          "ShiftMap": "2072518c2402a1ed",
+          "SuccSeq": "30d2c1d13988115c"
         },
         "strict_theorem_deps": {
-          "ContinuousHom": "a3fc5e6336ca9964",
           "ContinuousRelHom": "00875bc2ec7c2fc9",
-          "DecidingFront": "bd450244457d804c",
-          "DecidingValue": "a4f935637884b3fe",
-          "Front": "b6659350d53796ce",
-          "InfiniteSetEnumeration": "4c699c796ec567a4",
-          "MainProp": "0216bf9e1fe7c33a",
-          "NashWilliams": "34f8ba625e6160d4",
-          "RestrictionLocallyConstant": "501f917611622b64"
+          "GBetterRelIff": "90807e177d1fff33"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -396,7 +254,7 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "GBetterRelIff"
+                "name": "BqoIffGeneralShift"
               }
             ],
             "level": "exported"
@@ -411,7 +269,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 722,
+    "request_id": 724,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -636,7 +494,6 @@
       "deviation_current_fingerprints": {},
       "open_nodes": [
         "BadSuperToBase",
-        "BqoIffGeneralShift",
         "PerfectMultiRestrict",
         "PerfectMultiToSuper",
         "PerfectSuperRestrict",
@@ -3153,7 +3010,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed GBetterRelIff in Lean while preserving its accepted signature, imports, BODY marker, and TeX proof.",
+    "summary": "Closed BqoIffGeneralShift directly with the accepted statement and imports. The proof handles the identity increasing sequence by reflexivity, uses GBetterRelIff and GBetterRel in the nonidentity case, and derives the converse from BadMultiSequence with SuccSeq and ShiftMap.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3215,7 +3072,7 @@
     "BqoHerCtblWellF.tex": "74513edb0d0c64a64a8aef4a3824792f4a456c50774933e91a91e4a608ec8a92",
     "BqoHerCtblWqo.lean": "91a8816c6c6c7f64debd5f00bef1760c77ffc8fbf7ac5a1d81ac5687721e23d3",
     "BqoHerCtblWqo.tex": "9cd501df1ba83f963900bf32c065d83ed305e4a5d033ec7c4cd902a2a9c60485",
-    "BqoIffGeneralShift.lean": "7dbf02853a591af14d1b88f5fb6b755e49a9041a96e467995f9c2d292560f0dd",
+    "BqoIffGeneralShift.lean": "d74b3c0e6878da7e4383a0730754e6c4af4211aefbfa91c9cfb452a0dfe953d9",
     "BqoIffGeneralShift.tex": "30915b1b6d083c9a0a033eea823fbd2ce4920e73efde63663fd8d07f0b5e8c34",
     "BqoImpliesWqo.lean": "2bdbe7175556f0d888d0111ef11193180ee57c54025c85baba04c78f1c8a5dc2",
     "BqoImpliesWqo.tex": "059f749851f5955687c003f3266a9b6884dd43d892e413b59a280f2678fe9cd2",
@@ -3325,7 +3182,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "c997258b2ffe57938ffabee51c5584ea1c4e9a8c7a84f9ae767205cf86b9239f",
+    "INDEX.md": "a4cb5266275890ac5e08993e673d3c86092bd8e2dc6a15ef23c28082406a30eb",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3482,7 +3339,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "47d707d183d4b1a238a0a5c41dfcdd438f334c31e604fc0dc0ed49be9b5180e9",
+    "README.md": "09cdffdd8eca28940bf04265ea399772a35e09f6e7e2cea4594deb9b4d8e1f8b",
     "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3537,7 +3394,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_722_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_724_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

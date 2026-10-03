@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "GBetterRelIff closed directly and cleanly. Advance to BqoIffGeneralShift, whose only substantive prerequisite is now closed and whose short corollary completes that dependency branch.",
-    "comments": "Work on BqoIffGeneralShift in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Handle the identity g case by reflexivity, use GBetterRelIff and GBetterRel for nonidentity g, and in the converse use BadMultiSequence with SuccSeq and the ShiftMap identity. Leave no obligations open.",
+    "reason": "BqoIffGeneralShift closed directly and cleanly. Advance to the short independent PerfectSuperRestrict lemma to clear a remaining open obligation without introducing new structure.",
+    "comments": "Work on PerfectSuperRestrict in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Use the unchanged FiniteShift premise on the sub-front and rewrite both restricted values through SuperSequenceRestrict to apply the original perfectness implication. Leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BqoIffGeneralShift",
-    "next_active_coarse": "BqoIffGeneralShift",
+    "next_active": "PerfectSuperRestrict",
+    "next_active_coarse": "PerfectSuperRestrict",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BqoIffGeneralShift": "easy"
+      "PerfectSuperRestrict": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on BqoIffGeneralShift in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Handle the identity g case by reflexivity, use GBetterRelIff and GBetterRel for nonidentity g, and in the converse use BadMultiSequence with SuccSeq and the ShiftMap identity. Leave no obligations open.",
+    "comments": "Work on PerfectSuperRestrict in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Use the unchanged FiniteShift premise on the sub-front and rewrite both restricted values through SuperSequenceRestrict to apply the original perfectness implication. Leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 260,
+    "cycle": 261,
     "decision": "Continue",
     "difficulty_updates": {
-      "BqoIffGeneralShift": {
+      "PerfectSuperRestrict": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BqoIffGeneralShift",
-    "next_active_coarse": "BqoIffGeneralShift",
+    "next_active": "PerfectSuperRestrict",
+    "next_active_coarse": "PerfectSuperRestrict",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "GBetterRelIff closed directly and cleanly. Advance to BqoIffGeneralShift, whose only substantive prerequisite is now closed and whose short corollary completes that dependency branch.",
-    "request_id": 723,
+    "reason": "BqoIffGeneralShift closed directly and cleanly. Advance to the short independent PerfectSuperRestrict lemma to clear a remaining open obligation without introducing new structure.",
+    "request_id": 725,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_723_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_725_decision.context.json"
 }
