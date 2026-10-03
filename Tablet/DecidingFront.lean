@@ -104,7 +104,7 @@ theorem DecidingFront {E : Type u} (h : MultiSequence E)
         intro k
         constructor
         · intro hk
-          simpa using hk
+          simp at hk
         · rintro ⟨⟨i, rfl⟩, hi⟩
           exact False.elim ((Nat.not_lt_of_ge (x.monotone (Nat.zero_le i))) hi)
       have hempty_not : ¬ DecidingPrefix h ∅ := by
