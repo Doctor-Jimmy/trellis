@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PowerCopiedFiniteTerminal is closed; advance to the shift identity needed for terminal-shift transport.",
-    "comments": "Switch the coarse anchor to PowerCopiedShiftIdentity and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the stronger assertion for every row i and depth m that PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i + 1) m. In the base case unfold the depth-zero clauses and use PowerShiftIterShift at i and i+1 to identify the two PowerIResponse inputs. In the successor case apply the induction hypotheses at rows i and i+1, unfold the successor clauses, and use determinism of PowerIResponse. Specialize at i=n and m=k. Do not add wrappers or leave helper obligations open.",
+    "reason": "PowerCopiedShiftIdentity is closed; close its remaining support dependency PowerShiftIterShift before advancing the coarse anchor.",
+    "comments": "Keep PowerCopiedShiftIdentity as the coarse anchor and route to PowerShiftIterShift in Local mode. Preserve the theorem statement, import, BODY marker, and accepted TeX proof. Prove the stated equality by induction on n: the zero case unfolds PowerShiftIter and reduces to the defining first shift, while the successor case unfolds the recursive PowerShiftIter definition and applies the induction hypothesis to ShiftMap x. Do not add helpers, alter imports or statements, or leave obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerCopiedShiftIdentity",
-    "next_active_coarse": "PowerCopiedShiftIdentity",
+    "next_active": "PowerShiftIterShift",
+    "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerCopiedShiftIdentity": "hard"
+      "PowerShiftIterShift": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerCopiedShiftIdentity and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Prove the stronger assertion for every row i and depth m that PowerCopiedLeft r h (ShiftMap x) i m = PowerCopiedLeft r h x (i + 1) m. In the base case unfold the depth-zero clauses and use PowerShiftIterShift at i and i+1 to identify the two PowerIResponse inputs. In the successor case apply the induction hypotheses at rows i and i+1, unfold the successor clauses, and use determinism of PowerIResponse. Specialize at i=n and m=k. Do not add wrappers or leave helper obligations open.",
+    "comments": "Keep PowerCopiedShiftIdentity as the coarse anchor and route to PowerShiftIterShift in Local mode. Preserve the theorem statement, import, BODY marker, and accepted TeX proof. Prove the stated equality by induction on n: the zero case unfolds PowerShiftIter and reduces to the defining first shift, while the successor case unfolds the recursive PowerShiftIter definition and applies the induction hypothesis to ShiftMap x. Do not add helpers, alter imports or statements, or leave obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 222,
+    "cycle": 223,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerCopiedShiftIdentity": {
-        "Set": "Hard"
+      "PowerShiftIterShift": {
+        "Set": "Easy"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerCopiedShiftIdentity",
-    "next_active_coarse": "PowerCopiedShiftIdentity",
+    "next_active": "PowerShiftIterShift",
+    "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PowerCopiedFiniteTerminal is closed; advance to the shift identity needed for terminal-shift transport.",
-    "request_id": 647,
+    "reason": "PowerCopiedShiftIdentity is closed; close its remaining support dependency PowerShiftIterShift before advancing the coarse anchor.",
+    "request_id": 649,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_647_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_649_decision.context.json"
 }
