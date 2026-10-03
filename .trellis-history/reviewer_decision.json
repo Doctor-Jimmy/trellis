@@ -1,30 +1,40 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "TildeFHerCtbl is closed and the anchor is cleanly unlocked; finish the short semantic consolidation identifying exactly the front nodes at which the recursion yields atoms.",
-    "comments": "Switch the coarse anchor to TildeFAtomIffFront and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the two directions directly: at a front node use TildeFFrontEquation and the supplied front value, while at a non-front node use TildeFNonfrontEquation and disjointness of the atom and node constructors. Do not introduce wrappers or helpers, and leave no obligations open; both recursion-equation support nodes are already closed.",
+    "reason": "TildeFAtomIffFront is closed and the anchor is cleanly unlocked; advance to the high-leverage ShiftDichotomy argument, whose two downstream users depend on the settled coloring/front construction.",
+    "comments": "Switch the coarse anchor to ShiftDichotomy and use Local mode with a complete decomposition burst. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the settled route: define the Boolean coloring from r (h x) (h (ShiftMap x)), prove its local constancy with the shifted-prefix cutoff, obtain its deciding front and deciding value, apply Nash-Williams to the value-one subfront, enumerate the resulting infinite base, and prove the perfect and bad alternatives using MultiSequenceRestrict and RestrictionShift. Introduce only meaningful support helpers if needed, with complete NL proofs and no SKETCH markers; do not build a separate infinite Ramsey development. Require the active theorem itself to close.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "TildeFAtomIffFront",
-    "next_active_coarse": "TildeFAtomIffFront",
+    "next_active": "ShiftDichotomy",
+    "next_active_coarse": "ShiftDichotomy",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "TildeFAtomIffFront": "easy"
+      "ShiftDichotomy": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
-    "paper_focus_ranges": [],
+    "work_style_hint": "restructure",
+    "paper_focus_ranges": [
+      {
+        "start_line": 1617,
+        "end_line": 1626,
+        "reason": "The manuscript proposition and its coloring plus deciding-front proof establish the intended dichotomy route."
+      }
+    ],
+    "paper_grounding": {
+      "consulted_cited_ranges": true,
+      "basis_summary": "I directly read paper lines 1617-1626. They state the continuous homomorphism dichotomy and construct it from the Boolean relation coloring, its deciding front, and Nash-Williams homogenization; the tablet proof expands these steps for the ShiftMap formalization."
+    },
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +42,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to TildeFAtomIffFront and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the two directions directly: at a front node use TildeFFrontEquation and the supplied front value, while at a non-front node use TildeFNonfrontEquation and disjointness of the atom and node constructors. Do not introduce wrappers or helpers, and leave no obligations open; both recursion-equation support nodes are already closed.",
+    "comments": "Switch the coarse anchor to ShiftDichotomy and use Local mode with a complete decomposition burst. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the settled route: define the Boolean coloring from r (h x) (h (ShiftMap x)), prove its local constancy with the shifted-prefix cutoff, obtain its deciding front and deciding value, apply Nash-Williams to the value-one subfront, enumerate the resulting infinite base, and prove the perfect and bad alternatives using MultiSequenceRestrict and RestrictionShift. Introduce only meaningful support helpers if needed, with complete NL proofs and no SKETCH markers; do not build a separate infinite Ramsey development. Require the active theorem itself to close.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 246,
+    "cycle": 247,
     "decision": "Continue",
     "difficulty_updates": {
-      "TildeFAtomIffFront": {
-        "Set": "Easy"
+      "ShiftDichotomy": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,18 +57,24 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "TildeFAtomIffFront",
-    "next_active_coarse": "TildeFAtomIffFront",
+    "next_active": "ShiftDichotomy",
+    "next_active_coarse": "ShiftDichotomy",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
-    "paper_focus_ranges": [],
+    "paper_focus_ranges": [
+      {
+        "end_line": 1626,
+        "reason": "The manuscript proposition and its coloring plus deciding-front proof establish the intended dichotomy route.",
+        "start_line": 1617
+      }
+    ],
     "paper_grounding": {
-      "basis_summary": "",
-      "consulted_cited_ranges": false
+      "basis_summary": "I directly read paper lines 1617-1626. They state the continuous homomorphism dichotomy and construct it from the Boolean relation coloring, its deciding front, and Nash-Williams homogenization; the tablet proof expands these steps for the ShiftMap formalization.",
+      "consulted_cited_ranges": true
     },
     "protected_semantic_change_nodes": [],
-    "reason": "TildeFHerCtbl is closed and the anchor is cleanly unlocked; finish the short semantic consolidation identifying exactly the front nodes at which the recursion yields atoms.",
-    "request_id": 695,
+    "reason": "TildeFAtomIffFront is closed and the anchor is cleanly unlocked; advance to the high-leverage ShiftDichotomy argument, whose two downstream users depend on the settled coloring/front construction.",
+    "request_id": 697,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +82,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_695_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_697_decision.context.json"
 }

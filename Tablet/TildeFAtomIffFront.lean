@@ -10,4 +10,11 @@ theorem TildeFAtomIffFront {Q : Type u} {F : Set (Finset Nat)}
     (s : {s : Finset Nat // s ∈ PrefixTree F}) :
     (∃ q : Q, TildeF f s = PowerQ.atom q) ↔ s.1 ∈ F := by
 -- BODY
-  sorry
+  constructor
+  · intro h
+    by_contra hsF
+    obtain ⟨q, hq⟩ := h
+    rw [TildeFNonfrontEquation f s hsF] at hq
+    cases hq
+  · intro hsF
+    exact ⟨f.value ⟨s.1, hsF⟩, TildeFFrontEquation f s hsF⟩

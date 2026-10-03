@@ -1,17 +1,16 @@
 {
   "raw": {
-    "audit_request": null,
-    "comments": "Edited only Tablet/TildeFHerCtbl.lean. Preserved the theorem statement, imports, BODY marker, and accepted TeX proof. The proof performs the extension-oriented well-founded induction, closes the front case with TildeFFrontEquation and HereditarilyCountableAtom, and closes the non-front case by packaging recursive witnesses over the lifted nonempty countable extension type and applying HerCtblNodeClosure. Incremental check and lake build pass; no helpers or other nodes were added.",
-    "deleted_nodes": [],
-    "deviation_deletions": [],
-    "deviation_requests": {},
-    "difficulty_updates": {},
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
-    "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Closed TildeFHerCtbl by direct well-founded induction over the front tree. The active node is Lean-closed with no new obligations.",
-    "target_claim_updates": {}
+    "summary": "Closed TildeFAtomIffFront by the front/non-front case split using the two recursion equations and constructor disjointness.",
+    "comments": "Preserved the active theorem statement, imports, BODY marker, and TeX proof. No helpers or other node edits were made.",
+    "target_claim_updates": {},
+    "difficulty_updates": {},
+    "deviation_requests": {},
+    "node_deviation_claims": {},
+    "deviation_deletions": [],
+    "deleted_nodes": [],
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -21,22 +20,36 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Edited only Tablet/TildeFHerCtbl.lean. Preserved the theorem statement, imports, BODY marker, and accepted TeX proof. The proof performs the extension-oriented well-founded induction, closes the front case with TildeFFrontEquation and HereditarilyCountableAtom, and closes the non-front case by packaging recursive witnesses over the lifted nonempty countable extension type and applying HerCtblNodeClosure. Incremental check and lake build pass; no helpers or other nodes were added.",
-    "cycle": 246,
+    "comments": "Preserved the active theorem statement, imports, BODY marker, and TeX proof. No helpers or other node edits were made.",
+    "cycle": 247,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
     "deviation_deletions": [],
     "deviation_requests": {},
     "difficulty_updates": {},
+    "elaboration_costs": {
+      "TildeFAtomIffFront": {
+        "cost_version": "2",
+        "heartbeats": null,
+        "heartbeats_key": null,
+        "measured_at_snapshot_id": "",
+        "node": "TildeFAtomIffFront",
+        "olean_size_bytes": 29928,
+        "peak_rss_kib": 1675924,
+        "peak_rss_process": "lean",
+        "source_closure_hash": "270ffff6ff5226504b64381d425ef03f6216cf0d9950c3a42341f9d548145495",
+        "walltime_ms": 2234
+      }
+    },
     "kind": "worker",
     "local_closure_results": {
-      "TildeFHerCtbl": {
+      "TildeFAtomIffFront": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "38bd52face4a0f14a0828b8c71bbafd5ed29cb8ad29dbeab127c0058c61eeea0",
-            "size_bytes": 26248
+            "sha256": "b1560a50aa4ce65ab4397b81a4cda4bf779678af355ac78fd1e5c9bbb671d92b",
+            "size_bytes": 29928
           }
         ],
         "axiomization_check": {
@@ -45,12 +58,8 @@
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
             "Tablet.FrontTreeImmediateExtensions::FrontTreeImmediateExtensions@exported:theorem",
-            "Tablet.FrontTreeWellFounded::FrontTreeWellFounded@exported:theorem",
-            "Tablet.HerCtblNodeClosure::HerCtblNodeClosure@exported:theorem",
-            "Tablet.HerCtblPower::HerCtblPower@exported:definition",
-            "Tablet.HereditarilyCountable::HereditarilyCountable@exported:definition",
-            "Tablet.HereditarilyCountableAtom::HereditarilyCountableAtom@exported:theorem",
             "Tablet.PowerQ::PowerQ.atom@exported:constructor",
+            "Tablet.PowerQ::PowerQ.ctorIdx@exported:definition",
             "Tablet.PowerQ::PowerQ.node@exported:constructor",
             "Tablet.PowerQ::PowerQ@exported:inductive",
             "Tablet.PrefixTree::PrefixTree@exported:definition",
@@ -85,14 +94,11 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "TildeFHerCtbl"
+            "name": "TildeFAtomIffFront"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.FrontTreeImmediateExtensions",
-          "Tablet.HerCtblNodeClosure",
-          "Tablet.HereditarilyCountableAtom",
           "Tablet.TildeF",
           "Tablet.TildeFFrontEquation",
           "Tablet.TildeFNonfrontEquation"
@@ -106,39 +112,15 @@
             "visibility": "exported"
           },
           {
-            "declaration_kind": "theorem",
-            "owner": "FrontTreeWellFounded",
-            "reached_declaration": "FrontTreeWellFounded",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "HerCtblNodeClosure",
-            "reached_declaration": "HerCtblNodeClosure",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "HerCtblPower",
-            "reached_declaration": "HerCtblPower",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "definition",
-            "owner": "HereditarilyCountable",
-            "reached_declaration": "HereditarilyCountable",
-            "visibility": "exported"
-          },
-          {
-            "declaration_kind": "theorem",
-            "owner": "HereditarilyCountableAtom",
-            "reached_declaration": "HereditarilyCountableAtom",
-            "visibility": "exported"
-          },
-          {
             "declaration_kind": "constructor",
             "owner": "PowerQ",
             "reached_declaration": "PowerQ.atom",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "PowerQ",
+            "reached_declaration": "PowerQ.ctorIdx",
             "visibility": "exported"
           },
           {
@@ -207,23 +189,21 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "TildeFHerCtbl",
+        "principal_declaration": "TildeFAtomIffFront",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"TildeFHerCtbl\"],\"boundary_theorems\":[\"Tablet.FrontTreeImmediateExtensions::FrontTreeImmediateExtensions@exported:theorem\",\"Tablet.FrontTreeWellFounded::FrontTreeWellFounded@exported:theorem\",\"Tablet.HerCtblNodeClosure::HerCtblNodeClosure@exported:theorem\",\"Tablet.HerCtblPower::HerCtblPower@exported:definition\",\"Tablet.HereditarilyCountable::HereditarilyCountable@exported:definition\",\"Tablet.HereditarilyCountableAtom::HereditarilyCountableAtom@exported:theorem\",\"Tablet.PowerQ::PowerQ.atom@exported:constructor\",\"Tablet.PowerQ::PowerQ.node@exported:constructor\",\"Tablet.PowerQ::PowerQ@exported:inductive\",\"Tablet.PrefixTree::PrefixTree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.SuperSequence::SuperSequence.front@exported:theorem\",\"Tablet.SuperSequence::SuperSequence.value@exported:definition\",\"Tablet.SuperSequence::SuperSequence@exported:inductive\",\"Tablet.TildeF::TildeF@exported:definition\",\"Tablet.TildeFFrontEquation::TildeFFrontEquation@exported:theorem\",\"Tablet.TildeFNonfrontEquation::TildeFNonfrontEquation@exported:theorem\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"TildeFHerCtbl\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"TildeFHerCtbl\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"FrontTreeImmediateExtensions\",\"reached_declaration\":\"FrontTreeImmediateExtensions\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"FrontTreeWellFounded\",\"reached_declaration\":\"FrontTreeWellFounded\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"HerCtblNodeClosure\",\"reached_declaration\":\"HerCtblNodeClosure\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"HerCtblPower\",\"reached_declaration\":\"HerCtblPower\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"HereditarilyCountable\",\"reached_declaration\":\"HereditarilyCountable\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"HereditarilyCountableAtom\",\"reached_declaration\":\"HereditarilyCountableAtom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.atom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.node\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixTree\",\"reached_declaration\":\"PrefixTree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.value\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"TildeF\",\"reached_declaration\":\"TildeF\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"TildeFFrontEquation\",\"reached_declaration\":\"TildeFFrontEquation\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"TildeFNonfrontEquation\",\"reached_declaration\":\"TildeFNonfrontEquation\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"TildeFHerCtbl\",\"principal_declaration\":\"TildeFHerCtbl\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"HerCtblPower\",\"semantic_hash\":\"cf74205a519c00d6\"},{\"name\":\"HereditarilyCountable\",\"semantic_hash\":\"aa89f5fa96f4fdb0\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"eb448a4c139aebf2\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1f06fec9c525a2b8\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1a7622b0590b3994\"},{\"name\":\"PrefixTree\",\"semantic_hash\":\"94b89b18d87975df\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"97f9f0f5dc5dec42\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"2ab38a5f61409383\"},{\"name\":\"TildeF\",\"semantic_hash\":\"47ceb2e3e597eb36\"}],\"strict_theorem_deps\":[{\"name\":\"FrontTreeImmediateExtensions\",\"value_hash\":\"f9d6f16f3d411a53\"},{\"name\":\"FrontTreeWellFounded\",\"value_hash\":\"326803dee095577a\"},{\"name\":\"HerCtblNodeClosure\",\"value_hash\":\"d93dff6735332a7c\"},{\"name\":\"HereditarilyCountableAtom\",\"value_hash\":\"bfab75573d66b550\"},{\"name\":\"SuperSequence\",\"value_hash\":\"064e0cd704aab6c4\"},{\"name\":\"TildeFFrontEquation\",\"value_hash\":\"8e169a93658d552c\"},{\"name\":\"TildeFNonfrontEquation\",\"value_hash\":\"c7298532aa52a8dc\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"TildeFAtomIffFront\"],\"boundary_theorems\":[\"Tablet.FrontTreeImmediateExtensions::FrontTreeImmediateExtensions@exported:theorem\",\"Tablet.PowerQ::PowerQ.atom@exported:constructor\",\"Tablet.PowerQ::PowerQ.ctorIdx@exported:definition\",\"Tablet.PowerQ::PowerQ.node@exported:constructor\",\"Tablet.PowerQ::PowerQ@exported:inductive\",\"Tablet.PrefixTree::PrefixTree@exported:definition\",\"Tablet.ProperInitialSegment::ProperInitialSegment@exported:definition\",\"Tablet.SuperSequence::SuperSequence.front@exported:theorem\",\"Tablet.SuperSequence::SuperSequence.value@exported:definition\",\"Tablet.SuperSequence::SuperSequence@exported:inductive\",\"Tablet.TildeF::TildeF@exported:definition\",\"Tablet.TildeFFrontEquation::TildeFFrontEquation@exported:theorem\",\"Tablet.TildeFNonfrontEquation::TildeFNonfrontEquation@exported:theorem\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"TildeFAtomIffFront\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"TildeFAtomIffFront\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"theorem\",\"owner\":\"FrontTreeImmediateExtensions\",\"reached_declaration\":\"FrontTreeImmediateExtensions\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.atom\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.ctorIdx\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ.node\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"PowerQ\",\"reached_declaration\":\"PowerQ\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"PrefixTree\",\"reached_declaration\":\"PrefixTree\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"ProperInitialSegment\",\"reached_declaration\":\"ProperInitialSegment\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.front\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence.value\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"SuperSequence\",\"reached_declaration\":\"SuperSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"TildeF\",\"reached_declaration\":\"TildeF\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"TildeFFrontEquation\",\"reached_declaration\":\"TildeFFrontEquation\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"TildeFNonfrontEquation\",\"reached_declaration\":\"TildeFNonfrontEquation\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"TildeFAtomIffFront\",\"principal_declaration\":\"TildeFAtomIffFront\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"PowerQ\",\"semantic_hash\":\"eb448a4c139aebf2\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1f06fec9c525a2b8\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"1a7622b0590b3994\"},{\"name\":\"PowerQ\",\"semantic_hash\":\"7eb611d2516caf3c\"},{\"name\":\"PrefixTree\",\"semantic_hash\":\"94b89b18d87975df\"},{\"name\":\"ProperInitialSegment\",\"semantic_hash\":\"b0b2a1c37bea1919\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"97f9f0f5dc5dec42\"},{\"name\":\"SuperSequence\",\"semantic_hash\":\"2ab38a5f61409383\"},{\"name\":\"TildeF\",\"semantic_hash\":\"47ceb2e3e597eb36\"}],\"strict_theorem_deps\":[{\"name\":\"FrontTreeImmediateExtensions\",\"value_hash\":\"f9d6f16f3d411a53\"},{\"name\":\"SuperSequence\",\"value_hash\":\"064e0cd704aab6c4\"},{\"name\":\"TildeFFrontEquation\",\"value_hash\":\"8e169a93658d552c\"},{\"name\":\"TildeFNonfrontEquation\",\"value_hash\":\"c7298532aa52a8dc\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "TildeFHerCtbl"
+            "name": "TildeFAtomIffFront"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "93bcd1222ba35be41eaa8c16aa94a27b2bab4f2f10b84209ce85934f718edf54",
+        "source_sha256": "400270208a36e4197107ec2015c2fa78d07c2cdcdd48ce60475366cba929a810",
         "status": "ok",
         "strict_definition_deps": {
-          "HerCtblPower": "cf74205a519c00d6",
-          "HereditarilyCountable": "aa89f5fa96f4fdb0",
-          "PowerQ": "1a7622b0590b3994",
+          "PowerQ": "7eb611d2516caf3c",
           "PrefixTree": "94b89b18d87975df",
           "ProperInitialSegment": "b0b2a1c37bea1919",
           "SuperSequence": "2ab38a5f61409383",
@@ -231,9 +211,6 @@
         },
         "strict_theorem_deps": {
           "FrontTreeImmediateExtensions": "f9d6f16f3d411a53",
-          "FrontTreeWellFounded": "326803dee095577a",
-          "HerCtblNodeClosure": "d93dff6735332a7c",
-          "HereditarilyCountableAtom": "bfab75573d66b550",
           "SuperSequence": "064e0cd704aab6c4",
           "TildeFFrontEquation": "8e169a93658d552c",
           "TildeFNonfrontEquation": "c7298532aa52a8dc"
@@ -244,7 +221,7 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "TildeFHerCtbl"
+                "name": "TildeFAtomIffFront"
               }
             ],
             "level": "exported"
@@ -259,7 +236,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 694,
+    "request_id": 696,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -501,8 +478,7 @@
         "PerfectSuperToBase",
         "PerfectSuperToMulti",
         "ShiftDichotomy",
-        "Subarr",
-        "TildeFAtomIffFront"
+        "Subarr"
       ],
       "paper_current_fingerprints": {
         "MainProp": "{\"target\":\"MainProp\",\"covering_nodes\":{\"MainProp\":\"fb2fb371243a039fa491772ebdcede5e14bc5484555d5cdeab325a7a791360e5\"},\"lean_relevant_definition_descendants\":{\"BaireContinuous\":\"d021288c4bd741e074f0be580769057f7738eae46960657ffc8f995735b92f1c\",\"ContMor\":\"dfa456a882144c75ec69ddddc405b0572cc399694f5e1a09ffc2450dc5b74c62\",\"ContMorEq\":\"93c7acca9d1b2c04e8eba37751ebbc575485fa22cdfb456a4d87f6b73570be32\",\"ContinuousHom\":\"af41b3e1d4ca8047ec1cca7891559aaba7538ad15a414b60211f1cabeb49806f\",\"IncSeq\":\"6af816e714d95beeaacb3d1f638c20e4b8a774a0701ba06d7d075caac332553a\",\"IncSeqComp\":\"0e70d64ddc41d0da41e80d4e205dd7719c838029e41015374e5d5b1a612dc3b0\",\"IncSeqId\":\"cd5afe9f2d7429bf17041ca143b794ca31b3d16f5c17266df85b556418527634\",\"PrefixAgree\":\"946e45028c5626839a4ef82b7358a9fedeedd9664923c12b41e6d87a76b03811\",\"RightComp\":\"3640805624f89002391cbad60eb359c90f19be01e79b9717e3ab3b731f469415\",\"ShiftMap\":\"5cef8faf1b0dd7104e2cd6827cb477d3b55ada2480fbea930920d28d9dab6285\",\"SuccSeq\":\"616473001e35a1ce654ae6ea71aa61714cf2453900aeaae39041003a239d7989\"},\"preamble_definition_hashes\":[\"cc6ac61abd0fd3922abe491e708e188f0f7df52c6c9b23e5736f91e97c0bce8a\"]}",
@@ -3015,7 +2991,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed TildeFHerCtbl by direct well-founded induction over the front tree. The active node is Lean-closed with no new obligations.",
+    "summary": "Closed TildeFAtomIffFront by the front/non-front case split using the two recursion equations and constructor disjointness.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3187,7 +3163,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "15aa7294469259d3eca4d0a95e2a80c3afb235b0aa0fc78e01edf94d03ecf222",
+    "INDEX.md": "2af6b84cac77b6719a4cd65e092b18c0635ffb250e1df005816cd2544920301c",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3344,7 +3320,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "1a27b8ececcdd2f7f42bc2bf49ed492e38011afb1763d39b6d82a4d7e4036892",
+    "README.md": "fc3d06bf70465fd987f2164c78d4002d2780cb225b5156091018e69a4bafa78e",
     "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3385,7 +3361,7 @@
     "TailSet.tex": "c7033ac7f3a695e8aabb7a0398f7edd7c8c48cc6c76e3fc82477b041895fa212",
     "TildeF.lean": "f931c98da220437298f781ef147ee3a3d811b0b664e12d5f0f578b9ad4f409c3",
     "TildeF.tex": "43557b9e0b063e5e0a482a2bac8110371200b56c56a6d01655cae3b91871a089",
-    "TildeFAtomIffFront.lean": "bfccc5dbe6d68f3ac4285b7c0705bb60008f50d39cfad501e41af3780eda7ae2",
+    "TildeFAtomIffFront.lean": "400270208a36e4197107ec2015c2fa78d07c2cdcdd48ce60475366cba929a810",
     "TildeFAtomIffFront.tex": "59c167a48f34d668b25f9c00900b75825ec79c712cca7491a1243ba8a572e686",
     "TildeFFrontEquation.lean": "523658745daba9b506ee75a729c3f6d9f71e8c4f144bdf1a2ae479d97d81e571",
     "TildeFFrontEquation.tex": "352f6d7533c296a794c5a76235327f0a3d84a51683fb01eead2cadb44d88221c",
@@ -3399,7 +3375,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_694_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_696_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

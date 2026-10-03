@@ -188,11 +188,11 @@
 | SuperSequenceRestrict | definition | - | closed |
 | TailSet | definition | - | closed |
 | TildeF | definition | - | closed |
-| TildeFAtomIffFront | proof | Atoms occur exactly at front nodes | open |
+| TildeFAtomIffFront | proof | Atoms occur exactly at front nodes | closed |
 | TildeFFrontEquation | proof | Front recursion equation | closed |
 | TildeFHerCtbl | proof | Hereditary countability of the front recursion | closed |
 | TildeFNonfrontEquation | proof | Non-front recursion equation | closed |
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 165/185 closed
+**Summary:** 166/185 closed

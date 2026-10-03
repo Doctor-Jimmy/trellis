@@ -182,11 +182,11 @@
 | SuperSequenceRestrict | definition | definition | closed | - | - | SuperSequence |
 | TailSet | definition | definition | closed | - | - | Preamble |
 | TildeF | definition | definition | closed | - | - | FrontTreeImmediateExtensions, FrontTreeWellFounded, PowerQ, SuperSequence |
-| TildeFAtomIffFront | lemma | proof | open | - | Atoms occur exactly at front nodes | TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
+| TildeFAtomIffFront | lemma | proof | closed | - | Atoms occur exactly at front nodes | TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
 | TildeFFrontEquation | lemma | proof | closed | - | Front recursion equation | SuperSequence, TildeF |
 | TildeFHerCtbl | lemma | proof | closed | - | Hereditary countability of the front recursion | FrontTreeImmediateExtensions, HerCtblNodeClosure, HereditarilyCountableAtom, TildeF, TildeFFrontEquation, TildeFNonfrontEquation |
 | TildeFNonfrontEquation | lemma | proof | closed | - | Non-front recursion equation | FrontTreeImmediateExtensions, TildeF |
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 165 | **Open:** 20
+**Total:** 185 nodes | **Closed:** 166 | **Open:** 19
