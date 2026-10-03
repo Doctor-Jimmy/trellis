@@ -1,7 +1,7 @@
 {
   "raw": {
     "audit_request": null,
-    "comments": "Closed OrbitEmbedding in Lean with local inductions proving strict monotonicity of every iterate and the successor iterate identity. The successive orbit inequalities yield a StrictMono orbit map, from which OrderEmbedding.ofStrictMono supplies the required IncSeq and OrbitPoint equation. The theorem statement, imports, BODY marker, and TeX proof were preserved.",
+    "comments": "Only Tablet/OrbitUnbounded.lean was edited. The theorem statement, imports, BODY marker, and accepted TeX proof were preserved. The proof obtains the strictly increasing orbit embedding from OrbitEmbedding, proves n <= G n by induction, and chooses n = l + 1 to obtain the required strict bound. No helpers or open obligations were added.",
     "deleted_nodes": [],
     "deviation_deletions": [],
     "deviation_requests": {},
@@ -10,7 +10,7 @@
     "needs_restructure_suggested_nodes": [],
     "node_deviation_claims": {},
     "outcome": "valid",
-    "summary": "Closed the active OrbitEmbedding theorem by constructing the strictly increasing orbit embedding and proving its OrbitPoint characterization.",
+    "summary": "Closed OrbitUnbounded in Lean using the existing OrbitEmbedding result and a direct induction showing n <= G n for every orbit index.",
     "target_claim_updates": {}
   },
   "response": {
@@ -21,8 +21,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "Closed OrbitEmbedding in Lean with local inductions proving strict monotonicity of every iterate and the successor iterate identity. The successive orbit inequalities yield a StrictMono orbit map, from which OrderEmbedding.ofStrictMono supplies the required IncSeq and OrbitPoint equation. The theorem statement, imports, BODY marker, and TeX proof were preserved.",
-    "cycle": 234,
+    "comments": "Only Tablet/OrbitUnbounded.lean was edited. The theorem statement, imports, BODY marker, and accepted TeX proof were preserved. The proof obtains the strictly increasing orbit embedding from OrbitEmbedding, proves n <= G n by induction, and chooses n = l + 1 to obtain the required strict bound. No helpers or open obligations were added.",
+    "cycle": 235,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -31,12 +31,12 @@
     "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "OrbitEmbedding": {
+      "OrbitUnbounded": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "13384b01261e869c1231b20c01d4240ef58d233b9891bb2417e82e0cae80d0c3",
-            "size_bytes": 26992
+            "sha256": "39a3a63b4890e0acc0998f85ad439e9757a81a09a2c8119739240173a1e63fdb",
+            "size_bytes": 15496
           }
         ],
         "axiomization_check": {
@@ -45,6 +45,7 @@
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
             "Tablet.IncSeq::IncSeq@exported:definition",
+            "Tablet.OrbitEmbedding::OrbitEmbedding@exported:theorem",
             "Tablet.OrbitPoint::OrbitPoint@exported:definition"
           ],
           "error": null,
@@ -69,12 +70,12 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "OrbitEmbedding"
+            "name": "OrbitUnbounded"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.IncSeq",
+          "Tablet.OrbitEmbedding",
           "Tablet.OrbitPoint"
         ],
         "errors": [],
@@ -83,6 +84,12 @@
             "declaration_kind": "definition",
             "owner": "IncSeq",
             "reached_declaration": "IncSeq",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "OrbitEmbedding",
+            "reached_declaration": "OrbitEmbedding",
             "visibility": "exported"
           },
           {
@@ -96,31 +103,33 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "OrbitEmbedding",
+        "principal_declaration": "OrbitUnbounded",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"OrbitEmbedding\"],\"boundary_theorems\":[\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.OrbitPoint::OrbitPoint@exported:definition\"],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"OrbitEmbedding\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"OrbitEmbedding\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"OrbitPoint\",\"reached_declaration\":\"OrbitPoint\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"node\":\"OrbitEmbedding\",\"principal_declaration\":\"OrbitEmbedding\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"OrbitPoint\",\"semantic_hash\":\"22af31eef2ad68ed\"}],\"strict_theorem_deps\":[]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"OrbitUnbounded\"],\"boundary_theorems\":[\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.OrbitEmbedding::OrbitEmbedding@exported:theorem\",\"Tablet.OrbitPoint::OrbitPoint@exported:definition\"],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"OrbitUnbounded\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"OrbitUnbounded\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"OrbitEmbedding\",\"reached_declaration\":\"OrbitEmbedding\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"OrbitPoint\",\"reached_declaration\":\"OrbitPoint\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Quot.sound\",\"propext\"],\"node\":\"OrbitUnbounded\",\"principal_declaration\":\"OrbitUnbounded\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"OrbitPoint\",\"semantic_hash\":\"22af31eef2ad68ed\"}],\"strict_theorem_deps\":[{\"name\":\"OrbitEmbedding\",\"value_hash\":\"0bbbcba9bc809657\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "OrbitEmbedding"
+            "name": "OrbitUnbounded"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "2292f3e48a4fa0de620d2b1604b2d4842a2409b862fbc0e782b011d626ab7808",
+        "source_sha256": "28e5ecf9d3d92d933ac3361120dacae94d0568920fe1efaafe64b965ca48b326",
         "status": "ok",
         "strict_definition_deps": {
           "IncSeq": "1722254285ddeb5c",
           "OrbitPoint": "22af31eef2ad68ed"
         },
-        "strict_theorem_deps": {},
+        "strict_theorem_deps": {
+          "OrbitEmbedding": "0bbbcba9bc809657"
+        },
         "timed_out": false,
         "visibility_manifests": [
           {
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "OrbitEmbedding"
+                "name": "OrbitUnbounded"
               }
             ],
             "level": "exported"
@@ -135,7 +144,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 670,
+    "request_id": 672,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -376,7 +385,6 @@
         "HerCtblNodeClosure",
         "NoBadPerfectSuper",
         "OrbitBlockCoverage",
-        "OrbitUnbounded",
         "PerfectBaseToSuper",
         "PerfectMultiRestrict",
         "PerfectMultiToSuper",
@@ -2903,7 +2911,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed the active OrbitEmbedding theorem by constructing the strictly increasing orbit embedding and proving its OrbitPoint characterization.",
+    "summary": "Closed OrbitUnbounded in Lean using the existing OrbitEmbedding result and a direct induction showing n <= G n for every orbit index.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3075,7 +3083,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "b1fc7889295192136e2188cdb6470d98a38a58b672e4375e044f0708af031f81",
+    "INDEX.md": "90d7b651d0e49b38b8e6457fd87e40adccd54c02412be4cdf8d1215eb3789be2",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3112,7 +3120,7 @@
     "OrbitEmbedding.tex": "82e5de0af7a5f5b0eadee195abb96b513fb3d3e3a9edf118c7effcca98690971",
     "OrbitPoint.lean": "7c117bc64a0d99983a98b485eec1d3b6beff1d8277adefa16d6b97baf5a397e1",
     "OrbitPoint.tex": "487d448cd4baf3f3c7a9e93a118db9506070f9d7b61d018620b0351a9f9db4d2",
-    "OrbitUnbounded.lean": "9f7bc41dc2b7cb8b32f06625184b91334ef91df091caca20b6f11739af33f8c0",
+    "OrbitUnbounded.lean": "28e5ecf9d3d92d933ac3361120dacae94d0568920fe1efaafe64b965ca48b326",
     "OrbitUnbounded.tex": "95624e9699d4f77d164afa9df3a0706b2b19ff3cb5533d96ae06c29d888075d9",
     "PerfectBaseToSuper.lean": "07bd99a6fad1400647b0d1f70d433018b4c341ae969ccd2daf9b4c86fe379aa9",
     "PerfectBaseToSuper.tex": "558282044adf767171baab93a5313fffa6aefa5eb5aa52eb1fa45e5a3a1d3f9e",
@@ -3232,7 +3240,7 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "57dfc5ea90e3687e7e3bd949b72f55e52aa7ac41deef1e44486985309206ab62",
+    "README.md": "3c0fe30677d65334dbc97b6bd343411b54ea0165629d43e0f89bda9077a6d1b8",
     "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
@@ -3287,7 +3295,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_670_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_672_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

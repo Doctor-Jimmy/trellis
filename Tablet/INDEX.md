@@ -102,7 +102,7 @@
 | OrbitBlockCoverage | lemma | proof | open | - | - | OrbitBlock, OrbitEmbedding, OrbitUnbounded |
 | OrbitEmbedding | lemma | proof | closed | - | - | IncSeq, OrbitPoint |
 | OrbitPoint | definition | definition | closed | - | - | IncSeq |
-| OrbitUnbounded | lemma | proof | open | - | - | OrbitEmbedding, OrbitPoint |
+| OrbitUnbounded | lemma | proof | closed | - | - | OrbitEmbedding, OrbitPoint |
 | PerfectBaseToSuper | lemma | proof | open | - | Perfect base extensions yield perfect sub-super-sequences | BaseIncSeq, BaseRestrict, FiniteShift, Front, FrontPrefix, FrontRestrict, FrontRestriction, IncSeq, IncSeqComp, InfiniteSetEnumeration, InitialSegment, PerfectMultiSequence, PerfectSuperSequence, ProperPrefixSet, RestrictionShift, ShiftMap, SuperSequence, SuperSequenceExtension, SuperSequenceRestrict |
 | PerfectMultiRestrict | lemma | proof | open | - | Perfectness under restriction | MultiSequenceRestrict, PerfectMultiSequence, RestrictionShift |
 | PerfectMultiSequence | definition | definition | closed | - | - | MultiSequence, ShiftMap |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 153 | **Open:** 32
+**Total:** 185 nodes | **Closed:** 154 | **Open:** 31

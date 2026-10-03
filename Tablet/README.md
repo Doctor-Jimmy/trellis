@@ -110,7 +110,7 @@
 | OrbitBlockCoverage | proof | - | open |
 | OrbitEmbedding | proof | - | closed |
 | OrbitPoint | definition | - | closed |
-| OrbitUnbounded | proof | - | open |
+| OrbitUnbounded | proof | - | closed |
 | PerfectBaseToSuper | proof | Perfect base extensions yield perfect sub-super-sequences | open |
 | PerfectMultiRestrict | proof | Perfectness under restriction | open |
 | PerfectMultiSequence | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 153/185 closed
+**Summary:** 154/185 closed
