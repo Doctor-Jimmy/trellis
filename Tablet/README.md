@@ -31,7 +31,7 @@
 | BetterRel | definition | - | closed |
 | BlockSigma | definition | - | closed |
 | BlockSigmaContinuous | proof | - | closed |
-| BlockSigmaEmbedding | proof | - | open |
+| BlockSigmaEmbedding | proof | - | closed |
 | BlockSigmaIntertwines | proof | - | open |
 | BooleanInfinitePigeonhole | proof | Infinite pigeonhole | closed |
 | Bqo | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 157/185 closed
+**Summary:** 158/185 closed

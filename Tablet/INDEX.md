@@ -23,7 +23,7 @@
 | BetterRel | definition | definition | closed | - | - | ContinuousRelHom, ShiftMap |
 | BlockSigma | definition | definition | closed | - | - | OrbitPoint |
 | BlockSigmaContinuous | lemma | proof | closed | - | - | BlockSigma, OrbitBlockCoverage, PrefixAgree |
-| BlockSigmaEmbedding | lemma | proof | open | - | - | BlockSigma, IncSeq, OrbitBlockCoverage |
+| BlockSigmaEmbedding | lemma | proof | closed | - | - | BlockSigma, IncSeq, OrbitBlockCoverage |
 | BlockSigmaIntertwines | lemma | proof | open | - | - | BlockSigma, OrbitBlockCoverage, RightComp, SuccSeq |
 | BooleanInfinitePigeonhole | lemma | proof | closed | - | Infinite pigeonhole | Preamble |
 | Bqo | definition | definition | closed | - | - | BadMultiSequence, LocallyConstant |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 157 | **Open:** 28
+**Total:** 185 nodes | **Closed:** 158 | **Open:** 27

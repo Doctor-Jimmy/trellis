@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BlockSigmaContinuous is closed; continue repairing MainProp's support by closing the block-map embedding prerequisite for EmapLemma.",
-    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaEmbedding in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive increasing-injection construction without wrappers or helpers: establish strict increase and iterate-composition identities for g, obtain the unique orbit block from OrbitBlockCoverage, identify the least-index definition of BlockSigma, and prove strict increase across the initial interval, within blocks, and at block boundaries using f(n) >= n. Do not alter statements or imports and leave no obligations open.",
+    "reason": "BlockSigmaEmbedding is closed; continue repairing MainProp's support by closing the remaining BlockSigma intertwining prerequisite for EmapLemma.",
+    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaIntertwines in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual intertwining argument without wrappers or helpers: split below the initial orbit point using the fixed-point hypothesis, locate the unique orbit block of l via OrbitBlockCoverage, show g(l) lies in the successor block, unfold both BlockSigma branches, and finish with f(n) >= n, natural subtraction arithmetic, and the iterate identity g^[a](g l)=g^[a+1](l). Do not alter statements or imports and leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BlockSigmaEmbedding",
+    "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BlockSigmaEmbedding": "hard"
+      "BlockSigmaIntertwines": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaEmbedding in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the substantive increasing-injection construction without wrappers or helpers: establish strict increase and iterate-composition identities for g, obtain the unique orbit block from OrbitBlockCoverage, identify the least-index definition of BlockSigma, and prove strict increase across the initial interval, within blocks, and at block boundaries using f(n) >= n. Do not alter statements or imports and leave no obligations open.",
+    "comments": "Keep MainProp as the coarse anchor and route to BlockSigmaIntertwines in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the actual intertwining argument without wrappers or helpers: split below the initial orbit point using the fixed-point hypothesis, locate the unique orbit block of l via OrbitBlockCoverage, show g(l) lies in the successor block, unfold both BlockSigma branches, and finish with f(n) >= n, natural subtraction arithmetic, and the iterate identity g^[a](g l)=g^[a+1](l). Do not alter statements or imports and leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 238,
+    "cycle": 239,
     "decision": "Continue",
     "difficulty_updates": {
-      "BlockSigmaEmbedding": {
+      "BlockSigmaIntertwines": {
         "Set": "Hard"
       }
     },
@@ -47,7 +47,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BlockSigmaEmbedding",
+    "next_active": "BlockSigmaIntertwines",
     "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BlockSigmaContinuous is closed; continue repairing MainProp's support by closing the block-map embedding prerequisite for EmapLemma.",
-    "request_id": 679,
+    "reason": "BlockSigmaEmbedding is closed; continue repairing MainProp's support by closing the remaining BlockSigma intertwining prerequisite for EmapLemma.",
+    "request_id": 681,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_679_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_681_decision.context.json"
 }
