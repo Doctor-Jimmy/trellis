@@ -9,4 +9,6 @@ theorem TildeFFrontEquation {Q : Type u} {F : Set (Finset Nat)}
     (s : {s : Finset Nat // s ∈ PrefixTree F}) (hs : s.1 ∈ F) :
     TildeF f s = PowerQ.atom (f.value ⟨s.1, hs⟩) := by
 -- BODY
-  sorry
+  unfold TildeF
+  rw [WellFounded.fix_eq]
+  simp [hs]

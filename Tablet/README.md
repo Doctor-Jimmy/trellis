@@ -189,10 +189,10 @@
 | TailSet | definition | - | closed |
 | TildeF | definition | - | closed |
 | TildeFAtomIffFront | proof | Atoms occur exactly at front nodes | open |
-| TildeFFrontEquation | proof | Front recursion equation | open |
+| TildeFFrontEquation | proof | Front recursion equation | closed |
 | TildeFHerCtbl | proof | Hereditary countability of the front recursion | open |
 | TildeFNonfrontEquation | proof | Non-front recursion equation | open |
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 161/185 closed
+**Summary:** 162/185 closed

@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "SuperSequenceExtension is now closed and its anchor is cleanly unlocked; advance to the short front-case recursion equation that directly supports the hereditary-countability and atom/front arguments.",
-    "comments": "Switch the coarse anchor to TildeFFrontEquation and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the definitional front branch directly: unfold TildeF at a node known to lie in F, identify the front branch, and resolve the subtype proof argument by proof irrelevance. Do not introduce wrappers or helpers, and leave no obligations open; TildeF and SuperSequence are the existing support nodes.",
+    "reason": "TildeFFrontEquation is closed and the anchor is cleanly unlocked; advance to the sibling non-front recursion equation, which is a direct prerequisite for the same downstream hereditary-countability and atom/front arguments.",
+    "comments": "Switch the coarse anchor to TildeFNonfrontEquation and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the definitional non-front branch directly: unfold TildeF under hs, use FrontTreeImmediateExtensions for the nonempty extension witness, identify the lifted subtype index and recursive arguments, and simplify the well-founded recursion equation. Do not introduce wrappers or helpers, and leave no obligations open; use the existing TildeF and FrontTreeImmediateExtensions support.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "TildeFFrontEquation",
-    "next_active_coarse": "TildeFFrontEquation",
+    "next_active": "TildeFNonfrontEquation",
+    "next_active_coarse": "TildeFNonfrontEquation",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "TildeFFrontEquation": "easy"
+      "TildeFNonfrontEquation": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to TildeFFrontEquation and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the definitional front branch directly: unfold TildeF at a node known to lie in F, identify the front branch, and resolve the subtype proof argument by proof irrelevance. Do not introduce wrappers or helpers, and leave no obligations open; TildeF and SuperSequence are the existing support nodes.",
+    "comments": "Switch the coarse anchor to TildeFNonfrontEquation and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the definitional non-front branch directly: unfold TildeF under hs, use FrontTreeImmediateExtensions for the nonempty extension witness, identify the lifted subtype index and recursive arguments, and simplify the well-founded recursion equation. Do not introduce wrappers or helpers, and leave no obligations open; use the existing TildeF and FrontTreeImmediateExtensions support.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 242,
+    "cycle": 243,
     "decision": "Continue",
     "difficulty_updates": {
-      "TildeFFrontEquation": {
+      "TildeFNonfrontEquation": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "TildeFFrontEquation",
-    "next_active_coarse": "TildeFFrontEquation",
+    "next_active": "TildeFNonfrontEquation",
+    "next_active_coarse": "TildeFNonfrontEquation",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "SuperSequenceExtension is now closed and its anchor is cleanly unlocked; advance to the short front-case recursion equation that directly supports the hereditary-countability and atom/front arguments.",
-    "request_id": 687,
+    "reason": "TildeFFrontEquation is closed and the anchor is cleanly unlocked; advance to the sibling non-front recursion equation, which is a direct prerequisite for the same downstream hereditary-countability and atom/front arguments.",
+    "request_id": 689,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_687_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_689_decision.context.json"
 }
