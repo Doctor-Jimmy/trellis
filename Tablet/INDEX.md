@@ -104,7 +104,7 @@
 | OrbitPoint | definition | definition | closed | - | - | IncSeq |
 | OrbitUnbounded | lemma | proof | closed | - | - | OrbitEmbedding, OrbitPoint |
 | PerfectBaseToSuper | lemma | proof | closed | - | Perfect base extensions yield perfect sub-super-sequences | BaseIncSeq, BaseRestrict, FiniteShift, Front, FrontPrefix, FrontRestrict, FrontRestriction, IncSeq, IncSeqComp, InfiniteSetEnumeration, InitialSegment, PerfectMultiSequence, PerfectSuperSequence, ProperPrefixSet, RestrictionShift, ShiftMap, SuperSequence, SuperSequenceExtension, SuperSequenceRestrict |
-| PerfectMultiRestrict | lemma | proof | open | - | Perfectness under restriction | MultiSequenceRestrict, PerfectMultiSequence, RestrictionShift |
+| PerfectMultiRestrict | lemma | proof | closed | - | Perfectness under restriction | MultiSequenceRestrict, PerfectMultiSequence, RestrictionShift |
 | PerfectMultiSequence | definition | definition | closed | - | - | MultiSequence, ShiftMap |
 | PerfectMultiToSuper | lemma | proof | open | - | Multi-sequence perfectness gives super-sequence perfectness | DecidingFrontSet, DecidingPrefix, PerfectMultiSequence, PerfectSuperSequence |
 | PerfectSuperRestrict | lemma | proof | closed | - | Perfectness under sub-front restriction | PerfectSuperSequence, SuperSequenceRestrict |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 181 | **Open:** 4
+**Total:** 185 nodes | **Closed:** 182 | **Open:** 3

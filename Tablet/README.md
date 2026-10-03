@@ -112,7 +112,7 @@
 | OrbitPoint | definition | - | closed |
 | OrbitUnbounded | proof | - | closed |
 | PerfectBaseToSuper | proof | Perfect base extensions yield perfect sub-super-sequences | closed |
-| PerfectMultiRestrict | proof | Perfectness under restriction | open |
+| PerfectMultiRestrict | proof | Perfectness under restriction | closed |
 | PerfectMultiSequence | definition | - | closed |
 | PerfectMultiToSuper | proof | Multi-sequence perfectness gives super-sequence perfectness | open |
 | PerfectSuperRestrict | proof | Perfectness under sub-front restriction | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 181/185 closed
+**Summary:** 182/185 closed

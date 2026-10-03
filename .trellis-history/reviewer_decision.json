@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "PerfectSuperRestrict closed directly. Advance to the analogous short PerfectMultiRestrict lemma to continue clearing independent open obligations with direct proofs.",
-    "comments": "Work on PerfectMultiRestrict in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Apply the original perfectness assertion to z composed with an arbitrary x, rewrite both values with MultiSequenceRestrict, and use RestrictionShift for the shifted composition. Leave no obligations open.",
+    "reason": "PerfectMultiRestrict closed directly and cleanly. Advance to PerfectSuperToBase, the largest remaining substantive transport lemma; all of its imported support is already closed.",
+    "comments": "Work on PerfectSuperToBase in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Use SuperSequenceExtension to construct the base multi-sequence and its extension equation, apply FrontPrefixExists to an arbitrary base sequence and BaseShift_X of it, form the FiniteShift witness from the two prefixes, and apply the original perfectness to prove BasePerfect and the required extension witness. Leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PerfectMultiRestrict",
-    "next_active_coarse": "PerfectMultiRestrict",
+    "next_active": "PerfectSuperToBase",
+    "next_active_coarse": "PerfectSuperToBase",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PerfectMultiRestrict": "easy"
+      "PerfectSuperToBase": "hard"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on PerfectMultiRestrict in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Apply the original perfectness assertion to z composed with an arbitrary x, rewrite both values with MultiSequenceRestrict, and use RestrictionShift for the shifted composition. Leave no obligations open.",
+    "comments": "Work on PerfectSuperToBase in Local mode and close it directly without helpers or wrappers. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Use SuperSequenceExtension to construct the base multi-sequence and its extension equation, apply FrontPrefixExists to an arbitrary base sequence and BaseShift_X of it, form the FiniteShift witness from the two prefixes, and apply the original perfectness to prove BasePerfect and the required extension witness. Leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 262,
+    "cycle": 263,
     "decision": "Continue",
     "difficulty_updates": {
-      "PerfectMultiRestrict": {
-        "Set": "Easy"
+      "PerfectSuperToBase": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PerfectMultiRestrict",
-    "next_active_coarse": "PerfectMultiRestrict",
+    "next_active": "PerfectSuperToBase",
+    "next_active_coarse": "PerfectSuperToBase",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "PerfectSuperRestrict closed directly. Advance to the analogous short PerfectMultiRestrict lemma to continue clearing independent open obligations with direct proofs.",
-    "request_id": 727,
+    "reason": "PerfectMultiRestrict closed directly and cleanly. Advance to PerfectSuperToBase, the largest remaining substantive transport lemma; all of its imported support is already closed.",
+    "request_id": 729,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_727_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_729_decision.context.json"
 }
