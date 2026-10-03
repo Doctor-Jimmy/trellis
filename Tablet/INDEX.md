@@ -49,7 +49,8 @@
 | FrontBase | definition | definition | closed | - | - | Preamble |
 | FrontBridge | definition | definition | closed | - | Finite bridge state | Front, FrontBridgeTail, PrefixTree, ProperInitialSegment |
 | FrontBridgeInit | lemma | proof | closed | - | Initial bridge | FrontBridge, FrontTreeOrderedExtension, FrontTreeSingleton |
-| FrontBridgeStep | lemma | proof | closed | - | Bridge response transition | FrontBridge, FrontBridgeTailInsert, FrontTreeOrderedExtension, InitialSegmentInsert |
+| FrontBridgeRightResponse | helper | proof | closed | - | Right-side bridge response | FrontBridge, FrontBridgeTailInsert, InitialSegmentInsert |
+| FrontBridgeStep | lemma | proof | closed | - | Bridge response transition | FrontBridge, FrontBridgeRightResponse, FrontBridgeTailInsert, FrontTreeOrderedExtension, InitialSegmentInsert |
 | FrontBridgeTail | definition | definition | closed | - | Finite bridge tail | InitialSegment |
 | FrontBridgeTailInsert | helper | proof | closed | - | Appending a larger point to the finite bridge tail | FrontBridgeTail |
 | FrontBridgeTerminal | lemma | proof | closed | - | A terminal bridge gives a finite shift | FiniteShift, FrontBridge, InfiniteSetEnumeration |
@@ -177,4 +178,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, FrontContainsCardinalitySets, NashWilliams |
 
-**Total:** 173 nodes | **Closed:** 173 | **Open:** 0
+**Total:** 174 nodes | **Closed:** 174 | **Open:** 0

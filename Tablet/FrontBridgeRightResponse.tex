@@ -1,0 +1,43 @@
+\begin{helper}[Right-side bridge response]
+Let $t,u$ be the right-side data of a bridge, and let $x$ be a current
+left-side set with $\mathsf{InitialSegment}(x,u)$.  Under either legal right
+response from \noderef{FrontBridgeStep}, the updated data satisfy
+the following common conclusions: $t'$ belongs to the prefix tree and is
+nonempty, $u'$ is nonempty, and for the response point $q$ we have
+\[
+  j<q\quad(j\in u),\qquad u'=\operatorname{insert}(q,u).
+\]
+Moreover $\mathsf{InitialSegment}(x,u')$; if $t'\in F$ then
+$\mathsf{InitialSegment}(t',\mathsf{FrontBridgeTail}(u'))$, while if
+$t'\notin F$ then $t'=\mathsf{FrontBridgeTail}(u')$.
+\end{helper}
+\begin{proof}
+In the nonterminal right response, write the new point as $n$.  The
+finite-tail insertion lemma \noderef{FrontBridgeTailInsert}, together with
+$t=\mathsf{FrontBridgeTail}(u)$, gives
+\[
+ \mathsf{FrontBridgeTail}(u')
+ =\operatorname{insert}(n,\mathsf{FrontBridgeTail}(u))
+ =\operatorname{insert}(n,t)=t'.
+\]
+Thus the two alternatives for the final tail condition follow respectively
+from equality and from the same equality.  The given tree membership and
+nonemptiness of $t'$ are retained, and $u'$ is nonempty because it contains
+the old nonempty set $u$.  Applying \noderef{InitialSegmentInsert} to
+$\mathsf{InitialSegment}(x,u)$ gives the updated left initial segment.
+
+In the terminal right response, write the new point as $k$.  The same tail
+insertion lemma applies.  Since every element of $\mathsf{FrontBridgeTail}(u)$
+is an element of $u$, every such element is below $k$.  Hence
+\noderef{InitialSegmentInsert}, applied to
+$\mathsf{InitialSegment}(t,\mathsf{FrontBridgeTail}(u))$, yields
+\[
+ \mathsf{InitialSegment}(t',\mathsf{FrontBridgeTail}(u')).
+\]
+Here $t'=t$, so its tree membership and nonemptiness come from the old
+bridge.  The updated left initial segment follows by applying the same
+lemma to $\mathsf{InitialSegment}(x,u)$.  Finally, the response hypothesis
+ensures $t'=t\in F$, so the alternative $t'\notin F$ is impossible.  In
+both cases the displayed response point supplies the asserted existential
+witness for $q$.
+\end{proof}

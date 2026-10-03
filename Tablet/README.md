@@ -57,6 +57,7 @@
 | FrontBase | definition | - | closed |
 | FrontBridge | definition | Finite bridge state | closed |
 | FrontBridgeInit | proof | Initial bridge | closed |
+| FrontBridgeRightResponse | proof | Right-side bridge response | closed |
 | FrontBridgeStep | proof | Bridge response transition | closed |
 | FrontBridgeTail | definition | Finite bridge tail | closed |
 | FrontBridgeTailInsert | proof | Appending a larger point to the finite bridge tail | closed |
@@ -183,4 +184,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 173/173 closed
+**Summary:** 174/174 closed

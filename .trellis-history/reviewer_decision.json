@@ -1,8 +1,8 @@
 {
   "raw": {
-    "decision": "continue",
-    "reason": "Dispatch the two remaining independent LintFix tasks as one atomic batch.",
-    "comments": "Apply only the requested FrontRestriction hsne simplification and PerfectBaseToSuper hi_eq cleanup. Preserve declarations, statements, imports, proof results, and all TeX artifacts; leave the separate FrontBridgeStep extraction pending.",
+    "decision": "done",
+    "reason": "Finalize cleanup: no Pending tasks or verifier blockers remain after the accepted helper extraction.",
+    "comments": "The FrontBridgeStep extraction is accepted, correspondence-checked, and preserves the parent statement while shortening its proof. All remaining audit proposals are terminal, so no further cleanup dispatch or re-audit is needed.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
@@ -24,10 +24,7 @@
     "authorized_nodes": [],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
-    "cleanup_batch_tasks": [
-      13,
-      16
-    ],
+    "cleanup_batch_tasks": null,
     "cleanup_repair_node": null,
     "cleanup_request_reaudit": false
   },
@@ -36,19 +33,15 @@
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
-    "cleanup_batch_tasks": [
-      13,
-      16
-    ],
     "cleanup_dismiss_tasks": [],
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Apply only the requested FrontRestriction hsne simplification and PerfectBaseToSuper hi_eq cleanup. Preserve declarations, statements, imports, proof results, and all TeX artifacts; leave the separate FrontBridgeStep extraction pending.",
+    "comments": "The FrontBridgeStep extraction is accepted, correspondence-checked, and preserves the parent statement while shortening its proof. All remaining audit proposals are terminal, so no further cleanup dispatch or re-audit is needed.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 274,
-    "decision": "Continue",
+    "cycle": 275,
+    "decision": "Done",
     "difficulty_updates": {},
     "dismiss_audit_plan": false,
     "dismissed_tasks": [],
@@ -65,8 +58,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "Dispatch the two remaining independent LintFix tasks as one atomic batch.",
-    "request_id": 753,
+    "reason": "Finalize cleanup: no Pending tasks or verifier blockers remain after the accepted helper extraction.",
+    "request_id": 758,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -76,5 +69,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_753_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_758_decision.context.json"
 }
