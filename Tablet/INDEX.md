@@ -100,7 +100,7 @@
 | NoBadPerfectSuper | lemma | proof | open | - | A super-sequence is not both perfect and bad | BadSuperSequence, BaseShift, FrontPrefixExists, InfiniteSetEnumeration, PerfectSuperSequence |
 | OrbitBlock | definition | definition | closed | - | - | OrbitPoint |
 | OrbitBlockCoverage | lemma | proof | open | - | - | OrbitBlock, OrbitEmbedding, OrbitUnbounded |
-| OrbitEmbedding | lemma | proof | open | - | - | IncSeq, OrbitPoint |
+| OrbitEmbedding | lemma | proof | closed | - | - | IncSeq, OrbitPoint |
 | OrbitPoint | definition | definition | closed | - | - | IncSeq |
 | OrbitUnbounded | lemma | proof | open | - | - | OrbitEmbedding, OrbitPoint |
 | PerfectBaseToSuper | lemma | proof | open | - | Perfect base extensions yield perfect sub-super-sequences | BaseIncSeq, BaseRestrict, FiniteShift, Front, FrontPrefix, FrontRestrict, FrontRestriction, IncSeq, IncSeqComp, InfiniteSetEnumeration, InitialSegment, PerfectMultiSequence, PerfectSuperSequence, ProperPrefixSet, RestrictionShift, ShiftMap, SuperSequence, SuperSequenceExtension, SuperSequenceRestrict |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 152 | **Open:** 33
+**Total:** 185 nodes | **Closed:** 153 | **Open:** 32

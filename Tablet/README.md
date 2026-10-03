@@ -108,7 +108,7 @@
 | NoBadPerfectSuper | proof | A super-sequence is not both perfect and bad | open |
 | OrbitBlock | definition | - | closed |
 | OrbitBlockCoverage | proof | - | open |
-| OrbitEmbedding | proof | - | open |
+| OrbitEmbedding | proof | - | closed |
 | OrbitPoint | definition | - | closed |
 | OrbitUnbounded | proof | - | open |
 | PerfectBaseToSuper | proof | Perfect base extensions yield perfect sub-super-sequences | open |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 152/185 closed
+**Summary:** 153/185 closed

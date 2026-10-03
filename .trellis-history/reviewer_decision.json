@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "MainProp is closed but its support cone is not; first close the foundational OrbitEmbedding dependency needed by RmapLemma while retaining MainProp as the coarse anchor.",
-    "comments": "Keep MainProp as the coarse anchor and route to OrbitEmbedding in Local mode. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Prove the orbit map is an increasing embedding by induction: establish that every iterate of g is strictly increasing, establish g^[n](g x) = g^[n+1](x), apply these to k < g k to obtain strict growth of the orbit, and conclude order embedding and the OrbitPoint equation. Do not add helpers, alter statements or imports, or leave obligations open.",
+    "reason": "OrbitEmbedding is closed; continue repairing MainProp's support cone with the direct OrbitUnbounded consequence needed by OrbitBlockCoverage.",
+    "comments": "Keep MainProp as the coarse anchor and route to OrbitUnbounded in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Use the closed OrbitEmbedding result to obtain a strictly increasing orbit embedding; if the orbit were bounded by l, all its values would lie in the finite set of naturals at most l, contradicting injectivity of the infinitely many orbit indices. Conclude the required witness for every l. Do not add helpers, alter statements or imports, or leave obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "OrbitEmbedding",
+    "next_active": "OrbitUnbounded",
     "next_active_coarse": "",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "OrbitEmbedding": "easy"
+      "OrbitUnbounded": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Keep MainProp as the coarse anchor and route to OrbitEmbedding in Local mode. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Prove the orbit map is an increasing embedding by induction: establish that every iterate of g is strictly increasing, establish g^[n](g x) = g^[n+1](x), apply these to k < g k to obtain strict growth of the orbit, and conclude order embedding and the OrbitPoint equation. Do not add helpers, alter statements or imports, or leave obligations open.",
+    "comments": "Keep MainProp as the coarse anchor and route to OrbitUnbounded in Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Use the closed OrbitEmbedding result to obtain a strictly increasing orbit embedding; if the orbit were bounded by l, all its values would lie in the finite set of naturals at most l, contradicting injectivity of the infinitely many orbit indices. Conclude the required witness for every l. Do not add helpers, alter statements or imports, or leave obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 233,
+    "cycle": 234,
     "decision": "Continue",
     "difficulty_updates": {
-      "OrbitEmbedding": {
+      "OrbitUnbounded": {
         "Set": "Easy"
       }
     },
@@ -47,7 +47,7 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "OrbitEmbedding",
+    "next_active": "OrbitUnbounded",
     "next_active_coarse": null,
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "MainProp is closed but its support cone is not; first close the foundational OrbitEmbedding dependency needed by RmapLemma while retaining MainProp as the coarse anchor.",
-    "request_id": 669,
+    "reason": "OrbitEmbedding is closed; continue repairing MainProp's support cone with the direct OrbitUnbounded consequence needed by OrbitBlockCoverage.",
+    "request_id": 671,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_669_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_671_decision.context.json"
 }
