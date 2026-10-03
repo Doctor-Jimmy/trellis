@@ -105,7 +105,7 @@
 | MultiSequence | definition | - | closed |
 | MultiSequenceRestrict | definition | - | closed |
 | NashWilliams | proof | Nash--Williams | closed |
-| NoBadPerfectSuper | proof | A super-sequence is not both perfect and bad | open |
+| NoBadPerfectSuper | proof | A super-sequence is not both perfect and bad | closed |
 | OrbitBlock | definition | - | closed |
 | OrbitBlockCoverage | proof | - | closed |
 | OrbitEmbedding | proof | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 174/185 closed
+**Summary:** 175/185 closed

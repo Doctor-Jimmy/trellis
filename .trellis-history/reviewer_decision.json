@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "BadMultiRestrict is closed. Advance to NoBadPerfectSuper, the direct perfect-versus-bad contradiction needed by Subarr, with all dependencies already closed.",
-    "comments": "Work on NoBadPerfectSuper in Local mode and close it directly without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Enumerate the infinite base, use FrontPrefixExists for x and ShiftMap x, package the shifted base with BaseShift, obtain the resulting FiniteShift witnesses, and apply PerfectSuperSequence and BadSuperSequence to the same front elements to contradict. Leave no obligations open.",
+    "reason": "NoBadPerfectSuper is closed and its coarse cone is clean. Advance to PerfectBaseToSuper, the substantial direct support theorem for Subarr, whose imported support is already closed.",
+    "comments": "Work on PerfectBaseToSuper in Local mode with a complete-decomposition closure burst. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Formalize the exact transport from a perfect base restriction to a perfect restricted super-sequence; introduce only genuine intermediate helpers needed by the 200-line argument, each with a complete non-SKETCH NL proof. Do not add a wrapper that merely defers the target. Close the active theorem in this burst.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "NoBadPerfectSuper",
-    "next_active_coarse": "NoBadPerfectSuper",
+    "next_active": "PerfectBaseToSuper",
+    "next_active_coarse": "PerfectBaseToSuper",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "NoBadPerfectSuper": "hard"
+      "PerfectBaseToSuper": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on NoBadPerfectSuper in Local mode and close it directly without helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Enumerate the infinite base, use FrontPrefixExists for x and ShiftMap x, package the shifted base with BaseShift, obtain the resulting FiniteShift witnesses, and apply PerfectSuperSequence and BadSuperSequence to the same front elements to contradict. Leave no obligations open.",
+    "comments": "Work on PerfectBaseToSuper in Local mode with a complete-decomposition closure burst. Preserve the accepted theorem statement, imports, BODY marker, and TeX proof. Formalize the exact transport from a perfect base restriction to a perfect restricted super-sequence; introduce only genuine intermediate helpers needed by the 200-line argument, each with a complete non-SKETCH NL proof. Do not add a wrapper that merely defers the target. Close the active theorem in this burst.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 255,
+    "cycle": 256,
     "decision": "Continue",
     "difficulty_updates": {
-      "NoBadPerfectSuper": {
+      "PerfectBaseToSuper": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "NoBadPerfectSuper",
-    "next_active_coarse": "NoBadPerfectSuper",
+    "next_active": "PerfectBaseToSuper",
+    "next_active_coarse": "PerfectBaseToSuper",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "BadMultiRestrict is closed. Advance to NoBadPerfectSuper, the direct perfect-versus-bad contradiction needed by Subarr, with all dependencies already closed.",
-    "request_id": 713,
+    "reason": "NoBadPerfectSuper is closed and its coarse cone is clean. Advance to PerfectBaseToSuper, the substantial direct support theorem for Subarr, whose imported support is already closed.",
+    "request_id": 715,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_713_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_715_decision.context.json"
 }
