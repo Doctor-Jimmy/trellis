@@ -174,7 +174,7 @@
 | ShiftDichotomy | lemma | proof | closed | - | Perfect-or-bad shift dichotomy | BadMultiSequence, DecidingFront, DecidingValue, InfiniteSetEnumeration, MultiSequenceRestrict, NashWilliams, PerfectMultiSequence, RestrictionShift |
 | ShiftMap | definition | definition | closed | - | - | RightComp, SuccSeq |
 | SubFrontCharacterization | lemma | proof | closed | - | Sub-fronts | Front, FrontRestrict, FrontRestriction |
-| Subarr | corollary | proof | open | lem:subarr | Sub-arrays and super-sequences | BadMultiRestrict, BadMultiToSuper, BadSuperRestrict, BaseBqoRestriction, DecidingFront, DecidingValue, NoBadPerfectSuper, PerfectBaseToSuper, PerfectSuperToMulti, RestrictionLocallyConstant, ShiftDichotomy, SuperSequenceExtension |
+| Subarr | corollary | proof | closed | lem:subarr | Sub-arrays and super-sequences | BadMultiRestrict, BadMultiToSuper, BadSuperRestrict, BaseBqoRestriction, DecidingFront, DecidingValue, NoBadPerfectSuper, PerfectBaseToSuper, PerfectSuperToMulti, RestrictionLocallyConstant, ShiftDichotomy, SuperSequenceExtension |
 | SuccSeq | definition | definition | closed | - | - | IncSeq |
 | SuperNW | theorem | proof | closed | - | - | NashWilliams, SuperSequence |
 | SuperSequence | definition | definition | closed | - | - | Front |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 177 | **Open:** 8
+**Total:** 185 nodes | **Closed:** 178 | **Open:** 7

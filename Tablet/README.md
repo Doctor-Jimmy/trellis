@@ -4,7 +4,7 @@
 
 | Name | Labels | Title | Status |
 |------|--------|-------|--------|
-| Subarr | lem:subarr | Sub-arrays and super-sequences | open |
+| Subarr | lem:subarr | Sub-arrays and super-sequences | closed |
 
 ## Nodes Without Labels
 
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 177/185 closed
+**Summary:** 178/185 closed
