@@ -1,18 +1,18 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The PowerQ reflection cone is shallowly closed, so advance to the configured preservation theorem and require its direct proof to be completed.",
-    "comments": "Switch the coarse anchor to PowerQPresBqo and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the theorem without helpers: unfold Bqo, introduce an arbitrary locally constant h and a badness assumption, apply PowerQReflection to obtain a locally constant bad g with the same relation, and contradict the assumed Bqo r using its defining implication. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
+    "reason": "The configured PowerQ preservation target is closed; advance to the self-contained bad-pair characterization that directly supports the Rado embedding branch.",
+    "comments": "Switch the coarse anchor to PowerWqoBadPairSequence and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close it without helpers by unfolding WellQuasiOrdered and SetDomination. In the forward direction, extract a sequence of sets with no later domination and choose, for each m<n, a witness in the earlier set that is unrelated to every element of the later set; prove the resulting IncreasingPair map is bad. In the reverse direction, define each row set as the range of f(m,n) for n>m and show no row is dominated by a later row using BadPairSequence. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerQPresBqo",
-    "next_active_coarse": "PowerQPresBqo",
+    "next_active": "PowerWqoBadPairSequence",
+    "next_active_coarse": "PowerWqoBadPairSequence",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerQPresBqo": "easy"
+      "PowerWqoBadPairSequence": "easy"
     },
     "allow_new_obligations": false,
     "must_close_active": true,
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerQPresBqo and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the theorem without helpers: unfold Bqo, introduce an arbitrary locally constant h and a badness assumption, apply PowerQReflection to obtain a locally constant bad g with the same relation, and contradict the assumed Bqo r using its defining implication. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
+    "comments": "Switch the coarse anchor to PowerWqoBadPairSequence and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close it without helpers by unfolding WellQuasiOrdered and SetDomination. In the forward direction, extract a sequence of sets with no later domination and choose, for each m<n, a witness in the earlier set that is unrelated to every element of the later set; prove the resulting IncreasingPair map is bad. In the reverse direction, define each row set as the range of f(m,n) for n>m and show no row is dominated by a later row using BadPairSequence. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 229,
+    "cycle": 230,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerQPresBqo": {
+      "PowerWqoBadPairSequence": {
         "Set": "Easy"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerQPresBqo",
-    "next_active_coarse": "PowerQPresBqo",
+    "next_active": "PowerWqoBadPairSequence",
+    "next_active_coarse": "PowerWqoBadPairSequence",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The PowerQ reflection cone is shallowly closed, so advance to the configured preservation theorem and require its direct proof to be completed.",
-    "request_id": 661,
+    "reason": "The configured PowerQ preservation target is closed; advance to the self-contained bad-pair characterization that directly supports the Rado embedding branch.",
+    "request_id": 663,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_661_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_663_decision.context.json"
 }

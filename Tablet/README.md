@@ -146,7 +146,7 @@
 | PowerPresentationEqEquivalence | proof | Structural equivalence is an equivalence relation | closed |
 | PowerQ | definition | - | closed |
 | PowerQIsPreorder | proof | The lifted relation is a preorder | closed |
-| PowerQPresBqo | proof | - | open |
+| PowerQPresBqo | proof | - | closed |
 | PowerQReflection | proof | Reflection to the base quasi-order | closed |
 | PowerRel | definition | - | closed |
 | PowerRelAtomAtom | proof | Atom--atom reduction | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 148/185 closed
+**Summary:** 149/185 closed

@@ -138,7 +138,7 @@
 | PowerPresentationEqEquivalence | lemma | proof | closed | - | Structural equivalence is an equivalence relation | PowerPresentationEq |
 | PowerQ | definition | definition | closed | - | - | Preamble |
 | PowerQIsPreorder | lemma | proof | closed | - | The lifted relation is a preorder | PowerRelTrans |
-| PowerQPresBqo | corollary | proof | open | - | - | Bqo, PowerQReflection |
+| PowerQPresBqo | corollary | proof | closed | - | - | Bqo, PowerQReflection |
 | PowerQReflection | theorem | proof | closed | - | Reflection to the base quasi-order | PowerCopiedFailureMove, PowerCopiedOrbitDependence, PowerCopiedTerminalShift, PowerCopiedTerminalSupport, PowerFiniteOrbitConstancy |
 | PowerRel | definition | definition | closed | - | - | PowerChildWellFounded |
 | PowerRelAtomAtom | lemma | proof | closed | - | Atom--atom reduction | PowerRel |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 148 | **Open:** 37
+**Total:** 185 nodes | **Closed:** 149 | **Open:** 36
