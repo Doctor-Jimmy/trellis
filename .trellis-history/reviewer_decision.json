@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The ShiftDichotomy cone is cleanly closed. Advance to the downstream BaseBqoRestriction theorem, whose imports are closed and whose substantial proof is the next useful coarse goal.",
-    "comments": "Work on BaseBqoRestriction in Local mode. Close the theorem in this burst, using helpers only when they express genuine intermediate mathematics needed by the paper proof; do not introduce wrappers that merely defer the target. Preserve the vetted theorem statement, imports, BODY marker, and TeX statement, and ensure any helper has a complete non-SKETCH natural-language proof and a real role in the restriction argument.",
+    "reason": "BaseBqoRestriction is closed and its coarse cone is clean. Advance to BadMultiToSuper, a direct prerequisite of both Subarr and BadMultiToNontrivialSuper with all dependencies already closed.",
+    "comments": "Work on BadMultiToSuper in Local mode and close it without introducing helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the existing finite-shift argument directly: use the common increasing enumeration and the two ProperPrefixSet witnesses to apply the value equation at s and t, then contradict BadMultiSequence at x and ShiftMap x. Leave no obligations open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "BaseBqoRestriction",
-    "next_active_coarse": "BaseBqoRestriction",
+    "next_active": "BadMultiToSuper",
+    "next_active_coarse": "BadMultiToSuper",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "BaseBqoRestriction": "hard"
+      "BadMultiToSuper": "hard"
     },
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "restructure",
+    "work_style_hint": "none",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": true,
+    "allow_new_obligations": false,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Work on BaseBqoRestriction in Local mode. Close the theorem in this burst, using helpers only when they express genuine intermediate mathematics needed by the paper proof; do not introduce wrappers that merely defer the target. Preserve the vetted theorem statement, imports, BODY marker, and TeX statement, and ensure any helper has a complete non-SKETCH natural-language proof and a real role in the restriction argument.",
+    "comments": "Work on BadMultiToSuper in Local mode and close it without introducing helpers or wrappers. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the existing finite-shift argument directly: use the common increasing enumeration and the two ProperPrefixSet witnesses to apply the value equation at s and t, then contradict BadMultiSequence at x and ShiftMap x. Leave no obligations open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 249,
+    "cycle": 250,
     "decision": "Continue",
     "difficulty_updates": {
-      "BaseBqoRestriction": {
+      "BadMultiToSuper": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "BaseBqoRestriction",
-    "next_active_coarse": "BaseBqoRestriction",
+    "next_active": "BadMultiToSuper",
+    "next_active_coarse": "BadMultiToSuper",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The ShiftDichotomy cone is cleanly closed. Advance to the downstream BaseBqoRestriction theorem, whose imports are closed and whose substantial proof is the next useful coarse goal.",
-    "request_id": 701,
+    "reason": "BaseBqoRestriction is closed and its coarse cone is clean. Advance to BadMultiToSuper, a direct prerequisite of both Subarr and BadMultiToNontrivialSuper with all dependencies already closed.",
+    "request_id": 703,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "restructure"
+    "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_701_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_703_decision.context.json"
 }

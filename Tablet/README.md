@@ -20,7 +20,7 @@
 | BadSuperToBase | proof | Super-sequence badness gives base badness | open |
 | BaireContinuous | definition | - | closed |
 | BaseBad | definition | - | closed |
-| BaseBqoRestriction | proof | Base invariance of the bqo restriction property | open |
+| BaseBqoRestriction | proof | Base invariance of the bqo restriction property | closed |
 | BaseIncSeq | definition | - | closed |
 | BaseLocallyConstant | definition | - | closed |
 | BaseMultiSequence | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 168/185 closed
+**Summary:** 169/185 closed

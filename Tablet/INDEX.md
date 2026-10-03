@@ -12,7 +12,7 @@
 | BadSuperToBase | lemma | proof | open | - | Super-sequence badness gives base badness | BadSuperSequence, BaseBad, BaseIncSeq, BaseLocallyConstant, BaseShift, FiniteShift, FrontPrefix, ProperPrefixSet, SuperSequence, SuperSequenceExtension |
 | BaireContinuous | definition | definition | closed | - | - | PrefixAgree |
 | BaseBad | definition | definition | closed | - | - | BaseMultiSequence, BaseShift |
-| BaseBqoRestriction | lemma | proof | open | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BaseRestrict, Bqo, InfiniteSetEnumeration, PerfectMultiSequence, RestrictionLocallyConstant, ShiftDichotomy |
+| BaseBqoRestriction | lemma | proof | closed | - | Base invariance of the bqo restriction property | BaseLocallyConstant, BaseRestrict, Bqo, InfiniteSetEnumeration, PerfectMultiSequence, RestrictionLocallyConstant, ShiftDichotomy |
 | BaseIncSeq | definition | definition | closed | - | - | IncSeq |
 | BaseLocallyConstant | definition | definition | closed | - | - | BaseMultiSequence, PrefixAgree |
 | BaseMultiSequence | definition | definition | closed | - | - | BaseIncSeq |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 168 | **Open:** 17
+**Total:** 185 nodes | **Closed:** 169 | **Open:** 16
