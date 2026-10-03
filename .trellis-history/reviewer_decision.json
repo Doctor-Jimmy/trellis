@@ -1,20 +1,20 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The prefix-agreement cone is shallowly closed; advance to the finite-orbit constancy lemma needed by the reflection theorem.",
-    "comments": "Switch the coarse anchor to PowerFiniteOrbitConstancy and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. For each j <= m obtain a local-constancy witness at PowerShiftIter j x, combine the finitely many shifted witness lengths into one N (for example by induction on m with a maximum), and use monotonicity of PrefixAgree to obtain agreement at each required n_j+j. Apply PowerShiftIterPrefixAgree with prefix n_j and shift j, then the corresponding local-constancy witness, for an arbitrary j <= m. Do not add wrappers or helpers, change imports, or leave obligations open.",
+    "reason": "The finite-orbit support cone is shallowly closed; advance to the substantive reflection theorem and require its proof construction to be completed.",
+    "comments": "Switch the coarse anchor to PowerQReflection and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the active theorem in this burst, allowing new obligations only for genuine auxiliary facts rather than wrappers. Follow the TeX proof: for each x use PowerCopiedFiniteTerminal to obtain k and terminal atoms, use PowerCopiedFailureMove plus the atom clause of PowerMove to establish persistence and uniqueness of terminal labels, and define g by the unique terminal row-zero atom. Use PowerCopiedFailureMove and PowerRelAtomAtom for badness, PowerCopiedSupport and the zeroth iterate for support, and PowerFiniteOrbitConstancy with m=k+2 together with PowerCopiedOrbitDependence for local constancy. Any helper should expose a real reusable atom-persistence or terminal-label-uniqueness fact, carry a complete NL proof, and be mechanically closed if feasible; do not repackage the target or alter protected statements/imports.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerFiniteOrbitConstancy",
-    "next_active_coarse": "PowerFiniteOrbitConstancy",
+    "next_active": "PowerQReflection",
+    "next_active_coarse": "PowerQReflection",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerFiniteOrbitConstancy": "hard"
+      "PowerQReflection": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
@@ -24,7 +24,7 @@
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,13 +32,13 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerFiniteOrbitConstancy and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. For each j <= m obtain a local-constancy witness at PowerShiftIter j x, combine the finitely many shifted witness lengths into one N (for example by induction on m with a maximum), and use monotonicity of PrefixAgree to obtain agreement at each required n_j+j. Apply PowerShiftIterPrefixAgree with prefix n_j and shift j, then the corresponding local-constancy witness, for an arbitrary j <= m. Do not add wrappers or helpers, change imports, or leave obligations open.",
+    "comments": "Switch the coarse anchor to PowerQReflection and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close the active theorem in this burst, allowing new obligations only for genuine auxiliary facts rather than wrappers. Follow the TeX proof: for each x use PowerCopiedFiniteTerminal to obtain k and terminal atoms, use PowerCopiedFailureMove plus the atom clause of PowerMove to establish persistence and uniqueness of terminal labels, and define g by the unique terminal row-zero atom. Use PowerCopiedFailureMove and PowerRelAtomAtom for badness, PowerCopiedSupport and the zeroth iterate for support, and PowerFiniteOrbitConstancy with m=k+2 together with PowerCopiedOrbitDependence for local constancy. Any helper should expose a real reusable atom-persistence or terminal-label-uniqueness fact, carry a complete NL proof, and be mechanically closed if feasible; do not repackage the target or alter protected statements/imports.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 227,
+    "cycle": 228,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerFiniteOrbitConstancy": {
+      "PowerQReflection": {
         "Set": "Hard"
       }
     },
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerFiniteOrbitConstancy",
-    "next_active_coarse": "PowerFiniteOrbitConstancy",
+    "next_active": "PowerQReflection",
+    "next_active_coarse": "PowerQReflection",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The prefix-agreement cone is shallowly closed; advance to the finite-orbit constancy lemma needed by the reflection theorem.",
-    "request_id": 657,
+    "reason": "The finite-orbit support cone is shallowly closed; advance to the substantive reflection theorem and require its proof construction to be completed.",
+    "request_id": 659,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -68,5 +68,5 @@
     "task_blockers": [],
     "work_style_hint": "none"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_657_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_659_decision.context.json"
 }
