@@ -1,30 +1,30 @@
 {
   "raw": {
     "decision": "continue",
-    "reason": "The configured PowerQ preservation target is closed; advance to the self-contained bad-pair characterization that directly supports the Rado embedding branch.",
-    "comments": "Switch the coarse anchor to PowerWqoBadPairSequence and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close it without helpers by unfolding WellQuasiOrdered and SetDomination. In the forward direction, extract a sequence of sets with no later domination and choose, for each m<n, a witness in the earlier set that is unrelated to every element of the later set; prove the resulting IncreasingPair map is bad. In the reverse direction, define each row set as the range of f(m,n) for n>m and show no row is dominated by a later row using BadPairSequence. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
+    "reason": "The bad-pair prerequisite and finite-homogeneity prerequisites are closed; advance to the substantive Rado embedding theorem with a complete decomposition-and-closure assignment.",
+    "comments": "Switch the coarse anchor to RadoEmbedding and use Local mode. Its TeX proof is substantial, so close the active theorem in this burst while allowing genuine auxiliary obligations. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the paper's sequence: obtain the bad pair map from PowerWqoBadPairSequence, use TripleHomogeneous to force the first color and QuadrupleHomogeneous to force the second, remove the minimum and enumerate the remaining infinite set, establish the direct Rado-order monotonicity fact on the homogeneous set, define e through that enumeration, prove preservation and reflection by the three stated cases using badness and transitivity, and finish injectivity plus RelationEmbedding. If helpers are needed, make them substantive facts such as the homogeneous-set monotonicity or reflection case analysis, with complete NL proofs; do not create wrappers that merely defer this work, alter protected statements/imports, or leave the active theorem open.",
     "task_blocker_ids": [],
     "reset_blocker_ids": [],
     "request_sound_verifier_node_ids": [],
-    "next_active": "PowerWqoBadPairSequence",
-    "next_active_coarse": "PowerWqoBadPairSequence",
+    "next_active": "RadoEmbedding",
+    "next_active_coarse": "RadoEmbedding",
     "next_mode": "local",
     "reset": "none",
     "reset_node": "",
     "difficulty_updates": {
-      "PowerWqoBadPairSequence": "easy"
+      "RadoEmbedding": "hard"
     },
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "must_close_active": true,
     "authorized_node_ids": [],
     "next_worker_context_mode": "resume",
-    "work_style_hint": "none",
+    "work_style_hint": "restructure",
     "paper_focus_ranges": [],
     "protected_semantic_change_node_ids": [],
     "confirm_protected_semantic_change_scope": false
   },
   "response": {
-    "allow_new_obligations": false,
+    "allow_new_obligations": true,
     "assumption_authoring_request": false,
     "audit_request": null,
     "authorized_nodes": [],
@@ -32,14 +32,14 @@
     "cleanup_next_task": null,
     "cleanup_request_reaudit": false,
     "clear_human_input": false,
-    "comments": "Switch the coarse anchor to PowerWqoBadPairSequence and use Local mode. Preserve its theorem statement, imports, BODY marker, and accepted TeX proof. Close it without helpers by unfolding WellQuasiOrdered and SetDomination. In the forward direction, extract a sequence of sets with no later domination and choose, for each m<n, a witness in the earlier set that is unrelated to every element of the later set; prove the resulting IncreasingPair map is bad. In the reverse direction, define each row set as the range of f(m,n) for n>m and show no row is dominated by a later row using BadPairSequence. Do not add wrappers, alter protected statements or imports, or leave obligations open.",
+    "comments": "Switch the coarse anchor to RadoEmbedding and use Local mode. Its TeX proof is substantial, so close the active theorem in this burst while allowing genuine auxiliary obligations. Preserve the theorem statement, imports, BODY marker, and accepted TeX proof. Follow the paper's sequence: obtain the bad pair map from PowerWqoBadPairSequence, use TripleHomogeneous to force the first color and QuadrupleHomogeneous to force the second, remove the minimum and enumerate the remaining infinite set, establish the direct Rado-order monotonicity fact on the homogeneous set, define e through that enumeration, prove preservation and reflection by the three stated cases using badness and transitivity, and finish injectivity plus RelationEmbedding. If helpers are needed, make them substantive facts such as the homogeneous-set monotonicity or reflection case analysis, with complete NL proofs; do not create wrappers that merely defer this work, alter protected statements/imports, or leave the active theorem open.",
     "confirm_protected_semantic_change_scope": false,
     "consume_global_repair_grant": false,
-    "cycle": 230,
+    "cycle": 231,
     "decision": "Continue",
     "difficulty_updates": {
-      "PowerWqoBadPairSequence": {
-        "Set": "Easy"
+      "RadoEmbedding": {
+        "Set": "Hard"
       }
     },
     "dismiss_audit_plan": false,
@@ -47,8 +47,8 @@
     "global_repair_request": null,
     "kind": "review",
     "must_close_active": true,
-    "next_active": "PowerWqoBadPairSequence",
-    "next_active_coarse": "PowerWqoBadPairSequence",
+    "next_active": "RadoEmbedding",
+    "next_active_coarse": "RadoEmbedding",
     "next_mode": "Local",
     "next_worker_context_mode": "resume",
     "paper_focus_ranges": [],
@@ -57,8 +57,8 @@
       "consulted_cited_ranges": false
     },
     "protected_semantic_change_nodes": [],
-    "reason": "The configured PowerQ preservation target is closed; advance to the self-contained bad-pair characterization that directly supports the Rado embedding branch.",
-    "request_id": 663,
+    "reason": "The bad-pair prerequisite and finite-homogeneity prerequisites are closed; advance to the substantive Rado embedding theorem with a complete decomposition-and-closure assignment.",
+    "request_id": 665,
     "request_sound_verifier_nodes": [],
     "reset": "None",
     "reset_blockers": [],
@@ -66,7 +66,7 @@
     "status": "Ok",
     "stuck_math_audit": null,
     "task_blockers": [],
-    "work_style_hint": "none"
+    "work_style_hint": "restructure"
   },
-  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_663_decision.context.json"
+  "context_json_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/staging/trellis_review_665_decision.context.json"
 }

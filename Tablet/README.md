@@ -163,7 +163,7 @@
 | PowerSupport | definition | - | closed |
 | PowerSupportInvariant | proof | Support respects presentation equivalence | closed |
 | PowerSupportNonempty | proof | Nonempty support | closed |
-| PowerWqoBadPairSequence | proof | Bad-witness characterization | open |
+| PowerWqoBadPairSequence | proof | Bad-witness characterization | closed |
 | PrefixAgree | definition | - | closed |
 | PrefixTree | definition | - | closed |
 | ProperInitialSegment | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 149/185 closed
+**Summary:** 150/185 closed

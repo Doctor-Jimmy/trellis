@@ -155,7 +155,7 @@
 | PowerSupport | definition | definition | closed | - | - | PowerQ |
 | PowerSupportInvariant | lemma | proof | closed | - | Support respects presentation equivalence | PowerPresentationEq, PowerSupport |
 | PowerSupportNonempty | lemma | proof | closed | - | Nonempty support | PowerSupport |
-| PowerWqoBadPairSequence | lemma | proof | open | - | Bad-witness characterization | BadPairSequence, SetDomination |
+| PowerWqoBadPairSequence | lemma | proof | closed | - | Bad-witness characterization | BadPairSequence, SetDomination |
 | Preamble | preamble | preamble | closed | - | - | - |
 | PrefixAgree | definition | definition | closed | - | - | IncSeq |
 | PrefixTree | definition | definition | closed | - | - | InitialSegment |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 149 | **Open:** 36
+**Total:** 185 nodes | **Closed:** 150 | **Open:** 35
