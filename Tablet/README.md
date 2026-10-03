@@ -13,7 +13,7 @@
 | BadMultiRestrict | proof | Badness under restriction | open |
 | BadMultiSequence | definition | - | closed |
 | BadMultiToNontrivialSuper | proof | A bad multi-sequence has a nontrivial deciding front | open |
-| BadMultiToSuper | proof | Multi-sequence badness gives super-sequence badness | open |
+| BadMultiToSuper | proof | Multi-sequence badness gives super-sequence badness | closed |
 | BadPairSequence | definition | Bad sequence of sequences | closed |
 | BadSuperRestrict | proof | Badness under sub-front restriction | open |
 | BadSuperSequence | definition | - | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 169/185 closed
+**Summary:** 170/185 closed

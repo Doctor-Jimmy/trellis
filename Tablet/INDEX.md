@@ -5,7 +5,7 @@
 | BadMultiRestrict | lemma | proof | open | - | Badness under restriction | BadMultiSequence, MultiSequenceRestrict, RestrictionShift |
 | BadMultiSequence | definition | definition | closed | - | - | LocallyConstant, ShiftMap |
 | BadMultiToNontrivialSuper | lemma | proof | open | - | A bad multi-sequence has a nontrivial deciding front | BadMultiSequence, BadMultiToSuper, DecidingFront, DecidingFrontSet, DecidingValue, IncSeqId, ShiftMap |
-| BadMultiToSuper | lemma | proof | open | - | Multi-sequence badness gives super-sequence badness | BadMultiSequence, BadSuperSequence, DecidingFrontSet, DecidingPrefix, DecidingValue |
+| BadMultiToSuper | lemma | proof | closed | - | Multi-sequence badness gives super-sequence badness | BadMultiSequence, BadSuperSequence, DecidingFrontSet, DecidingPrefix, DecidingValue |
 | BadPairSequence | definition | definition | closed | - | Bad sequence of sequences | IncreasingPair |
 | BadSuperRestrict | lemma | proof | open | - | Badness under sub-front restriction | BadSuperSequence, SuperSequenceRestrict |
 | BadSuperSequence | definition | definition | closed | - | - | FiniteShift, SuperSequence |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 169 | **Open:** 16
+**Total:** 185 nodes | **Closed:** 170 | **Open:** 15

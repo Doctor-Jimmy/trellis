@@ -14,4 +14,7 @@ theorem BadMultiToSuper {Q : Type u} (r : Q → Q → Prop)
     (hh : BadMultiSequence r h) :
     BadSuperSequence r f := by
 -- BODY
-  sorry
+  intro s t hs ht hst hrel
+  rcases hst with ⟨x, hsx, htx⟩
+  rw [hf ⟨s, hs⟩ x hsx, hf ⟨t, ht⟩ (ShiftMap x) htx] at hrel
+  exact hh x hrel
