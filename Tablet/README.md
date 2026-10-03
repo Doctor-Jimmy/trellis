@@ -169,7 +169,7 @@
 | ProperInitialSegment | definition | - | closed |
 | ProperPrefixSet | definition | - | closed |
 | QuadrupleHomogeneous | proof | Homogeneous quadruples | closed |
-| RadoEmbedding | proof | Rado embedding | open |
+| RadoEmbedding | proof | Rado embedding | closed |
 | RadoOrder | definition | Rado order | closed |
 | Ray | definition | - | closed |
 | RelationEmbedding | definition | Relation embedding | closed |
@@ -195,4 +195,4 @@
 | TildeFSingleton | definition | - | closed |
 | TripleHomogeneous | proof | Homogeneous triples | closed |
 
-**Summary:** 150/185 closed
+**Summary:** 151/185 closed

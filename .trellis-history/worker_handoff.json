@@ -1,16 +1,16 @@
 {
   "raw": {
     "outcome": "valid",
-    "summary": "Closed PowerWqoBadPairSequence by unfolding WellQuasiOrdered and SetDomination. The forward direction chooses a non-dominating element for each ordered pair, and the reverse direction uses the row sets of a bad pair sequence.",
-    "comments": "The active theorem compiles with no sorry and no helper nodes were added. Imports, signature, BODY marker, and accepted TeX proof were preserved.",
-    "deleted_nodes": [],
-    "deviation_deletions": [],
-    "deviation_requests": {},
+    "summary": "Closed RadoEmbedding in Lean using the bad-pair characterization, triple and quadruple homogeneous thinning, minimum removal, direct homogeneous-set monotonicity, the three reflection cases, and injectivity via RelationEmbedding.",
+    "comments": "Only Tablet/RadoEmbedding.lean was edited. Its signature, imports, BODY marker, and accepted TeX proof are preserved; the active theorem has no sorry.",
+    "target_claim_updates": {},
     "difficulty_updates": {},
-    "memory_challenges": [],
-    "needs_restructure_suggested_nodes": [],
+    "deviation_requests": {},
     "node_deviation_claims": {},
-    "target_claim_updates": {}
+    "deviation_deletions": [],
+    "deleted_nodes": [],
+    "memory_challenges": [],
+    "needs_restructure_suggested_nodes": []
   },
   "response": {
     "acceptance_check_passed": true,
@@ -20,8 +20,8 @@
     "authored_citation_locator": "",
     "authored_claim_class": "",
     "authored_rust_justification": "",
-    "comments": "The active theorem compiles with no sorry and no helper nodes were added. Imports, signature, BODY marker, and accepted TeX proof were preserved.",
-    "cycle": 231,
+    "comments": "Only Tablet/RadoEmbedding.lean was edited. Its signature, imports, BODY marker, and accepted TeX proof are preserved; the active theorem has no sorry.",
+    "cycle": 232,
     "deleted_nodes": [],
     "dep_updates": {},
     "deterministic_rejection_reasons": [],
@@ -30,12 +30,12 @@
     "difficulty_updates": {},
     "kind": "worker",
     "local_closure_results": {
-      "PowerWqoBadPairSequence": {
+      "RadoEmbedding": {
         "artifact_bundle": [
           {
             "level": "exported",
-            "sha256": "35e2007691777438ec64f6e8b7129e1c9bc8b6d02fa177b2413e0b3d0f0b275f",
-            "size_bytes": 41968
+            "sha256": "c921be60a4e8d532b7c9a55aaba8e06b466a36206057319523fcc533a02d8203",
+            "size_bytes": 1165664
           }
         ],
         "axiomization_check": {
@@ -44,12 +44,20 @@
           "axcheck_only_boundaries": [],
           "boundary_theorems": [
             "Tablet.BadPairSequence::BadPairSequence@exported:definition",
+            "Tablet.IncSeq::IncSeq@exported:definition",
+            "Tablet.IncreasingPair::IncreasingPair.casesOn@exported:definition",
             "Tablet.IncreasingPair::IncreasingPair.first@exported:definition",
             "Tablet.IncreasingPair::IncreasingPair.increasing@exported:theorem",
             "Tablet.IncreasingPair::IncreasingPair.mk@exported:constructor",
             "Tablet.IncreasingPair::IncreasingPair.second@exported:definition",
             "Tablet.IncreasingPair::IncreasingPair@exported:inductive",
-            "Tablet.SetDomination::SetDomination@exported:definition"
+            "Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem",
+            "Tablet.PowerWqoBadPairSequence::PowerWqoBadPairSequence@exported:theorem",
+            "Tablet.QuadrupleHomogeneous::QuadrupleHomogeneous@exported:theorem",
+            "Tablet.RadoOrder::RadoOrder@exported:definition",
+            "Tablet.RelationEmbedding::RelationEmbedding@exported:definition",
+            "Tablet.SetDomination::SetDomination@exported:definition",
+            "Tablet.TripleHomogeneous::TripleHomogeneous@exported:theorem"
           ],
           "error": null,
           "kernel_axioms": [
@@ -74,13 +82,349 @@
         "declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "PowerWqoBadPairSequence"
+            "name": "IncreasingPair.mk.congr_simp"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_10"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_11"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_12"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_13"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_14"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_15"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_16"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_17"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_18"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_19"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_20"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_21"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_22"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_23"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_24"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_25"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_26"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_27"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_28"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_29"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_3"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_30"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_31"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_32"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_33"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_34"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_35"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_36"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_4"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_41"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_42"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_43"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_44"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_45"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_46"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_47"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_48"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_49"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_5"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_50"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_51"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_52"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_53"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_54"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_55"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_56"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_57"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_58"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_59"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_6"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_60"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_61"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_62"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_63"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_64"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_65"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_66"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_67"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_68"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_69"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_7"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_70"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_71"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_72"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_73"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_74"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_75"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_76"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_77"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_78"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_79"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_8"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_80"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_81"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_82"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_83"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_9"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_2"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_38"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_39"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_40"
           }
         ],
         "direct_imports": [
           "Init",
-          "Tablet.BadPairSequence",
-          "Tablet.SetDomination"
+          "Tablet.InfiniteSetEnumeration",
+          "Tablet.PowerWqoBadPairSequence",
+          "Tablet.QuadrupleHomogeneous",
+          "Tablet.RadoOrder",
+          "Tablet.RelationEmbedding",
+          "Tablet.TripleHomogeneous"
         ],
         "errors": [],
         "exact_declaration_uses": [
@@ -88,6 +432,18 @@
             "declaration_kind": "definition",
             "owner": "BadPairSequence",
             "reached_declaration": "BadPairSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "IncSeq",
+            "reached_declaration": "IncSeq",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "IncreasingPair",
+            "reached_declaration": "IncreasingPair.casesOn",
             "visibility": "exported"
           },
           {
@@ -121,9 +477,45 @@
             "visibility": "exported"
           },
           {
+            "declaration_kind": "theorem",
+            "owner": "InfiniteSetEnumeration",
+            "reached_declaration": "InfiniteSetEnumeration",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "PowerWqoBadPairSequence",
+            "reached_declaration": "PowerWqoBadPairSequence",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "QuadrupleHomogeneous",
+            "reached_declaration": "QuadrupleHomogeneous",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "RadoOrder",
+            "reached_declaration": "RadoOrder",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "definition",
+            "owner": "RelationEmbedding",
+            "reached_declaration": "RelationEmbedding",
+            "visibility": "exported"
+          },
+          {
             "declaration_kind": "definition",
             "owner": "SetDomination",
             "reached_declaration": "SetDomination",
+            "visibility": "exported"
+          },
+          {
+            "declaration_kind": "theorem",
+            "owner": "TripleHomogeneous",
+            "reached_declaration": "TripleHomogeneous",
             "visibility": "exported"
           }
         ],
@@ -132,26 +524,365 @@
           "Quot.sound",
           "propext"
         ],
-        "principal_declaration": "PowerWqoBadPairSequence",
+        "principal_declaration": "RadoEmbedding",
         "raw_stderr": "",
-        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"PowerWqoBadPairSequence\"],\"boundary_theorems\":[\"Tablet.BadPairSequence::BadPairSequence@exported:definition\",\"Tablet.IncreasingPair::IncreasingPair.first@exported:definition\",\"Tablet.IncreasingPair::IncreasingPair.increasing@exported:theorem\",\"Tablet.IncreasingPair::IncreasingPair.mk@exported:constructor\",\"Tablet.IncreasingPair::IncreasingPair.second@exported:definition\",\"Tablet.IncreasingPair::IncreasingPair@exported:inductive\",\"Tablet.SetDomination::SetDomination@exported:definition\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"PowerWqoBadPairSequence\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"PowerWqoBadPairSequence\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadPairSequence\",\"reached_declaration\":\"BadPairSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.first\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.increasing\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.second\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SetDomination\",\"reached_declaration\":\"SetDomination\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"PowerWqoBadPairSequence\",\"principal_declaration\":\"PowerWqoBadPairSequence\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadPairSequence\",\"semantic_hash\":\"aa8090e51328e728\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"cb838143b3e37b25\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"c43614ff2149ecf2\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"86d608d008f6ad94\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"2d443010b6cc6064\"},{\"name\":\"SetDomination\",\"semantic_hash\":\"4d9f2c9d56fe6a94\"}],\"strict_theorem_deps\":[{\"name\":\"IncreasingPair\",\"value_hash\":\"a698f14f313d7042\"}]}\n",
+        "raw_stdout": "{\"axiomization_check\":{\"agreed\":true,\"axcheck_only_axioms\":[],\"axcheck_only_boundaries\":[],\"axcheck_seeded_declarations\":[\"IncreasingPair.mk.congr_simp\",\"RadoEmbedding\",\"RadoEmbedding._proof_1_10\",\"RadoEmbedding._proof_1_11\",\"RadoEmbedding._proof_1_12\",\"RadoEmbedding._proof_1_13\",\"RadoEmbedding._proof_1_14\",\"RadoEmbedding._proof_1_15\",\"RadoEmbedding._proof_1_16\",\"RadoEmbedding._proof_1_17\",\"RadoEmbedding._proof_1_18\",\"RadoEmbedding._proof_1_19\",\"RadoEmbedding._proof_1_20\",\"RadoEmbedding._proof_1_21\",\"RadoEmbedding._proof_1_22\",\"RadoEmbedding._proof_1_23\",\"RadoEmbedding._proof_1_24\",\"RadoEmbedding._proof_1_25\",\"RadoEmbedding._proof_1_26\",\"RadoEmbedding._proof_1_27\",\"RadoEmbedding._proof_1_28\",\"RadoEmbedding._proof_1_29\",\"RadoEmbedding._proof_1_3\",\"RadoEmbedding._proof_1_30\",\"RadoEmbedding._proof_1_31\",\"RadoEmbedding._proof_1_32\",\"RadoEmbedding._proof_1_33\",\"RadoEmbedding._proof_1_34\",\"RadoEmbedding._proof_1_35\",\"RadoEmbedding._proof_1_36\",\"RadoEmbedding._proof_1_4\",\"RadoEmbedding._proof_1_41\",\"RadoEmbedding._proof_1_42\",\"RadoEmbedding._proof_1_43\",\"RadoEmbedding._proof_1_44\",\"RadoEmbedding._proof_1_45\",\"RadoEmbedding._proof_1_46\",\"RadoEmbedding._proof_1_47\",\"RadoEmbedding._proof_1_48\",\"RadoEmbedding._proof_1_49\",\"RadoEmbedding._proof_1_5\",\"RadoEmbedding._proof_1_50\",\"RadoEmbedding._proof_1_51\",\"RadoEmbedding._proof_1_52\",\"RadoEmbedding._proof_1_53\",\"RadoEmbedding._proof_1_54\",\"RadoEmbedding._proof_1_55\",\"RadoEmbedding._proof_1_56\",\"RadoEmbedding._proof_1_57\",\"RadoEmbedding._proof_1_58\",\"RadoEmbedding._proof_1_59\",\"RadoEmbedding._proof_1_6\",\"RadoEmbedding._proof_1_60\",\"RadoEmbedding._proof_1_61\",\"RadoEmbedding._proof_1_62\",\"RadoEmbedding._proof_1_63\",\"RadoEmbedding._proof_1_64\",\"RadoEmbedding._proof_1_65\",\"RadoEmbedding._proof_1_66\",\"RadoEmbedding._proof_1_67\",\"RadoEmbedding._proof_1_68\",\"RadoEmbedding._proof_1_69\",\"RadoEmbedding._proof_1_7\",\"RadoEmbedding._proof_1_70\",\"RadoEmbedding._proof_1_71\",\"RadoEmbedding._proof_1_72\",\"RadoEmbedding._proof_1_73\",\"RadoEmbedding._proof_1_74\",\"RadoEmbedding._proof_1_75\",\"RadoEmbedding._proof_1_76\",\"RadoEmbedding._proof_1_77\",\"RadoEmbedding._proof_1_78\",\"RadoEmbedding._proof_1_79\",\"RadoEmbedding._proof_1_8\",\"RadoEmbedding._proof_1_80\",\"RadoEmbedding._proof_1_81\",\"RadoEmbedding._proof_1_82\",\"RadoEmbedding._proof_1_83\",\"RadoEmbedding._proof_1_9\",\"RadoEmbedding._simp_1_1\",\"RadoEmbedding._simp_1_2\",\"RadoEmbedding._simp_1_38\",\"RadoEmbedding._simp_1_39\",\"RadoEmbedding._simp_1_40\"],\"boundary_theorems\":[\"Tablet.BadPairSequence::BadPairSequence@exported:definition\",\"Tablet.IncSeq::IncSeq@exported:definition\",\"Tablet.IncreasingPair::IncreasingPair.casesOn@exported:definition\",\"Tablet.IncreasingPair::IncreasingPair.first@exported:definition\",\"Tablet.IncreasingPair::IncreasingPair.increasing@exported:theorem\",\"Tablet.IncreasingPair::IncreasingPair.mk@exported:constructor\",\"Tablet.IncreasingPair::IncreasingPair.second@exported:definition\",\"Tablet.IncreasingPair::IncreasingPair@exported:inductive\",\"Tablet.InfiniteSetEnumeration::InfiniteSetEnumeration@exported:theorem\",\"Tablet.PowerWqoBadPairSequence::PowerWqoBadPairSequence@exported:theorem\",\"Tablet.QuadrupleHomogeneous::QuadrupleHomogeneous@exported:theorem\",\"Tablet.RadoOrder::RadoOrder@exported:definition\",\"Tablet.RelationEmbedding::RelationEmbedding@exported:definition\",\"Tablet.SetDomination::SetDomination@exported:definition\",\"Tablet.TripleHomogeneous::TripleHomogeneous@exported:theorem\"],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"primary_only_axioms\":[],\"primary_only_boundaries\":[],\"primary_seeded_declarations\":[\"IncreasingPair.mk.congr_simp\",\"RadoEmbedding\",\"RadoEmbedding._proof_1_10\",\"RadoEmbedding._proof_1_11\",\"RadoEmbedding._proof_1_12\",\"RadoEmbedding._proof_1_13\",\"RadoEmbedding._proof_1_14\",\"RadoEmbedding._proof_1_15\",\"RadoEmbedding._proof_1_16\",\"RadoEmbedding._proof_1_17\",\"RadoEmbedding._proof_1_18\",\"RadoEmbedding._proof_1_19\",\"RadoEmbedding._proof_1_20\",\"RadoEmbedding._proof_1_21\",\"RadoEmbedding._proof_1_22\",\"RadoEmbedding._proof_1_23\",\"RadoEmbedding._proof_1_24\",\"RadoEmbedding._proof_1_25\",\"RadoEmbedding._proof_1_26\",\"RadoEmbedding._proof_1_27\",\"RadoEmbedding._proof_1_28\",\"RadoEmbedding._proof_1_29\",\"RadoEmbedding._proof_1_3\",\"RadoEmbedding._proof_1_30\",\"RadoEmbedding._proof_1_31\",\"RadoEmbedding._proof_1_32\",\"RadoEmbedding._proof_1_33\",\"RadoEmbedding._proof_1_34\",\"RadoEmbedding._proof_1_35\",\"RadoEmbedding._proof_1_36\",\"RadoEmbedding._proof_1_4\",\"RadoEmbedding._proof_1_41\",\"RadoEmbedding._proof_1_42\",\"RadoEmbedding._proof_1_43\",\"RadoEmbedding._proof_1_44\",\"RadoEmbedding._proof_1_45\",\"RadoEmbedding._proof_1_46\",\"RadoEmbedding._proof_1_47\",\"RadoEmbedding._proof_1_48\",\"RadoEmbedding._proof_1_49\",\"RadoEmbedding._proof_1_5\",\"RadoEmbedding._proof_1_50\",\"RadoEmbedding._proof_1_51\",\"RadoEmbedding._proof_1_52\",\"RadoEmbedding._proof_1_53\",\"RadoEmbedding._proof_1_54\",\"RadoEmbedding._proof_1_55\",\"RadoEmbedding._proof_1_56\",\"RadoEmbedding._proof_1_57\",\"RadoEmbedding._proof_1_58\",\"RadoEmbedding._proof_1_59\",\"RadoEmbedding._proof_1_6\",\"RadoEmbedding._proof_1_60\",\"RadoEmbedding._proof_1_61\",\"RadoEmbedding._proof_1_62\",\"RadoEmbedding._proof_1_63\",\"RadoEmbedding._proof_1_64\",\"RadoEmbedding._proof_1_65\",\"RadoEmbedding._proof_1_66\",\"RadoEmbedding._proof_1_67\",\"RadoEmbedding._proof_1_68\",\"RadoEmbedding._proof_1_69\",\"RadoEmbedding._proof_1_7\",\"RadoEmbedding._proof_1_70\",\"RadoEmbedding._proof_1_71\",\"RadoEmbedding._proof_1_72\",\"RadoEmbedding._proof_1_73\",\"RadoEmbedding._proof_1_74\",\"RadoEmbedding._proof_1_75\",\"RadoEmbedding._proof_1_76\",\"RadoEmbedding._proof_1_77\",\"RadoEmbedding._proof_1_78\",\"RadoEmbedding._proof_1_79\",\"RadoEmbedding._proof_1_8\",\"RadoEmbedding._proof_1_80\",\"RadoEmbedding._proof_1_81\",\"RadoEmbedding._proof_1_82\",\"RadoEmbedding._proof_1_83\",\"RadoEmbedding._proof_1_9\",\"RadoEmbedding._simp_1_1\",\"RadoEmbedding._simp_1_2\",\"RadoEmbedding._simp_1_38\",\"RadoEmbedding._simp_1_39\",\"RadoEmbedding._simp_1_40\"],\"seed_coverage_agreed\":true,\"skipped\":false},\"boundary_theorems\":[],\"declaration_manifest\":[{\"kind\":\"theorem\",\"name\":\"IncreasingPair.mk.congr_simp\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_10\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_11\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_12\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_13\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_14\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_15\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_16\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_17\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_18\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_19\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_20\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_21\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_22\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_23\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_24\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_25\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_26\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_27\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_28\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_29\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_3\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_30\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_31\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_32\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_33\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_34\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_35\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_36\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_4\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_41\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_42\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_43\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_44\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_45\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_46\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_47\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_48\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_49\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_5\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_50\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_51\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_52\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_53\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_54\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_55\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_56\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_57\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_58\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_59\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_6\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_60\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_61\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_62\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_63\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_64\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_65\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_66\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_67\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_68\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_69\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_7\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_70\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_71\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_72\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_73\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_74\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_75\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_76\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_77\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_78\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_79\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_8\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_80\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_81\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_82\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_83\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._proof_1_9\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._simp_1_1\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._simp_1_2\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._simp_1_38\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._simp_1_39\"},{\"kind\":\"theorem\",\"name\":\"RadoEmbedding._simp_1_40\"}],\"errors\":[],\"exact_declaration_uses\":[{\"declaration_kind\":\"definition\",\"owner\":\"BadPairSequence\",\"reached_declaration\":\"BadPairSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncSeq\",\"reached_declaration\":\"IncSeq\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.casesOn\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.first\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.increasing\",\"visibility\":\"exported\"},{\"declaration_kind\":\"constructor\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.mk\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair.second\",\"visibility\":\"exported\"},{\"declaration_kind\":\"inductive\",\"owner\":\"IncreasingPair\",\"reached_declaration\":\"IncreasingPair\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"InfiniteSetEnumeration\",\"reached_declaration\":\"InfiniteSetEnumeration\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"PowerWqoBadPairSequence\",\"reached_declaration\":\"PowerWqoBadPairSequence\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"QuadrupleHomogeneous\",\"reached_declaration\":\"QuadrupleHomogeneous\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"RadoOrder\",\"reached_declaration\":\"RadoOrder\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"RelationEmbedding\",\"reached_declaration\":\"RelationEmbedding\",\"visibility\":\"exported\"},{\"declaration_kind\":\"definition\",\"owner\":\"SetDomination\",\"reached_declaration\":\"SetDomination\",\"visibility\":\"exported\"},{\"declaration_kind\":\"theorem\",\"owner\":\"TripleHomogeneous\",\"reached_declaration\":\"TripleHomogeneous\",\"visibility\":\"exported\"}],\"kernel_axioms\":[\"Classical.choice\",\"Quot.sound\",\"propext\"],\"node\":\"RadoEmbedding\",\"principal_declaration\":\"RadoEmbedding\",\"root_kind\":\"theorem\",\"status\":\"ok\",\"strict_definition_deps\":[{\"name\":\"BadPairSequence\",\"semantic_hash\":\"aa8090e51328e728\"},{\"name\":\"IncSeq\",\"semantic_hash\":\"1722254285ddeb5c\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"2d443010b6cc6064\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"c43614ff2149ecf2\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"86d608d008f6ad94\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"67c4df6e7c3aea14\"},{\"name\":\"IncreasingPair\",\"semantic_hash\":\"cb838143b3e37b25\"},{\"name\":\"RadoOrder\",\"semantic_hash\":\"aca67e1f72bcb76a\"},{\"name\":\"RelationEmbedding\",\"semantic_hash\":\"9e5d51c43e349837\"},{\"name\":\"SetDomination\",\"semantic_hash\":\"4d9f2c9d56fe6a94\"}],\"strict_theorem_deps\":[{\"name\":\"IncreasingPair\",\"value_hash\":\"a698f14f313d7042\"},{\"name\":\"InfiniteSetEnumeration\",\"value_hash\":\"4c699c796ec567a4\"},{\"name\":\"PowerWqoBadPairSequence\",\"value_hash\":\"0c77e6de5af599b4\"},{\"name\":\"QuadrupleHomogeneous\",\"value_hash\":\"cf7d1cc25959d381\"},{\"name\":\"TripleHomogeneous\",\"value_hash\":\"e14890b4efc3dc43\"}]}\n",
         "replay_declaration_manifest": [
           {
             "kind": "theorem",
-            "name": "PowerWqoBadPairSequence"
+            "name": "IncreasingPair.mk.congr_simp"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_10"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_11"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_12"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_13"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_14"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_15"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_16"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_17"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_18"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_19"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_20"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_21"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_22"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_23"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_24"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_25"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_26"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_27"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_28"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_29"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_3"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_30"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_31"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_32"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_33"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_34"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_35"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_36"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_4"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_41"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_42"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_43"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_44"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_45"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_46"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_47"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_48"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_49"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_5"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_50"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_51"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_52"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_53"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_54"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_55"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_56"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_57"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_58"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_59"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_6"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_60"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_61"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_62"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_63"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_64"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_65"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_66"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_67"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_68"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_69"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_7"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_70"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_71"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_72"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_73"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_74"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_75"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_76"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_77"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_78"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_79"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_8"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_80"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_81"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_82"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_83"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._proof_1_9"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_1"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_2"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_38"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_39"
+          },
+          {
+            "kind": "theorem",
+            "name": "RadoEmbedding._simp_1_40"
           }
         ],
         "returncode": 0,
         "seed_support_definition_deps": {},
-        "source_sha256": "6ace9cedb8cf54b69d91b742f6a752e203d5e683f560e887c00c4b61c0889971",
+        "source_sha256": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
         "status": "ok",
         "strict_definition_deps": {
           "BadPairSequence": "aa8090e51328e728",
-          "IncreasingPair": "2d443010b6cc6064",
+          "IncSeq": "1722254285ddeb5c",
+          "IncreasingPair": "cb838143b3e37b25",
+          "RadoOrder": "aca67e1f72bcb76a",
+          "RelationEmbedding": "9e5d51c43e349837",
           "SetDomination": "4d9f2c9d56fe6a94"
         },
         "strict_theorem_deps": {
-          "IncreasingPair": "a698f14f313d7042"
+          "IncreasingPair": "a698f14f313d7042",
+          "InfiniteSetEnumeration": "4c699c796ec567a4",
+          "PowerWqoBadPairSequence": "0c77e6de5af599b4",
+          "QuadrupleHomogeneous": "cf7d1cc25959d381",
+          "TripleHomogeneous": "e14890b4efc3dc43"
         },
         "timed_out": false,
         "visibility_manifests": [
@@ -159,7 +890,339 @@
             "declarations": [
               {
                 "kind": "theorem",
-                "name": "PowerWqoBadPairSequence"
+                "name": "IncreasingPair.mk.congr_simp"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_10"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_11"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_12"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_13"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_14"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_15"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_16"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_17"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_18"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_19"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_20"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_21"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_22"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_23"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_24"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_25"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_26"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_27"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_28"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_29"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_3"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_30"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_31"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_32"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_33"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_34"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_35"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_36"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_4"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_41"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_42"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_43"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_44"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_45"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_46"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_47"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_48"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_49"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_5"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_50"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_51"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_52"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_53"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_54"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_55"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_56"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_57"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_58"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_59"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_6"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_60"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_61"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_62"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_63"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_64"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_65"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_66"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_67"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_68"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_69"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_7"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_70"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_71"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_72"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_73"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_74"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_75"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_76"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_77"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_78"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_79"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_8"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_80"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_81"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_82"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_83"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._proof_1_9"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._simp_1_1"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._simp_1_2"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._simp_1_38"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._simp_1_39"
+              },
+              {
+                "kind": "theorem",
+                "name": "RadoEmbedding._simp_1_40"
               }
             ],
             "level": "exported"
@@ -174,7 +1237,7 @@
     "outcome": "Valid",
     "proof_node_updates": {},
     "protected_semantic_change_nodes": [],
-    "request_id": 664,
+    "request_id": 666,
     "snapshot": {
       "corr_current_fingerprints": {
         "BadMultiRestrict": "{\"own_tex\":\"30d287d37fbf821a8053d8bd8b6715efcd335e0fdc57a4c0b16ced93dbabdbcc\",\"lean_semantic_closure\":\"86bd16152fa5b50db0292415063987e89afaf1994630d0e21f692ab97dba3c6a\",\"lean_relevant_definition_descendants\":{\"BadMultiSequence\":\"317d1f338ea08de2f5e24835fcc7fc5ce37700070b79e022e48f42cd7f19fec5\",\"IncSeq\":\"62678618917744e9ce8d2ea0935fbc4fa2c24b3c7b0dbab44953ba983870e74e\",\"IncSeqComp\":\"fe460d37cbb7a7230c014bd82cf799e870cf9d9a3508775cd1bc1ac208cd538c\",\"MultiSequence\":\"7635ce3ff35236138660569fafc2bfdeaf869a00fcfcd98c2e9cdeee44c8eb1a\",\"MultiSequenceRestrict\":\"0e188c957babfd621139a27b0d6f0d3f850fefb796064297881edd7f3923078d\",\"RightComp\":\"b77841b9948e53739053b2b6bb8fc8083b8a6a0b83bb1cae34ff9231eca235c0\",\"ShiftMap\":\"f3a7536af50b62fd7e31cf8defc84752ad6a5fcf206d55ad77c6c1789db1ba44\",\"SuccSeq\":\"73d8e6ad3fadde2e191cff3e9759a2eca9b1fc0bd42cdd0e437bc298ec8114e4\"},\"lean_relevant_dependencies\":[\"BadMultiSequence\",\"IncSeq\",\"IncSeqComp\",\"MultiSequence\",\"MultiSequenceRestrict\",\"RightComp\",\"ShiftMap\",\"SuccSeq\"],\"preamble_tex\":\"1326b30908430fd49a79a55d2843eaf354b37b56f8c1ea876d29837962d4cb39\"}",
@@ -424,7 +1487,6 @@
         "PerfectSuperRestrict",
         "PerfectSuperToBase",
         "PerfectSuperToMulti",
-        "RadoEmbedding",
         "RmapLemma",
         "ShiftDichotomy",
         "Subarr",
@@ -2945,7 +4007,7 @@
     "staged_assumption_lean_statement": "",
     "staged_assumption_nl_statement": "",
     "status": "Ok",
-    "summary": "Closed PowerWqoBadPairSequence by unfolding WellQuasiOrdered and SetDomination. The forward direction chooses a non-dominating element for each ordered pair, and the reverse direction uses the row sets of a bad pair sequence.",
+    "summary": "Closed RadoEmbedding in Lean using the bad-pair characterization, triple and quadruple homogeneous thinning, minimum removal, direct homogeneous-set monotonicity, the three reflection cases, and injectivity via RelationEmbedding.",
     "target_claim_updates": {},
     "transport_failure": false,
     "under_model_disproof": "",
@@ -3117,7 +4179,7 @@
     "HereditarilyCountableAtom.tex": "2cbf956db225606fe17d7219dab26dbb8d2d715f6f749fe3c0766477b5d0afca",
     "HereditarilyCountablePresentationInvariant.lean": "df9f04375105dd4fb74ffc2e2a15c61c2ae38263c70482792c9801046b2b980a",
     "HereditarilyCountablePresentationInvariant.tex": "667b70996e46b26cd64c764f1be262fe2a9cbf31fafe503f1c5f14ffc3822d7d",
-    "INDEX.md": "2b012e1c3ede9e5aa651ff88c95524e1bbce5b17c839e457f69b747d7d426f34",
+    "INDEX.md": "a80b352a38f01cb1d38fe45b3fbd26f2f082bfbf659747dd80c2ad5ffaeb93c7",
     "IncSeq.lean": "c96e48fa488b73bef6e90f1b70dbfc34152f7a1024266a970975b20e6beea8f7",
     "IncSeq.tex": "ba3e36d1e4f3cea185126051ff5f004a2d6f49825d99bbbf7ac6402750e9a9cc",
     "IncSeqComp.lean": "47b3ad44946bcb90bf2fc1ac72ad8ebadaee21a0ea347e3c56ea6f362c08202a",
@@ -3274,8 +4336,8 @@
     "ProperPrefixSet.tex": "781c5d90f0fca5f1e9dfdb592c8d6b5f31b379cbb71dcc1eba210615f5deacf1",
     "QuadrupleHomogeneous.lean": "6f97887af13b11adc835e19fee8e741c9d2a10040382181f6b2c33004579c1fd",
     "QuadrupleHomogeneous.tex": "a707c6b041308fbe847fc327d5cb3be632e63005f8518ce2b59bab9988cf6c3e",
-    "README.md": "689a03596d172a28e4e0e4c5e5c54931fb638a698ff76cd5f7de41df5741e2c4",
-    "RadoEmbedding.lean": "604b48ec42f508411fbfcaf36473bd1040fd54fef661a9635f41aedc2a478975",
+    "README.md": "fb2f9fd487035ea9b14041a124faf7aa952f01589d7731ec198b5e58a710554f",
+    "RadoEmbedding.lean": "85cf3b8729df241cdf3dcef38a93effeae0f6e262d201391d00bcc283394f03e",
     "RadoEmbedding.tex": "1d8e5eba4a7aba4cf9b62ca96707f74bc5efd8288a09310fda1fbb4f1f7fc2a1",
     "RadoOrder.lean": "8e2a202928115c64db7311bfbf7a51fafd7a764b0ff43cf1accfeae7779d02db",
     "RadoOrder.tex": "721e1106db0f774109eee56eb6db738427da66550a61bfb2d6cdd0bd95ca1fda",
@@ -3329,7 +4391,7 @@
     "TripleHomogeneous.tex": "4c4271aa4e003b9a67e7142ce980afad203cb74ea0e23aa1c42355a970dac94d",
     "header.tex": "869f7181550712d438fb395f073247946d3736f88f32667d9db02571997b3249"
   },
-  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_664_result.acceptance.json",
+  "acceptance_context_path": "/home/james/math/bqo3/.trellis/runtime/bqo3-runtime/private/trellis_worker_666_result.acceptance.json",
   "authoritative_repo_path": "/home/james/math/bqo3/.trellis/supervisor/repo",
   "errors": [],
   "validation_errors": [],

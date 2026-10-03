@@ -162,7 +162,7 @@
 | ProperInitialSegment | definition | definition | closed | - | - | InitialSegment |
 | ProperPrefixSet | definition | definition | closed | - | - | Preamble |
 | QuadrupleHomogeneous | lemma | proof | closed | - | Homogeneous quadruples | CardinalityFrontIsFront, NashWilliams |
-| RadoEmbedding | theorem | proof | open | - | Rado embedding | InfiniteSetEnumeration, PowerWqoBadPairSequence, QuadrupleHomogeneous, RadoOrder, RelationEmbedding, TripleHomogeneous |
+| RadoEmbedding | theorem | proof | closed | - | Rado embedding | InfiniteSetEnumeration, PowerWqoBadPairSequence, QuadrupleHomogeneous, RadoOrder, RelationEmbedding, TripleHomogeneous |
 | RadoOrder | definition | definition | closed | - | Rado order | IncreasingPair |
 | Ray | definition | definition | closed | - | - | Preamble |
 | RelationEmbedding | definition | definition | closed | - | Relation embedding | Preamble |
@@ -189,4 +189,4 @@
 | TildeFSingleton | definition | definition | closed | - | - | FrontTreeSingleton, TildeF, TildeFHerCtbl |
 | TripleHomogeneous | lemma | proof | closed | - | Homogeneous triples | CardinalityFrontIsFront, NashWilliams |
 
-**Total:** 185 nodes | **Closed:** 150 | **Open:** 35
+**Total:** 185 nodes | **Closed:** 151 | **Open:** 34
